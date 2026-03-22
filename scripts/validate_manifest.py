@@ -114,11 +114,11 @@ def seed_bundle_ref_requires_anchor(ref: object) -> bool:
         or ref.startswith("seed_branches/")
         or ref.startswith("seed_soil/")
         or ref.startswith("seed_expansion/")
-        or ref.startswith("0ld/seed_bundle/seeds_")
-        or ref.startswith("0ld/seed_templates/")
-        or ref.startswith("0ld/seed_branches/")
-        or ref.startswith("0ld/seed_soil/")
-        or ref.startswith("0ld/seed_expansion/")
+        or ref.startswith("archive/seed_bundle/seeds_")
+        or ref.startswith("archive/seed_templates/")
+        or ref.startswith("archive/seed_branches/")
+        or ref.startswith("archive/seed_soil/")
+        or ref.startswith("archive/seed_expansion/")
     )
 
 

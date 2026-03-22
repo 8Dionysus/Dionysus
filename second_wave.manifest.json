@@ -3,44 +3,44 @@
   "mode": "method_spine",
   "canonical_sources": [
     "first_wave.manifest.json",
-    "0ld/seed_bundle/seed_bundle.md",
-    "0ld/seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks",
-    "0ld/seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-06-practice-branch-of-the-tree",
-    "0ld/seed_bundle/seeds_aoa.md#aoa-seed-08-evidence-backed-gamified-maturation"
+    "archive/seed_bundle/seed_bundle.md",
+    "archive/seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks",
+    "archive/seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-06-practice-branch-of-the-tree",
+    "archive/seed_bundle/seeds_aoa.md#aoa-seed-08-evidence-backed-gamified-maturation"
   ],
   "second_wave_order": [
     {
       "id": "aoa-method-lives-in-playbooks",
       "label": "AOA-SEED-06 Method Lives in Playbooks",
-      "source": "0ld/seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks"
+      "source": "archive/seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks"
     },
     {
       "id": "aoa-source-first-donor-refinery",
       "label": "AOA-SEED-04 Source-First Donor Refinery",
-      "source": "0ld/seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery"
+      "source": "archive/seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery"
     },
     {
       "id": "tos-practice-branch-of-the-tree",
       "label": "TOS-SEED-06 Practice Branch of the Tree",
-      "source": "0ld/seed_bundle/seeds_tos.md#tos-seed-06-practice-branch-of-the-tree"
+      "source": "archive/seed_bundle/seeds_tos.md#tos-seed-06-practice-branch-of-the-tree"
     },
     {
       "id": "aoa-evidence-backed-gamified-maturation",
       "label": "AOA-SEED-08 Evidence-Backed Gamified Maturation",
-      "source": "0ld/seed_bundle/seeds_aoa.md#aoa-seed-08-evidence-backed-gamified-maturation"
+      "source": "archive/seed_bundle/seeds_aoa.md#aoa-seed-08-evidence-backed-gamified-maturation"
     }
   ],
   "deferred_pilots": [
-    "0ld/seed_witness/seed.aoa.protocol-witness.v0.md",
-    "0ld/seed_witness/seed.tos.context-compost.v0.md"
+    "archive/seed_witness/seed.aoa.protocol-witness.v0.md",
+    "archive/seed_witness/seed.tos.context-compost.v0.md"
   ],
   "held_later": [
-    "0ld/seed_bundle/seeds_aoa.md#aoa-seed-05-kag-compatible-substrate-not-empire",
-    "0ld/seed_bundle/seeds_aoa.md#aoa-seed-07-concept-operation-counterpart-edges",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-07-counterpart-mapping-without-collapse",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure"
+    "archive/seed_bundle/seeds_aoa.md#aoa-seed-05-kag-compatible-substrate-not-empire",
+    "archive/seed_bundle/seeds_aoa.md#aoa-seed-07-concept-operation-counterpart-edges",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-07-counterpart-mapping-without-collapse",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure"
   ]
 }

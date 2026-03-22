@@ -3,25 +3,25 @@
   "mode": "tos_soil_prep",
   "canonical_sources": [
     "seventh_wave.manifest.json",
-    "0ld/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-context-node-template",
-    "0ld/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-manual-zarathustra-entry-gate",
-    "0ld/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-pre-expansion-review-route"
+    "archive/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-context-node-template",
+    "archive/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-manual-zarathustra-entry-gate",
+    "archive/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-pre-expansion-review-route"
   ],
   "eighth_wave_order": [
     {
       "id": "tos-context-node-template",
       "label": "Context-Node Template",
-      "source": "0ld/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-context-node-template"
+      "source": "archive/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-context-node-template"
     },
     {
       "id": "tos-manual-zarathustra-entry-gate",
       "label": "Manual Zarathustra Entry Gate",
-      "source": "0ld/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-manual-zarathustra-entry-gate"
+      "source": "archive/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-manual-zarathustra-entry-gate"
     },
     {
       "id": "tos-pre-expansion-review-route",
       "label": "Pre-Expansion Review Route",
-      "source": "0ld/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-pre-expansion-review-route"
+      "source": "archive/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-pre-expansion-review-route"
     }
   ],
   "held_later": [

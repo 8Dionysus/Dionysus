@@ -39,7 +39,7 @@ It supports only bounded restart fidelity for the planted public surfaces.
 
 The ninth-wave source pack is now archived at:
 
-- `0ld/seed_pack_2026-03-22/`
+- `archive/seed_pack_2026-03-22/`
 
 The next live surface after this archive move remains:
 

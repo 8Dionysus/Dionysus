@@ -3,35 +3,35 @@
   "mode": "counterpart_bridge",
   "canonical_sources": [
     "second_wave.manifest.json",
-    "0ld/seed_bundle/seed_bundle.md",
-    "0ld/seed_bundle/seeds_aoa.md#aoa-seed-05-kag-compatible-substrate-not-empire",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-07-counterpart-mapping-without-collapse",
-    "0ld/seed_bundle/seeds_aoa.md#aoa-seed-07-concept-operation-counterpart-edges"
+    "archive/seed_bundle/seed_bundle.md",
+    "archive/seed_bundle/seeds_aoa.md#aoa-seed-05-kag-compatible-substrate-not-empire",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-07-counterpart-mapping-without-collapse",
+    "archive/seed_bundle/seeds_aoa.md#aoa-seed-07-concept-operation-counterpart-edges"
   ],
   "third_wave_order": [
     {
       "id": "aoa-kag-compatible-substrate-not-empire",
       "label": "AOA-SEED-05 KAG-Compatible Substrate, Not Empire",
-      "source": "0ld/seed_bundle/seeds_aoa.md#aoa-seed-05-kag-compatible-substrate-not-empire"
+      "source": "archive/seed_bundle/seeds_aoa.md#aoa-seed-05-kag-compatible-substrate-not-empire"
     },
     {
       "id": "tos-counterpart-mapping-without-collapse",
       "label": "TOS-SEED-07 Counterpart Mapping Without Collapse",
-      "source": "0ld/seed_bundle/seeds_tos.md#tos-seed-07-counterpart-mapping-without-collapse"
+      "source": "archive/seed_bundle/seeds_tos.md#tos-seed-07-counterpart-mapping-without-collapse"
     },
     {
       "id": "aoa-concept-operation-counterpart-edges",
       "label": "AOA-SEED-07 Concept Operation Counterpart Edges",
-      "source": "0ld/seed_bundle/seeds_aoa.md#aoa-seed-07-concept-operation-counterpart-edges"
+      "source": "archive/seed_bundle/seeds_aoa.md#aoa-seed-07-concept-operation-counterpart-edges"
     }
   ],
   "deferred_pilots": [
-    "0ld/seed_witness/seed.aoa.protocol-witness.v0.md",
-    "0ld/seed_witness/seed.tos.context-compost.v0.md"
+    "archive/seed_witness/seed.aoa.protocol-witness.v0.md",
+    "archive/seed_witness/seed.tos.context-compost.v0.md"
   ],
   "held_later": [
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure"
+    "archive/seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure"
   ]
 }

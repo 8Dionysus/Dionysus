@@ -3,30 +3,30 @@
   "mode": "aoa_contract_growth",
   "canonical_sources": [
     "eighth_wave.manifest.json",
-    "0ld/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.memory-thermodynamics.md",
-    "0ld/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.model-tier-orchestration.md",
-    "0ld/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.restartable-inquiry-loop.md"
+    "archive/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.memory-thermodynamics.md",
+    "archive/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.model-tier-orchestration.md",
+    "archive/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.restartable-inquiry-loop.md"
   ],
   "ninth_wave_order": [
     {
       "id": "aoa-memory-thermodynamics",
       "label": "AOA-SEED-09 Memory Thermodynamics",
-      "source": "0ld/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.memory-thermodynamics.md"
+      "source": "archive/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.memory-thermodynamics.md"
     },
     {
       "id": "aoa-model-tier-orchestration",
       "label": "AOA-SEED-10 Model-Tier Orchestration",
-      "source": "0ld/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.model-tier-orchestration.md"
+      "source": "archive/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.model-tier-orchestration.md"
     },
     {
       "id": "aoa-restartable-inquiry-loop",
       "label": "AOA-SEED-11 Restartable Inquiry Loop",
-      "source": "0ld/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.restartable-inquiry-loop.md"
+      "source": "archive/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.restartable-inquiry-loop.md"
     }
   ],
   "supporting_notes": [
-    "0ld/seed_pack_2026-03-22/README.md",
-    "0ld/seed_pack_2026-03-22/notes/stack_operational_notes.md",
+    "archive/seed_pack_2026-03-22/README.md",
+    "archive/seed_pack_2026-03-22/notes/stack_operational_notes.md",
     "ninth_wave.closure.md"
   ]
 }

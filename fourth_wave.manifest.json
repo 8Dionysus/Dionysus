@@ -3,24 +3,24 @@
   "mode": "pilot_pair",
   "canonical_sources": [
     "third_wave.manifest.json",
-    "0ld/seed_witness/seed.aoa.protocol-witness.v0.md",
-    "0ld/seed_witness/seed.tos.context-compost.v0.md"
+    "archive/seed_witness/seed.aoa.protocol-witness.v0.md",
+    "archive/seed_witness/seed.tos.context-compost.v0.md"
   ],
   "fourth_wave_order": [
     {
       "id": "aoa-witness-protocol",
       "label": "Witness Protocol",
-      "source": "0ld/seed_witness/seed.aoa.protocol-witness.v0.md"
+      "source": "archive/seed_witness/seed.aoa.protocol-witness.v0.md"
     },
     {
       "id": "tos-context-compost",
       "label": "Context Compost",
-      "source": "0ld/seed_witness/seed.tos.context-compost.v0.md"
+      "source": "archive/seed_witness/seed.tos.context-compost.v0.md"
     }
   ],
   "held_later": [
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion",
-    "0ld/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure"
+    "archive/seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion",
+    "archive/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure"
   ]
 }
