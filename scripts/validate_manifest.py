@@ -7,7 +7,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST_PATH = ROOT / "first_wave.manifest.json"
+MANIFEST_PATHS = [
+    ROOT / "first_wave.manifest.json",
+    ROOT / "second_wave.manifest.json",
+]
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 HTML_ID = re.compile(r"<a\s+id=\"([^\"]+)\"\s*>\s*</a>", re.IGNORECASE)
 
@@ -56,44 +59,63 @@ def anchors_for(path: Path) -> set[str]:
     return anchors
 
 
-def validate_ref(ref: str, label: str) -> None:
+def validate_ref(ref: str, label: str, require_anchor: bool = False) -> None:
     if not isinstance(ref, str) or not ref:
         fail(f"{label}: ref must be a non-empty string")
     path_text, _, anchor = ref.partition("#")
     target = ROOT / path_text
     if not target.exists():
         fail(f"{label}: referenced path does not exist: {ref}")
+    if require_anchor and target.suffix.lower() == ".md" and not anchor:
+        fail(f"{label}: referenced markdown ref must include an explicit anchor: {ref}")
     if anchor and target.suffix.lower() == ".md" and anchor not in anchors_for(target):
         fail(f"{label}: referenced markdown anchor does not exist: {ref}")
 
 
+def validate_manifest(manifest_path: Path) -> None:
+    payload = load_json(manifest_path)
+    if not isinstance(payload, dict):
+        fail(f"{manifest_path.name}: manifest must be a JSON object")
+
+    if manifest_path.name == "first_wave.manifest.json":
+        order_key = "first_wave_order"
+        tail_keys = ("later_pilots", "origin_notes")
+    elif manifest_path.name == "second_wave.manifest.json":
+        order_key = "second_wave_order"
+        tail_keys = ("deferred_pilots", "held_later")
+    else:
+        fail(f"unsupported manifest surface: {manifest_path.name}")
+
+    for key in ("canonical_sources", order_key, *tail_keys):
+        if key not in payload:
+            fail(f"{manifest_path.name}: manifest is missing required key '{key}'")
+
+    for index, ref in enumerate(payload["canonical_sources"]):
+        validate_ref(ref, f"{manifest_path.name}: canonical_sources[{index}]")
+    for index, item in enumerate(payload[order_key]):
+        if not isinstance(item, dict):
+            fail(f"{manifest_path.name}: {order_key}[{index}] must be an object")
+        if "source" not in item:
+            fail(f"{manifest_path.name}: {order_key}[{index}] is missing required key 'source'")
+        source_ref = item["source"]
+        require_anchor = isinstance(source_ref, str) and source_ref.startswith("seed_bundle/")
+        validate_ref(source_ref, f"{manifest_path.name}: {order_key}[{index}].source", require_anchor=require_anchor)
+    for tail_key in tail_keys:
+        for index, ref in enumerate(payload[tail_key]):
+            require_anchor = manifest_path.name == "second_wave.manifest.json" and tail_key == "held_later"
+            validate_ref(ref, f"{manifest_path.name}: {tail_key}[{index}]", require_anchor=require_anchor)
+
+
 def main() -> int:
     try:
-        payload = load_json(MANIFEST_PATH)
-        if not isinstance(payload, dict):
-            fail("manifest must be a JSON object")
-
-        for key in ("canonical_sources", "first_wave_order", "later_pilots", "origin_notes"):
-            if key not in payload:
-                fail(f"manifest is missing required key '{key}'")
-
-        for index, ref in enumerate(payload["canonical_sources"]):
-            validate_ref(ref, f"canonical_sources[{index}]")
-        for index, item in enumerate(payload["first_wave_order"]):
-            if not isinstance(item, dict):
-                fail(f"first_wave_order[{index}] must be an object")
-            if "source" not in item:
-                fail(f"first_wave_order[{index}] is missing required key 'source'")
-            validate_ref(item["source"], f"first_wave_order[{index}].source")
-        for index, ref in enumerate(payload["later_pilots"]):
-            validate_ref(ref, f"later_pilots[{index}]")
-        for index, ref in enumerate(payload["origin_notes"]):
-            validate_ref(ref, f"origin_notes[{index}]")
+        for manifest_path in MANIFEST_PATHS:
+            validate_manifest(manifest_path)
     except ValidationError as exc:
         print(f"[error] {exc}", file=sys.stderr)
         return 1
 
-    print("[ok] validated first_wave.manifest.json")
+    for manifest_path in MANIFEST_PATHS:
+        print(f"[ok] validated {manifest_path.name}")
     return 0
 
 

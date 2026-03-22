@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "mode": "method_spine",
+  "canonical_sources": [
+    "first_wave.manifest.json",
+    "seed_bundle/seed_bundle.md",
+    "seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks",
+    "seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery",
+    "seed_bundle/seeds_tos.md#tos-seed-06-practice-branch-of-the-tree",
+    "seed_bundle/seeds_aoa.md#aoa-seed-08-evidence-backed-gamified-maturation"
+  ],
+  "second_wave_order": [
+    {
+      "id": "aoa-method-lives-in-playbooks",
+      "label": "AOA-SEED-06 Method Lives in Playbooks",
+      "source": "seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks"
+    },
+    {
+      "id": "aoa-source-first-donor-refinery",
+      "label": "AOA-SEED-04 Source-First Donor Refinery",
+      "source": "seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery"
+    },
+    {
+      "id": "tos-practice-branch-of-the-tree",
+      "label": "TOS-SEED-06 Practice Branch of the Tree",
+      "source": "seed_bundle/seeds_tos.md#tos-seed-06-practice-branch-of-the-tree"
+    },
+    {
+      "id": "aoa-evidence-backed-gamified-maturation",
+      "label": "AOA-SEED-08 Evidence-Backed Gamified Maturation",
+      "source": "seed_bundle/seeds_aoa.md#aoa-seed-08-evidence-backed-gamified-maturation"
+    }
+  ],
+  "deferred_pilots": [
+    "seed_witness/seed.aoa.protocol-witness.v0.md",
+    "seed_witness/seed.tos.context-compost.v0.md"
+  ],
+  "held_later": [
+    "seed_bundle/seeds_aoa.md#aoa-seed-05-kag-compatible-substrate-not-empire",
+    "seed_bundle/seeds_aoa.md#aoa-seed-07-concept-operation-counterpart-edges",
+    "seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust",
+    "seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion",
+    "seed_bundle/seeds_tos.md#tos-seed-07-counterpart-mapping-without-collapse",
+    "seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure"
+  ]
+}

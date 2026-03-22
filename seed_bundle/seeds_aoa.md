@@ -149,6 +149,7 @@
 
 \---
 
+<a id="aoa-seed-04-source-first-donor-refinery"></a>
 ## AOA-SEED-04 — Source-First Donor Refinery
 
 ### Суть
@@ -183,6 +184,7 @@ AoA нужен свой плавильный цех, а не чужие скел
 
 \---
 
+<a id="aoa-seed-05-kag-compatible-substrate-not-empire"></a>
 ## AOA-SEED-05 — KAG-Compatible Substrate, Not Empire
 
 ### Суть
@@ -222,6 +224,7 @@ KAG тебе подходит как логика формы, но не как �
 
 \---
 
+<a id="aoa-seed-06-method-lives-in-playbooks"></a>
 ## AOA-SEED-06 — Method Lives in Playbooks
 
 ### Суть
@@ -255,6 +258,7 @@ KAG тебе подходит как логика формы, но не как �
 
 \---
 
+<a id="aoa-seed-07-concept-operation-counterpart-edges"></a>
 ## AOA-SEED-07 — Concept ↔ Operation Counterpart Edges
 
 ### Суть
@@ -289,6 +293,7 @@ KAG тебе подходит как логика формы, но не как �
 
 \---
 
+<a id="aoa-seed-08-evidence-backed-gamified-maturation"></a>
 ## AOA-SEED-08 — Evidence-Backed Gamified Maturation
 
 ### Суть

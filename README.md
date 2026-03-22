@@ -26,6 +26,11 @@ Validation:
 python scripts/validate_manifest.py
 ```
 
+The manifest validator now checks both:
+
+- `first_wave.manifest.json`
+- `second_wave.manifest.json`
+
 ## First-wave order
 
 The current first-wave sequence is:
@@ -40,6 +45,27 @@ The current first-wave sequence is:
 8. AoA-ToS Bridge Contracts
 
 The Witness / Compost pair remains important, but belongs **after** this structural wave:
+
+- `seed_witness/seed.aoa.protocol-witness.v0.md`
+- `seed_witness/seed.tos.context-compost.v0.md`
+
+## Second-wave method spine
+
+After the trunk-first first wave, the next planting wave is **method-centered**:
+
+1. `AOA-SEED-06 - Method Lives in Playbooks`
+2. `AOA-SEED-04 - Source-First Donor Refinery`
+3. `TOS-SEED-06 - Practice Branch of the Tree`
+4. `AOA-SEED-08 - Evidence-Backed Gamified Maturation`
+
+This wave treats `aoa-playbooks` as the first real home of scenario-level method.
+It gives AoA a donor-refinery law, gives ToS conceptual legitimacy for a practice branch, and fixes an evidence-backed maturity grammar before any heavier pilot protocol work.
+
+The machine-readable route for this wave lives in:
+
+- `second_wave.manifest.json`
+
+The Witness / Compost pair remains deferred during this wave:
 
 - `seed_witness/seed.aoa.protocol-witness.v0.md`
 - `seed_witness/seed.tos.context-compost.v0.md`
