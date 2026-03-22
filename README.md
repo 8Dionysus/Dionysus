@@ -26,10 +26,11 @@ Validation:
 python scripts/validate_manifest.py
 ```
 
-The manifest validator now checks both:
+The manifest validator now checks:
 
 - `first_wave.manifest.json`
 - `second_wave.manifest.json`
+- `third_wave.manifest.json`
 
 ## First-wave order
 
@@ -70,6 +71,26 @@ The Witness / Compost pair remains deferred during this wave:
 - `seed_witness/seed.aoa.protocol-witness.v0.md`
 - `seed_witness/seed.tos.context-compost.v0.md`
 
+## Third-wave counterpart bridge
+
+After the method-centered second wave, the next planting wave is a **tight counterpart bridge**:
+
+1. `AOA-SEED-05 - KAG-Compatible Substrate, Not Empire`
+2. `TOS-SEED-07 - Counterpart Mapping Without Collapse`
+3. `AOA-SEED-07 - Concept Operation Counterpart Edges`
+
+This wave keeps counterpart work derived, source-first, and non-graph-sovereign.
+It gives AoA and ToS an explicit bridge law without turning `aoa-kag` into a new source empire.
+
+The machine-readable route for this wave lives in:
+
+- `third_wave.manifest.json`
+
+The Witness / Compost pair remains deferred during this wave as well:
+
+- `seed_witness/seed.aoa.protocol-witness.v0.md`
+- `seed_witness/seed.tos.context-compost.v0.md`
+
 ## Origin notes, not first-wave canon
 
 These files remain useful as origin commentary and fertile soil, but they are not the canonical first-wave start:
@@ -87,3 +108,4 @@ When in doubt:
 - plant explicit boundaries before bridges
 - plant authored/core memory before derived retrieval surfaces
 - plant ToS node law before archive growth
+- plant counterpart bridges as derived edges, not identity claims

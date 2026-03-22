@@ -7,10 +7,21 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST_PATHS = [
-    ROOT / "first_wave.manifest.json",
-    ROOT / "second_wave.manifest.json",
-]
+MANIFEST_SPECS = {
+    "first_wave.manifest.json": {
+        "order_key": "first_wave_order",
+        "tail_keys": ("later_pilots", "origin_notes"),
+    },
+    "second_wave.manifest.json": {
+        "order_key": "second_wave_order",
+        "tail_keys": ("deferred_pilots", "held_later"),
+    },
+    "third_wave.manifest.json": {
+        "order_key": "third_wave_order",
+        "tail_keys": ("deferred_pilots", "held_later"),
+    },
+}
+MANIFEST_PATHS = [ROOT / name for name in MANIFEST_SPECS]
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 HTML_ID = re.compile(r"<a\s+id=\"([^\"]+)\"\s*>\s*</a>", re.IGNORECASE)
 
@@ -72,37 +83,42 @@ def validate_ref(ref: str, label: str, require_anchor: bool = False) -> None:
         fail(f"{label}: referenced markdown anchor does not exist: {ref}")
 
 
+def seed_bundle_ref_requires_anchor(ref: object) -> bool:
+    return isinstance(ref, str) and ref.startswith("seed_bundle/seeds_")
+
+
 def validate_manifest(manifest_path: Path) -> None:
     payload = load_json(manifest_path)
     if not isinstance(payload, dict):
         fail(f"{manifest_path.name}: manifest must be a JSON object")
 
-    if manifest_path.name == "first_wave.manifest.json":
-        order_key = "first_wave_order"
-        tail_keys = ("later_pilots", "origin_notes")
-    elif manifest_path.name == "second_wave.manifest.json":
-        order_key = "second_wave_order"
-        tail_keys = ("deferred_pilots", "held_later")
-    else:
+    spec = MANIFEST_SPECS.get(manifest_path.name)
+    if spec is None:
         fail(f"unsupported manifest surface: {manifest_path.name}")
+    order_key = spec["order_key"]
+    tail_keys = spec["tail_keys"]
 
     for key in ("canonical_sources", order_key, *tail_keys):
         if key not in payload:
             fail(f"{manifest_path.name}: manifest is missing required key '{key}'")
 
     for index, ref in enumerate(payload["canonical_sources"]):
-        validate_ref(ref, f"{manifest_path.name}: canonical_sources[{index}]")
+        validate_ref(
+            ref,
+            f"{manifest_path.name}: canonical_sources[{index}]",
+            require_anchor=seed_bundle_ref_requires_anchor(ref),
+        )
     for index, item in enumerate(payload[order_key]):
         if not isinstance(item, dict):
             fail(f"{manifest_path.name}: {order_key}[{index}] must be an object")
         if "source" not in item:
             fail(f"{manifest_path.name}: {order_key}[{index}] is missing required key 'source'")
         source_ref = item["source"]
-        require_anchor = isinstance(source_ref, str) and source_ref.startswith("seed_bundle/")
+        require_anchor = seed_bundle_ref_requires_anchor(source_ref)
         validate_ref(source_ref, f"{manifest_path.name}: {order_key}[{index}].source", require_anchor=require_anchor)
     for tail_key in tail_keys:
         for index, ref in enumerate(payload[tail_key]):
-            require_anchor = manifest_path.name == "second_wave.manifest.json" and tail_key == "held_later"
+            require_anchor = seed_bundle_ref_requires_anchor(ref)
             validate_ref(ref, f"{manifest_path.name}: {tail_key}[{index}]", require_anchor=require_anchor)
 
 
