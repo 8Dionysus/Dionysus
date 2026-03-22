@@ -24,6 +24,10 @@ MANIFEST_SPECS = {
         "order_key": "fourth_wave_order",
         "tail_keys": ("held_later",),
     },
+    "fifth_wave.manifest.json": {
+        "order_key": "fifth_wave_order",
+        "tail_keys": ("held_later",),
+    },
 }
 MANIFEST_PATHS = [ROOT / name for name in MANIFEST_SPECS]
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
