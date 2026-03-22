@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "mode": "pilot_pair",
+  "canonical_sources": [
+    "third_wave.manifest.json",
+    "seed_witness/seed.aoa.protocol-witness.v0.md",
+    "seed_witness/seed.tos.context-compost.v0.md"
+  ],
+  "fourth_wave_order": [
+    {
+      "id": "aoa-witness-protocol",
+      "label": "Witness Protocol",
+      "source": "seed_witness/seed.aoa.protocol-witness.v0.md"
+    },
+    {
+      "id": "tos-context-compost",
+      "label": "Context Compost",
+      "source": "seed_witness/seed.tos.context-compost.v0.md"
+    }
+  ],
+  "held_later": [
+    "seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust",
+    "seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion",
+    "seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure"
+  ]
+}
