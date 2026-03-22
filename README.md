@@ -35,6 +35,7 @@ The manifest validator now checks:
 - `fifth_wave.manifest.json`
 - `sixth_wave.manifest.json`
 - `seventh_wave.manifest.json`
+- `eighth_wave.manifest.json`
 
 ## First-wave order
 
@@ -160,6 +161,25 @@ The machine-readable route for this wave lives in:
 
 - `seventh_wave.manifest.json`
 
+## Eighth-wave ToS soil prep before manual Zarathustra entry
+
+After the bounded calibration lineage pilot, the next planting wave is a **pre-expansion soil wave**:
+
+1. context-node template
+2. manual Zarathustra entry gate
+3. pre-expansion review route
+
+This wave prepares ToS for future movement without opening a new family, adding new branch nodes, or pretending wider world-thought expansion has already begun.
+It keeps tree motion explicitly gated by maintainer-led manual source entry, with Zarathustra material as the current named gate.
+
+The machine-readable route for this wave lives in:
+
+- `eighth_wave.manifest.json`
+
+The next live seed remains later during this preparation wave:
+
+- `seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-wider-world-thought-expansion-later`
+
 ## Archived planted seeds
 
 Planted seed sources that are now historical rather than active live under `0ld/`:
@@ -172,6 +192,7 @@ The active seed surface that still contains future work remains:
 
 - `seed_templates/`
 - `seed_branches/`
+- `seed_soil/`
 
 ## Origin notes, not first-wave canon
 
@@ -195,3 +216,4 @@ When in doubt:
 - plant ToS growth law explicitly before reopening broader corpus or template expansion
 - plant stable IDs and first templates before opening branch pilots or wider corpus growth
 - plant one bounded lineage pilot before wider world-thought expansion
+- plant preparation soil before expansion when manual source entry has not yet begun
