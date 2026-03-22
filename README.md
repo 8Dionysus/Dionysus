@@ -32,6 +32,7 @@ The manifest validator now checks:
 - `second_wave.manifest.json`
 - `third_wave.manifest.json`
 - `fourth_wave.manifest.json`
+- `fifth_wave.manifest.json`
 
 ## First-wave order
 
@@ -112,6 +113,21 @@ The remaining ToS growth seeds stay later during this pilot wave:
 - `seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion`
 - `seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure`
 
+## Fifth-wave ToS growth law trio
+
+After the witness and compost pilot, the next planting wave is a **ToS-centered growth law trio**:
+
+1. `TOS-SEED-03 - Calibration Axis, Not Neutral Dust`
+2. `TOS-SEED-05 - Human-Curated, AI-Amplified Expansion`
+3. `TOS-SEED-08 - Growth by Explicit Structure`
+
+This wave stays doctrine-first and review-first.
+It makes the ToS guiding axis explicit without flattening plurality, makes AI amplification reviewable rather than sovereign, and names structural growth laws before any heavier corpus or platform expansion.
+
+The machine-readable route for this wave lives in:
+
+- `fifth_wave.manifest.json`
+
 ## Origin notes, not first-wave canon
 
 These files remain useful as origin commentary and fertile soil, but they are not the canonical first-wave start:
@@ -131,3 +147,4 @@ When in doubt:
 - plant ToS node law before archive growth
 - plant counterpart bridges as derived edges, not identity claims
 - plant witness and compost as public contracts before runtime instrumentation
+- plant ToS growth law explicitly before reopening broader corpus or template expansion
