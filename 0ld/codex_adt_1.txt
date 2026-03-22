@@ -1,0 +1,241 @@
+[8Dionysus/aoa-skills] Align aoa-skills builder and validator routing contracts (PR #40)
+In scripts/skill_catalog_contract.py:
+
+> +                location,
++                "frontmatter 'technique_dependencies' must be a list",
++            )
++        )
++        return issues
++
++    if not all(isinstance(dependency, str) for dependency in dependencies):
++        issues.append(
++            ContractIssue(
++                location,
++                "frontmatter 'technique_dependencies' must only contain strings",
++            )
++        )
++        return issues
++
++    manifest_ids = technique_ids_from_manifest(manifest)
+P1 Badge Return parity issues without raising on bad manifests
+
+collect_skill_parity_issues is called from validate_skill_manifest_parity to collect validation problems, but this line calls technique_ids_from_manifest(manifest) directly. When techniques.yaml has a malformed techniques field (for example, not a list), this raises ValueError and causes run_validation to fail through the runtime-error path instead of reporting normal validation issues. That turns an expected lint failure into a hard crash and hides actionable diagnostics for invalid manifests.
+
+
+
+
+
+
+[8Dionysus/aoa-routing] Implement aoa-routing v0.1 foundation (PR #1)
+In scripts/validate_router.py:
+
+> +    except RouterError as exc:
++        issues.append(ValidationIssue(path.name, str(exc)))
++        return None
++
++
++def validate_registry_entry_attributes(
++    entry: dict[str, Any],
++    location: str,
++    issues: list[ValidationIssue],
++) -> None:
++    attributes = entry.get("attributes")
++    if not isinstance(attributes, dict):
++        issues.append(ValidationIssue(location, "attributes must be an object"))
++        return
++
++    kind = entry["kind"]
+P1 Badge Guard kind lookup when schema-required fields are missing
+
+If a registry entry is malformed (for example, missing kind), validate_against_schema records a schema violation but this direct entry["kind"] access raises KeyError and aborts validation early. In that case users get a crash instead of a complete issue list, which defeats the validator’s purpose on corrupted generated artifacts.
+
+Useful? React with 👍 / 👎.
+
+In scripts/validate_router.py:
+
+> +
++    issues.append(ValidationIssue(location, f"unsupported entry kind '{kind}'"))
++
++
++def validate_registry_dependencies(
++    registry_entries: list[dict[str, Any]],
++    issues: list[ValidationIssue],
++) -> None:
++    entries_by_kind: dict[str, set[str]] = {kind: set() for kind in ACTIVE_KINDS}
++    for entry in registry_entries:
++        entries_by_kind.setdefault(entry["kind"], set()).add(entry["id"])
++
++    for entry in registry_entries:
++        location = f"cross_repo_registry.min.json:{entry['kind']}:{entry['id']}"
++        if entry["kind"] == "skill":
++            for dependency_id in entry["attributes"]["technique_dependencies"]:
+P1 Badge Skip dependency checks for entries with invalid attributes
+
+Dependency validation unconditionally indexes entry["attributes"]["technique_dependencies"] (and similar fields) even after earlier checks may have reported attributes as missing or non-object. A malformed skill/eval entry therefore raises KeyError/TypeError here and terminates validation, so one bad entry can prevent reporting the rest of the issues.
+
+Useful? React with 👍 / 👎.
+
+In scripts/validate_router.py:
+
+> +        except RouterError as exc:
++            issues.append(ValidationIssue(router_path.name, str(exc)))
++            continue
++        validate_against_schema(entry, "router-entry.schema.json", location, issues)
++        key = (entry.get("kind"), entry.get("id"))
++        if key in seen_router_keys:
++            issues.append(ValidationIssue(location, f"duplicate router entry for {key[0]}:{key[1]}"))
++        else:
++            seen_router_keys.add(key)
++        if entry.get("kind") == "memo":
++            issues.append(ValidationIssue(location, "memo router entries are not allowed in v0.1"))
++        if "source_type" in entry or "attributes" in entry:
++            issues.append(ValidationIssue(location, "router entries must stay as the thin projection surface"))
++        normalized_router_entries.append(entry)
++
++    if router_payload != build_router_payload(normalized_registry_entries):
+P1 Badge Rebuild projections only from schema-valid registry entries
+
+This comparison rebuilds the router projection from normalized_registry_entries, which currently includes entries already known to be schema-invalid. If one such entry has an unknown kind or missing required fields, build_router_payload can raise KeyError, causing validation to crash instead of returning accumulated issues for the bad files.
+
+
+
+
+
+ [8Dionysus/aoa-skills] Add Stage 1 routing catalogs to aoa-skills (PR #41)
+In scripts/validate_skills.py:
+
+> +                    f"invalid JSON: {exc.msg}",
++                )
++            )
++        else:
++            if isinstance(parsed, dict):
++                min_data = parsed
++            else:
++                issues.append(
++                    ValidationIssue(
++                        relative_location(min_path),
++                        "catalog must parse to an object",
++                    )
++                )
++
++    if full_data is not None and min_data is not None:
++        projected_min = build_catalog.project_min_catalog(full_data)
+P2 Badge Handle malformed full catalog before projecting min view
+
+Guard this projection call so a syntactically valid but structurally incomplete generated/skill_catalog.json (for example, missing skills or per-skill fields) reports a validation issue instead of raising KeyError and aborting the whole validator with a runtime error. In that corruption scenario, users currently lose the actionable file-level diagnostics that validate_generated_catalogs is intended to provide.
+
+
+
+
+
+
+
+[8Dionysus/aoa-evals] Align aoa-evals builder and validator routing contracts (PR #5)
+In scripts/validate_repo.py:
+
+> +    if target_eval_names is None:
++        if actual_full != expected_full:
++            issues.append(
++                ValidationIssue(
++                    full_location,
+P2 Badge Validate catalog-level metadata in targeted mode
+
+When run_validation(..., eval_name=...) calls validate_generated_catalogs with target_eval_names, the code skips the whole-catalog comparison path and only checks per-eval entries. That means stale top-level contract fields (for example catalog_version or source_of_truth) in generated/eval_catalog.json/.min.json are not detected in targeted runs, so --eval can pass even though generated artifacts are globally out of date after a contract change. This breaks the stated goal of enforcing the same Stage 1 invariants between full and targeted validation.
+
+
+
+
+
+
+ [8Dionysus/aoa-evals] Add Stage 1 routing catalogs to aoa-evals (PR #4)
+In scripts/validate_repo.py:
+
+> +    if actual_full != expected_full:
++        issues.append(
++            ValidationIssue(
++                relative_location(full_path, repo_root),
++                "generated catalog is out of date; run 'python scripts/build_catalog.py'",
++            )
++        )
++    if actual_min != expected_min:
++        issues.append(
++            ValidationIssue(
++                relative_location(min_path, repo_root),
++                "generated min catalog is out of date; run 'python scripts/build_catalog.py'",
++            )
++        )
++
++    projected_min = project_min_catalog(actual_full)
+P2 Badge Guard min projection check against malformed full catalog
+
+Handle structurally invalid but parseable generated/eval_catalog.json before projecting it: when actual_full is valid JSON with missing keys (for example after a manual edit or merge conflict), project_min_catalog(actual_full) can raise KeyError/TypeError, causing validate_repo.py to terminate with a runtime error instead of reporting a normal validation issue. This breaks the validator flow in exactly the case where users need a clear repair message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ [8Dionysus/aoa-techniques] Add local technique capsules and capsule parity enforcement (PR #87)
+In scripts/validate_repo.py:
+
+> +    forced_budget = max(1, min(max_words, len(source_words) - 1))
++    return truncate_capsule_text(source_plain, forced_budget)
+P2 Badge Preserve capsule prefixes when forcing derived summaries
+
+When summarize_capsule_* builds a prefixed candidate (e.g. Use when ... or Needs ...) and ensure_derived_capsule_text detects it matches the source text, this fallback truncates source_plain directly, which drops the field prefix entirely. For short single-item sections (for example a two- or three-word bullet), this emits values like rapid... or config... instead of the expected prefixed form, breaking the capsule field shape that downstream readers/tests assume for these runtime-card strings.
+
+
+
+
+
+
+
+
+
+
+
+[8Dionysus/aoa-skills] Add local skill capsules and capsule parity enforcement (PR #42)
+In scripts/build_catalog.py:
+
+> +        heading_match = SECTION_HEADING_PATTERN.match(line.strip())
++        if heading_match:
+P2 Badge Avoid stripping indentation before heading detection
+
+parse_skill_sections matches headings against line.strip(), so indented ## ... lines (for example inside nested code blocks or list examples) are treated as real section headers. Because validate_skills.parse_skill_markdown now depends on this parser, a malformed SKILL.md can falsely satisfy required-section checks, and capsule extraction can pull content from example blocks instead of actual sections. Match headings on the raw line start (or ignore fenced/code-indented regions) so only true top-level section headings drive validation and capsule generation.
+
+
+
+
+
+
+
+
+
+
+ [8Dionysus/aoa-routing] Make aoa-routing a catalog consumer and add inspect dispatch (PR #3)
+In scripts/build_router.py:
+
+>          entries.append(
+             {
+                 "kind": "skill",
+                 "id": skill_name,
+                 "name": skill_name,
+                 "repo": "aoa-skills",
+-                "path": skill_md_path.relative_to(skills_root).as_posix(),
+-                "status": ensure_string(metadata["status"], f"{relative_posix(skill_md_path)}.status"),
+-                "summary": ensure_string(metadata["summary"], f"{relative_posix(skill_md_path)}.summary"),
+-                "source_type": HYBRID_SOURCE_TYPE,
++                "path": ensure_repo_relative_path(skill["skill_path"], f"{location}.skill_path"),
+P2 Badge Reject parent-directory traversal in catalog paths
+
+Now that collect_skill_entries consumes skill_path directly from skill_catalog.min.json, this line accepts paths like ../secret.md because ensure_repo_relative_path only blocks absolute paths. That means a malformed or compromised catalog can publish registry entries that point outside aoa-skills, and downstream consumers that resolve repo_root / path may inspect unintended files. Please normalize and reject .. segments for catalog-provided paths (including the analogous eval_path flow) before emitting registry entries.

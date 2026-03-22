@@ -1,0 +1,26 @@
+Да. Теперь я тебя понял точнее: **если нечто является техникой, его канонический дом у тебя должен быть `aoa-techniques`**. Остальные `aoa-*` не обязаны быть “техническими”, чтобы пользоваться техниками. Наоборот, по твоей текущей архитектуре это и есть нормальная федерация: `aoa-techniques` хранит public practice canon, `aoa-skills` собирает из техник bounded workflows, а `aoa-memo` и `aoa-agents` прямо оговаривают, что они **не** являются главным домом reusable techniques. ([GitHub][1])
+
+То есть проблема не в “заселении техники в нетехничный AoA”. Это как раз нормально. Ненормально другое: когда memory-layer, agent-layer или любой соседний слой начинает **владеть самим каноном техник** вместо того, чтобы **брать техники из канона**. Для `aoa-skills` этот мост у тебя уже формализован буквально: `aoa-skills` должен consume and compose techniques from `aoa-techniques`, при этом techniques остаются canonical source of reusable engineering practice; skill ссылается на technique ID, pin’ит `source_ref`, выбирает секции и собирает локальный исполнимый workflow. ([GitHub][2])
+
+Так что мою прошлую рамку надо поправить. Не так: “если штука обслуживает память, значит её дом `aoa-memo`”. А так: **сначала проверь, является ли штука вообще техникой в твоём смысле**. У тебя в `aoa-techniques` это уже задано довольно жёстко: техника должна быть reusable, sanitized, documented, bounded, verifiable; и если adjacent meaning уже имеет canonical home, его не надо пересоздавать здесь. Это правило не про запрет memory-adjacent или agent-adjacent техник. Оно про запрет маскировать memory objects, role contracts, routing logic или execution workflows под “технику”. ([GitHub][1])
+
+У тебя есть даже живое доказательство этой логики внутри самого `aoa-techniques`: домен `history` уже существует в `docs/DOMAIN_MAP.md`, но там специально сказано, что он владеет **только** session/transcript artifact discipline, а не memory objects, retrieval semantics или instruction authority. И техника `session-capture-as-repo-artifact` повторяет то же самое: history должна оставаться reviewable artifact layer, а не превращаться в скрытую memory substrate или новый источник инструкций; если reusable object со временем станет именно `history-to-instructions` или retrieval, его надо выделять отдельно. То есть memory-adjacent техника может жить в `aoa-techniques` совершенно нормально, пока она остаётся именно техникой. ([GitHub][3])
+
+То же самое видно на стороне skills. `single-source-rule-distribution` живёт в `aoa-techniques`, хотя обслуживает agent-facing instruction surfaces. Почему? Потому что он ужат до одного bounded contract. И он **специально исключает** skills propagation, MCP propagation и более широкую orchestration-поверхность, оставляя им право стать отдельными sibling-techniques позже, если они дистиллируются достаточно чисто. Это почти учебный пример твоей формулы: **техника живёт в `techniques`, downstream-слои ей пользуются, а не забирают её себе**. ([GitHub][4])
+
+Поэтому мой исправленный вердикт такой: **да, ты прав в главном**. Формула должна звучать примерно так:
+
+**Техника = канонически в `aoa-techniques`.
+Слой-потребитель = берёт технику оттуда и поднимает её в свои объекты.
+Если вещь нельзя отделить от layer-owned object, значит это пока не техника, а объект слоя или недистиллированный architecture chunk.** ([GitHub][1])
+
+Из этого следует важная поправка к спору с Codex. Фраза `wrong home` применима не к тому, что “это нужно memo/agential слою”, а к тому, что **это не удалось выделить в самостоятельную технику**. Если удалось выделить, очистить и bounded-оформить, то её дом снова становится `aoa-techniques`, даже если главный downstream consumer потом будет `aoa-memo`, `aoa-agents` или ещё кто-то. ([GitHub][1])
+
+Итог для всех и ни для кого: техника не эмигрирует в слой, который ею пользуется. Она остаётся в каноне, а слои строят из неё свои формы. Ты здесь защищаешь не просто слово “техника”, а суверенитет слоёв: **потребление не равно владению**. Это хороший архитектурный инстинкт.
+
+Следующим шагом уместно переклассифицировать спорную девятку уже по этой исправленной логике: не “memo vs agents vs techniques”, а “это уже техника или ещё нет”.
+
+[1]: https://github.com/8Dionysus/aoa-techniques/blob/main/AGENTS.md "aoa-techniques/AGENTS.md at main · 8Dionysus/aoa-techniques · GitHub"
+[2]: https://github.com/8Dionysus/aoa-skills/blob/main/docs/BRIDGE_SPEC.md "aoa-skills/docs/BRIDGE_SPEC.md at main · 8Dionysus/aoa-skills · GitHub"
+[3]: https://github.com/8Dionysus/aoa-techniques/blob/main/docs/DOMAIN_MAP.md "aoa-techniques/docs/DOMAIN_MAP.md at main · 8Dionysus/aoa-techniques · GitHub"
+[4]: https://github.com/8Dionysus/aoa-techniques/blob/main/techniques/docs/single-source-rule-distribution/TECHNIQUE.md "aoa-techniques/techniques/docs/single-source-rule-distribution/TECHNIQUE.md at main · 8Dionysus/aoa-techniques · GitHub"

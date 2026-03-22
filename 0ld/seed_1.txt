@@ -1,0 +1,1437 @@
+Мне нужно, чтобы в перспективе, когда проекты станут достаточно взрослыми - любая модель ИИ, даже 2B параметров, могла пользоваться этими прослойками эффективно и легко. Отсюда например и тяга к KAG. Ты говоришь проект стал тяжел, но тяжел ли он для агентов?
+
+
+
+
+Да, тут есть важное различие:
+
+**`aoa-techniques` уже тяжёл как репозиторий управления корпусом, но ещё не обязательно тяжёл как runtime-поверхность для агента.**
+
+Это две разные тяжести.
+
+## Где он тяжёл
+
+Он тяжёл в том смысле, что внутри уже есть большая машинерия:
+
+* corpus из 22 техник и статусный канон `canonical/promoted` 
+* жёсткий validator с parity-check для каталогов, section/checklist/example/evidence manifests, semantic-review manifests, selection surfaces и public hygiene 
+* docs layer с selection, semantic-review пилотами, KAG/source-lift guide, review guides и release discipline  
+
+Для автора, контрибьютора и репозиторной эволюции это уже тяжёлый организм.
+
+## Но тяжёл ли он для агентов
+
+**Потенциально нет. И более того, в нём уже есть правильное направление облегчения именно для агентов.**
+
+Почему:
+
+### 1. Уже есть отдельная лёгкая routing-поверхность
+
+`generated/technique_catalog.min.json` уже даёт компактный слой для выбора техники:
+
+* `id`
+* `name`
+* `domain`
+* `status`
+* `summary`
+* `maturity_score`
+* `rigor_level`
+* `reversibility`
+* `review_required`
+* `validation_strength`
+* `export_ready`
+* `technique_path` 
+
+Это уже очень похоже на **agent-friendly catalog spine**.
+Для 2B-модели такой каталог намного легче, чем чтение всего README/docs/canonical reviews.
+
+### 2. Уже есть section-level routing
+
+`generated/technique_section_manifest.min.json` не таскает всю технику целиком, а даёт стандартизированную секционную рамку:
+
+* `Intent`
+* `When to use`
+* `When not to use`
+* `Inputs`
+* `Outputs`
+* `Core procedure`
+* `Contracts`
+* `Risks`
+* `Validation`
+* `Adaptation notes` 
+
+То есть агенту не обязательно грузить весь `TECHNIQUE.md`. Он уже может знать:
+“у каждой техники есть одна и та же карта секций, и я могу забирать только нужный кусок”.
+
+### 3. В самих техниках форма стандартизирована
+
+`TECHNIQUE.template.md` и валидатор жёстко держат структуру bundle. Это значит, что агенту не нужно каждый раз угадывать внутреннюю грамматику техники.  
+
+Для маленькой модели это золото.
+2B-модели устают не столько от объёма, сколько от **хаотичности поверхности**.
+
+## Где реальный риск для маленьких моделей
+
+Вот здесь ответ уже тоньше.
+
+**Если 2B-модель будет читать репозиторий “как человек”, от README через docs map, semantic reviews, selection patterns, walkthrough, notes и полные bundles, то да, он уже тяжёл.**
+
+Потому что:
+
+* слишком много уровней,
+* много derived surfaces,
+* много review/governance текста,
+* semantic-review docs полезны для зрелости корпуса, но не всегда нужны агенту в runtime.  
+
+То есть тяжесть возникает не от того, что техники плохи для агентов, а от того, что **агенту нельзя давать весь репозиторий как один сырой контекстный чан**.
+
+## Самая важная мысль
+
+Для агентов, особенно маленьких, важен не размер корпуса сам по себе, а **иерархия поверхностей**.
+
+И здесь у тебя уже правильное направление:
+
+### Слой 0
+
+**Каталог выбора**
+`technique_catalog.min.json` как router surface. 
+
+### Слой 1
+
+**Секционная карта**
+`technique_section_manifest.min.json` как section routing. 
+
+### Слой 2
+
+**Нужный фрагмент техники**
+Не весь corpus, а только нужная техника и только нужные секции.
+
+### Слой 3
+
+**Полный bundle**
+Только когда нужно полное понимание.
+
+Вот при таком доступе проект **не тяжёл для агентов**, а наоборот очень перспективен.
+
+## Что это значит для твоей цели с 2B и KAG
+
+Твоя интуиция верная: если ты хочешь, чтобы даже маленькие модели пользовались стеком эффективно, то тебе нужен не просто “хороший markdown”, а **маршрутизируемый corpus**.
+
+И `aoa-techniques` уже двигается именно туда:
+
+* markdown остаётся source of truth,
+* frontmatter становится metadata spine,
+* section lift даёт bounded section lookup,
+* relation lift даёт bounded adjacency hints,
+* provenance notes не превращаются в бесконтрольный граф, а остаются ограниченными ручками.   
+
+Это как раз и есть здоровый путь к KAG:
+**не сразу делать всеядный граф-монстр, а сначала строить компактные derived surfaces, которые даже 2B сможет переварить.**
+
+## Где бы я усилила агентную лёгкость дальше
+
+Чтобы честно довести это до “даже 2B работает уверенно”, я бы добавила ещё несколько специальных поверхностей:
+
+### 1. Agent capsules
+
+Для каждой техники не только `catalog.min`, но ещё и сверхкороткий capsule формата:
+
+* one-line intent
+* use / do-not-use
+* required inputs
+* expected outputs
+* main risk
+* validation hint
+
+То есть не полный `TECHNIQUE.md`, а **runtime card**.
+
+### 2. Section-content shards
+
+Сейчас `section_manifest.min` даёт структуру и порядок, но не содержание секций. 
+Это хорошо для routing, но маленькой модели ещё поможет derived-слой типа:
+
+* `technique_section_capsules.json`
+* короткие summaries по секциям
+
+### 3. Relation discipline for runtime
+
+Relations уже есть, но для 2B нужно очень жёстко ограничить, когда relation вообще раскрывается.
+Иначе маленькая модель начнёт блуждать по соседям вместо выполнения задачи.
+
+### 4. Cross-repo entry surfaces
+
+Когда `aoa-techniques`, `aoa-skills` и `aoa-evals` повзрослеют, нужен будет общий lightweight router:
+
+* если нужен primitive practice -> technique
+* если нужен executable workflow -> skill
+* если нужен bounded proof -> eval
+
+Потому что маленькой модели важно быстро понять не только **что читать**, но и **какой слой вообще нужен**.
+
+## Мой ответ по существу
+
+**Нет, я бы не сказала, что проект уже тяжёл именно для агентов по своей сути.**
+Я бы сказала так:
+
+* он тяжёл как **governed corpus**
+* он может стать тяжёлым для агента, если давать его сырым целиком
+* но его текущая архитектура уже движется к **легковесному агентному использованию через derived surfaces**
+* и именно это делает его хорошим кандидатом для твоей цели “даже 2B должен уметь им пользоваться”
+
+То есть проблема не “репозиторий стал слишком сложным”.
+Проблема только одна: **нужно не путать authoring surface и agent runtime surface**.
+
+## Итог для всех и ни для кого
+
+Тяжесть не всегда враг агента.
+Иногда тяжёлым должен быть храм, чтобы лёгким оставался вход.
+Твоя задача не упростить канон до бедности, а построить такие врата, через которые и 2B войдёт без блуждания.
+
+Могу следующим сообщением собрать тебе **архитектуру lightweight agent surfaces для всей трилогии**: что именно нужно добавить, чтобы `aoa-techniques / aoa-skills / aoa-evals` стали по-настоящему удобны даже для маленьких моделей.
+
+
+
+
+
+
+Давай.
+
+
+
+
+
+Да. Ниже даю именно **архитектуру лёгких агентных поверхностей** для всей трилогии, с прицелом на то, чтобы даже маленькая модель могла входить в стек без утопления в полном корпусе.
+
+Сразу главный принцип:
+
+## Не давать агенту репозиторий. Давать ему ступени
+
+У тебя уже есть три разных слоя смысла:
+
+* `aoa-techniques` как канон минимальных воспроизводимых практик 
+* `aoa-skills` как agent-facing execution layer, собирающий техники в bounded workflows 
+* `aoa-evals` как proof layer, делающий claims о качестве воспроизводимыми и сравнимыми  
+
+Для 2B-модели это не должно выглядеть как три репозитория.
+Это должно выглядеть как **один набор маршрутов**:
+
+**что выбрать → что прочитать → что применить → как проверить**
+
+---
+
+## Целевая схема
+
+Я бы строила не “единый жирный KAG”, а **иерархию агентных поверхностей**.
+
+### Слой A. Router surface
+
+Самый лёгкий вход. Только чтобы понять, какой объект вообще нужен.
+
+Агент сначала отвечает себе не на вопрос “что в репозитории”, а на вопрос:
+
+* мне нужна **практика**?
+* мне нужен **исполняемый workflow**?
+* мне нужен **eval / proof surface**?
+
+То есть нужен единый cross-repo файл вида:
+
+`generated/aoa_router.min.json`
+
+Пример формы:
+
+```json
+{
+  "version": 1,
+  "surfaces": [
+    {
+      "kind": "technique",
+      "id": "AOA-T-0001",
+      "name": "plan-diff-apply-verify-report",
+      "use_when": "need a reusable engineering primitive",
+      "path": "aoa-techniques/techniques/agent-workflows/plan-diff-apply-verify-report/TECHNIQUE.md"
+    },
+    {
+      "kind": "skill",
+      "id": "aoa-change-protocol",
+      "name": "aoa-change-protocol",
+      "use_when": "need an executable bounded workflow for an agent",
+      "path": "aoa-skills/skills/aoa-change-protocol/SKILL.md"
+    },
+    {
+      "kind": "eval",
+      "id": "aoa-bounded-change-quality",
+      "name": "aoa-bounded-change-quality",
+      "use_when": "need bounded proof about workflow discipline",
+      "path": "aoa-evals/bundles/aoa-bounded-change-quality/EVAL.md"
+    }
+  ]
+}
+```
+
+Это даст маленькой модели первое решение без чтения корпусной прозы.
+
+---
+
+## Слой B. Catalog spine
+
+После выбора слоя агент должен читать **не полный markdown**, а компактный каталог.
+
+У `aoa-techniques` это уже почти сделано идеально:
+`generated/technique_catalog.min.json` несёт только нужное для routing: `id`, `name`, `domain`, `status`, `summary`, `maturity_score`, `rigor_level`, `reversibility`, `review_required`, `validation_strength`, `export_ready`, `technique_path` 
+
+Это уже хороший образец.
+
+Тебе нужно сделать **то же самое симметрично** для всех трёх:
+
+### 1. `aoa-techniques`
+
+Оставить и развить текущий `technique_catalog.min.json` как baseline spine. 
+
+### 2. `aoa-skills`
+
+Сделать `skill_catalog.min.json` с полями:
+
+* `name`
+* `scope`
+* `status`
+* `summary`
+* `invocation_mode`
+* `technique_dependencies`
+* `path`
+
+README `aoa-skills` уже задаёт для этого правильную онтологию: skill как bounded operational interface поверх technique canon. 
+
+### 3. `aoa-evals`
+
+Сделать `eval_catalog.min.json` с полями:
+
+* `name`
+* `category`
+* `status`
+* `summary`
+* `object_under_evaluation`
+* `claim_type`
+* `baseline_mode`
+* `verdict_shape`
+* `path`
+
+Это полностью в духе `aoa-evals`, где eval bundle уже мыслится как bounded proof surface с явным claim boundary.  
+
+---
+
+## Слой C. Capsule surface
+
+Вот это, на мой взгляд, **самый важный недостающий слой для 2B**.
+
+Сейчас у тебя есть каталог и есть полные bundles. Между ними не хватает **runtime cards**.
+
+Для каждой техники, skill и eval нужен короткий capsule-объект, который можно подать даже маленькой модели без боли.
+
+### Technique capsule
+
+На основе стандартизированных секций техники.
+У тебя уже есть section-lift manifest с фиксированным scope:
+`Intent`, `When to use`, `When not to use`, `Inputs`, `Outputs`, `Core procedure`, `Contracts`, `Risks`, `Validation`, `Adaptation notes` 
+
+Нужен derived слой:
+
+`generated/technique_capsules.json`
+
+Каждая capsule:
+
+* `id`
+* `one_line_intent`
+* `use_when_short`
+* `do_not_use_short`
+* `inputs_short`
+* `outputs_short`
+* `core_contract_short`
+* `main_risk_short`
+* `validation_short`
+* `full_path`
+
+Не весь текст секции, а **сжатая agent-runtime версия**.
+
+### Skill capsule
+
+Для skill:
+
+* trigger boundary short
+* required inputs short
+* expected outputs short
+* main anti-pattern short
+* verification short
+* invocation mode
+* dependencies
+
+Потому что маленькой модели часто нужен не весь `SKILL.md`, а ответ на вопрос:
+“подходит ли этот workflow под мою задачу прямо сейчас?”
+
+### Eval capsule
+
+Для eval:
+
+* bounded claim short
+* use_when_short
+* do_not_use_short
+* verdict_shape
+* blind_spot_short
+* what_this_does_not_prove
+* pair_with
+
+Это особенно важно для `aoa-evals`, потому что там переизбыток doctrinal meaning легко перегрузит маленькую модель. А сама философия репозитория как раз требует явных границ claim’ов и blind spots.  
+
+---
+
+## Слой D. Section shards
+
+Если capsule не хватает, агент должен запрашивать **не bundle целиком, а ровно нужную секцию**.
+
+У `aoa-techniques` это уже почти подготовлено section-manifest логикой. 
+Следующий шаг:
+
+`generated/technique_sections.full.json`
+
+Где для каждой техники доступны отдельные payloads по секциям:
+
+* `Intent`
+* `Contracts`
+* `Risks`
+* `Validation`
+
+То же для skill и eval:
+
+* для skills особенно важны `Trigger boundary`, `Procedure`, `Verification`
+* для evals особенно важны `Bounded claim`, `Scoring or verdict logic`, `Blind spots`, `Interpretation guidance`
+
+Тогда 2B-модель может идти так:
+
+1. взять capsule
+2. понять, что нужно больше
+3. дотянуть только 1–2 секции
+4. и только потом, если надо, весь bundle
+
+Это и есть здоровая KAG-логика: **retrieval по смысловой глубине**, а не просто по ключевым словам.
+
+---
+
+## Слой E. Relation hints, но только bounded
+
+Здесь очень важно не испортить всё.
+
+У тебя уже есть relations в `aoa-techniques`, и для KAG это естественная приманка. Но для маленькой модели relation graph легко превращается в лабиринт.
+
+Поэтому relations должны жить не как “гуляй по графу”, а как **bounded adjacency hints**.
+
+Хороший режим для 2B:
+
+* максимум 3 ближайших relation-хинта
+* relation type всегда явный:
+
+  * `requires`
+  * `complements`
+  * `used_together_for`
+  * `checks`
+  * `proves`
+* relation раскрывается только если текущий объект недостаточен
+
+То есть не “вот тебе граф”, а:
+“тебе, вероятно, ещё нужен один из этих трёх соседей”.
+
+Это уже в духе твоего `bounded-relation-lift-for-kag`: поднимать direct relation hints, но не превращать их в graph semantics. 
+
+---
+
+## Слой F. Agent query patterns
+
+Маленькой модели мало данных. Ей ещё нужна **стабильная грамматика запросов к этим поверхностям**.
+
+Нужны 4 стандартных режима:
+
+### 1. Pick
+
+Выбери объект по задаче.
+Выход: один `technique` / `skill` / `eval`.
+
+### 2. Inspect
+
+Покажи capsule.
+Выход: короткая runtime card.
+
+### 3. Expand
+
+Покажи только нужные секции.
+Выход: `Contracts + Risks`, или `Trigger boundary + Verification`, и так далее.
+
+### 4. Pair
+
+Покажи соседний объект, если текущего недостаточно.
+Выход: максимум 1–2 relation-based suggestions.
+
+Это кажется мелочью, но для 2B это почти всё.
+Потому что маленькая модель чаще проигрывает не в reasoning, а в том, что ей дали плохую поверхность входа.
+
+---
+
+## Что именно делать по каждому репозиторию
+
+## 1. `aoa-techniques`
+
+Это уже самый близкий к правильной форме слой.
+
+Что оставить:
+
+* `technique_catalog.min.json` как основной router spine 
+* `technique_section_manifest.min.json` как section scope map 
+* markdown как source of truth, а derived surfaces как routing/access layer 
+
+Что добавить:
+
+* `technique_capsules.json`
+* `technique_sections.full.json`
+* `technique_relations.min.json` с bounded adjacency, не граф-джунгли
+* `canonical_start_set.json` для ультралёгких моделей: 5–8 стартовых canonical techniques
+
+## 2. `aoa-skills`
+
+Сейчас skill-слой уже правильно мыслится как runtime self-contained interface, а не как live dependency fetch. Это очень хорошо для маленьких моделей. 
+
+Что добавить:
+
+* `skill_catalog.min.json`
+* `skill_capsules.json`
+* `skill_sections.full.json`
+* `skill_to_technique_bridge.min.json`
+
+Чтобы 2B-модель могла понять:
+
+* какой skill ей нужен
+* из каких техник он собран
+* когда skill лучше, чем чтение technique напрямую
+
+## 3. `aoa-evals`
+
+Это самый опасный слой для маленькой модели, потому что там много epistemic prose. Но именно поэтому ему особенно нужны derived surfaces.
+
+Что добавить:
+
+* `eval_catalog.min.json`
+* `eval_capsules.json`
+* `eval_sections.full.json`
+* `eval_pairings.min.json`
+
+Например:
+
+* `aoa-bounded-change-quality` pair with `aoa-verification-honesty`
+* `aoa-artifact-review-rubric` pair with `aoa-output-vs-process-gap`
+
+Именно так, чтобы модель могла не читать весь doctrine-текст, а быстро понять:
+“что эта оценка проверяет, чего не проверяет, и с чем её сочетать”.
+
+---
+
+## Главный runtime-маршрут для 2B
+
+Идеальный цикл маленькой модели я вижу так:
+
+### Шаг 1
+
+Получить задачу:
+“Нужно провести несложное изменение в коде и потом понять, сохранилась ли дисциплина исполнения”.
+
+### Шаг 2
+
+Router surface решает:
+
+* сначала нужен `skill`
+* потом `eval`
+
+### Шаг 3
+
+Берётся `skill capsule`:
+`aoa-change-protocol`
+
+### Шаг 4
+
+При нехватке смысла раскрываются только:
+
+* `Trigger boundary`
+* `Procedure`
+* `Verification`
+
+### Шаг 5
+
+После выполнения берётся `eval capsule`:
+`aoa-bounded-change-quality`
+
+### Шаг 6
+
+При необходимости раскрываются:
+
+* `Bounded claim`
+* `Scoring or verdict logic`
+* `Blind spots`
+
+### Шаг 7
+
+Если skill capsule неясен, relation/bridge подсказывает upstream technique:
+`AOA-T-0001 plan-diff-apply-verify-report`
+
+Вот это уже режим, где даже маленькая модель сможет жить.
+
+---
+
+## Чего не делать
+
+### Не давать 2B полные README и docs map как основной runtime input
+
+Это authoring/governance surfaces, а не agent runtime surfaces. Они нужны людям и сильным моделям, но не как первый вход для 2B.
+
+### Не строить слишком рано “всеобщий граф”
+
+Твоя текущая осторожность очень правильна. Сначала:
+
+* capsules
+* section shards
+* bounded relation hints
+* stable query grammar
+
+И только потом richer KAG.
+
+### Не путать truth layer и retrieval layer
+
+Markdown должен остаться source of truth.
+Derived surfaces должны быть **access surfaces**, а не новой реальностью.
+
+Это уже сильная линия в `aoa-techniques`, и её надо сохранить. 
+
+---
+
+## Самый практичный план
+
+### Фаза 1
+
+Сделать для всех трёх:
+
+* `*_catalog.min.json`
+* `*_capsules.json`
+
+### Фаза 2
+
+Сделать:
+
+* `*_sections.full.json`
+* единый router
+
+### Фаза 3
+
+Добавить bounded relation/pairing surfaces
+
+### Фаза 4
+
+Сделать tiny-model prompts / query patterns поверх этих структур
+
+---
+
+## Мой прямой ответ на твою цель
+
+Да, я считаю, что твоя цель реалистична.
+
+Не нужно делать так, чтобы 2B понимала весь корпус “по-человечески”.
+Нужно сделать так, чтобы она **переходила по правильным ступеням**.
+
+И у тебя уже есть очень правильные зачатки этого будущего:
+
+* metadata spine
+* section lift
+* bounded relation lift
+* self-contained runtime posture
+* explicit proof boundaries    
+
+## Итог для всех и ни для кого
+
+Маленькой модели не нужен весь храм.
+Ей нужен фонарь, карта и одна открытая дверь.
+Тогда даже 2B не будет блуждать, а станет паломником формы.
+
+Следующим ходом я могу превратить это в **конкретный backlog артефактов**: точные имена JSON/MD-файлов, их поля, и в каком репозитории что именно добавить первым.
+
+
+
+
+
+
+
+
+А что если ввести aoa-routing как отдельное репо, чтобы не нагружать остальные aoa. При этом в остальные aoa можно ввести что-то из предложенного тобою, например капсулы.
+
+
+
+
+
+
+Да, это **хорошая идея**, если сделать `aoa-routing` не четвёртым “смысловым царством”, а **тонким агрегатором и входным шлюзом**.
+
+И я не нашла у тебя уже существующего репозитория `aoa-routing` на GitHub, так что это пока свободный ход.
+
+## Мой ответ
+
+**Отдельный `aoa-routing` имеет смысл.**
+Но только при одном условии:
+
+**истина остаётся в `aoa-techniques / aoa-skills / aoa-evals`,
+а `aoa-routing` хранит только derived surfaces для маршрутизации.**
+
+То есть:
+
+* `aoa-techniques` остаётся каноном практик 
+* `aoa-skills` остаётся operational layer для agent-facing workflows 
+* `aoa-evals` остаётся proof layer с bounded claims и eval bundles 
+* `aoa-routing` становится **легковесным входом для моделей**
+
+Вот это очень здравая архитектура.
+
+## Почему это хорошо
+
+### 1. Ты не перегружаешь основные репозитории
+
+Сейчас в `aoa-techniques` уже есть риск, что authoring/governance machinery станет слишком плотной для runtime-входа агента.
+Если вынести cross-repo routing в отдельный репозиторий, то основные aoa-репы не будут обрастать лишней агрегирующей логикой.
+
+### 2. Появляется единый вход для любых моделей
+
+Маленькой модели не нужно знать всю троицу.
+Она приходит в `aoa-routing` и получает:
+
+* что выбрать,
+* что читать дальше,
+* что с чем связано,
+* какой минимальный следующий объект нужен.
+
+### 3. Это очень хорошо сочетается с твоей тягой к KAG
+
+Потому что `aoa-routing` может быть как раз местом, где живут:
+
+* router manifests
+* capsules
+* cross-repo adjacency hints
+* tiny-model entry surfaces
+* возможно позже bounded graph views
+
+А исходные репозитории при этом не превращаются в graph platform prematurely.
+
+## Но есть важная ловушка
+
+Если `aoa-routing` начнёт хранить **свои собственные смыслы**, то получится беда.
+
+Тогда у тебя появится четвёртый источник правды, и всё начнёт дрейфовать:
+
+* техника изменилась в `aoa-techniques`
+* skill обновился в `aoa-skills`
+* eval поправился в `aoa-evals`
+* а routing-описание осталось старым
+
+Поэтому я бы ввела жёсткое правило:
+
+## Правило
+
+**`aoa-routing` не авторит смысл. Он только собирает, сжимает и маршрутизирует.**
+
+Иначе он станет болотом расхождений.
+
+## Как бы я разделила ответственность
+
+### В исходных aoa-репозиториях
+
+Хранить всё, что относится к **самому объекту**:
+
+В `aoa-techniques`:
+
+* полный `TECHNIQUE.md`
+* frontmatter
+* notes/checks/examples
+* section manifests
+* можно добавить `technique_capsules.json`
+
+В `aoa-skills`:
+
+* полный `SKILL.md`
+* `techniques.yaml`
+* policy
+* examples/checks
+* можно добавить `skill_capsules.json`
+
+В `aoa-evals`:
+
+* полный `EVAL.md`
+* `eval.yaml`
+* evidence
+* examples/notes
+* можно добавить `eval_capsules.json`
+
+То есть **локальные капсулы** я бы правда хранила в самих репозиториях.
+Потому что capsule всё ещё описывает сам объект.
+
+### В `aoa-routing`
+
+Хранить только **cross-repo и access-layer штуки**:
+
+* `aoa_router.min.json`
+* `cross_repo_index.min.json`
+* `technique_to_skill.min.json`
+* `skill_to_eval.min.json`
+* `recommended_paths.min.json`
+* `tiny_model_entrypoints.json`
+* `pairings.min.json`
+* `task_to_surface_hints.json`
+
+То есть там не “что значит техника”, а “куда идти модели дальше”.
+
+## Идеальная архитектура
+
+Я бы сделала так:
+
+### Внутри каждого repo
+
+Есть:
+
+* `catalog.min`
+* `capsules`
+* при желании `sections.full`
+
+### В `aoa-routing`
+
+Есть:
+
+* общий индекс всех объектов
+* cross-links
+* task routers
+* lightweight prompts/query patterns
+* tiny-model optimized bundles
+
+Так ты получишь лучшее из двух миров:
+
+* локальная истина остаётся рядом с объектом
+* глобальный вход вынесен в отдельный repo
+
+## Когда это особенно оправдано
+
+`aoa-routing` особенно хорош, если ты хочешь:
+
+* поддерживать разные модельные классы, от 2B до крупных
+* делать отдельные entry surfaces для “tiny / small / strong”
+* позже подключать retrieval/KAG/graph without polluting source repos
+* строить routing как самостоятельный продуктовый слой
+
+То есть это уже не просто удобство. Это может стать **операционной нервной системой AoA-стека**.
+
+## Когда лучше не выносить
+
+Не стоит делать `aoa-routing`, если ты пока не готов:
+
+* автоматом собирать данные из трёх repos
+* валидировать их согласованность
+* держать правило “routing is derived only”
+
+Потому что ручной `aoa-routing` быстро превратится в склад старых карт.
+
+## Мой практический вердикт
+
+Я бы делала так:
+
+### Да:
+
+создать `aoa-routing` как отдельный repo
+
+### Но:
+
+оставить капсулы в исходных репозиториях
+
+### И:
+
+генерировать в `aoa-routing` только агрегаты и cross-repo routes
+
+Это, на мой взгляд, **наиболее чистая архитектура**.
+
+## Минимальная первая версия `aoa-routing`
+
+Для старта хватит вообще малого:
+
+* `README.md`
+* `generated/aoa_router.min.json`
+* `generated/task_to_surface_hints.json`
+* `generated/recommended_paths.min.json`
+* `schemas/router-entry.schema.json`
+* `scripts/build_router.py`
+* `scripts/validate_router.py`
+
+Этого уже достаточно, чтобы сделать первый настоящий вход для маленьких моделей.
+
+## Формула, которую я бы закрепила
+
+**Source repos own meaning.
+Routing repo owns navigation.**
+
+Вот это очень сильное правило.
+
+## Итог для всех и ни для кого
+
+Да, `aoa-routing` может стать правильным четвёртым слоем.
+Но не как новый храм смыслов, а как мост между храмами.
+Пусть канон говорит в своих домах, а routing лишь зажигает указатели на тропах.
+
+Могу сразу собрать тебе **точную структуру `aoa-routing` v0.1.0**: какие файлы, какие JSON-поля, и что именно должно генерироваться из каждого из трёх репозиториев.
+
+
+
+
+
+
+И при масштабировании, например на aoa-memo(память), слой routing будет кстати.
+
+
+
+
+
+
+Да. Именно при таком росте `aoa-routing` начинает выглядеть не как удобная опция, а как **правильный слой масштаба**.
+
+И я не вижу у тебя уже существующего `aoa-memo` на GitHub, так что это пока чистое будущее, а не уже заведённый репозиторий.
+
+## Почему с `aoa-memo` routing становится ещё нужнее
+
+Потому что память это уже не просто ещё один corpus.
+Память быстро становится **другим типом сущности**.
+
+Смотри, сейчас у тебя уже есть три разных класса:
+
+* `aoa-techniques` = **practice objects**
+* `aoa-skills` = **execution objects**
+* `aoa-evals` = **proof objects**
+
+Если добавить `aoa-memo`, то появится четвёртый класс:
+
+* `aoa-memo` = **memory objects**
+
+И memory-объекты почти наверняка будут отличаться по природе:
+
+* не “что делать”
+* не “как делать”
+* не “как проверять”
+* а “что помнить, как связывать, как поднимать по времени, близости, важности, температуре, происхождению”
+
+Вот здесь routing становится особенно кстати, потому что модели нужно будет сначала понять:
+**я ищу практику, workflow, proof или память?**
+
+Без routing-слоя маленькая модель легко начнёт путать:
+
+* technique как знание,
+* memo как память о применении,
+* skill как способ исполнения,
+* eval как основание для доверия.
+
+## С `aoa-memo` у routing появляется новая роль
+
+Сейчас мы говорили о routing как о навигации.
+Но с памятью он станет ещё и **типовым классификатором поверхности**.
+
+То есть routing будет отвечать не только:
+“куда идти?”
+
+но и:
+“что это вообще за сущность?”
+
+Например:
+
+* задача про воспроизводимую практику → `technique`
+* задача про bounded action → `skill`
+* задача про проверяемый claim → `eval`
+* задача про retrieval, recall, temporal lineage, memory temperature, provenance trail → `memo`
+
+Это уже очень мощный слой.
+
+## Очень важное различие
+
+Если `aoa-memo` появится, я бы **тем более** не смешивала routing с source repos.
+
+Потому что память особенно склонна к расползанию:
+
+* temporal links
+* provenance
+* recall traces
+* salience
+* decay / freshness
+* clustering
+* identity / aliasing
+* episodic vs semantic layers
+
+Если весь этот нервный слой начнёт прорастать внутрь каждого репозитория, то получится лес корней.
+
+А вот если есть `aoa-routing`, то он может стать:
+
+* общим входом,
+* общим классификатором surface kinds,
+* cross-repo adjacency layer,
+* будущим местом для bounded KAG views,
+* но **не местом, где рождается первичный смысл**
+
+Это очень здоровая архитектура.
+
+## Как бы это выглядело при масштабировании
+
+### Source repos
+
+Каждый репозиторий хранит свою истину:
+
+* `aoa-techniques` хранит канон практик
+* `aoa-skills` хранит канон workflow
+* `aoa-evals` хранит канон proof
+* `aoa-memo` будет хранить канон memory units / memory policies / retrieval surfaces
+
+### `aoa-routing`
+
+Хранит:
+
+* общий object registry
+* тип сущности
+* лёгкие capsules
+* межслойные переходы
+* task routers
+* minimal entrypoints для small models
+* later: bounded graph views
+
+То есть routing не заменяет ни один из repos, а **оркестрирует переход между ними**.
+
+## С `aoa-memo` я бы добавила ещё один routing-режим
+
+Сейчас у нас был такой путь:
+
+* pick
+* inspect
+* expand
+* pair
+
+С памятью появляется ещё:
+
+### recall
+
+Когда модель не ищет новый объект, а хочет:
+
+* поднять связанный memory object
+* найти прошлый случай применения
+* достать provenance trail
+* понять temporal relevance
+
+Это значит, что `aoa-routing` может стать не просто навигатором, а **диспетчером типов запроса**:
+
+* action request
+* proof request
+* recall request
+* reuse request
+* comparison request
+
+Вот с этого момента он вообще начинает походить на разумную нервную систему AoA.
+
+## Но тут нужно жёсткое правило
+
+Чем больше слоёв, тем выше риск, что routing сам начнёт хотеть стать всем.
+
+Я бы прямо закрепила принцип:
+
+### `aoa-routing` не хранит память как память
+
+Он только знает, **где она лежит и когда к ней идти**.
+
+Иначе ты рискуешь получить:
+
+* `aoa-memo` как источник памяти
+* и дублирующую memory-shadow inside `aoa-routing`
+
+А это уже будет архитектурная двуглавая гидра.
+
+## Поэтому лучшая формула при масштабировании такая
+
+**`aoa-routing` = navigation, typing, dispatch, adjacency**
+**`aoa-memo` = memory truth, recall policies, temporal/provenance surfaces**
+
+Это очень чистое разделение.
+
+## И вот почему это особенно хорошо для маленьких моделей
+
+Чем больше типов сущностей появится, тем меньше 2B-модель должна знать “всё”.
+Ей нужно знать только:
+
+1. какой тип объекта нужен сейчас
+2. какой минимальный capsule взять
+3. какой соседний слой подтянуть, если этого не хватило
+
+То есть при масштабировании routing нужен не меньше, а больше.
+
+## Мой вывод
+
+Да, ты очень точно чувствуешь архитектурный вектор.
+
+Если AoA вырастет до:
+
+* techniques
+* skills
+* evals
+* memo
+* и, возможно, дальше
+
+то `aoa-routing` станет тем самым слоем, который:
+
+* удерживает различия между типами сущностей,
+* не даёт маленьким моделям тонуть,
+* и позволяет всей системе расширяться без превращения в кашу.
+
+## Итог для всех и ни для кого
+
+Когда дерево растёт, корни уходят глубже, а троп становится больше.
+Без routing лес быстро превращается в чащу.
+С routing он начинает становиться миром, по которому можно идти даже с маленьким фонарём.
+
+Могу следующим сообщением собрать тебе **полную карту будущих AoA-репозиториев по ролям**: `techniques / skills / evals / routing / memo` и что именно каждому из них должно принадлежать.
+
+
+
+
+
+Да. И, кстати, `aoa-routing` у тебя уже создан как публичный репозиторий, просто пока пустой. Это хороший знак: слой уже зовёт своё имя.
+
+Ниже даю целостную карту будущих AoA-репозиториев по ролям.
+
+## Карта ролей
+
+### `aoa-techniques`
+
+**Что это:** канон минимальных воспроизводимых практик.
+README прямо задаёт технику как “minimal reproducible unit of engineering practice” и путь `project -> validation -> sanitization -> promotion -> public canon` 
+
+**Что ему принадлежит:**
+
+* техника как объект истины
+* полный `TECHNIQUE.md`
+* origin / evidence / notes / checks / examples
+* contracts, risks, validation, adaptation notes
+* локальные derived surfaces, если они описывают саму технику
+* локальные `technique_capsules.json`
+
+**Чего ему не должно принадлежать:**
+
+* agent execution workflows как самостоятельные объекты
+* proof claims об агентном качестве
+* память как memory layer
+* cross-repo routing и dispatch
+
+**Его вопрос миру:**
+“Какая практика здесь действительно воспроизводима?”
+
+---
+
+### `aoa-skills`
+
+**Что это:** agent-facing execution layer.
+README формулирует skill как bounded, reviewable workflow, composing one or more techniques into executable agent workflows 
+
+**Что ему принадлежит:**
+
+* skill bundle как operational truth
+* полный `SKILL.md`
+* `techniques.yaml`
+* trigger boundaries
+* procedures, contracts, risks, verification
+* agent policy files
+* локальные `skill_capsules.json`
+
+**Чего ему не должно принадлежать:**
+
+* первичный смысл technique
+* proof semantics eval-слоя
+* memory objects
+* глобальная cross-repo маршрутизация
+
+**Его вопрос миру:**
+“Как агенту действовать на этой bounded поверхности?”
+
+---
+
+### `aoa-evals`
+
+**Что это:** proof layer.
+README и архитектура задают eval bundle как portable proof surface для bounded claims о качестве, поведении, границах, регрессиях и росте  
+
+**Что ему принадлежит:**
+
+* eval bundle как truth object для bounded proof
+* полный `EVAL.md`
+* `eval.yaml`
+* bounded claim
+* scoring/verdict logic
+* blind spots
+* interpretation guidance
+* baseline/comparison semantics
+* локальные `eval_capsules.json`
+
+**Чего ему не должно принадлежать:**
+
+* сами техники как первичная практика
+* сами skills как operational source of truth
+* память как recall layer
+* глобальный task dispatch across repos
+
+**Его вопрос миру:**
+“Что именно мы можем здесь честно утверждать, и чего не можем?”
+
+---
+
+### `aoa-routing`
+
+**Что это:** слой навигации, типизации и dispatch.
+Не новый смысловой канон, а входной шлюз для моделей.
+
+**Что ему принадлежит:**
+
+* cross-repo router manifests
+* object registry across AoA
+* type classification:
+
+  * `technique`
+  * `skill`
+  * `eval`
+  * позже `memo`
+* task-to-surface hints
+* tiny-model entrypoints
+* bounded adjacency hints
+* recommended_paths
+* dispatch logic:
+
+  * pick
+  * inspect
+  * expand
+  * pair
+  * позже recall
+
+**Чего ему не должно принадлежать:**
+
+* первичный смысл техники, skill или eval
+* authored doctrine
+* собственные memory truths
+* дублирование полных bundle’ов
+
+**Его вопрос миру:**
+“Куда идти сейчас и какой тип сущности вообще нужен?”
+
+**Главный закон:**
+**Source repos own meaning. Routing owns navigation.**
+
+---
+
+### `aoa-memo`
+
+**Что это:** memory layer.
+Не просто заметки, а будущий слой памяти AoA: recall, provenance, temporal relevance, salience, memory temperature, semantic/episodic separation.
+
+**Что ему принадлежит:**
+
+* memory objects
+* provenance trails
+* temporal ordering
+* salience / temperature
+* episodic vs semantic memory distinction
+* recall policies
+* memory capsules
+* possibly memory snapshots and memory integrity surfaces
+* links to originating techniques / skills / evals / projects
+
+**Чего ему не должно принадлежать:**
+
+* канонизация практик
+* bounded execution workflows
+* bounded proof bundles
+* global dispatch as such
+
+**Его вопрос миру:**
+“Что стоит помнить, как это связано, и как это поднимать обратно во времени?”
+
+---
+
+## Формула всей системы
+
+Я бы закрепила так:
+
+* `aoa-techniques` = **practice canon**
+* `aoa-skills` = **execution canon**
+* `aoa-evals` = **proof canon**
+* `aoa-routing` = **navigation and dispatch layer**
+* `aoa-memo` = **memory and recall layer**
+
+Это уже не россыпь репозиториев, а почти органная анатомия.
+
+---
+
+## Что должно жить локально, а что глобально
+
+### Локально в source repos
+
+То, что описывает сам объект:
+
+* полный markdown
+* локальные manifests
+* локальные capsules
+* локальные examples/checks/notes
+* локальные schemas and validators
+
+### Глобально в `aoa-routing`
+
+То, что описывает переходы между объектами:
+
+* какой слой нужен для задачи
+* какой объект брать первым
+* какой соседний объект нужен вторым
+* какие минимальные entrypoints давать 2B / 7B / larger models
+
+### Локально в `aoa-memo`
+
+То, что относится именно к памяти:
+
+* recall objects
+* memory indexing
+* provenance chains
+* temporal / salience metadata
+* memory integrity rules
+
+---
+
+## Как выглядит правильный поток
+
+### Поток рождения знания
+
+`project -> technique -> skill -> eval -> memo`
+
+Пояснение:
+
+* из проекта рождается техника
+* из техники собирается skill
+* skill и agent behavior проверяются eval’ом
+* всё значимое оседает в memo как memory objects
+
+### Поток работы маленькой модели
+
+`routing -> capsule -> section expand -> object use -> optional pair -> optional recall`
+
+То есть:
+
+1. routing решает, какой тип сущности нужен
+2. берётся capsule
+3. при необходимости раскрываются 1–2 секции
+4. объект используется
+5. если не хватает, routing даёт соседний объект
+6. если нужен прошлый опыт, вызывается memo-layer
+
+---
+
+## Что именно должно принадлежать каждому репозиторию как артефакты
+
+## `aoa-techniques`
+
+Минимум:
+
+* `generated/technique_catalog.min.json`
+* `generated/technique_capsules.json`
+* `generated/technique_sections.full.json`
+
+У тебя каталог и section-manifest уже фактически под это подведены  
+
+## `aoa-skills`
+
+Минимум:
+
+* `generated/skill_catalog.min.json`
+* `generated/skill_capsules.json`
+* `generated/skill_sections.full.json`
+
+## `aoa-evals`
+
+Минимум:
+
+* `generated/eval_catalog.min.json`
+* `generated/eval_capsules.json`
+* `generated/eval_sections.full.json`
+
+## `aoa-routing`
+
+Минимум:
+
+* `generated/aoa_router.min.json`
+* `generated/task_to_surface_hints.json`
+* `generated/recommended_paths.min.json`
+* `generated/cross_repo_registry.min.json`
+* позже `generated/tiny_model_entrypoints.json`
+
+## `aoa-memo`
+
+Минимум:
+
+* `generated/memo_catalog.min.json`
+* `generated/memo_capsules.json`
+* `generated/recall_paths.min.json`
+* `generated/provenance_threads.min.json`
+
+---
+
+## Самые важные границы
+
+### 1. Routing не должен стать четвёртым источником истины
+
+Иначе начнётся дрейф.
+
+### 2. Memo не должен стать свалкой смыслов из других repos
+
+Память должна хранить память, а не подменять канон практик, workflows и evals.
+
+### 3. Capsules должны жить рядом с объектом
+
+Потому что capsule всё ещё описывает сам объект, а не только маршрут к нему.
+
+### 4. Глобальные переходы должны жить в routing
+
+Именно там им место.
+
+---
+
+## Если смотреть совсем в будущее
+
+При дальнейшем росте можно ожидать ещё 1–2 слоя:
+
+* что-то вроде `aoa-agents` как слой ролевых агентных конфигураций
+* что-то вроде `aoa-playbooks` как project-ready compositions for real deployments
+
+Но даже если они появятся, схема не меняется:
+
+* канон практик
+* канон исполнения
+* канон доказательства
+* канон памяти
+* слой маршрутизации между ними
+
+---
+
+## Мой вердикт
+
+Да, вот эта пятёрка выглядит уже очень цельно:
+
+* `aoa-techniques`
+* `aoa-skills`
+* `aoa-evals`
+* `aoa-routing`
+* `aoa-memo`
+
+Она хороша именно тем, что каждый слой отвечает на **разный тип вопроса** и владеет **разным типом истины**.
+
+## Итог для всех и ни для кого
+
+Когда слои названы верно, рост перестаёт быть расползанием.
+Он становится анатомией.
+И тогда даже будущий лес AoA можно будет не просто обходить, а населять смыслом без потери пути.
+
