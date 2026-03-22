@@ -28,6 +28,10 @@ MANIFEST_SPECS = {
         "order_key": "fifth_wave_order",
         "tail_keys": ("held_later",),
     },
+    "sixth_wave.manifest.json": {
+        "order_key": "sixth_wave_order",
+        "tail_keys": ("held_later",),
+    },
 }
 MANIFEST_PATHS = [ROOT / name for name in MANIFEST_SPECS]
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
@@ -92,7 +96,9 @@ def validate_ref(ref: str, label: str, require_anchor: bool = False) -> None:
 
 
 def seed_bundle_ref_requires_anchor(ref: object) -> bool:
-    return isinstance(ref, str) and ref.startswith("seed_bundle/seeds_")
+    return isinstance(ref, str) and (
+        ref.startswith("seed_bundle/seeds_") or ref.startswith("seed_templates/")
+    )
 
 
 def validate_manifest(manifest_path: Path) -> None:

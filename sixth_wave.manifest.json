@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "mode": "tos_corpus_scaffold",
+  "canonical_sources": [
+    "fifth_wave.manifest.json",
+    "seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-stable-identifier-discipline",
+    "seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-source-node-template",
+    "seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-concept-node-template-worked-example"
+  ],
+  "sixth_wave_order": [
+    {
+      "id": "tos-stable-identifier-discipline",
+      "label": "Stable Identifier Discipline",
+      "source": "seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-stable-identifier-discipline"
+    },
+    {
+      "id": "tos-source-node-template",
+      "label": "Source-Node Template",
+      "source": "seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-source-node-template"
+    },
+    {
+      "id": "tos-concept-node-template-worked-example",
+      "label": "Concept-Node Template Plus Worked Example",
+      "source": "seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-concept-node-template-worked-example"
+    }
+  ],
+  "held_later": [
+    "seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-lineage-branch-pilot-later",
+    "seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-wider-world-thought-expansion-later"
+  ]
+}

@@ -33,6 +33,7 @@ The manifest validator now checks:
 - `third_wave.manifest.json`
 - `fourth_wave.manifest.json`
 - `fifth_wave.manifest.json`
+- `sixth_wave.manifest.json`
 
 ## First-wave order
 
@@ -128,6 +129,21 @@ The machine-readable route for this wave lives in:
 
 - `fifth_wave.manifest.json`
 
+## Sixth-wave ToS corpus scaffold
+
+After the ToS growth law trio, the next planting wave is a **ToS-centered template-first scaffold wave**:
+
+1. stable identifier discipline
+2. source-node template
+3. concept-node template plus one worked example set
+
+This wave leaves the exhausted seed-bundle era and opens roadmap-derived corpus groundwork.
+It keeps ToS on a manual-plus-schema posture, gives the knowledge architecture its first stable node ID law, and introduces first public source and concept node templates without pretending a branch pilot already exists.
+
+The machine-readable route for this wave lives in:
+
+- `sixth_wave.manifest.json`
+
 ## Origin notes, not first-wave canon
 
 These files remain useful as origin commentary and fertile soil, but they are not the canonical first-wave start:
@@ -148,3 +164,4 @@ When in doubt:
 - plant counterpart bridges as derived edges, not identity claims
 - plant witness and compost as public contracts before runtime instrumentation
 - plant ToS growth law explicitly before reopening broader corpus or template expansion
+- plant stable IDs and first templates before opening branch pilots or wider corpus growth
