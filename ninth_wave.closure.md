@@ -1,7 +1,7 @@
 # Ninth Wave Closure
 
 Date: 2026-03-22
-Status: closed pending archive
+Status: archived
 
 ## Summary
 
@@ -14,7 +14,7 @@ The completed seed scope is:
 3. `AOA-SEED-11 - Restartable Inquiry Loop`
 
 These seeds are treated as complete on their contract-first terms.
-No additional in-wave planting is required before the archive move.
+No additional in-wave planting was required before the archive move.
 
 ## Landed surfaces
 
@@ -35,16 +35,15 @@ The bounded closure proof for this wave lives in `aoa-evals`:
 That proof remains draft and non-starter.
 It supports only bounded restart fidelity for the planted public surfaces.
 
-## Archive readiness
+## Archive state
 
-`seed_pack_2026-03-22/` remains in place only until the archive move is executed.
-
-The intended archive target for the pack is:
+The ninth-wave source pack is now archived at:
 
 - `0ld/seed_pack_2026-03-22/`
 
-The intended next live surface after that move remains:
+The next live surface after this archive move remains:
 
 - `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion`
 
-This closure note does not archive the pack and does not open `tenth_wave.manifest.json`.
+This closure note records the archive move.
+It does not open `tenth_wave.manifest.json`.

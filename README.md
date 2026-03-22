@@ -189,11 +189,11 @@ After the ToS soil-prep wave, the next planting wave was an **AoA-centered contr
 2. `AOA-SEED-10 - Model-Tier Orchestration`
 3. `AOA-SEED-11 - Restartable Inquiry Loop`
 
-This wave treated `seed_pack_2026-03-22/` as the canonical source pack and kept the planting posture contract-first rather than runtime-heavy.
+This wave treated the now-archived `0ld/seed_pack_2026-03-22/` source pack as its canonical source pack and kept the planting posture contract-first rather than runtime-heavy.
 It planted new memory, orchestration, and long-horizon inquiry surfaces across the active AoA layer repositories without pretending runtime services, model brands, or ToS corpus motion were the primary source of truth here.
 
-This wave is now **closed pending archive**.
-The planting is complete on its contract-first terms, and the source pack remains in place only until the archive move documented in `ninth_wave.closure.md`.
+This wave is now **archived**.
+The planting is complete on its contract-first terms, and the source pack now lives under `0ld/seed_pack_2026-03-22/` as recorded in `ninth_wave.closure.md`.
 
 The machine-readable route for this wave lives in:
 
@@ -201,8 +201,8 @@ The machine-readable route for this wave lives in:
 
 Supporting notes for this wave are:
 
-- `seed_pack_2026-03-22/README.md`
-- `seed_pack_2026-03-22/notes/stack_operational_notes.md`
+- `0ld/seed_pack_2026-03-22/README.md`
+- `0ld/seed_pack_2026-03-22/notes/stack_operational_notes.md`
 - `ninth_wave.closure.md`
 
 ## Archived planted seeds
@@ -215,6 +215,7 @@ Planted seed sources that are now historical rather than active live under `0ld/
 - `0ld/seed_templates/`
 - `0ld/seed_branches/`
 - `0ld/seed_soil/`
+- `0ld/seed_pack_2026-03-22/`
 
 The current live future-work seed surface is:
 
