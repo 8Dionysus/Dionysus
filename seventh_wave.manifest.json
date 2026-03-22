@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "mode": "tos_lineage_pilot",
+  "canonical_sources": [
+    "sixth_wave.manifest.json",
+    "seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-lineage-node-template",
+    "seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-calibration-family-pilot",
+    "seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-worked-pilot-node-set"
+  ],
+  "seventh_wave_order": [
+    {
+      "id": "tos-lineage-node-template",
+      "label": "Lineage-Node Template",
+      "source": "seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-lineage-node-template"
+    },
+    {
+      "id": "tos-calibration-family-branch-pilot",
+      "label": "Calibration-Family Branch Pilot",
+      "source": "seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-calibration-family-pilot"
+    },
+    {
+      "id": "tos-worked-pilot-node-set",
+      "label": "Worked Pilot Node Set",
+      "source": "seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-worked-pilot-node-set"
+    }
+  ],
+  "held_later": [
+    "seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-wider-world-thought-expansion-later"
+  ]
+}
