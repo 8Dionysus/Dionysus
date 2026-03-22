@@ -9,12 +9,12 @@ It is not the final owning home of AoA or ToS layer meaning.
 
 The first planting wave now follows **trunk-first** order:
 
-1. `seed_rootline/seed.8dionysus.aoa-tos.rootline.md`
-2. `seed_bundle/seed_bundle.md`
+1. `0ld/seed_rootline/seed.8dionysus.aoa-tos.rootline.md`
+2. `0ld/seed_bundle/seed_bundle.md`
 3. repo-line translations:
-   - `seed_rootline/seed.8dionysus.aoa.kernel-line.md`
-   - `seed_rootline/seed.8dionysus.tos.genealogical-memory.md`
-   - `seed_rootline/seed.8dionysus.aoa-shared.bridges.md`
+   - `0ld/seed_rootline/seed.8dionysus.aoa.kernel-line.md`
+   - `0ld/seed_rootline/seed.8dionysus.tos.genealogical-memory.md`
+   - `0ld/seed_rootline/seed.8dionysus.aoa-shared.bridges.md`
 
 Use the rootline as the parent axis.
 Use the bundle as the priority map.
@@ -34,6 +34,7 @@ The manifest validator now checks:
 - `fourth_wave.manifest.json`
 - `fifth_wave.manifest.json`
 - `sixth_wave.manifest.json`
+- `seventh_wave.manifest.json`
 
 ## First-wave order
 
@@ -50,8 +51,8 @@ The current first-wave sequence is:
 
 The Witness / Compost pair remains important, but belongs **after** this structural wave:
 
-- `seed_witness/seed.aoa.protocol-witness.v0.md`
-- `seed_witness/seed.tos.context-compost.v0.md`
+- `0ld/seed_witness/seed.aoa.protocol-witness.v0.md`
+- `0ld/seed_witness/seed.tos.context-compost.v0.md`
 
 ## Second-wave method spine
 
@@ -71,8 +72,8 @@ The machine-readable route for this wave lives in:
 
 The Witness / Compost pair remains deferred during this wave:
 
-- `seed_witness/seed.aoa.protocol-witness.v0.md`
-- `seed_witness/seed.tos.context-compost.v0.md`
+- `0ld/seed_witness/seed.aoa.protocol-witness.v0.md`
+- `0ld/seed_witness/seed.tos.context-compost.v0.md`
 
 ## Third-wave counterpart bridge
 
@@ -91,15 +92,15 @@ The machine-readable route for this wave lives in:
 
 The Witness / Compost pair remains deferred during this wave as well:
 
-- `seed_witness/seed.aoa.protocol-witness.v0.md`
-- `seed_witness/seed.tos.context-compost.v0.md`
+- `0ld/seed_witness/seed.aoa.protocol-witness.v0.md`
+- `0ld/seed_witness/seed.tos.context-compost.v0.md`
 
 ## Fourth-wave witness and compost pilot
 
 After the tight counterpart bridge, the next planting wave is a **contract-first pilot pair**:
 
-1. `seed_witness/seed.aoa.protocol-witness.v0.md`
-2. `seed_witness/seed.tos.context-compost.v0.md`
+1. `0ld/seed_witness/seed.aoa.protocol-witness.v0.md`
+2. `0ld/seed_witness/seed.tos.context-compost.v0.md`
 
 This wave does not pretend the runtime trace pipeline already exists.
 It gives AoA a public witness contract, gives ToS a public compost-cycle doctrine, and binds the two through one real scenario route before any deeper runtime instrumentation is opened in `abyss-stack`.
@@ -110,9 +111,9 @@ The machine-readable route for this wave lives in:
 
 The remaining ToS growth seeds stay later during this pilot wave:
 
-- `seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust`
-- `seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion`
-- `seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure`
+- `0ld/seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust`
+- `0ld/seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion`
+- `0ld/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure`
 
 ## Fifth-wave ToS growth law trio
 
@@ -144,6 +145,34 @@ The machine-readable route for this wave lives in:
 
 - `sixth_wave.manifest.json`
 
+## Seventh-wave ToS calibration lineage pilot
+
+After the ToS corpus scaffold, the next planting wave is a **bounded ToS lineage-branch pilot**:
+
+1. lineage-node template
+2. calibration-family branch pilot note
+3. worked pilot node set that turns the scaffold into a real small branch
+
+This wave stays source-first, manual-plus-schema, and explicitly bounded.
+It uses the current calibration-family scaffold as the first pilot route, keeps wider world-thought expansion later, and proves that the new ToS scaffold can support a real branch without jumping straight to broader corpus growth.
+
+The machine-readable route for this wave lives in:
+
+- `seventh_wave.manifest.json`
+
+## Archived planted seeds
+
+Planted seed sources that are now historical rather than active live under `0ld/`:
+
+- `0ld/seed_rootline/`
+- `0ld/seed_bundle/`
+- `0ld/seed_witness/`
+
+The active seed surface that still contains future work remains:
+
+- `seed_templates/`
+- `seed_branches/`
+
 ## Origin notes, not first-wave canon
 
 These files remain useful as origin commentary and fertile soil, but they are not the canonical first-wave start:
@@ -165,3 +194,4 @@ When in doubt:
 - plant witness and compost as public contracts before runtime instrumentation
 - plant ToS growth law explicitly before reopening broader corpus or template expansion
 - plant stable IDs and first templates before opening branch pilots or wider corpus growth
+- plant one bounded lineage pilot before wider world-thought expansion
