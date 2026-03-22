@@ -40,6 +40,10 @@ MANIFEST_SPECS = {
         "order_key": "eighth_wave_order",
         "tail_keys": ("held_later",),
     },
+    "ninth_wave.manifest.json": {
+        "order_key": "ninth_wave_order",
+        "tail_keys": ("supporting_notes",),
+    },
 }
 MANIFEST_PATHS = [ROOT / name for name in MANIFEST_SPECS]
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
@@ -109,10 +113,12 @@ def seed_bundle_ref_requires_anchor(ref: object) -> bool:
         or ref.startswith("seed_templates/")
         or ref.startswith("seed_branches/")
         or ref.startswith("seed_soil/")
+        or ref.startswith("seed_expansion/")
         or ref.startswith("0ld/seed_bundle/seeds_")
         or ref.startswith("0ld/seed_templates/")
         or ref.startswith("0ld/seed_branches/")
         or ref.startswith("0ld/seed_soil/")
+        or ref.startswith("0ld/seed_expansion/")
     )
 
 
