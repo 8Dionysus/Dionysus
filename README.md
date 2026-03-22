@@ -183,23 +183,27 @@ The next live seed remains later during this preparation wave:
 
 ## Ninth-wave AoA contract growth
 
-After the ToS soil-prep wave, the next planting wave is an **AoA-centered contract-first growth wave**:
+After the ToS soil-prep wave, the next planting wave was an **AoA-centered contract-first growth wave**:
 
 1. `AOA-SEED-09 - Memory Thermodynamics`
 2. `AOA-SEED-10 - Model-Tier Orchestration`
 3. `AOA-SEED-11 - Restartable Inquiry Loop`
 
-This wave treats `seed_pack_2026-03-22/` as the canonical source pack and keeps the planting posture contract-first rather than runtime-heavy.
-It plants new memory, orchestration, and long-horizon inquiry surfaces across the active AoA layer repositories without pretending runtime services, model brands, or ToS corpus motion are the primary source of truth here.
+This wave treated `seed_pack_2026-03-22/` as the canonical source pack and kept the planting posture contract-first rather than runtime-heavy.
+It planted new memory, orchestration, and long-horizon inquiry surfaces across the active AoA layer repositories without pretending runtime services, model brands, or ToS corpus motion were the primary source of truth here.
+
+This wave is now **closed pending archive**.
+The planting is complete on its contract-first terms, and the source pack remains in place only until the archive move documented in `ninth_wave.closure.md`.
 
 The machine-readable route for this wave lives in:
 
 - `ninth_wave.manifest.json`
 
-Supporting source-pack notes remain supporting material during this wave:
+Supporting notes for this wave are:
 
 - `seed_pack_2026-03-22/README.md`
 - `seed_pack_2026-03-22/notes/stack_operational_notes.md`
+- `ninth_wave.closure.md`
 
 ## Archived planted seeds
 
