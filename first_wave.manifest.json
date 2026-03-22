@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "mode": "trunk",
+  "canonical_sources": [
+    "seed_rootline/seed.8dionysus.aoa-tos.rootline.md",
+    "seed_bundle/seed_bundle.md",
+    "seed_rootline/seed.8dionysus.aoa.kernel-line.md",
+    "seed_rootline/seed.8dionysus.tos.genealogical-memory.md",
+    "seed_rootline/seed.8dionysus.aoa-shared.bridges.md"
+  ],
+  "first_wave_order": [
+    {
+      "id": "rootline",
+      "label": "AoA x ToS Rootline",
+      "source": "seed_rootline/seed.8dionysus.aoa-tos.rootline.md"
+    },
+    {
+      "id": "aoa-ontology-spine",
+      "label": "AOA-SEED-01 Ontology Spine of Action",
+      "source": "seed_bundle/seeds_aoa.md#aoa-seed-01-ontology-spine-of-action"
+    },
+    {
+      "id": "aoa-narrative-core-memory",
+      "label": "AOA-SEED-03 Narrative-Core Memory",
+      "source": "seed_bundle/seeds_aoa.md#aoa-seed-03-narrative-core-memory"
+    },
+    {
+      "id": "tos-layered-node-contract",
+      "label": "TOS-SEED-01 Layered Node Contract",
+      "source": "seed_bundle/seeds_tos.md#tos-seed-01-layered-node-contract"
+    },
+    {
+      "id": "tos-lineage-before-archive",
+      "label": "TOS-SEED-02 Lineage Before Archive",
+      "source": "seed_bundle/seeds_tos.md#tos-seed-02-lineage-before-archive"
+    },
+    {
+      "id": "aoa-self-agent-checkpoint",
+      "label": "AOA-SEED-02 Self-Agent Checkpoint Stack",
+      "source": "seed_bundle/seeds_aoa.md#aoa-seed-02-self-agent-checkpoint-stack"
+    },
+    {
+      "id": "tos-interpretation-ladder",
+      "label": "TOS-SEED-04 Interpretation Ladder",
+      "source": "seed_bundle/seeds_tos.md#tos-seed-04-interpretation-ladder"
+    },
+    {
+      "id": "aoa-tos-bridge-contracts",
+      "label": "AoA-ToS Bridge Contracts",
+      "source": "seed_rootline/seed.8dionysus.aoa-shared.bridges.md"
+    }
+  ],
+  "later_pilots": [
+    "seed_witness/seed.aoa.protocol-witness.v0.md",
+    "seed_witness/seed.tos.context-compost.v0.md"
+  ],
+  "origin_notes": [
+    "seed_expat.md",
+    "seed_self-agent.md",
+    "seed_trio.md",
+    "0ld/"
+  ]
+}

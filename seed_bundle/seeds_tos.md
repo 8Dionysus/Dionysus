@@ -34,6 +34,7 @@
 
 \---
 
+<a id="tos-seed-01-layered-node-contract"></a>
 ## TOS-SEED-01 — Layered Node Contract
 
 ### Суть
@@ -70,6 +71,7 @@
 
 \---
 
+<a id="tos-seed-02-lineage-before-archive"></a>
 ## TOS-SEED-02 — Lineage Before Archive
 
 ### Суть
@@ -103,6 +105,7 @@ ToS должен расти как система lineage navigation:
 
 \---
 
+<a id="tos-seed-03-calibration-axis-not-neutral-dust"></a>
 ## TOS-SEED-03 — Calibration Axis, Not Neutral Dust
 
 ### Суть
@@ -137,6 +140,7 @@ ToS должен расти как система lineage navigation:
 
 \---
 
+<a id="tos-seed-04-interpretation-ladder"></a>
 ## TOS-SEED-04 — Interpretation Ladder
 
 ### Суть
@@ -175,6 +179,7 @@ ToS должен расти как система lineage navigation:
 
 \---
 
+<a id="tos-seed-05-human-curated-ai-amplified-expansion"></a>
 ## TOS-SEED-05 — Human-Curated, AI-Amplified Expansion
 
 ### Суть
@@ -214,6 +219,7 @@ AI усиливает:
 
 \---
 
+<a id="tos-seed-06-practice-branch-of-the-tree"></a>
 ## TOS-SEED-06 — Practice Branch of the Tree
 
 ### Суть
@@ -256,6 +262,7 @@ AI усиливает:
 
 \---
 
+<a id="tos-seed-07-counterpart-mapping-without-collapse"></a>
 ## TOS-SEED-07 — Counterpart Mapping Without Collapse
 
 ### Суть
@@ -290,6 +297,7 @@ AI усиливает:
 
 \---
 
+<a id="tos-seed-08-growth-by-explicit-structure"></a>
 ## TOS-SEED-08 — Growth by Explicit Structure
 
 ### Суть
@@ -343,4 +351,3 @@ ToS должен расти не через накопление материа�
 3. `interpretation must stay linked to sources`
 
 А guiding axis удерживает дерево от превращения в нейтральную библиотечную пыль.
-

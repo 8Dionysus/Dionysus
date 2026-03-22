@@ -39,6 +39,7 @@
 
 \---
 
+<a id="aoa-seed-01-ontology-spine-of-action"></a>
 ## AOA-SEED-01 — Ontology Spine of Action
 
 ### Суть
@@ -76,6 +77,7 @@
 
 \---
 
+<a id="aoa-seed-02-self-agent-checkpoint-stack"></a>
 ## AOA-SEED-02 — Self-Agent Checkpoint Stack
 
 ### Суть
@@ -114,6 +116,7 @@
 
 \---
 
+<a id="aoa-seed-03-narrative-core-memory"></a>
 ## AOA-SEED-03 — Narrative-Core Memory
 
 ### Суть
@@ -146,6 +149,7 @@
 
 \---
 
+<a id="aoa-seed-04-source-first-donor-refinery"></a>
 ## AOA-SEED-04 — Source-First Donor Refinery
 
 ### Суть
@@ -180,6 +184,7 @@ AoA нужен свой плавильный цех, а не чужие скел
 
 \---
 
+<a id="aoa-seed-05-kag-compatible-substrate-not-empire"></a>
 ## AOA-SEED-05 — KAG-Compatible Substrate, Not Empire
 
 ### Суть
@@ -219,6 +224,7 @@ KAG тебе подходит как логика формы, но не как �
 
 \---
 
+<a id="aoa-seed-06-method-lives-in-playbooks"></a>
 ## AOA-SEED-06 — Method Lives in Playbooks
 
 ### Суть
@@ -252,6 +258,7 @@ KAG тебе подходит как логика формы, но не как �
 
 \---
 
+<a id="aoa-seed-07-concept-operation-counterpart-edges"></a>
 ## AOA-SEED-07 — Concept ↔ Operation Counterpart Edges
 
 ### Суть
@@ -286,6 +293,7 @@ KAG тебе подходит как логика формы, но не как �
 
 \---
 
+<a id="aoa-seed-08-evidence-backed-gamified-maturation"></a>
 ## AOA-SEED-08 — Evidence-Backed Gamified Maturation
 
 ### Суть
@@ -349,4 +357,3 @@ KAG тебе подходит как логика формы, но не как �
 3. `self-agent != free myth of autonomy; self-agent = governed checkpoint`
 
 Именно эти три оси сейчас лучше всего соответствуют профилю `8Dionysus` и текущей форме публичной экосистемы.
-
