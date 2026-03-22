@@ -36,6 +36,7 @@ The manifest validator now checks:
 - `sixth_wave.manifest.json`
 - `seventh_wave.manifest.json`
 - `eighth_wave.manifest.json`
+- `ninth_wave.manifest.json`
 
 ## First-wave order
 
@@ -178,7 +179,27 @@ The machine-readable route for this wave lives in:
 
 The next live seed remains later during this preparation wave:
 
-- `seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-wider-world-thought-expansion-later`
+- `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion`
+
+## Ninth-wave AoA contract growth
+
+After the ToS soil-prep wave, the next planting wave is an **AoA-centered contract-first growth wave**:
+
+1. `AOA-SEED-09 - Memory Thermodynamics`
+2. `AOA-SEED-10 - Model-Tier Orchestration`
+3. `AOA-SEED-11 - Restartable Inquiry Loop`
+
+This wave treats `seed_pack_2026-03-22/` as the canonical source pack and keeps the planting posture contract-first rather than runtime-heavy.
+It plants new memory, orchestration, and long-horizon inquiry surfaces across the active AoA layer repositories without pretending runtime services, model brands, or ToS corpus motion are the primary source of truth here.
+
+The machine-readable route for this wave lives in:
+
+- `ninth_wave.manifest.json`
+
+Supporting source-pack notes remain supporting material during this wave:
+
+- `seed_pack_2026-03-22/README.md`
+- `seed_pack_2026-03-22/notes/stack_operational_notes.md`
 
 ## Archived planted seeds
 
@@ -187,15 +208,13 @@ Planted seed sources that are now historical rather than active live under `0ld/
 - `0ld/seed_rootline/`
 - `0ld/seed_bundle/`
 - `0ld/seed_witness/`
+- `0ld/seed_templates/`
+- `0ld/seed_branches/`
+- `0ld/seed_soil/`
 
 The current live future-work seed surface is:
 
-- `seed_soil/`
-
-Historically important route sources that still explain the path already taken remain:
-
-- `seed_templates/`
-- `seed_branches/`
+- `seed_expansion/`
 
 ## Origin notes, not first-wave canon
 
