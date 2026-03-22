@@ -31,6 +31,7 @@ The manifest validator now checks:
 - `first_wave.manifest.json`
 - `second_wave.manifest.json`
 - `third_wave.manifest.json`
+- `fourth_wave.manifest.json`
 
 ## First-wave order
 
@@ -91,6 +92,26 @@ The Witness / Compost pair remains deferred during this wave as well:
 - `seed_witness/seed.aoa.protocol-witness.v0.md`
 - `seed_witness/seed.tos.context-compost.v0.md`
 
+## Fourth-wave witness and compost pilot
+
+After the tight counterpart bridge, the next planting wave is a **contract-first pilot pair**:
+
+1. `seed_witness/seed.aoa.protocol-witness.v0.md`
+2. `seed_witness/seed.tos.context-compost.v0.md`
+
+This wave does not pretend the runtime trace pipeline already exists.
+It gives AoA a public witness contract, gives ToS a public compost-cycle doctrine, and binds the two through one real scenario route before any deeper runtime instrumentation is opened in `abyss-stack`.
+
+The machine-readable route for this wave lives in:
+
+- `fourth_wave.manifest.json`
+
+The remaining ToS growth seeds stay later during this pilot wave:
+
+- `seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust`
+- `seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion`
+- `seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure`
+
 ## Origin notes, not first-wave canon
 
 These files remain useful as origin commentary and fertile soil, but they are not the canonical first-wave start:
@@ -109,3 +130,4 @@ When in doubt:
 - plant authored/core memory before derived retrieval surfaces
 - plant ToS node law before archive growth
 - plant counterpart bridges as derived edges, not identity claims
+- plant witness and compost as public contracts before runtime instrumentation
