@@ -1,0 +1,569 @@
+registry_version: 1
+updated_at: '2026-03-22'
+navigation:
+  canonical_order_source: wave manifests
+  semantic_source: source seed files
+  manifest_validator: scripts/validate_manifest.py
+  registry_validator: scripts/validate_seed_registry.py
+  validation_entrypoint: scripts/validate_seed_surfaces.py
+  registry_contract: schema/seed-registry.contract.yaml
+  planting_report_template: templates/planting-report.template.md
+  registry_role: navigation overlay for humans and Codex
+  archived_root: 0ld/
+  archived_pack: 0ld/seed_pack_2026-03-22/
+  next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+lifecycle_states:
+  archived_canonical: historical source kept for lineage and replay
+  pending_archive: temporary source surface still live only until archive move
+  gated_next: acknowledged next seed surface, not yet an opened wave
+origin_notes:
+- seed_expat.md
+- seed_self-agent.md
+- seed_trio.md
+wave_index:
+- wave: first_wave
+  file: first_wave.manifest.json
+  mode: trunk
+  registry_status: archived_canonical
+  summary: trunk-first structure and parent axis
+- wave: second_wave
+  file: second_wave.manifest.json
+  mode: method_spine
+  registry_status: archived_canonical
+  summary: method-centered AoA / ToS spine
+- wave: third_wave
+  file: third_wave.manifest.json
+  mode: counterpart_bridge
+  registry_status: archived_canonical
+  summary: tight counterpart bridge without collapse
+- wave: fourth_wave
+  file: fourth_wave.manifest.json
+  mode: pilot_pair
+  registry_status: archived_canonical
+  summary: witness and compost pilot pair
+- wave: fifth_wave
+  file: fifth_wave.manifest.json
+  mode: tos_growth
+  registry_status: archived_canonical
+  summary: ToS growth law trio
+- wave: sixth_wave
+  file: sixth_wave.manifest.json
+  mode: tos_corpus_scaffold
+  registry_status: archived_canonical
+  summary: ToS corpus scaffold and template-first law
+- wave: seventh_wave
+  file: seventh_wave.manifest.json
+  mode: tos_lineage_pilot
+  registry_status: archived_canonical
+  summary: bounded ToS lineage pilot
+- wave: eighth_wave
+  file: eighth_wave.manifest.json
+  mode: tos_soil_prep
+  registry_status: archived_canonical
+  summary: soil prep before manual Zarathustra entry
+- wave: ninth_wave
+  file: ninth_wave.manifest.json
+  mode: aoa_contract_growth
+  registry_status: archived_canonical
+  closure_note: ninth_wave.closure.md
+  supporting_notes:
+  - 0ld/seed_pack_2026-03-22/README.md
+  - 0ld/seed_pack_2026-03-22/notes/stack_operational_notes.md
+  landed_to:
+  - aoa-memo
+  - aoa-agents
+  - aoa-routing
+  - aoa-playbooks
+  - aoa-evals
+  - abyss-stack
+  summary: contract-first AoA growth wave closed and archived on canonical terms
+seed_index:
+- registry_id: rootline
+  label: AoA x ToS Rootline
+  source_ref: 0ld/seed_rootline/seed.8dionysus.aoa-tos.rootline.md
+  wave: first_wave
+  projects:
+  - AoA
+  - ToS
+  kind: architectural-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Agents-of-Abyss
+  - Tree-of-Sophia
+  - shared / interface / infra repos
+  first_artifact_hint: rootline note plus one structural artifact in the target repo
+  notes: Parent axis for trunk-first planting.
+- registry_id: aoa-ontology-spine
+  label: AOA-SEED-01 Ontology Spine of Action
+  source_ref: 0ld/seed_bundle/seeds_aoa.md#aoa-seed-01-ontology-spine-of-action
+  wave: first_wave
+  projects:
+  - AoA
+  kind: architecture-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Agents-of-Abyss
+  - aoa-techniques
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-agents
+  - aoa-evals
+  - aoa-memo
+  first_artifact_hint: federation glossary section plus repo ownership table
+  notes: Locks the grammar of action before repo overlap.
+- registry_id: aoa-narrative-core-memory
+  label: AOA-SEED-03 Narrative-Core Memory
+  source_ref: 0ld/seed_bundle/seeds_aoa.md#aoa-seed-03-narrative-core-memory
+  wave: first_wave
+  projects:
+  - AoA
+  kind: architecture-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - aoa-agents
+  - aoa-kag (later / derived only)
+  first_artifact_hint: memory contract for core authored surfaces vs derived memory
+  notes: Keeps authored memory distinct from retrieval substrate.
+- registry_id: tos-layered-node-contract
+  label: TOS-SEED-01 Layered Node Contract
+  source_ref: 0ld/seed_bundle/seeds_tos.md#tos-seed-01-layered-node-contract
+  wave: first_wave
+  projects:
+  - ToS
+  kind: knowledge-architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: node template with required vs optional layers
+  notes: Names the node as a layered contract, not a flat note.
+- registry_id: tos-lineage-before-archive
+  label: TOS-SEED-02 Lineage Before Archive
+  source_ref: 0ld/seed_bundle/seeds_tos.md#tos-seed-02-lineage-before-archive
+  wave: first_wave
+  projects:
+  - ToS
+  kind: knowledge-architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: lineage edge vocabulary plus one small pilot branch
+  notes: Makes lineage more important than archive neatness.
+- registry_id: aoa-self-agent-checkpoint
+  label: AOA-SEED-02 Self-Agent Checkpoint Stack
+  source_ref: 0ld/seed_bundle/seeds_aoa.md#aoa-seed-02-self-agent-checkpoint-stack
+  wave: first_wave
+  projects:
+  - AoA
+  kind: architecture-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  first_artifact_hint: self-agent checkpoint contract plus one bounded improvement playbook
+  notes: Frames self-agent as governed checkpoint, not autonomy myth.
+- registry_id: tos-interpretation-ladder
+  label: TOS-SEED-04 Interpretation Ladder
+  source_ref: 0ld/seed_bundle/seeds_tos.md#tos-seed-04-interpretation-ladder
+  wave: first_wave
+  projects:
+  - ToS
+  kind: knowledge-architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  - aoa-kag / AoA tools (later, not primary home)
+  first_artifact_hint: interpretation-level note plus one explicitly marked example node
+  notes: Separates source, thesis, commentary, and synthesis.
+- registry_id: aoa-tos-bridge-contracts
+  label: AoA-ToS Bridge Contracts
+  source_ref: 0ld/seed_rootline/seed.8dionysus.aoa-shared.bridges.md
+  wave: first_wave
+  projects:
+  - AoA
+  - ToS
+  kind: interface-seed
+  registry_status: archived_canonical
+  parent_seed: seed.8dionysus.aoa-tos.rootline
+  repo_homes:
+  - shared / interface / infra repos
+  - aoa-* bridge surfaces
+  first_artifact_hint: writeback and retrieval contracts plus one shared schema or event spec
+  notes: Keeps the AoA ↔ ToS bridge explicit and reversible.
+- registry_id: aoa-method-lives-in-playbooks
+  label: AOA-SEED-06 Method Lives in Playbooks
+  source_ref: 0ld/seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks
+  wave: second_wave
+  projects:
+  - AoA
+  kind: architecture-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - aoa-playbooks
+  - aoa-techniques
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-agents
+  first_artifact_hint: playbook bundle spec plus one canonical route example
+  notes: Gives method its own home instead of smearing it across layers.
+- registry_id: aoa-source-first-donor-refinery
+  label: AOA-SEED-04 Source-First Donor Refinery
+  source_ref: 0ld/seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery
+  wave: second_wave
+  projects:
+  - AoA
+  kind: architecture-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Agents-of-Abyss
+  - aoa-techniques
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  first_artifact_hint: donor intake rubric plus two worked donor examples
+  notes: Turns donor repos into patterns, not imported dogma.
+- registry_id: tos-practice-branch-of-the-tree
+  label: TOS-SEED-06 Practice Branch of the Tree
+  source_ref: 0ld/seed_bundle/seeds_tos.md#tos-seed-06-practice-branch-of-the-tree
+  wave: second_wave
+  projects:
+  - ToS
+  - AoA
+  kind: knowledge-architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  - AoA repos (implementation stays there)
+  - aoa-kag (later / derived bridges only)
+  first_artifact_hint: idea-lineage vs practice-lineage note plus 2–3 counterpart examples
+  notes: Gives practices a neighboring branch without collapsing repos.
+- registry_id: aoa-evidence-backed-gamified-maturation
+  label: AOA-SEED-08 Evidence-Backed Gamified Maturation
+  source_ref: 0ld/seed_bundle/seeds_aoa.md#aoa-seed-08-evidence-backed-gamified-maturation
+  wave: second_wave
+  projects:
+  - AoA
+  kind: architecture-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Agents-of-Abyss
+  - aoa-techniques
+  - aoa-skills (later)
+  - aoa-playbooks (later)
+  first_artifact_hint: maturity ladder plus shared-vs-local status rules
+  notes: Makes progression evidence-backed instead of ornamental.
+- registry_id: aoa-kag-compatible-substrate-not-empire
+  label: AOA-SEED-05 KAG-Compatible Substrate, Not Empire
+  source_ref: 0ld/seed_bundle/seeds_aoa.md#aoa-seed-05-kag-compatible-substrate-not-empire
+  wave: third_wave
+  projects:
+  - AoA
+  kind: architecture-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - aoa-kag
+  - Agents-of-Abyss
+  first_artifact_hint: guardrail section plus source-vs-derived counterpart table
+  notes: Protects source-owned meaning from substrate drift.
+- registry_id: tos-counterpart-mapping-without-collapse
+  label: TOS-SEED-07 Counterpart Mapping Without Collapse
+  source_ref: 0ld/seed_bundle/seeds_tos.md#tos-seed-07-counterpart-mapping-without-collapse
+  wave: third_wave
+  projects:
+  - ToS
+  - AoA
+  kind: knowledge-architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  - aoa-kag (later / derived mapping layer)
+  first_artifact_hint: counterpart relation vocabulary plus explicit non-identity policy
+  notes: Treats mappings as suggestive bridges, not identity claims.
+- registry_id: aoa-concept-operation-counterpart-edges
+  label: AOA-SEED-07 Concept Operation Counterpart Edges
+  source_ref: 0ld/seed_bundle/seeds_aoa.md#aoa-seed-07-concept-operation-counterpart-edges
+  wave: third_wave
+  projects:
+  - AoA
+  - ToS
+  kind: interface-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Agents-of-Abyss
+  - aoa-kag
+  - Tree-of-Sophia (conceptual side only)
+  first_artifact_hint: counterpart edge vocabulary plus 3–5 example mappings
+  notes: Makes concept↔operation bridges explicit and derived.
+- registry_id: aoa-witness-protocol
+  label: Witness Protocol
+  source_ref: 0ld/seed_witness/seed.aoa.protocol-witness.v0.md
+  wave: fourth_wave
+  projects:
+  - AoA
+  kind: architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - agent-runtime
+  - tool-layer
+  - evals
+  - logging
+  - memory-bridge
+  first_artifact_hint: WitnessTrace schema plus human-readable markdown exporter
+  notes: Turns significant runs into inspectable witness traces.
+- registry_id: tos-context-compost
+  label: Context Compost
+  source_ref: 0ld/seed_witness/seed.tos.context-compost.v0.md
+  wave: fourth_wave
+  projects:
+  - ToS
+  kind: knowledge-architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - ingest
+  - memory-pipeline
+  - synthesis
+  - canon
+  - provenance
+  - retrieval
+  - review-loop
+  first_artifact_hint: CompostNode layer schema plus promotion and decay rules
+  notes: Transforms traces and notes into layered, reviewable memory.
+- registry_id: tos-calibration-axis-not-neutral-dust
+  label: TOS-SEED-03 Calibration Axis, Not Neutral Dust
+  source_ref: 0ld/seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust
+  wave: fifth_wave
+  projects:
+  - ToS
+  kind: knowledge-architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: calibration note plus explicit curation guardrails
+  notes: Keeps the guiding axis alive without replacing interpretation.
+- registry_id: tos-human-curated-ai-amplified-expansion
+  label: TOS-SEED-05 Human-Curated, AI-Amplified Expansion
+  source_ref: 0ld/seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion
+  wave: fifth_wave
+  projects:
+  - ToS
+  - AoA
+  kind: knowledge-architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  - AoA (operational support only)
+  first_artifact_hint: curation protocol for what AI may propose vs what human must decide
+  notes: Keeps human judgment visible in expansion workflows.
+- registry_id: tos-growth-by-explicit-structure
+  label: TOS-SEED-08 Growth by Explicit Structure
+  source_ref: 0ld/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure
+  wave: fifth_wave
+  projects:
+  - ToS
+  kind: knowledge-architecture
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: growth note for when to create nodes, branches, or deepen existing nodes
+  notes: Rejects quantity growth without structural law.
+- registry_id: tos-stable-identifier-discipline
+  label: Stable Identifier Discipline
+  source_ref: 0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-stable-identifier-discipline
+  wave: sixth_wave
+  projects:
+  - ToS
+  kind: template-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: stable node identifier rules
+  notes: Opens corpus scaffold with durable identity law.
+- registry_id: tos-source-node-template
+  label: Source-Node Template
+  source_ref: 0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-source-node-template
+  wave: sixth_wave
+  projects:
+  - ToS
+  kind: template-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: source-node template
+  notes: Gives first public source-node scaffold.
+- registry_id: tos-concept-node-template-worked-example
+  label: Concept-Node Template Plus Worked Example
+  source_ref: 0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-concept-node-template-worked-example
+  wave: sixth_wave
+  projects:
+  - ToS
+  kind: template-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: concept-node template plus one worked example set
+  notes: Turns scaffold doctrine into a first reusable concept pattern.
+- registry_id: tos-lineage-node-template
+  label: Lineage-Node Template
+  source_ref: 0ld/seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-lineage-node-template
+  wave: seventh_wave
+  projects:
+  - ToS
+  kind: branch-pilot
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: lineage-node template
+  notes: Begins the bounded lineage pilot with explicit node law.
+- registry_id: tos-calibration-family-branch-pilot
+  label: Calibration-Family Branch Pilot
+  source_ref: 0ld/seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-calibration-family-pilot
+  wave: seventh_wave
+  projects:
+  - ToS
+  kind: branch-pilot
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: bounded calibration-family pilot note
+  notes: Keeps the first branch real and intentionally small.
+- registry_id: tos-worked-pilot-node-set
+  label: Worked Pilot Node Set
+  source_ref: 0ld/seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-worked-pilot-node-set
+  wave: seventh_wave
+  projects:
+  - ToS
+  kind: branch-pilot
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: worked pilot node set
+  notes: Proves the scaffold can support a real small branch.
+- registry_id: tos-context-node-template
+  label: Context-Node Template
+  source_ref: 0ld/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-context-node-template
+  wave: eighth_wave
+  projects:
+  - ToS
+  kind: soil-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: context-node template
+  notes: Prepares wider expansion with context-bearing node law.
+- registry_id: tos-manual-zarathustra-entry-gate
+  label: Manual Zarathustra Entry Gate
+  source_ref: 0ld/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-manual-zarathustra-entry-gate
+  wave: eighth_wave
+  projects:
+  - ToS
+  kind: soil-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: manual source-entry gate for Zarathustra-linked corpus motion
+  notes: Keeps plurality gated by real source entry, not empty expansion.
+- registry_id: tos-pre-expansion-review-route
+  label: Pre-Expansion Review Route
+  source_ref: 0ld/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-pre-expansion-review-route
+  wave: eighth_wave
+  projects:
+  - ToS
+  kind: soil-seed
+  registry_status: archived_canonical
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: review route before expansion wave opens
+  notes: Adds explicit review before wider corpus movement.
+- registry_id: aoa-memory-thermodynamics
+  label: AOA-SEED-09 Memory Thermodynamics
+  source_ref: 0ld/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.memory-thermodynamics.md
+  wave: ninth_wave
+  projects:
+  - AoA
+  - ToS
+  kind: architecture-seed
+  registry_status: archived_canonical
+  parent_seed: seed.8dionysus.aoa.kernel-line
+  repo_homes:
+  - aoa-memo
+  - aoa-agents
+  - docs/contracts
+  first_artifact_hint: memory temperature contracts plus agent memory posture artifact
+  notes: Adds heat classes, decay, and writeback policy to runtime memory.
+- registry_id: aoa-model-tier-orchestration
+  label: AOA-SEED-10 Model-Tier Orchestration
+  source_ref: 0ld/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.model-tier-orchestration.md
+  wave: ninth_wave
+  projects:
+  - AoA
+  kind: architecture-seed
+  registry_status: archived_canonical
+  parent_seed: seed.8dionysus.aoa.kernel-line
+  repo_homes:
+  - aoa-agents
+  - aoa-routing
+  - aoa-playbooks
+  - abyss-stack
+  first_artifact_hint: model tier registry plus explicit state machine document
+  notes: Turns local model diversity into role-based orchestration.
+- registry_id: aoa-restartable-inquiry-loop
+  label: AOA-SEED-11 Restartable Inquiry Loop
+  source_ref: 0ld/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.restartable-inquiry-loop.md
+  wave: ninth_wave
+  projects:
+  - AoA
+  - ToS
+  kind: playbook-seed
+  registry_status: archived_canonical
+  parent_seed: seed.8dionysus.aoa.kernel-line
+  repo_homes:
+  - aoa-playbooks
+  - aoa-memo
+  - aoa-evals
+  - docs/contracts
+  first_artifact_hint: checkpoint pack contract plus restart protocol and one eval hook
+  notes: Makes long-horizon work restartable through artifact-first checkpoints.
+- registry_id: tos-expansion-wider-world-thought-expansion
+  label: ToS Wider World-Thought Expansion
+  source_ref: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  wave: null
+  projects:
+  - ToS
+  kind: expansion-seed
+  registry_status: gated_next
+  parent_seed: null
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: first post-gate expansion wave after real manual source entry resumes
+  notes: Remains gated by manual Zarathustra entry and review law.
