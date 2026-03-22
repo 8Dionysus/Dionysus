@@ -1,0 +1,66 @@
+contract_version: 1
+purpose: Human-readable field contract for seed-registry.yaml.
+source_of_truth:
+  order: wave manifests
+  meaning: source seed files
+  closure_state: closure notes for closed waves
+required_top_level_keys:
+  - registry_version
+  - updated_at
+  - navigation
+  - lifecycle_states
+  - origin_notes
+  - wave_index
+  - seed_index
+navigation:
+  required_keys:
+    - canonical_order_source
+    - semantic_source
+    - manifest_validator
+    - registry_validator
+    - validation_entrypoint
+    - registry_contract
+    - planting_report_template
+    - registry_role
+    - archived_root
+    - archived_pack
+    - next_live_seed
+wave_index:
+  required_entry_keys:
+    - wave
+    - file
+    - mode
+    - registry_status
+    - summary
+  optional_entry_keys:
+    - closure_note
+    - supporting_notes
+    - landed_to
+  constraints:
+    - wave name should match the manifest filename stem
+    - mode should match the manifest JSON payload
+    - registry_status must be defined in lifecycle_states
+    - closure note status, when present, should agree with registry_status
+seed_index:
+  required_entry_keys:
+    - registry_id
+    - label
+    - source_ref
+    - wave
+    - projects
+    - kind
+    - registry_status
+    - parent_seed
+    - repo_homes
+    - first_artifact_hint
+    - notes
+  optional_entry_keys: []
+  constraints:
+    - registry_id should be unique
+    - source_ref must exist and any markdown anchor must resolve
+    - when wave is not null, source_ref should be traceable to that wave manifest
+    - when wave is null, registry_status should usually be gated_next
+    - when wave is not null, seed registry_status should match the enclosing wave status
+navigation_constraints:
+  - archived_root and archived_pack must exist
+  - next_live_seed must match a seed_index entry with registry_status gated_next

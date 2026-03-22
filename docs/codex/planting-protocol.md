@@ -10,9 +10,12 @@ Dionysus is seed soil, not the final home of repo-owned meaning. Planting should
 
 1. Read the relevant `*_wave.manifest.json`.
 2. Read the exact `source` refs named by that manifest.
-3. Read any closure note or supporting note for that wave.
+3. Read the closure note for that wave when one exists.
 4. Use `seed-registry.yaml` to orient yourself across waves, status, and likely repo homes.
-5. Inspect the target repo and plant only where that repo already has a natural ownership boundary.
+5. Use `schema/seed-registry.contract.yaml` and `templates/planting-report.template.md` to keep the landing inspectable.
+6. Inspect the target repo and plant only where that repo already has a natural ownership boundary.
+
+When closure notes and README wording disagree, treat the manifest and closure note as authoritative and update the README in the same change.
 
 ## The unit of work
 
@@ -175,10 +178,15 @@ Do not fake deeper integration.
 
 ## Planting report format
 
-Use this in a PR description, commit note, or standalone report.
+Use `templates/planting-report.template.md` for a standalone report.
+
+Prefer the target-repo PR description when the planting is easy to trace there. Use `reports/planting/` inside Dionysus when the trace would otherwise be scattered or lost.
+
+Minimum fields:
 
 ```md
 ## Planting report
+- Date:
 - Wave:
 - Seed:
 - Source ref:
@@ -199,6 +207,7 @@ Update `seed-registry.yaml` when:
 - a wave closes
 - the next live seed changes
 - a historical surface moves into `0ld/`
+- a closure note changes the canonical status of a wave
 
 Do not use the registry to override manifest order. The registry is navigation, not sovereignty.
 

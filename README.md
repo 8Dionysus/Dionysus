@@ -2,14 +2,16 @@
 
 `Dionysus` is the seed garden and dispatch layer for the current AoA / ToS ecosystem.
 
-It stores seed sources, wave manifests, and archived planting surfaces. It is not the final owning home of AoA meaning, ToS meaning, or repo-local implementation detail.
+It stores seed sources, wave manifests, archived planting surfaces, and the minimal protocol needed to move seeds into owning repositories. It is not the final owning home of AoA meaning, ToS meaning, or repo-local implementation detail.
 
 ## What belongs here
 
 - seed sources before or between plantings
 - wave manifests that define order
-- archived canonical seed sources kept for lineage
-- planting protocol and navigation overlays for humans and Codex
+- archived canonical seed surfaces kept for lineage
+- live gated future-work seeds that are not yet open waves
+- planting protocol, registry overlays, and validation surfaces
+- planting trace only when the trace would otherwise be lost
 
 ## What does not belong here
 
@@ -22,13 +24,16 @@ It stores seed sources, wave manifests, and archived planting surfaces. It is no
 ## Current state
 
 - `first_wave.manifest.json` through `ninth_wave.manifest.json` define the planting waves.
-- `scripts/validate_manifest.py` validates those manifests.
-- `0ld/` is the historical canonical archive of planted seed sources.
+- `scripts/validate_manifest.py` validates manifest refs.
+- `scripts/validate_seed_registry.py` validates `seed-registry.yaml`, wave linkage, and closure-note status alignment.
+- `scripts/validate_seed_surfaces.py` runs both validators as one entrypoint.
+- `0ld/` is the canonical archive root.
 - `0ld/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
-- `ninth_wave.closure.md` closes the ninth wave on contract-first terms and records the archive move.
 - `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion` is the next live gated seed surface.
 - `seed-registry.yaml` is the navigation overlay for humans and Codex.
-- `docs/codex/planting-protocol.md` defines the current planting discipline.
+- `schema/seed-registry.contract.yaml` defines the registry field contract.
+- `docs/codex/planting-protocol.md` defines the planting discipline.
+- `templates/planting-report.template.md` and `reports/planting/` define how planting trace should be stored when Dionysus keeps the report.
 
 ## Source-of-truth order
 
@@ -36,31 +41,41 @@ When there is tension between files, read in this order:
 
 1. wave manifest
 2. canonical source seed file
-3. closure note or supporting note for the same wave
+3. closure note for the same wave
 4. `seed-registry.yaml`
-5. target repository structure and ownership
+5. planting protocol and contract files
+6. target repository structure and ownership
+7. `README.md`
 
-`seed-registry.yaml` is intentionally redundant with the manifests. The manifest defines order. The seed file defines meaning. The registry makes navigation legible.
+The manifest defines order. The seed file defines meaning. The closure note defines the finished state of a closed wave. The registry makes navigation legible. The README should explain, not overrule.
 
 ## Repository map
 
 - `0ld/`
   - historical canonical seed sources
-  - previous bundles, rootlines, witness seeds, templates, branch pilots, and soil-prep files
-- `0ld/seed_pack_2026-03-22/`
-  - archived canonical source pack for the closed ninth wave
+  - previous bundles, rootlines, witness seeds, templates, branch pilots, soil-prep files, and archived packs
 - `seed_expansion/`
-  - next live surface after the archive move
+  - next gated future-work surface after the archived ninth wave
 - `*_wave.manifest.json`
   - machine-readable planting order by wave
 - `ninth_wave.closure.md`
   - closure state and landed surfaces for wave nine
-- `scripts/validate_manifest.py`
-  - manifest reference validator
 - `seed-registry.yaml`
   - human/Codex navigation overlay
+- `schema/seed-registry.contract.yaml`
+  - registry field contract and cross-link expectations
 - `docs/codex/planting-protocol.md`
   - planting rules for Codex and maintainers
+- `templates/planting-report.template.md`
+  - reusable planting report template
+- `reports/planting/`
+  - durable planting trace when Dionysus is the right place to hold the report
+- `scripts/validate_manifest.py`
+  - manifest reference validator
+- `scripts/validate_seed_registry.py`
+  - registry and closure-alignment validator
+- `scripts/validate_seed_surfaces.py`
+  - single validation entrypoint for CI and local runs
 - `seed_expat.md`, `seed_self-agent.md`, `seed_trio.md`
   - origin notes and fertile soil, not first-wave canon
 
@@ -69,9 +84,9 @@ When there is tension between files, read in this order:
 - `archived_canonical`
   - historical seed source still needed for lineage and replay
 - `pending_archive`
-  - temporary pack or surface still live only until archive move
+  - temporary source surface still live only until archive move
 - `gated_next`
-  - next seed surface acknowledged but not yet opened as a full wave
+  - acknowledged next seed surface, not yet an opened wave
 
 ## Wave map
 
@@ -97,17 +112,24 @@ When there is tension between files, read in this order:
    - preserved seed vocabulary
    - explicit boundaries
 6. Stop at contracts/docs when a seed would cross red-risk zones.
-7. Leave trace in the PR, commit message, or planting report.
+7. Leave trace in the PR, commit message, or a report based on `templates/planting-report.template.md`.
 
 See `docs/codex/planting-protocol.md` for the detailed rules.
 
 ## Validation
 
 ```bash
-python scripts/validate_manifest.py
+python scripts/validate_seed_surfaces.py
 ```
 
-The current validator checks the wave manifests. It does not yet validate `seed-registry.yaml` or planting reports.
+This runs:
+
+- `python scripts/validate_manifest.py`
+- `python scripts/validate_seed_registry.py`
+
+The registry validator checks field shape, path validity, anchor validity, wave linkage, next-live-seed coherence, and closure-note status alignment.
+
+A GitHub Actions workflow lives at `.github/workflows/validate-seed-surfaces.yml`.
 
 ## Working rule
 

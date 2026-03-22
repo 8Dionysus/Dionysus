@@ -1,12 +1,13 @@
-# Dionysus seed registry
-# Wave manifests remain the source of truth for order.
-# This file is a navigation overlay for humans and Codex.
 registry_version: 1
 updated_at: '2026-03-22'
 navigation:
   canonical_order_source: wave manifests
   semantic_source: source seed files
-  validator: scripts/validate_manifest.py
+  manifest_validator: scripts/validate_manifest.py
+  registry_validator: scripts/validate_seed_registry.py
+  validation_entrypoint: scripts/validate_seed_surfaces.py
+  registry_contract: schema/seed-registry.contract.yaml
+  planting_report_template: templates/planting-report.template.md
   registry_role: navigation overlay for humans and Codex
   archived_root: 0ld/
   archived_pack: 0ld/seed_pack_2026-03-22/
