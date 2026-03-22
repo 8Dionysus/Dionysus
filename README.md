@@ -188,11 +188,14 @@ Planted seed sources that are now historical rather than active live under `0ld/
 - `0ld/seed_bundle/`
 - `0ld/seed_witness/`
 
-The active seed surface that still contains future work remains:
+The current live future-work seed surface is:
+
+- `seed_soil/`
+
+Historically important route sources that still explain the path already taken remain:
 
 - `seed_templates/`
 - `seed_branches/`
-- `seed_soil/`
 
 ## Origin notes, not first-wave canon
 
