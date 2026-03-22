@@ -3,29 +3,29 @@
   "mode": "tos_corpus_scaffold",
   "canonical_sources": [
     "fifth_wave.manifest.json",
-    "0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-stable-identifier-discipline",
-    "0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-source-node-template",
-    "0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-concept-node-template-worked-example"
+    "archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-stable-identifier-discipline",
+    "archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-source-node-template",
+    "archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-concept-node-template-worked-example"
   ],
   "sixth_wave_order": [
     {
       "id": "tos-stable-identifier-discipline",
       "label": "Stable Identifier Discipline",
-      "source": "0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-stable-identifier-discipline"
+      "source": "archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-stable-identifier-discipline"
     },
     {
       "id": "tos-source-node-template",
       "label": "Source-Node Template",
-      "source": "0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-source-node-template"
+      "source": "archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-source-node-template"
     },
     {
       "id": "tos-concept-node-template-worked-example",
       "label": "Concept-Node Template Plus Worked Example",
-      "source": "0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-concept-node-template-worked-example"
+      "source": "archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-concept-node-template-worked-example"
     }
   ],
   "held_later": [
-    "0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-lineage-branch-pilot-later",
-    "0ld/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-wider-world-thought-expansion-later"
+    "archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-lineage-branch-pilot-later",
+    "archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-wider-world-thought-expansion-later"
   ]
 }

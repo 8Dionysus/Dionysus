@@ -27,8 +27,8 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 - `scripts/validate_manifest.py` validates manifest refs.
 - `scripts/validate_seed_registry.py` validates `seed-registry.yaml`, wave linkage, and closure-note status alignment.
 - `scripts/validate_seed_surfaces.py` runs both validators as one entrypoint.
-- `0ld/` is the canonical archive root.
-- `0ld/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
+- `archive/` is the canonical archive root.
+- `archive/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
 - `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion` is the next live gated seed surface.
 - `seed-registry.yaml` is the navigation overlay for humans and Codex.
 - `schema/seed-registry.contract.yaml` defines the registry field contract.
@@ -51,7 +51,7 @@ The manifest defines order. The seed file defines meaning. The closure note defi
 
 ## Repository map
 
-- `0ld/`
+- `archive/`
   - historical canonical seed sources
   - previous bundles, rootlines, witness seeds, templates, branch pilots, soil-prep files, and archived packs
 - `seed_expansion/`

@@ -206,7 +206,7 @@ Update `seed-registry.yaml` when:
 - a seed pack changes status
 - a wave closes
 - the next live seed changes
-- a historical surface moves into `0ld/`
+- a historical surface moves into `archive/`
 - a closure note changes the canonical status of a wave
 
 Do not use the registry to override manifest order. The registry is navigation, not sovereignty.

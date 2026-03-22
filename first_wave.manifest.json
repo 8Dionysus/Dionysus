@@ -2,62 +2,62 @@
   "version": 1,
   "mode": "trunk",
   "canonical_sources": [
-    "0ld/seed_rootline/seed.8dionysus.aoa-tos.rootline.md",
-    "0ld/seed_bundle/seed_bundle.md",
-    "0ld/seed_rootline/seed.8dionysus.aoa.kernel-line.md",
-    "0ld/seed_rootline/seed.8dionysus.tos.genealogical-memory.md",
-    "0ld/seed_rootline/seed.8dionysus.aoa-shared.bridges.md"
+    "archive/seed_rootline/seed.8dionysus.aoa-tos.rootline.md",
+    "archive/seed_bundle/seed_bundle.md",
+    "archive/seed_rootline/seed.8dionysus.aoa.kernel-line.md",
+    "archive/seed_rootline/seed.8dionysus.tos.genealogical-memory.md",
+    "archive/seed_rootline/seed.8dionysus.aoa-shared.bridges.md"
   ],
   "first_wave_order": [
     {
       "id": "rootline",
       "label": "AoA x ToS Rootline",
-      "source": "0ld/seed_rootline/seed.8dionysus.aoa-tos.rootline.md"
+      "source": "archive/seed_rootline/seed.8dionysus.aoa-tos.rootline.md"
     },
     {
       "id": "aoa-ontology-spine",
       "label": "AOA-SEED-01 Ontology Spine of Action",
-      "source": "0ld/seed_bundle/seeds_aoa.md#aoa-seed-01-ontology-spine-of-action"
+      "source": "archive/seed_bundle/seeds_aoa.md#aoa-seed-01-ontology-spine-of-action"
     },
     {
       "id": "aoa-narrative-core-memory",
       "label": "AOA-SEED-03 Narrative-Core Memory",
-      "source": "0ld/seed_bundle/seeds_aoa.md#aoa-seed-03-narrative-core-memory"
+      "source": "archive/seed_bundle/seeds_aoa.md#aoa-seed-03-narrative-core-memory"
     },
     {
       "id": "tos-layered-node-contract",
       "label": "TOS-SEED-01 Layered Node Contract",
-      "source": "0ld/seed_bundle/seeds_tos.md#tos-seed-01-layered-node-contract"
+      "source": "archive/seed_bundle/seeds_tos.md#tos-seed-01-layered-node-contract"
     },
     {
       "id": "tos-lineage-before-archive",
       "label": "TOS-SEED-02 Lineage Before Archive",
-      "source": "0ld/seed_bundle/seeds_tos.md#tos-seed-02-lineage-before-archive"
+      "source": "archive/seed_bundle/seeds_tos.md#tos-seed-02-lineage-before-archive"
     },
     {
       "id": "aoa-self-agent-checkpoint",
       "label": "AOA-SEED-02 Self-Agent Checkpoint Stack",
-      "source": "0ld/seed_bundle/seeds_aoa.md#aoa-seed-02-self-agent-checkpoint-stack"
+      "source": "archive/seed_bundle/seeds_aoa.md#aoa-seed-02-self-agent-checkpoint-stack"
     },
     {
       "id": "tos-interpretation-ladder",
       "label": "TOS-SEED-04 Interpretation Ladder",
-      "source": "0ld/seed_bundle/seeds_tos.md#tos-seed-04-interpretation-ladder"
+      "source": "archive/seed_bundle/seeds_tos.md#tos-seed-04-interpretation-ladder"
     },
     {
       "id": "aoa-tos-bridge-contracts",
       "label": "AoA-ToS Bridge Contracts",
-      "source": "0ld/seed_rootline/seed.8dionysus.aoa-shared.bridges.md"
+      "source": "archive/seed_rootline/seed.8dionysus.aoa-shared.bridges.md"
     }
   ],
   "later_pilots": [
-    "0ld/seed_witness/seed.aoa.protocol-witness.v0.md",
-    "0ld/seed_witness/seed.tos.context-compost.v0.md"
+    "archive/seed_witness/seed.aoa.protocol-witness.v0.md",
+    "archive/seed_witness/seed.tos.context-compost.v0.md"
   ],
   "origin_notes": [
     "seed_expat.md",
     "seed_self-agent.md",
     "seed_trio.md",
-    "0ld/"
+    "archive/"
   ]
 }
