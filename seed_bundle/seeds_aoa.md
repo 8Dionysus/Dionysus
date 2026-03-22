@@ -39,6 +39,7 @@
 
 \---
 
+<a id="aoa-seed-01-ontology-spine-of-action"></a>
 ## AOA-SEED-01 — Ontology Spine of Action
 
 ### Суть
@@ -76,6 +77,7 @@
 
 \---
 
+<a id="aoa-seed-02-self-agent-checkpoint-stack"></a>
 ## AOA-SEED-02 — Self-Agent Checkpoint Stack
 
 ### Суть
@@ -114,6 +116,7 @@
 
 \---
 
+<a id="aoa-seed-03-narrative-core-memory"></a>
 ## AOA-SEED-03 — Narrative-Core Memory
 
 ### Суть
@@ -349,4 +352,3 @@ KAG тебе подходит как логика формы, но не как �
 3. `self-agent != free myth of autonomy; self-agent = governed checkpoint`
 
 Именно эти три оси сейчас лучше всего соответствуют профилю `8Dionysus` и текущей форме публичной экосистемы.
-

@@ -34,6 +34,7 @@
 
 \---
 
+<a id="tos-seed-01-layered-node-contract"></a>
 ## TOS-SEED-01 — Layered Node Contract
 
 ### Суть
@@ -70,6 +71,7 @@
 
 \---
 
+<a id="tos-seed-02-lineage-before-archive"></a>
 ## TOS-SEED-02 — Lineage Before Archive
 
 ### Суть
@@ -137,6 +139,7 @@ ToS должен расти как система lineage navigation:
 
 \---
 
+<a id="tos-seed-04-interpretation-ladder"></a>
 ## TOS-SEED-04 — Interpretation Ladder
 
 ### Суть
@@ -343,4 +346,3 @@ ToS должен расти не через накопление материа�
 3. `interpretation must stay linked to sources`
 
 А guiding axis удерживает дерево от превращения в нейтральную библиотечную пыль.
-
