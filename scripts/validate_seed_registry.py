@@ -298,7 +298,7 @@ def validate_registry() -> None:
     )
 
     lifecycle_states = require_string_map(payload["lifecycle_states"], "seed-registry.yaml: lifecycle_states")
-    for key in ("archived_canonical", "pending_archive", "gated_next"):
+    for key in ("archived_canonical", "pending_archive", "gated_next", "landed_post_wave"):
         if key not in lifecycle_states:
             fail(f"seed-registry.yaml: lifecycle_states is missing required key '{key}'")
 
@@ -372,6 +372,8 @@ def validate_registry() -> None:
     seen_gated_next_refs: set[str] = set()
     registry_order_refs_by_wave: dict[str, set[str]] = {wave: set() for wave in wave_status_by_name}
 
+    allowed_null_wave_statuses = {"gated_next", "landed_post_wave"}
+
     for index, entry in enumerate(seed_index):
         if not isinstance(entry, dict):
             fail(f"seed-registry.yaml: seed_index[{index}] must be an object")
@@ -420,11 +422,14 @@ def validate_registry() -> None:
 
         wave_name = entry["wave"]
         if wave_name is None:
-            if entry["registry_status"] != "gated_next":
+            if entry["registry_status"] not in allowed_null_wave_statuses:
                 fail(
-                    f"seed-registry.yaml: seed_index[{index}] has wave=null but registry_status '{entry['registry_status']}' instead of 'gated_next'"
+                    "seed-registry.yaml: "
+                    f"seed_index[{index}] has wave=null but registry_status '{entry['registry_status']}' "
+                    "instead of one of: gated_next, landed_post_wave"
                 )
-            seen_gated_next_refs.add(source_ref)
+            if entry["registry_status"] == "gated_next":
+                seen_gated_next_refs.add(source_ref)
         else:
             if not isinstance(wave_name, str) or not wave_name:
                 fail(f"seed-registry.yaml: seed_index[{index}].wave must be a non-empty string or null")

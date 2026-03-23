@@ -87,6 +87,8 @@ The manifest defines order. The seed file defines meaning. The closure note defi
   - temporary source surface still live only until archive move
 - `gated_next`
   - acknowledged next seed surface, not yet an opened wave
+- `landed_post_wave`
+  - planted and merged post-wave seed kept live in the registry until a later archival pass
 
 ## Wave map
 

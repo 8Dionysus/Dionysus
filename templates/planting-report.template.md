@@ -10,7 +10,7 @@ Use one report per planted seed whenever possible.
 - Source ref:
 - Target repo:
 - Planting status: proposed | landed | archived
-- PR / commit / issue:
+- PR / commit / issue: target repo PR #... merged as <sha>; Dionysus report PR #... merged as <sha> (if applicable)
 - Maintainer:
 
 ## Contract being planted
@@ -39,6 +39,7 @@ Name the one artifact that makes the planting materially inspectable.
 
 ## Risks / follow-ups
 
+- Use time-scoped wording if you need to preserve an earlier queued or deferred state.
 - 
 
 ## Vocabulary preserved
