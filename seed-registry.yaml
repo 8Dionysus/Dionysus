@@ -567,3 +567,68 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: first post-gate expansion wave after real manual source entry resumes
   notes: Remains gated by manual Zarathustra entry and review law.
+- registry_id: aoa-agents-runtime-seam
+  label: AOA-SEED-R1 Agents Runtime Seam
+  source_ref: seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r1-agents-runtime-seam
+  wave: null
+  projects:
+  - AoA
+  kind: architecture-seed
+  registry_status: gated_next
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  first_artifact_hint: runtime seam contract note plus public tier-artifact schema pack
+  notes: Post-ninth-wave prep surface for a contract-first runtime seam in aoa-agents.
+- registry_id: aoa-playbooks-executable-scenarios
+  label: AOA-SEED-R2 Playbooks as Executable Scenarios
+  source_ref: seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r2-playbooks-executable-scenarios
+  wave: null
+  projects:
+  - AoA
+  kind: playbook-seed
+  registry_status: gated_next
+  parent_seed: null
+  repo_homes:
+  - aoa-playbooks
+  first_artifact_hint: executable playbook contract note plus one scenario activation surface
+  notes: Keeps scenario composition in aoa-playbooks while making runtime-facing execution inputs explicit.
+- registry_id: aoa-runtime-writeback-to-memo
+  label: AOA-SEED-R3 Runtime Writeback to Memo
+  source_ref: seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r3-runtime-writeback-to-memo
+  wave: null
+  projects:
+  - AoA
+  kind: interface-seed
+  registry_status: gated_next
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  first_artifact_hint: runtime writeback mapping note plus checkpoint-to-memory contract
+  notes: Makes runtime writeback explicit without collapsing scratchpad and memory canon.
+- registry_id: aoa-trace-and-eval-bridge
+  label: AOA-SEED-R4 Trace and Eval Bridge
+  source_ref: seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r4-trace-and-eval-bridge
+  wave: null
+  projects:
+  - AoA
+  kind: interface-seed
+  registry_status: gated_next
+  parent_seed: null
+  repo_homes:
+  - aoa-evals
+  first_artifact_hint: trace-to-eval contract note plus one artifact-to-verdict hook surface
+  notes: Keeps workflow-level judgment inspectable through witness trace and explicit eval hooks.
+- registry_id: aoa-kag-reasoning-handoff
+  label: AOA-SEED-R5 KAG Reasoning Handoff
+  source_ref: seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r5-kag-reasoning-handoff
+  wave: null
+  projects:
+  - AoA
+  kind: interface-seed
+  registry_status: gated_next
+  parent_seed: null
+  repo_homes:
+  - aoa-kag
+  first_artifact_hint: reasoning handoff note plus source-vs-derived retrieval guardrail surface
+  notes: Makes kag handoff explicit without letting derived retrieval replace source-owned meaning.
