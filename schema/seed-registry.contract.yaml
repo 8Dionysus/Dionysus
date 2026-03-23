@@ -1,4 +1,4 @@
-contract_version: 1
+contract_version: 2
 purpose: Human-readable field contract for seed-registry.yaml.
 source_of_truth:
   order: wave manifests
@@ -59,7 +59,7 @@ seed_index:
     - registry_id should be unique
     - source_ref must exist and any markdown anchor must resolve
     - when wave is not null, source_ref should be traceable to that wave manifest
-    - when wave is null, registry_status should usually be gated_next
+    - when wave is null, registry_status must be gated_next for live next seeds or landed_post_wave for planted post-wave seeds
     - when wave is not null, seed registry_status should match the enclosing wave status
 navigation_constraints:
   - archived_root and archived_pack must exist

@@ -4,7 +4,7 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: seed-pack
-status: gated
+status: landed_post_wave
 priority: medium
 parent_seed: null
 tags:
@@ -22,15 +22,15 @@ tags:
 This pack harvests bounded planting slices from `seed_agents_1st.md`.
 
 It does not reopen the ninth wave, replace the current `next_live_seed`, or turn one donor note into a new sovereign canon.
-It prepares small repo-owned follow-on seeds with explicit homes and explicit anti-goals.
+It records small repo-owned follow-on seeds with explicit homes and explicit anti-goals.
 
 ## Provenance
 
 - donor note: `seed_agents_1st.md`
 - extraction goal: turn one strategy note into bounded repo-home seeds
-- lifecycle posture: gated post-wave prep only
-- direct planting target now: `AOA-SEED-R1 Agents Runtime Seam`
-- queued slices: `AOA-SEED-R2` through `AOA-SEED-R5`
+- lifecycle posture: landed post-wave seed-pack retained in the registry until a later archival pass
+- planting outcome: `AOA-SEED-R1` through `AOA-SEED-R5` have landed across `aoa-agents`, `aoa-playbooks`, `aoa-memo`, `aoa-evals`, and `aoa-kag`
+- next live seed unchanged: `seed.tos.wider-world-thought-expansion.v0`
 
 ## Preserved Vocabulary
 
@@ -304,6 +304,7 @@ Define how a future runtime hands off retrieval and reasoning work to `aoa-kag` 
 
 ## Deferred Notes
 
+The core `R1` through `R5` slices are landed.
 The donor note also names useful but not yet cleanly owned follow-ons.
 Keep them deferred here until a later planting opens a better home:
 

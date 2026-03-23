@@ -16,6 +16,7 @@ lifecycle_states:
   archived_canonical: historical source kept for lineage and replay
   pending_archive: temporary source surface still live only until archive move
   gated_next: acknowledged next seed surface, not yet an opened wave
+  landed_post_wave: planted and merged post-wave seed kept live until a later archival pass
 origin_notes:
 - seed_expat.md
 - seed_self-agent.md
@@ -574,7 +575,7 @@ seed_index:
   projects:
   - AoA
   kind: architecture-seed
-  registry_status: gated_next
+  registry_status: landed_post_wave
   parent_seed: null
   repo_homes:
   - aoa-agents
@@ -587,7 +588,7 @@ seed_index:
   projects:
   - AoA
   kind: playbook-seed
-  registry_status: gated_next
+  registry_status: landed_post_wave
   parent_seed: null
   repo_homes:
   - aoa-playbooks
@@ -600,7 +601,7 @@ seed_index:
   projects:
   - AoA
   kind: interface-seed
-  registry_status: gated_next
+  registry_status: landed_post_wave
   parent_seed: null
   repo_homes:
   - aoa-memo
@@ -613,7 +614,7 @@ seed_index:
   projects:
   - AoA
   kind: interface-seed
-  registry_status: gated_next
+  registry_status: landed_post_wave
   parent_seed: null
   repo_homes:
   - aoa-evals
@@ -626,7 +627,7 @@ seed_index:
   projects:
   - AoA
   kind: interface-seed
-  registry_status: gated_next
+  registry_status: landed_post_wave
   parent_seed: null
   repo_homes:
   - aoa-kag

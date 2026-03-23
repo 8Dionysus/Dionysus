@@ -4,6 +4,9 @@ This folder holds durable planting trace when Dionysus is the right place to pre
 
 Prefer a target-repo PR description when the planting can be reviewed there without loss. Use this folder when a seed touches multiple repos, when the original PR context is likely to disappear, or when you need Dionysus to keep the lineage visible.
 
+Hydrate durable reports with merged target-repo PR and commit refs once the planting lands.
+If a report is revised after later slices land, use time-scoped wording for any then-current queued or deferred notes instead of leaving false present-tense state behind.
+
 ## Naming convention
 
 Use one file per planted seed:
