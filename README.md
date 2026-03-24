@@ -29,7 +29,8 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 - `scripts/validate_seed_surfaces.py` runs both validators as one entrypoint.
 - `archive/` is the canonical archive root.
 - `archive/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
-- `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion` is the next live gated seed surface.
+- `seed_expansion/seed.tos.zarathustra-trilingual-entry.v0.md#tos-expansion-zarathustra-trilingual-entry` landed in `Tree-of-Sophia` and remains live in the registry until a later archival pass.
+- `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion` is the next live gated seed surface after that bounded trilingual landing.
 - `seed-registry.yaml` is the navigation overlay for humans and Codex.
 - `schema/seed-registry.contract.yaml` defines the registry field contract.
 - `docs/codex/planting-protocol.md` defines the planting discipline.
@@ -55,7 +56,7 @@ The manifest defines order. The seed file defines meaning. The closure note defi
   - historical canonical seed sources
   - previous bundles, rootlines, witness seeds, templates, branch pilots, soil-prep files, and archived packs
 - `seed_expansion/`
-  - next gated future-work surface after the archived ninth wave
+  - live gated future-work surfaces after the archived ninth wave
 - `*_wave.manifest.json`
   - machine-readable planting order by wave
 - `ninth_wave.closure.md`

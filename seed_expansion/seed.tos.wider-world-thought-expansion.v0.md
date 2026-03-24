@@ -3,7 +3,7 @@
 Roadmap-derived live seed source for ToS wider world-thought expansion.
 
 Date: 2026-03-22
-Status: live next seed, gated by manual Zarathustra entry
+Status: live later seed, held behind bounded trilingual Zarathustra entry
 
 ## Grounding
 
@@ -14,7 +14,7 @@ The current preparation wave is complete:
 - pre-expansion review law is public
 
 The next move is still not automatic.
-It remains gated by maintainer-led manual source entry.
+It remains gated by maintainer-led manual source entry through `seed_expansion/seed.tos.zarathustra-trilingual-entry.v0.md#tos-expansion-zarathustra-trilingual-entry`.
 
 ---
 
@@ -25,13 +25,13 @@ It remains gated by maintainer-led manual source entry.
 
 Open wider ToS plurality only after real source-linked movement resumes.
 
-### Why next
+### Why later
 
 - preparation soil is now in place
 - plurality should follow actual corpus movement rather than empty template expansion
-- the current gate remains manual Zarathustra entry
+- the current gate is bounded trilingual Zarathustra entry rather than wider plurality
 
 ### First materialized output
 
-- first post-gate expansion wave
-- real corpus movement beyond preparation-only surfaces
+- first post-gate expansion wave after the trilingual Zarathustra route holds under review
+- real corpus movement beyond preparation-only surfaces and the first bounded trilingual route

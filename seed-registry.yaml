@@ -1,5 +1,5 @@
 registry_version: 1
-updated_at: '2026-03-22'
+updated_at: '2026-03-24'
 navigation:
   canonical_order_source: wave manifests
   semantic_source: source seed files
@@ -198,8 +198,8 @@ seed_index:
   repo_homes:
   - shared / interface / infra repos
   - aoa-* bridge surfaces
-  first_artifact_hint: writeback and retrieval contracts plus one shared schema or event spec
-  notes: Keeps the AoA ↔ ToS bridge explicit and reversible.
+  first_artifact_hint: primary coordination note plus retrieval and writeback companion contracts and one schema-backed bridge surface
+  notes: Primary coordination note now lives in aoa-kag/docs/BRIDGE_CONTRACTS.md, with memo-side companion in aoa-memo/docs/KAG_TOS_BRIDGE_CONTRACT.md and routing orientation in aoa-routing/docs/FEDERATION_ENTRY_ABI.md.
 - registry_id: aoa-method-lives-in-playbooks
   label: AOA-SEED-06 Method Lives in Playbooks
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks
@@ -555,6 +555,19 @@ seed_index:
   - docs/contracts
   first_artifact_hint: checkpoint pack contract plus restart protocol and one eval hook
   notes: Makes long-horizon work restartable through artifact-first checkpoints.
+- registry_id: tos-expansion-zarathustra-trilingual-entry
+  label: ToS Zarathustra Trilingual Entry
+  source_ref: seed_expansion/seed.tos.zarathustra-trilingual-entry.v0.md#tos-expansion-zarathustra-trilingual-entry
+  wave: null
+  projects:
+  - ToS
+  kind: expansion-seed
+  registry_status: landed_post_wave
+  parent_seed: tos-manual-zarathustra-entry-gate
+  repo_homes:
+  - Tree-of-Sophia
+  first_artifact_hint: one bounded source bundle plus a witness-linked trilingual source node, concept spine, and review note
+  notes: Landed in Tree-of-Sophia as one bounded manual trilingual route and remains live in the registry until a later archival pass.
 - registry_id: tos-expansion-wider-world-thought-expansion
   label: ToS Wider World-Thought Expansion
   source_ref: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
@@ -563,11 +576,11 @@ seed_index:
   - ToS
   kind: expansion-seed
   registry_status: gated_next
-  parent_seed: null
+  parent_seed: tos-expansion-zarathustra-trilingual-entry
   repo_homes:
   - Tree-of-Sophia
-  first_artifact_hint: first post-gate expansion wave after real manual source entry resumes
-  notes: Remains gated by manual Zarathustra entry and review law.
+  first_artifact_hint: first post-gate expansion wave after bounded trilingual Zarathustra entry stabilizes
+  notes: Now the next live gated seed, held until the bounded trilingual Zarathustra route proves stable under later review so plurality follows real corpus movement rather than abstract multilingual expansion.
 - registry_id: aoa-agents-runtime-seam
   label: AOA-SEED-R1 Agents Runtime Seam
   source_ref: seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r1-agents-runtime-seam
