@@ -28,7 +28,7 @@ It records small repo-owned follow-on seeds with explicit homes and explicit ant
 
 - donor note: `seed_agents_1st.md`
 - extraction goal: turn one strategy note into bounded repo-home seeds
-- lifecycle posture: landed post-wave seed-pack retained in the registry until a later archival pass
+- lifecycle posture: landed post-wave seed-pack retained in the registry after archive cleanup while `seed_expansion/` returns to next-live-only navigation
 - planting outcome: `AOA-SEED-R1` through `AOA-SEED-R5` have landed across `aoa-agents`, `aoa-playbooks`, `aoa-memo`, `aoa-evals`, and `aoa-kag`
 - next live seed unchanged: `seed.tos.wider-world-thought-expansion.v0`
 

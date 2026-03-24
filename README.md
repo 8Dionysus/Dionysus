@@ -29,6 +29,7 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 - `scripts/validate_seed_surfaces.py` runs both validators as one entrypoint.
 - `archive/` is the canonical archive root.
 - `archive/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
+- `archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r1-agents-runtime-seam` is the archived source pack for the landed post-wave runtime slice.
 - `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion` is the next live gated seed surface.
 - `seed-registry.yaml` is the navigation overlay for humans and Codex.
 - `schema/seed-registry.contract.yaml` defines the registry field contract.
@@ -53,9 +54,9 @@ The manifest defines order. The seed file defines meaning. The closure note defi
 
 - `archive/`
   - historical canonical seed sources
-  - previous bundles, rootlines, witness seeds, templates, branch pilots, soil-prep files, and archived packs
+  - previous bundles, rootlines, witness seeds, templates, branch pilots, soil-prep files, archived packs, and archived post-wave seed-packs
 - `seed_expansion/`
-  - next gated future-work surface after the archived ninth wave
+  - next gated future-work surface only
 - `*_wave.manifest.json`
   - machine-readable planting order by wave
 - `ninth_wave.closure.md`
@@ -88,7 +89,7 @@ The manifest defines order. The seed file defines meaning. The closure note defi
 - `gated_next`
   - acknowledged next seed surface, not yet an opened wave
 - `landed_post_wave`
-  - planted and merged post-wave seed kept live in the registry until a later archival pass
+  - planted and merged post-wave seed kept live in the registry even after archive cleanup, until a later lifecycle-model pass changes that status
 
 ## Wave map
 
