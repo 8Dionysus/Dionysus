@@ -26,7 +26,8 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 - `first_wave.manifest.json` through `ninth_wave.manifest.json` define the planting waves.
 - `scripts/validate_manifest.py` validates manifest refs.
 - `scripts/validate_seed_registry.py` validates `seed-registry.yaml`, wave linkage, and closure-note status alignment.
-- `scripts/validate_seed_surfaces.py` runs both validators as one entrypoint.
+- `scripts/validate_nested_agents.py` validates the required root and local `AGENTS.md` coverage for the wave 1.3 operating surfaces.
+- `scripts/validate_seed_surfaces.py` runs all three validators as one entrypoint.
 - `archive/` is the canonical archive root.
 - `archive/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
 - `archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r1-agents-runtime-seam` is the archived source pack for the landed post-wave runtime slice.
@@ -65,6 +66,8 @@ The manifest defines order. The seed file defines meaning. The closure note defi
   - human/Codex navigation overlay
 - `schema/seed-registry.contract.yaml`
   - registry field contract and cross-link expectations
+- `AGENTS.md` and local `AGENTS.md` files
+  - repo and directory-level operating guidance for Codex and maintainers
 - `docs/codex/planting-protocol.md`
   - planting rules for Codex and maintainers
 - `templates/planting-report.template.md`
@@ -75,6 +78,8 @@ The manifest defines order. The seed file defines meaning. The closure note defi
   - manifest reference validator
 - `scripts/validate_seed_registry.py`
   - registry and closure-alignment validator
+- `scripts/validate_nested_agents.py`
+  - required `AGENTS.md` coverage validator
 - `scripts/validate_seed_surfaces.py`
   - single validation entrypoint for CI and local runs
 - `seed_expat.md`, `seed_self-agent.md`, `seed_trio.md`
@@ -117,6 +122,8 @@ The manifest defines order. The seed file defines meaning. The closure note defi
 6. Stop at contracts/docs when a seed would cross red-risk zones.
 7. Leave trace in the PR, commit message, or a report based on `templates/planting-report.template.md`.
 
+Operational editing guidance lives in `AGENTS.md` and the nearest nested `AGENTS.md`.
+
 See `docs/codex/planting-protocol.md` for the detailed rules.
 
 ## Validation
@@ -129,8 +136,9 @@ This runs:
 
 - `python scripts/validate_manifest.py`
 - `python scripts/validate_seed_registry.py`
+- `python scripts/validate_nested_agents.py`
 
-The registry validator checks field shape, path validity, anchor validity, wave linkage, next-live-seed coherence, and closure-note status alignment.
+The registry validator checks field shape, path validity, anchor validity, wave linkage, next-live-seed coherence, and closure-note status alignment. The nested-agents validator checks that the required root and wave-local `AGENTS.md` files are present and non-empty.
 
 A GitHub Actions workflow lives at `.github/workflows/validate-seed-surfaces.yml`.
 
