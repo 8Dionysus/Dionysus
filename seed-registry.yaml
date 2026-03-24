@@ -1,5 +1,5 @@
 registry_version: 1
-updated_at: '2026-03-22'
+updated_at: '2026-03-24'
 navigation:
   canonical_order_source: wave manifests
   semantic_source: source seed files
@@ -170,7 +170,7 @@ seed_index:
   - aoa-evals
   - aoa-memo
   first_artifact_hint: self-agent checkpoint contract plus one bounded improvement playbook
-  notes: Frames self-agent as governed checkpoint, not autonomy myth.
+  notes: 'Frames self-agent as governed checkpoint, not autonomy myth. The eval-side landing now closes through existing bounded eval anchors and an AOA-P-0006 hook surface rather than a new sovereign checkpoint bundle.'
 - registry_id: tos-interpretation-ladder
   label: TOS-SEED-04 Interpretation Ladder
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-04-interpretation-ladder
@@ -199,7 +199,7 @@ seed_index:
   - shared / interface / infra repos
   - aoa-* bridge surfaces
   first_artifact_hint: writeback and retrieval contracts plus one shared schema or event spec
-  notes: Keeps the AoA ↔ ToS bridge explicit and reversible.
+  notes: 'Keeps the AoA ↔ ToS bridge explicit and reversible. Strict closure now rides on one shared bridge envelope in aoa-kag that links memo companion faces and KAG retrieval faces without duplicating payload bodies.'
 - registry_id: aoa-method-lives-in-playbooks
   label: AOA-SEED-06 Method Lives in Playbooks
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks
@@ -311,7 +311,7 @@ seed_index:
   - aoa-kag
   - Tree-of-Sophia (conceptual side only)
   first_artifact_hint: counterpart edge vocabulary plus 3–5 example mappings
-  notes: Makes concept↔operation bridges explicit and derived.
+  notes: 'Makes concept↔operation bridges explicit and derived. Tree conceptual side and the bounded example mappings are landed, while the KAG public surface intentionally remains planned until downstream consumer contract and federation exposure are opened.'
 - registry_id: aoa-witness-protocol
   label: Witness Protocol
   source_ref: archive/seed_witness/seed.aoa.protocol-witness.v0.md
