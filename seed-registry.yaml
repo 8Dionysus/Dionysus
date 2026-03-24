@@ -113,7 +113,7 @@ seed_index:
   - aoa-evals
   - aoa-memo
   first_artifact_hint: federation glossary section plus repo ownership table
-  notes: Locks the grammar of action before repo overlap.
+  notes: 'Locks the grammar of action before repo overlap. Repo-home saturation is now explicit through the technique-layer note in aoa-techniques and the skill-layer note in aoa-skills, so this seed no longer needs to be treated as under-landed outside its primary homes.'
 - registry_id: aoa-narrative-core-memory
   label: AOA-SEED-03 Narrative-Core Memory
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-03-narrative-core-memory
@@ -217,7 +217,7 @@ seed_index:
   - aoa-memo
   - aoa-agents
   first_artifact_hint: playbook bundle spec plus one canonical route example
-  notes: Gives method its own home instead of smearing it across layers.
+  notes: 'Gives method its own home instead of smearing it across layers. Repo-home saturation is now explicit through technique-layer and skill-layer boundary notes that route recurring scenario method back to aoa-playbooks rather than letting it blur across neighboring repos.'
 - registry_id: aoa-source-first-donor-refinery
   label: AOA-SEED-04 Source-First Donor Refinery
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery
@@ -250,7 +250,7 @@ seed_index:
   - AoA repos (implementation stays there)
   - aoa-kag (later / derived bridges only)
   first_artifact_hint: idea-lineage vs practice-lineage note plus 2–3 counterpart examples
-  notes: Gives practices a neighboring branch without collapsing repos.
+  notes: 'Gives practices a neighboring branch without collapsing repos. Current public homes are support-complete; any later AoA or aoa-kag saturation remains optional derived follow-on work rather than a present blocker.'
 - registry_id: aoa-evidence-backed-gamified-maturation
   label: AOA-SEED-08 Evidence-Backed Gamified Maturation
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-08-evidence-backed-gamified-maturation
@@ -375,7 +375,7 @@ seed_index:
   - Tree-of-Sophia
   - AoA (operational support only)
   first_artifact_hint: curation protocol for what AI may propose vs what human must decide
-  notes: Keeps human judgment visible in expansion workflows.
+  notes: 'Keeps human judgment visible in expansion workflows. This seed is support-complete in Tree-of-Sophia; AoA-side operational support remains an optional later reinforcement, not a missing primary landing.'
 - registry_id: tos-growth-by-explicit-structure
   label: TOS-SEED-08 Growth by Explicit Structure
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure
