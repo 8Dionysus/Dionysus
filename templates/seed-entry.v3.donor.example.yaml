@@ -1,0 +1,49 @@
+registry_id: example-external-lifecycle-pattern
+label: Example External Lifecycle Pattern
+source_ref: archive/donor_intake/example.seed.md#example-external-lifecycle-pattern
+wave: null
+projects:
+- AoA
+kind: playbook-seed
+registry_status: gated_next
+parent_seed: null
+repo_homes:
+- aoa-playbooks
+- aoa-skills
+first_artifact_hint: one lifecycle contract note plus one runnable example surface
+notes: Example donor-derived seed showing the v3 provenance shape.
+provenance:
+  origin_mode: donor_derived
+  donor_repo: https://github.com/example/open-donor-repo
+  donor_ref: commit:0123456789abcdef
+  donor_license_spdx: Apache-2.0
+  donor_paths:
+  - docs/lifecycle.md
+  - scripts/start.sh
+  provenance_note: docs/codex/donors/example-external-lifecycle-pattern.md
+redistribution:
+  license_spdx: Apache-2.0
+  upstream_license_ref: https://github.com/example/open-donor-repo/blob/main/LICENSE
+  copy_license_required: true
+  notice_required: true
+  retain_attribution_required: true
+  mark_modifications_required: true
+  modified_from_upstream: true
+  obligations_note: Carry LICENSE, preserve NOTICE/attribution surfaces, and mark
+    modified upstream files in redistributed derivatives.
+transplant:
+  policy: adapt_with_attribution
+  what_survives:
+  - bounded one-command lifecycle contract
+  - preflight-before-start discipline
+  what_stays_behind:
+  - donor product identity language
+  - deployment orchestration beyond local lifecycle
+  - private environment assumptions
+  non_goals:
+  - no vendor lock-in doctrine
+  - no fleet orchestration semantics
+freshness:
+  last_revalidated_at: '2026-03-24'
+  revalidate_after_days: 180
+  superseded_by: null

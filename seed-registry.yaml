@@ -1,4 +1,4 @@
-registry_version: 1
+registry_version: 2
 updated_at: '2026-03-24'
 navigation:
   canonical_order_source: wave manifests
@@ -8,6 +8,8 @@ navigation:
   validation_entrypoint: scripts/validate_seed_surfaces.py
   registry_contract: schema/seed-registry.contract.yaml
   planting_report_template: templates/planting-report.template.md
+  provenance_policy: docs/codex/seed-provenance-policy.md
+  donor_capture_template: templates/donor-capture.template.md
   registry_role: navigation overlay for humans and Codex
   archived_root: archive/
   archived_pack: archive/seed_pack_2026-03-22/
@@ -21,6 +23,9 @@ origin_notes:
 - seed_expat.md
 - seed_self-agent.md
 - seed_trio.md
+- seed_clawrouter_donor_graft.md
+- seed_wave1_codex_audit_spine.md
+- seed_wave2_codex_skill_proof_audit_bridge.md
 wave_index:
 - wave: first_wave
   file: first_wave.manifest.json
@@ -95,6 +100,34 @@ seed_index:
   - shared / interface / infra repos
   first_artifact_hint: rootline note plus one structural artifact in the target repo
   notes: Parent axis for trunk-first planting.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Parent axis for trunk-first planting.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-ontology-spine
   label: AOA-SEED-01 Ontology Spine of Action
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-01-ontology-spine-of-action
@@ -113,7 +146,35 @@ seed_index:
   - aoa-evals
   - aoa-memo
   first_artifact_hint: federation glossary section plus repo ownership table
-  notes: 'Locks the grammar of action before repo overlap. Repo-home saturation is now explicit through the technique-layer note in aoa-techniques and the skill-layer note in aoa-skills, so this seed no longer needs to be treated as under-landed outside its primary homes.'
+  notes: Locks the grammar of action before repo overlap. Repo-home saturation is now explicit through the technique-layer note in aoa-techniques and the skill-layer note in aoa-skills, so this seed no longer needs to be treated as under-landed outside its primary homes.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Locks the grammar of action before repo overlap. Repo-home saturation is now explicit through the technique-layer note in aoa-techniques and the skill-layer note in aoa-skills, so this seed no longer needs to be treated as under-landed outside its primary homes.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-narrative-core-memory
   label: AOA-SEED-03 Narrative-Core Memory
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-03-narrative-core-memory
@@ -129,6 +190,34 @@ seed_index:
   - aoa-kag (later / derived only)
   first_artifact_hint: memory contract for core authored surfaces vs derived memory
   notes: Keeps authored memory distinct from retrieval substrate.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Keeps authored memory distinct from retrieval substrate.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-layered-node-contract
   label: TOS-SEED-01 Layered Node Contract
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-01-layered-node-contract
@@ -142,6 +231,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: node template with required vs optional layers
   notes: Names the node as a layered contract, not a flat note.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Names the node as a layered contract, not a flat note.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-lineage-before-archive
   label: TOS-SEED-02 Lineage Before Archive
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-02-lineage-before-archive
@@ -155,6 +272,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: lineage edge vocabulary plus one small pilot branch
   notes: Makes lineage more important than archive neatness.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Makes lineage more important than archive neatness.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-self-agent-checkpoint
   label: AOA-SEED-02 Self-Agent Checkpoint Stack
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-02-self-agent-checkpoint-stack
@@ -170,7 +315,35 @@ seed_index:
   - aoa-evals
   - aoa-memo
   first_artifact_hint: self-agent checkpoint contract plus one bounded improvement playbook
-  notes: 'Frames self-agent as governed checkpoint, not autonomy myth. The eval-side landing now closes through existing bounded eval anchors and an AOA-P-0006 hook surface rather than a new sovereign checkpoint bundle.'
+  notes: Frames self-agent as governed checkpoint, not autonomy myth. The eval-side landing now closes through existing bounded eval anchors and an AOA-P-0006 hook surface rather than a new sovereign checkpoint bundle.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Frames self-agent as governed checkpoint, not autonomy myth. The eval-side landing now closes through existing bounded eval anchors and an AOA-P-0006 hook surface rather than a new sovereign checkpoint bundle.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-interpretation-ladder
   label: TOS-SEED-04 Interpretation Ladder
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-04-interpretation-ladder
@@ -185,6 +358,34 @@ seed_index:
   - aoa-kag / AoA tools (later, not primary home)
   first_artifact_hint: interpretation-level note plus one explicitly marked example node
   notes: Separates source, thesis, commentary, and synthesis.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Separates source, thesis, commentary, and synthesis.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-tos-bridge-contracts
   label: AoA-ToS Bridge Contracts
   source_ref: archive/seed_rootline/seed.8dionysus.aoa-shared.bridges.md
@@ -199,7 +400,35 @@ seed_index:
   - shared / interface / infra repos
   - aoa-* bridge surfaces
   first_artifact_hint: writeback and retrieval contracts plus one shared schema or event spec
-  notes: 'Keeps the AoA ↔ ToS bridge explicit and reversible. Strict closure now rides on one shared bridge envelope in aoa-kag that links memo companion faces and KAG retrieval faces without duplicating payload bodies.'
+  notes: Keeps the AoA ↔ ToS bridge explicit and reversible. Strict closure now rides on one shared bridge envelope in aoa-kag that links memo companion faces and KAG retrieval faces without duplicating payload bodies.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Keeps the AoA ↔ ToS bridge explicit and reversible. Strict closure now rides on one shared bridge envelope in aoa-kag that links memo companion faces and KAG retrieval faces without duplicating payload bodies.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-method-lives-in-playbooks
   label: AOA-SEED-06 Method Lives in Playbooks
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-06-method-lives-in-playbooks
@@ -217,7 +446,35 @@ seed_index:
   - aoa-memo
   - aoa-agents
   first_artifact_hint: playbook bundle spec plus one canonical route example
-  notes: 'Gives method its own home instead of smearing it across layers. Repo-home saturation is now explicit through technique-layer and skill-layer boundary notes that route recurring scenario method back to aoa-playbooks rather than letting it blur across neighboring repos.'
+  notes: Gives method its own home instead of smearing it across layers. Repo-home saturation is now explicit through technique-layer and skill-layer boundary notes that route recurring scenario method back to aoa-playbooks rather than letting it blur across neighboring repos.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Gives method its own home instead of smearing it across layers. Repo-home saturation is now explicit through technique-layer and skill-layer boundary notes that route recurring scenario method back to aoa-playbooks rather than letting it blur across neighboring repos.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-source-first-donor-refinery
   label: AOA-SEED-04 Source-First Donor Refinery
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery
@@ -235,6 +492,34 @@ seed_index:
   - aoa-evals
   first_artifact_hint: donor intake rubric plus two worked donor examples
   notes: Turns donor repos into patterns, not imported dogma.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Turns donor repos into patterns, not imported dogma.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-practice-branch-of-the-tree
   label: TOS-SEED-06 Practice Branch of the Tree
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-06-practice-branch-of-the-tree
@@ -250,7 +535,35 @@ seed_index:
   - AoA repos (implementation stays there)
   - aoa-kag (later / derived bridges only)
   first_artifact_hint: idea-lineage vs practice-lineage note plus 2–3 counterpart examples
-  notes: 'Gives practices a neighboring branch without collapsing repos. Current public homes are support-complete; any later AoA or aoa-kag saturation remains optional derived follow-on work rather than a present blocker.'
+  notes: Gives practices a neighboring branch without collapsing repos. Current public homes are support-complete; any later AoA or aoa-kag saturation remains optional derived follow-on work rather than a present blocker.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Gives practices a neighboring branch without collapsing repos. Current public homes are support-complete; any later AoA or aoa-kag saturation remains optional derived follow-on work rather than a present blocker.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-evidence-backed-gamified-maturation
   label: AOA-SEED-08 Evidence-Backed Gamified Maturation
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-08-evidence-backed-gamified-maturation
@@ -267,6 +580,34 @@ seed_index:
   - aoa-playbooks (later)
   first_artifact_hint: maturity ladder plus shared-vs-local status rules
   notes: Makes progression evidence-backed instead of ornamental.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Makes progression evidence-backed instead of ornamental.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-kag-compatible-substrate-not-empire
   label: AOA-SEED-05 KAG-Compatible Substrate, Not Empire
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-05-kag-compatible-substrate-not-empire
@@ -281,6 +622,34 @@ seed_index:
   - Agents-of-Abyss
   first_artifact_hint: guardrail section plus source-vs-derived counterpart table
   notes: Protects source-owned meaning from substrate drift.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Protects source-owned meaning from substrate drift.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-counterpart-mapping-without-collapse
   label: TOS-SEED-07 Counterpart Mapping Without Collapse
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-07-counterpart-mapping-without-collapse
@@ -296,6 +665,34 @@ seed_index:
   - aoa-kag (later / derived mapping layer)
   first_artifact_hint: counterpart relation vocabulary plus explicit non-identity policy
   notes: Treats mappings as suggestive bridges, not identity claims.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Treats mappings as suggestive bridges, not identity claims.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-concept-operation-counterpart-edges
   label: AOA-SEED-07 Concept Operation Counterpart Edges
   source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-07-concept-operation-counterpart-edges
@@ -311,7 +708,35 @@ seed_index:
   - aoa-kag
   - Tree-of-Sophia (conceptual side only)
   first_artifact_hint: counterpart edge vocabulary plus 3–5 example mappings
-  notes: 'Makes concept↔operation bridges explicit and derived. Tree conceptual side and the bounded example mappings are landed, while the KAG public surface intentionally remains planned until downstream consumer contract and federation exposure are opened.'
+  notes: Makes concept↔operation bridges explicit and derived. Tree conceptual side and the bounded example mappings are landed, while the KAG public surface intentionally remains planned until downstream consumer contract and federation exposure are opened.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Makes concept↔operation bridges explicit and derived. Tree conceptual side and the bounded example mappings are landed, while the KAG public surface intentionally remains planned until downstream consumer contract and federation exposure are opened.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-witness-protocol
   label: Witness Protocol
   source_ref: archive/seed_witness/seed.aoa.protocol-witness.v0.md
@@ -329,6 +754,34 @@ seed_index:
   - memory-bridge
   first_artifact_hint: WitnessTrace schema plus human-readable markdown exporter
   notes: Turns significant runs into inspectable witness traces.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Turns significant runs into inspectable witness traces.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-context-compost
   label: Context Compost
   source_ref: archive/seed_witness/seed.tos.context-compost.v0.md
@@ -348,6 +801,34 @@ seed_index:
   - review-loop
   first_artifact_hint: CompostNode layer schema plus promotion and decay rules
   notes: Transforms traces and notes into layered, reviewable memory.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Transforms traces and notes into layered, reviewable memory.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-calibration-axis-not-neutral-dust
   label: TOS-SEED-03 Calibration Axis, Not Neutral Dust
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-03-calibration-axis-not-neutral-dust
@@ -361,6 +842,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: calibration note plus explicit curation guardrails
   notes: Keeps the guiding axis alive without replacing interpretation.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Keeps the guiding axis alive without replacing interpretation.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-human-curated-ai-amplified-expansion
   label: TOS-SEED-05 Human-Curated, AI-Amplified Expansion
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-05-human-curated-ai-amplified-expansion
@@ -375,7 +884,35 @@ seed_index:
   - Tree-of-Sophia
   - AoA (operational support only)
   first_artifact_hint: curation protocol for what AI may propose vs what human must decide
-  notes: 'Keeps human judgment visible in expansion workflows. This seed is support-complete in Tree-of-Sophia; AoA-side operational support remains an optional later reinforcement, not a missing primary landing.'
+  notes: Keeps human judgment visible in expansion workflows. This seed is support-complete in Tree-of-Sophia; AoA-side operational support remains an optional later reinforcement, not a missing primary landing.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Keeps human judgment visible in expansion workflows. This seed is support-complete in Tree-of-Sophia; AoA-side operational support remains an optional later reinforcement, not a missing primary landing.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-growth-by-explicit-structure
   label: TOS-SEED-08 Growth by Explicit Structure
   source_ref: archive/seed_bundle/seeds_tos.md#tos-seed-08-growth-by-explicit-structure
@@ -389,6 +926,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: growth note for when to create nodes, branches, or deepen existing nodes
   notes: Rejects quantity growth without structural law.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Rejects quantity growth without structural law.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-stable-identifier-discipline
   label: Stable Identifier Discipline
   source_ref: archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-stable-identifier-discipline
@@ -402,6 +967,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: stable node identifier rules
   notes: Opens corpus scaffold with durable identity law.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Opens corpus scaffold with durable identity law.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-source-node-template
   label: Source-Node Template
   source_ref: archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-source-node-template
@@ -415,6 +1008,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: source-node template
   notes: Gives first public source-node scaffold.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Gives first public source-node scaffold.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-concept-node-template-worked-example
   label: Concept-Node Template Plus Worked Example
   source_ref: archive/seed_templates/seed.tos.corpus-scaffold.v0.md#tos-template-concept-node-template-worked-example
@@ -428,6 +1049,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: concept-node template plus one worked example set
   notes: Turns scaffold doctrine into a first reusable concept pattern.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Turns scaffold doctrine into a first reusable concept pattern.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-lineage-node-template
   label: Lineage-Node Template
   source_ref: archive/seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-lineage-node-template
@@ -441,6 +1090,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: lineage-node template
   notes: Begins the bounded lineage pilot with explicit node law.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Begins the bounded lineage pilot with explicit node law.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-calibration-family-branch-pilot
   label: Calibration-Family Branch Pilot
   source_ref: archive/seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-calibration-family-pilot
@@ -454,6 +1131,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: bounded calibration-family pilot note
   notes: Keeps the first branch real and intentionally small.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Keeps the first branch real and intentionally small.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-worked-pilot-node-set
   label: Worked Pilot Node Set
   source_ref: archive/seed_branches/seed.tos.calibration-lineage-pilot.v0.md#tos-branch-worked-pilot-node-set
@@ -467,6 +1172,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: worked pilot node set
   notes: Proves the scaffold can support a real small branch.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Proves the scaffold can support a real small branch.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-context-node-template
   label: Context-Node Template
   source_ref: archive/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-context-node-template
@@ -480,6 +1213,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: context-node template
   notes: Prepares wider expansion with context-bearing node law.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Prepares wider expansion with context-bearing node law.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-manual-zarathustra-entry-gate
   label: Manual Zarathustra Entry Gate
   source_ref: archive/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-manual-zarathustra-entry-gate
@@ -493,6 +1254,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: manual source-entry gate for Zarathustra-linked corpus motion
   notes: Keeps plurality gated by real source entry, not empty expansion.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Keeps plurality gated by real source entry, not empty expansion.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-pre-expansion-review-route
   label: Pre-Expansion Review Route
   source_ref: archive/seed_soil/seed.tos.pre-expansion-soil.v0.md#tos-soil-pre-expansion-review-route
@@ -506,6 +1295,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: review route before expansion wave opens
   notes: Adds explicit review before wider corpus movement.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Adds explicit review before wider corpus movement.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-memory-thermodynamics
   label: AOA-SEED-09 Memory Thermodynamics
   source_ref: archive/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.memory-thermodynamics.md
@@ -522,6 +1339,34 @@ seed_index:
   - docs/contracts
   first_artifact_hint: memory temperature contracts plus agent memory posture artifact
   notes: Adds heat classes, decay, and writeback policy to runtime memory.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Adds heat classes, decay, and writeback policy to runtime memory.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-model-tier-orchestration
   label: AOA-SEED-10 Model-Tier Orchestration
   source_ref: archive/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.model-tier-orchestration.md
@@ -538,6 +1383,34 @@ seed_index:
   - abyss-stack
   first_artifact_hint: model tier registry plus explicit state machine document
   notes: Turns local model diversity into role-based orchestration.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Turns local model diversity into role-based orchestration.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-restartable-inquiry-loop
   label: AOA-SEED-11 Restartable Inquiry Loop
   source_ref: archive/seed_pack_2026-03-22/seed_rootline/seed.8dionysus.aoa.restartable-inquiry-loop.md
@@ -555,6 +1428,34 @@ seed_index:
   - docs/contracts
   first_artifact_hint: checkpoint pack contract plus restart protocol and one eval hook
   notes: Makes long-horizon work restartable through artifact-first checkpoints.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Makes long-horizon work restartable through artifact-first checkpoints.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: tos-expansion-wider-world-thought-expansion
   label: ToS Wider World-Thought Expansion
   source_ref: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
@@ -568,6 +1469,34 @@ seed_index:
   - Tree-of-Sophia
   first_artifact_hint: first post-gate expansion wave after real manual source entry resumes
   notes: Remains gated by manual Zarathustra entry and review law.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Remains gated by manual Zarathustra entry and review law.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-agents-runtime-seam
   label: AOA-SEED-R1 Agents Runtime Seam
   source_ref: archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r1-agents-runtime-seam
@@ -581,6 +1510,34 @@ seed_index:
   - aoa-agents
   first_artifact_hint: runtime seam contract note plus public tier-artifact schema pack
   notes: Post-ninth-wave prep surface for a contract-first runtime seam in aoa-agents.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Post-ninth-wave prep surface for a contract-first runtime seam in aoa-agents.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-playbooks-executable-scenarios
   label: AOA-SEED-R2 Playbooks as Executable Scenarios
   source_ref: archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r2-playbooks-executable-scenarios
@@ -594,6 +1551,34 @@ seed_index:
   - aoa-playbooks
   first_artifact_hint: executable playbook contract note plus one scenario activation surface
   notes: Keeps scenario composition in aoa-playbooks while making runtime-facing execution inputs explicit.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Keeps scenario composition in aoa-playbooks while making runtime-facing execution inputs explicit.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-runtime-writeback-to-memo
   label: AOA-SEED-R3 Runtime Writeback to Memo
   source_ref: archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r3-runtime-writeback-to-memo
@@ -607,6 +1592,34 @@ seed_index:
   - aoa-memo
   first_artifact_hint: runtime writeback mapping note plus checkpoint-to-memory contract
   notes: Makes runtime writeback explicit without collapsing scratchpad and memory canon.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Makes runtime writeback explicit without collapsing scratchpad and memory canon.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-trace-and-eval-bridge
   label: AOA-SEED-R4 Trace and Eval Bridge
   source_ref: archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r4-trace-and-eval-bridge
@@ -620,6 +1633,34 @@ seed_index:
   - aoa-evals
   first_artifact_hint: trace-to-eval contract note plus one artifact-to-verdict hook surface
   notes: Keeps workflow-level judgment inspectable through witness trace and explicit eval hooks.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Keeps workflow-level judgment inspectable through witness trace and explicit eval hooks.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
 - registry_id: aoa-kag-reasoning-handoff
   label: AOA-SEED-R5 KAG Reasoning Handoff
   source_ref: archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r5-kag-reasoning-handoff
@@ -633,3 +1674,31 @@ seed_index:
   - aoa-kag
   first_artifact_hint: reasoning handoff note plus source-vs-derived retrieval guardrail surface
   notes: Makes kag handoff explicit without letting derived retrieval replace source-owned meaning.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Makes kag handoff explicit without letting derived retrieval replace source-owned meaning.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - no third-party redistribution or donor carry-over is implied by this registry entry
+  freshness:
+    last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
