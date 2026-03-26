@@ -116,6 +116,12 @@ MANIFEST_SPECS = {
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 HTML_ID = re.compile(r'<a\s+id="([^"]+)"></a>', re.IGNORECASE)
 CLOSURE_STATUS = re.compile(r"\bStatus:\s*([A-Za-z_-]+)\b", re.IGNORECASE)
+ARCHIVED_SEED_PACK_DIR = re.compile(r"^seed_pack_\d{4}-\d{2}-\d{2}(?:$|[-_])")
+RAW_GITHUB_CONTENT_URL = re.compile(
+    r"https://raw\.githubusercontent\.com/[^/\s]+/[^/\s]+/(?P<revision>[^/\s]+)/[^\s)>\"]+",
+    re.IGNORECASE,
+)
+IMMUTABLE_GIT_REVISION = re.compile(r"^[0-9a-f]{7,40}$", re.IGNORECASE)
 
 
 class ValidationError(RuntimeError):
@@ -283,6 +289,75 @@ def require_keys(mapping: dict[str, Any], label: str, keys: tuple[str, ...]) -> 
     for key in keys:
         if key not in mapping:
             fail(f"{label}: missing required key '{key}'")
+
+
+def iter_archived_seed_pack_dirs(root: Path) -> tuple[Path, ...]:
+    archive_root = root / "archive"
+    if not archive_root.exists():
+        return ()
+    return tuple(
+        sorted(
+            path
+            for path in archive_root.iterdir()
+            if path.is_dir() and ARCHIVED_SEED_PACK_DIR.match(path.name)
+        )
+    )
+
+
+def collect_registry_trace_refs(payload: dict[str, Any]) -> set[str]:
+    refs: set[str] = set()
+
+    for ref in payload.get("origin_notes", ()):
+        if isinstance(ref, str) and ref:
+            refs.add(ref)
+
+    for entry in payload.get("wave_index", ()):
+        if not isinstance(entry, dict):
+            continue
+        supporting_notes = entry.get("supporting_notes")
+        if isinstance(supporting_notes, list):
+            for ref in supporting_notes:
+                if isinstance(ref, str) and ref:
+                    refs.add(ref)
+
+    for entry in payload.get("seed_index", ()):
+        if not isinstance(entry, dict):
+            continue
+        source_ref = entry.get("source_ref")
+        if isinstance(source_ref, str) and source_ref:
+            refs.add(source_ref)
+        provenance = entry.get("provenance")
+        if isinstance(provenance, dict):
+            provenance_note = provenance.get("provenance_note")
+            if isinstance(provenance_note, str) and provenance_note:
+                refs.add(provenance_note)
+
+    return refs
+
+
+def validate_archived_seed_pack_traceability(payload: dict[str, Any], root: Path) -> None:
+    trace_refs = collect_registry_trace_refs(payload)
+    for pack_dir in iter_archived_seed_pack_dirs(root):
+        pack_prefix = f"{pack_dir.relative_to(root).as_posix().rstrip('/')}/"
+        if any(ref == pack_prefix.rstrip("/") or ref.startswith(pack_prefix) for ref in trace_refs):
+            continue
+        fail(
+            f"{pack_prefix}: archived seed pack must be traceable from seed-registry.yaml "
+            "via source_ref, provenance_note, origin_notes, or wave supporting_notes"
+        )
+
+
+def validate_archived_seed_pack_immutable_sources(root: Path) -> None:
+    for pack_dir in iter_archived_seed_pack_dirs(root):
+        for markdown_path in sorted(pack_dir.rglob("*.md")):
+            for match in RAW_GITHUB_CONTENT_URL.finditer(markdown_path.read_text(encoding="utf-8")):
+                revision = match.group("revision")
+                if IMMUTABLE_GIT_REVISION.fullmatch(revision):
+                    continue
+                fail(
+                    f"{markdown_path.relative_to(root).as_posix()}: archive seed packs must pin raw "
+                    f"GitHub sources to immutable commit revisions, not '{revision}': {match.group(0)}"
+                )
 
 
 def collect_manifest_refs(manifest_path: Path) -> tuple[dict[str, Any], set[str], set[str]]:
@@ -645,6 +720,9 @@ def validate_registry() -> None:
             fail(
                 f"seed-registry.yaml: entry '{current_id}' points freshness.superseded_by to unknown registry_id '{superseded_by}'"
             )
+
+    validate_archived_seed_pack_traceability(payload, ROOT)
+    validate_archived_seed_pack_immutable_sources(ROOT)
 
     for wave_name, order_refs in manifest_order_refs_by_wave.items():
         missing = sorted(order_refs - registry_order_refs_by_wave[wave_name])
