@@ -31,11 +31,13 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 - `archive/` is the canonical archive root.
 - `archive/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
 - `archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r1-agents-runtime-seam` is the archived source pack for the landed post-wave runtime slice.
-- `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion` is the next live gated seed surface.
+- `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion` is the next live gated seed surface, now synced to the bounded Zarathustra-route review gate in `Tree-of-Sophia`.
 - `seed-registry.yaml` is the navigation overlay for humans and Codex.
 - `seed_clawrouter_donor_graft.md` and `seed_clawrouter_donor_graft.map.yaml` stage a donor-origin prep slice for later bounded ClawRouter plantings without changing the current next-live seed.
 - `seed_wave1_codex_audit_spine.md` and `seed_wave1_codex_audit_spine.map.yaml` stage a future cross-repo Codex audit wave without planting into the owning repos yet.
 - `seed_wave2_codex_skill_proof_audit_bridge.md` and `seed_wave2_codex_skill_proof_audit_bridge.map.yaml` stage the later skill/proof audit seam wave without planting into the owning repos yet.
+- `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, and their `.map.yaml` files stage additional future prep packs and candidate lineage without changing the current next-live seed.
+- `seed_wave3_codex_repo_local_skills_trace_harness.md` and `seed_wave3_codex_repo_local_skills_trace_harness.map.yaml` stage the later repo-local Codex skills and trace-harness audit wave without downstream planting yet.
 - `schema/seed-registry.contract.yaml` defines the registry field contract, including v3 provenance and transplant maps.
 - `docs/codex/planting-protocol.md` defines the planting discipline.
 - `docs/codex/seed-provenance-policy.md` and `docs/codex/seed-registry-v3-migration.md` define donor-shaped intake rules and the staged v3 migration path.
@@ -77,6 +79,10 @@ The manifest defines order. The seed file defines meaning. The closure note defi
   - audit-wave prep note and machine-readable transplant map for later bounded Codex audit planting
 - `seed_wave2_codex_skill_proof_audit_bridge.md` and `seed_wave2_codex_skill_proof_audit_bridge.map.yaml`
   - skill/proof seam prep note and machine-readable transplant map for later bounded wave 2 audit planting
+- `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, and their `.map.yaml` files
+  - staged future prep packs and candidate lineage preserved in Dionysus without changing the current next-live seed
+- `seed_wave3_codex_repo_local_skills_trace_harness.md` and `seed_wave3_codex_repo_local_skills_trace_harness.map.yaml`
+  - later repo-local Codex skills and trace-harness audit prep note and machine-readable transplant map
 - `schema/seed-registry.contract.yaml`
   - registry field contract and cross-link expectations
 - `AGENTS.md` and local `AGENTS.md` files
@@ -105,7 +111,7 @@ The manifest defines order. The seed file defines meaning. The closure note defi
   - required `AGENTS.md` coverage validator
 - `scripts/validate_seed_surfaces.py`
   - single validation entrypoint for CI and local runs
-- `seed_expat.md`, `seed_self-agent.md`, `seed_trio.md`, `seed_clawrouter_donor_graft.md`, `seed_wave1_codex_audit_spine.md`, `seed_wave2_codex_skill_proof_audit_bridge.md`
+- `seed_expat.md`, `seed_self-agent.md`, `seed_trio.md`, `seed_clawrouter_donor_graft.md`, `seed_wave1_codex_audit_spine.md`, `seed_wave2_codex_skill_proof_audit_bridge.md`, `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, `seed_wave3_codex_repo_local_skills_trace_harness.md`
   - origin notes and prep soil, not first-wave canon
 
 ## Seed lifecycle

@@ -1,5 +1,5 @@
 registry_version: 2
-updated_at: '2026-03-24'
+updated_at: '2026-03-28'
 navigation:
   canonical_order_source: wave manifests
   semantic_source: source seed files
@@ -26,6 +26,12 @@ origin_notes:
 - seed_clawrouter_donor_graft.md
 - seed_wave1_codex_audit_spine.md
 - seed_wave2_codex_skill_proof_audit_bridge.md
+- seed_architecture_fit_pack.md
+- seed_dialogue_memory_pack.md
+- seed_federation_conductor_pack.md
+- seed_memory_evals_skills_docs_pack.md
+- seed_future_agent_systems_prep_pack.md
+- seed_wave3_codex_repo_local_skills_trace_harness.md
 wave_index:
 - wave: first_wave
   file: first_wave.manifest.json
@@ -1467,8 +1473,8 @@ seed_index:
   parent_seed: null
   repo_homes:
   - Tree-of-Sophia
-  first_artifact_hint: first post-gate expansion wave after real manual source entry resumes
-  notes: Remains gated by manual Zarathustra entry and review law.
+  first_artifact_hint: first post-review expansion wave after the bounded Zarathustra route holds under review
+  notes: Remains gated by bounded Zarathustra route review and tiny-entry seam hold law.
   provenance:
     origin_mode: native
     donor_repo: null
@@ -1488,13 +1494,13 @@ seed_index:
   transplant:
     policy: native
     what_survives:
-    - Remains gated by manual Zarathustra entry and review law.
+    - Remains gated by bounded Zarathustra route review and tiny-entry seam hold law.
     what_stays_behind:
     - no external donor doctrine is imported at this seed surface
     non_goals:
     - no third-party redistribution or donor carry-over is implied by this registry entry
   freshness:
-    last_revalidated_at: null
+    last_revalidated_at: '2026-03-28'
     revalidate_after_days: null
     superseded_by: null
 - registry_id: aoa-agents-runtime-seam
