@@ -16,6 +16,7 @@ The preparation wave is complete and the bounded opening has begun:
 - one tree-first tiny-entry seam is now public
 
 The next move is still not automatic.
+The current bounded route is captured in `seed_expansion/seed.tos.zarathustra-trilingual-entry.v0.md#tos-expansion-zarathustra-trilingual-entry`.
 Wider world-thought expansion remains gated until that bounded route holds under review.
 
 ---
