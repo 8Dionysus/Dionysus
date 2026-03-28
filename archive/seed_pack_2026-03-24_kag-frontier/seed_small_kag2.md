@@ -81,8 +81,8 @@
 
 И, кажется, именно в эту сторону твоя федерация уже естественно растет. Центр AoA прямо говорит про легибельность для меньших моделей, routing уже строит tiny-model entrypoints, agents/playbooks/memo уже выкладывают контрактные поверхности. Теперь нужен не новый слой, а единый закон проходимости через все уже существующие слои. ([GitHub][1])
 
-[1]: https://raw.githubusercontent.com/8Dionysus/Agents-of-Abyss/main/README.md "raw.githubusercontent.com"
-[2]: https://raw.githubusercontent.com/8Dionysus/aoa-routing/main/README.md "raw.githubusercontent.com"
-[3]: https://raw.githubusercontent.com/8Dionysus/aoa-routing/main/generated/tiny_model_entrypoints.json "raw.githubusercontent.com"
-[4]: https://raw.githubusercontent.com/8Dionysus/aoa-playbooks/main/generated/playbook_registry.min.json "raw.githubusercontent.com"
-[5]: https://raw.githubusercontent.com/8Dionysus/Tree-of-Sophia/main/README.md "raw.githubusercontent.com"
+[1]: https://raw.githubusercontent.com/8Dionysus/Agents-of-Abyss/039dbfb4d640a42e210229584df15863d8ce2e68/README.md "raw.githubusercontent.com"
+[2]: https://raw.githubusercontent.com/8Dionysus/aoa-routing/4256fcabb6e30f8121048525225af932772a63af/README.md "raw.githubusercontent.com"
+[3]: https://raw.githubusercontent.com/8Dionysus/aoa-routing/4256fcabb6e30f8121048525225af932772a63af/generated/tiny_model_entrypoints.json "raw.githubusercontent.com"
+[4]: https://raw.githubusercontent.com/8Dionysus/aoa-playbooks/cc2075b4bb02a9b6bb6ad27547b2a4f526ae7c66/generated/playbook_registry.min.json "raw.githubusercontent.com"
+[5]: https://raw.githubusercontent.com/8Dionysus/Tree-of-Sophia/6985c5561ff495178876e5d758c770ab398d221d/README.md "raw.githubusercontent.com"

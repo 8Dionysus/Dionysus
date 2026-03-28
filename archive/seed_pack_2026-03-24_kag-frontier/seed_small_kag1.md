@@ -85,7 +85,7 @@ Need operations/runtime -> leave ToS and go to AoA or abyss-stack.
 [2]: https://github.com/8Dionysus/Agents-of-Abyss/blob/main/AGENTS.md "https://github.com/8Dionysus/Agents-of-Abyss/blob/main/AGENTS.md"
 [3]: https://github.com/8Dionysus/Agents-of-Abyss/blob/main/docs/FEDERATION_RULES.md "https://github.com/8Dionysus/Agents-of-Abyss/blob/main/docs/FEDERATION_RULES.md"
 [4]: https://github.com/8Dionysus/Agents-of-Abyss/blob/main/docs/LAYERS.md "https://github.com/8Dionysus/Agents-of-Abyss/blob/main/docs/LAYERS.md"
-[5]: https://raw.githubusercontent.com/8Dionysus/Agents-of-Abyss/main/generated/ecosystem_registry.min.json "https://raw.githubusercontent.com/8Dionysus/Agents-of-Abyss/main/generated/ecosystem_registry.min.json"
+[5]: https://raw.githubusercontent.com/8Dionysus/Agents-of-Abyss/039dbfb4d640a42e210229584df15863d8ce2e68/generated/ecosystem_registry.min.json "https://raw.githubusercontent.com/8Dionysus/Agents-of-Abyss/039dbfb4d640a42e210229584df15863d8ce2e68/generated/ecosystem_registry.min.json"
 [6]: https://github.com/8Dionysus/Tree-of-Sophia/blob/main/docs/KNOWLEDGE_MODEL.md "https://github.com/8Dionysus/Tree-of-Sophia/blob/main/docs/KNOWLEDGE_MODEL.md"
 [7]: https://github.com/8Dionysus/aoa-techniques "https://github.com/8Dionysus/aoa-techniques"
 [8]: https://github.com/8Dionysus/aoa-routing "https://github.com/8Dionysus/aoa-routing"
