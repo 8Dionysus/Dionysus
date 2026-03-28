@@ -1,9 +1,12 @@
-contract_version: 2
-purpose: Human-readable field contract for seed-registry.yaml.
+contract_version: 3
+purpose: Human-readable field contract for seed-registry.yaml with donor provenance, redistribution obligations, and transplant policy.
+
 source_of_truth:
   order: wave manifests
   meaning: source seed files
   closure_state: closure notes for closed waves
+  donor_shaping: provenance policy and donor capture notes
+
 required_top_level_keys:
   - registry_version
   - updated_at
@@ -12,6 +15,7 @@ required_top_level_keys:
   - origin_notes
   - wave_index
   - seed_index
+
 navigation:
   required_keys:
     - canonical_order_source
@@ -21,10 +25,13 @@ navigation:
     - validation_entrypoint
     - registry_contract
     - planting_report_template
+    - provenance_policy
+    - donor_capture_template
     - registry_role
     - archived_root
     - archived_pack
     - next_live_seed
+
 wave_index:
   required_entry_keys:
     - wave
@@ -41,6 +48,7 @@ wave_index:
     - mode should match the manifest JSON payload
     - registry_status must be defined in lifecycle_states
     - closure note status, when present, should agree with registry_status
+
 seed_index:
   required_entry_keys:
     - registry_id
@@ -54,13 +62,84 @@ seed_index:
     - repo_homes
     - first_artifact_hint
     - notes
-  optional_entry_keys: []
+    - provenance
+    - redistribution
+    - transplant
+  optional_entry_keys:
+    - freshness
   constraints:
     - registry_id should be unique
     - source_ref must exist and any markdown anchor must resolve
     - when wave is not null, source_ref should be traceable to that wave manifest
     - when wave is null, registry_status must be gated_next for live next seeds or landed_post_wave for planted post-wave seeds
     - when wave is not null, seed registry_status should match the enclosing wave status
+    - registries adopting this contract should bump registry_version to 2 once all seed entries carry v3 maps
+
+  provenance:
+    required_keys:
+      - origin_mode
+      - donor_repo
+      - donor_ref
+      - donor_license_spdx
+      - donor_paths
+      - provenance_note
+    allowed_origin_modes:
+      - native
+      - donor_derived
+      - mixed
+    constraints:
+      - native entries should keep donor_repo, donor_ref, donor_license_spdx, and provenance_note null and donor_paths empty
+      - donor_derived and mixed entries should name an exact donor_repo and donor_ref
+      - donor_paths should point to the donor surfaces actually mined, even when nothing was copied verbatim
+      - provenance_note should point to a local donor capture note when origin_mode is donor_derived or mixed
+
+  redistribution:
+    required_keys:
+      - license_spdx
+      - upstream_license_ref
+      - copy_license_required
+      - notice_required
+      - retain_attribution_required
+      - mark_modifications_required
+      - modified_from_upstream
+      - obligations_note
+    constraints:
+      - native entries may keep license_spdx and upstream_license_ref null when no third-party material shaped the seed
+      - donor_derived and mixed entries should name the upstream SPDX identifier when known
+      - obligations_note should summarize concrete redistribution obligations or explicitly say none beyond license retention
+      - mark_modifications_required should be true when redistributed modified upstream files need change markers
+
+  transplant:
+    required_keys:
+      - policy
+      - what_survives
+      - what_stays_behind
+      - non_goals
+    allowed_policies:
+      - native
+      - idea_only
+      - pattern_extract
+      - adapt_with_attribution
+      - vendor_verbatim
+      - read_only_donor
+    constraints:
+      - native entries should use policy=native
+      - donor_derived or mixed entries should not leave what_survives or what_stays_behind empty
+      - what_survives should describe the bounded reusable form
+      - what_stays_behind should name donor doctrine, environment assumptions, or sprawl intentionally excluded
+      - non_goals should stay aligned with planting reports and target-repo boundaries
+
+  freshness:
+    required_keys:
+      - last_revalidated_at
+      - revalidate_after_days
+      - superseded_by
+    constraints:
+      - last_revalidated_at should be null or an ISO date
+      - revalidate_after_days should be null or a positive integer
+      - superseded_by should be null or another registry_id
+      - donor_derived and mixed entries should prefer freshness metadata once public donor intake becomes active
+
 navigation_constraints:
   - archived_root and archived_pack must exist
   - next_live_seed must match a seed_index entry with registry_status gated_next

@@ -55,6 +55,27 @@ For every planted seed, leave all of the following:
    - tests added
    - or explicit statement that planting stopped at docs/contracts only
 5. Explicit non-goals or skipped zones.
+6. When the seed is donor-derived or materially shaped by a public external repo, also leave:
+   - donor repo and exact donor ref
+   - upstream license / notice obligations in compact form
+   - transplant policy
+   - explicit `what survives` / `what stays behind` notes
+
+## Donor-shaped planting additions
+
+For donor-derived or mixed seeds, the planting package should stay honest about what kind of carry-over is happening:
+
+- `idea_only`: donor influenced the shape, but no donor material is being redistributed here
+- `pattern_extract`: the reusable object is the bounded pattern, not the donor's codebase or worldview
+- `adapt_with_attribution`: upstream structure or text was adapted and must retain the right attribution trail
+- `vendor_verbatim`: upstream material is carried near-verbatim and must preserve license / notice obligations
+- `read_only_donor`: donor remains evidence or source context only and is not redistributed through the landing
+
+A donor-shaped planting should also answer:
+
+- what survives
+- what stays behind
+- what redistribution obligations were recorded
 
 ## Boundaries that must survive
 

@@ -1,0 +1,48 @@
+registry_id: aoa-source-first-donor-refinery
+label: AOA-SEED-04 Source-First Donor Refinery
+source_ref: archive/seed_bundle/seeds_aoa.md#aoa-seed-04-source-first-donor-refinery
+wave: second_wave
+projects:
+- AoA
+kind: architecture-seed
+registry_status: archived_canonical
+parent_seed: null
+repo_homes:
+- Agents-of-Abyss
+- aoa-techniques
+- aoa-skills
+- aoa-playbooks
+- aoa-evals
+first_artifact_hint: donor intake rubric plus two worked donor examples
+notes: Turns donor repos into patterns, not imported dogma.
+provenance:
+  origin_mode: native
+  donor_repo: null
+  donor_ref: null
+  donor_license_spdx: null
+  donor_paths: []
+  provenance_note: null
+redistribution:
+  license_spdx: null
+  upstream_license_ref: null
+  copy_license_required: false
+  notice_required: false
+  retain_attribution_required: false
+  mark_modifications_required: false
+  modified_from_upstream: false
+  obligations_note: No third-party redistribution obligations recorded at this seed
+    surface.
+transplant:
+  policy: native
+  what_survives:
+  - source-first donor intake as a bounded governance pattern
+  - pattern extraction before repo-level doctrine import
+  what_stays_behind:
+  - no external repo doctrine is imported as canon at the seed level
+  non_goals:
+  - no wholesale donor repo import
+  - no runtime automation implied by this registry entry
+freshness:
+  last_revalidated_at: '2026-03-24'
+  revalidate_after_days: null
+  superseded_by: null

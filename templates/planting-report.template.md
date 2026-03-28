@@ -13,6 +13,14 @@ Use one report per planted seed whenever possible.
 - PR / commit / issue: target repo PR #... merged as <sha>; Dionysus report PR #... merged as <sha> (if applicable)
 - Maintainer:
 
+## Donor provenance (only for donor-shaped or mixed seeds)
+
+- Donor repo / ref:
+- Transplant policy:
+- What survives:
+- What stays behind:
+- Redistribution obligations:
+
 ## Contract being planted
 
 Write 2 to 5 sentences on what this planting is trying to make explicit.

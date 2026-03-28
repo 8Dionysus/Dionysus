@@ -25,16 +25,27 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 
 - `first_wave.manifest.json` through `ninth_wave.manifest.json` define the planting waves.
 - `scripts/validate_manifest.py` validates manifest refs.
-- `scripts/validate_seed_registry.py` validates `seed-registry.yaml`, wave linkage, and closure-note status alignment.
-- `scripts/validate_seed_surfaces.py` runs both validators as one entrypoint.
+- `scripts/validate_seed_registry.py` validates `seed-registry.yaml`, required v3 provenance/redistribution/transplant shape, wave linkage, and closure-note status alignment.
+- `scripts/validate_nested_agents.py` validates the required root and local `AGENTS.md` coverage for the wave 1.3 operating surfaces.
+- `scripts/validate_seed_surfaces.py` runs all three validators as one entrypoint.
 - `archive/` is the canonical archive root.
 - `archive/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
+- `archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r1-agents-runtime-seam` is the archived source pack for the landed post-wave runtime slice.
 - `seed_expansion/seed.tos.zarathustra-trilingual-entry.v0.md#tos-expansion-zarathustra-trilingual-entry` landed in `Tree-of-Sophia` and remains live in the registry until a later archival pass.
-- `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion` is the next live gated seed surface after that bounded trilingual landing.
+- `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion` is the next live gated seed surface, now synced to the bounded Zarathustra-route review gate in `Tree-of-Sophia`.
 - `seed-registry.yaml` is the navigation overlay for humans and Codex.
-- `schema/seed-registry.contract.yaml` defines the registry field contract.
+- `seed_clawrouter_donor_graft.md` and `seed_clawrouter_donor_graft.map.yaml` stage a donor-origin prep slice for later bounded ClawRouter plantings without changing the current next-live seed.
+- `seed_wave1_codex_audit_spine.md` and `seed_wave1_codex_audit_spine.map.yaml` stage a future cross-repo Codex audit wave without planting into the owning repos yet.
+- `seed_wave2_codex_skill_proof_audit_bridge.md` and `seed_wave2_codex_skill_proof_audit_bridge.map.yaml` stage the later skill/proof audit seam wave without planting into the owning repos yet.
+- `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, and their `.map.yaml` files stage additional future prep packs and candidate lineage without changing the current next-live seed.
+- `seed_wave3_codex_repo_local_skills_trace_harness.md` and `seed_wave3_codex_repo_local_skills_trace_harness.map.yaml` stage the later repo-local Codex skills and trace-harness audit wave without downstream planting yet.
+- `schema/seed-registry.contract.yaml` defines the registry field contract, including v3 provenance and transplant maps.
 - `docs/codex/planting-protocol.md` defines the planting discipline.
+- `docs/codex/seed-provenance-policy.md` and `docs/codex/seed-registry-v3-migration.md` define donor-shaped intake rules and the staged v3 migration path.
+- `templates/donor-capture.template.md` is the local donor-intake note shape for donor-derived or mixed seeds.
 - `templates/planting-report.template.md` and `reports/planting/` define how planting trace should be stored when Dionysus keeps the report.
+- `scripts/check_seed_registry_v3_readiness.py` provides an advisory v3 readiness check plus report/stub generation.
+- `reports/seed-registry-v3-readiness.md` records the current advisory v3 readiness snapshot for the live registry.
 
 ## Source-of-truth order
 
@@ -54,7 +65,7 @@ The manifest defines order. The seed file defines meaning. The closure note defi
 
 - `archive/`
   - historical canonical seed sources
-  - previous bundles, rootlines, witness seeds, templates, branch pilots, soil-prep files, and archived packs
+  - previous bundles, rootlines, witness seeds, templates, branch pilots, soil-prep files, archived packs, and archived post-wave seed-packs
 - `seed_expansion/`
   - live gated future-work surfaces after the archived ninth wave
 - `*_wave.manifest.json`
@@ -63,22 +74,46 @@ The manifest defines order. The seed file defines meaning. The closure note defi
   - closure state and landed surfaces for wave nine
 - `seed-registry.yaml`
   - human/Codex navigation overlay
+- `seed_clawrouter_donor_graft.md` and `seed_clawrouter_donor_graft.map.yaml`
+  - donor-origin prep note and machine-readable transplant map for later bounded ClawRouter planting
+- `seed_wave1_codex_audit_spine.md` and `seed_wave1_codex_audit_spine.map.yaml`
+  - audit-wave prep note and machine-readable transplant map for later bounded Codex audit planting
+- `seed_wave2_codex_skill_proof_audit_bridge.md` and `seed_wave2_codex_skill_proof_audit_bridge.map.yaml`
+  - skill/proof seam prep note and machine-readable transplant map for later bounded wave 2 audit planting
+- `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, and their `.map.yaml` files
+  - staged future prep packs and candidate lineage preserved in Dionysus without changing the current next-live seed
+- `seed_wave3_codex_repo_local_skills_trace_harness.md` and `seed_wave3_codex_repo_local_skills_trace_harness.map.yaml`
+  - later repo-local Codex skills and trace-harness audit prep note and machine-readable transplant map
 - `schema/seed-registry.contract.yaml`
   - registry field contract and cross-link expectations
+- `AGENTS.md` and local `AGENTS.md` files
+  - repo and directory-level operating guidance for Codex and maintainers
 - `docs/codex/planting-protocol.md`
   - planting rules for Codex and maintainers
+- `docs/codex/seed-provenance-policy.md` and `docs/codex/seed-registry-v3-migration.md`
+  - donor provenance policy and staged v3 migration guidance
+- `templates/donor-capture.template.md`
+  - reusable donor capture note template
+- `templates/seed-entry.v3.native.example.yaml` and `templates/seed-entry.v3.donor.example.yaml`
+  - worked native and donor-shaped v3 registry examples
 - `templates/planting-report.template.md`
   - reusable planting report template
+- `reports/seed-registry-v3-readiness.md`
+  - advisory migration report for the current live registry shape
 - `reports/planting/`
   - durable planting trace when Dionysus is the right place to hold the report
+- `scripts/check_seed_registry_v3_readiness.py`
+  - advisory v3 readiness checker and stub/report generator
 - `scripts/validate_manifest.py`
   - manifest reference validator
 - `scripts/validate_seed_registry.py`
   - registry and closure-alignment validator
+- `scripts/validate_nested_agents.py`
+  - required `AGENTS.md` coverage validator
 - `scripts/validate_seed_surfaces.py`
   - single validation entrypoint for CI and local runs
-- `seed_expat.md`, `seed_self-agent.md`, `seed_trio.md`
-  - origin notes and fertile soil, not first-wave canon
+- `seed_expat.md`, `seed_self-agent.md`, `seed_trio.md`, `seed_clawrouter_donor_graft.md`, `seed_wave1_codex_audit_spine.md`, `seed_wave2_codex_skill_proof_audit_bridge.md`, `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, `seed_wave3_codex_repo_local_skills_trace_harness.md`
+  - origin notes and prep soil, not first-wave canon
 
 ## Seed lifecycle
 
@@ -89,7 +124,7 @@ The manifest defines order. The seed file defines meaning. The closure note defi
 - `gated_next`
   - acknowledged next seed surface, not yet an opened wave
 - `landed_post_wave`
-  - planted and merged post-wave seed kept live in the registry until a later archival pass
+  - planted and merged post-wave seed kept live in the registry even after archive cleanup, until a later lifecycle-model pass changes that status
 
 ## Wave map
 
@@ -117,6 +152,10 @@ The manifest defines order. The seed file defines meaning. The closure note defi
 6. Stop at contracts/docs when a seed would cross red-risk zones.
 7. Leave trace in the PR, commit message, or a report based on `templates/planting-report.template.md`.
 
+For donor-shaped or mixed seeds, also record donor repo/ref, transplant policy, redistribution obligations, and explicit `what survives` / `what stays behind` notes.
+
+Operational editing guidance lives in `AGENTS.md` and the nearest nested `AGENTS.md`.
+
 See `docs/codex/planting-protocol.md` for the detailed rules.
 
 ## Validation
@@ -129,8 +168,17 @@ This runs:
 
 - `python scripts/validate_manifest.py`
 - `python scripts/validate_seed_registry.py`
+- `python scripts/validate_nested_agents.py`
 
-The registry validator checks field shape, path validity, anchor validity, wave linkage, next-live-seed coherence, and closure-note status alignment.
+The registry validator checks field shape, path validity, anchor validity, wave linkage, next-live-seed coherence, and closure-note status alignment. The nested-agents validator checks that the required root and wave-local `AGENTS.md` files are present and non-empty.
+
+For advisory v3 backfill status, also run:
+
+```bash
+python scripts/check_seed_registry_v3_readiness.py seed-registry.yaml --write-report reports/seed-registry-v3-readiness.md
+```
+
+This checker remains advisory and is useful for future donor-shaped additions or registry drift checks.
 
 A GitHub Actions workflow lives at `.github/workflows/validate-seed-surfaces.yml`.
 
