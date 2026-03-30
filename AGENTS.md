@@ -40,6 +40,7 @@ This `AGENTS.md` explains how to work in the repo. It does not overrule the seed
 
 - If you change manifest, registry, closure, archive, or seed-expansion linkage, update the linked surfaces together in one bounded diff.
 - Prefer manifests, registry, reports, templates, and protocol notes over derived exports or decorative growth.
+- Keep derived zip exports under `archive/seed_pack_exports/` rather than the repo root, and do not treat those exports as seed canon.
 - Preserve seed vocabulary unless the mapping is explicit and source-linked.
 - Use `reports/planting/` only when the target-repo PR or commit trail would not preserve the lineage well enough on its own.
 - When adding local operating guidance, keep it close to the working directory and keep it compact.

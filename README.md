@@ -29,6 +29,7 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 - `scripts/validate_nested_agents.py` validates the required root and local `AGENTS.md` coverage for the wave 1.3 operating surfaces.
 - `scripts/validate_seed_surfaces.py` runs all three validators as one entrypoint.
 - `archive/` is the canonical archive root.
+- `archive/seed_pack_exports/` keeps derived convenience zip bundles for review, handoff, or transport; these exports are not authoritative seed surfaces.
 - `archive/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
 - `archive/seed_post_wave/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r1-agents-runtime-seam` is the archived source pack for the landed post-wave runtime slice.
 - `seed_expansion/seed.tos.zarathustra-trilingual-entry.v0.md#tos-expansion-zarathustra-trilingual-entry` landed in `Tree-of-Sophia` and remains live in the registry until a later archival pass.
@@ -66,6 +67,8 @@ The manifest defines order. The seed file defines meaning. The closure note defi
 - `archive/`
   - historical canonical seed sources
   - previous bundles, rootlines, witness seeds, templates, branch pilots, soil-prep files, archived packs, and archived post-wave seed-packs
+- `archive/seed_pack_exports/`
+  - derived zip exports for review, transport, or bounded handoff; not authoritative seed canon
 - `seed_expansion/`
   - live gated future-work surfaces after the archived ninth wave
 - `*_wave.manifest.json`
