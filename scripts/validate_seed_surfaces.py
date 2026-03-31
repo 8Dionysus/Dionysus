@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 VALIDATORS = (
     ROOT / 'scripts' / 'validate_manifest.py',
     ROOT / 'scripts' / 'validate_seed_registry.py',
+    ROOT / 'scripts' / 'validate_prep_packs.py',
     ROOT / 'scripts' / 'validate_nested_agents.py',
 )
 

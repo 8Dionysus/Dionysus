@@ -17,6 +17,15 @@ Dionysus is seed soil, not the final home of repo-owned meaning. Planting should
 
 When closure notes and README wording disagree, treat the manifest and closure note as authoritative and update the README in the same change.
 
+## Named prep-pack staging
+
+When work is coming from a named prep pack instead of an opened wave:
+
+1. Read the pack note.
+2. Read the matching `.map.yaml`.
+3. Use its priority, dependencies, and readiness only as staging guidance.
+4. If a later manifest, live seed, or canonical source surface exists, that stronger surface wins.
+
 ## The unit of work
 
 A planting is successful when one seed produces a small, coherent landing slice inside a target repo.
@@ -98,9 +107,11 @@ Stop at contracts, docs, schemas, and notes when planting would touch:
 
 ## Planting algorithm
 
-### 1. Select the wave
+### 1. Select the source frame
 
-Use the manifest, not intuition, for order.
+Use the manifest for opened or historical waves.
+Use a named prep pack note plus `.map.yaml` when the work should stay flexible
+and a new numbered wave would be premature.
 
 ### 2. Read the source seed
 
@@ -224,6 +235,7 @@ Minimum fields:
 Update `seed-registry.yaml` when:
 
 - a new seed source is added
+- a new named prep pack note or matching `.map.yaml` is added
 - a seed pack changes status
 - a wave closes
 - the next live seed changes
@@ -231,6 +243,8 @@ Update `seed-registry.yaml` when:
 - a closure note changes the canonical status of a wave
 
 Do not use the registry to override manifest order. The registry is navigation, not sovereignty.
+Do not create a new numbered wave just to store future priority when a named prep
+pack is still the more honest surface.
 
 ## Success criteria
 

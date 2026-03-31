@@ -27,10 +27,18 @@ When files pull in different directions, treat these as authoritative in this or
 
 This `AGENTS.md` explains how to work in the repo. It does not overrule the seed surfaces above.
 
+When work starts from a named prep pack with no manifest, read the pack note and
+matching `.map.yaml` from `origin_notes` after checking the stronger live
+surfaces above. Named prep packs stage flexible future work; they do not
+overrule an opened wave, `navigation.next_live_seed`, or canonical seed
+meaning.
+
 ## Local contract
 
 - Keep `Dionysus` small, legible, lineage-preserving, and transplant-focused.
 - Prefer the smallest source-linked change that makes planting, replay, or navigation clearer.
+- Prefer named prep packs over new numbered waves when multi-repo future work should stay flexible and need-driven.
+- Keep the current questbook contour scoped away from `ATM10-Agent`, and defer `aoa-sdk` to its own later named seed.
 - Preserve filenames, anchors, and referenced paths whenever possible.
 - Keep AoA and ToS boundaries explicit. Do not let bridge language become identity collapse.
 - Do not turn `Dionysus` into a shadow owner of runtime behavior or target-repo doctrine.
@@ -41,6 +49,7 @@ This `AGENTS.md` explains how to work in the repo. It does not overrule the seed
 - If you change manifest, registry, closure, archive, or seed-expansion linkage, update the linked surfaces together in one bounded diff.
 - Prefer manifests, registry, reports, templates, and protocol notes over derived exports or decorative growth.
 - Keep derived zip exports under `archive/seed_pack_exports/` rather than the repo root, and do not treat those exports as seed canon.
+- Do not open a new numbered wave just to store planting priority; use a named prep pack plus explicit priority and readiness metadata until a real bounded wave is needed.
 - Preserve seed vocabulary unless the mapping is explicit and source-linked.
 - Use `reports/planting/` only when the target-repo PR or commit trail would not preserve the lineage well enough on its own.
 - When adding local operating guidance, keep it close to the working directory and keep it compact.

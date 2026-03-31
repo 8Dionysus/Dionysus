@@ -1,0 +1,109 @@
+map_version: 1
+updated_at: '2026-03-31'
+seed_note: seed_questbook_foundation_pack.md
+status: future_seed_prep_note
+source_bundle:
+  path: archive/seed_pack_exports/questbook_first_wave_seed.zip
+  included_surfaces:
+    - questbook_first_wave_seed/README.md
+    - questbook_first_wave_seed/APPLY_ORDER.md
+    - questbook_first_wave_seed/SEED_MANIFEST.yaml
+    - questbook_first_wave_seed/TOUCHPOINTS_NOT_INCLUDED.md
+    - questbook_first_wave_seed/later-wave-targets.md
+    - questbook_first_wave_seed/Agents-of-Abyss/
+    - questbook_first_wave_seed/aoa-agents/
+    - questbook_first_wave_seed/aoa-routing/
+    - questbook_first_wave_seed/aoa-playbooks/
+    - questbook_first_wave_seed/aoa-memo/
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - Agents-of-Abyss
+    - aoa-agents
+    - aoa-routing
+    - aoa-playbooks
+    - aoa-memo
+  priority_band: now
+  planting_readiness: ready
+  why_now:
+    - the shared questbook model and route boundaries should harden before repo-local spread
+    - this pack is the smallest honest first contour after removing ATM10 from the current planting line
+    - it creates the center, delegation, routing, playbook, and memo seams that later packs rely on
+  dependencies: []
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+targets:
+  - repo: Agents-of-Abyss
+    contour: federation-center
+    files:
+      - QUESTBOOK.md
+      - docs/QUESTBOOK_MODEL.md
+      - docs/QUESTBOOK_FIRST_WAVE.md
+      - quests/AOA-Q-0001.yaml
+      - quests/AOA-Q-0002.yaml
+      - quests/AOA-Q-0003.yaml
+    focus:
+      - common questbook model
+      - first shared rollout scope
+      - federation-level quest boundary
+  - repo: aoa-agents
+    contour: execution-passport
+    files:
+      - QUESTBOOK.md
+      - docs/QUEST_EXECUTION_PASSPORT.md
+      - schemas/quest_dispatch.schema.json
+      - quests/AOA-AG-Q-0001.yaml
+      - quests/AOA-AG-Q-0002.yaml
+    focus:
+      - difficulty and risk mapping
+      - control mode and delegation posture
+      - leaf-only wrapper allowance
+  - repo: aoa-routing
+    contour: thin-derived-routing
+    files:
+      - QUESTBOOK.md
+      - docs/QUEST_ROUTING_SEAM.md
+      - schemas/quest_dispatch_hint.schema.json
+      - quests/AOA-RT-Q-0001.yaml
+      - quests/AOA-RT-Q-0002.yaml
+    focus:
+      - generated-surface ingestion only
+      - no live quest meaning takeover
+      - thin frontier entry hints
+  - repo: aoa-playbooks
+    contour: harvest-reanchor
+    files:
+      - QUESTBOOK.md
+      - docs/QUEST_HARVEST_AND_REANCHOR.md
+      - quests/AOA-PB-Q-0001.yaml
+      - quests/AOA-PB-Q-0002.yaml
+    focus:
+      - harvest thresholds
+      - reanchor semantics
+      - scenario route promotion
+  - repo: aoa-memo
+    contour: writeback-boundary
+    files:
+      - QUESTBOOK.md
+      - docs/QUEST_EVIDENCE_WRITEBACK.md
+      - quests/AOA-MEM-Q-0001.yaml
+      - quests/AOA-MEM-Q-0002.yaml
+    focus:
+      - memory writeback boundary
+      - compact witness traces
+      - source-owned quest state
+scope_exclusions:
+  - ATM10-Agent
+  - aoa-sdk
+  - aoa-techniques
+  - aoa-skills
+  - aoa-evals
+  - aoa-kag
+  - Tree-of-Sophia
+  - abyss-stack
+  - Dionysus
+  - 8Dionysus
