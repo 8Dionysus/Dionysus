@@ -10,6 +10,7 @@ Use it for:
 - source-vs-runtime drift audits
 - cross-repo closure snapshots
 - controlled-autonomy readiness assessments
+- closeout digests for audit-driven remediation waves
 
 Do not use it for:
 
