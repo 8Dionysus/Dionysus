@@ -7,23 +7,42 @@ Scenario-based LangGraph pilot on the promoted llama.cpp substrate with mileston
 - Status counts: `{"pass": 8, "fail": 0, "planned": 0}`
 - Next action: W5 passed on promoted llama.cpp + LangGraph. Use this substrate as the bounded baseline for the next autonomy-focused wave.
 
+## Truth Status
+- source_authored: `true`
+- deployed: `true`
+- trial_proven: `true`
+- live_available: `true`
+- note: This truth status tracks the W5 implementation surface for aoa-sync-federation-surfaces --check.
+- note: source_authored inspects the canonical source checkout copy.
+- note: deployed inspects the operator-visible Configs/scripts copy.
+- note: trial_proven is backed by the passing W5 implementation scenario packet.
+- note: live_available is true only because the W5 scenario passed and the deployed script exposes --check.
+
 ## Cases
 - `runtime-inspect-langchain-health`: `pass` [2026-03-30.w5-langgraph-llamacpp-v1.W5.runtime-inspect-langchain-health.md](/srv/Dionysus/reports/local-ai-trials/w5-langgraph-llamacpp-v1/2026-03-30.w5-langgraph-llamacpp-v1.W5.runtime-inspect-langchain-health.md)
   Inspect Langchain API Health
+  truth_status: source_authored=true, deployed=true, trial_proven=true, live_available=true
 - `runtime-inspect-route-api-health`: `pass` [2026-03-30.w5-langgraph-llamacpp-v1.W5.runtime-inspect-route-api-health.md](/srv/Dionysus/reports/local-ai-trials/w5-langgraph-llamacpp-v1/2026-03-30.w5-langgraph-llamacpp-v1.W5.runtime-inspect-route-api-health.md)
   Inspect Route API Health
+  truth_status: source_authored=true, deployed=true, trial_proven=true, live_available=true
 - `runtime-inspect-platform-adaptation`: `pass` [2026-03-30.w5-langgraph-llamacpp-v1.W5.runtime-inspect-platform-adaptation.md](/srv/Dionysus/reports/local-ai-trials/w5-langgraph-llamacpp-v1/2026-03-30.w5-langgraph-llamacpp-v1.W5.runtime-inspect-platform-adaptation.md)
   Inspect Latest Platform Adaptation Record
+  truth_status: source_authored=true, deployed=true, trial_proven=true, live_available=true
 - `evals-validate-and-explain`: `pass` [2026-03-30.w5-langgraph-llamacpp-v1.W5.evals-validate-and-explain.md](/srv/Dionysus/reports/local-ai-trials/w5-langgraph-llamacpp-v1/2026-03-30.w5-langgraph-llamacpp-v1.W5.evals-validate-and-explain.md)
   Run aoa-evals Validator And Explain Boundary
+  truth_status: source_authored=true, deployed=true, trial_proven=true, live_available=true
 - `aoa-evals-contract-wording-alignment`: `pass` [2026-03-30.w5-langgraph-llamacpp-v1.W5.aoa-evals-contract-wording-alignment.md](/srv/Dionysus/reports/local-ai-trials/w5-langgraph-llamacpp-v1/2026-03-30.w5-langgraph-llamacpp-v1.W5.aoa-evals-contract-wording-alignment.md)
   aoa-evals Contract Wording Alignment
+  truth_status: source_authored=true, deployed=true, trial_proven=true, live_available=true
 - `aoa-routing-doc-boundary-alignment`: `pass` [2026-03-30.w5-langgraph-llamacpp-v1.W5.aoa-routing-doc-boundary-alignment.md](/srv/Dionysus/reports/local-ai-trials/w5-langgraph-llamacpp-v1/2026-03-30.w5-langgraph-llamacpp-v1.W5.aoa-routing-doc-boundary-alignment.md)
   aoa-routing Boundary Doc Alignment
+  truth_status: source_authored=true, deployed=true, trial_proven=true, live_available=true
 - `aoa-routing-generated-surface-refresh`: `pass` [2026-03-30.w5-langgraph-llamacpp-v1.W5.aoa-routing-generated-surface-refresh.md](/srv/Dionysus/reports/local-ai-trials/w5-langgraph-llamacpp-v1/2026-03-30.w5-langgraph-llamacpp-v1.W5.aoa-routing-generated-surface-refresh.md)
   aoa-routing Generated Surface Refresh
+  truth_status: source_authored=true, deployed=true, trial_proven=true, live_available=true
 - `stack-sync-federation-check-mode`: `pass` [2026-03-30.w5-langgraph-llamacpp-v1.W5.stack-sync-federation-check-mode.md](/srv/Dionysus/reports/local-ai-trials/w5-langgraph-llamacpp-v1/2026-03-30.w5-langgraph-llamacpp-v1.W5.stack-sync-federation-check-mode.md)
   Add Check Mode To Federation Sync
+  truth_status: source_authored=true, deployed=true, trial_proven=true, live_available=true
 
 ## Gate Detail
 ```json

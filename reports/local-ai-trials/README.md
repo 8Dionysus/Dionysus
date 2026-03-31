@@ -8,6 +8,7 @@ Keep here:
 
 - case-level Markdown reports
 - wave-level Markdown digests
+- additive `truth_status` clarifications when source, deployment, trial, and live state differ
 
 Keep out of here:
 
@@ -19,6 +20,17 @@ Keep out of here:
 Runtime truth stays in:
 
 - `/srv/abyss-stack/Logs/local-ai-trials/`
+
+When a mirrored report talks about promoted runtime behavior, keep these states separate:
+
+- `source_authored`
+- `deployed`
+- `trial_proven`
+- `live_available`
+
+The mirror may clarify those fields for humans.
+It must not replace the machine-readable runtime truth owned by `abyss-stack`.
+The operator verdict for current autonomy posture stays in `abyss-stack` at `scripts/aoa-status --autonomy`.
 
 Durable program roots:
 
