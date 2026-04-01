@@ -70,7 +70,7 @@ EXPECTED_PACKS = {
         "seed_id": "seed.questbook.seedgarden-profile-pack.v0",
         "priority": "later",
         "priority_band": "later",
-        "planting_readiness": "blocked",
+        "planting_readiness": "needs_adaptation",
         "source_bundle": "archive/seed_pack_exports/questbook_second_wave_seed.zip",
         "targets": [
             "Dionysus",

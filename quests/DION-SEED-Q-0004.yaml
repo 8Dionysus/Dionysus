@@ -1,0 +1,48 @@
+schema_version: work_quest_v1
+id: DION-SEED-Q-0004
+title: Track live gated seed closure and later seed readiness without converting repo-local backlog into seed canon
+summary: Use quests to track later seed readiness and live-seed closure without
+  bloating the seed garden into a general backlog.
+repo: Dionysus
+owner_surface: future-seeds/readiness
+theme_ref: ''
+milestone_ref: ''
+kind: support
+state: captured
+band: latent
+difficulty: d3_seam
+risk: r1_repo_local
+control_mode: human_codex_copilot
+delegate_tier: planner
+fallback_tier: archivist
+wrapper_class: codex_primary
+write_scope: docs_only
+split_required: true
+complexity_basis:
+  scope: 2
+  ambiguity: 2
+  boundary: 1
+  verification: 1
+parent: null
+depends_on: []
+activation:
+  mode: manual
+  note: open when the next live seed, closure state, or later reflection contour changes
+anchor_ref:
+  artifact: seed-registry
+  ref: seed-registry.yaml
+handoff_role: seed-garden-maintainer
+evidence:
+- live gated seed closure receives stable quest IDs
+- later seed readiness is explicit
+- repo-local backlog is not mislabeled as seed canon
+harvest:
+  target: none
+opened_at: '2026-03-31'
+touched_at: '2026-03-31'
+tags:
+- future-seed
+- closure
+- readiness
+notes: profile-level reflection in 8Dionysus remains deferred until a later public-profile refresh contour
+public_safe: true

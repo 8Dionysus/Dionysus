@@ -1,0 +1,51 @@
+schema_version: work_quest_v1
+id: DION-SEED-Q-0002
+title: Keep wave manifests, named prep packs, seed registry, and planting protocol aligned across live and staged seed surfaces
+summary: Use quests to keep the seed garden honest as wave manifests, prep-pack maps,
+  registry entries, and planting protocol evolve.
+repo: Dionysus
+owner_surface: planting/alignment
+theme_ref: ''
+milestone_ref: ''
+kind: guardrail
+state: triaged
+band: frontier
+difficulty: d3_seam
+risk: r2_contract
+control_mode: human_codex_copilot
+delegate_tier: planner
+fallback_tier: verifier
+wrapper_class: hybrid
+write_scope: repo_local
+split_required: true
+complexity_basis:
+  scope: 2
+  ambiguity: 1
+  boundary: 2
+  verification: 2
+parent: null
+depends_on: []
+activation:
+  mode: on_review_of
+  ref: seed-registry.yaml
+  note: review when live or staged seed surfaces change
+anchor_ref:
+  artifact: source-of-truth-order
+  ref: README.md
+  note: the manifest defines order, the seed file defines meaning, and named prep-pack notes remain staging overlays
+handoff_role: seed-garden-maintainer
+evidence:
+- manifest, prep-pack, registry, and protocol drift receives stable quest IDs
+- live or staged seed changes map back to waves or named prep packs
+- validator scope remains explicit
+harvest:
+  target: none
+opened_at: '2026-03-31'
+touched_at: '2026-03-31'
+tags:
+- manifest
+- prep-pack
+- registry
+- protocol
+notes: ''
+public_safe: true

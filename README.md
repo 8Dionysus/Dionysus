@@ -28,7 +28,7 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 - `scripts/validate_manifest.py` validates manifest refs.
 - `scripts/validate_seed_registry.py` validates `seed-registry.yaml`, required v3 provenance/redistribution/transplant shape, wave linkage, and closure-note status alignment.
 - `scripts/validate_nested_agents.py` validates the required root and local `AGENTS.md` coverage for the wave 1.3 operating surfaces.
-- `scripts/validate_seed_surfaces.py` runs all three validators as one entrypoint.
+- `scripts/validate_seed_surfaces.py` runs all five validators as one entrypoint.
 - `archive/` is the canonical archive root.
 - `archive/seed_pack_exports/` keeps derived convenience zip bundles for review, handoff, or transport; these exports are not authoritative seed surfaces.
 - `archive/seed_pack_2026-03-22/` is the archived canonical source pack for the closed ninth wave.
@@ -42,6 +42,7 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 - `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, and their `.map.yaml` files stage additional future prep packs and candidate lineage without changing the current next-live seed.
 - `seed_wave3_codex_repo_local_skills_trace_harness.md` and `seed_wave3_codex_repo_local_skills_trace_harness.map.yaml` stage the later repo-local Codex skills and trace-harness audit wave without downstream planting yet.
 - `seed_questbook_foundation_pack.md`, `seed_questbook_source_proof_pack.md`, `seed_questbook_boundary_runtime_pack.md`, and `seed_questbook_seedgarden_profile_pack.md`, with matching `.map.yaml` files, stage a need-driven questbook rollout as named prep packs without opening a tenth numbered wave.
+- `QUESTBOOK.md`, `docs/QUESTBOOK_SEED_GARDEN_INTEGRATION.md`, `quests/*.yaml`, `schemas/quest*.json`, and `generated/*.example.json` now hold the repo-local questbook reflection layer for seed-garden follow-through inside `Dionysus`; profile-level reflection in `8Dionysus` remains deferred to a later public-entry refresh contour.
 - The current questbook contour explicitly leaves `ATM10-Agent` outside this planting line and defers `aoa-sdk` to the next separate named seed after the four-pack rollout lands.
 - `archive/seed_pack_exports/questbook_first_wave_seed.zip` and `archive/seed_pack_exports/questbook_second_wave_seed.zip` are transport-provenance bundles for the staged questbook prep packs; they are not authoritative seed surfaces.
 - `schema/seed-registry.contract.yaml` defines the registry field contract, including v3 provenance and transplant maps.
@@ -117,6 +118,8 @@ overrule an opened wave or the current live seed.
   - advisory migration report for the current live registry shape
 - `reports/planting/`
   - durable planting trace when Dionysus is the right place to hold the report
+- `QUESTBOOK.md`, `docs/QUESTBOOK_SEED_GARDEN_INTEGRATION.md`, `quests/*.yaml`, `schemas/quest*.json`, `generated/*.example.json`
+  - repo-local questbook reflection surfaces for planting follow-through, not a second sovereignty layer
 - `scripts/check_seed_registry_v3_readiness.py`
   - advisory v3 readiness checker and stub/report generator
 - `scripts/validate_manifest.py`
@@ -127,6 +130,8 @@ overrule an opened wave or the current live seed.
   - required `AGENTS.md` coverage validator
 - `scripts/validate_prep_packs.py`
   - named prep-pack validator for questbook staging notes and maps
+- `scripts/validate_questbook_surface.py`
+  - repo-local questbook reflection validator for Dionysus seed-garden surfaces
 - `scripts/validate_seed_surfaces.py`
   - single validation entrypoint for CI and local runs
 - `seed_expat.md`, `seed_self-agent.md`, `seed_trio.md`, `seed_clawrouter_donor_graft.md`, `seed_wave1_codex_audit_spine.md`, `seed_wave2_codex_skill_proof_audit_bridge.md`, `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, `seed_wave3_codex_repo_local_skills_trace_harness.md`, `seed_questbook_foundation_pack.md`, `seed_questbook_source_proof_pack.md`, `seed_questbook_boundary_runtime_pack.md`, `seed_questbook_seedgarden_profile_pack.md`
@@ -186,9 +191,10 @@ This runs:
 - `python scripts/validate_manifest.py`
 - `python scripts/validate_seed_registry.py`
 - `python scripts/validate_prep_packs.py`
+- `python scripts/validate_questbook_surface.py`
 - `python scripts/validate_nested_agents.py`
 
-The registry validator checks field shape, path validity, anchor validity, wave linkage, next-live-seed coherence, and closure-note status alignment. The nested-agents validator checks that the required root and wave-local `AGENTS.md` files are present and non-empty.
+The registry validator checks field shape, path validity, anchor validity, wave linkage, next-live-seed coherence, and closure-note status alignment. The questbook validator checks that the repo-local seed-garden questbook stays aligned with its local YAML and example surfaces. The nested-agents validator checks that the required root and wave-local `AGENTS.md` files are present and non-empty.
 
 For advisory v3 backfill status, also run:
 

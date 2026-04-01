@@ -1,0 +1,72 @@
+from __future__ import annotations
+
+import shutil
+import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
+from scripts import validate_questbook_surface
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+SURFACE_PATHS = (
+    "QUESTBOOK.md",
+    "docs/QUESTBOOK_SEED_GARDEN_INTEGRATION.md",
+    "schemas",
+    "generated",
+    "quests",
+)
+
+
+def copy_surface(target_root: Path) -> None:
+    for relative_path in SURFACE_PATHS:
+        source = REPO_ROOT / relative_path
+        destination = target_root / relative_path
+        if source.is_dir():
+            shutil.copytree(source, destination)
+        else:
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, destination)
+
+
+class ValidateQuestbookSurfaceTests(unittest.TestCase):
+    def test_repo_surface_validates(self) -> None:
+        self.assertEqual([], validate_questbook_surface.run_validation(REPO_ROOT))
+
+    def test_missing_tracked_id_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            questbook_path = root / "QUESTBOOK.md"
+            questbook_path.write_text(
+                questbook_path.read_text(encoding="utf-8").replace(
+                    "DION-SEED-Q-0004", "DION-SEED-Q-9999", 1
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("QUESTBOOK.md must reference 'DION-SEED-Q-0004'", errors[0])
+
+    def test_wrong_repo_in_quest_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            quest_path = root / "quests" / "DION-SEED-Q-0001.yaml"
+            quest_path.write_text(
+                quest_path.read_text(encoding="utf-8").replace(
+                    "repo: Dionysus", "repo: 8Dionysus", 1
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("DION-SEED-Q-0001 repo must equal 'Dionysus'", errors[0])
+
+
+if __name__ == "__main__":
+    unittest.main()

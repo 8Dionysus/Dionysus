@@ -21,10 +21,12 @@ tags:
 
 Prepare the final questbook rollout contour from
 `archive/seed_pack_exports/questbook_second_wave_seed.zip` for `Dionysus` and
-`8Dionysus`.
+later `8Dionysus`.
 
-This pack should come last so the seed garden and profile layer reflect planted
-upstream reality instead of racing ahead and becoming a shadow command center.
+The upstream contour is now real enough for the `Dionysus` slice to land as a
+seed-garden reflection layer. Keep `8Dionysus` deferred until a later
+public-profile refresh contour so the profile layer does not race ahead and
+become a shadow command center.
 
 ## Why this belongs in Dionysus
 
@@ -75,6 +77,7 @@ Keep the default order flexible but bias toward:
 
 ## Final rule
 
-Use this pack only after the upstream questbook contour becomes real enough to
-mirror honestly. `Dionysus` and `8Dionysus` should stay coordination and
-orientation surfaces, not a hidden second sovereignty layer.
+Use this pack to land `Dionysus` first now that the upstream questbook contour
+is real enough to mirror honestly. Keep `8Dionysus` for a later public-profile
+refresh so both repos stay coordination and orientation surfaces, not a hidden
+second sovereignty layer.

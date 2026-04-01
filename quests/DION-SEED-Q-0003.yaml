@@ -1,0 +1,49 @@
+schema_version: work_quest_v1
+id: DION-SEED-Q-0003
+title: Treat zip exports and transport packs as derived convenience surfaces with validity checks, not authority
+summary: Use quests to keep transport packs honest as convenience surfaces rather
+  than accidental source truth.
+repo: Dionysus
+owner_surface: exports/transport
+theme_ref: ''
+milestone_ref: ''
+kind: guardrail
+state: captured
+band: near
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: verifier
+fallback_tier: planner
+wrapper_class: local_validator
+write_scope: generated_only
+split_required: false
+complexity_basis:
+  scope: 1
+  ambiguity: 1
+  boundary: 1
+  verification: 2
+parent: null
+depends_on: []
+activation:
+  mode: on_review_of
+  ref: archive/seed_pack_exports/
+  note: review when export bundles are refreshed
+anchor_ref:
+  artifact: export-derivation
+  ref: archive/seed_pack_exports/
+handoff_role: seed-garden-maintainer
+evidence:
+- exports are marked derived
+- validity checks are named
+- canonical seed sources remain explicit
+harvest:
+  target: none
+opened_at: '2026-03-31'
+touched_at: '2026-03-31'
+tags:
+- exports
+- transport
+- derived
+notes: generated example projections remain reviewable convenience surfaces only
+public_safe: true
