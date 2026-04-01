@@ -22,6 +22,8 @@ SURFACE_PATHS = (
     "seed_questbook_seedgarden_profile_pack.map.yaml",
     "seed_rpg_first_wave_pack.md",
     "seed_rpg_first_wave_pack.map.yaml",
+    "seed_rpg_second_wave_pack.md",
+    "seed_rpg_second_wave_pack.map.yaml",
 )
 
 
@@ -96,6 +98,47 @@ class ValidatePrepPacksTests(unittest.TestCase):
 
         self.assertEqual(1, len(errors))
         self.assertIn("source_bundle.path must be 'archive/seed_pack_exports/rpg_first_wave_seed.zip'", errors[0])
+
+    def test_rpg_pack_rejects_legacy_top_level_selection_fields(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            map_path = root / "seed_rpg_second_wave_pack.map.yaml"
+            map_path.write_text(
+                map_path.read_text(encoding="utf-8").replace(
+                    "\nnavigation_constraints:\n",
+                    "\npriority_band: next\nnavigation_constraints:\n",
+                    1,
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_prep_packs.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("'priority_band' must live under selection_policy", errors[0])
+
+    def test_rpg_pack_rejects_invalid_readiness_label(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            map_path = root / "seed_rpg_second_wave_pack.map.yaml"
+            map_path.write_text(
+                map_path.read_text(encoding="utf-8").replace(
+                    "planting_readiness: ready",
+                    "planting_readiness: ready_after_first_wave",
+                    1,
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_prep_packs.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn(
+            "selection_policy.planting_readiness must be one of ['blocked', 'needs_adaptation', 'ready']",
+            errors[0],
+        )
 
 
 if __name__ == "__main__":

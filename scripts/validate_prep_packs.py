@@ -18,6 +18,12 @@ ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_PRIORITY = {"now", "next", "later", "hold"}
 ALLOWED_PRIORITY_BANDS = {"now", "next", "later", "hold"}
 ALLOWED_PLANTING_READINESS = {"ready", "needs_adaptation", "blocked"}
+LEGACY_TOP_LEVEL_SELECTION_KEYS = (
+    "priority_band",
+    "planting_readiness",
+    "why_now",
+    "dependencies",
+)
 
 PACK_FAMILIES = {
     "questbook": {
@@ -107,6 +113,22 @@ PACK_FAMILIES = {
                     "Dionysus",
                 ],
                 "dependencies": [],
+            },
+            "seed_rpg_second_wave_pack.md": {
+                "seed_id": "seed.rpg.second-wave-pack.v0",
+                "priority": "next",
+                "priority_band": "next",
+                "planting_readiness": "ready",
+                "source_bundle": "archive/seed_pack_exports/rpg_second_wave_seed.zip",
+                "targets": [
+                    "Agents-of-Abyss",
+                    "aoa-techniques",
+                    "aoa-skills",
+                    "Dionysus",
+                ],
+                "dependencies": [
+                    "seed.rpg.first-wave-pack.v0",
+                ],
             },
         },
     },
@@ -267,6 +289,9 @@ def validate_prep_packs(root: Path = ROOT) -> None:
         for key in MAP_REQUIRED_KEYS:
             if key not in mapping:
                 fail(f"{map_path.name}: missing required key '{key}'")
+        for key in LEGACY_TOP_LEVEL_SELECTION_KEYS:
+            if key in mapping:
+                fail(f"{map_path.name}: '{key}' must live under selection_policy")
         if require_nonempty_string(mapping["seed_note"], f"{map_path.name}.seed_note") != note_name:
             fail(f"{map_path.name}.seed_note must be '{note_name}'")
 
