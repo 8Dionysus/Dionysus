@@ -10,11 +10,15 @@ from scripts import validate_questbook_surface
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SURFACE_PATHS = (
+    "README.md",
     "QUESTBOOK.md",
     "docs/QUESTBOOK_SEED_GARDEN_INTEGRATION.md",
+    "docs/codex",
     "schemas",
     "generated",
     "quests",
+    "archive/seed_pack_exports",
+    "seed-registry.yaml",
 )
 
 
@@ -48,7 +52,7 @@ class ValidateQuestbookSurfaceTests(unittest.TestCase):
             errors = validate_questbook_surface.run_validation(root)
 
         self.assertEqual(1, len(errors))
-        self.assertIn("QUESTBOOK.md must reference 'DION-SEED-Q-0004'", errors[0])
+        self.assertIn("QUESTBOOK.md must reference active quest id 'DION-SEED-Q-0004'", errors[0])
 
     def test_wrong_repo_in_quest_fails_validation(self) -> None:
         with TemporaryDirectory() as temp_dir:

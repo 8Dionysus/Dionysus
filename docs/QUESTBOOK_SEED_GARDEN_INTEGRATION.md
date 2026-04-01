@@ -42,3 +42,9 @@ Good seed-garden quests usually answer:
 - which live seed or closure state needs explicit follow-through
 - which export or transport surface needs validity checks
 - which later seed-garden reflection obligation survived current review
+
+## Manual-first pilot reflection
+
+- The March 31 manual-first questbook pilot now has live state transitions in source/proof repos, one playbook reanchor decision, and one memo writeback note without opening routing automation.
+- `Dionysus` reflects that state through `QUESTBOOK.md`, `quests/*.yaml`, and the durable planting report [2026-03-31.dionysus.questbook-manual-first-pilot.md](../reports/planting/2026-03-31.dionysus.questbook-manual-first-pilot.md).
+- No new wave opened for this pass, and `8Dionysus` remains deferred until a later public-profile refresh contour.

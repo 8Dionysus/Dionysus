@@ -18,8 +18,7 @@ Do not use it for:
 
 ## Frontier
 
-- `DION-SEED-Q-0001` — land a seed-garden questbook for planting obligations and validator follow-ups
-- `DION-SEED-Q-0002` — keep wave manifests, named prep packs, seed registry, and planting protocol aligned across live and staged seed surfaces
+- none yet
 
 ## Near
 

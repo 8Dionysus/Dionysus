@@ -8,7 +8,7 @@ owner_surface: questbook/public-surface
 theme_ref: ''
 milestone_ref: ''
 kind: rollout
-state: ready
+state: done
 band: frontier
 difficulty: d2_slice
 risk: r1_repo_local
@@ -44,5 +44,7 @@ tags:
 - seed-garden
 - planting
 - questbook
-notes: generated example surfaces stay review-only until a real builder lands
+notes: Closed in the Phase 2 manual-first hygiene pass after the seed-garden
+  questbook surface, schemas, validator, and review-only example projections all
+  landed.
 public_safe: true

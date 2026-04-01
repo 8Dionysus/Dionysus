@@ -8,7 +8,7 @@ owner_surface: planting/alignment
 theme_ref: ''
 milestone_ref: ''
 kind: guardrail
-state: triaged
+state: done
 band: frontier
 difficulty: d3_seam
 risk: r2_contract
@@ -47,5 +47,7 @@ tags:
 - prep-pack
 - registry
 - protocol
-notes: ''
+notes: Closed in the Phase 2 manual-first pilot after the seed-garden report and
+  integration note recorded live quest transitions while keeping 8Dionysus
+  deferred and routing automation out of scope.
 public_safe: true
