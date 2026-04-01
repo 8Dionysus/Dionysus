@@ -24,6 +24,7 @@ Do not use it for:
 
 - `DION-SEED-Q-0003` — treat zip exports and transport packs as derived convenience surfaces with validity checks, not authority
 - `DION-SEED-Q-0005` — stage the RPG first-wave reflection pack as a named seed-garden prep pack
+- `DION-SEED-Q-0006` — stage the RPG second-wave abilities-and-feats pack as a named seed-garden prep pack
 
 ## Latent / parked
 
