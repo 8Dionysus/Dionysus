@@ -20,6 +20,7 @@ This note shows how `QUESTBOOK.md` fits into `Dionysus` as the public tracked su
 - target repositories remain the owners of their own quest meaning
 - `Dionysus` reflects planting drift, archive/export validity, and live-seed readiness without re-owning AoA, ToS, KAG, infra, or profile doctrine
 - `8Dionysus` remains deferred until a later public-profile refresh contour
+- the compact quest surfaces in `generated/` stay derived from `quests/*.yaml`
 - the example surfaces in `generated/` stay review-only examples, not live authority
 
 ## Good anchors in this repo

@@ -15,24 +15,29 @@ except ImportError as exc:  # pragma: no cover
     )
     raise SystemExit(1) from exc
 
+if __package__:
+    from . import build_questbook_surfaces as questbook_builder
+else:  # pragma: no cover - script entrypoint path
+    import build_questbook_surfaces as questbook_builder
+
 ROOT = Path(__file__).resolve().parents[1]
 QUESTBOOK_PATH = Path("QUESTBOOK.md")
 QUESTBOOK_INTEGRATION_PATH = Path("docs") / "QUESTBOOK_SEED_GARDEN_INTEGRATION.md"
 QUEST_SCHEMA_PATH = Path("schemas") / "quest.schema.json"
 QUEST_DISPATCH_SCHEMA_PATH = Path("schemas") / "quest_dispatch.schema.json"
-QUEST_CATALOG_EXAMPLE_PATH = Path("generated") / "quest_catalog.min.example.json"
-QUEST_DISPATCH_EXAMPLE_PATH = Path("generated") / "quest_dispatch.min.example.json"
-QUEST_IDS = (
-    "DION-SEED-Q-0001",
-    "DION-SEED-Q-0002",
-    "DION-SEED-Q-0003",
-    "DION-SEED-Q-0004",
-)
+QUEST_CATALOG_PATH = questbook_builder.QUEST_CATALOG_PATH
+QUEST_DISPATCH_PATH = questbook_builder.QUEST_DISPATCH_PATH
+QUEST_CATALOG_EXAMPLE_PATH = questbook_builder.QUEST_CATALOG_EXAMPLE_PATH
+QUEST_DISPATCH_EXAMPLE_PATH = questbook_builder.QUEST_DISPATCH_EXAMPLE_PATH
+QUEST_IDS = questbook_builder.QUEST_IDS
 QUESTBOOK_REQUIRED_TOKENS = (
     "deferred seed-garden obligations that belong to `Dionysus`",
     "repo-local backlog disguised as seed canon",
+    "generated/quest_catalog.min.json",
+    "generated/quest_dispatch.min.json",
     "generated/quest_catalog.min.example.json",
     "generated/quest_dispatch.min.example.json",
+    "live derived projections built from `quests/*.yaml`",
     "versioned examples for review and validator alignment",
 )
 QUESTBOOK_INTEGRATION_REQUIRED_TOKENS = (
@@ -156,50 +161,6 @@ def validate_schema_envelope(
         fail(f"{label} schema_version.const must equal '{schema_version}'")
 
 
-def build_expected_quest_catalog_entry(quest_id: str, payload: dict[str, Any]) -> dict[str, Any]:
-    return {
-        "id": quest_id,
-        "title": payload["title"],
-        "repo": payload["repo"],
-        "theme_ref": payload.get("theme_ref", ""),
-        "milestone_ref": payload.get("milestone_ref", ""),
-        "state": payload["state"],
-        "band": payload["band"],
-        "kind": payload["kind"],
-        "difficulty": payload["difficulty"],
-        "risk": payload["risk"],
-        "owner_surface": payload["owner_surface"],
-        "source_path": f"quests/{quest_id}.yaml",
-        "public_safe": payload["public_safe"],
-    }
-
-
-def build_expected_quest_dispatch_entry(quest_id: str, payload: dict[str, Any]) -> dict[str, Any]:
-    activation = payload.get("activation")
-    if not isinstance(activation, dict):
-        fail(f"{quest_id} activation must be an object")
-
-    return {
-        "schema_version": "quest_dispatch_v1",
-        "id": quest_id,
-        "repo": payload["repo"],
-        "state": payload["state"],
-        "band": payload["band"],
-        "difficulty": payload["difficulty"],
-        "risk": payload["risk"],
-        "control_mode": payload["control_mode"],
-        "delegate_tier": payload["delegate_tier"],
-        "split_required": payload["split_required"],
-        "write_scope": payload["write_scope"],
-        "requires_artifacts": DISPATCH_ARTIFACTS[quest_id],
-        "activation_mode": activation["mode"],
-        "source_path": f"quests/{quest_id}.yaml",
-        "public_safe": payload["public_safe"],
-        "fallback_tier": payload["fallback_tier"],
-        "wrapper_class": payload["wrapper_class"],
-    }
-
-
 def validate_reference_path(path_text: str, *, label: str, root: Path) -> None:
     if not isinstance(path_text, str) or not path_text:
         fail(f"{label} must be a non-empty string")
@@ -214,6 +175,8 @@ def validate_questbook_surface(root: Path = ROOT) -> None:
         QUESTBOOK_INTEGRATION_PATH,
         QUEST_SCHEMA_PATH,
         QUEST_DISPATCH_SCHEMA_PATH,
+        QUEST_CATALOG_PATH,
+        QUEST_DISPATCH_PATH,
         QUEST_CATALOG_EXAMPLE_PATH,
         QUEST_DISPATCH_EXAMPLE_PATH,
     ) + tuple(Path("quests") / f"{quest_id}.yaml" for quest_id in QUEST_IDS)
@@ -257,15 +220,15 @@ def validate_questbook_surface(root: Path = ROOT) -> None:
         label=QUEST_DISPATCH_SCHEMA_PATH.as_posix(),
     )
 
-    expected_catalog = []
-    expected_dispatch = []
+    try:
+        quest_payloads = questbook_builder.collect_quest_payloads(root)
+    except ValueError as exc:
+        fail(str(exc))
     active_quest_ids: list[str] = []
     closed_quest_ids: list[str] = []
     for quest_id in QUEST_IDS:
         quest_path = root / "quests" / f"{quest_id}.yaml"
-        quest_payload = read_yaml(quest_path, root)
-        if not isinstance(quest_payload, dict):
-            fail(f"{quest_path.relative_to(root).as_posix()} must be a YAML object")
+        quest_payload = quest_payloads[quest_id]
         if quest_payload.get("schema_version") != "work_quest_v1":
             fail(f"{quest_id} schema_version must equal 'work_quest_v1'")
         if quest_payload.get("id") != quest_id:
@@ -298,9 +261,6 @@ def validate_questbook_surface(root: Path = ROOT) -> None:
         if activation_ref is not None:
             validate_reference_path(activation_ref, label=f"{quest_id} activation.ref", root=root)
 
-        expected_catalog.append(build_expected_quest_catalog_entry(quest_id, quest_payload))
-        expected_dispatch.append(build_expected_quest_dispatch_entry(quest_id, quest_payload))
-
     for quest_id in active_quest_ids:
         if quest_id not in questbook_text:
             fail(f"QUESTBOOK.md must reference active quest id '{quest_id}'")
@@ -308,12 +268,32 @@ def validate_questbook_surface(root: Path = ROOT) -> None:
         if quest_id in questbook_text:
             fail(f"QUESTBOOK.md must not list closed quest id '{quest_id}'")
 
-    catalog_payload = read_json(root / QUEST_CATALOG_EXAMPLE_PATH, root)
-    if catalog_payload != expected_catalog:
+    try:
+        expected_catalog = questbook_builder.build_quest_catalog_payload(root)
+    except ValueError as exc:
+        fail(str(exc))
+    live_catalog_payload = read_json(root / QUEST_CATALOG_PATH, root)
+    if live_catalog_payload != expected_catalog:
+        fail("generated/quest_catalog.min.json must stay aligned with quests/*.yaml")
+
+    catalog_example_payload = read_json(root / QUEST_CATALOG_EXAMPLE_PATH, root)
+    if catalog_example_payload != live_catalog_payload:
+        fail("generated/quest_catalog.min.example.json must match generated/quest_catalog.min.json")
+    if catalog_example_payload != expected_catalog:
         fail("generated/quest_catalog.min.example.json must stay aligned with quests/*.yaml")
 
-    dispatch_payload = read_json(root / QUEST_DISPATCH_EXAMPLE_PATH, root)
-    if dispatch_payload != expected_dispatch:
+    try:
+        expected_dispatch = questbook_builder.build_quest_dispatch_payload(root)
+    except ValueError as exc:
+        fail(str(exc))
+    live_dispatch_payload = read_json(root / QUEST_DISPATCH_PATH, root)
+    if live_dispatch_payload != expected_dispatch:
+        fail("generated/quest_dispatch.min.json must stay aligned with quests/*.yaml")
+
+    dispatch_example_payload = read_json(root / QUEST_DISPATCH_EXAMPLE_PATH, root)
+    if dispatch_example_payload != live_dispatch_payload:
+        fail("generated/quest_dispatch.min.example.json must match generated/quest_dispatch.min.json")
+    if dispatch_example_payload != expected_dispatch:
         fail("generated/quest_dispatch.min.example.json must stay aligned with quests/*.yaml")
 
 
