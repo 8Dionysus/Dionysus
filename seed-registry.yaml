@@ -1,5 +1,5 @@
 registry_version: 2
-updated_at: '2026-03-31'
+updated_at: '2026-04-01'
 navigation:
   canonical_order_source: wave manifests
   semantic_source: source seed files
@@ -36,6 +36,7 @@ origin_notes:
 - seed_questbook_source_proof_pack.md
 - seed_questbook_boundary_runtime_pack.md
 - seed_questbook_seedgarden_profile_pack.md
+- seed_rpg_first_wave_pack.md
 - archive/seed_pack_2026-03-24_kag-frontier/README.md
 wave_index:
 - wave: first_wave

@@ -42,9 +42,11 @@ It stores seed sources, wave manifests, archived planting surfaces, and the mini
 - `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, and their `.map.yaml` files stage additional future prep packs and candidate lineage without changing the current next-live seed.
 - `seed_wave3_codex_repo_local_skills_trace_harness.md` and `seed_wave3_codex_repo_local_skills_trace_harness.map.yaml` stage the later repo-local Codex skills and trace-harness audit wave without downstream planting yet.
 - `seed_questbook_foundation_pack.md`, `seed_questbook_source_proof_pack.md`, `seed_questbook_boundary_runtime_pack.md`, and `seed_questbook_seedgarden_profile_pack.md`, with matching `.map.yaml` files, stage a need-driven questbook rollout as named prep packs without opening a tenth numbered wave.
+- `seed_rpg_first_wave_pack.md` and `seed_rpg_first_wave_pack.map.yaml` stage the first adjunct RPG reflection contour as a named prep pack without opening a new numbered wave.
 - `QUESTBOOK.md`, `docs/QUESTBOOK_SEED_GARDEN_INTEGRATION.md`, `quests/*.yaml`, `schemas/quest*.json`, and `generated/*.example.json` now hold the repo-local questbook reflection layer for seed-garden follow-through inside `Dionysus`; profile-level reflection in `8Dionysus` remains deferred to a later public-entry refresh contour.
 - The current questbook contour explicitly leaves `ATM10-Agent` outside this planting line and defers `aoa-sdk` to the next separate named seed after the four-pack rollout lands.
 - `archive/seed_pack_exports/questbook_first_wave_seed.zip` and `archive/seed_pack_exports/questbook_second_wave_seed.zip` are transport-provenance bundles for the staged questbook prep packs; they are not authoritative seed surfaces.
+- `archive/seed_pack_exports/rpg_first_wave_seed.zip` is the transport-provenance bundle for the staged RPG first-wave prep pack; it is not an authoritative seed surface.
 - `schema/seed-registry.contract.yaml` defines the registry field contract, including v3 provenance and transplant maps.
 - `docs/codex/planting-protocol.md` defines the planting discipline.
 - `docs/codex/seed-provenance-policy.md` and `docs/codex/seed-registry-v3-migration.md` define donor-shaped intake rules and the staged v3 migration path.
@@ -134,7 +136,7 @@ overrule an opened wave or the current live seed.
   - repo-local questbook reflection validator for Dionysus seed-garden surfaces
 - `scripts/validate_seed_surfaces.py`
   - single validation entrypoint for CI and local runs
-- `seed_expat.md`, `seed_self-agent.md`, `seed_trio.md`, `seed_clawrouter_donor_graft.md`, `seed_wave1_codex_audit_spine.md`, `seed_wave2_codex_skill_proof_audit_bridge.md`, `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, `seed_wave3_codex_repo_local_skills_trace_harness.md`, `seed_questbook_foundation_pack.md`, `seed_questbook_source_proof_pack.md`, `seed_questbook_boundary_runtime_pack.md`, `seed_questbook_seedgarden_profile_pack.md`
+- `seed_expat.md`, `seed_self-agent.md`, `seed_trio.md`, `seed_clawrouter_donor_graft.md`, `seed_wave1_codex_audit_spine.md`, `seed_wave2_codex_skill_proof_audit_bridge.md`, `seed_architecture_fit_pack.md`, `seed_dialogue_memory_pack.md`, `seed_federation_conductor_pack.md`, `seed_memory_evals_skills_docs_pack.md`, `seed_future_agent_systems_prep_pack.md`, `seed_wave3_codex_repo_local_skills_trace_harness.md`, `seed_questbook_foundation_pack.md`, `seed_questbook_source_proof_pack.md`, `seed_questbook_boundary_runtime_pack.md`, `seed_questbook_seedgarden_profile_pack.md`, `seed_rpg_first_wave_pack.md`
   - origin notes and prep soil, not first-wave canon
 
 ## Seed lifecycle

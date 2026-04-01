@@ -89,5 +89,28 @@
     "public_safe": true,
     "fallback_tier": "archivist",
     "wrapper_class": "codex_primary"
+  },
+  {
+    "schema_version": "quest_dispatch_v1",
+    "id": "DION-SEED-Q-0005",
+    "repo": "Dionysus",
+    "state": "captured",
+    "band": "near",
+    "difficulty": "d2_slice",
+    "risk": "r1_repo_local",
+    "control_mode": "codex_supervised",
+    "delegate_tier": "planner",
+    "split_required": false,
+    "write_scope": "docs_only",
+    "requires_artifacts": [
+      "bounded_plan",
+      "work_result",
+      "verification_result"
+    ],
+    "activation_mode": "manual",
+    "source_path": "quests/DION-SEED-Q-0005.yaml",
+    "public_safe": true,
+    "fallback_tier": "verifier",
+    "wrapper_class": "local_validator"
   }
 ]

@@ -23,6 +23,7 @@ Do not use it for:
 ## Near
 
 - `DION-SEED-Q-0003` — treat zip exports and transport packs as derived convenience surfaces with validity checks, not authority
+- `DION-SEED-Q-0005` — stage the RPG first-wave reflection pack as a named seed-garden prep pack
 
 ## Latent / parked
 

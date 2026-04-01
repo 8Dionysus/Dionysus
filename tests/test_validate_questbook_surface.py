@@ -19,6 +19,8 @@ SURFACE_PATHS = (
     "quests",
     "archive/seed_pack_exports",
     "seed-registry.yaml",
+    "seed_rpg_first_wave_pack.md",
+    "seed_rpg_first_wave_pack.map.yaml",
 )
 
 
@@ -53,6 +55,23 @@ class ValidateQuestbookSurfaceTests(unittest.TestCase):
 
         self.assertEqual(1, len(errors))
         self.assertIn("QUESTBOOK.md must reference active quest id 'DION-SEED-Q-0004'", errors[0])
+
+    def test_missing_rpg_tracked_id_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            questbook_path = root / "QUESTBOOK.md"
+            questbook_path.write_text(
+                questbook_path.read_text(encoding="utf-8").replace(
+                    "DION-SEED-Q-0005", "DION-SEED-Q-9998", 1
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("QUESTBOOK.md must reference active quest id 'DION-SEED-Q-0005'", errors[0])
 
     def test_closed_tracked_id_in_questbook_fails_validation(self) -> None:
         with TemporaryDirectory() as temp_dir:

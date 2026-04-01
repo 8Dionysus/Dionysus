@@ -15,72 +15,100 @@ except ImportError as exc:  # pragma: no cover
     raise SystemExit(1) from exc
 
 ROOT = Path(__file__).resolve().parents[1]
-REGISTRY_PATH = ROOT / "seed-registry.yaml"
 ALLOWED_PRIORITY = {"now", "next", "later", "hold"}
 ALLOWED_PRIORITY_BANDS = {"now", "next", "later", "hold"}
 ALLOWED_PLANTING_READINESS = {"ready", "needs_adaptation", "blocked"}
 
-EXPECTED_PACKS = {
-    "seed_questbook_foundation_pack.md": {
-        "seed_id": "seed.questbook.foundation-pack.v0",
-        "priority": "now",
-        "priority_band": "now",
-        "planting_readiness": "ready",
-        "source_bundle": "archive/seed_pack_exports/questbook_first_wave_seed.zip",
-        "targets": [
-            "Agents-of-Abyss",
-            "aoa-agents",
-            "aoa-routing",
-            "aoa-playbooks",
-            "aoa-memo",
-        ],
-        "dependencies": [],
+PACK_FAMILIES = {
+    "questbook": {
+        "label": "questbook",
+        "note_glob": "seed_questbook_*_pack.md",
+        "expected_packs": {
+            "seed_questbook_foundation_pack.md": {
+                "seed_id": "seed.questbook.foundation-pack.v0",
+                "priority": "now",
+                "priority_band": "now",
+                "planting_readiness": "ready",
+                "source_bundle": "archive/seed_pack_exports/questbook_first_wave_seed.zip",
+                "targets": [
+                    "Agents-of-Abyss",
+                    "aoa-agents",
+                    "aoa-routing",
+                    "aoa-playbooks",
+                    "aoa-memo",
+                ],
+                "dependencies": [],
+            },
+            "seed_questbook_source_proof_pack.md": {
+                "seed_id": "seed.questbook.source-proof-pack.v0",
+                "priority": "next",
+                "priority_band": "next",
+                "planting_readiness": "ready",
+                "source_bundle": "archive/seed_pack_exports/questbook_second_wave_seed.zip",
+                "targets": [
+                    "aoa-techniques",
+                    "aoa-skills",
+                    "aoa-evals",
+                ],
+                "dependencies": [
+                    "seed.questbook.foundation-pack.v0",
+                ],
+            },
+            "seed_questbook_boundary_runtime_pack.md": {
+                "seed_id": "seed.questbook.boundary-runtime-pack.v0",
+                "priority": "later",
+                "priority_band": "later",
+                "planting_readiness": "needs_adaptation",
+                "source_bundle": "archive/seed_pack_exports/questbook_second_wave_seed.zip",
+                "targets": [
+                    "aoa-kag",
+                    "Tree-of-Sophia",
+                    "abyss-stack",
+                ],
+                "dependencies": [
+                    "seed.questbook.source-proof-pack.v0",
+                ],
+            },
+            "seed_questbook_seedgarden_profile_pack.md": {
+                "seed_id": "seed.questbook.seedgarden-profile-pack.v0",
+                "priority": "later",
+                "priority_band": "later",
+                "planting_readiness": "needs_adaptation",
+                "source_bundle": "archive/seed_pack_exports/questbook_second_wave_seed.zip",
+                "targets": [
+                    "Dionysus",
+                    "8Dionysus",
+                ],
+                "dependencies": [
+                    "seed.questbook.foundation-pack.v0",
+                    "seed.questbook.source-proof-pack.v0",
+                    "seed.questbook.boundary-runtime-pack.v0",
+                ],
+            },
+        },
     },
-    "seed_questbook_source_proof_pack.md": {
-        "seed_id": "seed.questbook.source-proof-pack.v0",
-        "priority": "next",
-        "priority_band": "next",
-        "planting_readiness": "ready",
-        "source_bundle": "archive/seed_pack_exports/questbook_second_wave_seed.zip",
-        "targets": [
-            "aoa-techniques",
-            "aoa-skills",
-            "aoa-evals",
-        ],
-        "dependencies": [
-            "seed.questbook.foundation-pack.v0",
-        ],
-    },
-    "seed_questbook_boundary_runtime_pack.md": {
-        "seed_id": "seed.questbook.boundary-runtime-pack.v0",
-        "priority": "later",
-        "priority_band": "later",
-        "planting_readiness": "needs_adaptation",
-        "source_bundle": "archive/seed_pack_exports/questbook_second_wave_seed.zip",
-        "targets": [
-            "aoa-kag",
-            "Tree-of-Sophia",
-            "abyss-stack",
-        ],
-        "dependencies": [
-            "seed.questbook.source-proof-pack.v0",
-        ],
-    },
-    "seed_questbook_seedgarden_profile_pack.md": {
-        "seed_id": "seed.questbook.seedgarden-profile-pack.v0",
-        "priority": "later",
-        "priority_band": "later",
-        "planting_readiness": "needs_adaptation",
-        "source_bundle": "archive/seed_pack_exports/questbook_second_wave_seed.zip",
-        "targets": [
-            "Dionysus",
-            "8Dionysus",
-        ],
-        "dependencies": [
-            "seed.questbook.foundation-pack.v0",
-            "seed.questbook.source-proof-pack.v0",
-            "seed.questbook.boundary-runtime-pack.v0",
-        ],
+    "rpg": {
+        "label": "rpg",
+        "note_glob": "seed_rpg_*_pack.md",
+        "expected_packs": {
+            "seed_rpg_first_wave_pack.md": {
+                "seed_id": "seed.rpg.first-wave-pack.v0",
+                "priority": "next",
+                "priority_band": "next",
+                "planting_readiness": "ready",
+                "source_bundle": "archive/seed_pack_exports/rpg_first_wave_seed.zip",
+                "targets": [
+                    "Agents-of-Abyss",
+                    "aoa-agents",
+                    "aoa-evals",
+                    "aoa-playbooks",
+                    "aoa-memo",
+                    "aoa-routing",
+                    "Dionysus",
+                ],
+                "dependencies": [],
+            },
+        },
     },
 }
 
@@ -166,8 +194,22 @@ def load_note_frontmatter(path: Path) -> dict[str, Any]:
     return data
 
 
-def main() -> int:
-    registry = require_mapping(load_yaml(REGISTRY_PATH), "seed-registry.yaml")
+def collect_expected_packs() -> dict[str, dict[str, Any]]:
+    expected_packs: dict[str, dict[str, Any]] = {}
+    for family_name, family in PACK_FAMILIES.items():
+        for note_name, expected in family["expected_packs"].items():
+            expected_packs[note_name] = {
+                **expected,
+                "family_name": family_name,
+                "family_label": family["label"],
+                "note_glob": family["note_glob"],
+            }
+    return expected_packs
+
+
+def validate_prep_packs(root: Path = ROOT) -> None:
+    registry_path = root / "seed-registry.yaml"
+    registry = require_mapping(load_yaml(registry_path), "seed-registry.yaml")
     navigation = require_mapping(registry["navigation"], "seed-registry.yaml.navigation")
     next_live_seed = require_nonempty_string(
         navigation["next_live_seed"], "seed-registry.yaml.navigation.next_live_seed"
@@ -177,14 +219,16 @@ def main() -> int:
     if not isinstance(seed_index, list):
         fail("seed-registry.yaml.seed_index: must be a list")
 
-    expected_names = set(EXPECTED_PACKS)
-    found_names = {path.name for path in ROOT.glob("seed_questbook_*_pack.md")}
-    if found_names != expected_names:
-        missing = sorted(expected_names - found_names)
-        extra = sorted(found_names - expected_names)
-        if missing:
-            fail(f"missing questbook prep-pack notes: {', '.join(missing)}")
-        fail(f"unexpected questbook prep-pack notes: {', '.join(extra)}")
+    expected_packs = collect_expected_packs()
+    for family_name, family in PACK_FAMILIES.items():
+        expected_names = set(family["expected_packs"])
+        found_names = {path.name for path in root.glob(family["note_glob"])}
+        if found_names != expected_names:
+            missing = sorted(expected_names - found_names)
+            extra = sorted(found_names - expected_names)
+            if missing:
+                fail(f"missing {family['label']} prep-pack notes: {', '.join(missing)}")
+            fail(f"unexpected {family['label']} prep-pack notes: {', '.join(extra)}")
 
     for source_ref in (
         entry.get("source_ref")
@@ -193,12 +237,12 @@ def main() -> int:
     ):
         if not isinstance(source_ref, str):
             continue
-        for note_name in expected_names:
+        for note_name in expected_packs:
             if source_ref.startswith(note_name):
-                fail(f"seed-registry.yaml.seed_index must not register questbook prep-pack note '{note_name}' yet")
+                fail(f"seed-registry.yaml.seed_index must not register prep-pack note '{note_name}' yet")
 
-    for note_name, expected in EXPECTED_PACKS.items():
-        note_path = ROOT / note_name
+    for note_name, expected in expected_packs.items():
+        note_path = root / note_name
         map_path = note_path.with_suffix(".map.yaml")
         if not map_path.exists():
             fail(f"{note_name}: missing matching map file '{map_path.name}'")
@@ -234,7 +278,7 @@ def main() -> int:
             fail(f"{map_path.name}.source_bundle.path must be '{expected['source_bundle']}'")
         if not source_bundle_path.startswith("archive/seed_pack_exports/"):
             fail(f"{map_path.name}.source_bundle.path must stay under archive/seed_pack_exports/")
-        if not (ROOT / source_bundle_path).exists():
+        if not (root / source_bundle_path).exists():
             fail(f"{map_path.name}.source_bundle.path does not exist: {source_bundle_path}")
 
         selection = require_mapping(mapping["selection_policy"], f"{map_path.name}.selection_policy")
@@ -302,23 +346,33 @@ def main() -> int:
             target_repos.append(repo)
             if repo in {"ATM10-Agent", "aoa-sdk"}:
                 fail(f"{map_path.name}.targets[{index}].repo must not include '{repo}' in the current rollout")
-            if note_name == "seed_questbook_boundary_runtime_pack.md" and repo == "abyss-stack":
-                for file_ref in files:
-                    if not file_ref.startswith("Configs/"):
-                        fail(
-                            f"{map_path.name}: abyss-stack target files must be adapted to Configs/... paths, "
-                            f"got '{file_ref}'"
-                        )
+        if note_name == "seed_questbook_boundary_runtime_pack.md" and repo == "abyss-stack":
+            for file_ref in files:
+                if not file_ref.startswith("Configs/"):
+                    fail(
+                        f"{map_path.name}: abyss-stack target files must be adapted to Configs/... paths, "
+                        f"got '{file_ref}'"
+                    )
         if target_repos != expected["targets"]:
             fail(f"{map_path.name}.targets repo order must be {expected['targets']}")
 
-    print("[ok] validated named questbook prep packs")
+def run_validation(root: Path = ROOT) -> list[str]:
+    try:
+        validate_prep_packs(root)
+    except ValidationError as exc:
+        return [str(exc)]
+    return []
+
+
+def main() -> int:
+    errors = run_validation(ROOT)
+    if errors:
+        for error in errors:
+            print(f"[error] {error}", file=sys.stderr)
+        return 1
+    print("[ok] validated prep-pack notes")
     return 0
 
 
 if __name__ == "__main__":
-    try:
-        raise SystemExit(main())
-    except ValidationError as exc:
-        print(f"[error] {exc}", file=sys.stderr)
-        raise SystemExit(1) from exc
+    raise SystemExit(main())

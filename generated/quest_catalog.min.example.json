@@ -58,5 +58,20 @@
     "owner_surface": "future-seeds/readiness",
     "source_path": "quests/DION-SEED-Q-0004.yaml",
     "public_safe": true
+  },
+  {
+    "id": "DION-SEED-Q-0005",
+    "title": "Stage the RPG first-wave reflection pack as a named seed-garden prep pack",
+    "repo": "Dionysus",
+    "theme_ref": "",
+    "milestone_ref": "",
+    "state": "captured",
+    "band": "near",
+    "kind": "rollout",
+    "difficulty": "d2_slice",
+    "risk": "r1_repo_local",
+    "owner_surface": "future-seeds/rpg-first-wave",
+    "source_path": "quests/DION-SEED-Q-0005.yaml",
+    "public_safe": true
   }
 ]
