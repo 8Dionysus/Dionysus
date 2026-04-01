@@ -54,6 +54,25 @@ class ValidateQuestbookSurfaceTests(unittest.TestCase):
         self.assertEqual(1, len(errors))
         self.assertIn("QUESTBOOK.md must reference active quest id 'DION-SEED-Q-0004'", errors[0])
 
+    def test_closed_tracked_id_in_questbook_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            questbook_path = root / "QUESTBOOK.md"
+            questbook_path.write_text(
+                questbook_path.read_text(encoding="utf-8").replace(
+                    "## Frontier\n\n- none yet",
+                    "## Frontier\n\n- `DION-SEED-Q-0001` — closed rollout should not stay listed",
+                    1,
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("QUESTBOOK.md must not list closed quest id 'DION-SEED-Q-0001'", errors[0])
+
     def test_wrong_repo_in_quest_fails_validation(self) -> None:
         with TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
@@ -70,6 +89,54 @@ class ValidateQuestbookSurfaceTests(unittest.TestCase):
 
         self.assertEqual(1, len(errors))
         self.assertIn("DION-SEED-Q-0001 repo must equal 'Dionysus'", errors[0])
+
+    def test_missing_live_catalog_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            (root / "generated" / "quest_catalog.min.json").unlink()
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("missing required file: generated/quest_catalog.min.json", errors[0])
+
+    def test_live_dispatch_drift_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            dispatch_path = root / "generated" / "quest_dispatch.min.json"
+            dispatch_path.write_text(
+                dispatch_path.read_text(encoding="utf-8").replace(
+                    '"state":"done"', '"state":"captured"', 1
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("generated/quest_dispatch.min.json must stay aligned with quests/*.yaml", errors[0])
+
+    def test_catalog_fixture_live_drift_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            example_path = root / "generated" / "quest_catalog.min.example.json"
+            example_path.write_text(
+                example_path.read_text(encoding="utf-8").replace(
+                    '"state": "done"', '"state": "captured"', 1
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn(
+            "generated/quest_catalog.min.example.json must match generated/quest_catalog.min.json",
+            errors[0],
+        )
 
 
 if __name__ == "__main__":

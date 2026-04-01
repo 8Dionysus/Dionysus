@@ -34,11 +34,14 @@ Do not use it for:
 
 ## Backing files
 
+- `generated/quest_catalog.min.json`
+- `generated/quest_dispatch.min.json`
 - `quests/*.yaml`
 - `schemas/quest.schema.json`
 - `schemas/quest_dispatch.schema.json`
 - `generated/quest_catalog.min.example.json`
 - `generated/quest_dispatch.min.example.json`
 
-The files under `generated/` are versioned examples for review and validator alignment.
-They are not authoritative seed surfaces or live builder output.
+The compact files under `generated/` are live derived projections built from `quests/*.yaml`.
+The `.example.json` companions stay versioned examples for review and validator alignment.
+None of these files are authoritative seed surfaces.
