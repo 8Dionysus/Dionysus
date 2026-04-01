@@ -29,7 +29,6 @@ QUEST_CATALOG_PATH = questbook_builder.QUEST_CATALOG_PATH
 QUEST_DISPATCH_PATH = questbook_builder.QUEST_DISPATCH_PATH
 QUEST_CATALOG_EXAMPLE_PATH = questbook_builder.QUEST_CATALOG_EXAMPLE_PATH
 QUEST_DISPATCH_EXAMPLE_PATH = questbook_builder.QUEST_DISPATCH_EXAMPLE_PATH
-QUEST_IDS = questbook_builder.QUEST_IDS
 QUESTBOOK_REQUIRED_TOKENS = (
     "deferred seed-garden obligations that belong to `Dionysus`",
     "repo-local backlog disguised as seed canon",
@@ -89,12 +88,6 @@ QUEST_DISPATCH_REQUIRED_FIELDS = (
     "activation_mode",
     "public_safe",
 )
-DISPATCH_ARTIFACTS = {
-    "DION-SEED-Q-0001": ["bounded_plan", "work_result", "verification_result"],
-    "DION-SEED-Q-0002": ["bounded_plan", "guardrail_check", "verification_result"],
-    "DION-SEED-Q-0003": ["bounded_plan", "guardrail_check", "verification_result"],
-    "DION-SEED-Q-0004": ["bounded_plan", "work_result"],
-}
 
 
 class ValidationError(RuntimeError):
@@ -170,6 +163,11 @@ def validate_reference_path(path_text: str, *, label: str, root: Path) -> None:
 
 
 def validate_questbook_surface(root: Path = ROOT) -> None:
+    try:
+        quest_ids = questbook_builder.discover_quest_ids(root)
+    except ValueError as exc:
+        fail(str(exc))
+
     required_paths = (
         QUESTBOOK_PATH,
         QUESTBOOK_INTEGRATION_PATH,
@@ -179,7 +177,7 @@ def validate_questbook_surface(root: Path = ROOT) -> None:
         QUEST_DISPATCH_PATH,
         QUEST_CATALOG_EXAMPLE_PATH,
         QUEST_DISPATCH_EXAMPLE_PATH,
-    ) + tuple(Path("quests") / f"{quest_id}.yaml" for quest_id in QUEST_IDS)
+    ) + tuple(Path("quests") / f"{quest_id}.yaml" for quest_id in quest_ids)
 
     for relative_path in required_paths:
         path = root / relative_path
@@ -226,7 +224,7 @@ def validate_questbook_surface(root: Path = ROOT) -> None:
         fail(str(exc))
     active_quest_ids: list[str] = []
     closed_quest_ids: list[str] = []
-    for quest_id in QUEST_IDS:
+    for quest_id in quest_ids:
         quest_path = root / "quests" / f"{quest_id}.yaml"
         quest_payload = quest_payloads[quest_id]
         if quest_payload.get("schema_version") != "work_quest_v1":

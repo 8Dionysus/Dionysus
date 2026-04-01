@@ -43,6 +43,7 @@ Good seed-garden quests usually answer:
 - which live seed or closure state needs explicit follow-through
 - which export or transport surface needs validity checks
 - which later seed-garden reflection obligation survived current review
+- which new prep-pack contour should stay staged as transport and lineage instead of being mistaken for canon
 
 ## Manual-first pilot reflection
 

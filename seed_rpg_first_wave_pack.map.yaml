@@ -1,0 +1,141 @@
+map_version: 1
+updated_at: '2026-04-01'
+seed_note: seed_rpg_first_wave_pack.md
+status: future_seed_prep_note
+
+source_bundle:
+  path: archive/seed_pack_exports/rpg_first_wave_seed.zip
+  included_surfaces:
+    - rpg_first_wave_seed/README.md
+    - rpg_first_wave_seed/APPLY_ORDER.md
+    - rpg_first_wave_seed/CODEX_NOTES.md
+    - rpg_first_wave_seed/SEED_MANIFEST.yaml
+    - rpg_first_wave_seed/COVERAGE_MAP.md
+    - rpg_first_wave_seed/TOUCHPOINTS_NOT_INCLUDED.md
+    - rpg_first_wave_seed/later-wave-targets.md
+    - rpg_first_wave_seed/Agents-of-Abyss/
+    - rpg_first_wave_seed/aoa-agents/
+    - rpg_first_wave_seed/aoa-evals/
+    - rpg_first_wave_seed/aoa-playbooks/
+    - rpg_first_wave_seed/aoa-memo/
+    - rpg_first_wave_seed/aoa-routing/
+    - rpg_first_wave_seed/Dionysus/
+
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - Agents-of-Abyss
+    - aoa-agents
+    - aoa-evals
+    - aoa-playbooks
+    - aoa-memo
+    - aoa-routing
+    - Dionysus
+  priority_band: next
+  planting_readiness: ready
+  why_now:
+    - live questbook and execution-passport surfaces now exist
+    - the first RPG reflection slice should land as adjunct contracts before runtime mechanics
+    - the source/proof contour already supplies the proof spine this pack depends on
+  dependencies: []
+
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+
+targets:
+  - repo: Agents-of-Abyss
+    contour: common-rpg-model
+    files:
+      - docs/RPG_LAYER_MODEL.md
+      - docs/RPG_FIRST_WAVE.md
+      - quests/AOA-Q-0004.yaml
+    focus:
+      - adjunct model
+      - wave scope
+      - anti-collapse boundaries
+
+  - repo: aoa-agents
+    contour: agent-progression
+    files:
+      - docs/AGENT_PROGRESSION_MODEL.md
+      - schemas/agent_progression.schema.json
+      - examples/agent_progression.example.json
+      - quests/AOA-AG-Q-0003.yaml
+    focus:
+      - mastery axes
+      - rank posture
+      - unlock posture
+
+  - repo: aoa-evals
+    contour: progression-evidence
+    files:
+      - docs/PROGRESSION_EVIDENCE_MODEL.md
+      - schemas/progression_evidence.schema.json
+      - examples/progression_evidence.example.json
+      - quests/AOA-EV-Q-0005.yaml
+    focus:
+      - advancement verdicts
+      - multi-axis deltas
+      - caution posture
+
+  - repo: aoa-playbooks
+    contour: questline-campaign
+    files:
+      - docs/QUESTLINE_AND_CAMPAIGN_MODEL.md
+      - schemas/questline_outline.schema.json
+      - examples/questline_outline.example.yaml
+      - quests/AOA-PB-Q-0003.yaml
+    focus:
+      - questline
+      - campaign
+      - raid
+      - reanchor discipline
+
+  - repo: aoa-memo
+    contour: chronicle-writeback
+    files:
+      - docs/QUEST_CHRONICLE_WRITEBACK.md
+      - schemas/quest_chronicle.schema.json
+      - examples/quest_chronicle.example.json
+      - quests/AOA-MEM-Q-0003.yaml
+    focus:
+      - witness chronicle
+      - temperature posture
+      - archivist handoff
+
+  - repo: aoa-routing
+    contour: derived-quest-board
+    files:
+      - docs/QUEST_BOARD_SEAM.md
+      - schemas/quest_board_entry.schema.json
+      - generated/quest_board.min.example.json
+      - quests/AOA-RT-Q-0003.yaml
+    focus:
+      - derived board cards
+      - narrow entry actions
+      - progression-gate hints
+
+  - repo: Dionysus
+    contour: seed-garden-staging
+    files:
+      - seed_rpg_first_wave_pack.md
+      - seed_rpg_first_wave_pack.map.yaml
+      - quests/DION-SEED-Q-0005.yaml
+    focus:
+      - prep-pack lineage
+      - transport posture
+      - non-authority staging
+
+scope_exclusions:
+  - aoa-skills
+  - aoa-techniques
+  - abyss-stack
+  - 8Dionysus
+  - aoa-sdk
+  - ATM10-Agent
+  - Tree-of-Sophia
+  - aoa-kag

@@ -28,18 +28,19 @@ QUEST_SURFACE_PATHS = (
     QUEST_CATALOG_EXAMPLE_PATH,
     QUEST_DISPATCH_EXAMPLE_PATH,
 )
-QUEST_IDS = (
+FOUNDATION_QUEST_IDS = (
     "DION-SEED-Q-0001",
     "DION-SEED-Q-0002",
     "DION-SEED-Q-0003",
     "DION-SEED-Q-0004",
 )
-DISPATCH_ARTIFACTS = {
-    "DION-SEED-Q-0001": ["bounded_plan", "work_result", "verification_result"],
-    "DION-SEED-Q-0002": ["bounded_plan", "guardrail_check", "verification_result"],
-    "DION-SEED-Q-0003": ["bounded_plan", "guardrail_check", "verification_result"],
-    "DION-SEED-Q-0004": ["bounded_plan", "work_result"],
-}
+
+
+def quest_id_sort_key(quest_id: str) -> tuple[int, str]:
+    try:
+        return (int(quest_id.rsplit("-", 1)[1]), quest_id)
+    except (IndexError, ValueError):
+        return (sys.maxsize, quest_id)
 
 
 def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
@@ -56,6 +57,28 @@ def relative_path(path: Path, root: Path) -> str:
     return path.relative_to(root).as_posix()
 
 
+def discover_quest_ids(root: Path = ROOT) -> tuple[str, ...]:
+    quest_ids = tuple(
+        sorted(
+            (
+                path.stem
+                for path in (root / "quests").glob("DION-SEED-Q-*.yaml")
+                if path.is_file()
+            ),
+            key=quest_id_sort_key,
+        )
+    )
+    if not quest_ids:
+        raise ValueError("missing required files: quests/DION-SEED-Q-*.yaml")
+    missing = sorted(set(FOUNDATION_QUEST_IDS) - set(quest_ids), key=quest_id_sort_key)
+    if missing:
+        raise ValueError(
+            "seed-garden quest set must include required foundation quests "
+            f"(missing: {', '.join(missing)})"
+        )
+    return quest_ids
+
+
 def read_yaml_payload(path: Path, root: Path) -> dict[str, Any]:
     try:
         payload = yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -70,7 +93,7 @@ def read_yaml_payload(path: Path, root: Path) -> dict[str, Any]:
 
 def collect_quest_payloads(root: Path) -> dict[str, dict[str, Any]]:
     payloads: dict[str, dict[str, Any]] = {}
-    for quest_id in QUEST_IDS:
+    for quest_id in discover_quest_ids(root):
         quest_path = root / "quests" / f"{quest_id}.yaml"
         payload = read_yaml_payload(quest_path, root)
         if payload.get("schema_version") != "work_quest_v1":
@@ -83,6 +106,18 @@ def collect_quest_payloads(root: Path) -> dict[str, dict[str, Any]]:
             raise ValueError(f"{quest_id} public_safe must be true")
         payloads[quest_id] = payload
     return payloads
+
+
+def build_required_artifacts(quest_payload: dict[str, Any]) -> list[str]:
+    artifacts = ["bounded_plan"]
+    kind = quest_payload.get("kind")
+    if kind == "guardrail":
+        artifacts.append("guardrail_check")
+    else:
+        artifacts.append("work_result")
+    if kind in {"rollout", "guardrail", "proof"}:
+        artifacts.append("verification_result")
+    return artifacts
 
 
 def build_quest_catalog_payload(root: Path = ROOT) -> list[dict[str, Any]]:
@@ -103,7 +138,7 @@ def build_quest_catalog_payload(root: Path = ROOT) -> list[dict[str, Any]]:
             "source_path": f"quests/{quest_id}.yaml",
             "public_safe": payloads[quest_id]["public_safe"],
         }
-        for quest_id in QUEST_IDS
+        for quest_id in discover_quest_ids(root)
     ]
 
 
@@ -122,14 +157,14 @@ def build_quest_dispatch_payload(root: Path = ROOT) -> list[dict[str, Any]]:
             "delegate_tier": payloads[quest_id]["delegate_tier"],
             "split_required": payloads[quest_id]["split_required"],
             "write_scope": payloads[quest_id]["write_scope"],
-            "requires_artifacts": DISPATCH_ARTIFACTS[quest_id],
+            "requires_artifacts": build_required_artifacts(payloads[quest_id]),
             "activation_mode": payloads[quest_id]["activation"]["mode"],
             "source_path": f"quests/{quest_id}.yaml",
             "public_safe": payloads[quest_id]["public_safe"],
             "fallback_tier": payloads[quest_id]["fallback_tier"],
             "wrapper_class": payloads[quest_id]["wrapper_class"],
         }
-        for quest_id in QUEST_IDS
+        for quest_id in discover_quest_ids(root)
     ]
 
 
