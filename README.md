@@ -45,6 +45,7 @@ If work starts from a named prep pack rather than an opened wave, read the pack 
 - `scripts/validate_seed_surfaces.py` is the single validation entrypoint
 - `seed_wave1_root_docs_refresh.md` and `seed_wave1_root_docs_refresh.map.yaml` keep the first-wave root docs refresh replayable as a bounded transport-and-lineage pack
 - `seed_wave2_root_docs_refresh.md` and `seed_wave2_root_docs_refresh.map.yaml` keep the second-wave root docs refresh replayable as a bounded transport-and-lineage pack
+- `seed_wave3_root_docs_refresh.md` and `seed_wave3_root_docs_refresh.map.yaml` keep the third-wave root docs refresh replayable as a bounded transport-and-lineage pack
 - repo-local questbook surfaces in `QUESTBOOK.md`, `quests/`, `schemas/`, and `generated/` are follow-through for the seed garden, not a second sovereignty layer
 - `aoa-sdk` has already been seeded into its own live repository and should be treated as a live owning home for SDK work rather than as deferred future separation
 
