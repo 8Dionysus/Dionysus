@@ -20,7 +20,7 @@ tags:
 
 Prepare the narrow RPG SDK consumer addendum as a named prep pack without opening a fresh numbered wave.
 
-This pack stages typed readers, compatibility helpers, and explicit surface paths so later agents, tooling, and UI readers can consume the RPG contour without moving meaning or runtime ownership into `aoa-sdk`.
+This pack stages typed readers, compatibility helpers, explicit surface paths, and fixture-staged future transport files so later agents, tooling, and UI readers can consume the RPG contour without moving meaning or runtime ownership into `aoa-sdk`.
 
 ## Why this belongs in Dionysus
 
@@ -47,6 +47,11 @@ It carries:
 - `rpg_sdk_addendum_seed/TOUCHPOINTS_NOT_INCLUDED.md`
 - repo-local typed-consumer surfaces for `aoa-sdk`
 - this `Dionysus` prep-pack note, map, and quest object
+
+The landed adaptation keeps the slice API-only and updates the staged
+`abyss-stack` fixture transport root to `tests/fixtures/workspace/src/abyss-stack/`
+so `aoa-sdk` exercises its real workspace-discovery posture instead of a flatter
+seed-only layout.
 
 ## Ownership posture
 

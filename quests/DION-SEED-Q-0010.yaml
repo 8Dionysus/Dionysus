@@ -41,7 +41,7 @@ evidence:
 harvest:
   target: none
 opened_at: '2026-04-03'
-touched_at: '2026-04-03'
+touched_at: '2026-04-04'
 tags:
   - seed
   - rpg
@@ -49,4 +49,5 @@ tags:
   - transport
 notes: >
   Keep the zip export derived and reviewable. Do not let the prep pack overrule owner-repo meaning or turn the typed consumer layer into a hidden authority.
+  The live landing keeps the slice API-only, leaves global compatibility untouched, and adapts staged abyss-stack fixtures to tests/fixtures/workspace/src/abyss-stack/ so workspace discovery stays honest.
 public_safe: true
