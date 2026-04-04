@@ -1,5 +1,5 @@
 map_version: 1
-updated_at: '2026-04-03'
+updated_at: '2026-04-04'
 seed_note: seed_rpg_sdk_addendum_pack.md
 status: future_seed_prep_note
 
@@ -40,6 +40,7 @@ targets:
   - repo: aoa-sdk
     contour: typed-rpg-consumer-addendum
     files:
+      - README.md
       - docs/RPG_SDK_ADDENDUM.md
       - docs/RPG_SURFACE_PATHS.md
       - src/aoa_sdk/api.py
@@ -48,15 +49,17 @@ targets:
       - src/aoa_sdk/rpg/registry.py
       - src/aoa_sdk/rpg/surfaces.py
       - tests/test_rpg_api.py
+      - tests/test_live_workspace.py
       - tests/fixtures/workspace/Agents-of-Abyss/generated/dual_vocabulary_overlay.json
-      - tests/fixtures/workspace/abyss-stack/generated/rpg/agent_build_snapshots.json
-      - tests/fixtures/workspace/abyss-stack/generated/rpg/reputation_ledgers.json
-      - tests/fixtures/workspace/abyss-stack/generated/rpg/quest_run_results.json
-      - tests/fixtures/workspace/abyss-stack/generated/rpg/frontend_projection_bundles.json
+      - tests/fixtures/workspace/src/abyss-stack/generated/rpg/agent_build_snapshots.json
+      - tests/fixtures/workspace/src/abyss-stack/generated/rpg/reputation_ledgers.json
+      - tests/fixtures/workspace/src/abyss-stack/generated/rpg/quest_run_results.json
+      - tests/fixtures/workspace/src/abyss-stack/generated/rpg/frontend_projection_bundles.json
     focus:
       - typed readers
       - compatibility helpers
       - consumer-only posture
+      - fixture-staged future transport paths
 
   - repo: Dionysus
     contour: seed-garden-staging
