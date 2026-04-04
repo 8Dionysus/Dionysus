@@ -1,5 +1,5 @@
 map_version: 1
-updated_at: '2026-04-03'
+updated_at: '2026-04-04'
 seed_note: seed_rpg_bridge_wave_pack.md
 status: future_seed_prep_note
 
@@ -62,7 +62,7 @@ targets:
       - docs/UNLOCK_PROOF_BRIDGE.md
       - schemas/unlock_proof_catalog.schema.json
       - generated/unlock_proof_cards.min.example.json
-      - quests/AOA-EV-Q-0006.yaml
+      - quests/AOA-EV-Q-0009.yaml
     focus:
       - unlock proof
       - gated grants
@@ -75,7 +75,7 @@ targets:
       - docs/BUILD_SYNERGY_POSTURE.md
       - schemas/party_template_catalog.schema.json
       - generated/party_template_cards.min.example.json
-      - quests/AOA-PB-Q-0004.yaml
+      - quests/AOA-PB-Q-0007.yaml
     focus:
       - party templates
       - build synergy
