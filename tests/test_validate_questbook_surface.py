@@ -23,6 +23,14 @@ SURFACE_PATHS = (
     "seed_rpg_first_wave_pack.map.yaml",
     "seed_rpg_second_wave_pack.md",
     "seed_rpg_second_wave_pack.map.yaml",
+    "seed_rpg_architecture_rfc_pack.md",
+    "seed_rpg_architecture_rfc_pack.map.yaml",
+    "seed_rpg_bridge_wave_pack.md",
+    "seed_rpg_bridge_wave_pack.map.yaml",
+    "seed_rpg_sdk_addendum_pack.md",
+    "seed_rpg_sdk_addendum_pack.map.yaml",
+    "seed_rpg_runtime_projection_pack.md",
+    "seed_rpg_runtime_projection_pack.map.yaml",
 )
 
 
@@ -92,6 +100,74 @@ class ValidateQuestbookSurfaceTests(unittest.TestCase):
         self.assertEqual(1, len(errors))
         self.assertIn("QUESTBOOK.md must reference active quest id 'DION-SEED-Q-0006'", errors[0])
 
+    def test_missing_architecture_rpg_tracked_id_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            questbook_path = root / "QUESTBOOK.md"
+            questbook_path.write_text(
+                questbook_path.read_text(encoding="utf-8").replace(
+                    "DION-SEED-Q-0007", "DION-SEED-Q-9996", 1
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("QUESTBOOK.md must reference active quest id 'DION-SEED-Q-0007'", errors[0])
+
+    def test_missing_bridge_wave_rpg_tracked_id_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            questbook_path = root / "QUESTBOOK.md"
+            questbook_path.write_text(
+                questbook_path.read_text(encoding="utf-8").replace(
+                    "DION-SEED-Q-0008", "DION-SEED-Q-9995", 1
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("QUESTBOOK.md must reference active quest id 'DION-SEED-Q-0008'", errors[0])
+
+    def test_missing_runtime_projection_rpg_tracked_id_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            questbook_path = root / "QUESTBOOK.md"
+            questbook_path.write_text(
+                questbook_path.read_text(encoding="utf-8").replace(
+                    "DION-SEED-Q-0009", "DION-SEED-Q-9994", 1
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("QUESTBOOK.md must reference active quest id 'DION-SEED-Q-0009'", errors[0])
+
+    def test_missing_sdk_addendum_rpg_tracked_id_fails_validation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            questbook_path = root / "QUESTBOOK.md"
+            questbook_path.write_text(
+                questbook_path.read_text(encoding="utf-8").replace(
+                    "DION-SEED-Q-0010", "DION-SEED-Q-9993", 1
+                ),
+                encoding="utf-8",
+            )
+
+            errors = validate_questbook_surface.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("QUESTBOOK.md must reference active quest id 'DION-SEED-Q-0010'", errors[0])
+
     def test_closed_tracked_id_in_questbook_fails_validation(self) -> None:
         with TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
@@ -99,8 +175,8 @@ class ValidateQuestbookSurfaceTests(unittest.TestCase):
             questbook_path = root / "QUESTBOOK.md"
             questbook_path.write_text(
                 questbook_path.read_text(encoding="utf-8").replace(
-                    "## Frontier\n\n- none yet",
-                    "## Frontier\n\n- `DION-SEED-Q-0001` — closed rollout should not stay listed",
+                    "- `DION-SEED-Q-0007` — stage the RPG architecture RFC pack as a named seed-garden prep pack",
+                    "- `DION-SEED-Q-0007` — stage the RPG architecture RFC pack as a named seed-garden prep pack\n- `DION-SEED-Q-0001` — closed rollout should not stay listed",
                     1,
                 ),
                 encoding="utf-8",

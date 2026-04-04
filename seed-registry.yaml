@@ -41,6 +41,10 @@ origin_notes:
 - seed_questbook_seedgarden_profile_pack.md
 - seed_rpg_first_wave_pack.md
 - seed_rpg_second_wave_pack.md
+- seed_rpg_architecture_rfc_pack.md
+- seed_rpg_bridge_wave_pack.md
+- seed_rpg_sdk_addendum_pack.md
+- seed_rpg_runtime_projection_pack.md
 - archive/seed_pack_2026-03-24_kag-frontier/README.md
 wave_index:
 - wave: first_wave

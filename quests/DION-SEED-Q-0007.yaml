@@ -1,0 +1,52 @@
+schema_version: work_quest_v1
+id: DION-SEED-Q-0007
+title: Stage the RPG architecture RFC pack as a named seed-garden prep pack
+summary: Keep the vocabulary, boundary-law, and runtime/frontend contract rollout legible as a transport and lineage bundle without turning Dionysus into architecture or runtime doctrine authority.
+repo: Dionysus
+owner_surface: future-seeds/rpg-architecture-rfc
+theme_ref: ''
+milestone_ref: ''
+kind: rollout
+state: captured
+band: frontier
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: planner
+fallback_tier: verifier
+wrapper_class: local_validator
+write_scope: docs_only
+split_required: false
+complexity_basis:
+  scope: 1
+  ambiguity: 1
+  boundary: 1
+  verification: 2
+parent: null
+depends_on:
+  - DION-SEED-Q-0005
+  - DION-SEED-Q-0006
+activation:
+  mode: manual
+  note: open when the RPG architecture RFC bundle is refreshed or staged in the seed garden
+anchor_ref:
+  artifact: rpg_architecture_rfc_pack
+  ref: seed_rpg_architecture_rfc_pack.md
+  note: the seed note and map keep transport posture explicit
+handoff_role: seed-garden-maintainer
+evidence:
+  - the pack is marked transport-only
+  - repo ownership boundaries remain explicit
+  - later RPG waves inherit one cited vocabulary and boundary map
+harvest:
+  target: none
+opened_at: '2026-04-03'
+touched_at: '2026-04-04'
+tags:
+  - seed
+  - rpg
+  - architecture
+  - transport
+notes: >
+  Keep the zip export derived and reviewable. Do not let the prep pack overrule owner-repo meaning or turn Dionysus into architecture or runtime doctrine authority. If the live target repo requires a repo-native quest-id adaptation, record that adaptation in the map instead of reviving an older prefix.
+public_safe: true

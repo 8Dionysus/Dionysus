@@ -130,6 +130,73 @@ PACK_FAMILIES = {
                     "seed.rpg.first-wave-pack.v0",
                 ],
             },
+            "seed_rpg_architecture_rfc_pack.md": {
+                "seed_id": "seed.rpg.architecture-rfc.v0",
+                "priority": "now",
+                "priority_band": "now",
+                "planting_readiness": "ready",
+                "source_bundle": "archive/seed_pack_exports/rpg_architecture_rfc_seed.zip",
+                "targets": [
+                    "Agents-of-Abyss",
+                    "abyss-stack",
+                    "Dionysus",
+                ],
+                "dependencies": [
+                    "seed.rpg.first-wave-pack.v0",
+                    "seed.rpg.second-wave-pack.v0",
+                ],
+            },
+            "seed_rpg_bridge_wave_pack.md": {
+                "seed_id": "seed.rpg.bridge-wave-pack.v0",
+                "priority": "next",
+                "priority_band": "next",
+                "planting_readiness": "needs_adaptation",
+                "source_bundle": "archive/seed_pack_exports/rpg_bridge_wave_seed.zip",
+                "targets": [
+                    "Agents-of-Abyss",
+                    "aoa-evals",
+                    "aoa-playbooks",
+                    "aoa-routing",
+                    "Dionysus",
+                ],
+                "dependencies": [
+                    "seed.rpg.first-wave-pack.v0",
+                    "seed.rpg.second-wave-pack.v0",
+                    "seed.rpg.architecture-rfc.v0",
+                ],
+            },
+            "seed_rpg_sdk_addendum_pack.md": {
+                "seed_id": "seed.rpg.sdk-addendum.v0",
+                "priority": "later",
+                "priority_band": "later",
+                "planting_readiness": "needs_adaptation",
+                "source_bundle": "archive/seed_pack_exports/rpg_sdk_addendum_seed.zip",
+                "targets": [
+                    "aoa-sdk",
+                    "Dionysus",
+                ],
+                "dependencies": [
+                    "seed.rpg.architecture-rfc.v0",
+                    "seed.rpg.bridge-wave-pack.v0",
+                ],
+            },
+            "seed_rpg_runtime_projection_pack.md": {
+                "seed_id": "seed.rpg.runtime-projection-pack.v0",
+                "priority": "later",
+                "priority_band": "later",
+                "planting_readiness": "blocked",
+                "source_bundle": "archive/seed_pack_exports/rpg_runtime_projection_seed.zip",
+                "targets": [
+                    "Agents-of-Abyss",
+                    "abyss-stack",
+                    "Dionysus",
+                ],
+                "dependencies": [
+                    "seed.rpg.architecture-rfc.v0",
+                    "seed.rpg.bridge-wave-pack.v0",
+                    "seed.rpg.sdk-addendum.v0",
+                ],
+            },
         },
     },
 }
@@ -356,7 +423,10 @@ def validate_prep_packs(root: Path = ROOT) -> None:
             fail(f"{map_path.name}: keep_next_live_seed must match seed-registry navigation.next_live_seed")
 
         scope_exclusions = require_string_list(mapping["scope_exclusions"], f"{map_path.name}.scope_exclusions")
-        for excluded in ("ATM10-Agent", "aoa-sdk"):
+        required_exclusions = ["ATM10-Agent"]
+        if note_name != "seed_rpg_sdk_addendum_pack.md":
+            required_exclusions.append("aoa-sdk")
+        for excluded in required_exclusions:
             if excluded not in scope_exclusions:
                 fail(f"{map_path.name}.scope_exclusions must include '{excluded}'")
 
@@ -369,7 +439,9 @@ def validate_prep_packs(root: Path = ROOT) -> None:
             repo = require_nonempty_string(target_map["repo"], f"{map_path.name}.targets[{index}].repo")
             files = require_string_list(target_map["files"], f"{map_path.name}.targets[{index}].files")
             target_repos.append(repo)
-            if repo in {"ATM10-Agent", "aoa-sdk"}:
+            if repo == "ATM10-Agent":
+                fail(f"{map_path.name}.targets[{index}].repo must not include '{repo}' in the current rollout")
+            if repo == "aoa-sdk" and note_name != "seed_rpg_sdk_addendum_pack.md":
                 fail(f"{map_path.name}.targets[{index}].repo must not include '{repo}' in the current rollout")
         if note_name == "seed_questbook_boundary_runtime_pack.md" and repo == "abyss-stack":
             for file_ref in files:

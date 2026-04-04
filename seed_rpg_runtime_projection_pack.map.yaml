@@ -1,0 +1,96 @@
+map_version: 1
+updated_at: '2026-04-03'
+seed_note: seed_rpg_runtime_projection_pack.md
+status: future_seed_prep_note
+
+source_bundle:
+  path: archive/seed_pack_exports/rpg_runtime_projection_seed.zip
+  included_surfaces:
+    - rpg_runtime_projection_seed/README.md
+    - rpg_runtime_projection_seed/APPLY_ORDER.md
+    - rpg_runtime_projection_seed/CODEX_NOTES.md
+    - rpg_runtime_projection_seed/SEED_MANIFEST.yaml
+    - rpg_runtime_projection_seed/COVERAGE_MAP.md
+    - rpg_runtime_projection_seed/TOUCHPOINTS_NOT_INCLUDED.md
+    - rpg_runtime_projection_seed/later-wave-targets.md
+    - rpg_runtime_projection_seed/Agents-of-Abyss/
+    - rpg_runtime_projection_seed/abyss-stack/
+    - rpg_runtime_projection_seed/Dionysus/
+
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - Agents-of-Abyss
+    - abyss-stack
+    - Dionysus
+  priority_band: later
+  planting_readiness: blocked
+  why_now:
+    - the architecture RFC fixes the law, the bridge wave fixes the cross-repo geometry, and the SDK addendum fixes the typed reader hand that this body-facing pack will depend on
+    - abyss-stack still needs explicit collection and projection surfaces before any honest UI or reader can rely on them
+    - staging the body-facing pack now preserves lineage without promoting runtime state ahead of source-owned meaning
+  dependencies:
+    - seed.rpg.architecture-rfc.v0
+    - seed.rpg.bridge-wave-pack.v0
+    - seed.rpg.sdk-addendum.v0
+
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+
+targets:
+  - repo: Agents-of-Abyss
+    contour: common-runtime-projection-wave
+    files:
+      - docs/RPG_RUNTIME_PROJECTION_WAVE.md
+      - quests/AOA-Q-0008.yaml
+    focus:
+      - body-facing wave law
+      - anti-collapse boundaries
+      - AoA versus ToS discipline
+
+  - repo: abyss-stack
+    contour: runtime-rpg-collections
+    files:
+      - docs/RPG_RUNTIME_COLLECTIONS.md
+      - docs/RPG_RUNTIME_BUILDERS.md
+      - docs/RPG_ROUTE_API_SEAM.md
+      - docs/RPG_FRONTEND_PROJECTION_SEAM.md
+      - schemas/agent_build_snapshot_collection.schema.json
+      - schemas/reputation_ledger_collection.schema.json
+      - schemas/quest_run_result_collection.schema.json
+      - schemas/frontend_projection_bundle_collection.schema.json
+      - generated/rpg/agent_build_snapshots.json
+      - generated/rpg/reputation_ledgers.json
+      - generated/rpg/quest_run_results.json
+      - generated/rpg/frontend_projection_bundles.json
+      - quests/ABY-Q-0002.yaml
+    focus:
+      - runtime-owned read models
+      - filesystem-first projection transport
+      - read-only /rpg/* seam
+
+  - repo: Dionysus
+    contour: seed-garden-staging
+    files:
+      - seed_rpg_runtime_projection_pack.md
+      - seed_rpg_runtime_projection_pack.map.yaml
+      - quests/DION-SEED-Q-0009.yaml
+    focus:
+      - prep-pack lineage
+      - transport posture
+      - non-authority staging
+
+scope_exclusions:
+  - 8Dionysus
+  - route-api implementation code
+  - live UI code
+  - aoa-skills runtime mirror
+  - aoa-techniques runtime mirror
+  - artifact doctrine
+  - Tree-of-Sophia runtime overlays
+  - aoa-sdk
+  - ATM10-Agent
