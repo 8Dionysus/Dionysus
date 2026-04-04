@@ -20,7 +20,7 @@ tags:
 
 Prepare the body-facing RPG runtime slice as a named prep pack without turning `Dionysus` into runtime doctrine authority.
 
-This pack stages collection wrappers, generated transport files, and the future `/rpg/*` seam posture so later service work and frontend work can build on one honest runtime shape.
+This pack stages collection wrappers, generated transport files, filesystem-first runtime copies, and the future `/rpg/*` seam posture so later service work and frontend work can build on one honest runtime shape.
 
 ## Why this belongs in Dionysus
 
@@ -54,6 +54,7 @@ It carries:
 Read the later plantings under these repo-home boundaries:
 
 - `Agents-of-Abyss` owns the common runtime/projection wave law
+- `Agents-of-Abyss` also owns the generated dual-vocabulary transport twin required by live SDK compatibility
 - `abyss-stack` owns the runtime collections and future `/rpg/*` read seam
 - `Dionysus` owns only seed-garden staging and transport lineage
 

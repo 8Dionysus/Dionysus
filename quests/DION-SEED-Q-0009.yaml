@@ -1,7 +1,7 @@
 schema_version: work_quest_v1
 id: DION-SEED-Q-0009
 title: Stage the RPG runtime-projection pack as a body-facing prep pack
-summary: Keep the runtime collection and projection rollout legible as transport and lineage without letting Dionysus become runtime doctrine authority.
+summary: Keep the runtime collection, generated twin, and projection rollout legible as transport and lineage without letting Dionysus become runtime doctrine authority.
 repo: Dionysus
 owner_surface: future-seeds/rpg-runtime-projection
 theme_ref: ''
@@ -37,11 +37,12 @@ handoff_role: seed-garden-maintainer
 evidence:
   - the pack is marked transport-only
   - runtime ownership remains in abyss-stack
+  - repo-native adaptations for generated twins and quest ids stay explicit
   - the prep pack does not overrule owner-repo meaning
 harvest:
   target: none
 opened_at: '2026-04-03'
-touched_at: '2026-04-03'
+touched_at: '2026-04-04'
 tags:
   - seed
   - rpg
@@ -49,5 +50,7 @@ tags:
   - frontend
   - transport
 notes: >
-  Keep the zip export derived and reviewable. Do not let the prep pack become the owner of bundle doctrine or route-api semantics.
+  Keep the zip export derived and reviewable. Record the ABY-Q-0002 to ABYSS-STACK-Q-0006 adaptation
+  and the new Agents-of-Abyss generated overlay twin explicitly. Do not let the prep pack become the
+  owner of bundle doctrine or route-api semantics.
 public_safe: true

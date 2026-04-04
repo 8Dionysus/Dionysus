@@ -1,5 +1,5 @@
 map_version: 1
-updated_at: '2026-04-03'
+updated_at: '2026-04-04'
 seed_note: seed_rpg_runtime_projection_pack.md
 status: future_seed_prep_note
 
@@ -47,10 +47,12 @@ targets:
     files:
       - docs/RPG_RUNTIME_PROJECTION_WAVE.md
       - quests/AOA-Q-0008.yaml
+      - generated/dual_vocabulary_overlay.json
     focus:
       - body-facing wave law
       - anti-collapse boundaries
       - AoA versus ToS discipline
+      - live SDK transport twin
 
   - repo: abyss-stack
     contour: runtime-rpg-collections
@@ -67,10 +69,12 @@ targets:
       - generated/rpg/reputation_ledgers.json
       - generated/rpg/quest_run_results.json
       - generated/rpg/frontend_projection_bundles.json
-      - quests/ABY-Q-0002.yaml
+      - scripts/aoa-rpg-runtime-projection
+      - quests/ABYSS-STACK-Q-0006.yaml
     focus:
       - runtime-owned read models
       - filesystem-first projection transport
+      - runtime latest/records parity
       - read-only /rpg/* seam
 
   - repo: Dionysus
