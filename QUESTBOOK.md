@@ -18,17 +18,20 @@ Do not use it for:
 
 ## Frontier
 
-- none yet
+- `DION-SEED-Q-0007` — stage the RPG architecture RFC pack as a named seed-garden prep pack
 
 ## Near
 
 - `DION-SEED-Q-0003` — treat zip exports and transport packs as derived convenience surfaces with validity checks, not authority
 - `DION-SEED-Q-0005` — stage the RPG first-wave reflection pack as a named seed-garden prep pack
 - `DION-SEED-Q-0006` — stage the RPG second-wave abilities-and-feats pack as a named seed-garden prep pack
+- `DION-SEED-Q-0008` — stage the RPG bridge-wave pack as a named seed-garden prep pack
+- `DION-SEED-Q-0010` — stage the RPG SDK addendum pack as a typed-consumer prep pack
 
 ## Latent / parked
 
 - `DION-SEED-Q-0004` — track live gated seed closure and later seed readiness without converting repo-local backlog into seed canon
+- `DION-SEED-Q-0009` — stage the RPG runtime-projection pack as a body-facing prep pack
 
 ## Harvest candidates
 

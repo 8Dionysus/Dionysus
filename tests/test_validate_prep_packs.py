@@ -24,6 +24,14 @@ SURFACE_PATHS = (
     "seed_rpg_first_wave_pack.map.yaml",
     "seed_rpg_second_wave_pack.md",
     "seed_rpg_second_wave_pack.map.yaml",
+    "seed_rpg_architecture_rfc_pack.md",
+    "seed_rpg_architecture_rfc_pack.map.yaml",
+    "seed_rpg_bridge_wave_pack.md",
+    "seed_rpg_bridge_wave_pack.map.yaml",
+    "seed_rpg_sdk_addendum_pack.md",
+    "seed_rpg_sdk_addendum_pack.map.yaml",
+    "seed_rpg_runtime_projection_pack.md",
+    "seed_rpg_runtime_projection_pack.map.yaml",
 )
 
 

@@ -1,0 +1,53 @@
+schema_version: work_quest_v1
+id: DION-SEED-Q-0009
+title: Stage the RPG runtime-projection pack as a body-facing prep pack
+summary: Keep the runtime collection and projection rollout legible as transport and lineage without letting Dionysus become runtime doctrine authority.
+repo: Dionysus
+owner_surface: future-seeds/rpg-runtime-projection
+theme_ref: ''
+milestone_ref: ''
+kind: rollout
+state: captured
+band: latent
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: planner
+fallback_tier: verifier
+wrapper_class: local_validator
+write_scope: docs_only
+split_required: false
+complexity_basis:
+  scope: 1
+  ambiguity: 1
+  boundary: 1
+  verification: 2
+parent: null
+depends_on:
+  - DION-SEED-Q-0008
+  - DION-SEED-Q-0010
+activation:
+  mode: manual
+  note: open when the runtime/body RPG pack is refreshed or staged in the seed garden
+anchor_ref:
+  artifact: rpg_runtime_projection_pack
+  ref: seed_rpg_runtime_projection_pack.md
+  note: the seed note and map keep runtime/body transport posture explicit
+handoff_role: seed-garden-maintainer
+evidence:
+  - the pack is marked transport-only
+  - runtime ownership remains in abyss-stack
+  - the prep pack does not overrule owner-repo meaning
+harvest:
+  target: none
+opened_at: '2026-04-03'
+touched_at: '2026-04-03'
+tags:
+  - seed
+  - rpg
+  - runtime
+  - frontend
+  - transport
+notes: >
+  Keep the zip export derived and reviewable. Do not let the prep pack become the owner of bundle doctrine or route-api semantics.
+public_safe: true
