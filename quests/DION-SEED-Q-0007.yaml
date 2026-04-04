@@ -41,12 +41,12 @@ evidence:
 harvest:
   target: none
 opened_at: '2026-04-03'
-touched_at: '2026-04-03'
+touched_at: '2026-04-04'
 tags:
   - seed
   - rpg
   - architecture
   - transport
 notes: >
-  Keep the zip export derived and reviewable. Do not let the prep pack overrule owner-repo meaning or turn Dionysus into architecture or runtime doctrine authority.
+  Keep the zip export derived and reviewable. Do not let the prep pack overrule owner-repo meaning or turn Dionysus into architecture or runtime doctrine authority. If the live target repo requires a repo-native quest-id adaptation, record that adaptation in the map instead of reviving an older prefix.
 public_safe: true

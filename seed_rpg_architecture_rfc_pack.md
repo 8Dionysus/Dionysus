@@ -48,6 +48,12 @@ It carries:
 - repo-local architecture-RFC surfaces for `Agents-of-Abyss` and `abyss-stack`
 - this `Dionysus` prep-pack note, map, and quest object
 
+## Repo-native landing note
+
+The transport bundle still carries the `abyss-stack` quest as `ABY-Q-0001`.
+
+When planted into the live repo, that quest should be adapted to the repo-native `ABYSS-STACK-Q-*` line rather than reviving the older prefix.
+
 ## Ownership posture
 
 Read the later plantings under these repo-home boundaries:
