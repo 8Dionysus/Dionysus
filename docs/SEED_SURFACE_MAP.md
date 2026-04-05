@@ -141,6 +141,7 @@ Reading:
 ### `donor_only_not_planted`
 
 - `seed_staging/donor/seed_clawrouter_donor_graft.md`
+- `seed_staging/donor/seed_aoa_session_donor_harvest.md`
 
 ## Audit Wave Sync
 
