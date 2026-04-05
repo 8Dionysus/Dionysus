@@ -5,8 +5,8 @@ projects:
   - AoA
 kind: audit-pack-note
 lifecycle_status: staged_only_not_landed
-lifecycle_note: Repo-local skills trace harness remains staged in Dionysus; no owner-repo rollout is verified as landed.
-reality_checked_at: '2026-04-04'
+lifecycle_note: Repo-local skills trace harness remains staged in Dionysus; wave 1 and wave 2 are now landed upstream, but wave 3 itself is not yet verified as planted in owner repos.
+reality_checked_at: '2026-04-05'
 status: pending_archive
 priority: medium
 parent_seed: null

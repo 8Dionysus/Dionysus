@@ -29,11 +29,11 @@ EXPECTED_NOTES = {
     },
     "seed_staging/audit/seed_wave1_codex_audit_spine.md": {
         "kind": "audit-pack-note",
-        "lifecycle_status": "staged_only_not_landed",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
     },
     "seed_staging/audit/seed_wave2_codex_skill_proof_audit_bridge.md": {
         "kind": "audit-pack-note",
-        "lifecycle_status": "staged_only_not_landed",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
     },
     "seed_staging/future/seed_architecture_fit_pack.md": {
         "kind": "prep-pack-note",

@@ -47,6 +47,9 @@ Structured transport notes should carry a current `lifecycle_status` and a
 short `lifecycle_note`, so the root no longer asks readers to infer that state
 from body prose alone.
 
+After merged owner-repo landing, update those markers in the same cleanup pass
+so `Dionysus` does not keep a stale staged-only reading for a now-landed pack.
+
 See `docs/codex/owner-repo-reality-check.md` for the narrow rule.
 
 ## The unit of work

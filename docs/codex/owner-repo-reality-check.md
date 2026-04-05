@@ -54,3 +54,18 @@ Structured staging notes should carry:
 
 That marker is a readability aid, not a replacement for direct repo checks.
 When reality changes upstream, update the marker in the same pass.
+
+## Post-merge rule
+
+If a staged pack lands upstream through merged owner-repo PRs, do not leave
+`Dionysus` saying it is still merely staged.
+
+In the same follow-up pass:
+
+- update `lifecycle_status`
+- update `lifecycle_note`
+- update `reality_checked_at`
+- update `docs/SEED_SURFACE_MAP.md`
+
+Otherwise the seed garden starts lying again even when the owner repos are
+already correct.
