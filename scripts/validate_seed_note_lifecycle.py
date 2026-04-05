@@ -27,6 +27,10 @@ EXPECTED_NOTES = {
         "kind": "donor-note",
         "lifecycle_status": "donor_only_not_planted",
     },
+    "seed_staging/donor/seed_aoa_session_donor_harvest.md": {
+        "kind": "donor-note",
+        "lifecycle_status": "donor_only_not_planted",
+    },
     "seed_staging/audit/seed_wave1_codex_audit_spine.md": {
         "kind": "audit-pack-note",
         "lifecycle_status": "landed_upstream_retained_for_lineage",

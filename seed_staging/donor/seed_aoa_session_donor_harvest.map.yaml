@@ -1,0 +1,66 @@
+map_version: 1
+updated_at: '2026-04-05'
+seed_note: seed_staging/donor/seed_aoa_session_donor_harvest.md
+status: donor_origin_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-session-donor-harvest.zip
+  included_surfaces:
+    - aoa-session-donor-harvest-deliverables.md
+    - aoa-session-donor-harvest-recommendation.md
+    - aoa-session-donor-harvest-source.zip
+    - aoa-session-donor-harvest.patch
+    - aoa-session-donor-harvest-patch.zip
+    - aoa-session-donor-harvest-codex-portable.zip
+donor_origin:
+  kind: reviewed_session_artifact
+  note: session-derived donor harvest bundle, not an already-published owner-repo source surface
+selection_policy:
+  preferred_first_owner: aoa-skills
+  boundary_rule:
+    - keep aoa-quest-harvest as final promotion triage only
+  lineage_precondition:
+    - decide whether a scaffold skill may land with pending technique IDs or whether aoa-techniques lineage must publish first
+  derivative_rule:
+    - do not use aoa-routing or aoa-kag as first-authoring homes for this source-owned meaning
+targets:
+  - repo: aoa-skills
+    contour: scaffold-skill-bundle
+    files:
+      - skills/aoa-session-donor-harvest/
+      - skills/aoa-quest-harvest/SKILL.md
+      - SKILL_INDEX.md
+      - config/portable_skill_overrides.json
+      - config/skill_pack_profiles.json
+      - config/skill_policy_matrix.json
+      - tests/fixtures/skill_evaluation_cases.yaml
+      - tests/fixtures/skill_evaluation_snapshots/
+      - .agents/skills/aoa-session-donor-harvest/
+    validation:
+      - python scripts/release_check.py
+      - current codex-portable-export workflow
+    focus:
+      - new scaffold skill only if owner-layer boundary stays explicit
+      - keep aoa-quest-harvest narrow
+      - preserve explicit-only invocation
+      - keep pending technique lineage honest
+  - repo: aoa-techniques
+    contour: later-lineage-home
+    files:
+      - future technique surfaces for session donor harvest
+      - future technique surfaces for owner-layer triage
+    validation:
+      - python scripts/release_check.py
+    focus:
+      - replace pending technique IDs only when real technique canon exists
+      - keep technique publication separate from the first scaffold-skill choice
+scope_exclusions:
+  - immediate owner-repo landing from this Dionysus staging step
+  - broad federation rollout beyond aoa-skills and later aoa-techniques lineage
+  - hidden widening of aoa-quest-harvest into upstream donor extraction
+  - first-authoring into aoa-routing or aoa-kag
+  - pretending patch-ready files are already owner-approved
