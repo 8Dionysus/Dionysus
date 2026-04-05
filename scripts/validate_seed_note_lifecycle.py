@@ -35,6 +35,10 @@ EXPECTED_NOTES = {
         "kind": "audit-pack-note",
         "lifecycle_status": "landed_upstream_retained_for_lineage",
     },
+    "seed_staging/audit/seed_federated_audit_remediation_pack.md": {
+        "kind": "audit-pack-note",
+        "lifecycle_status": "staged_only_not_landed",
+    },
     "seed_staging/future/seed_architecture_fit_pack.md": {
         "kind": "prep-pack-note",
         "lifecycle_status": "staged_only_not_landed",
