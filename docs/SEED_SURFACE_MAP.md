@@ -75,6 +75,7 @@ Read those markers first, then verify the owner repos directly.
 
 - `seed_wave1_codex_audit_spine.md` and `seed_wave2_codex_skill_proof_audit_bridge.md` are now landed upstream and retained here for lineage
 - `seed_wave3_codex_repo_local_skills_trace_harness.md` remains true staging
+- `seed_federated_audit_remediation_pack.md` is a newer staged-only cross-repo remediation transport surface and must not be mistaken for owner-repo truth
 
 ### `seed_staging/future/`
 
@@ -130,6 +131,7 @@ Reading:
 ### `staged_only_not_landed`
 
 - `seed_staging/audit/seed_wave3_codex_repo_local_skills_trace_harness.md`
+- `seed_staging/audit/seed_federated_audit_remediation_pack.md`
 - `seed_staging/future/seed_architecture_fit_pack.md`
 - `seed_staging/future/seed_dialogue_memory_pack.md`
 - `seed_staging/future/seed_federation_conductor_pack.md`
@@ -147,6 +149,7 @@ As of `2026-04-05` UTC owner-repo state:
 - `seed_wave1_codex_audit_spine.md` is landed upstream through merged audit surfaces in `Agents-of-Abyss`, `ATM10-Agent`, and `abyss-stack`
 - `seed_wave2_codex_skill_proof_audit_bridge.md` is landed upstream through merged audit surfaces in `Agents-of-Abyss`, `aoa-skills`, and `aoa-evals`
 - `seed_wave3_codex_repo_local_skills_trace_harness.md` remains unlanded and should not be inferred from wave 1 and wave 2 being done
+- `seed_federated_audit_remediation_pack.md` is newly staged and still needs owner-repo reality checks before any downstream application order is trusted
 
 ## Practical Rule
 

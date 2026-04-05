@@ -1,0 +1,254 @@
+map_version: 1
+updated_at: '2026-04-05'
+seed_note: seed_staging/audit/seed_federated_audit_remediation_pack.md
+status: audit_prep_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  owner_repo_reality_wins: true
+  separate_atm10_endcap: true
+  do_not_let_transport_pack_become_sovereignty: true
+source_bundle:
+  path: archive/seed_pack_exports/federated_audit_remediation_seed_pack.zip
+  included_surfaces:
+    - federated_audit_remediation_seed_pack/README.md
+    - federated_audit_remediation_seed_pack/seed_federated_audit_remediation_pack.md
+    - federated_audit_remediation_seed_pack/seed_federated_audit_remediation_pack.map.yaml
+    - federated_audit_remediation_seed_pack/PACK_MANIFEST.json
+    - federated_audit_remediation_seed_pack/WORKSTREAMS.yaml
+    - federated_audit_remediation_seed_pack/EXECUTION_ORDER.md
+    - federated_audit_remediation_seed_pack/TASKS_BY_PRIORITY.md
+    - federated_audit_remediation_seed_pack/VALIDATION_MATRIX.md
+    - federated_audit_remediation_seed_pack/FINDINGS_INDEX.md
+    - federated_audit_remediation_seed_pack/PATCH_SNIPPETS.md
+    - federated_audit_remediation_seed_pack/repo_targets/
+    - federated_audit_remediation_seed_pack/reports/planting-report.stub.md
+selection_policy:
+  fixed_order_required: true
+  default_order:
+    - WS01 federation compatibility, inventory, and release semantics
+    - 'WS02 control-plane hardening: aoa-routing × aoa-sdk × aoa-playbooks'
+    - WS03 memory and agent contract hardening
+    - WS04 memo-routing return-path normalization
+    - WS08 governance-surface honesty and review truth-sync
+    - WS09 aoa-skills CI and validator rail hardening
+    - WS10 federation-wide CI/canary posture
+    - WS05 source-first ToS/KAG routing hardening
+    - WS06 seed-garden, ecosystem-center, and runtime-body hardening
+    - WS07 techniques -> skills -> evals traceability and maturity hardening
+    - WS11 onboarding, support matrix, and release clarity
+    - WS12 ATM10-Agent preliminary endcap
+  first_slice_rule:
+    - start with one repo-bounded lie-removal slice, not a federation-wide sweep
+  owner_repo_rule:
+    - if a live repo already closed a finding, update lifecycle markers instead of replaying the transport pack
+application_order:
+  - WS01 federation compatibility, inventory, and release semantics
+  - 'WS02 control-plane hardening: aoa-routing × aoa-sdk × aoa-playbooks'
+  - WS03 memory and agent contract hardening
+  - WS04 memo-routing return-path normalization
+  - WS08 governance-surface honesty and review truth-sync
+  - WS09 aoa-skills CI and validator rail hardening
+  - WS10 federation-wide CI/canary posture
+  - WS05 source-first ToS/KAG routing hardening
+  - WS06 seed-garden, ecosystem-center, and runtime-body hardening
+  - WS07 techniques -> skills -> evals traceability and maturity hardening
+  - WS11 onboarding, support matrix, and release clarity
+  - WS12 ATM10-Agent preliminary endcap
+targets:
+  - repo: Agents-of-Abyss
+    workstreams:
+      - WS01
+      - WS06
+      - WS10
+      - WS11
+    validation:
+      - python scripts/validate_ecosystem.py
+      - pytest
+    focus:
+      - federation inventory
+      - ecosystem registry coverage
+      - source-side smoke
+      - onboarding path
+  - repo: aoa-sdk
+    workstreams:
+      - WS01
+      - WS02
+      - WS10
+      - WS11
+      - WS12
+    validation:
+      - python -m pytest -q
+      - python -m ruff check .
+      - python -m mypy src
+      - python -m build
+    focus:
+      - compatibility gate enforcement
+      - sibling canaries
+      - API semantic separation
+  - repo: aoa-routing
+    workstreams:
+      - WS01
+      - WS02
+      - WS04
+      - WS05
+      - WS10
+    validation:
+      - python scripts/validate_router.py ...
+      - python scripts/build_router.py --check ...
+      - pytest tests
+    focus:
+      - compatibility-gated routed surfaces
+      - ToS entry ABI
+      - memo return-path validators
+  - repo: aoa-playbooks
+    workstreams:
+      - WS01
+      - WS02
+      - WS03
+      - WS10
+    validation:
+      - current repo-validation workflow
+      - current compatibility-canary workflow
+    focus:
+      - activation/federation surface contract clarity
+      - control-plane non-overlap pact
+  - repo: aoa-memo
+    workstreams:
+      - WS01
+      - WS03
+      - WS04
+      - WS10
+    validation:
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python scripts/validate_memory_object_surfaces.py
+      - pytest
+    focus:
+      - typed posture slice
+      - working.return normalization
+      - audit event provenance
+  - repo: aoa-agents
+    workstreams:
+      - WS01
+      - WS03
+      - WS10
+    validation:
+      - current repo-validation workflow
+      - generated drift check
+      - pytest
+    focus:
+      - memory scope grammar
+      - tier-role law
+      - scenario-specific overlays
+  - repo: aoa-kag
+    workstreams:
+      - WS01
+      - WS05
+      - WS10
+    validation:
+      - current repo-validation workflow
+      - current compatibility-canary workflow
+    focus:
+      - ToS adjunct budget
+      - source-first subordinate posture
+      - canary role
+  - repo: aoa-techniques
+    workstreams:
+      - WS01
+      - WS07
+      - WS09
+      - WS10
+    validation:
+      - python scripts/release_check.py
+    focus:
+      - latest-sibling canary
+      - maturity legend alignment
+  - repo: aoa-skills
+    workstreams:
+      - WS01
+      - WS07
+      - WS08
+      - WS09
+      - WS10
+      - WS11
+    validation:
+      - python scripts/release_check.py
+      - current codex-portable-export workflow
+      - generated drift check
+    focus:
+      - readiness naming
+      - governance truth-sync
+      - CI hardening
+      - surface honesty
+  - repo: aoa-evals
+    workstreams:
+      - WS01
+      - WS07
+      - WS10
+    validation:
+      - python scripts/build_catalog.py --check
+      - python scripts/validate_repo.py
+      - pytest
+    focus:
+      - scheduled canary
+      - eval traceability
+      - adjacent execution lanes
+  - repo: Dionysus
+    workstreams:
+      - WS01
+      - WS06
+    validation:
+      - python scripts/validate_seed_surfaces.py
+    focus:
+      - owner-repo reality checks
+      - lifecycle markers
+      - transport-pack boundaries
+  - repo: Tree-of-Sophia
+    workstreams:
+      - WS05
+      - WS10
+    validation:
+      - python scripts/validate_kag_export.py
+      - pytest
+    focus:
+      - source-first reentry
+      - source-side smoke
+      - authority vocabulary
+  - repo: abyss-stack
+    workstreams:
+      - WS06
+      - WS10
+      - WS11
+      - WS12
+    validation:
+      - python scripts/validate_stack.py
+      - repo-native workflow smoke / pytest equivalent
+    focus:
+      - mirror canaries
+      - action pinning
+      - Windows bridge smoke
+      - runtime source-root posture
+  - repo: 8Dionysus profile surfaces
+    workstreams:
+      - WS11
+    validation:
+      - public-surface review only
+    focus:
+      - canonical onboarding route
+      - release/support clarity
+  - repo: ATM10-Agent
+    workstreams:
+      - WS11
+      - WS12
+    validation:
+      - preliminary only: use repo-native validation when the dedicated audit starts
+    focus:
+      - preliminary release/test-tier/platform-contract prep
+scope_exclusions:
+  - immediate downstream rollout from this staging step
+  - treating the pack as stronger than owner-repo truth
+  - cross-repo batch edits without repo-local validation
+  - presenting WS12 as a deep ATM10 audit
