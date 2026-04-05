@@ -4,9 +4,9 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: audit-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: Skill-proof audit bridge remains staged in Dionysus; no owner-repo rollout is verified as landed.
-reality_checked_at: '2026-04-04'
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: Skill-proof audit bridge landed upstream in `Agents-of-Abyss`, `aoa-skills`, and `aoa-evals`; keep this pack only for lineage and replay.
+reality_checked_at: '2026-04-05'
 status: pending_archive
 priority: medium
 parent_seed: null
