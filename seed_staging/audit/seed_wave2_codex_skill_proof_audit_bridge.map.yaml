@@ -1,0 +1,70 @@
+map_version: 1
+updated_at: '2026-03-24'
+seed_note: seed_staging/audit/seed_wave2_codex_skill_proof_audit_bridge.md
+status: audit_prep_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: wave2_codex_audit_update_pack.zip
+  included_surfaces:
+    - Agents-of-Abyss/docs/CODEX_SKILL_PROOF_AUDIT_BRIDGE.md
+    - aoa-skills/AUDIT.md
+    - aoa-evals/AUDIT.md
+    - PATCH_SNIPPETS.md
+application_order:
+  - add bundled files as written
+  - patch AGENTS.md in the three repositories
+  - replace aoa-skills and aoa-evals rows in Agents-of-Abyss/ECOSYSTEM_AUDIT_INDEX.md
+  - run target-repo validation
+  - only then start the later Codex skill/eval wave
+targets:
+  - repo: Agents-of-Abyss
+    audit_class: constitutional
+    files:
+      - docs/CODEX_SKILL_PROOF_AUDIT_BRIDGE.md
+      - ECOSYSTEM_AUDIT_INDEX.md row updates
+    agents_patch: true
+    validation:
+      - python scripts/validate_ecosystem.py
+    focus:
+      - seam clarity
+      - wrong-owner routing between skills and evals
+      - layer boundary drift
+
+  - repo: aoa-skills
+    audit_class: workflow
+    files:
+      - AUDIT.md
+    agents_patch: true
+    validation:
+      - python scripts/release_check.py
+      - python scripts/report_skill_evaluation.py --fail-on-canonical-gaps
+      - when technique dependencies change: python scripts/report_technique_drift.py --techniques-repo ../aoa-techniques
+    focus:
+      - workflow widening
+      - technique-truth duplication
+      - overlay authority drift
+      - generated-surface drift
+
+  - repo: aoa-evals
+    audit_class: proof
+    files:
+      - AUDIT.md
+    agents_patch: true
+    validation:
+      - python scripts/build_catalog.py
+      - python scripts/validate_repo.py
+      - for comparison-spine changes: re-read generated/comparison_spine.json and chooser docs
+    focus:
+      - overclaiming
+      - verdict/claim mismatch
+      - baseline-by-association drift
+      - chooser and shared-infra overstatement
+wave3_follow_on:
+  - repo-local Codex skills for repeatable audit/report work
+  - a small eval harness for Codex behavior using structured traces
+  - optional .codex profile tightening where genuinely useful
+  - proof packets for recurring review jobs in aoa-evals

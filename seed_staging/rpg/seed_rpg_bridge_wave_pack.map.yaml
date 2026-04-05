@@ -1,0 +1,117 @@
+map_version: 1
+updated_at: '2026-04-04'
+seed_note: seed_staging/rpg/seed_rpg_bridge_wave_pack.md
+status: future_seed_prep_note
+
+source_bundle:
+  path: archive/seed_pack_exports/rpg_bridge_wave_seed.zip
+  included_surfaces:
+    - rpg_bridge_wave_seed/README.md
+    - rpg_bridge_wave_seed/APPLY_ORDER.md
+    - rpg_bridge_wave_seed/CODEX_NOTES.md
+    - rpg_bridge_wave_seed/SEED_MANIFEST.yaml
+    - rpg_bridge_wave_seed/COVERAGE_MAP.md
+    - rpg_bridge_wave_seed/TOUCHPOINTS_NOT_INCLUDED.md
+    - rpg_bridge_wave_seed/later-wave-targets.md
+    - rpg_bridge_wave_seed/Agents-of-Abyss/
+    - rpg_bridge_wave_seed/aoa-evals/
+    - rpg_bridge_wave_seed/aoa-playbooks/
+    - rpg_bridge_wave_seed/aoa-routing/
+    - rpg_bridge_wave_seed/Dionysus/
+
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - Agents-of-Abyss
+    - aoa-evals
+    - aoa-playbooks
+    - aoa-routing
+    - Dionysus
+  priority_band: next
+  planting_readiness: needs_adaptation
+  why_now:
+    - the first and second RPG waves already exist, but unlock proof, party composition, and navigation still need an honest bridge
+    - aoa-evals can host unlock-proof doctrine without collapsing progression into one score
+    - aoa-playbooks and aoa-routing can host scenario and navigation bridge surfaces without becoming runtime authority
+  dependencies:
+    - seed.rpg.first-wave-pack.v0
+    - seed.rpg.second-wave-pack.v0
+    - seed.rpg.architecture-rfc.v0
+
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+
+targets:
+  - repo: Agents-of-Abyss
+    contour: common-rpg-bridge-wave
+    files:
+      - docs/RPG_BRIDGE_WAVE.md
+      - quests/AOA-Q-0007.yaml
+    focus:
+      - bridge-wave law
+      - anti-collapse boundaries
+      - cross-repo linkage
+
+  - repo: aoa-evals
+    contour: unlock-proof-bridge
+    files:
+      - docs/UNLOCK_PROOF_BRIDGE.md
+      - schemas/unlock_proof_catalog.schema.json
+      - generated/unlock_proof_cards.min.example.json
+      - quests/AOA-EV-Q-0009.yaml
+    focus:
+      - unlock proof
+      - gated grants
+      - caution-first proof posture
+
+  - repo: aoa-playbooks
+    contour: party-template-bridge
+    files:
+      - docs/PARTY_TEMPLATE_MODEL.md
+      - docs/BUILD_SYNERGY_POSTURE.md
+      - schemas/party_template_catalog.schema.json
+      - generated/party_template_cards.min.example.json
+      - quests/AOA-PB-Q-0007.yaml
+    focus:
+      - party templates
+      - build synergy
+      - reanchor posture
+
+  - repo: aoa-routing
+    contour: rpg-navigation-bridge
+    files:
+      - docs/RPG_NAVIGATION_BRIDGE.md
+      - schemas/rpg_navigation_bundle.schema.json
+      - generated/rpg_navigation.min.example.json
+      - quests/AOA-RT-Q-0004.yaml
+    focus:
+      - derived navigation cards
+      - orientation only
+      - example-only builder posture
+
+  - repo: Dionysus
+    contour: seed-garden-staging
+    files:
+      - seed_staging/rpg/seed_rpg_bridge_wave_pack.md
+      - seed_staging/rpg/seed_rpg_bridge_wave_pack.map.yaml
+      - quests/DION-SEED-Q-0008.yaml
+    focus:
+      - prep-pack lineage
+      - transport posture
+      - non-authority staging
+
+scope_exclusions:
+  - abyss-stack
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-agents
+  - aoa-memo
+  - aoa-skills
+  - aoa-techniques
+  - Tree-of-Sophia
+  - aoa-kag
+  - ATM10-Agent

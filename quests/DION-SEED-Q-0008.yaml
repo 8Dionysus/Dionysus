@@ -30,7 +30,7 @@ activation:
   note: open when the RPG bridge-wave bundle is refreshed or staged in the seed garden
 anchor_ref:
   artifact: rpg_bridge_wave_pack
-  ref: seed_rpg_bridge_wave_pack.md
+  ref: seed_staging/rpg/seed_rpg_bridge_wave_pack.md
   note: the seed note and map keep transport posture explicit
 handoff_role: seed-garden-maintainer
 evidence:

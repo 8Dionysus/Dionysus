@@ -1,0 +1,146 @@
+map_version: 1
+updated_at: '2026-03-28'
+seed_note: seed_staging/future/seed_future_agent_systems_prep_pack.md
+status: future_seed_prep_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: dionysus_future_agent_systems_dropin.zip
+  included_surfaces:
+    - README_DROPIN.md
+    - seed_future_agent_systems_prep_pack.md
+    - seed_future_agent_systems_prep_pack.map.yaml
+    - future_agent_systems_seed_pack.zip
+    - future_agent_systems_seed_pack/README.md
+    - future_agent_systems_seed_pack/matrix/future_agent_systems_applicability.yaml
+    - future_agent_systems_seed_pack/notes/selection_rationale.md
+    - future_agent_systems_seed_pack/notes/origin_notes_patch.snippet.yaml
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R6-memory-namespace-and-compression-discipline.md
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R7-eval-ladder-and-judge-discipline.md
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R8-skills-as-contracted-execution-capsules.md
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R9-ai-native-documentation-surface.md
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R10-tool-approval-and-remote-boundary-policy.md
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R11-online-trace-sentinel.md
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R12-skill-proof-regression-dataset-spine.md
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R13-mcp-resource-and-prompt-surface.md
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R14-outward-a2a-boundary-and-agent-card.md
+    - future_agent_systems_seed_pack/seed_cards/AOA-SEED-R15-prompt-profile-version-spine.md
+selection_policy:
+  fixed_order_required: false
+  queue_binding: none
+  choose_smallest_bounded_slice: true
+  opening_rule:
+    - choose the seed that reinforces an existing owner repo without changing the current next_live_seed
+    - prefer one primary repo-home and at most one adjacent bridge repo
+    - do not open two seeds that redefine the same seam without an explicit manifest
+    - delay seed_index promotion until a later bounded manifest or explicit planting decision
+readiness_buckets:
+  direct_fit_now:
+    - AOA-SEED-R6 Memory Namespace and Compression Discipline
+    - AOA-SEED-R7 Eval Ladder and Judge Discipline
+    - AOA-SEED-R8 Skills as Contracted Execution Capsules
+    - AOA-SEED-R9 AI-Native Documentation Surface
+    - AOA-SEED-R10 Tool Approval and Remote Boundary Policy
+  adjacent_baseline_or_neighbor_move_recommended:
+    - AOA-SEED-R11 Online Trace Sentinel
+    - AOA-SEED-R12 Skill/Proof Regression Dataset Spine
+    - AOA-SEED-R13 MCP Resource and Prompt Surface
+    - AOA-SEED-R14 Outward A2A Boundary and Agent Card
+  reserve:
+    - AOA-SEED-R15 Prompt/Profile Version Spine
+seed_catalog:
+  - id: R6
+    label: AOA-SEED-R6 Memory Namespace and Compression Discipline
+    kind: architecture-seed
+    repo_homes:
+      - aoa-memo
+      - aoa-agents
+      - abyss-stack
+      - aoa-kag (derived only)
+    first_artifact_hint: memory namespace contract plus compaction policy and write rules
+  - id: R7
+    label: AOA-SEED-R7 Eval Ladder and Judge Discipline
+    kind: evaluation-seed
+    repo_homes:
+      - aoa-evals
+      - aoa-agents
+      - aoa-playbooks
+      - aoa-memo
+    first_artifact_hint: EVAL_LADDER.md plus evaluator taxonomy and verdict rules
+  - id: R8
+    label: AOA-SEED-R8 Skills as Contracted Execution Capsules
+    kind: workflow-seed
+    repo_homes:
+      - aoa-skills
+      - aoa-playbooks
+      - aoa-agents
+      - aoa-evals
+    first_artifact_hint: skill capsule contract with inputs, outputs, preconditions, failure modes, and eval hooks
+  - id: R9
+    label: AOA-SEED-R9 AI-Native Documentation Surface
+    kind: documentation-seed
+    repo_homes:
+      - Agents-of-Abyss
+      - Tree-of-Sophia
+      - aoa-skills
+      - aoa-evals
+      - aoa-memo
+    first_artifact_hint: docs surface pack with llms.txt, doc map, and resource manifest
+  - id: R10
+    label: AOA-SEED-R10 Tool Approval and Remote Boundary Policy
+    kind: safety-seed
+    repo_homes:
+      - aoa-agents
+      - abyss-stack
+      - aoa-playbooks
+      - aoa-memo
+    first_artifact_hint: tool approval policy with capability classes and local-vs-remote boundary rules
+  - id: R11
+    label: AOA-SEED-R11 Online Trace Sentinel
+    kind: observability-seed
+    repo_homes:
+      - aoa-evals
+      - aoa-memo
+      - aoa-agents
+      - abyss-stack
+    first_artifact_hint: trace sentinel taxonomy and small online grader set keyed to artifact and failure classes
+  - id: R12
+    label: AOA-SEED-R12 Skill/Proof Regression Dataset Spine
+    kind: dataset-seed
+    repo_homes:
+      - aoa-evals
+      - aoa-skills
+      - aoa-playbooks
+      - aoa-agents
+    first_artifact_hint: dataset manifest plus schema linking inputs, expected artifacts, outputs, and failure tags
+  - id: R13
+    label: AOA-SEED-R13 MCP Resource and Prompt Surface
+    kind: protocol-seed
+    repo_homes:
+      - Agents-of-Abyss
+      - aoa-skills
+      - aoa-playbooks
+      - Tree-of-Sophia
+    first_artifact_hint: resource and prompt manifest naming high-signal docs, capsules, and scenario prompts
+  - id: R14
+    label: AOA-SEED-R14 Outward A2A Boundary and Agent Card
+    kind: interop-seed
+    repo_homes:
+      - aoa-agents
+      - aoa-routing
+      - Agents-of-Abyss
+      - abyss-stack
+    first_artifact_hint: outward boundary policy plus one Agent Card and one routing example
+  - id: R15
+    label: AOA-SEED-R15 Prompt/Profile Version Spine
+    kind: prompt-governance-seed
+    repo_homes:
+      - aoa-agents
+      - aoa-playbooks
+      - aoa-skills
+      - aoa-evals
+    first_artifact_hint: prompt/profile registry note with version IDs, rollback posture, and eval links

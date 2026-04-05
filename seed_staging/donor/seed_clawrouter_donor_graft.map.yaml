@@ -1,0 +1,341 @@
+map_version: 1
+updated_at: '2026-03-24'
+seed_note: seed_staging/donor/seed_clawrouter_donor_graft.md
+status: donor_origin_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+source:
+  repo: BlockRunAI/ClawRouter
+  version: '0.12.70'
+  donor_surfaces:
+    - docs/features.md
+    - docs/configuration.md
+    - src/dedup.ts
+    - src/response-cache.ts
+    - src/session.ts
+    - src/journal.ts
+    - src/spend-control.ts
+    - src/stats.ts
+    - src/compression/index.ts
+    - src/router/strategy.ts
+  excluded_surfaces:
+    - src/doctor.ts as-is
+    - x402 / wallet / payment shell
+    - donor static codebooks as default local truth
+ordering:
+  - AOA-SEED-CR1
+  - AOA-SEED-CR3
+  - AOA-SEED-CR2
+  - AOA-SEED-CR4
+  - AOA-SEED-CR5
+  - AOA-SEED-CR6
+  - AOA-SEED-CR7
+seeds:
+  - seed_id: AOA-SEED-CR1
+    slug: gateway-dedup-and-response-cache-lane
+    kind: architecture-seed
+    priority: 1
+    repo_homes:
+      - abyss-stack
+      - ATM10-Agent
+    donor_files:
+      - src/dedup.ts
+      - src/response-cache.ts
+      - docs/features.md#response-cache
+    first_artifacts:
+      - gateway cache contract note
+      - cache status schema or example artifact
+      - minimal validator or test stub
+    preserved_vocabulary:
+      - request deduplication
+      - response cache
+      - cache key normalization
+      - inflight
+      - no-cache
+      - hit rate
+      - eviction
+    hard_boundaries:
+      - below route meaning
+      - no truth ownership
+      - no vendor proxy canon
+    landing_forms:
+      - docs contract
+      - schema/example
+      - validator/test
+    target_hints:
+      abyss-stack:
+        first_slice:
+          - docs gateway contract
+          - cache status artifact
+      ATM10-Agent:
+        first_slice:
+          - operator-side cache status read surface
+    depends_on: []
+
+  - seed_id: AOA-SEED-CR2
+    slug: session-continuity-and-ephemeral-work-journal
+    kind: interface-seed
+    priority: 3
+    repo_homes:
+      - ATM10-Agent
+      - aoa-memo
+      - aoa-agents
+    donor_files:
+      - src/session.ts
+      - src/journal.ts
+      - docs/features.md#session-persistence
+    first_artifacts:
+      - session continuity contract note
+      - session_run_journal schema or example artifact
+      - memo bridge note
+    preserved_vocabulary:
+      - session persistence
+      - pinned model
+      - x-session-id
+      - derived session ID
+      - request fingerprint
+      - three-strike escalation
+      - session journal
+    hard_boundaries:
+      - journal weaker than memo canon
+      - review required before durable writeback
+      - do not move operator logs into aoa-agents
+    landing_forms:
+      - docs contract
+      - schema/example
+      - bridge note
+    target_hints:
+      ATM10-Agent:
+        first_slice:
+          - session continuity note
+          - session journal example artifact
+      aoa-memo:
+        first_slice:
+          - candidate-only writeback bridge note
+      aoa-agents:
+        first_slice:
+          - runtime seam reference only
+    depends_on:
+      - AOA-SEED-CR1
+
+  - seed_id: AOA-SEED-CR3
+    slug: budget-governor-usage-spine-and-local-ops-doctor-split
+    kind: architecture-seed
+    priority: 2
+    repo_homes:
+      - abyss-stack
+      - ATM10-Agent
+      - aoa-evals
+    donor_files:
+      - src/spend-control.ts
+      - src/stats.ts
+      - src/doctor.ts
+      - docs/configuration.md#routing-configuration
+      - docs/features.md#cost-tracking-with-stats
+    first_artifacts:
+      - budget governor contract note
+      - usage snapshot schema or example artifact
+      - local ops doctor checklist
+    preserved_vocabulary:
+      - per-request
+      - hourly
+      - daily
+      - session
+      - graceful degrade
+      - strict stop
+      - reset window
+      - baseline cost
+      - savings
+    hard_boundaries:
+      - strip wallet and payment commitments
+      - strip external paid AI diagnostics
+      - spend is not proof of quality
+    landing_forms:
+      - docs contract
+      - schema/example
+      - local checklist
+    target_hints:
+      abyss-stack:
+        first_slice:
+          - budget governor note
+          - health/status artifact
+      ATM10-Agent:
+        first_slice:
+          - operator-facing usage readout surface
+      aoa-evals:
+        first_slice:
+          - evidence input contract for usage snapshots
+    depends_on:
+      - AOA-SEED-CR1
+
+  - seed_id: AOA-SEED-CR4
+    slug: capability-filters-and-fallback-modes
+    kind: interface-seed
+    priority: 4
+    repo_homes:
+      - abyss-stack
+      - aoa-playbooks
+      - aoa-routing
+    donor_files:
+      - docs/features.md#tool-detection
+      - docs/features.md#context-length-aware-routing
+      - docs/features.md#free-tier-fallback
+      - src/router/strategy.ts
+      - docs/configuration.md#routing-configuration
+    first_artifacts:
+      - fallback-mode contract note
+      - capability manifest stub
+      - route-decision envelope example
+    preserved_vocabulary:
+      - tool-aware routing
+      - context-length-aware routing
+      - structured output minimum tier
+      - fallback chain
+      - local floor
+    hard_boundaries:
+      - playbooks keep fallback meaning
+      - routing keeps navigation only
+      - translate remote free floor into local floor where possible
+    landing_forms:
+      - docs contract
+      - config/example
+      - envelope example
+    target_hints:
+      abyss-stack:
+        first_slice:
+          - capability filter manifest
+      aoa-playbooks:
+        first_slice:
+          - named fallback-mode note
+      aoa-routing:
+        first_slice:
+          - tiny decision envelope only
+    depends_on:
+      - AOA-SEED-CR3
+
+  - seed_id: AOA-SEED-CR5
+    slug: context-compression-preprocessor
+    kind: technique-candidate
+    priority: 5
+    repo_homes:
+      - abyss-stack
+      - ATM10-Agent
+      - aoa-techniques
+    donor_files:
+      - src/compression/index.ts
+      - docs/features.md
+      - abyss-stack/docs/CONTEXT_BUDGET_POLICY.md
+    first_artifacts:
+      - compression policy note
+      - compression profile stub
+      - worked transient-trace example
+    preserved_vocabulary:
+      - deduplication
+      - dictionary encoding
+      - path shortening
+      - JSON compaction
+      - observation compression
+      - dynamic codebook
+    hard_boundaries:
+      - not for authored canon
+      - not for durable memory objects by default
+      - no foreign static codebook as local truth
+    landing_forms:
+      - docs policy
+      - config stub
+      - worked example
+    target_hints:
+      abyss-stack:
+        first_slice:
+          - policy note tied to context classes
+      ATM10-Agent:
+        first_slice:
+          - transient trace compression example
+      aoa-techniques:
+        first_slice:
+          - later only after evidence
+    depends_on:
+      - AOA-SEED-CR3
+
+  - seed_id: AOA-SEED-CR6
+    slug: runtime-selector-microkernel
+    kind: architecture-seed
+    priority: 6
+    repo_homes:
+      - abyss-stack
+      - ATM10-Agent
+      - aoa-agents
+    donor_files:
+      - src/router/strategy.ts
+      - docs/configuration.md#programmatic-usage
+    first_artifacts:
+      - strategy interface note
+      - route-decision envelope schema or example artifact
+      - selector-adapter boundary note
+    preserved_vocabulary:
+      - strategy registry
+      - rules strategy
+      - routing profile
+      - selected model
+      - confidence
+      - cost estimate
+    hard_boundaries:
+      - do not redefine AoA tiers
+      - do not move authorship into aoa-routing
+      - do not canonize donor selector without eval evidence
+    landing_forms:
+      - docs contract
+      - schema/example
+      - boundary note
+    target_hints:
+      abyss-stack:
+        first_slice:
+          - strategy interface note
+      ATM10-Agent:
+        first_slice:
+          - runtime decision envelope artifact
+      aoa-agents:
+        first_slice:
+          - seam-level reference only
+    depends_on:
+      - AOA-SEED-CR4
+      - AOA-SEED-CR5
+
+  - seed_id: AOA-SEED-CR7
+    slug: technique-promotion-surface
+    kind: technique-seed
+    priority: 7
+    repo_homes:
+      - aoa-techniques
+    donor_files:
+      - results of AOA-SEED-CR1..AOA-SEED-CR6
+    first_artifacts:
+      - donor candidate note
+      - adaptation notes
+      - validation evidence hook
+    preserved_vocabulary:
+      - donor intake
+      - refinement
+      - adaptation notes
+      - evidence
+      - promotion readiness
+    hard_boundaries:
+      - no promotion before proof
+      - no private hack publication
+      - no missing adaptation notes
+    landing_forms:
+      - candidate note
+      - evidence note
+    target_hints:
+      aoa-techniques:
+        first_slice:
+          - donor candidate entry only after two successful plantings
+    depends_on:
+      - AOA-SEED-CR1
+      - AOA-SEED-CR2
+      - AOA-SEED-CR3
+      - AOA-SEED-CR4
+      - AOA-SEED-CR5
+      - AOA-SEED-CR6

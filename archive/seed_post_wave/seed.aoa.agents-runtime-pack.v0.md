@@ -19,14 +19,14 @@ tags:
 
 ## Purpose
 
-This pack harvests bounded planting slices from `seed_agents_1st.md`.
+This pack harvests bounded planting slices from `seed_notes/exploratory/seed_agents_1st.md`.
 
 It does not reopen the ninth wave, replace the current `next_live_seed`, or turn one donor note into a new sovereign canon.
 It records small repo-owned follow-on seeds with explicit homes and explicit anti-goals.
 
 ## Provenance
 
-- donor note: `seed_agents_1st.md`
+- donor note: `seed_notes/exploratory/seed_agents_1st.md`
 - extraction goal: turn one strategy note into bounded repo-home seeds
 - lifecycle posture: landed post-wave seed-pack retained in the registry after archive cleanup while `seed_expansion/` returns to next-live-only navigation
 - planting outcome: `AOA-SEED-R1` through `AOA-SEED-R5` have landed across `aoa-agents`, `aoa-playbooks`, `aoa-memo`, `aoa-evals`, and `aoa-kag`

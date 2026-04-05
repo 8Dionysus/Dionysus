@@ -1,0 +1,55 @@
+map_version: 1
+updated_at: '2026-03-28'
+seed_note: seed_staging/future/seed_dialogue_memory_pack.md
+status: future_seed_prep_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: dionysus_dialogue_seed_pack_2026-03-24.zip
+  included_surfaces:
+    - README.md
+    - seed_expansion/seed.8dionysus.aoa.derived-memory-dual-substrate.v0.md
+    - seed_expansion/seed.8dionysus.aoa.typed-provenance-lifts.v0.md
+    - seed_expansion/seed.8dionysus.aoa.diffmem-hot-memory-controller.v0.md
+    - seed-registry.append.dialogue-memory-pack.yaml
+    - reports/planting/proposed.dialogue-memory-pack.md
+selection_policy:
+  fixed_order_required: true
+  default_order:
+    - Derived Memory Dual-Substrate
+    - Typed Provenance Lifts
+    - DiffMem Hot-Memory Controller
+  registry_posture:
+    - the bundled registry append remains advisory while the current next_live seed stays unchanged
+seed_catalog:
+  - id: DM1
+    label: Derived Memory Dual-Substrate
+    kind: architecture-seed
+    repo_homes:
+      - aoa-memo
+      - aoa-kag
+      - ATM10-Agent
+      - aoa-evals
+    first_artifact_hint: aoa-memo dual-substrate contract plus chunk_face and graph_face examples and one aoa-kag lift contract
+  - id: DM2
+    label: Typed Provenance Lifts
+    kind: knowledge-architecture
+    repo_homes:
+      - aoa-kag
+      - Tree-of-Sophia
+      - ATM10-Agent
+      - aoa-evals
+    first_artifact_hint: lift families note plus lift manifest schema, examples, and one ToS export-boundary note
+  - id: DM3
+    label: DiffMem Hot-Memory Controller
+    kind: architecture-seed
+    repo_homes:
+      - ATM10-Agent
+      - aoa-agents
+      - aoa-memo
+      - aoa-evals
+      - abyss-stack
+    first_artifact_hint: diffmem controller note plus turn-state schema, runtime profile, writeback seam, and bounded eval bundle

@@ -1,0 +1,98 @@
+map_version: 1
+updated_at: '2026-04-04'
+seed_note: seed_staging/rpg/seed_rpg_architecture_rfc_pack.md
+status: future_seed_prep_note
+
+source_bundle:
+  path: archive/seed_pack_exports/rpg_architecture_rfc_seed.zip
+  included_surfaces:
+    - rpg_architecture_rfc_seed/README.md
+    - rpg_architecture_rfc_seed/APPLY_ORDER.md
+    - rpg_architecture_rfc_seed/CODEX_NOTES.md
+    - rpg_architecture_rfc_seed/SEED_MANIFEST.yaml
+    - rpg_architecture_rfc_seed/COVERAGE_MAP.md
+    - rpg_architecture_rfc_seed/TOUCHPOINTS_NOT_INCLUDED.md
+    - rpg_architecture_rfc_seed/Agents-of-Abyss/
+    - rpg_architecture_rfc_seed/abyss-stack/
+    - rpg_architecture_rfc_seed/Dionysus/
+
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - Agents-of-Abyss
+    - abyss-stack
+    - Dionysus
+  priority_band: now
+  planting_readiness: ready
+  why_now:
+    - the first and second RPG waves already exist, but the shared vocabulary and boundary law for later bridges and runtime work is not fixed yet
+    - Agents-of-Abyss can own the architecture RFC without collapsing runtime state into source meaning
+    - abyss-stack can receive the first cited runtime/frontend contracts without becoming the seed authority
+  dependencies:
+    - seed.rpg.first-wave-pack.v0
+    - seed.rpg.second-wave-pack.v0
+
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+
+targets:
+  - repo: Agents-of-Abyss
+    contour: architecture-rfc
+    files:
+      - docs/RPG_ARCHITECTURE_RFC.md
+      - docs/RPG_CANONICAL_TERMINOLOGY.md
+      - docs/RPG_BOUNDARY_MAP.md
+      - schemas/dual_vocabulary_overlay.schema.json
+      - examples/dual_vocabulary_overlay.example.json
+      - quests/AOA-Q-0006.yaml
+    focus:
+      - vocabulary law
+      - boundary law
+      - dual-vocabulary overlay
+
+  - repo: abyss-stack
+    contour: runtime-frontend-contracts
+    files:
+      - docs/RPG_RUNTIME_FRONTEND_POSTURE.md
+      - schemas/agent_build_snapshot.schema.json
+      - schemas/reputation_ledger.schema.json
+      - schemas/quest_run_result.schema.json
+      - schemas/frontend_projection_bundle.schema.json
+      - examples/agent_build_snapshot.example.json
+      - examples/reputation_ledger.example.json
+      - examples/quest_run_result.example.json
+      - examples/frontend_projection_bundle.example.json
+      - quests/ABYSS-STACK-Q-0005.yaml
+    focus:
+      - runtime-facing contracts
+      - frontend reader posture
+      - owner-boundary discipline
+
+  - repo: Dionysus
+    contour: seed-garden-staging
+    files:
+      - seed_staging/rpg/seed_rpg_architecture_rfc_pack.md
+      - seed_staging/rpg/seed_rpg_architecture_rfc_pack.map.yaml
+      - quests/DION-SEED-Q-0007.yaml
+    focus:
+      - prep-pack lineage
+      - transport posture
+      - non-authority staging
+
+scope_exclusions:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-evals
+  - aoa-playbooks
+  - aoa-memo
+  - aoa-routing
+  - aoa-skills
+  - aoa-techniques
+  - 8Dionysus
+  - Tree-of-Sophia
+  - aoa-kag
+  - ATM10-Agent

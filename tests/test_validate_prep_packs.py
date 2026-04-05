@@ -12,26 +12,26 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SURFACE_PATHS = (
     "archive/seed_pack_exports",
     "seed-registry.yaml",
-    "seed_questbook_foundation_pack.md",
-    "seed_questbook_foundation_pack.map.yaml",
-    "seed_questbook_source_proof_pack.md",
-    "seed_questbook_source_proof_pack.map.yaml",
-    "seed_questbook_boundary_runtime_pack.md",
-    "seed_questbook_boundary_runtime_pack.map.yaml",
-    "seed_questbook_seedgarden_profile_pack.md",
-    "seed_questbook_seedgarden_profile_pack.map.yaml",
-    "seed_rpg_first_wave_pack.md",
-    "seed_rpg_first_wave_pack.map.yaml",
-    "seed_rpg_second_wave_pack.md",
-    "seed_rpg_second_wave_pack.map.yaml",
-    "seed_rpg_architecture_rfc_pack.md",
-    "seed_rpg_architecture_rfc_pack.map.yaml",
-    "seed_rpg_bridge_wave_pack.md",
-    "seed_rpg_bridge_wave_pack.map.yaml",
-    "seed_rpg_sdk_addendum_pack.md",
-    "seed_rpg_sdk_addendum_pack.map.yaml",
-    "seed_rpg_runtime_projection_pack.md",
-    "seed_rpg_runtime_projection_pack.map.yaml",
+    "seed_staging/questbook/seed_questbook_foundation_pack.md",
+    "seed_staging/questbook/seed_questbook_foundation_pack.map.yaml",
+    "seed_staging/questbook/seed_questbook_source_proof_pack.md",
+    "seed_staging/questbook/seed_questbook_source_proof_pack.map.yaml",
+    "seed_staging/questbook/seed_questbook_boundary_runtime_pack.md",
+    "seed_staging/questbook/seed_questbook_boundary_runtime_pack.map.yaml",
+    "seed_staging/questbook/seed_questbook_seedgarden_profile_pack.md",
+    "seed_staging/questbook/seed_questbook_seedgarden_profile_pack.map.yaml",
+    "seed_staging/rpg/seed_rpg_first_wave_pack.md",
+    "seed_staging/rpg/seed_rpg_first_wave_pack.map.yaml",
+    "seed_staging/rpg/seed_rpg_second_wave_pack.md",
+    "seed_staging/rpg/seed_rpg_second_wave_pack.map.yaml",
+    "seed_staging/rpg/seed_rpg_architecture_rfc_pack.md",
+    "seed_staging/rpg/seed_rpg_architecture_rfc_pack.map.yaml",
+    "seed_staging/rpg/seed_rpg_bridge_wave_pack.md",
+    "seed_staging/rpg/seed_rpg_bridge_wave_pack.map.yaml",
+    "seed_staging/rpg/seed_rpg_sdk_addendum_pack.md",
+    "seed_staging/rpg/seed_rpg_sdk_addendum_pack.map.yaml",
+    "seed_staging/rpg/seed_rpg_runtime_projection_pack.md",
+    "seed_staging/rpg/seed_rpg_runtime_projection_pack.map.yaml",
 )
 
 
@@ -54,7 +54,7 @@ class ValidatePrepPacksTests(unittest.TestCase):
         with TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             copy_surface(root)
-            map_path = root / "seed_rpg_first_wave_pack.map.yaml"
+            map_path = root / "seed_staging/rpg/seed_rpg_first_wave_pack.map.yaml"
             map_path.write_text(
                 map_path.read_text(encoding="utf-8").replace(
                     "seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion",
@@ -77,7 +77,7 @@ class ValidatePrepPacksTests(unittest.TestCase):
             registry_path.write_text(
                 registry_path.read_text(encoding="utf-8").replace(
                     "seed_index:\n",
-                    "seed_index:\n- source_ref: seed_rpg_first_wave_pack.md#seed-note\n",
+                    "seed_index:\n- source_ref: seed_staging/rpg/seed_rpg_first_wave_pack.md#seed-note\n",
                     1,
                 ),
                 encoding="utf-8",
@@ -86,13 +86,16 @@ class ValidatePrepPacksTests(unittest.TestCase):
             errors = validate_prep_packs.run_validation(root)
 
         self.assertEqual(1, len(errors))
-        self.assertIn("seed-registry.yaml.seed_index must not register prep-pack note 'seed_rpg_first_wave_pack.md' yet", errors[0])
+        self.assertIn(
+            "seed-registry.yaml.seed_index must not register prep-pack note 'seed_staging/rpg/seed_rpg_first_wave_pack.md' yet",
+            errors[0],
+        )
 
     def test_rpg_pack_rejects_out_of_archive_source_bundle(self) -> None:
         with TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             copy_surface(root)
-            map_path = root / "seed_rpg_first_wave_pack.map.yaml"
+            map_path = root / "seed_staging/rpg/seed_rpg_first_wave_pack.map.yaml"
             map_path.write_text(
                 map_path.read_text(encoding="utf-8").replace(
                     "archive/seed_pack_exports/rpg_first_wave_seed.zip",
@@ -111,7 +114,7 @@ class ValidatePrepPacksTests(unittest.TestCase):
         with TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             copy_surface(root)
-            map_path = root / "seed_rpg_second_wave_pack.map.yaml"
+            map_path = root / "seed_staging/rpg/seed_rpg_second_wave_pack.map.yaml"
             map_path.write_text(
                 map_path.read_text(encoding="utf-8").replace(
                     "\nnavigation_constraints:\n",
@@ -130,7 +133,7 @@ class ValidatePrepPacksTests(unittest.TestCase):
         with TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             copy_surface(root)
-            map_path = root / "seed_rpg_second_wave_pack.map.yaml"
+            map_path = root / "seed_staging/rpg/seed_rpg_second_wave_pack.map.yaml"
             map_path.write_text(
                 map_path.read_text(encoding="utf-8").replace(
                     "planting_readiness: ready",

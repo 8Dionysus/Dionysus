@@ -55,9 +55,9 @@
     "archive/seed_witness/seed.tos.context-compost.v0.md"
   ],
   "origin_notes": [
-    "seed_expat.md",
-    "seed_self-agent.md",
-    "seed_trio.md",
+    "seed_notes/exploratory/seed_expat.md",
+    "seed_notes/exploratory/seed_self-agent.md",
+    "seed_notes/exploratory/seed_trio.md",
     "archive/"
   ]
 }

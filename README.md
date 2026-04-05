@@ -40,12 +40,12 @@ If work starts from a named prep pack rather than an opened wave, read the pack 
 - `archive/` is the canonical archive root for historical seed sources
 - `seed_expansion/` holds the current gated next-work surfaces after the archived ninth wave
 - `seed-registry.yaml` is the human/Codex navigation overlay
+- `docs/SEED_SURFACE_MAP.md` explains how to read `seed_staging/` and `seed_notes/exploratory/` without confusing canon, staging, lineage, and exploratory donor notes
 - `docs/codex/` holds the planting protocol and provenance rules
 - `templates/planting-report.template.md` defines the durable planting-report shape when Dionysus needs to hold the trace
 - `scripts/validate_seed_surfaces.py` is the single validation entrypoint
-- `seed_wave1_root_docs_refresh.md` and `seed_wave1_root_docs_refresh.map.yaml` keep the first-wave root docs refresh replayable as a bounded transport-and-lineage pack
-- `seed_wave2_root_docs_refresh.md` and `seed_wave2_root_docs_refresh.map.yaml` keep the second-wave root docs refresh replayable as a bounded transport-and-lineage pack
-- `seed_wave3_root_docs_refresh.md` and `seed_wave3_root_docs_refresh.map.yaml` keep the third-wave root docs refresh replayable as a bounded transport-and-lineage pack
+- `seed_staging/` holds structured transport and staging packs grouped by domain instead of mixing them into the root
+- `seed_notes/exploratory/` holds informal exploratory seed texts that should not be mistaken for queue control
 - repo-local questbook surfaces in `QUESTBOOK.md`, `quests/`, `schemas/`, and `generated/` are follow-through for the seed garden, not a second sovereignty layer
 - `aoa-sdk` has already been seeded into its own live repository and should be treated as a live owning home for SDK work rather than as deferred future separation
 
