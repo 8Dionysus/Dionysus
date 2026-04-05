@@ -1,0 +1,92 @@
+map_version: 1
+updated_at: '2026-03-31'
+seed_note: seed_staging/questbook/seed_questbook_boundary_runtime_pack.md
+status: future_seed_prep_note
+source_bundle:
+  path: archive/seed_pack_exports/questbook_second_wave_seed.zip
+  included_surfaces:
+    - questbook_second_wave_seed/README.md
+    - questbook_second_wave_seed/APPLY_ORDER.md
+    - questbook_second_wave_seed/SEED_MANIFEST.yaml
+    - questbook_second_wave_seed/TOUCHPOINTS_NOT_INCLUDED.md
+    - questbook_second_wave_seed/COVERAGE_MAP.md
+    - questbook_second_wave_seed/aoa-kag/
+    - questbook_second_wave_seed/Tree-of-Sophia/
+    - questbook_second_wave_seed/abyss-stack/
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - aoa-kag
+    - Tree-of-Sophia
+    - abyss-stack
+  priority_band: later
+  planting_readiness: needs_adaptation
+  why_now:
+    - this contour should wait for the source/proof layers but should already be staged explicitly
+    - aoa-kag and Tree-of-Sophia need later bounded questbook adoption without weakening their ownership boundaries
+    - abyss-stack needs a real Configs/... path adaptation before any downstream planting is honest
+  dependencies:
+    - seed.questbook.source-proof-pack.v0
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+targets:
+  - repo: aoa-kag
+    contour: derived-boundary
+    files:
+      - QUESTBOOK.md
+      - docs/QUESTBOOK_KAG_INTEGRATION.md
+      - schemas/quest.schema.json
+      - schemas/quest_dispatch.schema.json
+      - generated/quest_catalog.min.example.json
+      - generated/quest_dispatch.min.example.json
+      - quests/AOA-KAG-Q-0001.yaml
+      - quests/AOA-KAG-Q-0002.yaml
+      - quests/AOA-KAG-Q-0003.yaml
+      - quests/AOA-KAG-Q-0004.yaml
+    focus:
+      - derived export boundary
+      - bridge contracts
+      - recurrence regrounding
+  - repo: Tree-of-Sophia
+    contour: source-first-boundary
+    files:
+      - QUESTBOOK.md
+      - docs/QUESTBOOK_TOS_INTEGRATION.md
+      - schemas/quest.schema.json
+      - schemas/quest_dispatch.schema.json
+      - generated/quest_catalog.min.example.json
+      - generated/quest_dispatch.min.example.json
+      - quests/TOS-Q-0001.yaml
+      - quests/TOS-Q-0002.yaml
+      - quests/TOS-Q-0003.yaml
+      - quests/TOS-Q-0004.yaml
+    focus:
+      - identifier and template hardening
+      - intake boundaries
+      - derived export requests without source collapse
+  - repo: abyss-stack
+    contour: runtime-guardrails
+    files:
+      - Configs/QUESTBOOK.md
+      - Configs/docs/QUESTBOOK_STACK_INTEGRATION.md
+      - Configs/schemas/quest.schema.json
+      - Configs/schemas/quest_dispatch.schema.json
+      - Configs/generated/quest_catalog.min.example.json
+      - Configs/generated/quest_dispatch.min.example.json
+      - Configs/quests/ABYSS-STACK-Q-0001.yaml
+      - Configs/quests/ABYSS-STACK-Q-0002.yaml
+      - Configs/quests/ABYSS-STACK-Q-0003.yaml
+      - Configs/quests/ABYSS-STACK-Q-0004.yaml
+    focus:
+      - infra guardrails
+      - human-gated runtime obligations
+      - Configs-root alignment
+scope_exclusions:
+  - ATM10-Agent
+  - aoa-sdk
+  - Dionysus
+  - 8Dionysus

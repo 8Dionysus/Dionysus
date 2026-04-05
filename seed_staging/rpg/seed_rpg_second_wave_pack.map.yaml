@@ -1,0 +1,104 @@
+map_version: 1
+updated_at: '2026-04-01'
+seed_note: seed_staging/rpg/seed_rpg_second_wave_pack.md
+status: future_seed_prep_note
+
+source_bundle:
+  path: archive/seed_pack_exports/rpg_second_wave_seed.zip
+  included_surfaces:
+    - rpg_second_wave_seed/README.md
+    - rpg_second_wave_seed/APPLY_ORDER.md
+    - rpg_second_wave_seed/CODEX_NOTES.md
+    - rpg_second_wave_seed/SEED_MANIFEST.yaml
+    - rpg_second_wave_seed/COVERAGE_MAP.md
+    - rpg_second_wave_seed/TOUCHPOINTS_NOT_INCLUDED.md
+    - rpg_second_wave_seed/later-wave-targets.md
+    - rpg_second_wave_seed/Agents-of-Abyss/
+    - rpg_second_wave_seed/aoa-techniques/
+    - rpg_second_wave_seed/aoa-skills/
+    - rpg_second_wave_seed/Dionysus/
+
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - Agents-of-Abyss
+    - aoa-techniques
+    - aoa-skills
+    - Dionysus
+  priority_band: next
+  planting_readiness: ready
+  why_now:
+    - the first-wave progression and proof spine is enough to support ability and feat reflection
+    - aoa-skills already has portable-layer, pack-profile, overlay, and adapter surfaces that can act as honest ability inputs
+    - aoa-techniques already has canon-hardening, donor-refinery, and generated/source-alignment surfaces that can act as honest feat inputs
+  dependencies:
+    - seed.rpg.first-wave-pack.v0
+
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+
+targets:
+  - repo: Agents-of-Abyss
+    contour: common-rpg-second-wave
+    files:
+      - docs/RPG_SKILLS_AND_FEATS.md
+      - docs/RPG_SECOND_WAVE.md
+      - quests/AOA-Q-0005.yaml
+    focus:
+      - adjunct model extension
+      - wave scope
+      - anti-collapse boundaries
+
+  - repo: aoa-techniques
+    contour: feat-reflection
+    files:
+      - docs/TECHNIQUE_FEAT_MODEL.md
+      - docs/MASTERY_HARVEST_POSTURE.md
+      - schemas/technique_feat_catalog.schema.json
+      - generated/technique_feat_cards.min.example.json
+      - quests/AOA-TECH-Q-0005.yaml
+    focus:
+      - feat cards
+      - mastery posture
+      - harvest discipline
+
+  - repo: aoa-skills
+    contour: ability-reflection
+    files:
+      - docs/SKILL_ABILITY_MODEL.md
+      - docs/ABILITY_LOADOUT_POSTURE.md
+      - schemas/skill_ability_catalog.schema.json
+      - generated/skill_ability_cards.min.example.json
+      - quests/AOA-SK-Q-0005.yaml
+    focus:
+      - ability cards
+      - loadout posture
+      - adapter and overlay honesty
+
+  - repo: Dionysus
+    contour: seed-garden-staging
+    files:
+      - seed_staging/rpg/seed_rpg_second_wave_pack.md
+      - seed_staging/rpg/seed_rpg_second_wave_pack.map.yaml
+      - quests/DION-SEED-Q-0006.yaml
+    focus:
+      - prep-pack lineage
+      - transport posture
+      - non-authority staging
+
+scope_exclusions:
+  - aoa-agents
+  - aoa-evals
+  - aoa-playbooks
+  - aoa-memo
+  - aoa-routing
+  - abyss-stack
+  - 8Dionysus
+  - aoa-sdk
+  - ATM10-Agent
+  - Tree-of-Sophia
+  - aoa-kag

@@ -1,0 +1,87 @@
+map_version: 1
+updated_at: '2026-04-01'
+seed_note: seed_staging/root_docs/seed_wave1_root_docs_refresh.md
+status: docs_refresh_pack
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/seed_wave1_root_docs_refresh_2026-04-02.zip
+  included_surfaces:
+    - seed_wave1_root_docs_refresh_2026-04-02/README.md
+    - seed_wave1_root_docs_refresh_2026-04-02/seed_wave1_root_docs_refresh.md
+    - seed_wave1_root_docs_refresh_2026-04-02/seed_wave1_root_docs_refresh.map.yaml
+    - seed_wave1_root_docs_refresh_2026-04-02/notes/rewrite_spec.md
+    - seed_wave1_root_docs_refresh_2026-04-02/notes/followups.md
+    - seed_wave1_root_docs_refresh_2026-04-02/notes/source_urls.md
+    - seed_wave1_root_docs_refresh_2026-04-02/transplant/8Dionysus/README.md
+    - seed_wave1_root_docs_refresh_2026-04-02/transplant/8Dionysus/AGENTS.md
+    - seed_wave1_root_docs_refresh_2026-04-02/transplant/Agents-of-Abyss/README.md
+    - seed_wave1_root_docs_refresh_2026-04-02/transplant/Agents-of-Abyss/AGENTS.md
+    - seed_wave1_root_docs_refresh_2026-04-02/transplant/Dionysus/README.md
+    - seed_wave1_root_docs_refresh_2026-04-02/transplant/Dionysus/AGENTS.md
+    - seed_wave1_root_docs_refresh_2026-04-02/transplant/abyss-stack/README.md
+    - seed_wave1_root_docs_refresh_2026-04-02/transplant/abyss-stack/AGENTS.md
+    - seed_wave1_root_docs_refresh_2026-04-02/diffs/
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - Agents-of-Abyss
+    - abyss-stack
+    - Dionysus
+    - 8Dionysus
+  priority_band: now
+  planting_readiness: ready
+  why_now:
+    - root public surfaces drifted into slower scans and oversized inventories
+    - the bundle keeps the refresh bounded to root README and AGENTS surfaces
+    - repo-home ownership stays intact while public routing becomes clearer
+  dependencies: []
+  same_pass_adaptation_rule:
+    - adapt transplant text to live repo state when a tiny same-pass sync is required
+    - keep any adjacent sync smaller than the root refresh itself
+targets:
+  - repo: Agents-of-Abyss
+    contour: constitutional-root-refresh
+    files:
+      - README.md
+      - AGENTS.md
+    focus:
+      - shorter route-first root
+      - explicit center boundaries
+      - no layer-owned meaning absorbed into the center
+  - repo: abyss-stack
+    contour: runtime-root-refresh
+    files:
+      - README.md
+      - AGENTS.md
+    focus:
+      - path clarity between source checkout and runtime root
+      - shorter root reading path
+      - runtime substrate boundaries stay explicit
+  - repo: Dionysus
+    contour: seed-garden-root-refresh
+    files:
+      - README.md
+      - AGENTS.md
+    focus:
+      - source-of-truth order stays explicit
+      - root inventory shrinks without losing planting discipline
+      - already-landed repo homes stay treated as live homes
+  - repo: 8Dionysus
+    contour: profile-root-refresh
+    files:
+      - README.md
+      - AGENTS.md
+    focus:
+      - preserve GitHub-profile first-screen rhythm
+      - keep profile role orientation-only
+      - add missing public route surfaces without over-promoting them
+scope_exclusions:
+  - deep doc rewrites
+  - charter or roadmap rewrites unless a tiny contradiction repair is required
+  - new ownership or maturity claims
+  - registry or manifest lifecycle changes
+  - runtime-root edits under /srv/abyss-stack used as if they were source-repo edits

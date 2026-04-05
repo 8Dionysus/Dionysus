@@ -31,7 +31,7 @@ activation:
   note: open when the runtime/body RPG pack is refreshed or staged in the seed garden
 anchor_ref:
   artifact: rpg_runtime_projection_pack
-  ref: seed_rpg_runtime_projection_pack.md
+  ref: seed_staging/rpg/seed_rpg_runtime_projection_pack.md
   note: the seed note and map keep runtime/body transport posture explicit
 handoff_role: seed-garden-maintainer
 evidence:

@@ -22,9 +22,32 @@ When closure notes and README wording disagree, treat the manifest and closure n
 When work is coming from a named prep pack instead of an opened wave:
 
 1. Read the pack note.
-2. Read the matching `.map.yaml`.
-3. Use its priority, dependencies, and readiness only as staging guidance.
-4. If a later manifest, live seed, or canonical source surface exists, that stronger surface wins.
+2. Read `lifecycle_status`, `lifecycle_note`, and `reality_checked_at` in the
+   note frontmatter.
+3. Read the matching `.map.yaml`.
+4. Use its priority, dependencies, and readiness only as staging guidance.
+5. If a later manifest, live seed, or canonical source surface exists, that stronger surface wins.
+
+## Owner-repo reality check
+
+Before treating a prep pack as the current queue, verify the owner repos
+directly.
+
+At minimum, check:
+
+- the target docs surfaces named by the pack
+- structural artifacts named by the pack
+- quest or validator anchors in the owner repo
+- recent planting commits or planting reports when available
+
+Prep-pack `priority`, `readiness`, and dependency fields remain useful staging
+guidance, but they do not override owner-repo reality.
+
+Structured transport notes should carry a current `lifecycle_status` and a
+short `lifecycle_note`, so the root no longer asks readers to infer that state
+from body prose alone.
+
+See `docs/codex/owner-repo-reality-check.md` for the narrow rule.
 
 ## The unit of work
 

@@ -28,9 +28,9 @@ LEGACY_TOP_LEVEL_SELECTION_KEYS = (
 PACK_FAMILIES = {
     "questbook": {
         "label": "questbook",
-        "note_glob": "seed_questbook_*_pack.md",
+        "note_glob": "seed_staging/questbook/seed_questbook_*_pack.md",
         "expected_packs": {
-            "seed_questbook_foundation_pack.md": {
+            "seed_staging/questbook/seed_questbook_foundation_pack.md": {
                 "seed_id": "seed.questbook.foundation-pack.v0",
                 "priority": "now",
                 "priority_band": "now",
@@ -45,7 +45,7 @@ PACK_FAMILIES = {
                 ],
                 "dependencies": [],
             },
-            "seed_questbook_source_proof_pack.md": {
+            "seed_staging/questbook/seed_questbook_source_proof_pack.md": {
                 "seed_id": "seed.questbook.source-proof-pack.v0",
                 "priority": "next",
                 "priority_band": "next",
@@ -60,7 +60,7 @@ PACK_FAMILIES = {
                     "seed.questbook.foundation-pack.v0",
                 ],
             },
-            "seed_questbook_boundary_runtime_pack.md": {
+            "seed_staging/questbook/seed_questbook_boundary_runtime_pack.md": {
                 "seed_id": "seed.questbook.boundary-runtime-pack.v0",
                 "priority": "later",
                 "priority_band": "later",
@@ -75,7 +75,7 @@ PACK_FAMILIES = {
                     "seed.questbook.source-proof-pack.v0",
                 ],
             },
-            "seed_questbook_seedgarden_profile_pack.md": {
+            "seed_staging/questbook/seed_questbook_seedgarden_profile_pack.md": {
                 "seed_id": "seed.questbook.seedgarden-profile-pack.v0",
                 "priority": "later",
                 "priority_band": "later",
@@ -95,9 +95,9 @@ PACK_FAMILIES = {
     },
     "rpg": {
         "label": "rpg",
-        "note_glob": "seed_rpg_*_pack.md",
+        "note_glob": "seed_staging/rpg/seed_rpg_*_pack.md",
         "expected_packs": {
-            "seed_rpg_first_wave_pack.md": {
+            "seed_staging/rpg/seed_rpg_first_wave_pack.md": {
                 "seed_id": "seed.rpg.first-wave-pack.v0",
                 "priority": "next",
                 "priority_band": "next",
@@ -114,7 +114,7 @@ PACK_FAMILIES = {
                 ],
                 "dependencies": [],
             },
-            "seed_rpg_second_wave_pack.md": {
+            "seed_staging/rpg/seed_rpg_second_wave_pack.md": {
                 "seed_id": "seed.rpg.second-wave-pack.v0",
                 "priority": "next",
                 "priority_band": "next",
@@ -130,7 +130,7 @@ PACK_FAMILIES = {
                     "seed.rpg.first-wave-pack.v0",
                 ],
             },
-            "seed_rpg_architecture_rfc_pack.md": {
+            "seed_staging/rpg/seed_rpg_architecture_rfc_pack.md": {
                 "seed_id": "seed.rpg.architecture-rfc.v0",
                 "priority": "now",
                 "priority_band": "now",
@@ -146,7 +146,7 @@ PACK_FAMILIES = {
                     "seed.rpg.second-wave-pack.v0",
                 ],
             },
-            "seed_rpg_bridge_wave_pack.md": {
+            "seed_staging/rpg/seed_rpg_bridge_wave_pack.md": {
                 "seed_id": "seed.rpg.bridge-wave-pack.v0",
                 "priority": "next",
                 "priority_band": "next",
@@ -165,7 +165,7 @@ PACK_FAMILIES = {
                     "seed.rpg.architecture-rfc.v0",
                 ],
             },
-            "seed_rpg_sdk_addendum_pack.md": {
+            "seed_staging/rpg/seed_rpg_sdk_addendum_pack.md": {
                 "seed_id": "seed.rpg.sdk-addendum.v0",
                 "priority": "later",
                 "priority_band": "later",
@@ -180,7 +180,7 @@ PACK_FAMILIES = {
                     "seed.rpg.bridge-wave-pack.v0",
                 ],
             },
-            "seed_rpg_runtime_projection_pack.md": {
+            "seed_staging/rpg/seed_rpg_runtime_projection_pack.md": {
                 "seed_id": "seed.rpg.runtime-projection-pack.v0",
                 "priority": "later",
                 "priority_band": "later",
@@ -311,7 +311,7 @@ def validate_prep_packs(root: Path = ROOT) -> None:
     expected_packs = collect_expected_packs()
     for family_name, family in PACK_FAMILIES.items():
         expected_names = set(family["expected_packs"])
-        found_names = {path.name for path in root.glob(family["note_glob"])}
+        found_names = {path.relative_to(root).as_posix() for path in root.glob(family["note_glob"])}
         if found_names != expected_names:
             missing = sorted(expected_names - found_names)
             extra = sorted(found_names - expected_names)
@@ -333,6 +333,7 @@ def validate_prep_packs(root: Path = ROOT) -> None:
     for note_name, expected in expected_packs.items():
         note_path = root / note_name
         map_path = note_path.with_suffix(".map.yaml")
+        note_filename = note_path.name
         if not map_path.exists():
             fail(f"{note_name}: missing matching map file '{map_path.name}'")
         if note_name not in origin_notes:
@@ -424,7 +425,7 @@ def validate_prep_packs(root: Path = ROOT) -> None:
 
         scope_exclusions = require_string_list(mapping["scope_exclusions"], f"{map_path.name}.scope_exclusions")
         required_exclusions = ["ATM10-Agent"]
-        if note_name != "seed_rpg_sdk_addendum_pack.md":
+        if note_filename != "seed_rpg_sdk_addendum_pack.md":
             required_exclusions.append("aoa-sdk")
         for excluded in required_exclusions:
             if excluded not in scope_exclusions:
@@ -441,9 +442,9 @@ def validate_prep_packs(root: Path = ROOT) -> None:
             target_repos.append(repo)
             if repo == "ATM10-Agent":
                 fail(f"{map_path.name}.targets[{index}].repo must not include '{repo}' in the current rollout")
-            if repo == "aoa-sdk" and note_name != "seed_rpg_sdk_addendum_pack.md":
+            if repo == "aoa-sdk" and note_filename != "seed_rpg_sdk_addendum_pack.md":
                 fail(f"{map_path.name}.targets[{index}].repo must not include '{repo}' in the current rollout")
-        if note_name == "seed_questbook_boundary_runtime_pack.md" and repo == "abyss-stack":
+        if note_filename == "seed_questbook_boundary_runtime_pack.md" and repo == "abyss-stack":
             for file_ref in files:
                 if not file_ref.startswith("Configs/"):
                     fail(

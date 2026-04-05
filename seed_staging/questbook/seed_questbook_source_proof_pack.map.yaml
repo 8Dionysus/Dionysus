@@ -1,0 +1,95 @@
+map_version: 1
+updated_at: '2026-03-31'
+seed_note: seed_staging/questbook/seed_questbook_source_proof_pack.md
+status: future_seed_prep_note
+source_bundle:
+  path: archive/seed_pack_exports/questbook_second_wave_seed.zip
+  included_surfaces:
+    - questbook_second_wave_seed/README.md
+    - questbook_second_wave_seed/APPLY_ORDER.md
+    - questbook_second_wave_seed/SEED_MANIFEST.yaml
+    - questbook_second_wave_seed/TOUCHPOINTS_NOT_INCLUDED.md
+    - questbook_second_wave_seed/COVERAGE_MAP.md
+    - questbook_second_wave_seed/aoa-techniques/
+    - questbook_second_wave_seed/aoa-skills/
+    - questbook_second_wave_seed/aoa-evals/
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - aoa-techniques
+    - aoa-skills
+    - aoa-evals
+  priority_band: next
+  planting_readiness: ready
+  why_now:
+    - these repos are the next strongest fit after the foundation seams are visible
+    - source-owned questbooks should harden canon, execution, and proof layers before later boundary and profile rollout
+    - the bundle is already shaped repo-locally and does not need a new numbered wave to stay legible
+  dependencies:
+    - seed.questbook.foundation-pack.v0
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+targets:
+  - repo: aoa-techniques
+    contour: source-canon
+    files:
+      - QUESTBOOK.md
+      - docs/QUESTBOOK_TECHNIQUE_INTEGRATION.md
+      - schemas/quest.schema.json
+      - schemas/quest_dispatch.schema.json
+      - generated/quest_catalog.min.example.json
+      - generated/quest_dispatch.min.example.json
+      - quests/AOA-TECH-Q-0001.yaml
+      - quests/AOA-TECH-Q-0002.yaml
+      - quests/AOA-TECH-Q-0003.yaml
+      - quests/AOA-TECH-Q-0004.yaml
+    focus:
+      - canon hardening follow-through
+      - donor refinery debts
+      - generated/source alignment
+  - repo: aoa-skills
+    contour: runtime-and-proof
+    files:
+      - QUESTBOOK.md
+      - docs/QUESTBOOK_SKILL_INTEGRATION.md
+      - schemas/quest.schema.json
+      - schemas/quest_dispatch.schema.json
+      - generated/quest_catalog.min.example.json
+      - generated/quest_dispatch.min.example.json
+      - quests/AOA-SK-Q-0001.yaml
+      - quests/AOA-SK-Q-0002.yaml
+      - quests/AOA-SK-Q-0003.yaml
+      - quests/AOA-SK-Q-0004.yaml
+    focus:
+      - workflow gaps
+      - skill-eval alignment
+      - portable-layer seam
+  - repo: aoa-evals
+    contour: proof-and-regression
+    files:
+      - QUESTBOOK.md
+      - docs/QUESTBOOK_EVAL_INTEGRATION.md
+      - schemas/quest.schema.json
+      - schemas/quest_dispatch.schema.json
+      - generated/quest_catalog.min.example.json
+      - generated/quest_dispatch.min.example.json
+      - quests/AOA-EV-Q-0001.yaml
+      - quests/AOA-EV-Q-0002.yaml
+      - quests/AOA-EV-Q-0003.yaml
+      - quests/AOA-EV-Q-0004.yaml
+    focus:
+      - missing proof bundles
+      - regression seams
+      - verdict bridge repair
+scope_exclusions:
+  - ATM10-Agent
+  - aoa-sdk
+  - aoa-kag
+  - Tree-of-Sophia
+  - abyss-stack
+  - Dionysus
+  - 8Dionysus
