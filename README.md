@@ -78,6 +78,7 @@ The manifest defines order. The seed file defines meaning. The closure note defi
 7. Leave trace in the target PR or commit trail, or in `reports/planting/` when the lineage would otherwise be lost.
 
 For donor-shaped or mixed seeds, also record donor repo/ref, transplant policy, redistribution obligations, and explicit `what survives` / `what stays behind` notes.
+When an owner-repo landing merges and Dionysus still keeps a linked prep pack or transport note for lineage, update `lifecycle_status` and `lifecycle_note` in the same cleanup pass so staged-only markers do not outlive the merge.
 
 ## Validation
 

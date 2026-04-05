@@ -11,6 +11,7 @@ Use one report per planted seed whenever possible.
 - Target repo:
 - Planting status: proposed | landed | archived
 - PR / commit / issue: target repo PR #... merged as <sha>; Dionysus report PR #... merged as <sha> (if applicable)
+- Dionysus lifecycle cleanup: updated linked prep-pack or transport-note markers | not needed
 - Maintainer:
 
 ## Donor provenance (only for donor-shaped or mixed seeds)
