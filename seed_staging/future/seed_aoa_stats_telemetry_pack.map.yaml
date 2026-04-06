@@ -1,0 +1,139 @@
+map_version: 1
+updated_at: '2026-04-05'
+seed_note: seed_staging/future/seed_aoa_stats_telemetry_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-stats-telemetry-seed.zip
+  companion_summary: archive/seed_pack_exports/aoa-stats-telemetry-seed-summary.md
+  included_surfaces:
+    - build_stats_seed/README.md
+    - build_stats_seed/CODEX_HANDOFF.md
+    - build_stats_seed/seed/family_manifest.yaml
+    - build_stats_seed/seed/docs/STATISTICS_ARCHITECTURE.md
+    - build_stats_seed/seed/docs/LAYER_BOUNDARIES.md
+    - build_stats_seed/seed/docs/METRIC_FAMILIES.md
+    - build_stats_seed/seed/docs/AGENT_WRITEBACK_RULES.md
+    - build_stats_seed/seed/schemas/stats-event-envelope.schema.json
+    - build_stats_seed/seed/schemas/skill-run-receipt.schema.json
+    - build_stats_seed/seed/schemas/eval-result.schema.json
+    - build_stats_seed/seed/schemas/progression-delta.schema.json
+    - build_stats_seed/seed/schemas/decision-fork.schema.json
+    - build_stats_seed/seed/schemas/automation-candidate.schema.json
+    - build_stats_seed/seed/schemas/object-window-summary.schema.json
+    - build_stats_seed/seed/examples/skill_run_receipt.example.json
+    - build_stats_seed/seed/examples/eval_result_receipt.example.json
+    - build_stats_seed/seed/examples/progression_delta_receipt.example.json
+    - build_stats_seed/seed/examples/decision_fork_receipt.example.json
+    - build_stats_seed/seed/examples/automation_candidate_receipt.example.json
+    - build_stats_seed/seed/examples/object_window_summary.example.json
+    - build_stats_seed/seed/integration/SESSION_HARVEST_AND_AUTOMATION_BRIDGE.md
+selection_policy:
+  preferred_first_owner: owner-local split wave led by aoa-skills and aoa-evals
+  family_rule:
+    - keep source-owned meaning in current owner repos
+    - start first instrumentation with the live session-harvest and automation family
+    - keep counts, verdicts, progression, and evidence links separate
+  landing_rule:
+    - prefer owner-local receipt emission before any federated read model
+    - regenerate schemas and builders from repo-native surfaces instead of copying seed artifacts directly
+  lineage_precondition:
+    - use live aoa-skills and aoa-evals surfaces as current truth when adapting the pack
+  derived_rule:
+    - treat cross-repo summaries as later derived views, not owner truth
+  sovereign_rule:
+    - do not let statistics become a sovereign meaning layer
+targets:
+  - repo: aoa-skills
+    contour: first instrumented workflow family for receipt emission
+    files:
+      - skills/aoa-session-donor-harvest/
+      - skills/aoa-session-route-forks/
+      - skills/aoa-session-self-diagnose/
+      - skills/aoa-session-self-repair/
+      - skills/aoa-session-progression-lift/
+      - skills/aoa-automation-opportunity-scan/
+      - SKILL_INDEX.md
+      - config/
+      - tests/fixtures/
+    validation:
+      - python scripts/release_check.py
+    focus:
+      - emit bounded finish receipts without turning skills into a central stats owner
+      - keep evidence links inspectable and avoid duplicating raw artifacts
+      - keep stats append-only and correction-friendly
+  - repo: aoa-evals
+    contour: bounded eval-result receipt home
+    files:
+      - schemas/
+      - docs/
+      - generated/
+      - tests/
+    validation:
+      - python scripts/release_check.py
+    focus:
+      - preserve proof-first posture
+      - let verdicts stay owner truth while receipts remain machine-readable supporting facts
+  - repo: future-derived-stats-layer
+    contour: later cross-repo read model and summary home
+    files:
+      - shared event-envelope consumers
+      - object summaries
+      - repeated-window summaries
+      - route or progression summaries
+      - automation pipeline summaries
+    validation:
+      - local validation once an explicit derived layer exists
+    focus:
+      - derive from owner receipts and bounded verdicts
+      - do not become the source of workflow or proof meaning
+  - repo: aoa-playbooks
+    contour: later automation-pipeline and scenario-summary consumer
+    files:
+      - docs/AUTOMATION_SEEDS.md
+      - generated/playbook_automation_seeds.json
+      - later repeated-window or automation summary consumers
+    validation:
+      - python scripts/validate_playbooks.py
+    focus:
+      - keep downstream automation hints advisory
+      - do not treat playbooks as the first authoring home for telemetry meaning
+  - repo: aoa-agents
+    contour: later actor and checkpoint ref normalization
+    files:
+      - schemas/
+      - docs/
+    validation:
+      - local repo validation once a bounded agent-law candidate exists
+    focus:
+      - keep actor or checkpoint posture narrow
+      - do not bypass owner-local workflow and proof surfaces
+  - repo: aoa-memo
+    contour: later provenance-thread and superseding support
+    files:
+      - docs/
+      - schemas/
+    validation:
+      - local repo validation once a bounded memo support candidate exists
+    focus:
+      - support correction history without becoming telemetry truth
+  - repo: aoa-techniques
+    contour: later technique extraction home
+    files:
+      - future technique surfaces for receipt discipline
+      - future technique surfaces for evidence-linked derived views
+    validation:
+      - python scripts/release_check.py
+    focus:
+      - extract reusable practice only after live instrumentation stabilizes
+scope_exclusions:
+  - immediate federation-wide planting from this Dionysus staging step
+  - importing seed schemas as canonical repo truth without adaptation
+  - replacing bounded eval verdicts with counters or rollup scores
+  - letting one central telemetry layer own workflow, proof, or quest state
+  - duplicating raw logs when evidence refs are enough
+  - first-authoring into aoa-routing or aoa-kag

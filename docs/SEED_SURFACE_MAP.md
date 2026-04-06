@@ -88,6 +88,9 @@ Read those markers first, then verify the owner repos directly.
 - `seed_aoa_automation_opportunity_scan_pack.md` is a newer staged add-on pack
   for automation-readiness detection around the live session-harvest family and
   the existing playbook automation-seed posture
+- `seed_aoa_stats_telemetry_pack.md` is now a partially landed lineage pack for
+  the first owner-local receipt wave across `aoa-skills` and `aoa-evals`,
+  while later derived stats layers remain deferred
 
 ### `seed_staging/donor/`
 
@@ -130,11 +133,14 @@ Current exploratory notes live under:
 ### `partially_landed_retained_for_lineage`
 
 - `seed_staging/questbook/seed_questbook_seedgarden_profile_pack.md`
+- `seed_staging/future/seed_aoa_stats_telemetry_pack.md`
 
 Reading:
 
 - the `Dionysus` slice landed
 - the `8Dionysus` slice remains deferred
+- the first owner-local telemetry receipt wave landed, but the derived stats
+  adjunct remains deferred
 
 ### `staged_only_not_landed`
 
