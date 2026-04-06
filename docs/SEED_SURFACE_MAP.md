@@ -80,7 +80,14 @@ Read those markers first, then verify the owner repos directly.
 ### `seed_staging/future/`
 
 - future bounded candidate packs and prep packs
-- still real staging soil, not planted owner-repo truth
+- mostly real staging soil, but some packs may later be retained here for
+  lineage after upstream landing
+- `seed_aoa_session_harvest_family_pack.md` now records a landed upstream
+  family-growth rollout for post-session AoA project-growth skills around
+  `aoa-session-donor-harvest`
+- `seed_aoa_automation_opportunity_scan_pack.md` is a newer staged add-on pack
+  for automation-readiness detection around the live session-harvest family and
+  the existing playbook automation-seed posture
 
 ### `seed_staging/donor/`
 
@@ -118,6 +125,7 @@ Current exploratory notes live under:
 - `seed_staging/rpg/seed_rpg_bridge_wave_pack.md`
 - `seed_staging/rpg/seed_rpg_sdk_addendum_pack.md`
 - `seed_staging/rpg/seed_rpg_runtime_projection_pack.md`
+- `seed_staging/future/seed_aoa_session_harvest_family_pack.md`
 
 ### `partially_landed_retained_for_lineage`
 
@@ -137,6 +145,7 @@ Reading:
 - `seed_staging/future/seed_federation_conductor_pack.md`
 - `seed_staging/future/seed_memory_evals_skills_docs_pack.md`
 - `seed_staging/future/seed_future_agent_systems_prep_pack.md`
+- `seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md`
 
 ### `donor_only_not_planted`
 

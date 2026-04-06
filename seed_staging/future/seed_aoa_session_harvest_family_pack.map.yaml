@@ -1,0 +1,148 @@
+map_version: 1
+updated_at: '2026-04-05'
+seed_note: seed_staging/future/seed_aoa_session_harvest_family_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-session-harvest-family-seed.zip
+  companion_summary: archive/seed_pack_exports/aoa-session-harvest-family-seed-summary.md
+  included_surfaces:
+    - aoa-session-harvest-family-seed/README.md
+    - aoa-session-harvest-family-seed/CODEX_HANDOFF.md
+    - aoa-session-harvest-family-seed/PACKAGE_MANIFEST.json
+    - aoa-session-harvest-family-seed/seed/family_manifest.yaml
+    - aoa-session-harvest-family-seed/seed/SKILL_INDEX.additions.md
+    - aoa-session-harvest-family-seed/seed/references/checkpoint-bridge.md
+    - aoa-session-harvest-family-seed/seed/references/harvest-packet.schema.yaml
+    - aoa-session-harvest-family-seed/seed/references/owner-layer-map.md
+    - aoa-session-harvest-family-seed/seed/references/pending-technique-seams.md
+    - aoa-session-harvest-family-seed/seed/references/quest-harvest-boundary.md
+    - aoa-session-harvest-family-seed/seed/references/rpg-reflection-posture.md
+    - aoa-session-harvest-family-seed/skills/aoa-session-donor-harvest/
+    - aoa-session-harvest-family-seed/skills/aoa-session-route-forks/
+    - aoa-session-harvest-family-seed/skills/aoa-session-self-diagnose/
+    - aoa-session-harvest-family-seed/skills/aoa-session-self-repair/
+    - aoa-session-harvest-family-seed/skills/aoa-session-progression-lift/
+selection_policy:
+  preferred_first_owner: aoa-skills
+  family_rule:
+    - keep aoa-session-donor-harvest as the nucleus
+    - keep aoa-quest-harvest as the narrow leaf promotion-triage skill
+  landing_rule:
+    - preserve the landed owner-first family contour rather than replaying an earlier minimal-only posture
+    - regenerate generated surfaces from repo-native builders instead of copying seed artifacts
+  lineage_precondition:
+    - use published aoa-techniques canon and live aoa-skills surfaces as the current truth rather than seed files directly
+  derivative_rule:
+    - do not use aoa-routing or aoa-kag as first-authoring homes for this source-owned meaning
+targets:
+  - repo: aoa-skills
+    contour: landed first owner for the session-harvest family
+    files:
+      - skills/aoa-session-donor-harvest/
+      - skills/aoa-session-route-forks/
+      - skills/aoa-session-self-diagnose/
+      - skills/aoa-session-self-repair/
+      - skills/aoa-session-progression-lift/
+      - skills/aoa-quest-harvest/SKILL.md
+      - SKILL_INDEX.md
+      - config/
+      - tests/fixtures/
+      - .agents/skills/
+    validation:
+      - python scripts/release_check.py
+      - current codex-portable-export workflow
+    focus:
+      - preserve the live full-family contour now present in aoa-skills
+      - keep all session-harvest invocation explicit and post-session
+      - keep aoa-quest-harvest narrow
+      - keep generated and portable surfaces repo-native
+  - repo: aoa-techniques
+    contour: landed technique extraction home
+    files:
+      - techniques/agent-workflows/session-donor-harvest/
+      - techniques/agent-workflows/owner-layer-triage/
+      - techniques/agent-workflows/harvest-packet-contract/
+      - techniques/agent-workflows/decision-fork-cards/
+      - techniques/agent-workflows/risk-passport-lift/
+      - techniques/agent-workflows/session-drift-taxonomy/
+      - techniques/agent-workflows/diagnosis-from-reviewed-evidence/
+      - techniques/agent-workflows/repair-shape-from-diagnosis/
+      - techniques/agent-workflows/checkpoint-bound-self-repair/
+      - techniques/agent-workflows/progression-evidence-lift/
+      - techniques/agent-workflows/multi-axis-quest-overlay/
+    validation:
+      - python scripts/release_check.py
+    focus:
+      - preserve the published technique canon that now backs the live family
+      - keep later updates source-owned in aoa-techniques rather than in archived seed files
+  - repo: /srv/.agents
+    contour: landed root install profile
+    files:
+      - .agents/skills/aoa-session-donor-harvest
+      - .agents/skills/aoa-session-route-forks
+      - .agents/skills/aoa-session-self-diagnose
+      - .agents/skills/aoa-session-self-repair
+      - .agents/skills/aoa-session-progression-lift
+      - .agents/skills/aoa-quest-harvest
+    validation:
+      - python /srv/aoa-skills/scripts/verify_skill_pack.py --repo-root /srv/aoa-skills --profile repo-session-harvest-family --install-root /srv/.agents/skills --format json
+    focus:
+      - keep root install aligned to live aoa-skills exports
+      - treat root install as runtime access, not as authoring canon
+  - repo: repo-local-install-roots
+    contour: landed repo-local rollout copies
+    files:
+      - aoa-agents/.agents/skills/
+      - aoa-evals/.agents/skills/
+      - aoa-memo/.agents/skills/
+      - aoa-playbooks/.agents/skills/
+      - aoa-techniques/.agents/skills/
+      - Agents-of-Abyss/.agents/skills/
+      - Tree-of-Sophia/.agents/skills/
+    validation:
+      - python /srv/aoa-skills/scripts/verify_skill_pack.py --repo-root /srv/aoa-skills --profile repo-session-harvest-family --install-root <repo>/.agents/skills --format json
+    focus:
+      - keep repo-local copies refreshed from live aoa-skills outputs
+      - do not treat copied install roots as the source of truth
+  - repo: aoa-playbooks
+    contour: later recurring route or repair scenario home
+    files:
+      - later playbook candidates derived from route-forks or repair packets
+    validation:
+      - local repo validation once a bounded playbook candidate exists
+    focus:
+      - no direct first landing from this Dionysus staging step
+  - repo: aoa-evals
+    contour: later proof surfaces for diagnosis or progression claims
+    files:
+      - later eval surfaces only after diagnosis or progression contracts become real
+    validation:
+      - local repo validation once a bounded eval candidate exists
+    focus:
+      - preserve proof-first posture
+  - repo: aoa-memo
+    contour: later recall or writeback companions
+    files:
+      - later memory-support surfaces only after source-owned meaning stabilizes elsewhere
+    validation:
+      - local repo validation once a bounded memory candidate exists
+    focus:
+      - do not treat session harvest as memory canon
+  - repo: aoa-agents
+    contour: later checkpoint or role-boundary law
+    files:
+      - later role-law or checkpoint-law surfaces if repair posture hardens into agent contracts
+    validation:
+      - local repo validation once a bounded agent-law candidate exists
+    focus:
+      - do not bypass aoa-skills as first owner
+scope_exclusions:
+  - treating this archived pack as fresher than the landed owner repos
+  - importing .seed files as canonical repo truth
+  - hidden widening of aoa-quest-harvest into the whole family
+  - using progression, diagnosis, or fork cards as routing authority
+  - first-authoring into aoa-routing or aoa-kag
