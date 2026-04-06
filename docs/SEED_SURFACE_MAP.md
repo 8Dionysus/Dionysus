@@ -7,7 +7,7 @@ current reading order.
 
 The main cleanup rule is simple:
 
-- root now stays mostly for canonical navigation and live control surfaces
+- root now stays mostly for canonical navigation and live lifecycle surfaces
 - structured transport and staging packs live under `seed_staging/`
 - informal exploratory seed texts live under `seed_notes/exploratory/`
 
@@ -44,6 +44,9 @@ Use root when the question is:
 - what is gated
 - what is archived
 - what controls read order
+
+Within `archive/`, treat `archive/seed_pack_exports/` as derived ingress and
+transport only, not as canonical seed meaning.
 
 ## `seed_staging/`
 

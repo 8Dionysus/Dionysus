@@ -10,12 +10,14 @@ Read in this order:
 
 1. the relevant `*_wave.manifest.json`
 2. the exact source seed named by that manifest
-3. `seed-registry.yaml`
-4. `docs/codex/planting-protocol.md`
-5. `AGENTS.md` and the nearest nested `AGENTS.md`
+3. the matching closure note for that wave when one exists
+4. `seed-registry.yaml`
+5. `docs/codex/planting-protocol.md`
 6. the target repository structure and ownership
+7. `AGENTS.md` and the nearest nested `AGENTS.md`
 
 If work starts from a named prep pack rather than an opened wave, read the pack note and matching `.map.yaml` after checking the stronger live surfaces above. Named prep packs are flexible staging notes. They do not overrule an opened wave or the current live seed.
+After reading a prep-pack note, verify the owner repo directly before treating staging guidance as current queue truth.
 
 ## What belongs here
 
@@ -38,12 +40,14 @@ If work starts from a named prep pack rather than an opened wave, read the pack 
 ## Key live surfaces
 
 - `archive/` is the canonical archive root for historical seed sources
+- `archive/seed_pack_exports/` holds derived ingress and transport bundles only; never treat them as canonical seed surfaces
 - `seed_expansion/` holds the current gated next-work surfaces after the archived ninth wave
 - `seed-registry.yaml` is the human/Codex navigation overlay
 - `docs/SEED_SURFACE_MAP.md` explains how to read `seed_staging/` and `seed_notes/exploratory/` without confusing canon, staging, lineage, and exploratory donor notes
 - `docs/codex/` holds the planting protocol and provenance rules
 - `templates/planting-report.template.md` defines the durable planting-report shape when Dionysus needs to hold the trace
-- `scripts/validate_seed_surfaces.py` is the single validation entrypoint
+- `reports/planting/README.md` explains when Dionysus should keep durable planting trace instead of relying on target-repo PR or commit history alone
+- `scripts/validate_seed_surfaces.py` is the single seed-surface validation entrypoint
 - `seed_staging/` holds structured transport and staging packs grouped by domain instead of mixing them into the root
 - `seed_notes/exploratory/` holds informal exploratory seed texts that should not be mistaken for queue control
 - repo-local questbook surfaces in `QUESTBOOK.md`, `quests/`, `schemas/`, and `generated/` are follow-through for the seed garden, not a second sovereignty layer
@@ -82,11 +86,19 @@ When an owner-repo landing merges and Dionysus still keeps a linked prep pack or
 
 ## Validation
 
+The seed-surface validation entrypoint remains:
+
 ```bash
 python scripts/validate_seed_surfaces.py
 ```
 
-This remains the single CI-facing command for seed-surface validation. It runs the manifest, registry, prep-pack, questbook, and nested-`AGENTS.md` checks. For advisory v3 readiness status, also use:
+For current repo-local and workflow reinforcement, also run:
+
+```bash
+python -m pytest -q tests
+```
+
+For advisory v3 readiness status only, also use:
 
 ```bash
 python scripts/check_seed_registry_v3_readiness.py seed-registry.yaml --write-report reports/seed-registry-v3-readiness.md

@@ -59,6 +59,11 @@ Run the repository entrypoint:
 python scripts/validate_seed_surfaces.py
 ```
 
-That gate should remain the single CI-facing command for seed-surface validation.
+That gate should remain the single seed-surface validation entrypoint.
+For repo-local and workflow reinforcement, also run:
+
+```bash
+python -m pytest -q tests
+```
 
 Use `reports/planting/` only when the target-repo PR or commit trail would not preserve the lineage well enough on its own.
