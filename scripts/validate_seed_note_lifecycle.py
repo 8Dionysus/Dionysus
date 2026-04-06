@@ -63,6 +63,14 @@ EXPECTED_NOTES = {
         "kind": "prep-pack-note",
         "lifecycle_status": "staged_only_not_landed",
     },
+    "seed_staging/future/seed_aoa_session_harvest_family_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
+    },
+    "seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "staged_only_not_landed",
+    },
     "seed_staging/audit/seed_wave3_codex_repo_local_skills_trace_harness.md": {
         "kind": "audit-pack-note",
         "lifecycle_status": "staged_only_not_landed",

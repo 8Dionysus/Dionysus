@@ -1,0 +1,105 @@
+map_version: 1
+updated_at: '2026-04-05'
+seed_note: seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-automation-opportunity-scan-seed.zip
+  companion_summary: archive/seed_pack_exports/aoa-automation-opportunity-scan-seed-summary.md
+  included_surfaces:
+    - aoa-automation-opportunity-scan-seed/README.md
+    - aoa-automation-opportunity-scan-seed/CODEX_HANDOFF.md
+    - aoa-automation-opportunity-scan-seed/PACKAGE_MANIFEST.json
+    - aoa-automation-opportunity-scan-seed/seed/addon_manifest.yaml
+    - aoa-automation-opportunity-scan-seed/seed/SKILL_INDEX.additions.md
+    - aoa-automation-opportunity-scan-seed/seed/PORTABLE_AND_GENERATED_HINTS.md
+    - aoa-automation-opportunity-scan-seed/seed/references/automation-fit-matrix.md
+    - aoa-automation-opportunity-scan-seed/seed/references/automation-opportunity-packet-schema.yaml
+    - aoa-automation-opportunity-scan-seed/seed/references/checkpoint-boundary.md
+    - aoa-automation-opportunity-scan-seed/seed/references/playbook-seed-bridge.md
+    - aoa-automation-opportunity-scan-seed/seed/references/session-harvest-integration.md
+    - aoa-automation-opportunity-scan-seed/seed/tests/fixture_ideas.yaml
+    - aoa-automation-opportunity-scan-seed/skills/aoa-automation-opportunity-scan/
+selection_policy:
+  preferred_first_owner: aoa-skills
+  family_rule:
+    - keep aoa-session-donor-harvest as the broad post-session refinery nucleus
+    - keep aoa-quest-harvest as the narrow leaf promotion-triage skill
+    - keep aoa-automation-opportunity-scan separate as the automation-readiness detector
+  landing_rule:
+    - prefer the minimal detector path before any broader automation routing path
+    - regenerate generated surfaces from repo-native builders instead of copying seed artifacts
+  downstream_rule:
+    - treat aoa-playbooks as the later home for recurring automation seed candidates, not the first authoring surface
+  lineage_precondition:
+    - extract automation-fit practice into aoa-techniques only after the live owner-repo seam stabilizes
+  derivative_rule:
+    - do not use aoa-routing or aoa-kag as first-authoring homes for this source-owned meaning
+targets:
+  - repo: aoa-skills
+    contour: automation opportunity detector first owner
+    files:
+      - skills/aoa-automation-opportunity-scan/
+      - skills/aoa-session-donor-harvest/SKILL.md
+      - skills/aoa-session-donor-harvest/references/
+      - SKILL_INDEX.md
+      - config/
+      - tests/fixtures/
+      - .agents/skills/
+    validation:
+      - python scripts/release_check.py
+      - current codex-portable-export workflow
+    focus:
+      - keep detection separate from automation execution
+      - keep the detector explicit-only and review-backed
+      - allow automation_candidate as a donor-harvest extract kind without turning it into hidden authority
+  - repo: aoa-playbooks
+    contour: later recurring automation seed candidate home
+    files:
+      - docs/AUTOMATION_SEEDS.md
+      - config/playbook_composition_overrides.json
+      - examples/automations/
+      - generated/playbook_automation_seeds.json
+    validation:
+      - python scripts/validate_playbooks.py
+    focus:
+      - keep schedule hints as hints, not authority
+      - land only after source-owned detector meaning is real in aoa-skills
+  - repo: aoa-techniques
+    contour: later technique extraction home
+    files:
+      - future technique surfaces for automation-fit matrix
+      - future technique surfaces for human-loop to seed lift
+      - future technique surfaces for approval-sensitivity check
+    validation:
+      - python scripts/release_check.py
+    focus:
+      - publish only after the live detector proves stable
+      - keep technique publication separate from the first aoa-skills landing
+  - repo: aoa-agents
+    contour: later checkpoint and authority-boundary law
+    files:
+      - later checkpoint posture or role-boundary surfaces if automation detection repeatedly reaches self-change edges
+    validation:
+      - local repo validation once a bounded agent-law candidate exists
+    focus:
+      - no shortcut around aoa-skills as first owner
+  - repo: aoa-evals
+    contour: later proof and approval-sensitivity hooks
+    files:
+      - later eval surfaces only after automation-fit contracts become real
+    validation:
+      - local repo validation once a bounded eval candidate exists
+    focus:
+      - preserve proof-first posture
+scope_exclusions:
+  - immediate owner-repo landing from this Dionysus staging step
+  - direct scheduler or background execution authority
+  - importing .seed files as canonical repo truth
+  - silent self-change or self-upgrade routes
+  - hidden widening of aoa-session-donor-harvest into an automation engine
+  - first-authoring into aoa-routing or aoa-kag
