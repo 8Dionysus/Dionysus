@@ -1,0 +1,84 @@
+{
+  "packet_type": "HARVEST_PACKET",
+  "session_ref": "session:2026-04-06-cross-repo-audit-remediation",
+  "closure_state": "closed-with-validated-fixes",
+  "reviewed_artifacts": [
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-06.cross-repo.audit-remediation-session-harvest.md",
+      "role": "primary"
+    }
+  ],
+  "wins": [
+    "Closed 10 reviewed audit findings across 5 repositories with full-repo test proof.",
+    "Preserved the abyss-stack source-vs-runtime boundary during mutation."
+  ],
+  "frictions": [
+    "The cross-repo remediation route still requires heavy human owner judgment.",
+    "The audit-ingest and validation-matrix loop is repetitive but not yet automation-ready."
+  ],
+  "extracts": [
+    {
+      "title": "Audit-to-Closeout Proof Loop",
+      "kind": "law",
+      "abstraction_shape": "technique_candidate",
+      "summary": "A reusable engineering practice for converting a bounded multi-repo audit into minimal fixes with explicit closeout proof through full per-repo pytest validation.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-06.cross-repo.audit-remediation-session-harvest.md",
+        "repo:aoa-sdk",
+        "repo:aoa-memo",
+        "repo:aoa-stats",
+        "repo:aoa-skills",
+        "repo:abyss-stack"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-techniques",
+      "chosen_next_surface": "TECHNIQUE candidate",
+      "nearest_wrong_target": "aoa-skills",
+      "difficulty": "medium",
+      "risk": "moderate",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The value is reusable practice and proof posture, not one leaf executable workflow."
+      ]
+    },
+    {
+      "title": "Cross-Repo Audit Remediation Route",
+      "kind": "route",
+      "abstraction_shape": "playbook_seed_candidate",
+      "summary": "A multi-step recurring scenario for ingesting a cross-repo audit, routing fixes by owner repo, and proving closure with full-suite validation across all touched repositories.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-06.cross-repo.audit-remediation-session-harvest.md"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-playbooks",
+      "chosen_next_surface": "playbook_seed",
+      "nearest_wrong_target": "aoa-skills",
+      "difficulty": "high",
+      "risk": "moderate",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The route spans several repos and verification surfaces, so it is broader than one skill."
+      ]
+    }
+  ],
+  "deferrals": [
+    {
+      "title": "Automation scan handoff",
+      "ref": "handoff:aoa-automation-opportunity-scan",
+      "reason": "The route is repetitive enough to scan, but not yet honest to call seed-ready."
+    },
+    {
+      "title": "Quest promotion",
+      "ref": "defer:aoa-quest-harvest",
+      "reason": "No single repeated reviewed quest-shaped unit remains after donor split."
+    }
+  ],
+  "quest_hooks": [
+    {
+      "status": "defer",
+      "target": "aoa-quest-harvest",
+      "reason": "Broader donor harvest still dominates over final promotion triage."
+    }
+  ]
+}

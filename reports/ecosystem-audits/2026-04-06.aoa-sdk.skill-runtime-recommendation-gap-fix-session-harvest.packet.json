@@ -1,0 +1,64 @@
+{
+  "packet_type": "HARVEST_PACKET",
+  "session_ref": "session:2026-04-06-aoa-sdk-skill-runtime-gap-fix",
+  "closure_state": "closed-with-validated-fix",
+  "reviewed_artifacts": [
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-06.aoa-sdk.skill-runtime-recommendation-gap-fix-session-harvest.md",
+      "role": "primary"
+    }
+  ],
+  "wins": [
+    "Closed the aoa-sdk skill runtime recommendation gap end-to-end with full-suite and lint proof.",
+    "Replaced manual host-inventory dependence with canonical install-root auto-discovery while preserving explicit override paths."
+  ],
+  "frictions": [
+    "Truthful host availability still depends on canonical install roots actually being populated.",
+    "The seam is now honest, but stricter fail-fast policy for router-only risk gates is still deferred."
+  ],
+  "extracts": [
+    {
+      "title": "Recommendation Truth / Host Actionability Split",
+      "kind": "law",
+      "abstraction_shape": "technique_candidate",
+      "summary": "A reusable control-plane law for keeping router recommendation truth separate from host actionability and resolving actionability through canonical install-root discovery plus router-only demotion out of activate_now.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-06.aoa-sdk.skill-runtime-recommendation-gap-fix-session-harvest.md",
+        "repo:aoa-sdk/docs/skill-runtime-recommendation-gap.md",
+        "repo:aoa-sdk/docs/skill-runtime-recommendation-gap-fix-spec.md",
+        "repo:aoa-sdk/src/aoa_sdk/skills/detector.py",
+        "repo:aoa-sdk/src/aoa_sdk/cli/main.py"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-techniques",
+      "chosen_next_surface": "TECHNIQUE candidate",
+      "nearest_wrong_target": "aoa-skills",
+      "difficulty": "medium",
+      "risk": "low",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The surviving value is reusable seam discipline for detectors and reports, not one bounded executable leaf workflow."
+      ]
+    }
+  ],
+  "deferrals": [
+    {
+      "title": "Automation promotion",
+      "ref": "defer:aoa-automation-opportunity-scan",
+      "reason": "One bounded seam fix is not enough reviewed repeat signal to justify an automation-opportunity packet."
+    },
+    {
+      "title": "Quest promotion",
+      "ref": "defer:aoa-quest-harvest",
+      "reason": "No single repeated reviewed quest-shaped unit remains as the only unresolved object."
+    }
+  ],
+  "quest_hooks": [
+    {
+      "status": "defer",
+      "target": "aoa-quest-harvest",
+      "reason": "The remaining reusable object is a technique candidate rather than a quest-promotion ambiguity."
+    }
+  ]
+}
