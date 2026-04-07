@@ -147,11 +147,21 @@ rows:
     next_reality_check: '2026-04-14'
   - ws: WS11
     repo: 8Dionysus profile surfaces + Agents-of-Abyss + aoa-sdk
-    first_slice: Keep onboarding/support/release clarity deferred until Wave 3 contracts stop drifting.
-    validator: public-surface review only
+    first_slice: Publish short canonical posture notes so 8Dionysus routes public entry honestly, Agents-of-Abyss states center support/release/CI posture explicitly, and aoa-sdk states its release/support/CI tiers without claiming source-owned meaning.
+    validator: python scripts/validate_ecosystem.py
+    additional_validation:
+      - python -m pytest -q tests
+      - git -C /srv/8Dionysus diff --check -- README.md docs/PUBLIC_ENTRY_POSTURE.md
+      - python -m pytest -q
+      - python -m ruff check .
+      - aoa workspace inspect /srv/aoa-sdk
+      - aoa compatibility check /srv/aoa-sdk
+      - aoa compatibility check /srv/aoa-sdk --repo aoa-skills --json
+      - python -m mypy src
+      - python -m build
     owner: 8Dionysus profile surfaces + Agents-of-Abyss + aoa-sdk
-    status: staged_post_gate_c
-    superseded_by_live_repo: onboarding routes already exist, but support matrix and release clarity remain open.
+    status: landed_first_slice
+    superseded_by_live_repo: 8Dionysus now keeps profile-bound onboarding and release limits in docs/PUBLIC_ENTRY_POSTURE.md, Agents-of-Abyss now keeps the center support/release/CI contract in docs/PUBLIC_SUPPORT_POSTURE.md, and aoa-sdk now keeps its release/support/CI tier map in docs/RELEASE_CI_POSTURE.md.
     next_reality_check: '2026-04-14'
   - ws: WS12
     repo: ATM10-Agent

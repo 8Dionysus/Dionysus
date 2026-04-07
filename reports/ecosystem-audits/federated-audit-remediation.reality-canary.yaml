@@ -47,3 +47,24 @@ checks:
       - python scripts/run_skills_ref_validation.py --repo-root . --require-skills-ref
     not_contains:
       - "continue-on-error: true"
+  - id: ws11-profile-entry-posture
+    workstream: WS11
+    path: /srv/8Dionysus/docs/PUBLIC_ENTRY_POSTURE.md
+    contains:
+      - ecosystem understanding
+      - aoa workspace inspect /srv/aoa-sdk
+      - WS12
+  - id: ws11-center-support-posture
+    workstream: WS11
+    path: /srv/Agents-of-Abyss/docs/PUBLIC_SUPPORT_POSTURE.md
+    contains:
+      - python scripts/validate_ecosystem.py
+      - python -m pytest -q tests
+      - .github/workflows/source-side-smoke.yml
+  - id: ws11-sdk-release-ci-posture
+    workstream: WS11
+    path: /srv/aoa-sdk/docs/RELEASE_CI_POSTURE.md
+    contains:
+      - aoa compatibility check /srv/aoa-sdk
+      - python -m mypy src
+      - .github/workflows/latest-sibling-canary.yml
