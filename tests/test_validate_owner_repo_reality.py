@@ -102,3 +102,47 @@ def test_owner_repo_reality_canary_accepts_remote_anchor(monkeypatch: pytest.Mon
         )
 
         assert validate_owner_repo_reality.run_validation(root, spec) == []
+
+
+def test_owner_repo_reality_canary_falls_back_to_github_raw_for_missing_workspace_sibling(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    class FakeResponse:
+        def __enter__(self) -> "FakeResponse":
+            return self
+
+        def __exit__(self, exc_type, exc, tb) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return b'"supporting-consumer"\n'
+
+    def fake_urlopen(url: str) -> FakeResponse:
+        assert (
+            url
+            == "https://raw.githubusercontent.com/8Dionysus/Agents-of-Abyss/main/generated/federation_supporting_inventory.min.json"
+        )
+        return FakeResponse()
+
+    monkeypatch.setattr(validate_owner_repo_reality.urllib_request, "urlopen", fake_urlopen)
+
+    with TemporaryDirectory() as temp_dir:
+        root = Path(temp_dir) / "Dionysus"
+        root.mkdir(parents=True, exist_ok=True)
+        spec = root / "canary.yaml"
+        write_text(
+            spec,
+            textwrap.dedent(
+                """
+                canary_version: 1
+                checks:
+                  - id: workspace-sibling
+                    path: /srv/Agents-of-Abyss/generated/federation_supporting_inventory.min.json
+                    contains:
+                      - '"supporting-consumer"'
+                """
+            ).strip()
+            + "\n",
+        )
+
+        assert validate_owner_repo_reality.run_validation(root, spec) == []
