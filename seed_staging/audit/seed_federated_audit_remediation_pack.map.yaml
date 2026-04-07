@@ -1,7 +1,9 @@
 map_version: 1
-updated_at: '2026-04-05'
+updated_at: '2026-04-07'
 seed_note: seed_staging/audit/seed_federated_audit_remediation_pack.md
-status: audit_prep_note
+status: partially_landed_audit_prep_note
+current_reality_report: reports/ecosystem-audits/2026-04-07.federated-audit-remediation.reality-check.md
+reality_canary: reports/ecosystem-audits/federated-audit-remediation.reality-canary.yaml
 navigation_constraints:
   keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
   add_to_origin_notes: true

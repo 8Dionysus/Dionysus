@@ -1,0 +1,49 @@
+canary_version: 1
+updated_at: '2026-04-07'
+source_seed: seed_staging/audit/seed_federated_audit_remediation_pack.md
+checks:
+  - id: ws01-supporting-inventory
+    workstream: WS01
+    path: /srv/Agents-of-Abyss/generated/federation_supporting_inventory.min.json
+    contains:
+      - '"aoa-sdk"'
+      - '"supporting-consumer"'
+  - id: ws01-ecosystem-map-split
+    workstream: WS01
+    path: /srv/Agents-of-Abyss/ECOSYSTEM_MAP.md
+    contains:
+      - supporting inventory
+      - generated/federation_supporting_inventory.min.json
+  - id: ws02-no-routing-raw-path-fallback
+    workstream: WS02
+    path: /srv/aoa-sdk/src/aoa_sdk/routing/picker.py
+    contains:
+      - add a compatibility rule before exposing it
+    not_contains:
+      - load_surface_from_path(
+  - id: ws02-sdk-canary-workflow
+    workstream: WS02
+    path: /srv/aoa-sdk/.github/workflows/latest-sibling-canary.yml
+    contains:
+      - "python scripts/run_sibling_canary.py --repo-root . --matrix scripts/sibling_canary_matrix.json"
+      - "repository: 8Dionysus/aoa-playbooks"
+  - id: ws06-ledger-present
+    workstream: WS06
+    path: /srv/Dionysus/reports/ecosystem-audits/federated-audit-remediation-ledger.yaml
+    contains:
+      - 'ws: WS01'
+      - 'ws: WS12'
+  - id: ws08-ws09-repo-validation-gates
+    workstream: WS08-WS09
+    path: /srv/aoa-skills/.github/workflows/repo-validation.yml
+    contains:
+      - python scripts/validate_skills.py --fail-on-review-truth-sync
+      - python scripts/report_technique_drift.py --techniques-repo ../aoa-techniques --fail-on-drift
+      - python scripts/release_check.py --include-packaging-smoke
+  - id: ws09-portable-export-skills-ref
+    workstream: WS09
+    path: /srv/aoa-skills/.github/workflows/codex-portable-export.yml
+    contains:
+      - python scripts/run_skills_ref_validation.py --repo-root . --require-skills-ref
+    not_contains:
+      - "continue-on-error: true"

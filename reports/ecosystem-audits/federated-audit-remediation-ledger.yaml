@@ -1,0 +1,137 @@
+ledger_version: 1
+updated_at: '2026-04-07'
+source_seed: seed_staging/audit/seed_federated_audit_remediation_pack.md
+rows:
+  - ws: WS01
+    repo: Agents-of-Abyss
+    first_slice: Split machine-readable center coverage into compact registry v1 plus supporting inventory so aoa-sdk is visible without widening compact v1.
+    validator: python scripts/validate_ecosystem.py
+    additional_validation:
+      - python -m pytest -q tests
+    owner: Agents-of-Abyss
+    status: landed_first_slice
+    superseded_by_live_repo: generated/federation_supporting_inventory.min.json now carries aoa-sdk as a supporting consumer surface.
+    next_reality_check: '2026-04-14'
+  - ws: WS02
+    repo: aoa-sdk
+    first_slice: Remove routed raw-path fallback and add an explicit sibling canary matrix plus scheduled latest-sibling canary workflow.
+    validator: python -m pytest -q
+    additional_validation:
+      - python -m ruff check .
+      - python -m mypy src
+      - python -m build
+    owner: aoa-sdk
+    status: landed_first_slice
+    superseded_by_live_repo: route-directed reads now require compatibility-map coverage and latest-sibling canary lives in .github/workflows/latest-sibling-canary.yml.
+    next_reality_check: '2026-04-14'
+  - ws: WS03
+    repo: aoa-agents + aoa-memo
+    first_slice: Normalize memory_scope grammar and typed posture fields only after Wave 2 gates hold.
+    validator: current repo-validation workflow
+    owner: aoa-agents + aoa-memo
+    status: staged_post_gate_b
+    superseded_by_live_repo: null
+    next_reality_check: '2026-04-14'
+  - ws: WS04
+    repo: aoa-memo + aoa-routing
+    first_slice: Formalize working.return as a validator-backed inspect -> capsule -> expand corridor after Wave 2 gates hold.
+    validator: python scripts/validate_memo.py
+    owner: aoa-memo + aoa-routing
+    status: staged_post_gate_b
+    superseded_by_live_repo: null
+    next_reality_check: '2026-04-14'
+  - ws: WS05
+    repo: aoa-routing + Tree-of-Sophia
+    first_slice: Land a Tree-of-Sophia-owned tiny-entry validator plus a bounded tos-root secondary re-entry in aoa-routing return navigation without widening the federation entry ABI.
+    validator: python scripts/validate_tiny_entry_route.py
+    additional_validation:
+      - python scripts/validate_kag_export.py
+      - python -m pytest -q
+      - python scripts/validate_router.py --techniques-root /srv/aoa-techniques --skills-root /srv/aoa-skills --evals-root /srv/aoa-evals --memo-root /srv/aoa-memo --agents-root /srv/aoa-agents --aoa-root /srv/Agents-of-Abyss --playbooks-root /srv/aoa-playbooks --kag-root /srv/aoa-kag --tos-root /srv/Tree-of-Sophia
+    owner: aoa-routing + Tree-of-Sophia
+    status: landed_trimmed_first_slice
+    superseded_by_live_repo: broad ToS tiny-entry ABI landings already existed; Tree-of-Sophia now owns a public tiny-entry validator and aoa-routing now restores tos-root through both root authority and one source-owned tiny-entry re-entry hop. The aoa-kag adjunct-budget follow-through remains open.
+    next_reality_check: '2026-04-14'
+  - ws: WS06
+    repo: Dionysus
+    first_slice: Add owner-repo reality canary, planning packets, and a durable remediation ledger before any broader downstream replay.
+    validator: python scripts/validate_seed_surfaces.py
+    additional_validation:
+      - python -m pytest -q tests
+    owner: Dionysus
+    status: landed_first_slice
+    superseded_by_live_repo: owner-repo reality is now validated through reports/ecosystem-audits/federated-audit-remediation.reality-canary.yaml.
+    next_reality_check: '2026-04-14'
+  - ws: WS07
+    repo: aoa-skills + aoa-evals
+    first_slice: Add proof-lineage fields and readiness/maturity split only after governance and canary gates stabilize.
+    validator: python scripts/build_catalog.py --check
+    owner: aoa-skills + aoa-evals
+    status: staged_post_gate_b
+    superseded_by_live_repo: null
+    next_reality_check: '2026-04-14'
+  - ws: WS08
+    repo: aoa-skills
+    first_slice: Make review-truth-sync a blocking validator lane so missing promotion artifacts surface as explicit governance debt.
+    validator: python scripts/validate_skills.py --fail-on-review-truth-sync
+    additional_validation:
+      - python -m pytest -q tests
+    owner: aoa-skills
+    status: landed_first_slice
+    superseded_by_live_repo: repo-validation now runs the review-truth-sync gate explicitly.
+    next_reality_check: '2026-04-14'
+  - ws: WS09
+    repo: aoa-skills + aoa-techniques
+    first_slice: Make technique drift and packaging smoke part of blocking CI rails rather than advisory-only lanes.
+    validator: python scripts/report_technique_drift.py --techniques-repo ../aoa-techniques --fail-on-drift
+    additional_validation:
+      - python scripts/release_check.py --include-packaging-smoke
+    owner: aoa-skills + aoa-techniques
+    status: landed_first_slice
+    superseded_by_live_repo: repo-validation and codex-portable-export now enforce drift and skills-ref portability more strictly.
+    next_reality_check: '2026-04-14'
+  - ws: WS10
+    repo: aoa-sdk + aoa-evals + Agents-of-Abyss + Tree-of-Sophia + abyss-stack + aoa-routing + aoa-playbooks + aoa-kag
+    first_slice: Seed scheduled latest-sibling canaries in aoa-sdk and aoa-evals, then add source-side smoke towers in Agents-of-Abyss and Tree-of-Sophia, then add a source-rooted deployed mirror canary in abyss-stack, then desynchronize compatibility canaries in aoa-routing, aoa-playbooks, and aoa-kag before broader federation-wide mesh claims.
+    validator: repo-native scheduled canary or source-side smoke lane
+    additional_validation:
+      - python scripts/run_sibling_canary.py --repo-root . --matrix scripts/sibling_canary_matrix.json
+      - python scripts/validate_repo.py
+      - python scripts/build_catalog.py --check
+      - python -m pytest -q
+      - python scripts/validate_ecosystem.py
+      - python -m pytest -q tests
+      - python scripts/validate_kag_export.py
+      - python -m unittest discover -s tests
+      - python scripts/validate_stack.py
+      - python scripts/validate_stack.py --parity-check --deployed-configs-root "$AOA_CONFIGS_ROOT"
+      - python scripts/validate_router.py --techniques-root /srv/aoa-techniques --skills-root /srv/aoa-skills --evals-root /srv/aoa-evals --memo-root /srv/aoa-memo --agents-root /srv/aoa-agents --aoa-root /srv/Agents-of-Abyss --playbooks-root /srv/aoa-playbooks --kag-root /srv/aoa-kag --tos-root /srv/Tree-of-Sophia
+      - python scripts/build_router.py --techniques-root /srv/aoa-techniques --skills-root /srv/aoa-skills --evals-root /srv/aoa-evals --memo-root /srv/aoa-memo --agents-root /srv/aoa-agents --aoa-root /srv/Agents-of-Abyss --playbooks-root /srv/aoa-playbooks --kag-root /srv/aoa-kag --tos-root /srv/Tree-of-Sophia --check
+      - python scripts/build_two_stage_skill_router.py --routing-root . --skills-root /srv/aoa-skills --check
+      - python scripts/validate_two_stage_skill_router.py --routing-root . --skills-root /srv/aoa-skills
+      - AOA_AGENTS_ROOT=/srv/aoa-agents AOA_EVALS_ROOT=/srv/aoa-evals python scripts/generate_playbook_activation_surfaces.py --check
+      - python scripts/generate_playbook_federation_surfaces.py --check
+      - AOA_SKILLS_ROOT=/srv/aoa-skills python scripts/generate_playbook_composition_surfaces.py --check
+      - AOA_AGENTS_ROOT=/srv/aoa-agents AOA_EVALS_ROOT=/srv/aoa-evals AOA_SKILLS_ROOT=/srv/aoa-skills AOA_MEMO_ROOT=/srv/aoa-memo python scripts/validate_playbooks.py
+      - AOA_TECHNIQUES_ROOT=/srv/aoa-techniques AOA_PLAYBOOKS_ROOT=/srv/aoa-playbooks AOA_EVALS_ROOT=/srv/aoa-evals TREE_OF_SOPHIA_ROOT=/srv/Tree-of-Sophia AOA_MEMO_ROOT=/srv/aoa-memo AOA_AGENTS_ROOT=/srv/aoa-agents python scripts/validate_kag.py
+      - AOA_TECHNIQUES_ROOT=/srv/aoa-techniques AOA_PLAYBOOKS_ROOT=/srv/aoa-playbooks AOA_EVALS_ROOT=/srv/aoa-evals TREE_OF_SOPHIA_ROOT=/srv/Tree-of-Sophia AOA_MEMO_ROOT=/srv/aoa-memo AOA_AGENTS_ROOT=/srv/aoa-agents python -m unittest discover -s tests -p 'test_*.py'
+    owner: aoa-sdk + aoa-evals + Agents-of-Abyss + Tree-of-Sophia + abyss-stack + aoa-routing + aoa-playbooks + aoa-kag
+    status: landed_full_mesh
+    superseded_by_live_repo: latest-sibling canaries now exist in aoa-sdk and aoa-evals; source-side smoke workflows exist in Agents-of-Abyss and Tree-of-Sophia; abyss-stack has a source-rooted deployed mirror canary workflow for repo-managed Configs parity; aoa-routing, aoa-playbooks, and aoa-kag now keep unsynchronized compatibility canaries, and aoa-routing generated surfaces were refreshed to current sibling state so the canary mesh is green rather than symbolic.
+    next_reality_check: '2026-04-14'
+  - ws: WS11
+    repo: 8Dionysus profile surfaces + Agents-of-Abyss + aoa-sdk
+    first_slice: Keep onboarding/support/release clarity deferred until Wave 3 contracts stop drifting.
+    validator: public-surface review only
+    owner: 8Dionysus profile surfaces + Agents-of-Abyss + aoa-sdk
+    status: staged_post_gate_c
+    superseded_by_live_repo: onboarding routes already exist, but support matrix and release clarity remain open.
+    next_reality_check: '2026-04-14'
+  - ws: WS12
+    repo: ATM10-Agent
+    first_slice: GitHub-only planning pass for release cadence, public test tiers, and supported-profile contract after Wave 3.
+    validator: GitHub issue + repo-native validation once the dedicated audit starts
+    owner: ATM10-Agent
+    status: github_only_deferred
+    superseded_by_live_repo: local execution remains out of scope for this program.
+    next_reality_check: '2026-04-14'

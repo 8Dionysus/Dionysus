@@ -1,0 +1,91 @@
+{
+  "packet_type": "HARVEST_PACKET",
+  "session_ref": "session:2026-04-07-cross-repo-aoa-stats-fixpack-rollout",
+  "closure_state": "closed-with-validated-rollout",
+  "reviewed_artifacts": [
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.md",
+      "role": "primary"
+    }
+  ],
+  "wins": [
+    "Established aoa-stats as the canonical shared receipt envelope owner and taught aoa-evals to validate its local mirror against that canonical enum.",
+    "Moved aoa-session-self-diagnose onto diagnosis_packet_receipt and kept project-core kernel telemetry aligned with the new detail receipt kind.",
+    "Added an explicit live publisher readiness audit and non-empty committed core/runtime summary fixtures."
+  ],
+  "frictions": [
+    "The federation still has four empty required publisher logs despite the new readiness audit.",
+    "Live session-growth history remains in a transition window where legacy skill_run_receipt still appears beside newer detail receipt kinds."
+  ],
+  "extracts": [
+    {
+      "title": "Canonical Shared Envelope Ownership / Mirror Validation",
+      "kind": "law",
+      "abstraction_shape": "technique_candidate",
+      "summary": "A reusable cross-repo law for keeping one canonical event envelope in the downstream stats owner while allowing local mirrors only when parity validation keeps the enum and ownership metadata exact.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.md",
+        "repo:aoa-stats/schemas/stats-event-envelope.schema.json",
+        "repo:aoa-stats/scripts/build_views.py",
+        "repo:aoa-evals/schemas/stats-event-envelope.schema.json",
+        "repo:aoa-evals/scripts/validate_repo.py"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-techniques",
+      "chosen_next_surface": "TECHNIQUE candidate",
+      "nearest_wrong_target": "aoa-skills",
+      "difficulty": "medium",
+      "risk": "low",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The value is reusable contract law for shared schema ownership and mirror parity, not one bounded leaf execution workflow."
+      ]
+    },
+    {
+      "title": "Federated Live Publisher Readiness Activation Route",
+      "kind": "route",
+      "abstraction_shape": "playbook_seed_candidate",
+      "summary": "A multi-repo coordination route for enabling owner-local live publishers, auditing readiness through aoa-stats, and only later hardening non-empty expectations once each owner stream has been exercised honestly.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.md",
+        "repo:aoa-stats/scripts/check_live_publishers.py",
+        "repo:aoa-stats/config/live_receipt_sources.json"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-playbooks",
+      "chosen_next_surface": "playbook_seed",
+      "nearest_wrong_target": "aoa-stats",
+      "difficulty": "medium",
+      "risk": "moderate",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The route spans several owner repos and explicit stop conditions, so aoa-stats should audit it rather than own it."
+      ]
+    }
+  ],
+  "deferrals": [
+    {
+      "title": "Automation promotion",
+      "ref": "defer:aoa-automation-opportunity-scan",
+      "reason": "The route is clearer, but one rollout plus one warning audit is still too little repeat evidence to call it seed-ready."
+    },
+    {
+      "title": "Repair packet",
+      "ref": "defer:aoa-session-self-repair",
+      "reason": "Diagnosis exists, but the concrete repair packet depends on which activation branch is chosen first."
+    },
+    {
+      "title": "Quest promotion",
+      "ref": "defer:aoa-quest-harvest",
+      "reason": "No single repeated reviewed quest-shaped unit remains after donor split."
+    }
+  ],
+  "quest_hooks": [
+    {
+      "status": "defer",
+      "target": "aoa-quest-harvest",
+      "reason": "The surviving reusable objects are a technique candidate and a playbook-seed candidate rather than one final promotion ambiguity."
+    }
+  ]
+}

@@ -5,9 +5,9 @@ projects:
   - AoA
   - ToS
 kind: audit-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: Cross-repo remediation pack compiled from the direct audit dialogue; staged in Dionysus for bounded owner-repo reality checks before any downstream rollout.
-reality_checked_at: '2026-04-05'
+lifecycle_status: partially_landed_retained_for_lineage
+lifecycle_note: Wave 0 dispatch surfaces and the first bounded Wave 1 owner-repo slices are now planted locally; the pack remains in Dionysus for lineage, remaining workstream order, and ongoing owner-repo reality checks.
+reality_checked_at: '2026-04-07'
 status: pending_archive
 priority: high
 parent_seed: null
@@ -31,6 +31,12 @@ fixes.
 The pack is intentionally split into workstreams rather than one giant
 checklist so Codex can land the smallest coherent slices without losing
 dependency order.
+
+Current first-slice reality is tracked in:
+
+- `reports/ecosystem-audits/federated-audit-remediation-ledger.yaml`
+- `reports/ecosystem-audits/2026-04-07.federated-audit-remediation.reality-check.md`
+- `reports/ecosystem-audits/federated-audit-remediation.reality-canary.yaml`
 
 ## Why this belongs in Dionysus
 

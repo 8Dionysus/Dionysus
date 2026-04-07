@@ -18,6 +18,12 @@ Check:
 - quest or validator anchors in the target repo
 - recent planting commits or reports when available
 
+For the federated audit remediation pack, the machine-checkable path now lives
+in:
+
+- `reports/ecosystem-audits/federated-audit-remediation.reality-canary.yaml`
+- `python scripts/validate_owner_repo_reality.py`
+
 ## Why this matters
 
 `Dionysus` intentionally preserves transport and lineage surfaces even after

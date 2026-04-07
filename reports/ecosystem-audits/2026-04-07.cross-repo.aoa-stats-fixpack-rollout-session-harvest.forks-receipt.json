@@ -1,0 +1,49 @@
+{
+  "event_kind": "decision_fork_receipt",
+  "event_id": "evt-fork-2026-04-07-cross-repo-aoa-stats-fixpack-rollout-001",
+  "observed_at": "2026-04-07T05:42:00Z",
+  "run_ref": "run-cross-repo-aoa-stats-fixpack-rollout-forks-2026-04-07",
+  "session_ref": "session:2026-04-07-cross-repo-aoa-stats-fixpack-rollout",
+  "actor_ref": "aoa-skills:session-route-forks",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-session-route-forks",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "fork_cards",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.forks.json",
+      "role": "primary"
+    },
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.md",
+      "role": "supporting"
+    }
+  ],
+  "payload": {
+    "branch_ids": [
+      "incremental-owner-activation",
+      "playbook-seed-first",
+      "hard-gate-non-empty-now"
+    ],
+    "suggested_default_branch": "incremental-owner-activation",
+    "predicted_gain_posture": "publisher parity and route clarity both improve, with the incremental branch carrying the cleanest immediate gain",
+    "predicted_cost_posture": "cost ranges from several small owner-repo passes to one noisy immediate gate",
+    "predicted_risk_posture": "risk ranges low to high, and the strict non-empty branch carries the heaviest short-term failure risk",
+    "stop_condition_refs": [
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.forks.json#branch_cards/0/stop_conditions/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.forks.json#branch_cards/1/stop_conditions/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.forks.json#branch_cards/2/stop_conditions/0"
+    ],
+    "owner_targets": [
+      "aoa-evals",
+      "aoa-playbooks",
+      "aoa-techniques",
+      "aoa-memo",
+      "aoa-stats"
+    ]
+  }
+}

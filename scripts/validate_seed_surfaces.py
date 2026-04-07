@@ -11,6 +11,7 @@ VALIDATORS = (
     ROOT / 'scripts' / 'validate_seed_registry.py',
     ROOT / 'scripts' / 'validate_prep_packs.py',
     ROOT / 'scripts' / 'validate_seed_note_lifecycle.py',
+    ROOT / 'scripts' / 'validate_owner_repo_reality.py',
     ROOT / 'scripts' / 'validate_questbook_surface.py',
     ROOT / 'scripts' / 'validate_nested_agents.py',
 )

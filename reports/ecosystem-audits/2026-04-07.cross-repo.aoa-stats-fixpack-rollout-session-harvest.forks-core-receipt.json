@@ -1,0 +1,29 @@
+{
+  "event_kind": "core_skill_application_receipt",
+  "event_id": "evt-core-skill-2026-04-07-cross-repo-aoa-stats-fixpack-rollout-forks-001",
+  "observed_at": "2026-04-07T05:42:10Z",
+  "run_ref": "run-cross-repo-aoa-stats-fixpack-rollout-forks-2026-04-07",
+  "session_ref": "session:2026-04-07-cross-repo-aoa-stats-fixpack-rollout",
+  "actor_ref": "aoa-skills:session-route-forks",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-session-route-forks",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "receipt",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.forks-receipt.json",
+      "role": "primary"
+    }
+  ],
+  "payload": {
+    "kernel_id": "project-core-session-growth-v1",
+    "skill_name": "aoa-session-route-forks",
+    "application_stage": "finish",
+    "detail_event_kind": "decision_fork_receipt",
+    "detail_receipt_ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.forks-receipt.json",
+    "route_ref": "route:cross-repo-aoa-stats-fixpack-rollout"
+  }
+}

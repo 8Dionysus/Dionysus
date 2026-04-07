@@ -1,0 +1,67 @@
+{
+  "event_kind": "diagnosis_packet_receipt",
+  "event_id": "evt-diagnosis-2026-04-07-cross-repo-aoa-stats-fixpack-rollout-001",
+  "observed_at": "2026-04-07T05:41:00Z",
+  "run_ref": "run-cross-repo-aoa-stats-fixpack-rollout-diagnosis-2026-04-07",
+  "session_ref": "session:2026-04-07-cross-repo-aoa-stats-fixpack-rollout",
+  "actor_ref": "aoa-skills:session-self-diagnose",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-session-self-diagnose",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "diagnosis_packet",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.diagnosis.json",
+      "role": "primary"
+    },
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.md",
+      "role": "supporting"
+    }
+  ],
+  "payload": {
+    "skill_name": "aoa-session-self-diagnose",
+    "result_kind": "diagnosis_packet",
+    "diagnosis_types": [
+      "publisher_parity_gap",
+      "federated_activation_gap",
+      "legacy_transition_overlap"
+    ],
+    "symptom_refs": [
+      "repo:aoa-stats/scripts/check_live_publishers.py",
+      "repo:aoa-evals/.aoa/live_receipts/eval-result-receipts.jsonl",
+      "repo:aoa-playbooks/.aoa/live_receipts/playbook-receipts.jsonl",
+      "repo:aoa-techniques/.aoa/live_receipts/technique-receipts.jsonl",
+      "repo:aoa-memo/.aoa/live_receipts/memo-writeback-receipts.jsonl",
+      "repo:aoa-skills/.aoa/live_receipts/session-harvest-family.jsonl"
+    ],
+    "probable_cause_hypotheses": [
+      "the new readiness audit surfaced owner repos whose live publication path has not yet been exercised after the contract rollout",
+      "default readiness posture intentionally treats empty required logs as warnings during staged federation activation",
+      "historical live skill logs still preserve legacy skill_run_receipt events while diagnosis_packet_receipt adoption is still early"
+    ],
+    "confidence_band": "medium",
+    "owner_hints": [
+      "aoa-stats",
+      "aoa-evals",
+      "aoa-playbooks",
+      "aoa-techniques",
+      "aoa-memo"
+    ],
+    "route_ref": "route:cross-repo-aoa-stats-fixpack-rollout",
+    "blocked_automation_causes": [
+      "required publisher parity is incomplete across owner repos",
+      "live history still contains mixed legacy and new session-growth detail kinds",
+      "owner-specific activation steps are not yet normalized into one bounded route"
+    ],
+    "repair_handoff": "aoa-session-self-repair",
+    "unknowns": [
+      "which owner repo should publish the first bounded live receipt in each currently empty stream",
+      "when the default readiness audit should become require-non-empty by default"
+    ]
+  }
+}

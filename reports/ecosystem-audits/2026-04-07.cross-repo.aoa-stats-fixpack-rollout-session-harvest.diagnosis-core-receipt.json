@@ -1,0 +1,29 @@
+{
+  "event_kind": "core_skill_application_receipt",
+  "event_id": "evt-core-skill-2026-04-07-cross-repo-aoa-stats-fixpack-rollout-diagnosis-001",
+  "observed_at": "2026-04-07T05:41:10Z",
+  "run_ref": "run-cross-repo-aoa-stats-fixpack-rollout-diagnosis-2026-04-07",
+  "session_ref": "session:2026-04-07-cross-repo-aoa-stats-fixpack-rollout",
+  "actor_ref": "aoa-skills:session-self-diagnose",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-session-self-diagnose",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "receipt",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.diagnosis-receipt.json",
+      "role": "primary"
+    }
+  ],
+  "payload": {
+    "kernel_id": "project-core-session-growth-v1",
+    "skill_name": "aoa-session-self-diagnose",
+    "application_stage": "finish",
+    "detail_event_kind": "diagnosis_packet_receipt",
+    "detail_receipt_ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.aoa-stats-fixpack-rollout-session-harvest.diagnosis-receipt.json",
+    "route_ref": "route:cross-repo-aoa-stats-fixpack-rollout"
+  }
+}

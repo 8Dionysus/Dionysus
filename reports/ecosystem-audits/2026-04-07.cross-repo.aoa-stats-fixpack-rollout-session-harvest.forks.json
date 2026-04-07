@@ -1,0 +1,45 @@
+{
+  "artifact_kind": "decision_fork",
+  "session_ref": "session:2026-04-07-cross-repo-aoa-stats-fixpack-rollout",
+  "route_ref": "route:cross-repo-aoa-stats-fixpack-rollout",
+  "suggested_default_branch": "incremental-owner-activation",
+  "branch_cards": [
+    {
+      "id": "incremental-owner-activation",
+      "likely_gain": "close publisher parity with minimal coordination shock",
+      "likely_cost": "several small owner-repo follow-up passes",
+      "likely_risk": "low",
+      "owner_target": "aoa-evals+aoa-playbooks+aoa-techniques+aoa-memo",
+      "stop_conditions": [
+        "do not harden non-empty gating until each owner repo can publish one bounded receipt",
+        "do not treat warning-only audit output as proof that parity is complete"
+      ]
+    },
+    {
+      "id": "playbook-seed-first",
+      "likely_gain": "capture the activation route as a reusable scenario before more owners go live",
+      "likely_cost": "extra authoring overhead before direct parity closeout",
+      "likely_risk": "moderate",
+      "owner_target": "aoa-playbooks",
+      "stop_conditions": [
+        "stop if the route is still changing faster than the playbook outline",
+        "stop if owner-specific activation steps remain too divergent"
+      ]
+    },
+    {
+      "id": "hard-gate-non-empty-now",
+      "likely_gain": "instant strict readiness truth in aoa-stats",
+      "likely_cost": "expected hard failures across four owner repos",
+      "likely_risk": "high",
+      "owner_target": "aoa-stats",
+      "stop_conditions": [
+        "stop if the gate would fail before owners have a published bounded receipt example",
+        "stop if warnings are still the only honest posture for staged federation activation"
+      ]
+    }
+  ],
+  "hold_option": {
+    "id": "wait-for-owner-first-publish",
+    "reason": "owner repos may need one bounded activation pass before the route law stabilizes"
+  }
+}
