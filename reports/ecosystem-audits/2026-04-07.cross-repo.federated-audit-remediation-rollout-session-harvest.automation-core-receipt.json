@@ -1,0 +1,29 @@
+{
+  "event_kind": "core_skill_application_receipt",
+  "event_id": "evt-core-skill-2026-04-07-cross-repo-federated-audit-remediation-rollout-automation-001",
+  "observed_at": "2026-04-07T17:50:39Z",
+  "run_ref": "run-cross-repo-federated-audit-remediation-rollout-automation-2026-04-07",
+  "session_ref": "session:2026-04-07-cross-repo-federated-audit-remediation-rollout",
+  "actor_ref": "aoa-skills:automation-opportunity-scan",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-automation-opportunity-scan",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "receipt",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.automation-receipt.json",
+      "role": "primary"
+    }
+  ],
+  "payload": {
+    "kernel_id": "project-core-session-growth-v1",
+    "skill_name": "aoa-automation-opportunity-scan",
+    "application_stage": "finish",
+    "detail_event_kind": "automation_candidate_receipt",
+    "detail_receipt_ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.automation-receipt.json",
+    "route_ref": "route:bounded-owner-delivery-lane"
+  }
+}

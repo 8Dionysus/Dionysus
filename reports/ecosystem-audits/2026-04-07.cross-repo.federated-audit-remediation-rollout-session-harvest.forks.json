@@ -1,0 +1,45 @@
+{
+  "artifact_kind": "decision_fork",
+  "session_ref": "session:2026-04-07-cross-repo-federated-audit-remediation-rollout",
+  "route_ref": "route:cross-repo-federated-audit-remediation-harvest-follow-on",
+  "suggested_default_branch": "technique-first",
+  "branch_cards": [
+    {
+      "id": "technique-first",
+      "likely_gain": "capture the most bounded reusable law while the GitHub-only endcap and reality-sync evidence are still sharp",
+      "likely_cost": "one focused technique-authoring pass",
+      "likely_risk": "low",
+      "owner_target": "aoa-techniques",
+      "stop_conditions": [
+        "stop if the next reviewed remote-owner landing differs materially enough that the law is still unstable",
+        "stop if the candidate starts widening into scenario canon instead of bounded practice law"
+      ]
+    },
+    {
+      "id": "playbook-seed-first",
+      "likely_gain": "preserve the full wave-gated remediation closure route before future repetitions blur planning and merge discipline",
+      "likely_cost": "broader authoring and upkeep overhead than the technique candidate",
+      "likely_risk": "moderate",
+      "owner_target": "aoa-playbooks",
+      "stop_conditions": [
+        "stop if local and GitHub-only closure tails are still diverging too much for one scenario seed",
+        "stop if the route starts depending on repo-specific exceptions rather than stable stage boundaries"
+      ]
+    },
+    {
+      "id": "automation-scan-first",
+      "likely_gain": "force an explicit checkpoint-aware judgment about whether the repeated delivery lane should stay manual or become a future automation seed",
+      "likely_cost": "classification pressure before a second full reviewed closure cycle exists",
+      "likely_risk": "moderate",
+      "owner_target": "aoa-playbooks",
+      "stop_conditions": [
+        "stop if repeat evidence still comes only from this one closure cycle",
+        "stop if approval-sensitive mutation surfaces remain too variable for a stable automation seed shape"
+      ]
+    }
+  ],
+  "hold_option": {
+    "id": "wait-for-second-full-closure",
+    "reason": "one full closure cycle is enough for donor harvest, but a second reviewed pass would make broader promotion and automation claims safer"
+  }
+}

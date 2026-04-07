@@ -1,0 +1,46 @@
+{
+  "event_kind": "decision_fork_receipt",
+  "event_id": "evt-fork-2026-04-07-cross-repo-federated-audit-remediation-rollout-001",
+  "observed_at": "2026-04-07T17:50:49Z",
+  "run_ref": "run-cross-repo-federated-audit-remediation-rollout-forks-2026-04-07",
+  "session_ref": "session:2026-04-07-cross-repo-federated-audit-remediation-rollout",
+  "actor_ref": "aoa-skills:session-route-forks",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-session-route-forks",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "fork_cards",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.forks.json",
+      "role": "primary"
+    },
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.md",
+      "role": "supporting"
+    }
+  ],
+  "payload": {
+    "branch_ids": [
+      "technique-first",
+      "playbook-seed-first",
+      "automation-scan-first"
+    ],
+    "suggested_default_branch": "technique-first",
+    "predicted_gain_posture": "the technique-first branch carries the cleanest bounded reuse gain, while the other branches preserve broader scenario and automation options",
+    "predicted_cost_posture": "cost ranges from one focused authoring pass to broader scenario capture and checkpoint-heavy automation classification",
+    "predicted_risk_posture": "risk ranges low to moderate, with broader playbook and automation framing carrying the greater chance of premature generalization",
+    "stop_condition_refs": [
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.forks.json#branch_cards/0/stop_conditions/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.forks.json#branch_cards/1/stop_conditions/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.forks.json#branch_cards/2/stop_conditions/0"
+    ],
+    "owner_targets": [
+      "aoa-techniques",
+      "aoa-playbooks"
+    ]
+  }
+}

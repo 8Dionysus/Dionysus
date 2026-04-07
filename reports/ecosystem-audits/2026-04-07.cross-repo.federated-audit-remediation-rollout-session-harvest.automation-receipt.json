@@ -1,0 +1,38 @@
+{
+  "event_kind": "automation_candidate_receipt",
+  "event_id": "evt-automation-2026-04-07-cross-repo-federated-audit-remediation-rollout-001",
+  "observed_at": "2026-04-07T17:50:29Z",
+  "run_ref": "run-cross-repo-federated-audit-remediation-rollout-automation-2026-04-07",
+  "session_ref": "session:2026-04-07-cross-repo-federated-audit-remediation-rollout",
+  "actor_ref": "aoa-skills:automation-opportunity-scan",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-automation-opportunity-scan",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "automation_packet",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.automation.json",
+      "role": "primary"
+    },
+    {
+      "kind": "harvest_packet",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.packet.json",
+      "role": "supporting"
+    }
+  ],
+  "payload": {
+    "manual_route_ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.federated-audit-remediation-rollout-session-harvest.automation.json",
+    "repeat_signal_posture": "strong within one session but only emerging across separate reviewed cycles",
+    "determinism_posture": "medium because owner judgment and mixed local plus GitHub delivery modes still matter",
+    "reversibility_posture": "moderate because git history, PR trace, and append-only seed sync exist, but the route still mutates many public surfaces",
+    "checkpoint_required": true,
+    "seed_ready": false,
+    "next_artifact_hint": "checkpoint-aware playbook_seed",
+    "likely_owner_layer": "aoa-playbooks",
+    "not_now_reason": "One full closure cycle is enough for classification but not yet enough for honest automation promotion across approval-sensitive multi-repo delivery.",
+    "proof_surface_notes": "Repo-native validators, GitHub PR test plus smoke, and Dionysus owner-repo reality checks make the route inspectable without granting schedule authority."
+  }
+}
