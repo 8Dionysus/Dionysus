@@ -1,0 +1,164 @@
+{
+  "packet_type": "HARVEST_PACKET",
+  "session_ref": "session:2026-04-07-cross-repo-surface-detection-wave-rollout",
+  "closure_state": "closed-with-owner-repo-landings",
+  "reviewed_artifacts": [
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.surface-detection-wave-rollout-session-harvest.md",
+      "role": "primary"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-sdk/pull/32",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-sdk/pull/33",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-skills/pull/138",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-routing/pull/65",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-stats/pull/11",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-playbooks/pull/74",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/8Dionysus/pull/14",
+      "role": "supporting"
+    }
+  ],
+  "wins": [
+    "Landed first-wave and second-wave surface-detection slices through real owner repos without widening aoa skills semantics.",
+    "Raised an explicit workspace trigger for additive aoa surfaces detect after skills enter and guard when route-drift and owner-layer ambiguity signals appear.",
+    "Closed the publish lane honestly through merged PRs, one pinned-ref routing fix, one portable-export mirror sync, and final clean-main workspace sync."
+  ],
+  "frictions": [
+    "Generated-output CI truth still depends on workflow-pinned sibling refs rather than whatever local mains happen to contain.",
+    "The publish lane crosses approval-sensitive mutation and public-share surfaces.",
+    "Owner-family precision beyond current second-wave surfaces still needs more reviewed repetitions before any canon promotion pressure becomes strong."
+  ],
+  "extracts": [
+    {
+      "title": "Cross-Repo Surface Detection Wave Landing Route",
+      "kind": "route",
+      "abstraction_shape": "playbook_seed_candidate",
+      "summary": "A multi-step scenario for taking surface-detection from seed staging through anchor landing, dependent-repo bridge work, CI-tail repair, merge, and final workspace sync without violating owner boundaries.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.surface-detection-wave-rollout-session-harvest.md",
+        "url:https://github.com/8Dionysus/aoa-sdk/pull/32",
+        "url:https://github.com/8Dionysus/aoa-sdk/pull/33",
+        "url:https://github.com/8Dionysus/aoa-skills/pull/138",
+        "url:https://github.com/8Dionysus/aoa-routing/pull/65",
+        "url:https://github.com/8Dionysus/aoa-stats/pull/11",
+        "url:https://github.com/8Dionysus/aoa-playbooks/pull/74"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-playbooks",
+      "chosen_next_surface": "playbook_seed",
+      "nearest_wrong_target": "aoa-skills",
+      "difficulty": "high",
+      "risk": "moderate",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The surviving value is scenario discipline across multiple owner repos rather than one executable leaf workflow."
+      ]
+    },
+    {
+      "title": "Workspace-Level Surface Trigger Propagation Law",
+      "kind": "law",
+      "abstraction_shape": "agent_surface_candidate",
+      "summary": "A reusable actor-law for when workspace sessions should invoke additive surface detection after ingress and mutation gating without confusing router hints for semantic authority.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.surface-detection-wave-rollout-session-harvest.md",
+        "url:https://github.com/8Dionysus/aoa-sdk/pull/33",
+        "url:https://github.com/8Dionysus/8Dionysus/pull/14"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-agents",
+      "chosen_next_surface": "agent-law-note",
+      "nearest_wrong_target": "aoa-routing",
+      "difficulty": "medium",
+      "risk": "low",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The surviving object is workspace actor posture about invocation timing and boundary law."
+      ]
+    },
+    {
+      "title": "Pinned Validation Matrix Before Generated Publish",
+      "kind": "law",
+      "abstraction_shape": "technique_candidate",
+      "summary": "A reusable publish law for rebuilding generated surfaces against workflow-pinned sibling refs before pushing, so local workspace drift does not masquerade as canonical output.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.surface-detection-wave-rollout-session-harvest.md",
+        "url:https://github.com/8Dionysus/aoa-routing/pull/65",
+        "url:https://github.com/8Dionysus/aoa-skills/pull/138"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-techniques",
+      "chosen_next_surface": "TECHNIQUE candidate",
+      "nearest_wrong_target": "aoa-routing",
+      "difficulty": "medium",
+      "risk": "moderate",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The reusable value is federation publish discipline under CI, not only the routing-tail patch itself."
+      ]
+    }
+  ],
+  "automation_candidate": {
+    "title": "Cross-Repo Publish And Merge Lane",
+    "current_manual_route": "validate -> branch -> commit -> push -> open PR -> wait checks -> inspect CI logs if needed -> patch tail -> merge -> sync local mains",
+    "owner_layer_hint": "aoa-playbooks",
+    "next_handoff": "aoa-automation-opportunity-scan",
+    "checkpoint_required": true,
+    "evidence_refs": [
+      "url:https://github.com/8Dionysus/aoa-sdk/pull/33",
+      "url:https://github.com/8Dionysus/aoa-skills/pull/138",
+      "url:https://github.com/8Dionysus/aoa-routing/pull/65",
+      "url:https://github.com/8Dionysus/aoa-stats/pull/11",
+      "url:https://github.com/8Dionysus/aoa-playbooks/pull/74"
+    ]
+  },
+  "deferrals": [
+    {
+      "title": "Automation-ready promotion",
+      "ref": "handoff:aoa-automation-opportunity-scan",
+      "reason": "The lane is real enough to classify, but it still crosses approval-sensitive surfaces and still relies on heavy owner judgment."
+    },
+    {
+      "title": "Standalone quest promotion",
+      "ref": "defer:aoa-quest-harvest",
+      "reason": "Selection pressure points toward a playbook-owned route, but donor harvest plus checkpoint-aware automation classification still preserve the truth better than a final promotion packet."
+    },
+    {
+      "title": "Diagnosis or repair packet",
+      "ref": "defer:aoa-session-self-repair",
+      "reason": "The session closed through merge and sync rather than leaving unresolved repair work as the main surviving object."
+    }
+  ],
+  "quest_hooks": [
+    {
+      "status": "defer",
+      "target": "aoa-quest-harvest",
+      "reason": "The repeated unit is route-shaped and nearer aoa-playbooks than aoa-skills, but a final promotion packet would still be premature."
+    }
+  ]
+}

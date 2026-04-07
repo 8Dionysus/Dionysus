@@ -1,0 +1,27 @@
+{
+  "artifact_kind": "progression_delta",
+  "session_ref": "session:2026-04-07-cross-repo-surface-detection-wave-rollout",
+  "route_ref": "route:cross-repo-surface-detection-wave-rollout",
+  "scope": "route_scoped",
+  "verdict": "advance",
+  "axis_deltas": {
+    "boundary_integrity": 1,
+    "execution_reliability": 1,
+    "change_legibility": 1,
+    "review_sharpness": 1,
+    "proof_discipline": 1,
+    "provenance_hygiene": 1,
+    "deep_readiness": 1
+  },
+  "unlock_hints": [
+    "workspace sessions can now call aoa surfaces detect as an additive trigger after skills enter and guard when owner ambiguity or route drift appears",
+    "future cross-repo surface-detection slices can reuse the landed shortlist plus receipt-context plus stats bridge instead of rebuilding the seam from scratch",
+    "generated publish work now has a clearer checkpoint: validate against workflow-pinned sibling refs before trusting local generated output"
+  ],
+  "cautions": [
+    "routing shortlist hints stay advisory only and must not be read as owner verdicts or activation authority",
+    "the cross-repo publish lane is still not automation-ready because it remains checkpoint-heavy and owner-judgment-heavy",
+    "owner-family precision beyond the current second-wave bridge still needs more reviewed repetitions before canon promotion pressure becomes strong"
+  ],
+  "automation_readiness_hint": "not_ready_until_second_reviewed_checkpoint_aware_repeat"
+}

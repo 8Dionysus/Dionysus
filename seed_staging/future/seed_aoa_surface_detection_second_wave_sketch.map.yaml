@@ -1,0 +1,106 @@
+map_version: 1
+updated_at: '2026-04-07'
+seed_note: seed_staging/future/seed_aoa_surface_detection_second_wave_sketch.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-surface-detection-second-wave-sketch.zip
+  companion_summary: archive/seed_pack_exports/aoa-surface-detection-second-wave-sketch-summary.md
+  included_surfaces:
+    - aoa-surface-detection-second-wave-sketch/README.md
+    - aoa-surface-detection-second-wave-sketch/TO_CODEX.md
+    - aoa-surface-detection-second-wave-sketch/patch_map.cross_repo.yaml
+    - aoa-surface-detection-second-wave-sketch/design/second-wave-contour.md
+    - aoa-surface-detection-second-wave-sketch/design/acceptance-grid.md
+selection_policy:
+  preferred_first_owner: aoa-sdk first-wave landing before any cross-repo follow-on
+  family_rule:
+    - keep aoa-sdk as the control-plane seam
+    - keep aoa-skills as executable runtime truth and receipt source
+    - keep aoa-routing and aoa-stats advisory and derived rather than semantic authorities
+  landing_rule:
+    - stage second wave only after recurring real first-wave reports justify tighter precision
+    - harden receipts and shortlist hints before asking owner repos for new public objects
+    - preserve activated versus manual-equivalent honesty labels across every follow-on
+  lineage_precondition:
+    - verify the first-wave aoa-sdk seam upstream before treating this sketch as current queue truth
+  derivative_rule:
+    - treat aoa-stats summaries as descriptive and aoa-routing hints as advisory only
+targets:
+  - repo: aoa-sdk
+    contour: control-plane anchor for stronger closeout packets and shortlist inputs
+    files:
+      - docs/
+      - src/aoa_sdk/cli/main.py
+      - src/aoa_sdk/skills/detector.py
+      - src/aoa_sdk/routing/hints.py
+      - src/aoa_sdk/closeout/api.py
+      - tests/test_cli.py
+      - tests/test_closeout.py
+      - tests/test_routing.py
+    validation:
+      - python -m pytest -q
+    focus:
+      - accept additive shortlist hints and stronger closeout packets without stealing owner meaning
+      - keep wave-one honesty intact
+  - repo: aoa-skills
+    contour: runtime receipts and optional human or Codex triage helper
+    files:
+      - README.md
+      - QUESTBOOK.md
+      - docs/README.md
+      - generated/
+      - tests/
+    validation:
+      - python scripts/release_check.py
+    focus:
+      - expose richer runtime receipts without turning the detector into one giant skill
+      - keep .agents/skills executable-only rather than a second canon
+  - repo: aoa-routing
+    contour: owner-layer shortlist assistance
+    files:
+      - README.md
+      - QUESTBOOK.md
+      - generated/
+      - tests/
+    validation:
+      - python -m pytest -q
+    focus:
+      - provide advisory shortlist hints without becoming semantic authority
+      - avoid blocking value on a router redesign
+  - repo: aoa-stats
+    contour: derived observability for repeated windows
+    files:
+      - README.md
+      - docs/README.md
+      - generated/
+      - tests/
+    validation:
+      - python -m pytest -q
+    focus:
+      - summarize repetition and honesty metrics across windows
+      - never decide promotion in place of reviewed closeout
+  - repo: owner-repo-family
+    contour: later compact family-entry or inspect surfaces
+    files:
+      - aoa-playbooks/README.md
+      - aoa-evals/README.md
+      - aoa-memo/README.md
+      - aoa-agents/README.md
+      - aoa-techniques/README.md
+    validation:
+      - local owner-repo validation once a bounded family-entry candidate exists
+    focus:
+      - add inspectability only where repetition proves value
+      - do not require a big-bang canon rewrite before second-wave utility appears
+scope_exclusions:
+  - treating this sketch as current queue truth before first wave lands in aoa-sdk
+  - auto-activating non-skill surfaces
+  - turning aoa-routing into a semantic source of truth
+  - letting aoa-stats decide promotion
+  - erasing activated versus manual-equivalent distinctions
+  - requiring every owner repo to land new public objects before second-wave value appears
