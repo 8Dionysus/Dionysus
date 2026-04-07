@@ -20,6 +20,9 @@ ROOT = Path(__file__).resolve().parents[1]
 CANARY_SPEC_PATH = (
     ROOT / "reports" / "ecosystem-audits" / "federated-audit-remediation.reality-canary.yaml"
 )
+WORKSPACE_ROOT = Path("/srv")
+GITHUB_RAW_OWNER = "8Dionysus"
+GITHUB_RAW_BASE = f"https://raw.githubusercontent.com/{GITHUB_RAW_OWNER}"
 
 
 class ValidationError(RuntimeError):
@@ -57,6 +60,24 @@ def resolve_path(root: Path, raw_path: str) -> Path:
     return root / path
 
 
+def workspace_path_to_raw_url(root: Path, target_path: Path) -> str | None:
+    try:
+        relative_to_workspace = target_path.relative_to(WORKSPACE_ROOT)
+    except ValueError:
+        return None
+
+    parts = relative_to_workspace.parts
+    if len(parts) < 2:
+        return None
+
+    repo_name = parts[0]
+    if repo_name == root.name:
+        return None
+
+    repo_relative_path = "/".join(parts[1:])
+    return f"{GITHUB_RAW_BASE}/{repo_name}/main/{repo_relative_path}"
+
+
 def read_target_text(root: Path, raw_path: str) -> tuple[str, str]:
     if raw_path.startswith(("http://", "https://")):
         try:
@@ -70,6 +91,13 @@ def read_target_text(root: Path, raw_path: str) -> tuple[str, str]:
             fail(f"{raw_path}: remote owner-repo surface must be UTF-8 text ({exc})")
 
     target_path = resolve_path(root, raw_path)
+    if target_path.is_file():
+        return target_path.read_text(encoding="utf-8"), str(target_path)
+
+    raw_fallback_url = workspace_path_to_raw_url(root, target_path)
+    if raw_fallback_url is not None:
+        return read_target_text(root, raw_fallback_url)
+
     if not target_path.is_file():
         fail(f"missing owner-repo surface {target_path}")
     return target_path.read_text(encoding="utf-8"), str(target_path)
