@@ -1,0 +1,73 @@
+map_version: 1
+updated_at: '2026-04-07'
+seed_note: seed_staging/future/seed_aoa_surface_detection_first_wave_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-surface-detection-first-wave-seed.zip
+  companion_summary: archive/seed_pack_exports/aoa-surface-detection-first-wave-seed-summary.md
+  included_surfaces:
+    - aoa-surface-detection-first-wave-seed/README.md
+    - aoa-surface-detection-first-wave-seed/TO_CODEX.md
+    - aoa-surface-detection-first-wave-seed/seed_manifest.json
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/patch_map.yaml
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/AGENTS.insert.md
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/docs/aoa-surface-detection-first-wave.md
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/docs/aoa-surface-detection-heuristics.md
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/docs/aoa-surface-detection-closeout-handoff.md
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/schemas/aoa_surface_detection_report.schema.json
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/schemas/aoa_closeout_surface_handoff.schema.json
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/examples/aoa_surface_detection_report.example.json
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/examples/aoa_closeout_surface_handoff.example.json
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/examples/aoa_surface_detection_heuristics.v1.json
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/snippets/models.additive.py
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/snippets/detector.pipeline.pseudocode.py
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/snippets/cli.additive.md
+    - aoa-surface-detection-first-wave-seed/aoa-sdk/snippets/tests.acceptance.md
+    - aoa-surface-detection-first-wave-seed/follow-ons/cross-repo-second-wave.md
+selection_policy:
+  preferred_first_owner: aoa-sdk
+  family_rule:
+    - keep aoa-sdk as the control-plane anchor rather than a semantic owner for sibling repos
+    - keep non-skill surfaces visible as inspect hints, candidates, or closeout handoffs
+    - keep executable skills as the only immediate activation lane
+  landing_rule:
+    - preserve backward compatibility with existing aoa skills commands
+    - add an additive surface-detection seam instead of widening skill dispatch into hidden non-skill activation
+    - regenerate examples and contracts from repo-native surfaces instead of copying seed artifacts directly
+  lineage_precondition:
+    - use live aoa-sdk docs, models, detector code, and closeout surfaces as the current truth when adapting the pack
+  closeout_rule:
+    - hand surviving non-skill notes to reviewed closeout rather than mid-route mutation
+targets:
+  - repo: aoa-sdk
+    contour: first honest owner for additive multi-surface detection
+    files:
+      - AGENTS.md
+      - docs/boundaries.md
+      - docs/session-closeout.md
+      - docs/skill-runtime-recommendation-gap.md
+      - docs/skill-runtime-recommendation-gap-fix-spec.md
+      - src/aoa_sdk/models.py
+      - src/aoa_sdk/skills/detector.py
+      - src/aoa_sdk/cli/main.py
+      - tests/test_cli.py
+      - tests/test_closeout.py
+      - tests/test_skills.py
+    validation:
+      - python -m pytest -q
+    focus:
+      - add an additive surface-detection report without stealing sibling-repo meaning
+      - preserve activated versus manual-equivalent versus candidate labels
+      - keep non-skill promotion closeout-only and review-backed
+scope_exclusions:
+  - immediate multi-repo rollout from this Dionysus staging step
+  - moving canonical meaning out of sibling owner repos
+  - auto-activating playbooks, evals, memo, techniques, or agents
+  - renaming or breaking existing aoa skills commands
+  - treating manual-equivalent as activated
+  - using the session-growth closeout kernel inside an active route
