@@ -146,3 +146,28 @@ def test_owner_repo_reality_canary_falls_back_to_github_raw_for_missing_workspac
         )
 
         assert validate_owner_repo_reality.run_validation(root, spec) == []
+
+
+def test_owner_repo_reality_canary_remaps_current_repo_workspace_path() -> None:
+    with TemporaryDirectory() as temp_dir:
+        root = Path(temp_dir) / "Dionysus"
+        target = root / "reports" / "ecosystem-audits" / "ledger.yaml"
+        root.mkdir(parents=True, exist_ok=True)
+        spec = root / "canary.yaml"
+        write_text(target, "token-a\n")
+        write_text(
+            spec,
+            textwrap.dedent(
+                """
+                canary_version: 1
+                checks:
+                  - id: current-repo-remap
+                    path: /srv/Dionysus/reports/ecosystem-audits/ledger.yaml
+                    contains:
+                      - token-a
+                """
+            ).strip()
+            + "\n",
+        )
+
+        assert validate_owner_repo_reality.run_validation(root, spec) == []

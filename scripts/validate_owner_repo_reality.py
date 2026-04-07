@@ -78,6 +78,23 @@ def workspace_path_to_raw_url(root: Path, target_path: Path) -> str | None:
     return f"{GITHUB_RAW_BASE}/{repo_name}/main/{repo_relative_path}"
 
 
+def remap_workspace_path_to_current_root(root: Path, target_path: Path) -> Path | None:
+    try:
+        relative_to_workspace = target_path.relative_to(WORKSPACE_ROOT)
+    except ValueError:
+        return None
+
+    parts = relative_to_workspace.parts
+    if len(parts) < 2:
+        return None
+
+    repo_name = parts[0]
+    if repo_name != root.name:
+        return None
+
+    return root.joinpath(*parts[1:])
+
+
 def read_target_text(root: Path, raw_path: str) -> tuple[str, str]:
     if raw_path.startswith(("http://", "https://")):
         try:
@@ -93,6 +110,10 @@ def read_target_text(root: Path, raw_path: str) -> tuple[str, str]:
     target_path = resolve_path(root, raw_path)
     if target_path.is_file():
         return target_path.read_text(encoding="utf-8"), str(target_path)
+
+    remapped_local_path = remap_workspace_path_to_current_root(root, target_path)
+    if remapped_local_path is not None and remapped_local_path.is_file():
+        return remapped_local_path.read_text(encoding="utf-8"), str(remapped_local_path)
 
     raw_fallback_url = workspace_path_to_raw_url(root, target_path)
     if raw_fallback_url is not None:
