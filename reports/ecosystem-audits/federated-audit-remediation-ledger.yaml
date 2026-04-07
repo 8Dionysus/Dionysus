@@ -34,23 +34,34 @@ rows:
     next_reality_check: '2026-04-14'
   - ws: WS04
     repo: aoa-memo + aoa-routing
-    first_slice: Formalize working.return as a validator-backed inspect -> capsule -> expand corridor after Wave 2 gates hold.
+    first_slice: Formalize working.return as a validator-backed inspect -> capsule -> expand corridor by making the aoa-memo return-ready object recall contract capsule-backed and requiring that shape cross-repo in aoa-routing.
     validator: python scripts/validate_memo.py
+    additional_validation:
+      - python scripts/validate_memory_surfaces.py
+      - python scripts/validate_memory_object_surfaces.py
+      - python scripts/validate_lifecycle_audit_examples.py
+      - python -m pytest -q tests
+      - python scripts/validate_router.py --techniques-root /srv/aoa-techniques --skills-root /srv/aoa-skills --evals-root /srv/aoa-evals --memo-root /srv/aoa-memo --agents-root /srv/aoa-agents --aoa-root /srv/Agents-of-Abyss --playbooks-root /srv/aoa-playbooks --kag-root /srv/aoa-kag --tos-root /srv/Tree-of-Sophia
+      - python scripts/build_router.py --techniques-root /srv/aoa-techniques --skills-root /srv/aoa-skills --evals-root /srv/aoa-evals --memo-root /srv/aoa-memo --agents-root /srv/aoa-agents --aoa-root /srv/Agents-of-Abyss --playbooks-root /srv/aoa-playbooks --kag-root /srv/aoa-kag --tos-root /srv/Tree-of-Sophia --check
+      - python scripts/build_two_stage_skill_router.py --routing-root /srv/aoa-routing --skills-root /srv/aoa-skills --check
+      - python scripts/validate_two_stage_skill_router.py --routing-root /srv/aoa-routing --skills-root /srv/aoa-skills
     owner: aoa-memo + aoa-routing
-    status: staged_post_gate_b
-    superseded_by_live_repo: null
+    status: landed_first_slice
+    superseded_by_live_repo: aoa-memo now treats examples/recall_contract.object.working.return.json as a true inspect -> capsule -> expand contract backed by generated/memory_object_capsules.json, and aoa-routing now cross-validates that owner-side return seam before accepting memo return navigation as current.
     next_reality_check: '2026-04-14'
   - ws: WS05
-    repo: aoa-routing + Tree-of-Sophia
-    first_slice: Land a Tree-of-Sophia-owned tiny-entry validator plus a bounded tos-root secondary re-entry in aoa-routing return navigation without widening the federation entry ABI.
+    repo: aoa-routing + Tree-of-Sophia + aoa-kag
+    first_slice: Land a Tree-of-Sophia-owned tiny-entry validator plus a bounded tos-root secondary re-entry in aoa-routing return navigation, then finish the aoa-kag adjunct-budget follow-through without widening the federation entry ABI.
     validator: python scripts/validate_tiny_entry_route.py
     additional_validation:
       - python scripts/validate_kag_export.py
       - python -m pytest -q
       - python scripts/validate_router.py --techniques-root /srv/aoa-techniques --skills-root /srv/aoa-skills --evals-root /srv/aoa-evals --memo-root /srv/aoa-memo --agents-root /srv/aoa-agents --aoa-root /srv/Agents-of-Abyss --playbooks-root /srv/aoa-playbooks --kag-root /srv/aoa-kag --tos-root /srv/Tree-of-Sophia
-    owner: aoa-routing + Tree-of-Sophia
-    status: landed_trimmed_first_slice
-    superseded_by_live_repo: broad ToS tiny-entry ABI landings already existed; Tree-of-Sophia now owns a public tiny-entry validator and aoa-routing now restores tos-root through both root authority and one source-owned tiny-entry re-entry hop. The aoa-kag adjunct-budget follow-through remains open.
+      - AOA_TECHNIQUES_ROOT=/srv/aoa-techniques AOA_PLAYBOOKS_ROOT=/srv/aoa-playbooks AOA_EVALS_ROOT=/srv/aoa-evals TREE_OF_SOPHIA_ROOT=/srv/Tree-of-Sophia AOA_MEMO_ROOT=/srv/aoa-memo AOA_AGENTS_ROOT=/srv/aoa-agents python scripts/validate_kag.py
+      - AOA_TECHNIQUES_ROOT=/srv/aoa-techniques AOA_PLAYBOOKS_ROOT=/srv/aoa-playbooks AOA_EVALS_ROOT=/srv/aoa-evals TREE_OF_SOPHIA_ROOT=/srv/Tree-of-Sophia AOA_MEMO_ROOT=/srv/aoa-memo AOA_AGENTS_ROOT=/srv/aoa-agents python scripts/release_check.py
+    owner: aoa-routing + Tree-of-Sophia + aoa-kag
+    status: landed_trimmed_follow_through
+    superseded_by_live_repo: broad ToS tiny-entry ABI landings already existed; Tree-of-Sophia now owns a public tiny-entry validator, aoa-routing restores tos-root through both root authority and one source-owned tiny-entry re-entry hop, and aoa-kag now makes the standalone ToS adjunct machine-checkable through explicit adjunct_budget and subordinate_posture fields in both the retrieval pack and federation spine entry.
     next_reality_check: '2026-04-14'
   - ws: WS06
     repo: Dionysus
