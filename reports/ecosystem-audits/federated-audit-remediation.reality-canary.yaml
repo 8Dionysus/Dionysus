@@ -68,3 +68,22 @@ checks:
       - aoa compatibility check /srv/aoa-sdk
       - python -m mypy src
       - .github/workflows/latest-sibling-canary.yml
+  - id: ws12-product-edge-posture
+    workstream: WS12
+    path: https://raw.githubusercontent.com/8Dionysus/ATM10-Agent/main/docs/PRODUCT_EDGE_POSTURE.md
+    contains:
+      - ov_intel_core_ultra_local
+      - combo_a
+      - Fedora-first stack parity
+  - id: ws12-readme-route
+    workstream: WS12
+    path: https://raw.githubusercontent.com/8Dionysus/ATM10-Agent/main/README.md
+    contains:
+      - docs/PRODUCT_EDGE_POSTURE.md
+      - public release cadence, supported profiles, and test tiers
+  - id: ws12-source-of-truth-route
+    workstream: WS12
+    path: https://raw.githubusercontent.com/8Dionysus/ATM10-Agent/main/docs/SOURCE_OF_TRUTH.md
+    contains:
+      - docs/PRODUCT_EDGE_POSTURE.md
+      - product-edge support claims

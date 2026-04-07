@@ -4,6 +4,8 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 from typing import Any
+from urllib import error as urllib_error
+from urllib import request as urllib_request
 
 try:
     import yaml
@@ -55,6 +57,24 @@ def resolve_path(root: Path, raw_path: str) -> Path:
     return root / path
 
 
+def read_target_text(root: Path, raw_path: str) -> tuple[str, str]:
+    if raw_path.startswith(("http://", "https://")):
+        try:
+            with urllib_request.urlopen(raw_path) as response:
+                payload = response.read()
+        except (urllib_error.URLError, OSError) as exc:
+            fail(f"missing owner-repo surface {raw_path}: {exc}")
+        try:
+            return payload.decode("utf-8"), raw_path
+        except UnicodeDecodeError as exc:
+            fail(f"{raw_path}: remote owner-repo surface must be UTF-8 text ({exc})")
+
+    target_path = resolve_path(root, raw_path)
+    if not target_path.is_file():
+        fail(f"missing owner-repo surface {target_path}")
+    return target_path.read_text(encoding="utf-8"), str(target_path)
+
+
 def validate_canary_spec(root: Path = ROOT, spec_path: Path = CANARY_SPEC_PATH) -> None:
     payload = load_yaml(spec_path)
     checks = payload.get("checks")
@@ -72,17 +92,13 @@ def validate_canary_spec(root: Path = ROOT, spec_path: Path = CANARY_SPEC_PATH) 
         if not isinstance(raw_path, str) or not raw_path:
             fail(f"{location}: missing non-empty 'path'")
 
-        target_path = resolve_path(root, raw_path)
-        if not target_path.is_file():
-            fail(f"{check_id}: missing owner-repo surface {target_path}")
-
-        text = target_path.read_text(encoding="utf-8")
+        text, target_label = read_target_text(root, raw_path)
         for token in require_string_list(check.get("contains"), f"{location}.contains"):
             if token not in text:
-                fail(f"{check_id}: expected token {token!r} in {target_path}")
+                fail(f"{check_id}: expected token {token!r} in {target_label}")
         for token in require_string_list(check.get("not_contains"), f"{location}.not_contains"):
             if token in text:
-                fail(f"{check_id}: stale token {token!r} still present in {target_path}")
+                fail(f"{check_id}: stale token {token!r} still present in {target_label}")
 
 
 def run_validation(root: Path = ROOT, spec_path: Path = CANARY_SPEC_PATH) -> list[str]:

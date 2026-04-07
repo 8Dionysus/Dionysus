@@ -4,6 +4,8 @@ import textwrap
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+import pytest
+
 from scripts import validate_owner_repo_reality
 
 
@@ -62,3 +64,41 @@ def test_owner_repo_reality_canary_rejects_stale_anchor() -> None:
         errors = validate_owner_repo_reality.run_validation(root, spec)
         assert len(errors) == 1
         assert "stale token 'old-token'" in errors[0]
+
+
+def test_owner_repo_reality_canary_accepts_remote_anchor(monkeypatch: pytest.MonkeyPatch) -> None:
+    class FakeResponse:
+        def __enter__(self) -> "FakeResponse":
+            return self
+
+        def __exit__(self, exc_type, exc, tb) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return b"remote-token\n"
+
+    def fake_urlopen(url: str) -> FakeResponse:
+        assert url == "https://example.invalid/surface.txt"
+        return FakeResponse()
+
+    monkeypatch.setattr(validate_owner_repo_reality.urllib_request, "urlopen", fake_urlopen)
+
+    with TemporaryDirectory() as temp_dir:
+        root = Path(temp_dir)
+        spec = root / "canary.yaml"
+        write_text(
+            spec,
+            textwrap.dedent(
+                """
+                canary_version: 1
+                checks:
+                  - id: remote
+                    path: https://example.invalid/surface.txt
+                    contains:
+                      - remote-token
+                """
+            ).strip()
+            + "\n",
+        )
+
+        assert validate_owner_repo_reality.run_validation(root, spec) == []

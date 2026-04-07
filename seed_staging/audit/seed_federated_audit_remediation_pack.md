@@ -5,8 +5,8 @@ projects:
   - AoA
   - ToS
 kind: audit-pack-note
-lifecycle_status: partially_landed_retained_for_lineage
-lifecycle_note: Waves 0 through 2 plus the first landed Wave 3 memory-scope slice, the first narrow Wave 3 return-corridor slice, the first Wave 3 proof-lineage/readiness split slice, and the first Wave 3 onboarding/support/release posture slice are now partially planted through bounded owner-repo landings, including the trimmed WS05 follow-through and the Wave 2 canary mesh; the pack remains in Dionysus for lineage, the remaining GitHub-only WS12 endcap, and ongoing owner-repo reality checks.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: Waves 0 through 4 are now fully planted through bounded owner-repo landings, including the trimmed WS05 follow-through, the Wave 2 canary mesh, the landed Wave 3 WS03/WS04/WS07/WS11 slices, and the GitHub-only WS12 product-edge contract in ATM10-Agent; the pack remains in Dionysus only for lineage, replay, and ongoing owner-repo reality checks.
 reality_checked_at: '2026-04-07'
 status: pending_archive
 priority: high

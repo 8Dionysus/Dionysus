@@ -165,9 +165,15 @@ rows:
     next_reality_check: '2026-04-14'
   - ws: WS12
     repo: ATM10-Agent
-    first_slice: GitHub-only planning pass for release cadence, public test tiers, and supported-profile contract after Wave 3.
-    validator: GitHub issue + repo-native validation once the dedicated audit starts
+    first_slice: Land a GitHub-only public product-edge contract in ATM10-Agent that closes the WS12 milestone and issue while making release cadence, CI/test tiers, supported profiles, and the explicit ATM10-Agent x abyss-stack boundary public and canonical.
+    validator: GitHub PR #50 with green Pytest test and smoke jobs
+    additional_validation:
+      - GitHub milestone #1 closed
+      - GitHub issue #49 closed
+      - docs/PRODUCT_EDGE_POSTURE.md landed on ATM10-Agent main
+      - README.md routes to docs/PRODUCT_EDGE_POSTURE.md on ATM10-Agent main
+      - docs/SOURCE_OF_TRUTH.md names docs/PRODUCT_EDGE_POSTURE.md as canonical on ATM10-Agent main
     owner: ATM10-Agent
-    status: github_only_deferred
-    superseded_by_live_repo: local execution remains out of scope for this program.
+    status: landed_full_github_track
+    superseded_by_live_repo: ATM10-Agent now publishes docs/PRODUCT_EDGE_POSTURE.md on main through PR #50 (merge commit a7ae973fb12004484919d31961875dad7fd49a02), issue #49 is closed, milestone #1 is closed, and the GitHub-only owner surface now carries explicit release cadence, CI tiers, supported profiles, and the ATM10-Agent x abyss-stack boundary without requiring a local checkout.
     next_reality_check: '2026-04-14'
