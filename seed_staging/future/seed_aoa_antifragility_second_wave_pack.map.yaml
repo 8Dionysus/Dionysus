@@ -1,0 +1,111 @@
+map_version: 1
+updated_at: '2026-04-07'
+seed_note: seed_staging/future/seed_aoa_antifragility_second_wave_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-antifragility-second-wave-seed.zip
+  companion_summary: archive/seed_pack_exports/aoa-antifragility-second-wave-seed-summary.md
+  included_surfaces:
+    - aoa-antifragility-second-wave-seed/CODEX_HANDOFF.md
+    - aoa-antifragility-second-wave-seed/LATER_WAVES.md
+    - aoa-antifragility-second-wave-seed/LOCAL_VALIDATION.md
+    - aoa-antifragility-second-wave-seed/MANIFEST.json
+    - aoa-antifragility-second-wave-seed/README.md
+    - aoa-antifragility-second-wave-seed/VALIDATION_REPORT.txt
+    - aoa-antifragility-second-wave-seed/abyss-stack/docs/ANTIFRAGILITY_RUNTIME.md
+    - aoa-antifragility-second-wave-seed/abyss-stack/docs/REPAIR_SAFE_CLOSEOUT.md
+    - aoa-antifragility-second-wave-seed/abyss-stack/examples/repair_safe_closeout_receipt.example.json
+    - aoa-antifragility-second-wave-seed/abyss-stack/examples/service_degradation_receipt.example.json
+    - aoa-antifragility-second-wave-seed/abyss-stack/schemas/repair_safe_closeout_receipt_v1.json
+    - aoa-antifragility-second-wave-seed/abyss-stack/schemas/service_degradation_receipt_v1.json
+    - aoa-antifragility-second-wave-seed/aoa-memo/docs/FAILURE_LESSON_MEMORY.md
+    - aoa-antifragility-second-wave-seed/aoa-memo/docs/FAILURE_LESSON_RECALL.md
+    - aoa-antifragility-second-wave-seed/aoa-memo/examples/failure_lesson_memory.example.json
+    - aoa-antifragility-second-wave-seed/aoa-memo/schemas/failure_lesson_memory_v1.json
+    - aoa-antifragility-second-wave-seed/aoa-routing/docs/DEGRADED_ROUTE_HINTS.md
+    - aoa-antifragility-second-wave-seed/aoa-routing/docs/STRESS_POSTURE_ROUTING.md
+    - aoa-antifragility-second-wave-seed/aoa-routing/examples/stress_navigation_hint.example.json
+    - aoa-antifragility-second-wave-seed/aoa-routing/schemas/stress_navigation_hint_v1.json
+    - aoa-antifragility-second-wave-seed/aoa-sdk/docs/antifragility-closeout-seam.md
+    - aoa-antifragility-second-wave-seed/aoa-sdk/docs/antifragility-control-plane.md
+    - aoa-antifragility-second-wave-seed/aoa-sdk/tests/fixtures/antifragility/stress_closeout_manifest.example.json
+    - aoa-antifragility-second-wave-seed/aoa-sdk/tests/fixtures/antifragility/stress_dispatch_input.example.json
+    - aoa-antifragility-second-wave-seed/aoa-sdk/tests/fixtures/antifragility/stress_dispatch_result.example.json
+selection_policy:
+  preferred_first_owner: first-wave owner landings before routing plus memo plus runtime plus aoa-sdk transport follow-ons
+  family_rule:
+    - keep routing derived rather than semantic ownership
+    - keep memo reviewed and contextual rather than proof
+    - keep runtime degradation and repair-safe closeout owner-local and explicit
+    - keep the sdk narrowing, disclosing, or blocking under stress rather than auto-repairing
+  landing_rule:
+    - verify first-wave receipts, proof, and derived vectors before widening transport
+    - treat /srv/abyss-stack as workspace-local only and use ~/src/abyss-stack as the real source checkout before runtime landing
+    - keep stats or memo hints weaker than source receipts
+  lineage_precondition:
+    - no antifragility traces are verified upstream across aoa-routing, aoa-memo, aoa-sdk, or the checked AoA repos in /srv
+targets:
+  - repo: aoa-routing
+    contour: additive stress-posture and degraded-route hints
+    files:
+      - docs/STRESS_POSTURE_ROUTING.md
+      - docs/DEGRADED_ROUTE_HINTS.md
+      - schemas/stress_navigation_hint_v1.json
+      - examples/stress_navigation_hint.example.json
+    validation:
+      - local repo validation once the routing slice is adapted
+    focus:
+      - derive next-hop posture from explicit evidence rather than raw anecdotes
+      - keep routing below source-owned stress meaning
+  - repo: aoa-memo
+    contour: reviewed failure-lesson memory and recall posture
+    files:
+      - docs/FAILURE_LESSON_MEMORY.md
+      - docs/FAILURE_LESSON_RECALL.md
+      - schemas/failure_lesson_memory_v1.json
+      - examples/failure_lesson_memory.example.json
+    validation:
+      - local repo validation once the memo slice is adapted
+    focus:
+      - keep repeated lessons reviewable and bounded
+      - avoid treating memo as proof
+  - repo: abyss-stack
+    contour: owner-local runtime degradation and repair-safe closeout receipts
+    files:
+      - docs/ANTIFRAGILITY_RUNTIME.md
+      - docs/REPAIR_SAFE_CLOSEOUT.md
+      - schemas/service_degradation_receipt_v1.json
+      - examples/service_degradation_receipt.example.json
+      - schemas/repair_safe_closeout_receipt_v1.json
+      - examples/repair_safe_closeout_receipt.example.json
+    validation:
+      - local owner-repo validation once the real source checkout is confirmed
+    focus:
+      - keep degradation and closeout reviewed, bounded, and owner-local
+      - avoid treating /srv/abyss-stack as the source repository by default
+      - use ~/src/abyss-stack as the real owner checkout for any later runtime landing
+  - repo: aoa-sdk
+    contour: control-plane and closeout consumption of stress context
+    files:
+      - docs/antifragility-control-plane.md
+      - docs/antifragility-closeout-seam.md
+      - tests/fixtures/antifragility/stress_dispatch_input.example.json
+      - tests/fixtures/antifragility/stress_dispatch_result.example.json
+      - tests/fixtures/antifragility/stress_closeout_manifest.example.json
+    validation:
+      - local repo validation once the bounded sdk slice is adapted
+    focus:
+      - keep stress context as narrowing or disclosure input only
+      - avoid hidden remediation widening or source-ownership drift
+scope_exclusions:
+  - immediate cross-repo rollout from this Dionysus staging step
+  - bypassing missing first-wave landings
+  - treating /srv/abyss-stack as the source repository
+  - hidden auto-repair or silent remediation widening
+  - memo acting as proof
+  - central stress empire behavior or global scoring
