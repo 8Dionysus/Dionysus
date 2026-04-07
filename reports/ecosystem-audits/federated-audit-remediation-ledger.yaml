@@ -26,11 +26,18 @@ rows:
     next_reality_check: '2026-04-14'
   - ws: WS03
     repo: aoa-agents + aoa-memo
-    first_slice: Normalize memory_scope grammar and typed posture fields only after Wave 2 gates hold.
-    validator: current repo-validation workflow
+    first_slice: Normalize the shared recall-scope grammar in aoa-agents, bind self-agent memory_scope to profile rights, and publish memo-side scope_classes in object inspect surfaces without widening playbook or routing ownership.
+    validator: AOA_PLAYBOOKS_ROOT=/srv/aoa-playbooks AOA_EVALS_ROOT=/srv/aoa-evals AOA_MEMO_ROOT=/srv/aoa-memo AOA_ROUTING_ROOT=/srv/aoa-routing python scripts/validate_agents.py
+    additional_validation:
+      - python -m pytest -q tests
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python scripts/validate_memory_object_surfaces.py
+      - python scripts/validate_lifecycle_audit_examples.py
+      - python -m pytest -q tests
     owner: aoa-agents + aoa-memo
-    status: staged_post_gate_b
-    superseded_by_live_repo: null
+    status: landed_first_slice
+    superseded_by_live_repo: aoa-agents now treats allowed_recall_scopes and self-agent memory_scope as one shared recall-scope grammar tied to profile rights, while aoa-memo object inspect surfaces now publish derived scope_classes so agent-side consumers can compare typed scope classes without parsing concrete object identifiers.
     next_reality_check: '2026-04-14'
   - ws: WS04
     repo: aoa-memo + aoa-routing
@@ -75,11 +82,19 @@ rows:
     next_reality_check: '2026-04-14'
   - ws: WS07
     repo: aoa-skills + aoa-evals
-    first_slice: Add proof-lineage fields and readiness/maturity split only after governance and canary gates stabilize.
-    validator: python scripts/build_catalog.py --check
+    first_slice: Add compact proof-lineage fields in aoa-evals reader surfaces and split source-owned maturity from default-reference readiness in aoa-skills public surfaces.
+    validator: python scripts/validate_skills.py --fail-on-review-truth-sync
+    additional_validation:
+      - python scripts/validate_agent_skills.py --repo-root .
+      - python -m pytest -q tests
+      - python scripts/validate_repo.py
+      - python scripts/build_catalog.py --check
+      - python scripts/generate_runtime_candidate_template_index.py --check
+      - python scripts/generate_runtime_candidate_intake.py --check
+      - python scripts/generate_phase_alpha_eval_matrix.py --check
     owner: aoa-skills + aoa-evals
-    status: staged_post_gate_b
-    superseded_by_live_repo: null
+    status: landed_first_slice
+    superseded_by_live_repo: owner repos now publish the first Wave 3 proof-lineage and readiness/maturity split through generated/public_surface.* and generated/eval_catalog.min.json plus generated/eval_capsules.json.
     next_reality_check: '2026-04-14'
   - ws: WS08
     repo: aoa-skills

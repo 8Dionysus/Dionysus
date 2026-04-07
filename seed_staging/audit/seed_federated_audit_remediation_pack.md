@@ -6,7 +6,7 @@ projects:
   - ToS
 kind: audit-pack-note
 lifecycle_status: partially_landed_retained_for_lineage
-lifecycle_note: Waves 0 through 2 and the first narrow Wave 3 return-corridor slice are now partially planted through bounded owner-repo landings, including the trimmed WS05 follow-through and the Wave 2 canary mesh; the pack remains in Dionysus for lineage, remaining Wave 3+ workstream order, and ongoing owner-repo reality checks.
+lifecycle_note: Waves 0 through 2 plus the first landed Wave 3 memory-scope slice, the first narrow Wave 3 return-corridor slice, and the first Wave 3 proof-lineage/readiness split slice are now partially planted through bounded owner-repo landings, including the trimmed WS05 follow-through and the Wave 2 canary mesh; the pack remains in Dionysus for lineage, remaining Wave 3+ workstream order, and ongoing owner-repo reality checks.
 reality_checked_at: '2026-04-07'
 status: pending_archive
 priority: high

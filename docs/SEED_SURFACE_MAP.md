@@ -145,8 +145,10 @@ Reading:
 - the `8Dionysus` slice remains deferred
 - the first owner-local telemetry receipt wave landed, but the derived stats
   adjunct remains deferred
-- the federated audit remediation pack now preserves Wave 0 / Wave 1 first
-  slices plus remaining work order and owner-repo reality checks
+- the federated audit remediation pack now preserves landed Wave 0 / Wave 1
+  lie-removal slices, the Wave 2 canary mesh and trimmed WS05 follow-through,
+  and the first landed Wave 3 `WS03` / `WS04` / `WS07` slices plus remaining
+  work order and owner-repo reality checks
 
 ### `staged_only_not_landed`
 
@@ -170,7 +172,7 @@ As of `2026-04-05` UTC owner-repo state:
 - `seed_wave1_codex_audit_spine.md` is landed upstream through merged audit surfaces in `Agents-of-Abyss`, `ATM10-Agent`, and `abyss-stack`
 - `seed_wave2_codex_skill_proof_audit_bridge.md` is landed upstream through merged audit surfaces in `Agents-of-Abyss`, `aoa-skills`, and `aoa-evals`
 - `seed_wave3_codex_repo_local_skills_trace_harness.md` remains unlanded and should not be inferred from wave 1 and wave 2 being done
-- `seed_federated_audit_remediation_pack.md` is now partially landed through Wave 0 / Wave 1 first slices, and its remaining application order should be read through the linked reality report and owner-repo canary rather than through staging prose alone
+- `seed_federated_audit_remediation_pack.md` is now partially landed through Wave 0 / Wave 1 lie-removal slices, the Wave 2 canary mesh, and the first landed Wave 3 `WS03` / `WS04` / `WS07` slices, and its remaining application order should be read through the linked reality report and owner-repo canary rather than through staging prose alone
 
 ## Practical Rule
 
