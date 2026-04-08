@@ -1,5 +1,5 @@
 registry_version: 2
-updated_at: '2026-04-07'
+updated_at: '2026-04-08'
 navigation:
   canonical_order_source: wave manifests
   semantic_source: source seed files
@@ -33,6 +33,7 @@ origin_notes:
 - seed_staging/future/seed_future_agent_systems_prep_pack.md
 - seed_staging/future/seed_aoa_surface_detection_first_wave_pack.md
 - seed_staging/future/seed_aoa_surface_detection_second_wave_sketch.md
+- seed_staging/future/seed_aoa_antifragility_first_wave_pack.md
 - seed_staging/future/seed_aoa_antifragility_second_wave_pack.md
 - seed_staging/future/seed_aoa_antifragility_third_wave_pack.md
 - seed_staging/future/seed_aoa_antifragility_fourth_wave_pack.md
