@@ -1,0 +1,28 @@
+{
+  "artifact_kind": "automation_opportunity",
+  "session_ref": "session:2026-04-08-cross-repo-via-negativa-rollout",
+  "route_ref": "route:cross-repo-seed-wave-landing-lane",
+  "candidate_name": "cross-repo-seed-wave-landing-lane",
+  "current_manual_route": "review prep pack -> bounded owner edits -> repo-native validation -> commit -> push -> open PR -> wait checks -> patch CI tail if needed -> merge -> Dionysus lineage closeout -> session-harvest follow-through",
+  "repeat_signal": "strong-within-session-emerging-across-sessions",
+  "friction_signal": "high",
+  "input_clarity": "high",
+  "output_clarity": "high",
+  "proof_surface": "repo-native validators plus GitHub PR checks plus Dionysus lineage sync and owner-follow-through receipts",
+  "reversibility": "moderate",
+  "approval_sensitivity": "high",
+  "verdict": "not_now",
+  "checkpoint_required": true,
+  "owner_layer": "aoa-playbooks",
+  "next_artifact": "existing-playbook-and-technique-followthrough",
+  "schedule_hint": "advisory-only: revisit after another reviewed seed-wave landing and after owner-local pruning routes prove a stable checkpoint grammar",
+  "nearest_wrong_target": "aoa-skills",
+  "repair_reason": "The route is legible enough to classify, but it still crosses approval-sensitive public-share surfaces and still depends on explicit owner-local pruning judgment.",
+  "evidence_refs": [
+    "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.md",
+    "url:https://github.com/8Dionysus/Dionysus/pull/55",
+    "url:https://github.com/8Dionysus/Dionysus/pull/56",
+    "url:https://github.com/8Dionysus/aoa-playbooks/pull/79",
+    "url:https://github.com/8Dionysus/aoa-techniques/pull/161"
+  ]
+}

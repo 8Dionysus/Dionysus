@@ -1,0 +1,29 @@
+{
+  "event_kind": "core_skill_application_receipt",
+  "event_id": "evt-core-skill-2026-04-08-cross-repo-via-negativa-rollout-progression-001",
+  "observed_at": "2026-04-08T03:06:30Z",
+  "run_ref": "run-cross-repo-via-negativa-rollout-progression-2026-04-08",
+  "session_ref": "session:2026-04-08-cross-repo-via-negativa-rollout",
+  "actor_ref": "aoa-skills:session-progression-lift",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-session-progression-lift",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "receipt",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.progression-receipt.json",
+      "role": "primary"
+    }
+  ],
+  "payload": {
+    "kernel_id": "project-core-session-growth-v1",
+    "skill_name": "aoa-session-progression-lift",
+    "application_stage": "finish",
+    "detail_event_kind": "progression_delta_receipt",
+    "detail_receipt_ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.progression-receipt.json",
+    "route_ref": "route:cross-repo-via-negativa-rollout"
+  }
+}
