@@ -1,0 +1,118 @@
+{
+  "packet_type": "HARVEST_PACKET",
+  "session_ref": "session:2026-04-07-cross-repo-checkpoint-aware-session-growth-rollout",
+  "closure_state": "closed-with-owner-repo-landings",
+  "reviewed_artifacts": [
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.md",
+      "role": "primary"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-skills/pull/144",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-sdk/pull/36",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/Dionysus/pull/58",
+      "role": "supporting"
+    }
+  ],
+  "wins": [
+    "Landed a checkpoint-note contract in aoa-skills without widening the existing explicit-only session-growth ring.",
+    "Landed checkpoint-aware detect, append, status, and promote flows in aoa-sdk with reviewed closeout linkage.",
+    "Landed a lightweight Dionysus promoted-note sink so mid-session reviewed notes no longer need the heavy session-harvest family by default."
+  ],
+  "frictions": [
+    "The route still needs more non-implementation repetitions before automation pressure becomes honest.",
+    "aoa-sdk needed one bounded mypy-tail repair after GitHub CI, which shows the lane is real but still young.",
+    "v1 intentionally avoids git hooks and background daemons, so checkpoint capture still depends on explicit command use."
+  ],
+  "extracts": [
+    {
+      "title": "Checkpoint-Aware Session Growth Route",
+      "kind": "route",
+      "abstraction_shape": "playbook_seed_candidate",
+      "summary": "A multi-step route for capturing meaningful checkpoints into a local note, reviewing density, promoting that note when warranted, and only then handing off to heavier closeout or Dionysus lineage surfaces.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.md",
+        "url:https://github.com/8Dionysus/aoa-skills/pull/144",
+        "url:https://github.com/8Dionysus/aoa-sdk/pull/36",
+        "url:https://github.com/8Dionysus/Dionysus/pull/58"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-playbooks",
+      "chosen_next_surface": "playbook_seed",
+      "nearest_wrong_target": "aoa-skills",
+      "difficulty": "medium",
+      "risk": "moderate",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The route spans three repositories and preserves distinct authority layers rather than collapsing into one leaf skill."
+      ]
+    },
+    {
+      "title": "Detect-Capture-Promote Boundary Law",
+      "kind": "law",
+      "abstraction_shape": "technique_candidate",
+      "summary": "A reusable workflow law that keeps checkpoint detection read-only, note capture append-only, and promotion explicit so lower-authority growth surfaces do not impersonate harvest verdicts.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.md",
+        "url:https://github.com/8Dionysus/aoa-skills/pull/144",
+        "url:https://github.com/8Dionysus/aoa-sdk/pull/36"
+      ],
+      "repeat_signal": "emerging",
+      "owner_repo": "aoa-techniques",
+      "chosen_next_surface": "TECHNIQUE candidate",
+      "nearest_wrong_target": "aoa-sdk",
+      "difficulty": "medium",
+      "risk": "low",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The implementation lives in aoa-sdk, but the enduring value is broader workflow discipline about authority boundaries."
+      ]
+    }
+  ],
+  "automation_candidate": {
+    "title": "Checkpoint-Aware Session Growth Loop",
+    "current_manual_route": "meaningful checkpoint -> aoa surfaces detect --phase checkpoint -> aoa checkpoint append -> aoa checkpoint status -> reviewed promote -> closeout handoff or Dionysus promoted note",
+    "owner_layer_hint": "aoa-playbooks",
+    "next_handoff": "aoa-automation-opportunity-scan",
+    "checkpoint_required": true,
+    "evidence_refs": [
+      "url:https://github.com/8Dionysus/aoa-sdk/pull/36",
+      "url:https://github.com/8Dionysus/aoa-skills/pull/144",
+      "url:https://github.com/8Dionysus/Dionysus/pull/58"
+    ]
+  },
+  "deferrals": [
+    {
+      "title": "Automation-ready promotion",
+      "ref": "handoff:aoa-automation-opportunity-scan",
+      "reason": "The route is now named and landed, but it still needs reviewed non-implementation repeats before honest automation pressure exists."
+    },
+    {
+      "title": "Quest promotion",
+      "ref": "defer:aoa-quest-harvest",
+      "reason": "This was the first implementation-and-landing pass, not a re-earned repeated quest loop."
+    },
+    {
+      "title": "Implicit hooks",
+      "ref": "defer:background-checkpoint-capture",
+      "reason": "v1 intentionally keeps checkpoint capture command-driven rather than hook-driven or daemon-driven."
+    }
+  ],
+  "quest_hooks": [
+    {
+      "status": "defer",
+      "target": "aoa-quest-harvest",
+      "reason": "The repeated unit is emerging, but donor harvest and progression still preserve the truth better than final promotion authority."
+    }
+  ]
+}

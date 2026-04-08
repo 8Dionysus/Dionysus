@@ -1,0 +1,54 @@
+{
+  "event_kind": "harvest_packet_receipt",
+  "event_id": "evt-harvest-2026-04-07-cross-repo-checkpoint-aware-session-growth-rollout-001",
+  "observed_at": "2026-04-08T04:08:00Z",
+  "run_ref": "run-cross-repo-checkpoint-aware-session-growth-rollout-harvest-2026-04-07",
+  "session_ref": "session:2026-04-07-cross-repo-checkpoint-aware-session-growth-rollout",
+  "actor_ref": "aoa-skills:session-donor-harvest",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-session-donor-harvest",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "harvest_packet",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.packet.json",
+      "role": "primary"
+    },
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.md",
+      "role": "supporting"
+    }
+  ],
+  "payload": {
+    "extract_kind_counts": {
+      "law": 1,
+      "route": 1
+    },
+    "owner_layer_distribution": {
+      "aoa-playbooks": 1,
+      "aoa-techniques": 1
+    },
+    "promotion_candidate_refs": [
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.packet.json#extracts/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.packet.json#extracts/1"
+    ],
+    "deferral_refs": [
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.packet.json#deferrals/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.packet.json#deferrals/1",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.packet.json#deferrals/2"
+    ],
+    "evidence_density_summary": "reviewed-and-merged",
+    "automation_candidate_present": true,
+    "handoff_targets": [
+      "aoa-automation-opportunity-scan"
+    ],
+    "chosen_next_artifact_refs": [
+      "artifact:aoa-playbooks/playbook-seed-candidate",
+      "artifact:aoa-techniques/TECHNIQUE-candidate"
+    ]
+  }
+}

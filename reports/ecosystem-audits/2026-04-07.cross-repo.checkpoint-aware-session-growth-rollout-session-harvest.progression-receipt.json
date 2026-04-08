@@ -1,0 +1,50 @@
+{
+  "event_kind": "progression_delta_receipt",
+  "event_id": "evt-progression-2026-04-07-cross-repo-checkpoint-aware-session-growth-rollout-001",
+  "observed_at": "2026-04-08T04:08:20Z",
+  "run_ref": "run-cross-repo-checkpoint-aware-session-growth-rollout-progression-2026-04-07",
+  "session_ref": "session:2026-04-07-cross-repo-checkpoint-aware-session-growth-rollout",
+  "actor_ref": "aoa-skills:session-progression-lift",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-session-progression-lift",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "progression_delta",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.progression.json",
+      "role": "primary"
+    },
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.md",
+      "role": "supporting"
+    }
+  ],
+  "payload": {
+    "scope_ref": "route:cross-repo-checkpoint-aware-session-growth-rollout",
+    "axis_delta_summary": {
+      "boundary_integrity": 1,
+      "execution_reliability": 1,
+      "change_legibility": 1,
+      "review_sharpness": 1,
+      "proof_discipline": 1,
+      "provenance_hygiene": 1,
+      "deep_readiness": 1
+    },
+    "verdict": "advance",
+    "caution_refs": [
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.progression.json#cautions/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.progression.json#cautions/1",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.progression.json#cautions/2"
+    ],
+    "unlock_hint_refs": [
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.progression.json#unlock_hints/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.progression.json#unlock_hints/1",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-07.cross-repo.checkpoint-aware-session-growth-rollout-session-harvest.progression.json#unlock_hints/2"
+    ],
+    "automation_readiness_hint": "not_ready_until_non_implementation_repeats_exist"
+  }
+}
