@@ -91,6 +91,9 @@ Read those markers first, then verify the owner repos directly.
 - `seed_aoa_automation_opportunity_scan_pack.md` is a newer staged add-on pack
   for automation-readiness detection around the live session-harvest family and
   the existing playbook automation-seed posture
+- `seed_tos_graph_curation_pack.md` is a newer staged cross-repo pack for a
+  route-first ToS graph helper that must stay subordinate to ToS source
+  authority and validator-gated writeback
 - `seed_aoa_stats_telemetry_pack.md` is now a partially landed lineage pack for
   the first owner-local receipt wave across `aoa-skills` and `aoa-evals`,
   while later derived stats layers remain deferred
@@ -157,6 +160,7 @@ Reading:
 - `seed_staging/future/seed_memory_evals_skills_docs_pack.md`
 - `seed_staging/future/seed_future_agent_systems_prep_pack.md`
 - `seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md`
+- `seed_staging/future/seed_tos_graph_curation_pack.md`
 
 ### `donor_only_not_planted`
 

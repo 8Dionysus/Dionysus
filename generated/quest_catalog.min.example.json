@@ -148,5 +148,20 @@
     "owner_surface": "future-seeds/rpg-sdk-addendum",
     "source_path": "quests/DION-SEED-Q-0010.yaml",
     "public_safe": true
+  },
+  {
+    "id": "DION-SEED-Q-0011",
+    "title": "Stage the ToS graph curation pack as a runtime-to-canon prep pack",
+    "repo": "Dionysus",
+    "theme_ref": "",
+    "milestone_ref": "",
+    "state": "captured",
+    "band": "frontier",
+    "kind": "rollout",
+    "difficulty": "d3_seam",
+    "risk": "r2_contract",
+    "owner_surface": "future-seeds/tos-graph-curation",
+    "source_path": "quests/DION-SEED-Q-0011.yaml",
+    "public_safe": true
   }
 ]

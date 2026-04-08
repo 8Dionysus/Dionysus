@@ -1,0 +1,91 @@
+map_version: 1
+updated_at: '2026-04-08'
+seed_note: seed_staging/future/seed_tos_graph_curation_pack.md
+status: prep_pack_note
+source_bundle:
+  path: archive/seed_pack_exports/tos_graph_curation_seed.zip
+  included_surfaces:
+    - codex_tos_graph_handoff.md
+    - codex_tos_graph_plan.yaml
+    - codex_tos_graph_prompt.txt
+selection_policy:
+  fixed_order_required: false
+  default_order:
+    - abyss-stack
+    - Tree-of-Sophia
+    - Dionysus
+  priority_band: now
+  planting_readiness: needs_adaptation
+  why_now:
+    - the runtime/helper boundary is now clear enough to stage without opening a new wave
+    - the bundle is thin and still needs repo-native adaptation, so Dionysus should preserve it as transport first
+    - abyss-stack can own the helper body without absorbing ToS canonical meaning
+    - Tree-of-Sophia already has the validator surfaces needed to keep later writeback honest
+  dependencies: []
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+targets:
+  - repo: abyss-stack
+    contour: route-first runtime helper surface
+    files:
+      - docs/TOS_GRAPH_CURATION.md
+      - quests/ABYSS-STACK-Q-0008.yaml
+      - compose/modules/52-tos-graph.yml
+      - compose/profiles/curation.txt
+      - config-templates/Configs/tos-graph/
+      - config-templates/Services/tos-graph/
+    validation:
+      - python scripts/validate_stack.py
+      - scripts/aoa-profile-modules --profile core --profile curation --paths
+      - scripts/aoa-profile-endpoints --profile core --profile curation
+    focus:
+      - keep Neo4j as projection only
+      - keep host exposure localhost-only
+      - land a read-only vertical slice before any writeback route
+  - repo: Tree-of-Sophia
+    contour: source authority and validator boundary
+    files:
+      - AGENTS.md
+      - scripts/AGENTS.md
+      - tree/AGENTS.md
+      - intake/AGENTS.md
+      - scripts/validate_tree_node_contracts.py
+      - scripts/validate_tree_relation_pack.py
+      - scripts/validate_intake_pack.py
+      - scripts/validate_tree_example_sync.py
+      - scripts/generate_kag_export.py
+      - scripts/validate_kag_export.py
+    validation:
+      - python scripts/validate_tree_node_contracts.py
+      - python scripts/validate_tree_relation_pack.py
+      - python scripts/validate_intake_pack.py
+      - python scripts/validate_tree_example_sync.py
+      - python scripts/generate_kag_export.py
+      - python scripts/validate_kag_export.py
+    focus:
+      - preserve ToS as canonical truth
+      - keep relation writeback dual-surface where intake parity matters
+      - gate any later apply path through explicit validators and rollback
+  - repo: Dionysus
+    contour: seed-garden staging and lineage
+    files:
+      - seed_staging/future/seed_tos_graph_curation_pack.md
+      - seed_staging/future/seed_tos_graph_curation_pack.map.yaml
+      - quests/DION-SEED-Q-0011.yaml
+    validation:
+      - python scripts/validate_seed_surfaces.py
+    focus:
+      - preserve transport posture
+      - keep the zip derived rather than canonical
+      - record owner-repo follow-through honestly
+scope_exclusions:
+  - new numbered wave creation
+  - seed_index promotion before owner rollout
+  - direct live write enablement from Dionysus
+  - treating mirrored tos-source surfaces as canonical edit inputs
+  - widening host exposure beyond localhost
+  - LLM-driven autonomous canonical writes

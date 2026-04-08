@@ -19,6 +19,7 @@ Do not use it for:
 ## Frontier
 
 - `DION-SEED-Q-0007` — stage the RPG architecture RFC pack as a named seed-garden prep pack
+- `DION-SEED-Q-0011` — stage the ToS graph curation pack as a runtime-to-canon prep pack
 
 ## Near
 
