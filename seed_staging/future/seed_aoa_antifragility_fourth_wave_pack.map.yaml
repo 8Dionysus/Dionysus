@@ -1,0 +1,105 @@
+map_version: 1
+updated_at: '2026-04-07'
+seed_note: seed_staging/future/seed_aoa_antifragility_fourth_wave_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-antifragility-fourth-wave-seed.zip
+  companion_summary: archive/seed_pack_exports/aoa-antifragility-fourth-wave-seed-summary.md
+  included_surfaces:
+    - aoa-antifragility-fourth-wave-seed/README.md
+    - aoa-antifragility-fourth-wave-seed/CODEX_HANDOFF.md
+    - aoa-antifragility-fourth-wave-seed/MANIFEST.json
+    - aoa-antifragility-fourth-wave-seed/LATER_WAVES.md
+    - aoa-antifragility-fourth-wave-seed/LOCAL_VALIDATION.md
+    - aoa-antifragility-fourth-wave-seed/VALIDATION_REPORT.txt
+    - aoa-antifragility-fourth-wave-seed/aoa-memo/docs/RECOVERY_PATTERN_MEMORY.md
+    - aoa-antifragility-fourth-wave-seed/aoa-memo/docs/RECOVERY_PATTERN_RECALL.md
+    - aoa-antifragility-fourth-wave-seed/aoa-memo/schemas/recovery_pattern_memory_v1.json
+    - aoa-antifragility-fourth-wave-seed/aoa-memo/examples/recovery_pattern_memory.example.json
+    - aoa-antifragility-fourth-wave-seed/aoa-routing/docs/PLAYBOOK_STRESS_ROUTE_CONSUMPTION.md
+    - aoa-antifragility-fourth-wave-seed/aoa-routing/docs/KAG_QUARANTINE_ROUTE_HINTS.md
+    - aoa-antifragility-fourth-wave-seed/aoa-routing/schemas/composite_stress_route_hint_v1.json
+    - aoa-antifragility-fourth-wave-seed/aoa-routing/examples/composite_stress_route_hint.example.json
+    - aoa-antifragility-fourth-wave-seed/aoa-stats/docs/STRESS_RECOVERY_WINDOW_SUMMARIES.md
+    - aoa-antifragility-fourth-wave-seed/aoa-stats/docs/DERIVED_SIGNAL_HYGIENE.md
+    - aoa-antifragility-fourth-wave-seed/aoa-stats/schemas/stress_recovery_window_summary_v1.json
+    - aoa-antifragility-fourth-wave-seed/aoa-stats/examples/stress_recovery_window_summary.example.json
+    - aoa-antifragility-fourth-wave-seed/aoa-evals/docs/STRESS_RECOVERY_WINDOW_EVALS.md
+    - aoa-antifragility-fourth-wave-seed/aoa-evals/schemas/stress_recovery_window_eval_report_v1.json
+    - aoa-antifragility-fourth-wave-seed/aoa-evals/bundles/aoa-stress-recovery-window/EVAL.md
+    - aoa-antifragility-fourth-wave-seed/aoa-evals/bundles/aoa-stress-recovery-window/input_manifest.example.json
+    - aoa-antifragility-fourth-wave-seed/aoa-evals/bundles/aoa-stress-recovery-window/report.example.json
+selection_policy:
+  preferred_first_owner: waves one through three must be real before proof-and-consumption follow-ons expand
+  family_rule:
+    - keep aoa-evals on bounded proof, aoa-stats on derived windows, aoa-routing on additive route posture, and aoa-memo on reviewed context
+    - keep owner receipts and earlier-wave objects stronger than convenience layers
+    - keep repeated-window quality split across multiple axes rather than one prestige scalar
+  landing_rule:
+    - land repeated-window evals before derived summaries, derived summaries before routing consumption, and routing before reviewed recovery memory
+    - suppress thin evidence rather than inventing authority from convenience layers
+    - keep re-entry and regrounding explicit and reviewable
+  lineage_precondition:
+    - no upstream antifragility traces are verified in aoa-evals, aoa-stats, aoa-routing, or aoa-memo in the current workspace
+targets:
+  - repo: aoa-evals
+    contour: repeated-window proof posture and report shape
+    files:
+      - docs/STRESS_RECOVERY_WINDOW_EVALS.md
+      - bundles/aoa-stress-recovery-window/EVAL.md
+      - bundles/aoa-stress-recovery-window/input_manifest.example.json
+      - bundles/aoa-stress-recovery-window/report.example.json
+      - schemas/stress_recovery_window_eval_report_v1.json
+    validation:
+      - local repo validation once the eval slice is adapted
+    focus:
+      - prove repeated-window stress handling without seizing workflow meaning
+      - keep blind spots explicit and split-axis
+  - repo: aoa-stats
+    contour: derived recovery-window summaries only
+    files:
+      - docs/STRESS_RECOVERY_WINDOW_SUMMARIES.md
+      - docs/DERIVED_SIGNAL_HYGIENE.md
+      - schemas/stress_recovery_window_summary_v1.json
+      - examples/stress_recovery_window_summary.example.json
+    validation:
+      - local repo validation once the derived stats slice is adapted
+    focus:
+      - derive bounded summaries and suppress them when evidence is thin
+      - avoid dashboard sovereignty or owner-meaning drift
+  - repo: aoa-routing
+    contour: additive composite stress-route hints
+    files:
+      - docs/PLAYBOOK_STRESS_ROUTE_CONSUMPTION.md
+      - docs/KAG_QUARANTINE_ROUTE_HINTS.md
+      - schemas/composite_stress_route_hint_v1.json
+      - examples/composite_stress_route_hint.example.json
+    validation:
+      - local repo validation once the routing-consumption slice is adapted
+    focus:
+      - consume playbook and kag stress signals additively
+      - keep owner receipts and proof stronger than route convenience
+  - repo: aoa-memo
+    contour: reviewed recovery-pattern memory and recall posture
+    files:
+      - docs/RECOVERY_PATTERN_MEMORY.md
+      - docs/RECOVERY_PATTERN_RECALL.md
+      - schemas/recovery_pattern_memory_v1.json
+      - examples/recovery_pattern_memory.example.json
+    validation:
+      - local repo validation once the memo slice is adapted
+    focus:
+      - keep recovery patterns contextual and reviewed
+      - avoid live health claims or proof substitution
+scope_exclusions:
+  - immediate proof-and-consumption rollout from this Dionysus staging step
+  - bypassing missing first, second, or third-wave landings
+  - centralizing stress meaning in evals, stats, routing, or memo
+  - routing overruling owner evidence
+  - memo acting as live health truth
+  - one-number recovery prestige scoring
