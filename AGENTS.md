@@ -16,6 +16,7 @@ This repository is the source of truth for:
 - live gated future-work seeds that are not yet open waves
 - named prep packs for flexible future-work staging
 - planting protocol, registry overlays, and validation surfaces
+- the compact low-context seed-entry capsule at `generated/seed_route_map.min.json`
 - durable planting trace when the target-repo trail would not preserve lineage well enough
 - repo-local quest follow-through for the seed garden itself, without becoming a second sovereignty layer
 
@@ -149,6 +150,13 @@ Run the repository entrypoint:
 
 ```bash
 python scripts/validate_seed_surfaces.py
+```
+
+When the compact seed-entry capsule changes, also run:
+
+```bash
+python scripts/build_seed_route_map.py --check
+python scripts/validate_seed_route_map.py
 ```
 
 That gate should remain the single seed-surface validation entrypoint.
