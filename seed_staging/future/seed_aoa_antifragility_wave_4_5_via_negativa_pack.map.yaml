@@ -1,0 +1,182 @@
+map_version: 1
+updated_at: '2026-04-07'
+seed_note: seed_staging/future/seed_aoa_antifragility_wave_4_5_via_negativa_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-antifragility-wave-4-5-via-negativa-seed-2026-04-08.zip
+  companion_summary: archive/seed_pack_exports/aoa-antifragility-wave-4-5-via-negativa-seed-2026-04-08-summary.md
+  included_surfaces:
+    - aoa-antifragility-wave-4-5-via-negativa-seed/README.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/CODEX_HANDOFF.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/MANIFEST.json
+    - aoa-antifragility-wave-4-5-via-negativa-seed/LATER_WAVES.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/LOCAL_VALIDATION.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/VALIDATION_REPORT.txt
+    - aoa-antifragility-wave-4-5-via-negativa-seed/FRAGILITY_BLACKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/DELETION_CANDIDATES.json
+    - aoa-antifragility-wave-4-5-via-negativa-seed/schemas/deletion_candidate_list_v1.json
+    - aoa-antifragility-wave-4-5-via-negativa-seed/Agents-of-Abyss/docs/VIA_NEGATIVA.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/Agents-of-Abyss/docs/ANTI_AUTHORITY_RULES.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/Agents-of-Abyss/docs/ONE_IN_ONE_OUT.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/Agents-of-Abyss/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/ATM10-Agent/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-techniques/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-skills/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-routing/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-memo/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-agents/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-playbooks/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-kag/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-evals/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-stats/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/aoa-sdk/docs/VIA_NEGATIVA_CHECKLIST.md
+    - aoa-antifragility-wave-4-5-via-negativa-seed/abyss-stack/docs/VIA_NEGATIVA_CHECKLIST.md
+selection_policy:
+  preferred_first_owner: land center doctrine first, then inspect owner repos before any pruning move stronger than merge or move
+  family_rule:
+    - keep via negativa inspect-first and owner-aware
+    - prefer merge, move, suppress, quarantine, or deprecate before delete
+    - keep receipts, provenance anchors, and bounded proof artifacts stronger than cleanup convenience
+    - keep convenience layers narrow while pruning rather than letting them seize authority
+  landing_rule:
+    - land center constitutional doctrine and candidate schema before repo-local checklist adaptation
+    - use repo-local source-of-truth rules before acting on any deletion candidate
+    - treat DELETION_CANDIDATES.json as prompts for review, not as verdicts
+    - preserve active operator paths unless a better surviving home already exists
+  lineage_precondition:
+    - no via-negativa owner-repo landings are yet verified in the current workspace
+targets:
+  - repo: Agents-of-Abyss
+    contour: constitutional subtraction posture and machine-readable anti-authority candidate list
+    files:
+      - docs/VIA_NEGATIVA.md
+      - docs/ANTI_AUTHORITY_RULES.md
+      - docs/ONE_IN_ONE_OUT.md
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+      - FRAGILITY_BLACKLIST.md
+      - DELETION_CANDIDATES.json
+      - schemas/deletion_candidate_list_v1.json
+    validation:
+      - local center validation once via-negativa doctrine is adapted
+    focus:
+      - keep the center thin and constitutional
+      - keep inspect-first cleanup prompts reviewable and owner-aware
+  - repo: ATM10-Agent
+    contour: product-edge and runbook pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist and source-of-truth routing are adapted
+    focus:
+      - move archived or rollback-only matter out of active runbooks when earned
+      - keep public status surfaces role-pure
+  - repo: aoa-techniques
+    contour: reusable-practice pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - merge near-duplicate techniques when distinctions are weak
+      - keep repo-local procedures out of the practice canon
+  - repo: aoa-skills
+    contour: bounded-execution pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - keep skills distinct from techniques and owner runbooks
+      - preserve bounded trigger contracts
+  - repo: aoa-routing
+    contour: thin-navigation pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - suppress unsourced narration masquerading as routing
+      - keep route hints grounded in owner receipts and bounded proof
+  - repo: aoa-memo
+    contour: reviewed-memory pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - prevent memory from drifting into proof or live-health truth
+      - keep object families distinct only where retrieval purpose differs
+  - repo: aoa-agents
+    contour: role-contract pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - merge role clones that differ only by style
+      - keep handoff variants tied to real boundary differences
+  - repo: aoa-playbooks
+    contour: scenario-composition pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - merge scenario clones and copied owner commands
+      - keep fallbacks and re-entry gates explicit
+  - repo: aoa-kag
+    contour: derived-substrate pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - quarantine low-value source copies
+      - preserve clean source-first fallbacks
+  - repo: aoa-evals
+    contour: bounded-proof pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - merge overlapping bundles when the claim family is the same
+      - resist prestige-score drift
+  - repo: aoa-stats
+    contour: derived-observability pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - suppress scalar prestige views and low-reader derived surfaces
+      - keep suppression semantics explicit under thin evidence
+  - repo: aoa-sdk
+    contour: control-plane helper pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - keep helpers narrow and typed without policy capture
+      - prune obsolete fixtures or overlapping wrappers when earned
+  - repo: abyss-stack
+    contour: runtime-substrate pruning checklist
+    files:
+      - docs/VIA_NEGATIVA_CHECKLIST.md
+    validation:
+      - local repo validation once the checklist is adapted
+    focus:
+      - keep repair paths explicit and reviewable
+      - move obsolete runtime guidance out of active surfaces when safe
+scope_exclusions:
+  - mass deletion from Dionysus
+  - automatic file deletion
+  - central authority arbitration outside owner repos
+  - deleting source receipts, provenance anchors, or bounded proof artifacts to satisfy a quota
+  - convenience layers seizing more policy while cleanup is underway
