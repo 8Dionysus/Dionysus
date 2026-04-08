@@ -1,0 +1,47 @@
+{
+  "event_kind": "decision_fork_receipt",
+  "event_id": "evt-fork-2026-04-08-cross-repo-via-negativa-rollout-001",
+  "observed_at": "2026-04-08T03:06:00Z",
+  "run_ref": "run-cross-repo-via-negativa-rollout-forks-2026-04-08",
+  "session_ref": "session:2026-04-08-cross-repo-via-negativa-rollout",
+  "actor_ref": "aoa-skills:session-route-forks",
+  "object_ref": {
+    "repo": "aoa-skills",
+    "kind": "skill",
+    "id": "aoa-session-route-forks",
+    "version": "main"
+  },
+  "evidence_refs": [
+    {
+      "kind": "fork_cards",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.forks.json",
+      "role": "primary"
+    },
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.md",
+      "role": "supporting"
+    }
+  ],
+  "payload": {
+    "branch_ids": [
+      "playbook-review-track-first",
+      "technique-evidence-first",
+      "owner-local-pruning-review-first"
+    ],
+    "suggested_default_branch": "playbook-review-track-first",
+    "predicted_gain_posture": "the playbook branch captures the strongest staged-lineage bridge, while the technique branch strengthens reusable law and the owner-local branch preserves subtraction discipline without new canon",
+    "predicted_cost_posture": "cost ranges from focused review-track evidence to multiple owner-local review passes",
+    "predicted_risk_posture": "risk stays low for the playbook and technique routes and rises to moderate once owner-local pruning review begins",
+    "stop_condition_refs": [
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.forks.json#branch_cards/0/stop_conditions/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.forks.json#branch_cards/1/stop_conditions/0",
+      "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.forks.json#branch_cards/2/stop_conditions/0"
+    ],
+    "owner_targets": [
+      "aoa-playbooks",
+      "aoa-techniques",
+      "owner-local repos"
+    ]
+  }
+}

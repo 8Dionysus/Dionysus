@@ -1,0 +1,123 @@
+{
+  "packet_type": "HARVEST_PACKET",
+  "session_ref": "session:2026-04-08-cross-repo-via-negativa-rollout",
+  "closure_state": "closed-with-owner-follow-through",
+  "reviewed_artifacts": [
+    {
+      "kind": "sanitized_report",
+      "ref": "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.md",
+      "role": "primary"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/Dionysus/pull/55",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/Dionysus/pull/56",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-playbooks/pull/79",
+      "role": "supporting"
+    },
+    {
+      "kind": "github_pull_request",
+      "ref": "url:https://github.com/8Dionysus/aoa-techniques/pull/161",
+      "role": "supporting"
+    }
+  ],
+  "wins": [
+    "Moved the strongest via-negativa survivors from chat memory into explicit owner surfaces in aoa-playbooks and aoa-techniques.",
+    "Preserved the inspect-first anti-authority posture by extending existing owner truth instead of inventing new deletion or automation authority.",
+    "Closed the follow-through honestly through merged owner PRs and one Dionysus session-harvest trail rather than leaving the harvest implicit."
+  ],
+  "frictions": [
+    "The broader seed-wave delivery lane still crosses approval-sensitive public-share surfaces.",
+    "Owner-local pruning judgment remains stronger than any cross-repo convenience route.",
+    "The strongest outputs were extensions to existing owner surfaces, not a fresh quest or automation object."
+  ],
+  "extracts": [
+    {
+      "title": "Via-Negativa Owner-First Landing Bridge",
+      "kind": "route",
+      "abstraction_shape": "playbook_review_track_extension",
+      "summary": "A staged-lineage route where Dionysus prep-pack truth still has to land through merged owner surfaces before the center can honestly demote itself to lineage-only replay.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.md",
+        "url:https://github.com/8Dionysus/Dionysus/pull/55",
+        "url:https://github.com/8Dionysus/Dionysus/pull/56",
+        "url:https://github.com/8Dionysus/aoa-playbooks/pull/79"
+      ],
+      "repeat_signal": "strengthened",
+      "owner_repo": "aoa-playbooks",
+      "chosen_next_surface": "AOA-P-0021 reviewed-run extension",
+      "nearest_wrong_target": "aoa-skills",
+      "difficulty": "medium",
+      "risk": "moderate",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The durable object is a playbook-layer bridge from staged lineage to merged owner truth, not a bounded execution skill."
+      ]
+    },
+    {
+      "title": "Pinned Validation Matrix Evidence Reinforcement",
+      "kind": "law",
+      "abstraction_shape": "technique_evidence_followthrough",
+      "summary": "A reusable publish-hygiene law strengthened by a second via-negativa replay, where workflow-pinned validation inputs mattered more than a convenient local sibling state.",
+      "evidence_refs": [
+        "repo:Dionysus/reports/ecosystem-audits/2026-04-08.cross-repo.via-negativa-rollout-session-harvest.md",
+        "url:https://github.com/8Dionysus/aoa-techniques/pull/161"
+      ],
+      "repeat_signal": "strengthened",
+      "owner_repo": "aoa-techniques",
+      "chosen_next_surface": "AOA-T-0096 evidence refresh",
+      "nearest_wrong_target": "aoa-routing",
+      "difficulty": "medium",
+      "risk": "low",
+      "control_mode": "human-reviewed",
+      "notes": [
+        "The replay strengthens a current promoted technique without yet proving canonical portability outside the aoa-routing and aoa-skills sibling family."
+      ]
+    }
+  ],
+  "automation_candidate": {
+    "title": "Cross-Repo Seed-Wave Landing Lane",
+    "current_manual_route": "review prep pack -> bounded owner edits -> repo-native validation -> commit -> push -> open PR -> wait checks -> patch CI tail if needed -> merge -> Dionysus lineage closeout -> session-harvest follow-through",
+    "owner_layer_hint": "aoa-playbooks",
+    "next_handoff": "aoa-automation-opportunity-scan",
+    "checkpoint_required": true,
+    "evidence_refs": [
+      "url:https://github.com/8Dionysus/Dionysus/pull/55",
+      "url:https://github.com/8Dionysus/Dionysus/pull/56",
+      "url:https://github.com/8Dionysus/aoa-playbooks/pull/79",
+      "url:https://github.com/8Dionysus/aoa-techniques/pull/161"
+    ]
+  },
+  "deferrals": [
+    {
+      "title": "Standalone quest promotion",
+      "ref": "defer:aoa-quest-harvest",
+      "reason": "The durable outputs landed as follow-through to existing owner surfaces rather than as a fresh promotion object."
+    },
+    {
+      "title": "Diagnosis packet",
+      "ref": "defer:aoa-session-self-diagnose",
+      "reason": "The session did not leave one unresolved contradiction family as the main surviving object."
+    },
+    {
+      "title": "Repair packet",
+      "ref": "defer:aoa-session-self-repair",
+      "reason": "The bounded owner follow-through closed through merge instead of leaving repair work open."
+    }
+  ],
+  "quest_hooks": [
+    {
+      "status": "defer",
+      "target": "aoa-quest-harvest",
+      "reason": "Selection pressure is real, but the honest durable landing today is still follow-through on existing owner surfaces rather than a new promotion packet."
+    }
+  ]
+}

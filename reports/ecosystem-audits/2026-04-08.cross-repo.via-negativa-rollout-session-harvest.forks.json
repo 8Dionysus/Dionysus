@@ -1,0 +1,45 @@
+{
+  "artifact_kind": "decision_fork",
+  "session_ref": "session:2026-04-08-cross-repo-via-negativa-rollout",
+  "route_ref": "route:cross-repo-via-negativa-harvest-follow-on",
+  "suggested_default_branch": "playbook-review-track-first",
+  "branch_cards": [
+    {
+      "id": "playbook-review-track-first",
+      "likely_gain": "capture the strongest staged-lineage bridge in its real owner review track while the via-negativa merges and Dionysus lineage are still fresh",
+      "likely_cost": "one focused playbook evidence pass plus regenerated review surfaces",
+      "likely_risk": "low",
+      "owner_target": "aoa-playbooks",
+      "stop_conditions": [
+        "stop if the route no longer depends on staged Dionysus lineage plus merged owner truth and is drifting into generic checklist maintenance",
+        "stop if the playbook extension starts inventing new automation or deletion authority"
+      ]
+    },
+    {
+      "id": "technique-evidence-first",
+      "likely_gain": "strengthen a real reusable publish-hygiene law without widening it beyond its current portability evidence",
+      "likely_cost": "one focused evidence and readiness refresh plus generated note/catalog parity",
+      "likely_risk": "low",
+      "owner_target": "aoa-techniques",
+      "stop_conditions": [
+        "stop if the replay evidence still looks repo-local instead of reusable law",
+        "stop if the change starts pushing AOA-T-0096 toward canonical without a non-identical second context"
+      ]
+    },
+    {
+      "id": "owner-local-pruning-review-first",
+      "likely_gain": "turn inspect-first via-negativa doctrine into concrete owner-local review passes without granting a new cross-repo cleanup authority",
+      "likely_cost": "multiple owner-specific review routes with stricter source-of-truth checks",
+      "likely_risk": "moderate",
+      "owner_target": "owner-local repos",
+      "stop_conditions": [
+        "stop if the route starts treating the Dionysus pack or checklist language as an executable deletion order",
+        "stop if operator-facing surfaces are being removed before a better surviving home is explicit"
+      ]
+    }
+  ],
+  "hold_option": {
+    "id": "keep-automation-manual",
+    "reason": "owner-local pruning judgment and public-share gating still make the broader seed-wave lane too checkpoint-heavy for honest automation promotion"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "artifact_kind": "progression_delta",
+  "session_ref": "session:2026-04-08-cross-repo-via-negativa-rollout",
+  "route_ref": "route:cross-repo-via-negativa-rollout",
+  "scope": "route_scoped",
+  "verdict": "advance",
+  "axis_deltas": {
+    "boundary_integrity": 1,
+    "execution_reliability": 1,
+    "change_legibility": 1,
+    "review_sharpness": 1,
+    "proof_discipline": 0,
+    "provenance_hygiene": 1,
+    "deep_readiness": 1
+  },
+  "unlock_hints": [
+    "AOA-P-0021 now has a second reviewed run in the owner-first family, so future staged-lineage landings no longer need to rediscover that bridge from scratch",
+    "AOA-T-0096 now carries stronger replay evidence while keeping canonical pressure honest and bounded",
+    "Dionysus now preserves the via-negativa session harvest as explicit donor plus forks plus progression plus automation surfaces instead of leaving the follow-through implicit"
+  ],
+  "cautions": [
+    "owner-local pruning judgment still has to be re-earned inside the repos that already landed via-negativa doctrine and checklists",
+    "the broader seed-wave delivery lane remains too checkpoint-heavy and approval-sensitive for honest automation promotion",
+    "this session strengthened review-track and technique evidence, but it did not create a new proof surface or new owner authority"
+  ],
+  "automation_readiness_hint": "not_ready_while_owner_local_pruning_judgment_dominates"
+}
