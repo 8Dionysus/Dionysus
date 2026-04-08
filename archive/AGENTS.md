@@ -1,12 +1,19 @@
 # AGENTS.md
 
-Local guidance for `archive/` in `Dionysus`.
+Local guidance for `archive/` in `Dionysus`. Read the root `AGENTS.md` first. This file adds local rules for archived lineage surfaces.
 
-Read the root `AGENTS.md` first. This file only adds local rules for archived lineage surfaces.
+## Read first
 
-## Scope
+Before changing anything in `archive/`, read:
+1. the repository root `AGENTS.md`
+2. the relevant `*_wave.manifest.json`
+3. the matching closure note when one exists
+4. `seed-registry.yaml`
+5. any planting report or target-repo reference that still points at the archived surface
 
-`archive/` is the canonical archive root for historical seed sources, archived seed packs, post-wave packs, and other lineage surfaces that still need to be replayable.
+## Local role
+
+`archive/` is the canonical archive root for historical seed sources, archived seed packs, post-wave packs, and other lineage surfaces that must remain replayable.
 
 Representative subtrees include:
 
@@ -19,22 +26,32 @@ Representative subtrees include:
 - `seed_pack_2026-03-22/`
 - `seed_post_wave/`
 
-## Local contract
+`archive/seed_pack_exports/` may hold derived ingress or transport bundles, but those bundles are not canonical seed meaning.
 
-- Treat archived material as historical canon for lineage and replay, not as a draft workspace.
-- Preserve original filenames, paths, anchors, chronology, and provenance notes whenever possible.
-- Fix archived content only when needed to preserve readability, reference integrity, or replayability.
-- Keep archive additions clearly historical: closed-wave packs, archive cleanup moves, or explicit lineage captures.
-- If a live surface moves into `archive/`, update registry, closure, report, and any linked refs in the same bounded change.
+## Editing posture
 
-## Change rules
+Treat archived material as historical canon for lineage and replay, not as a draft workspace.
 
-- Do not rewrite archived seed voice just to normalize style.
-- Do not mix new live work or speculative notes into `archive/`; use `seed_expansion/` or the owning target repo instead.
-- Do not silently rename or delete archived files that may be referenced from manifests, reports, or `seed-registry.yaml`.
-- When adding a new archived pack, include or update the pack-level provenance note when the folder would otherwise be hard to replay.
+Preserve whenever possible:
+- original filenames
+- paths and anchors
+- chronology
+- provenance notes
+- the seed's own voice
 
-## Validate
+Fix archived content only when needed to preserve readability, reference integrity, or replayability.
+
+If a live surface moves into `archive/`, update registry, closure, report, and linked references in the same bounded change.
+
+## Hard no
+
+Do not:
+- normalize archived seed voice just to make it prettier
+- mix new live work or speculative staging into `archive/`
+- silently rename or delete files that manifests, reports, or registry entries may still reference
+- treat archive cleanup as permission to rewrite history
+
+## Validation
 
 If you changed archived paths or anchors, run:
 
@@ -42,4 +59,4 @@ If you changed archived paths or anchors, run:
 python scripts/validate_seed_surfaces.py
 ```
 
-Then double-check any touched refs in manifests, closure notes, registry entries, and durable planting reports.
+Then manually verify touched references in manifests, closure notes, registry entries, and durable planting reports.

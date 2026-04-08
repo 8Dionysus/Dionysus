@@ -1,36 +1,50 @@
 # AGENTS.md
 
-Local guidance for `reports/planting/` in `Dionysus`.
+Local guidance for `reports/planting/` in `Dionysus`. Read the root `AGENTS.md` first. This file adds local rules for durable planting trace.
 
-Read the root `AGENTS.md` first. This file only adds local rules for durable planting trace.
+## Read first
 
-## Scope
+Before editing or adding a planting report, read:
+1. the repository root `AGENTS.md`
+2. the relevant `*_wave.manifest.json`
+3. the exact seed source or prep-pack note being planted
+4. `docs/codex/planting-protocol.md`
+5. `templates/planting-report.template.md`
 
-This folder holds planting reports when Dionysus is the right place to preserve the trace.
+## Local role
 
-Use it for cases such as:
+This folder holds planting reports when `Dionysus` is the right place to preserve the trace.
 
+Use it when the lineage would otherwise be scattered or fade into fog, for example:
 - multi-repo plantings
-- context that would be scattered across several target repos
-- target-repo review trails likely to disappear or become hard to reconstruct
+- landings whose context is split across several repos
+- cases where target-repo review trails may disappear or become hard to reconstruct
 
-## Local contract
+Reports are durable trace, not a new sovereign seed source.
 
-- Prefer the target-repo PR or commit trail when that preserves lineage well enough.
-- Keep one report per planted seed using `YYYY-MM-DD.<target-repo>.<seed-id>.md`.
-- Start from `templates/planting-report.template.md` and keep the required fields intact.
-- Reports are durable trace, not a new sovereign seed source.
-- Hydrate landed reports with merged PR, commit, or issue refs once they exist.
-- If you revise an older report after later slices landed, use time-scoped wording for then-current queued or deferred state.
+## Editing posture
 
-## Change rules
+Prefer the target-repo PR or commit trail when that preserves lineage well enough.
 
-- Keep reports public-safe and reviewable.
-- Preserve the exact source ref and the named target repo.
-- Leave one clearly named structural artifact and one clearly named validation surface in every report.
-- Do not let a report quietly replace registry, closure, or manifest state.
+Keep:
+- one report per planted seed
+- stable `YYYY-MM-DD...md` naming
+- the required template fields intact
+- exact source refs and named target repos visible
+- one clearly named structural artifact
+- one clearly named validation surface
 
-## Validate
+When a report is revised after later slices landed, use time-scoped wording for then-current queued or deferred state rather than rewriting the past as prophecy.
+
+## Hard no
+
+Do not:
+- let a planting report quietly replace manifest, closure, or registry state
+- blur landed fact with future intention
+- drop donor, license, or transplant notes when the planting depended on them
+- turn reports into a second queue system
+
+## Validation
 
 Run:
 
@@ -38,4 +52,8 @@ Run:
 python scripts/validate_seed_surfaces.py
 ```
 
-Then manually verify naming, source refs, landed-surface paths, and PR or commit references against the actual landing.
+Then manually verify:
+- report naming
+- source refs
+- landed-surface paths
+- PR, commit, or issue references against the actual landing

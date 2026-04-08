@@ -1,29 +1,47 @@
 # AGENTS.md
 
-Local guidance for `seed_expansion/` in `Dionysus`.
+Local guidance for `seed_expansion/` in `Dionysus`. Read the root `AGENTS.md` first. This file adds local rules for the next gated future-work seed surface.
 
-Read the root `AGENTS.md` first. This file only adds local rules for the next gated future-work seed surface.
+## Read first
 
-## Scope
+Before editing anything here, read:
+1. the repository root `AGENTS.md`
+2. `seed-registry.yaml`
+3. the exact live seed file or prep surface you plan to touch
+4. the owner-repo surfaces named by that seed when they already exist
+5. the relevant archive or closure surfaces if this change is part of a handoff
+
+## Local role
 
 `seed_expansion/` is for explicitly gated next-live seed material that has not yet become an opened wave.
 
-## Local contract
+This directory is neither archive nor loose brainstorm field. It is a narrow launch ledge for source-like future work.
 
-- Keep this directory small and intentional.
-- Every live seed here must have explicit registry coverage and lifecycle wording that matches `seed-registry.yaml`.
-- Preserve exact anchors and seed vocabulary because manifests or registry navigation may point here directly.
-- Treat files here as source surfaces, not as loose brainstorming notes.
-- When a seed here is planted, archived, split, or replaced, update the linked registry and archive surfaces in the same change.
+## Editing posture
 
-## Change rules
+Keep this directory:
+- small
+- intentional
+- bounded
+- source-like
 
-- Do not park donor dumps, private notes, or repo-local backlog items here.
-- Do not silently replace `navigation.next_live_seed` by editing a file without updating `seed-registry.yaml`.
-- Do not let `seed_expansion/` turn into a second archive or a general staging area.
-- Keep future-work material bounded, source-like, and explicit about anti-goals when those are known.
+Every live seed here must have:
+- explicit registry coverage
+- lifecycle wording that matches `seed-registry.yaml`
+- preserved anchors and seed vocabulary
+- explicit anti-goals when they are already known
 
-## Validate
+When a seed here is planted, archived, split, replaced, or superseded, update the linked registry and archive surfaces in the same bounded change.
+
+## Hard no
+
+Do not:
+- park donor dumps, private notes, or repo-local backlog items here
+- silently replace `navigation.next_live_seed` without updating `seed-registry.yaml`
+- let `seed_expansion/` become a second archive or a general staging warehouse
+- let prep language overrule stronger owner-repo reality
+
+## Validation
 
 Run:
 
@@ -31,4 +49,4 @@ Run:
 python scripts/validate_seed_surfaces.py
 ```
 
-If you changed the live seed path or anchor, verify the corresponding registry entry in the same diff.
+If you changed a live seed path, anchor, or lifecycle marker, verify the corresponding registry entry in the same diff.
