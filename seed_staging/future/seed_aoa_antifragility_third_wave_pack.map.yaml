@@ -1,0 +1,99 @@
+map_version: 1
+updated_at: '2026-04-07'
+seed_note: seed_staging/future/seed_aoa_antifragility_third_wave_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-antifragility-third-wave-seed.zip
+  companion_summary: archive/seed_pack_exports/aoa-antifragility-third-wave-seed-summary.md
+  included_surfaces:
+    - aoa-antifragility-third-wave-seed/CODEX_HANDOFF.md
+    - aoa-antifragility-third-wave-seed/LATER_WAVES.md
+    - aoa-antifragility-third-wave-seed/LOCAL_VALIDATION.md
+    - aoa-antifragility-third-wave-seed/MANIFEST.json
+    - aoa-antifragility-third-wave-seed/README.md
+    - aoa-antifragility-third-wave-seed/VALIDATION_REPORT.txt
+    - aoa-antifragility-third-wave-seed/aoa-agents/docs/AGENT_STRESS_HANDOFFS.md
+    - aoa-antifragility-third-wave-seed/aoa-agents/docs/AGENT_STRESS_POSTURE.md
+    - aoa-antifragility-third-wave-seed/aoa-agents/examples/agent_stress_posture.example.json
+    - aoa-antifragility-third-wave-seed/aoa-agents/examples/stress_handoff_envelope.example.json
+    - aoa-antifragility-third-wave-seed/aoa-agents/schemas/agent_stress_posture_v1.json
+    - aoa-antifragility-third-wave-seed/aoa-agents/schemas/stress_handoff_envelope_v1.json
+    - aoa-antifragility-third-wave-seed/aoa-kag/docs/KAG_PROJECTION_QUARANTINE.md
+    - aoa-antifragility-third-wave-seed/aoa-kag/docs/KAG_STRESS_REGROUNDING.md
+    - aoa-antifragility-third-wave-seed/aoa-kag/examples/projection_health_receipt.example.json
+    - aoa-antifragility-third-wave-seed/aoa-kag/examples/regrounding_ticket.example.json
+    - aoa-antifragility-third-wave-seed/aoa-kag/schemas/projection_health_receipt_v1.json
+    - aoa-antifragility-third-wave-seed/aoa-kag/schemas/regrounding_ticket_v1.json
+    - aoa-antifragility-third-wave-seed/aoa-playbooks/docs/PLAYBOOK_STRESS_HARVEST.md
+    - aoa-antifragility-third-wave-seed/aoa-playbooks/docs/PLAYBOOK_STRESS_LANES.md
+    - aoa-antifragility-third-wave-seed/aoa-playbooks/examples/playbook_reentry_gate.example.json
+    - aoa-antifragility-third-wave-seed/aoa-playbooks/examples/playbook_stress_lane.example.json
+    - aoa-antifragility-third-wave-seed/aoa-playbooks/schemas/playbook_reentry_gate_v1.json
+    - aoa-antifragility-third-wave-seed/aoa-playbooks/schemas/playbook_stress_lane_v1.json
+selection_policy:
+  preferred_first_owner: waves one and two first, then aoa-agents plus aoa-playbooks plus aoa-kag
+  family_rule:
+    - keep role contracts narrowing behavior under stress before mutation widens
+    - keep playbooks coordinating recurring degraded lanes without replacing receipts or proof
+    - keep kag derived, provenance-aware, and weaker than authored truth
+  landing_rule:
+    - land agent posture first, then playbook lanes and re-entry gates, then kag regrounding and quarantine
+    - keep handoffs carrying evidence, blocked actions, and re-entry conditions
+    - prefer additive docs, schemas, and examples over hidden automation changes
+  lineage_precondition:
+    - no upstream antifragility traces are verified in aoa-agents, aoa-playbooks, or aoa-kag in the current workspace
+targets:
+  - repo: aoa-agents
+    contour: role-scoped stress posture and handoff envelope meaning
+    files:
+      - docs/AGENT_STRESS_POSTURE.md
+      - docs/AGENT_STRESS_HANDOFFS.md
+      - schemas/agent_stress_posture_v1.json
+      - examples/agent_stress_posture.example.json
+      - schemas/stress_handoff_envelope_v1.json
+      - examples/stress_handoff_envelope.example.json
+    validation:
+      - local repo validation once the agent slice is adapted
+    focus:
+      - keep stress posture additive, explicit, and role-scoped
+      - carry evidence, blocked actions, and re-entry conditions in handoffs
+  - repo: aoa-playbooks
+    contour: recurring degraded lanes and reviewed re-entry gates
+    files:
+      - docs/PLAYBOOK_STRESS_LANES.md
+      - docs/PLAYBOOK_STRESS_HARVEST.md
+      - schemas/playbook_stress_lane_v1.json
+      - examples/playbook_stress_lane.example.json
+      - schemas/playbook_reentry_gate_v1.json
+      - examples/playbook_reentry_gate.example.json
+    validation:
+      - local repo validation once the playbook slice is adapted
+    focus:
+      - coordinate recurring stress routes without seizing receipt ownership
+      - keep re-entry decisions explicit and reviewable
+  - repo: aoa-kag
+    contour: derived projection-health and regrounding posture
+    files:
+      - docs/KAG_STRESS_REGROUNDING.md
+      - docs/KAG_PROJECTION_QUARANTINE.md
+      - schemas/projection_health_receipt_v1.json
+      - examples/projection_health_receipt.example.json
+      - schemas/regrounding_ticket_v1.json
+      - examples/regrounding_ticket.example.json
+    validation:
+      - local repo validation once the kag slice is adapted
+    focus:
+      - narrow consumer posture when derived knowledge drifts
+      - avoid silent self-heal or republishing behavior
+scope_exclusions:
+  - immediate behavior-wide rollout from this Dionysus staging step
+  - bypassing missing first-wave or second-wave landings
+  - hidden escalation or mutation widening under stress
+  - playbooks replacing receipts or proof
+  - kag self-heal or silent republishing loops
+  - derived convenience outranking owner evidence
