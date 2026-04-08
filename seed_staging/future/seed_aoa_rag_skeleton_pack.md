@@ -5,8 +5,8 @@ projects:
   - AoA
   - ToS
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: Thin RAG seed remains staged in Dionysus as a derived downstream-ingest pack; owner surfaces are still the public AoA and ToS repos, several live files have already drifted beyond the snapshot, and no downstream consumer rollout is verified yet.
+lifecycle_status: partially_landed_retained_for_lineage
+lifecycle_note: The first owner-local thin-RAG consumer slice is now landed and live-verified in abyss-stack, while owner-surface regrounding for the drifted aoa-kag/aoa-memo/aoa-routing snapshot files and runtime-reference revalidation remain deferred; Dionysus keeps this pack as lineage and audit-prep context rather than staged-only guidance.
 reality_checked_at: '2026-04-08'
 status: pending_archive
 priority: medium
@@ -93,22 +93,45 @@ authority, a routing authority, or a shadow memory surface.
 
 ## Application posture
 
-Treat this pack as staged downstream-ingest soil.
+Treat this pack as a partially landed lineage pack.
 
-The honest first landing, if chosen later, is:
+The honest first landing is now live as:
 
-1. choose one downstream consumer or runtime surface that needs a thin RAG
-   spine
-2. revalidate the owner surfaces named in `SEED_MANIFEST.json` against live
+1. an opt-in federated advisory seam in `abyss-stack` with named startup
+   presets and operator docs
+2. bounded contract checks for live `playbook`, `kag`, and `memo` consumer
+   paths through `langchain-api`
+3. a runtime posture that keeps source authority, KAG, routing, memo, and
+   runtime-reference boundaries explicit instead of promoting them into runtime
+   sovereignty
+
+The wider downstream path remains deferred on purpose:
+
+1. revalidate the owner surfaces named in `SEED_MANIFEST.json` against live
    repos before copying any shape forward
-3. land one repo-native retrieval path that keeps source authority, KAG,
-   routing, memo, and runtime-reference boundaries explicit
-
-Only after that should any wider runtime, memory writeback, or graph-heavy
-growth be considered.
+2. reground the drifted `aoa-kag`, `aoa-memo`, and `aoa-routing` snapshot
+   files before treating this pack as current audit evidence
+3. revalidate `ATM10-Agent` runtime-reference files from the live repo before
+   any runtime-reference adoption or audit claim depends on them
 
 When planted later, regenerate repo-native indexes, configs, and manifests from
 live owner surfaces rather than copying archived snapshot files unchanged.
+
+## Audit-prep follow-through
+
+Before a wide cross-repo audit uses this pack as supporting context:
+
+- treat the live owner repos and the landed `abyss-stack` consumer slice as
+  stronger evidence than the archived transport bundle
+- reread the four drifted snapshot files:
+  - `aoa-kag/README.md`
+  - `aoa-memo/README.md`
+  - `aoa-routing/README.md`
+  - `aoa-routing/generated/aoa_router.min.json`
+- keep `ATM10-Agent` runtime references reference-only until local or remote
+  revalidation is complete
+- use the archived zip and summary for lineage, ingest order, and precedence
+  rules, not as fresh owner truth
 
 ## What this pack is not for
 

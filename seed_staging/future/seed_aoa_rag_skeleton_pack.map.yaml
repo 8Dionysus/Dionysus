@@ -29,13 +29,14 @@ selection_policy:
     - aoa-memo
     - aoa-techniques
     - ATM10-Agent
+    - abyss-stack
     - Dionysus
   priority_band: next
   planting_readiness: needs_adaptation
   why_now:
     - the pack captures one bounded thin-RAG ingest spine across public AoA and ToS owner surfaces
     - the snapshot already shows small owner drift, so Dionysus should preserve it as replayable transport rather than fresh canon
-    - downstream consumer choice is still open, which makes seed-garden staging more honest than pretending the package is already landed
+    - the first owner-local consumer landing is now live in abyss-stack, which makes lineage closeout and audit-prep regrounding more honest than pretending the package is still staged-only
     - runtime-reference material remains useful, but it should stay explicitly downstream of source and KAG authority
   dependencies: []
 navigation_constraints:
@@ -45,6 +46,28 @@ navigation_constraints:
   do_not_apply_downstream_yet: true
   do_not_create_wave_manifest_yet: true
 targets:
+  - repo: abyss-stack
+    contour: opt-in federated advisory consumer surface
+    files:
+      - compose/presets/agent-federation.txt
+      - compose/presets/intel-federation.txt
+      - docs/PRESETS.md
+      - docs/PROFILE_RECIPES.md
+      - docs/RUNBOOK.md
+      - scripts/aoa-federated-check
+      - scripts/aoa-smoke
+      - scripts/validate_stack.py
+      - tests/test_aoa_federated_check.py
+    validation:
+      - python scripts/validate_stack.py
+      - python -m pytest -q tests/test_aoa_federated_check.py tests/test_langchain_api_federated.py
+      - scripts/aoa-federated-check --require-enabled --playbook-id AOA-P-0008 --json
+      - scripts/aoa-federated-check --require-enabled --inspect-id AOA-K-0011 --json
+      - scripts/aoa-federated-check --require-enabled --memo-id AOA-M-0001 --json
+    focus:
+      - keep the seam opt-in and advisory-only
+      - prove bounded consumer value without letting runtime absorb owner truth
+      - keep route-api and langchain-api contracts explicit for auditability
   - repo: Agents-of-Abyss
     contour: constitutional boundary reference set
     files:
@@ -147,11 +170,23 @@ targets:
     validation:
       - python scripts/validate_seed_surfaces.py
     focus:
-      - keep the pack derived and replayable
+      - keep the pack derived, replayable, and honest about the first landed consumer slice
       - record snapshot drift honestly
-      - avoid inventing a downstream owner before one exists
+      - avoid inventing new owner authority beyond the landed abyss-stack slice
+audit_follow_through:
+  owner_regrounding_needed:
+    - aoa-kag/README.md
+    - aoa-memo/README.md
+    - aoa-routing/README.md
+    - aoa-routing/generated/aoa_router.min.json
+  runtime_reference_regrounding_needed:
+    - ATM10-Agent/README.md
+    - ATM10-Agent/docs/ANTIFRAGILITY_FIRST_WAVE.md
+    - ATM10-Agent/docs/RUNBOOK.md
+  audit_rule:
+    - use live owner repos and the landed abyss-stack consumer slice as stronger audit evidence than the archived transport bundle
 scope_exclusions:
-  - immediate downstream implementation from this Dionysus staging step
+  - wider downstream implementation beyond the landed abyss-stack consumer slice
   - seed_index promotion before one consumer landing exists
   - changing navigation.next_live_seed
   - treating aoa-kag or aoa-routing as sovereign meaning

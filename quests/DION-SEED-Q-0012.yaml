@@ -27,7 +27,7 @@ depends_on:
   - DION-SEED-Q-0003
 activation:
   mode: manual
-  note: open when the RAG seed bundle is refreshed or a concrete downstream consumer landing starts
+  note: open when the RAG seed bundle is refreshed, owner-surface regrounding for audit prep begins, or a wider downstream rollout beyond abyss-stack starts
 anchor_ref:
   artifact: aoa_rag_skeleton_pack
   ref: seed_staging/future/seed_aoa_rag_skeleton_pack.md
@@ -50,5 +50,6 @@ tags:
   - staging
 notes: >
   Closed on 2026-04-08 after staging the bundle in Dionysus with archive, registry, lifecycle, and quest linkage.
-  Keep the package derived and replayable; do not let the snapshot overrule live owner repos or let downstream runtime references become ecosystem law.
+  Later the first owner-local consumer slice landed and was live-verified in abyss-stack through bounded playbook, kag, and memo advisory paths.
+  Keep the package derived and replayable; do not let the snapshot overrule live owner repos, let drifted owner surfaces stand in for current truth, or let downstream runtime references become ecosystem law.
 public_safe: true

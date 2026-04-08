@@ -91,10 +91,10 @@ Read those markers first, then verify the owner repos directly.
 - `seed_aoa_automation_opportunity_scan_pack.md` is a newer staged add-on pack
   for automation-readiness detection around the live session-harvest family and
   the existing playbook automation-seed posture
-- `seed_aoa_rag_skeleton_pack.md` is a staged downstream-ingest pack for a
-  thin RAG spine across public AoA and ToS owner surfaces; it keeps the
-  package derived, records current snapshot drift, and leaves the future
-  consumer choice explicit
+- `seed_aoa_rag_skeleton_pack.md` is now a partially landed lineage pack for a
+  thin RAG spine across public AoA and ToS owner surfaces; the first
+  `abyss-stack` consumer slice is live, while owner-surface regrounding and
+  runtime-reference revalidation remain explicit follow-through
 - `seed_tos_graph_curation_pack.md` is now a partially landed lineage pack for
   the first route-first ToS graph helper slice in `abyss-stack`, while
   validator-gated writeback and any later `Tree-of-Sophia` repo-local
@@ -147,6 +147,7 @@ Current exploratory notes live under:
 - `seed_staging/questbook/seed_questbook_seedgarden_profile_pack.md`
 - `seed_staging/future/seed_aoa_stats_telemetry_pack.md`
 - `seed_staging/future/seed_tos_graph_curation_pack.md`
+- `seed_staging/future/seed_aoa_rag_skeleton_pack.md`
 
 Reading:
 
@@ -157,6 +158,10 @@ Reading:
 - the first owner-local ToS graph curation slice landed in `abyss-stack`, but
   validator-gated writeback and any repo-local `Tree-of-Sophia` hardening
   remain deferred
+- the first owner-local thin-RAG advisory consumer slice landed in
+  `abyss-stack`, but owner-surface regrounding for drifted `aoa-kag` /
+  `aoa-memo` / `aoa-routing` snapshot files and `ATM10-Agent`
+  runtime-reference revalidation remain deferred
 - the federated audit remediation pack is now fully landed upstream and
   retained only for lineage, replay, and owner-repo reality checks
 
@@ -169,7 +174,6 @@ Reading:
 - `seed_staging/future/seed_memory_evals_skills_docs_pack.md`
 - `seed_staging/future/seed_future_agent_systems_prep_pack.md`
 - `seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md`
-- `seed_staging/future/seed_aoa_rag_skeleton_pack.md`
 
 ### `donor_only_not_planted`
 
