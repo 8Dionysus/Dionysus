@@ -21,6 +21,8 @@ SURFACE_PATHS = (
     "seed-registry.yaml",
     "seed_staging/future/seed_tos_graph_curation_pack.md",
     "seed_staging/future/seed_tos_graph_curation_pack.map.yaml",
+    "seed_staging/future/seed_aoa_rag_skeleton_pack.md",
+    "seed_staging/future/seed_aoa_rag_skeleton_pack.map.yaml",
     "seed_staging/rpg/seed_rpg_first_wave_pack.md",
     "seed_staging/rpg/seed_rpg_first_wave_pack.map.yaml",
     "seed_staging/rpg/seed_rpg_second_wave_pack.md",

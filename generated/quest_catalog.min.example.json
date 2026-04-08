@@ -163,5 +163,20 @@
     "owner_surface": "future-seeds/tos-graph-curation",
     "source_path": "quests/DION-SEED-Q-0011.yaml",
     "public_safe": true
+  },
+  {
+    "id": "DION-SEED-Q-0012",
+    "title": "Stage the AoA thin RAG skeleton pack as a downstream-ingest prep pack",
+    "repo": "Dionysus",
+    "theme_ref": "",
+    "milestone_ref": "",
+    "state": "done",
+    "band": "near",
+    "kind": "rollout",
+    "difficulty": "d3_seam",
+    "risk": "r2_contract",
+    "owner_surface": "future-seeds/aoa-rag-skeleton",
+    "source_path": "quests/DION-SEED-Q-0012.yaml",
+    "public_safe": true
   }
 ]

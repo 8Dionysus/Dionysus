@@ -1,0 +1,160 @@
+map_version: 1
+updated_at: '2026-04-08'
+seed_note: seed_staging/future/seed_aoa_rag_skeleton_pack.md
+status: prep_pack_note
+source_bundle:
+  path: archive/seed_pack_exports/aoa-rag-seed-2026-04-08.zip
+  companion_summary: archive/seed_pack_exports/aoa-rag-seed-2026-04-08-summary.md
+  included_surfaces:
+    - aoa-rag-seed/README_FOR_CODEX.md
+    - aoa-rag-seed/SEED_MANIFEST.json
+    - aoa-rag-seed/OPTIONAL_REMOTE_REFS.json
+    - aoa-rag-seed/repos/Agents-of-Abyss/CHARTER.md
+    - aoa-rag-seed/repos/Tree-of-Sophia/generated/kag_export.min.json
+    - aoa-rag-seed/repos/Tree-of-Sophia/tree/source/friedrich-nietzsche/thus-spoke-zarathustra/prologue-1/node.json
+    - aoa-rag-seed/repos/aoa-kag/generated/tos_text_chunk_map.min.json
+    - aoa-rag-seed/repos/aoa-kag/generated/tos_retrieval_axis_pack.min.json
+    - aoa-rag-seed/repos/aoa-kag/generated/federation_spine.min.json
+    - aoa-rag-seed/repos/aoa-routing/generated/federation_entrypoints.min.json
+    - aoa-rag-seed/repos/aoa-memo/generated/kag_export.min.json
+    - aoa-rag-seed/repos/aoa-techniques/generated/kag_export.min.json
+    - aoa-rag-seed/repos/ATM10-Agent/docs/ANTIFRAGILITY_FIRST_WAVE.md
+selection_policy:
+  fixed_order_required: true
+  default_order:
+    - Agents-of-Abyss
+    - Tree-of-Sophia
+    - aoa-kag
+    - aoa-routing
+    - aoa-memo
+    - aoa-techniques
+    - ATM10-Agent
+    - Dionysus
+  priority_band: next
+  planting_readiness: needs_adaptation
+  why_now:
+    - the pack captures one bounded thin-RAG ingest spine across public AoA and ToS owner surfaces
+    - the snapshot already shows small owner drift, so Dionysus should preserve it as replayable transport rather than fresh canon
+    - downstream consumer choice is still open, which makes seed-garden staging more honest than pretending the package is already landed
+    - runtime-reference material remains useful, but it should stay explicitly downstream of source and KAG authority
+  dependencies: []
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+targets:
+  - repo: Agents-of-Abyss
+    contour: constitutional boundary reference set
+    files:
+      - CHARTER.md
+      - docs/FEDERATION_RULES.md
+      - docs/LAYERS.md
+      - ECOSYSTEM_MAP.md
+    validation:
+      - reread live owner surfaces before any downstream rollout
+    focus:
+      - keep constitutional boundaries stronger than consumer convenience
+  - repo: Tree-of-Sophia
+    contour: source authority reference set
+    files:
+      - docs/TINY_ENTRY_ROUTE.md
+      - docs/ZARATHUSTRA_TRILINGUAL_ENTRY.md
+      - docs/KAG_EXPORT.md
+      - generated/kag_export.min.json
+      - examples/source_node.example.json
+      - examples/tos_tiny_entry_route.example.json
+      - tree/source/friedrich-nietzsche/thus-spoke-zarathustra/prologue-1/node.json
+    validation:
+      - python scripts/generate_kag_export.py
+      - python scripts/validate_kag_export.py
+    focus:
+      - prefer canonical source node and tiny-entry route over downstream guesses
+      - keep source meaning stronger than retrieval convenience
+  - repo: aoa-kag
+    contour: derived substrate reference set
+    files:
+      - docs/CONSUMER_GUIDE.md
+      - docs/REASONING_HANDOFF.md
+      - docs/RECURRENCE_REGROUNDING.md
+      - docs/TOS_TEXT_CHUNK_MAP.md
+      - docs/TOS_RETRIEVAL_AXIS_PACK.md
+      - generated/tiny_consumer_bundle.min.json
+      - generated/tos_text_chunk_map.min.json
+      - generated/tos_retrieval_axis_pack.min.json
+      - generated/federation_spine.min.json
+      - generated/return_regrounding_pack.min.json
+    validation:
+      - python scripts/validate_kag.py
+      - python scripts/validate_nested_agents.py
+    focus:
+      - keep derived guidance subordinate to source refs
+      - preserve regrounding paths when retrieval starts to overclaim
+  - repo: aoa-routing
+    contour: navigation-only reference set
+    files:
+      - README.md
+      - generated/federation_entrypoints.min.json
+      - generated/return_navigation_hints.min.json
+      - generated/kag_source_lift_relation_hints.min.json
+      - generated/aoa_router.min.json
+    validation:
+      - review live routing outputs before downstream rollout
+    focus:
+      - use routing as where-to-go-next hints, not semantic evidence
+  - repo: aoa-memo
+    contour: memory boundary reference set
+    files:
+      - README.md
+      - docs/KAG_SOURCE_EXPORT.md
+      - docs/KAG_TOS_BRIDGE_CONTRACT.md
+      - generated/kag_export.min.json
+      - examples/recall_contract.router.lineage.json
+      - examples/checkpoint_to_memory_contract.example.json
+    validation:
+      - review live memo boundary surfaces before downstream rollout
+    focus:
+      - keep memo as owner of memory truth and writeback boundary
+  - repo: aoa-techniques
+    contour: technique export reference set
+    files:
+      - README.md
+      - generated/kag_export.min.json
+    validation:
+      - review live technique export surfaces before downstream rollout
+    focus:
+      - preserve technique-side donor context without moving first authoring here
+  - repo: ATM10-Agent
+    contour: runtime reference set
+    files:
+      - README.md
+      - docs/ANTIFRAGILITY_FIRST_WAVE.md
+      - docs/RUNBOOK.md
+    validation:
+      - if the repo is absent locally, revalidate from the live repo before any runtime adoption
+    focus:
+      - runtime reference only
+      - never promote runtime docs into ecosystem law
+  - repo: Dionysus
+    contour: seed-garden staging and lineage
+    files:
+      - seed_staging/future/seed_aoa_rag_skeleton_pack.md
+      - seed_staging/future/seed_aoa_rag_skeleton_pack.map.yaml
+      - archive/seed_pack_exports/aoa-rag-seed-2026-04-08.zip
+      - archive/seed_pack_exports/aoa-rag-seed-2026-04-08-summary.md
+      - quests/DION-SEED-Q-0012.yaml
+    validation:
+      - python scripts/validate_seed_surfaces.py
+    focus:
+      - keep the pack derived and replayable
+      - record snapshot drift honestly
+      - avoid inventing a downstream owner before one exists
+scope_exclusions:
+  - immediate downstream implementation from this Dionysus staging step
+  - seed_index promotion before one consumer landing exists
+  - changing navigation.next_live_seed
+  - treating aoa-kag or aoa-routing as sovereign meaning
+  - treating ATM10-Agent runtime docs as ecosystem law
+  - assuming current local parity for the runtime reference repo
+  - hidden writeback or memory authority from the downstream consumer

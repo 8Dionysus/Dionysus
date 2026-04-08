@@ -1,0 +1,54 @@
+schema_version: work_quest_v1
+id: DION-SEED-Q-0012
+title: Stage the AoA thin RAG skeleton pack as a downstream-ingest prep pack
+summary: Keep the thin RAG seed legible as derived downstream-ingest staging without turning the package, KAG, routing, or runtime references into owner truth.
+repo: Dionysus
+owner_surface: future-seeds/aoa-rag-skeleton
+theme_ref: ''
+milestone_ref: ''
+kind: rollout
+state: done
+band: near
+difficulty: d3_seam
+risk: r2_contract
+control_mode: codex_supervised
+delegate_tier: planner
+fallback_tier: verifier
+wrapper_class: local_validator
+write_scope: docs_only
+split_required: true
+complexity_basis:
+  scope: 2
+  ambiguity: 2
+  boundary: 3
+  verification: 2
+parent: null
+depends_on:
+  - DION-SEED-Q-0003
+activation:
+  mode: manual
+  note: open when the RAG seed bundle is refreshed or a concrete downstream consumer landing starts
+anchor_ref:
+  artifact: aoa_rag_skeleton_pack
+  ref: seed_staging/future/seed_aoa_rag_skeleton_pack.md
+  note: the seed note and map keep downstream-ingest posture, owner boundaries, and snapshot drift explicit
+handoff_role: seed-garden-maintainer
+evidence:
+  - the zip is archived as a derived transport bundle under archive/seed_pack_exports
+  - owner source surfaces remain stronger than the curated package
+  - bounded KAG, routing, memo, and runtime-reference roles stay explicit
+  - no new wave or seed_index promotion is implied by staging this pack
+harvest:
+  target: none
+opened_at: '2026-04-08'
+touched_at: '2026-04-08'
+tags:
+  - seed
+  - rag
+  - retrieval
+  - source-first
+  - staging
+notes: >
+  Closed on 2026-04-08 after staging the bundle in Dionysus with archive, registry, lifecycle, and quest linkage.
+  Keep the package derived and replayable; do not let the snapshot overrule live owner repos or let downstream runtime references become ecosystem law.
+public_safe: true
