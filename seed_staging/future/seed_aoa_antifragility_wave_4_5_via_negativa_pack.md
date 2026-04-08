@@ -4,9 +4,9 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: The via-negativa antifragility pack is staged in Dionysus on 2026-04-07 from a source artifact dated 2026-04-08; no owner-repo landings are recorded yet across Agents-of-Abyss, ATM10-Agent, aoa-techniques, aoa-skills, aoa-routing, aoa-memo, aoa-agents, aoa-playbooks, aoa-kag, aoa-evals, aoa-stats, aoa-sdk, or abyss-stack.
-reality_checked_at: '2026-04-07'
+lifecycle_status: landed_post_wave
+lifecycle_note: The via-negativa antifragility pack was staged in Dionysus on 2026-04-07 local time from a source artifact dated 2026-04-08, and the owner-repo doctrine/checklist landings then merged on 2026-04-08 UTC across Agents-of-Abyss, ATM10-Agent, aoa-techniques, aoa-skills, aoa-routing, aoa-memo, aoa-agents, aoa-playbooks, aoa-kag, aoa-evals, aoa-stats, aoa-sdk, and abyss-stack; Dionysus now keeps this pack as lineage-only post-wave trace rather than as staged-only guidance.
+reality_checked_at: '2026-04-08'
 status: pending_archive
 priority: medium
 parent_seed: seed.aoa.antifragility-fourth-wave-pack.v0
@@ -25,10 +25,10 @@ tags:
 Prepare the `aoa-antifragility-wave-4-5-via-negativa-seed-2026-04-08` bundle
 as one bounded inspect-first pruning pack inside `Dionysus`.
 
-This pack preserves the subtraction posture for the antifragility stack after
-waves one through four: reduce duplicate meaning, shadow authority, stale
-convenience, and low-evidence permanence before inventing more protective
-surface area.
+This note now preserves that via-negativa family as landed lineage, including
+the original prep posture and the later owner-repo doctrine/checklist merges,
+without turning `Dionysus` into the owner of deletion judgments or cleanup
+authority.
 
 ## Why this belongs in Dionysus
 
@@ -101,19 +101,23 @@ Read later landings under these owner boundaries:
 
 ## Application posture
 
-Treat this pack as staged wave guidance until real owner-repo landings exist.
+This pack is no longer staged-only guidance. The center doctrine, machine-
+readable inspect-first candidate list, and repo-local via-negativa checklists
+have now merged upstream across the targeted owner repos.
 
-The honest path, if chosen next, is:
+The honest posture after those merges is:
 
-1. land the center doctrine and machine-readable inspect-first candidates
-2. inspect live owner repos against those candidates
-3. adapt repo-local pruning checklists to each repo's existing source-of-truth
+1. keep the merged doctrine and checklists reviewable as subtraction guidance
+2. inspect live owner repos against those prompts without treating the pack as
+   an executable deletion order
+3. earn any actual merge, move, suppress, quarantine, deprecate, or delete
+   action inside the owning repo under that repo's stricter source-of-truth
    rules
-4. only then decide whether any actual merge, move, suppress, quarantine,
-   deprecate, or delete actions are earned
+4. preserve this note as lineage-only replay of the wave rather than as a live
+   command surface
 
-When planted later, adapt the via-negativa guidance to live owner-repo
-conventions rather than copying the overlay seed blindly.
+The via-negativa wave landed inspect-first constitutional pressure, not a mass
+deletion pass.
 
 ## What this pack is not for
 
