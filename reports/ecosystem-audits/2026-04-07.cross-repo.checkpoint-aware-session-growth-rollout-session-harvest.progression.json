@@ -1,0 +1,27 @@
+{
+  "artifact_kind": "progression_delta",
+  "session_ref": "session:2026-04-07-cross-repo-checkpoint-aware-session-growth-rollout",
+  "route_ref": "route:cross-repo-checkpoint-aware-session-growth-rollout",
+  "scope": "route_scoped",
+  "verdict": "advance",
+  "axis_deltas": {
+    "boundary_integrity": 1,
+    "execution_reliability": 1,
+    "change_legibility": 1,
+    "review_sharpness": 1,
+    "proof_discipline": 1,
+    "provenance_hygiene": 1,
+    "deep_readiness": 1
+  },
+  "unlock_hints": [
+    "future sessions now have a first-class checkpoint phase and CLI path instead of relying only on post-session harvest",
+    "reviewed checkpoint notes can now promote into Dionysus without forcing the heavy session-harvest family too early",
+    "closeout handoff can now carry surviving checkpoint clusters instead of losing mid-session growth context"
+  ],
+  "cautions": [
+    "checkpoint capture still depends on explicit command use and has not yet been hardened through repeated non-implementation sessions",
+    "the route remains not-automation-ready until real reviewed repetitions prove the checkpoint loop outside the implementation session itself",
+    "checkpoint notes stay lower-authority than harvest verdicts and must not be treated as substitute receipts"
+  ],
+  "automation_readiness_hint": "not_ready_until_non_implementation_repeats_exist"
+}
