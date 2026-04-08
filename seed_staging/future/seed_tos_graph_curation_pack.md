@@ -5,8 +5,8 @@ projects:
   - AoA
   - ToS
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: ToS graph curation remains staged in Dionysus; no owner-repo rollout is verified yet.
+lifecycle_status: partially_landed_retained_for_lineage
+lifecycle_note: The first owner-local route-first read/projection slice is now landed in abyss-stack and the Dionysus lineage closeout is recorded; Tree-of-Sophia remains the canonical validator boundary while any later writeback lane stays deferred.
 reality_checked_at: '2026-04-08'
 status: pending_archive
 priority: now
@@ -68,15 +68,23 @@ shadow source of ToS doctrine.
 
 ## Application posture
 
-Treat this pack as a bounded prep source.
+Treat this pack as a partially landed lineage source.
 
-The honest first owner-repo landing is:
+The honest first owner-repo landing is now live as:
 
-1. plant the contract and quest anchors in `abyss-stack`
-2. land a read-only route-first projection slice before any writeback path
-3. use `Tree-of-Sophia` as the validator and authority boundary for any later
+1. contract, quest, compose/profile, config-template, and helper-service
+   surfaces in `abyss-stack`
+2. a localhost-only route-first UI with route-scoped Neo4j projection sync
+   while ToS canon remains read-only
+3. a Dionysus planting report and lifecycle cleanup so the prep pack no longer
+   claims staged-only status after verified owner rollout
+
+The later downstream path remains intentionally deferred:
+
+1. use `Tree-of-Sophia` as the validator and authority boundary for any later
    patch/apply route
-4. only then consider validator-gated writeback and rollback
+2. only then consider validator-gated writeback, rollback, and any repo-local
+   ToS-side contract hardening
 
 When planted later, regenerate repo-native files from the live owner repo
 surfaces rather than copying transport text into implementation trees

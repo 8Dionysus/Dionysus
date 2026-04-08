@@ -232,7 +232,7 @@
     "schema_version": "quest_dispatch_v1",
     "id": "DION-SEED-Q-0011",
     "repo": "Dionysus",
-    "state": "captured",
+    "state": "done",
     "band": "frontier",
     "difficulty": "d3_seam",
     "risk": "r2_contract",

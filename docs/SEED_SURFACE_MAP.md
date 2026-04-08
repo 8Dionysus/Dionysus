@@ -91,9 +91,10 @@ Read those markers first, then verify the owner repos directly.
 - `seed_aoa_automation_opportunity_scan_pack.md` is a newer staged add-on pack
   for automation-readiness detection around the live session-harvest family and
   the existing playbook automation-seed posture
-- `seed_tos_graph_curation_pack.md` is a newer staged cross-repo pack for a
-  route-first ToS graph helper that must stay subordinate to ToS source
-  authority and validator-gated writeback
+- `seed_tos_graph_curation_pack.md` is now a partially landed lineage pack for
+  the first route-first ToS graph helper slice in `abyss-stack`, while
+  validator-gated writeback and any later `Tree-of-Sophia` repo-local
+  hardening remain deferred
 - `seed_aoa_stats_telemetry_pack.md` is now a partially landed lineage pack for
   the first owner-local receipt wave across `aoa-skills` and `aoa-evals`,
   while later derived stats layers remain deferred
@@ -141,6 +142,7 @@ Current exploratory notes live under:
 
 - `seed_staging/questbook/seed_questbook_seedgarden_profile_pack.md`
 - `seed_staging/future/seed_aoa_stats_telemetry_pack.md`
+- `seed_staging/future/seed_tos_graph_curation_pack.md`
 
 Reading:
 
@@ -148,6 +150,9 @@ Reading:
 - the `8Dionysus` slice remains deferred
 - the first owner-local telemetry receipt wave landed, but the derived stats
   adjunct remains deferred
+- the first owner-local ToS graph curation slice landed in `abyss-stack`, but
+  validator-gated writeback and any repo-local `Tree-of-Sophia` hardening
+  remain deferred
 - the federated audit remediation pack is now fully landed upstream and
   retained only for lineage, replay, and owner-repo reality checks
 
@@ -160,7 +165,6 @@ Reading:
 - `seed_staging/future/seed_memory_evals_skills_docs_pack.md`
 - `seed_staging/future/seed_future_agent_systems_prep_pack.md`
 - `seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md`
-- `seed_staging/future/seed_tos_graph_curation_pack.md`
 
 ### `donor_only_not_planted`
 

@@ -7,7 +7,7 @@ owner_surface: future-seeds/tos-graph-curation
 theme_ref: ''
 milestone_ref: ''
 kind: rollout
-state: captured
+state: done
 band: frontier
 difficulty: d3_seam
 risk: r2_contract
@@ -49,6 +49,6 @@ tags:
   - curation
   - runtime
 notes: >
-  Keep the zip export derived and reviewable.
-  Do not let the prep pack overrule owner-repo meaning, treat Neo4j as source truth, or bypass Tree-of-Sophia validators on any later write path.
+  Closed on 2026-04-08 after the prep-pack stage in Dionysus, the route-first owner rollout in abyss-stack, and the Dionysus lineage cleanup report.
+  Keep the zip export derived and reviewable. Do not let the prep pack overrule owner-repo meaning, treat Neo4j as source truth, or bypass Tree-of-Sophia validators on any later write path.
 public_safe: true
