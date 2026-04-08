@@ -1,0 +1,119 @@
+map_version: 1
+updated_at: '2026-04-07'
+seed_note: seed_staging/future/seed_aoa_antifragility_first_wave_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-antifragility-first-wave-seed.zip
+  companion_summary: archive/seed_pack_exports/aoa-antifragility-first-wave-seed-summary.md
+  included_surfaces:
+    - aoa-antifragility-first-wave-seed/README.md
+    - aoa-antifragility-first-wave-seed/CODEX_HANDOFF.md
+    - aoa-antifragility-first-wave-seed/MANIFEST.json
+    - aoa-antifragility-first-wave-seed/LATER_WAVES.md
+    - aoa-antifragility-first-wave-seed/aoa-stats/schemas/antifragility_vector_v1.json
+    - aoa-antifragility-first-wave-seed/aoa-stats/docs/ANTIFRAGILITY_VECTOR.md
+    - aoa-antifragility-first-wave-seed/aoa-stats/examples/antifragility_vector.example.json
+    - aoa-antifragility-first-wave-seed/ATM10-Agent/schemas/stressor_receipt_v1.json
+    - aoa-antifragility-first-wave-seed/ATM10-Agent/schemas/adaptation_delta_v1.json
+    - aoa-antifragility-first-wave-seed/ATM10-Agent/examples/stressor_receipt.retrieval_only_fallback.example.json
+    - aoa-antifragility-first-wave-seed/ATM10-Agent/examples/adaptation_delta.retrieval_only_fallback.example.json
+    - aoa-antifragility-first-wave-seed/ATM10-Agent/docs/ANTIFRAGILITY_FIRST_WAVE.md
+    - aoa-antifragility-first-wave-seed/aoa-evals/schemas/antifragility_eval_report_v1.json
+    - aoa-antifragility-first-wave-seed/aoa-evals/bundles/aoa-antifragility-posture/EVAL.md
+    - aoa-antifragility-first-wave-seed/aoa-evals/bundles/aoa-antifragility-posture/report.example.json
+    - aoa-antifragility-first-wave-seed/aoa-evals/bundles/aoa-antifragility-posture/input_manifest.example.json
+    - aoa-antifragility-first-wave-seed/aoa-skills/docs/ANTIFRAGILITY_SKILL_ADDENDUM.md
+    - aoa-antifragility-first-wave-seed/aoa-techniques/techniques/validation-patterns/receipt-first-failure-analysis/TECHNIQUE.md
+    - aoa-antifragility-first-wave-seed/aoa-techniques/techniques/system-recovery/degrade-reground-recover/TECHNIQUE.md
+    - aoa-antifragility-first-wave-seed/Agents-of-Abyss/docs/ANTIFRAGILITY.md
+    - aoa-antifragility-first-wave-seed/Agents-of-Abyss/docs/ANTIFRAGILITY_FIRST_WAVE.md
+selection_policy:
+  preferred_first_owner: center doctrine in Agents-of-Abyss plus concrete first receipts in ATM10-Agent
+  family_rule:
+    - keep doctrine, source-owned receipts, portable technique, bounded proof, derived vectors, and skill addenda in their owning repos
+    - keep degraded modes valid, reviewable, and machine-readable
+    - keep aoa-stats derived rather than sovereign
+  landing_rule:
+    - land center doctrine before downstream repo wording fans out
+    - adapt overlay files to live repo conventions instead of copying the seed verbatim
+    - keep source-owned receipts, eval-owned proof, and stats-owned derived views distinct
+  lineage_precondition:
+    - the intended ATM10-Agent owner landing should go through GitHub rather than the /srv sibling-workspace path, and no antifragility traces were found in the checked AoA repos
+targets:
+  - repo: Agents-of-Abyss
+    contour: center doctrine and first-wave scope anchor
+    files:
+      - docs/ANTIFRAGILITY.md
+      - docs/ANTIFRAGILITY_FIRST_WAVE.md
+    validation:
+      - local repo validation once the bounded center slice is adapted
+    focus:
+      - define federation-level antifragility doctrine without seizing owner-local receipt meaning
+      - keep first-wave scope explicit for downstream repos
+  - repo: ATM10-Agent
+    contour: first concrete source-owned stressor and adaptation family
+    files:
+      - docs/ANTIFRAGILITY_FIRST_WAVE.md
+      - schemas/stressor_receipt_v1.json
+      - schemas/adaptation_delta_v1.json
+      - examples/stressor_receipt.retrieval_only_fallback.example.json
+      - examples/adaptation_delta.retrieval_only_fallback.example.json
+    validation:
+      - owner-repo validation through the GitHub landing path before adaptation
+    focus:
+      - keep the first wave concrete around a real degraded path
+      - emit source-owned receipts and explicit adaptation deltas without hidden automation widening
+  - repo: aoa-techniques
+    contour: portable recovery and validation practice
+    files:
+      - techniques/system-recovery/degrade-reground-recover/TECHNIQUE.md
+      - techniques/validation-patterns/receipt-first-failure-analysis/TECHNIQUE.md
+    validation:
+      - local repo validation once the bounded technique slice is adapted
+    focus:
+      - capture reusable antifragility method without centralizing runtime ownership
+      - keep techniques downstream from concrete first-wave evidence
+  - repo: aoa-evals
+    contour: bounded proof bundle and report shape
+    files:
+      - bundles/aoa-antifragility-posture/EVAL.md
+      - bundles/aoa-antifragility-posture/input_manifest.example.json
+      - bundles/aoa-antifragility-posture/report.example.json
+      - schemas/antifragility_eval_report_v1.json
+    validation:
+      - local repo validation once the bounded proof slice is adapted
+    focus:
+      - preserve proof-first posture
+      - avoid replacing workflow or receipt meaning with eval ownership
+  - repo: aoa-stats
+    contour: derived vector reporting only
+    files:
+      - docs/ANTIFRAGILITY_VECTOR.md
+      - schemas/antifragility_vector_v1.json
+      - examples/antifragility_vector.example.json
+    validation:
+      - local repo validation once the derived slice is adapted
+    focus:
+      - keep vector reporting evidence-linked and derived
+      - avoid sovereign score behavior
+  - repo: aoa-skills
+    contour: narrow authoring addendum for fallback and receipt posture
+    files:
+      - docs/ANTIFRAGILITY_SKILL_ADDENDUM.md
+    validation:
+      - local repo validation once the addendum is adapted
+    focus:
+      - keep skill authoring guidance narrow and additive
+      - avoid turning skill docs into a second center of antifragility meaning
+scope_exclusions:
+  - immediate owner-repo rollout from this Dionysus staging step
+  - assuming ATM10-Agent should be landed from the current /srv sibling workflow
+  - authority drift into aoa-stats
+  - hidden automation widening or auto-remediation
+  - one-number antifragility prestige scoring
+  - treating later waves as current queue truth before first wave lands
