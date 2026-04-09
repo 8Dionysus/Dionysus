@@ -11,20 +11,26 @@ from seed_route_map_common import (
     SURFACE_PAYLOAD,
     build_payload,
     resolve_ref,
+    validate_low_context_ref,
+    validate_payload_schema,
 )
 
 
 def main() -> int:
     expected_payload = build_payload()
     current_payload = json.loads(SEED_ROUTE_MAP_PATH.read_text(encoding="utf-8"))
+    validate_payload_schema(current_payload)
     if current_payload != expected_payload:
         raise SystemExit("generated/seed_route_map.min.json does not match the canonical rebuild")
 
     for key, expected in SURFACE_PAYLOAD.items():
         if current_payload.get(key) != expected:
             raise SystemExit(f"generated/seed_route_map.min.json must keep {key}={expected!r}")
-        if key == "authority_ref":
+        if key in {"authority_ref", "schema_ref"}:
             resolve_ref(expected)
+        if key == "validation_refs":
+            for ref in expected:
+                resolve_ref(ref)
 
     next_live_seed_ref = current_payload.get("next_live_seed_ref")
     if not isinstance(next_live_seed_ref, str) or not next_live_seed_ref.strip():
@@ -43,7 +49,7 @@ def main() -> int:
         surface_ref = route.get("surface_ref")
         if not isinstance(surface_ref, str) or not surface_ref.strip():
             raise SystemExit("generated/seed_route_map.min.json routes must carry a non-empty surface_ref")
-        resolve_ref(surface_ref)
+        validate_low_context_ref(surface_ref, f"route:{spec['route_id']}.surface_ref")
         if spec["route_id"] == "next-live-seed" and surface_ref != next_live_seed_ref:
             raise SystemExit("generated/seed_route_map.min.json next-live-seed must follow navigation.next_live_seed")
         if spec["route_id"] != "next-live-seed" and surface_ref != spec["surface_ref"]:
@@ -54,7 +60,7 @@ def main() -> int:
         for ref in verification_refs:
             if not isinstance(ref, str) or not ref.strip():
                 raise SystemExit("generated/seed_route_map.min.json verification_refs must contain strings")
-            resolve_ref(ref)
+            validate_low_context_ref(ref, f"route:{spec['route_id']}.verification_refs")
 
     print("[ok] validated generated/seed_route_map.min.json")
     return 0

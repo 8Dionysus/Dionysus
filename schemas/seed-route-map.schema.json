@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dionysus/schemas/seed-route-map.schema.json",
+  "title": "Dionysus seed route map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "schema_ref",
+    "owner_repo",
+    "surface_kind",
+    "authority_ref",
+    "next_live_seed_ref",
+    "validation_refs",
+    "routes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "dionysus_seed_route_map_v2"
+    },
+    "schema_ref": {
+      "const": "schemas/seed-route-map.schema.json"
+    },
+    "owner_repo": {
+      "const": "Dionysus"
+    },
+    "surface_kind": {
+      "const": "seed"
+    },
+    "authority_ref": {
+      "type": "string",
+      "const": "docs/codex/planting-protocol.md"
+    },
+    "next_live_seed_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validation_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/route"
+      }
+    }
+  },
+  "$defs": {
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route_id",
+        "need",
+        "surface_ref",
+        "verification_refs"
+      ],
+      "properties": {
+        "route_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "need": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surface_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verification_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

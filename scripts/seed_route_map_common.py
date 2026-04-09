@@ -8,18 +8,30 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
+from jsonschema import Draft202012Validator
 import yaml
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SEED_REGISTRY_PATH = REPO_ROOT / "seed-registry.yaml"
 SEED_ROUTE_MAP_PATH = REPO_ROOT / "generated" / "seed_route_map.min.json"
+SCHEMA_REF = "schemas/seed-route-map.schema.json"
+VALIDATION_REFS = (
+    "scripts/build_seed_route_map.py",
+    "scripts/validate_seed_route_map.py",
+    "scripts/validate_seed_surfaces.py",
+    "scripts/validate_seed_registry.py",
+    "tests/test_seed_route_map.py",
+)
+FORBIDDEN_LOW_CONTEXT_PREFIXES = ("src/", "scripts/")
 
 SURFACE_PAYLOAD = {
-    "schema_version": "dionysus_seed_route_map_v1",
+    "schema_version": "dionysus_seed_route_map_v2",
+    "schema_ref": SCHEMA_REF,
     "owner_repo": "Dionysus",
     "surface_kind": "seed",
     "authority_ref": "docs/codex/planting-protocol.md",
+    "validation_refs": list(VALIDATION_REFS),
 }
 
 ROUTE_SPECS = (
@@ -30,10 +42,10 @@ ROUTE_SPECS = (
     {
         "route_id": "registry-validation",
         "need": "validate registry and seed-surface coherence before trusting a seed route",
-        "surface_ref": "scripts/validate_seed_surfaces.py",
+        "surface_ref": "seed-registry.yaml",
         "verification_refs": [
-            "scripts/validate_seed_registry.py",
             "schema/seed-registry.contract.yaml",
+            "docs/codex/planting-protocol.md",
         ],
     },
     {
@@ -98,6 +110,33 @@ def resolve_ref(value: str) -> Path:
     return target
 
 
+def validate_low_context_ref(value: str, location: str) -> Path:
+    path_text, _, _ = value.partition("#")
+    for prefix in FORBIDDEN_LOW_CONTEXT_PREFIXES:
+        if path_text.startswith(prefix):
+            raise ValueError(f"{location} must not point to implementation path '{value}'")
+    return resolve_ref(value)
+
+
+def load_schema() -> dict[str, object]:
+    schema_path = resolve_ref(SCHEMA_REF)
+    return json.loads(schema_path.read_text(encoding="utf-8"))
+
+
+def validate_payload_schema(payload: dict[str, object]) -> None:
+    validator = Draft202012Validator(load_schema())
+    errors = sorted(validator.iter_errors(payload), key=lambda error: list(error.absolute_path))
+    if not errors:
+        return
+    error = errors[0]
+    path = "".join(f"[{item}]" if isinstance(item, int) else f".{item}" for item in error.absolute_path)
+    if path.startswith("."):
+        path = path[1:]
+    if path:
+        raise ValueError(f"schema violation at '{path}': {error.message}")
+    raise ValueError(f"schema violation: {error.message}")
+
+
 def build_payload() -> dict[str, object]:
     registry = load_registry()
     navigation = registry.get("navigation")
@@ -109,6 +148,9 @@ def build_payload() -> dict[str, object]:
 
     resolve_ref(SURFACE_PAYLOAD["authority_ref"])
     resolve_ref("seed-registry.yaml")
+    resolve_ref(SURFACE_PAYLOAD["schema_ref"])
+    for ref in SURFACE_PAYLOAD["validation_refs"]:
+        resolve_ref(ref)
     resolve_ref(next_live_seed_ref)
 
     routes: list[dict[str, object]] = [
@@ -123,9 +165,9 @@ def build_payload() -> dict[str, object]:
         }
     ]
     for spec in ROUTE_SPECS[1:]:
-        resolve_ref(spec["surface_ref"])
+        validate_low_context_ref(spec["surface_ref"], f"route:{spec['route_id']}.surface_ref")
         for ref in spec["verification_refs"]:
-            resolve_ref(ref)
+            validate_low_context_ref(ref, f"route:{spec['route_id']}.verification_refs")
         routes.append(
             {
                 "route_id": spec["route_id"],
@@ -135,11 +177,13 @@ def build_payload() -> dict[str, object]:
             }
         )
 
-    return {
+    payload = {
         **SURFACE_PAYLOAD,
         "next_live_seed_ref": next_live_seed_ref,
         "routes": routes,
     }
+    validate_payload_schema(payload)
+    return payload
 
 
 def render_payload(payload: dict[str, object]) -> str:
