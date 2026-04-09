@@ -30,7 +30,10 @@ def test_readme_lists_current_validation_and_lineage_routes() -> None:
     readme = read_text("README.md")
 
     assert "python scripts/validate_seed_surfaces.py" in readme
+    assert "python scripts/build_seed_route_map.py --check" in readme
+    assert "python scripts/validate_seed_route_map.py" in readme
     assert "python -m pytest -q tests" in readme
+    assert "`generated/seed_route_map.min.json` is the compact low-context seed entry capsule" in readme
     assert "`archive/seed_pack_exports/` holds derived ingress and transport bundles only" in readme
     assert "`reports/planting/README.md` explains when Dionysus should keep durable planting trace" in readme
 
@@ -39,6 +42,8 @@ def test_agents_mentions_pytest_reinforcement() -> None:
     agents = read_text("AGENTS.md")
 
     assert "python scripts/validate_seed_surfaces.py" in agents
+    assert "python scripts/build_seed_route_map.py --check" in agents
+    assert "python scripts/validate_seed_route_map.py" in agents
     assert "python -m pytest -q tests" in agents
 
 

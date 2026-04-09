@@ -42,6 +42,7 @@ After reading a prep-pack note, verify the owner repo directly before treating s
 - `archive/` is the canonical archive root for historical seed sources
 - `archive/seed_pack_exports/` holds derived ingress and transport bundles only; never treat them as canonical seed surfaces
 - `seed_expansion/` holds the current gated next-work surfaces after the archived ninth wave
+- `generated/seed_route_map.min.json` is the compact low-context seed entry capsule; `seed-registry.yaml` remains the canonical seed ledger and navigation overlay
 - `seed-registry.yaml` is the human/Codex navigation overlay
 - `docs/SEED_SURFACE_MAP.md` explains how to read `seed_staging/` and `seed_notes/exploratory/` without confusing canon, staging, lineage, and exploratory donor notes
 - `docs/codex/` holds the planting protocol and provenance rules
@@ -90,6 +91,13 @@ The seed-surface validation entrypoint remains:
 
 ```bash
 python scripts/validate_seed_surfaces.py
+```
+
+For the compact seed-entry capsule itself, use:
+
+```bash
+python scripts/build_seed_route_map.py --check
+python scripts/validate_seed_route_map.py
 ```
 
 For current repo-local and workflow reinforcement, also run:
