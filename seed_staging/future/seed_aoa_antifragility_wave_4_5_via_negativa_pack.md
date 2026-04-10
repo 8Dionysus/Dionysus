@@ -4,7 +4,7 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: landed_post_wave
+lifecycle_status: landed_upstream_retained_for_lineage
 lifecycle_note: The via-negativa antifragility pack was staged in Dionysus on 2026-04-07 local time from a source artifact dated 2026-04-08, and the owner-repo doctrine/checklist landings then merged on 2026-04-08 UTC across Agents-of-Abyss, ATM10-Agent, aoa-techniques, aoa-skills, aoa-routing, aoa-memo, aoa-agents, aoa-playbooks, aoa-kag, aoa-evals, aoa-stats, aoa-sdk, and abyss-stack; Dionysus now keeps this pack as lineage-only post-wave trace rather than as staged-only guidance.
 reality_checked_at: '2026-04-08'
 status: pending_archive

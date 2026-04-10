@@ -151,6 +151,15 @@ class ValidatePrepPacksTests(unittest.TestCase):
             errors[0],
         )
 
+    def test_missing_registry_on_nondefault_root_returns_validation_error(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+
+            errors = validate_prep_packs.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertEqual("missing file: seed-registry.yaml", errors[0])
+
 
 if __name__ == "__main__":
     unittest.main()

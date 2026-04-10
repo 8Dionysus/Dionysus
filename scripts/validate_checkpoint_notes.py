@@ -10,6 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDITS_DIR = ROOT / "reports" / "ecosystem-audits"
 
 
+def is_raw_checkpoint_history_ref(value: object) -> bool:
+    return isinstance(value, str) and "checkpoint-note.jsonl" in value
+
+
 def run_validation(root: Path) -> list[str]:
     errors: list[str] = []
     audits_dir = root / "reports" / "ecosystem-audits"
@@ -40,7 +44,7 @@ def run_validation(root: Path) -> list[str]:
         source_note_ref = payload.get("source_note_ref")
         if not isinstance(source_note_ref, str) or not source_note_ref:
             errors.append(f"{json_path.relative_to(root)} source_note_ref must be a non-empty string")
-        elif "checkpoint-note.jsonl" in source_note_ref:
+        elif is_raw_checkpoint_history_ref(source_note_ref):
             errors.append(f"{json_path.relative_to(root)} must not point at raw checkpoint-note.jsonl history")
 
         candidate_clusters = payload.get("candidate_clusters")
@@ -50,6 +54,15 @@ def run_validation(root: Path) -> list[str]:
         evidence_refs = payload.get("evidence_refs")
         if not isinstance(evidence_refs, list) or not evidence_refs:
             errors.append(f"{json_path.relative_to(root)} evidence_refs must be a non-empty list")
+        else:
+            for ref in evidence_refs:
+                if not isinstance(ref, str) or not ref:
+                    errors.append(f"{json_path.relative_to(root)} evidence_refs entries must be non-empty strings")
+                    continue
+                if is_raw_checkpoint_history_ref(ref):
+                    errors.append(
+                        f"{json_path.relative_to(root)} evidence_refs must not include raw checkpoint-note.jsonl history"
+                    )
 
         markdown = md_path.read_text(encoding="utf-8")
         if "Checkpoint Note Promotion" not in markdown:
