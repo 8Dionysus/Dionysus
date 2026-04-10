@@ -4,6 +4,8 @@
 
 It stores seed sources, wave manifests, archived planting surfaces, live gated expansion surfaces, and the minimal protocol needed to move bounded seeds into owning repositories. It is not the final owning home of AoA meaning, ToS meaning, runtime behavior, or repo-local implementation detail.
 
+> Current release: `v0.1.0`. See [CHANGELOG](CHANGELOG.md) for release notes.
+
 ## Start here
 
 Read in this order:
