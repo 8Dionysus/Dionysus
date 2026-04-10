@@ -79,6 +79,10 @@ EXPECTED_NOTES = {
         "kind": "prep-pack-note",
         "lifecycle_status": "partially_landed_retained_for_lineage",
     },
+    "seed_staging/future/seed_aoa_antifragility_wave_4_5_via_negativa_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
+    },
     "seed_staging/audit/seed_wave3_codex_repo_local_skills_trace_harness.md": {
         "kind": "audit-pack-note",
         "lifecycle_status": "staged_only_not_landed",
@@ -143,6 +147,19 @@ REQUIRED_KEYS = (
     "lifecycle_note",
     "reality_checked_at",
 )
+EXPECTED_COMPANION_MAPS = {
+    "seed_staging/future/seed_aoa_antifragility_wave_4_5_via_negativa_pack.md": {
+        "path": "seed_staging/future/seed_aoa_antifragility_wave_4_5_via_negativa_pack.map.yaml",
+        "updated_at": "2026-04-08",
+        "required_lineage_tokens": (
+            "owner-repo landings were verified",
+            "lineage-only replay",
+        ),
+        "forbidden_lineage_tokens": (
+            "no via-negativa owner-repo landings are yet verified in the current workspace",
+        ),
+    }
+}
 
 
 class ValidationError(RuntimeError):
@@ -185,6 +202,29 @@ def require_iso_date(value: object, label: str) -> str:
     return date_string
 
 
+def display_path(path: Path, *, root: Path = ROOT) -> str:
+    try:
+        return path.relative_to(root).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
+def load_yaml(path: Path, *, root: Path = ROOT) -> dict[str, Any]:
+    try:
+        payload = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except FileNotFoundError as exc:
+        fail(f"missing file: {display_path(path, root=root)}")
+    if not isinstance(payload, dict) or not payload:
+        fail(f"{display_path(path, root=root)}: YAML payload must be a non-empty mapping")
+    return payload
+
+
+def require_string_list(value: object, label: str) -> list[str]:
+    if not isinstance(value, list) or not value or not all(isinstance(item, str) and item.strip() for item in value):
+        fail(f"{label}: must be a non-empty list of non-empty strings")
+    return list(value)
+
+
 def validate_seed_note_lifecycle(root: Path = ROOT) -> None:
     for note_name, expected in EXPECTED_NOTES.items():
         note_path = root / note_name
@@ -213,6 +253,34 @@ def validate_seed_note_lifecycle(root: Path = ROOT) -> None:
         require_nonempty_string(frontmatter["seed_id"], f"{note_name}.seed_id")
         require_nonempty_string(frontmatter["lifecycle_note"], f"{note_name}.lifecycle_note")
         require_iso_date(frontmatter["reality_checked_at"], f"{note_name}.reality_checked_at")
+
+        companion_map = EXPECTED_COMPANION_MAPS.get(note_name)
+        if companion_map is not None:
+            map_path = root / companion_map["path"]
+            payload = load_yaml(map_path, root=root)
+            updated_at = require_iso_date(payload.get("updated_at"), f"{companion_map['path']}.updated_at")
+            if updated_at != companion_map["updated_at"]:
+                fail(f"{companion_map['path']}.updated_at must be '{companion_map['updated_at']}'")
+
+            selection_policy = require_mapping(
+                payload.get("selection_policy"),
+                f"{companion_map['path']}.selection_policy",
+            )
+            lineage_precondition = require_string_list(
+                selection_policy.get("lineage_precondition"),
+                f"{companion_map['path']}.selection_policy.lineage_precondition",
+            )
+            combined = "\n".join(lineage_precondition)
+            for token in companion_map["required_lineage_tokens"]:
+                if token not in combined:
+                    fail(
+                        f"{companion_map['path']}.selection_policy.lineage_precondition must mention {token!r}"
+                    )
+            for token in companion_map["forbidden_lineage_tokens"]:
+                if token in combined:
+                    fail(
+                        f"{companion_map['path']}.selection_policy.lineage_precondition must not mention {token!r}"
+                    )
 
 
 def run_validation(root: Path = ROOT) -> list[str]:

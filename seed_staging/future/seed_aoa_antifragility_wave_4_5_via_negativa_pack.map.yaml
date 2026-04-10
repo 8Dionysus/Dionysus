@@ -1,5 +1,5 @@
 map_version: 1
-updated_at: '2026-04-07'
+updated_at: '2026-04-08'
 seed_note: seed_staging/future/seed_aoa_antifragility_wave_4_5_via_negativa_pack.md
 status: prep_pack_note
 navigation_constraints:
@@ -49,7 +49,7 @@ selection_policy:
     - treat DELETION_CANDIDATES.json as prompts for review, not as verdicts
     - preserve active operator paths unless a better surviving home already exists
   lineage_precondition:
-    - no via-negativa owner-repo landings are yet verified in the current workspace
+    - via-negativa owner-repo landings were verified in the 2026-04-08 workspace and this pack now survives as lineage-only replay rather than as live staging
 targets:
   - repo: Agents-of-Abyss
     contour: constitutional subtraction posture and machine-readable anti-authority candidate list

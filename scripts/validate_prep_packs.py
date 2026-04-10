@@ -234,13 +234,20 @@ def fail(message: str) -> None:
     raise ValidationError(message)
 
 
-def load_yaml(path: Path) -> Any:
+def display_path(path: Path, *, root: Path = ROOT) -> str:
+    try:
+        return path.relative_to(root).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
+def load_yaml(path: Path, *, root: Path = ROOT) -> Any:
     try:
         return yaml.safe_load(path.read_text(encoding="utf-8"))
     except FileNotFoundError as exc:
-        raise ValidationError(f"missing file: {path.relative_to(ROOT).as_posix()}") from exc
+        raise ValidationError(f"missing file: {display_path(path, root=root)}") from exc
     except yaml.YAMLError as exc:
-        raise ValidationError(f"invalid YAML in {path.relative_to(ROOT).as_posix()}: {exc}") from exc
+        raise ValidationError(f"invalid YAML in {display_path(path, root=root)}: {exc}") from exc
 
 
 def require_mapping(value: object, label: str) -> dict[str, Any]:
@@ -298,7 +305,7 @@ def collect_expected_packs() -> dict[str, dict[str, Any]]:
 
 def validate_prep_packs(root: Path = ROOT) -> None:
     registry_path = root / "seed-registry.yaml"
-    registry = require_mapping(load_yaml(registry_path), "seed-registry.yaml")
+    registry = require_mapping(load_yaml(registry_path, root=root), "seed-registry.yaml")
     navigation = require_mapping(registry["navigation"], "seed-registry.yaml.navigation")
     next_live_seed = require_nonempty_string(
         navigation["next_live_seed"], "seed-registry.yaml.navigation.next_live_seed"
@@ -353,7 +360,7 @@ def validate_prep_packs(root: Path = ROOT) -> None:
         require_string_list(frontmatter["projects"], f"{note_name}.projects")
         require_string_list(frontmatter["tags"], f"{note_name}.tags")
 
-        mapping = require_mapping(load_yaml(map_path), map_path.name)
+        mapping = require_mapping(load_yaml(map_path, root=root), map_path.name)
         for key in MAP_REQUIRED_KEYS:
             if key not in mapping:
                 fail(f"{map_path.name}: missing required key '{key}'")
