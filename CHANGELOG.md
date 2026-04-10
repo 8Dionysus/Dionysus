@@ -9,6 +9,12 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [0.1.0] - 2026-04-10
 
+### Summary
+
+- first public baseline establishes `Dionysus` as the seed garden and staging surface of the federation
+- the release centers on seed-route-map validation, checkpoint-aware lineage, and bounded staging posture
+- release claims stay intentionally weaker than live owner-repo authority
+
 ### Added
 
 - community-docs baseline established for this repository
@@ -47,3 +53,14 @@ Tracking starts with the community-docs baseline for this repository.
   `quests/`, `scripts/`, `schemas/`, `tests/`, and `Spark/`, including the
   seed-route-map capsule, owner-repo reality fixes, checkpoint-aware closeout
   lineage, CI validator runs, and project-foundation follow-through
+
+### Validation
+
+- `python scripts/validate_seed_surfaces.py`
+- `python scripts/build_seed_route_map.py --check`
+- `python scripts/validate_seed_route_map.py`
+- `python -m pytest -q tests`
+
+### Notes
+
+- this remains a staging and seed-garden baseline, not a claim that `Dionysus` owns live owner-repo truth
