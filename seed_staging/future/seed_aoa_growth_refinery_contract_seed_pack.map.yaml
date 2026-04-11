@@ -1,0 +1,168 @@
+map_version: 1
+updated_at: '2026-04-11'
+seed_note: seed_staging/future/seed_aoa_growth_refinery_contract_seed_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-growth-refinery-contract-seed-pack-2026-04-11.zip
+  companion_summary: archive/seed_pack_exports/aoa-growth-refinery-contract-seed-pack-2026-04-11-summary.md
+  included_surfaces:
+    - aoa_growth_refinery_contract_seed_pack/README.md
+    - aoa_growth_refinery_contract_seed_pack/WHY_NOW.md
+    - aoa_growth_refinery_contract_seed_pack/TARGET_MAP.md
+    - aoa_growth_refinery_contract_seed_pack/ACCEPTANCE_MATRIX.md
+    - aoa_growth_refinery_contract_seed_pack/REVIEW_CHECKLIST.md
+    - aoa_growth_refinery_contract_seed_pack/contracts/candidate_lineage_contract_v1.md
+    - aoa_growth_refinery_contract_seed_pack/contracts/growth_funnel_contract_v1.md
+    - aoa_growth_refinery_contract_seed_pack/contracts/memory_writeback_contract_v1.md
+    - aoa_growth_refinery_contract_seed_pack/examples/lineage_bundle_v1/checkpoint_lineage_hint.json
+    - aoa_growth_refinery_contract_seed_pack/examples/lineage_bundle_v1/harvest_packet_candidate.json
+    - aoa_growth_refinery_contract_seed_pack/examples/lineage_bundle_v1/seed_lineage_entry.json
+    - aoa_growth_refinery_contract_seed_pack/examples/lineage_bundle_v1/candidate_lineage_summary.json
+    - aoa_growth_refinery_contract_seed_pack/tools/validate_lineage_examples.py
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss doctrine and aoa-sdk or aoa-skills lineage-carry surfaces
+  family_rule:
+    - treat this pack as the contract companion to the staged growth-refinery docket
+    - let the docket pack keep route order, owner boundaries, and stop-lines
+    - let this companion pack provide v1 contract text, examples, acceptance gates, and the tiny structural validator
+    - keep the lineage route explicit as cluster_ref -> candidate_ref -> seed_ref -> object_ref
+  landing_rule:
+    - adapt file placement to live repo conventions instead of copying proposed-targets literally
+    - prefer docs plus schema plus example plus validator before wider generated or automation surfaces
+    - keep each owner slice reviewable and bounded
+  acceptance_rule:
+    - use the companion pack acceptance matrix as merge gates, not as evidence that a slice has already landed
+  derivative_rule:
+    - keep aoa-routing and aoa-kag derivative rather than first-authoring homes
+  downstream_rule:
+    - keep aoa-stats derived-only, aoa-evals proof-only, aoa-playbooks scenario-only, and aoa-memo memory-only
+targets:
+  - repo: Agents-of-Abyss
+    contour: doctrine anchor and candidate-lineage crosswalk
+    files:
+      - docs/REVIEWABLE_GROWTH_REFINERY.md
+      - docs/CANDIDATE_LINEAGE_CROSSWALK.md
+      - docs/METHOD_SPINE.md
+      - docs/decisions/
+    validation:
+      - python scripts/build_center_entry_map.py --check
+      - python scripts/validate_center_entry_map.py
+      - python scripts/validate_ecosystem.py
+      - python -m pytest -q tests
+    focus:
+      - anchor doctrine without creating a new sovereign lineage layer
+      - keep aoa-routing and aoa-kag derivative
+  - repo: aoa-sdk
+    contour: checkpoint and closeout provisional lineage carry
+    files:
+      - docs/CANDIDATE_LINEAGE_CARRY.md
+      - schemas/checkpoint_lineage_hint.schema.json
+      - examples/checkpoint_lineage_hint.example.json
+      - examples/closeout_context.lineage.example.json
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - carry cluster_ref and reviewed-closeout hints only
+      - do not mint candidate_ref, seed_ref, or object_ref here
+  - repo: aoa-skills
+    contour: reviewed candidate identity contract
+    files:
+      - docs/CANDIDATE_LINEAGE_CONTRACT.md
+      - skills/aoa-session-donor-harvest/
+      - examples/
+    validation:
+      - python scripts/build_catalog.py --check
+      - python scripts/validate_skills.py --fail-on-review-truth-sync
+      - python scripts/report_skill_evaluation.py --fail-on-canonical-gaps
+      - python -m pytest -q tests
+    focus:
+      - mint candidate_ref only after reviewed donor harvest
+      - keep nearest_wrong_target and rejection value explicit
+  - repo: Dionysus
+    contour: candidate-to-seed bridge and planting trace
+    files:
+      - docs/CANDIDATE_SEED_IDENTITY.md
+      - schemas/seed_lineage_entry.schema.json
+      - examples/seed_lineage_entry.example.json
+      - seed-registry.yaml
+      - reports/planting/
+    validation:
+      - python scripts/validate_seed_surfaces.py
+      - python scripts/build_seed_route_map.py --check
+      - python scripts/validate_seed_route_map.py
+      - python -m pytest -q tests
+    focus:
+      - mint seed_ref only in Dionysus
+      - keep the tiny lineage validator structural only
+  - repo: aoa-stats
+    contour: derived candidate-lineage funnel summary
+    files:
+      - docs/GROWTH_FUNNEL_SUMMARY.md
+      - schemas/candidate_lineage_summary.schema.json
+      - examples/candidate_lineage_summary.example.json
+      - generated/
+      - config/live_receipt_sources.json
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - start with one v1 candidate_lineage_summary surface
+      - keep stats derived-only and reviewed-receipt-only
+  - repo: aoa-evals
+    contour: lineage integrity and owner-fit proof bundles
+    files:
+      - bundles/aoa-candidate-lineage-integrity/
+      - bundles/aoa-owner-fit-routing-quality/
+      - bundles/aoa-repair-boundedness/
+      - EVAL_INDEX.md
+      - EVAL_SELECTION.md
+    validation:
+      - python scripts/validate_repo.py
+      - python scripts/build_catalog.py --check
+      - python -m pytest -q tests
+    focus:
+      - prove lineage integrity directly
+      - keep claim limits and blind spots visible
+  - repo: aoa-playbooks
+    contour: recurring session-growth cycle
+    files:
+      - playbooks/session-growth-cycle/PLAYBOOK.md
+      - generated/
+    validation:
+      - python scripts/generate_playbook_activation_surfaces.py --check
+      - python scripts/generate_playbook_federation_surfaces.py --check
+      - python scripts/validate_playbooks.py
+      - python -m pytest -q tests
+    focus:
+      - land one steady-state scenario route after lineage seams exist
+      - do not collapse the route into a skill or hidden runner
+  - repo: aoa-memo
+    contour: lineage-aware writeback support
+    files:
+      - docs/GROWTH_REFINERY_WRITEBACK.md
+      - examples/failure_lesson_memory.lineage.example.json
+      - examples/recovery_pattern_memory.lineage.example.json
+    validation:
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python scripts/validate_memory_object_surfaces.py
+      - python -m pytest -q tests
+    focus:
+      - keep memory subordinate to owner truth and proof
+      - preserve misroute, drop, and repair trace without creating new taxonomy
+scope_exclusions:
+  - replacement of the staged growth-refinery docket pack
+  - direct literal import of proposed-targets into live repos unchanged
+  - new sovereign lineage layer
+  - first-authoring into aoa-routing or aoa-kag
+  - route authority, proof authority, or memory authority drifting into the wrong repo
