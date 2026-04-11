@@ -1,0 +1,18 @@
+{
+  "schema_version": "dionysus_seed_lineage_entry_v1",
+  "seed_ref": "seed:aoa:session-growth:reviewed-donor-harvest:v1",
+  "candidate_ref": "candidate:session-growth:reviewed-donor-harvest",
+  "cluster_ref": "cluster:checkpoint:session-growth",
+  "owner_hypothesis": "aoa-skills",
+  "owner_shape": "reviewed-owner-local-receipt",
+  "lifecycle_status": "staged",
+  "status_posture": "reviewed_ready_for_seed_staging",
+  "evidence_refs": [
+    "repo:aoa-skills/examples/session_growth_artifacts/candidate_lineage_receipt.alpha.json",
+    "seed_staging/future/seed_aoa_growth_refinery_contract_seed_pack.md#boundary-posture-to-preserve"
+  ],
+  "supersedes": [],
+  "merged_into": null,
+  "drop_reason": null,
+  "object_ref": null
+}

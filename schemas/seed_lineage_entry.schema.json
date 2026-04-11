@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dionysus seed_lineage_entry_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "seed_ref",
+    "candidate_ref",
+    "owner_hypothesis",
+    "owner_shape",
+    "lifecycle_status",
+    "status_posture",
+    "evidence_refs",
+    "supersedes",
+    "merged_into",
+    "drop_reason",
+    "object_ref"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "dionysus_seed_lineage_entry_v1"
+    },
+    "seed_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cluster_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "owner_hypothesis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_shape": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lifecycle_status": {
+      "enum": [
+        "staged",
+        "open-wave",
+        "planting-in-progress",
+        "planted",
+        "superseded",
+        "dropped"
+      ]
+    },
+    "status_posture": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "merged_into": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "drop_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "object_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    }
+  }
+}

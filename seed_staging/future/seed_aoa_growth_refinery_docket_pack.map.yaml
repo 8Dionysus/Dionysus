@@ -1,0 +1,190 @@
+map_version: 1
+updated_at: '2026-04-11'
+seed_note: seed_staging/future/seed_aoa_growth_refinery_docket_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-growth-refinery-docket-pack-2026-04-11.zip
+  companion_summary: archive/seed_pack_exports/aoa-growth-refinery-docket-pack-2026-04-11-summary.md
+  included_surfaces:
+    - aoa_growth_refinery_docket_pack/README.md
+    - aoa_growth_refinery_docket_pack/IMPLEMENTATION_DOCKET.md
+    - aoa_growth_refinery_docket_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_growth_refinery_docket_pack/PR_SLICES.md
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss doctrine and crosswalk surfaces
+  family_rule:
+    - keep the lineage route explicit as cluster_ref -> candidate_ref -> seed_ref -> object_ref
+    - keep aoa-sdk control-plane only, aoa-stats derived-only, Dionysus seed-only, aoa-evals proof-only, and aoa-memo memory-only
+    - keep carry, owner meaning, proof, derived view, and memory writeback as distinct layers
+  landing_rule:
+    - start with doctrine and crosswalk docs before control-plane carry or candidate minting
+    - prefer docs + schema + example + validator changes before aggressive automation
+    - keep each PR slice repo-owned and reviewable
+  lineage_precondition:
+    - preserve the already-landed Codex access plane as upstream context rather than the new route headline
+    - preserve the already-landed session-growth family as upstream reviewed-closeout context
+    - do not mint candidate_ref before reviewed donor harvest
+    - do not mint seed_ref outside Dionysus
+    - do not add raw aoa-sdk checkpoint note logs to aoa-stats
+  downstream_rule:
+    - do not skip ahead to proof, playbook, or memo closure while upstream lineage contracts are still missing
+  derivative_rule:
+    - do not let aoa-routing, aoa-kag, aoa-stats, or workspace glue become first-authoring homes for lineage meaning
+  sequence_rule:
+    - first land Agents-of-Abyss doctrine and candidate-lineage crosswalk
+    - next land aoa-sdk cluster_ref and lineage-hint carry
+    - then land aoa-skills reviewed candidate_ref contract
+    - then land Dionysus seed_ref and planting trace
+    - then land aoa-stats derived funnel summaries
+    - then land aoa-evals proof bundles
+    - then land aoa-playbooks session-growth-cycle method
+    - then land aoa-memo writeback
+    - revisit maturity only after real proof and real runs
+targets:
+  - repo: Agents-of-Abyss
+    contour: doctrine anchor and lineage crosswalk home
+    files:
+      - docs/REVIEWABLE_GROWTH_REFINERY.md
+      - docs/CANDIDATE_LINEAGE_CROSSWALK.md
+      - docs/METHOD_SPINE.md
+    validation:
+      - python scripts/build_center_entry_map.py --check
+      - python scripts/validate_center_entry_map.py
+      - python scripts/validate_ecosystem.py
+      - python -m pytest -q tests
+    focus:
+      - define the refinery without creating a new authority layer
+      - keep the center at crosswalk-level, not repo-local schema empire
+  - repo: aoa-sdk
+    contour: checkpoint and closeout carry without reviewed candidate minting
+    files:
+      - docs/session-growth-checkpoints.md
+      - docs/aoa-surface-detection-closeout-handoff.md
+      - docs/aoa-surface-detection-first-wave.md
+      - docs/CANDIDATE_LINEAGE_CONTROL_PLANE.md
+      - schemas/candidate_lineage_hint.schema.json
+      - examples/candidate_lineage_hint.example.json
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - carry cluster_ref and lineage hints without minting candidate_ref
+      - keep reviewed-only handoff discipline intact
+  - repo: aoa-skills
+    contour: reviewed candidate contract home
+    files:
+      - skills/aoa-session-donor-harvest/SKILL.md
+      - skills/aoa-checkpoint-closeout-bridge/SKILL.md
+      - skills/aoa-session-route-forks/SKILL.md
+      - skills/aoa-session-self-diagnose/SKILL.md
+      - skills/aoa-session-self-repair/SKILL.md
+      - skills/aoa-session-progression-lift/SKILL.md
+      - skills/aoa-quest-harvest/SKILL.md
+      - docs/CANDIDATE_LINEAGE_CONTRACT.md
+      - schemas/candidate_ref.schema.json
+      - schemas/harvest_candidate_packet.schema.json
+      - examples/harvest_candidate_packet.example.json
+    validation:
+      - python scripts/build_catalog.py --check
+      - python scripts/validate_skills.py --fail-on-review-truth-sync
+      - python scripts/report_skill_evaluation.py --fail-on-canonical-gaps
+      - python -m pytest -q tests
+    focus:
+      - mint candidate_ref only in reviewed donor harvest
+      - preserve nearest_wrong_target, hold_reason, and drop_reason honestly
+  - repo: Dionysus
+    contour: seed identity and lineage trace home
+    files:
+      - seed-registry.yaml
+      - generated/seed_route_map.min.json
+      - docs/CANDIDATE_SEED_LIFECYCLE.md
+      - schema/candidate-seed-lineage.contract.yaml
+      - templates/candidate-seed-staging.template.md
+      - templates/planting-report.template.md
+      - examples/candidate_seed_registry_entry.example.yaml
+    validation:
+      - python scripts/validate_seed_surfaces.py
+      - python scripts/build_seed_route_map.py --check
+      - python scripts/validate_seed_route_map.py
+      - python -m pytest -q tests
+    focus:
+      - mint seed_ref only in Dionysus
+      - keep registry and planting trace route-first rather than owner-sovereign
+  - repo: aoa-stats
+    contour: derived lineage and funnel summaries
+    files:
+      - docs/GROWTH_FUNNEL_SUMMARIES.md
+      - schemas/candidate_lineage_summary.schema.json
+      - schemas/growth_funnel_summary.schema.json
+      - generated/candidate_lineage_summary.min.json
+      - generated/growth_funnel_summary.min.json
+      - config/live_receipt_sources.json
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - derive the funnel from reviewed receipts, not raw checkpoint notes
+      - keep aoa-stats derived-only
+  - repo: aoa-evals
+    contour: lineage and routing proof home
+    files:
+      - bundles/aoa-candidate-lineage-integrity/
+      - bundles/aoa-owner-fit-routing-quality/
+      - bundles/aoa-repair-boundedness/
+      - EVAL_INDEX.md
+      - EVAL_SELECTION.md
+    validation:
+      - python scripts/validate_repo.py
+      - python scripts/build_catalog.py --check
+      - python -m pytest -q tests
+    focus:
+      - make the route falsifiable without inflating proof claims
+      - keep each bundle narrow and inspectable
+  - repo: aoa-playbooks
+    contour: recurring session-growth-cycle method home
+    files:
+      - playbooks/session-growth-cycle/PLAYBOOK.md
+      - docs/HANDOFF_CONTRACTS.md
+      - docs/FAILURE_RECOVERY.md
+      - generated/
+    validation:
+      - python scripts/generate_playbook_activation_surfaces.py --check
+      - python scripts/generate_playbook_federation_surfaces.py --check
+      - python scripts/validate_playbooks.py
+      - python -m pytest -q tests
+    focus:
+      - coordinate the recurring route without stealing proof or memory meaning
+      - keep stop lines, fallback posture, and handoff contracts explicit
+  - repo: aoa-memo
+    contour: failure and recovery writeback home
+    files:
+      - docs/SESSION_GROWTH_MEMORY_WRITEBACK.md
+      - docs/RUNTIME_WRITEBACK_SEAM.md
+      - docs/PLAYBOOK_MEMORY_SCOPES.md
+      - examples/failure_lesson_memory.growth_refinery.example.json
+      - examples/recovery_pattern_memory.growth_refinery.example.json
+    validation:
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python scripts/validate_memory_object_surfaces.py
+      - python -m pytest -q tests
+    focus:
+      - store failure and recovery memory with explicit evidence refs
+      - keep memory subordinate to proof and owner meaning
+scope_exclusions:
+  - immediate multi-repo landing from this Dionysus staging step
+  - candidate_ref minting before reviewed donor harvest
+  - seed_ref minting outside Dionysus
+  - raw aoa-sdk checkpoint-note ingestion in aoa-stats
+  - proof, playbook, or memo work before upstream lineage contracts exist
+  - first-authoring into aoa-routing or aoa-kag
+  - premature maturity upgrades without proof and real-run evidence

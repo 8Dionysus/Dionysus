@@ -47,11 +47,13 @@ After reading a prep-pack note, verify the owner repo directly before treating s
 - `generated/seed_route_map.min.json` is the compact low-context seed entry capsule; `seed-registry.yaml` remains the canonical seed ledger and navigation overlay
 - `seed-registry.yaml` is the human/Codex navigation overlay
 - `docs/SEED_SURFACE_MAP.md` explains how to read `seed_staging/` and `seed_notes/exploratory/` without confusing canon, staging, lineage, and exploratory donor notes
+- `docs/CANDIDATE_SEED_IDENTITY.md` explains the local `candidate_ref -> seed_ref` bridge and the stop rules around `seed_ref`
 - `docs/codex/` holds the planting protocol and provenance rules
 - `docs/CODEX_MCP.md` explains the repo-local Codex MCP surface and its stop rules
 - `templates/planting-report.template.md` defines the durable planting-report shape when Dionysus needs to hold the trace
 - `reports/planting/README.md` explains when Dionysus should keep durable planting trace instead of relying on target-repo PR or commit history alone
 - `scripts/validate_seed_surfaces.py` is the single seed-surface validation entrypoint
+- `schemas/seed_lineage_entry.schema.json`, `examples/seed_lineage_entry.example.json`, and `scripts/validate_seed_lineage_examples.py` keep the local seed-lineage witness structural instead of sovereign
 - `seed_staging/` holds structured transport and staging packs grouped by domain instead of mixing them into the root
 - `seed_notes/exploratory/` holds informal exploratory seed texts that should not be mistaken for queue control
 - repo-local questbook surfaces in `QUESTBOOK.md`, `quests/`, `schemas/`, and `generated/` are follow-through for the seed garden, not a second sovereignty layer
