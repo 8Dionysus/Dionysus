@@ -56,8 +56,12 @@
       ]
     },
     "status_posture": {
-      "type": "string",
-      "minLength": 1
+      "enum": [
+        "early",
+        "reanchor",
+        "thin-evidence",
+        "stable"
+      ]
     },
     "evidence_refs": {
       "type": "array",
