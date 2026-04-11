@@ -4,8 +4,8 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: partially_landed_retained_for_lineage
-lifecycle_note: The broad remaining-seeds capsule mostly describes Growth Refinery surfaces already landed by the docket and contract companion rollout; keep it as follow-through lineage while planting only the explicit Wave B gap for aoa-diagnosis-cause-discipline and deferring Wave D automation.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: 'The broad remaining-seeds capsule is now landed upstream for its selected follow-through slice: aoa-evals owns aoa-diagnosis-cause-discipline, already-landed stats/playbook/memo surfaces stayed untouched, and Wave D automation remains deferred.'
 reality_checked_at: '2026-04-11'
 status: pending_archive
 priority: high
@@ -81,13 +81,16 @@ Read this pack under these boundaries:
 
 ## Application posture
 
-Treat this pack as partially landed follow-through lineage.
+Treat this pack as landed upstream and retained for follow-through lineage.
 
-The current planting selects only:
+The current planting landed only:
 
 1. archive and describe the capsule in `Dionysus`
 2. add the missing `aoa-diagnosis-cause-discipline` eval bundle in `aoa-evals`
 3. record already-landed and deferred items in the final `Dionysus` closeout
+
+Stats, playbook, and memo Growth Refinery surfaces remained already-landed
+rather than being duplicated from this capsule.
 
 ## What this pack is not for
 

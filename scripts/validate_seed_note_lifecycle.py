@@ -83,6 +83,14 @@ EXPECTED_NOTES = {
         "kind": "prep-pack-note",
         "lifecycle_status": "partially_landed_retained_for_lineage",
     },
+    "seed_staging/future/seed_aoa_first_wave_candidate_lineage_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
+    },
+    "seed_staging/future/seed_aoa_remaining_seeds_execution_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
+    },
     "seed_staging/future/seed_aoa_antifragility_wave_4_5_via_negativa_pack.md": {
         "kind": "prep-pack-note",
         "lifecycle_status": "landed_upstream_retained_for_lineage",

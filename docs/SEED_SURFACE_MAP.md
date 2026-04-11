@@ -98,16 +98,14 @@ Read those markers first, then verify the owner repos directly.
   retained for lineage as the contract companion to that docket pack: it
   preserves the v1 contract substrate, acceptance gates, examples, and tiny
   structural validator posture without replacing owner-repo truth
-- `seed_aoa_first_wave_candidate_lineage_pack.md` is a partially landed
-  lineage hardening pack for the already-live first Growth Refinery chain; use
-  it to align one `cluster_ref -> candidate_ref -> seed_ref` example chain,
-  add the cross-repo validator, and close only the named schema/example/doc
-  seams
-- `seed_aoa_remaining_seeds_execution_pack.md` is a partially landed
-  follow-through capsule for remaining Growth Refinery work; in the current
-  planting it selects only the missing `aoa-evals`
-  `aoa-diagnosis-cause-discipline` bundle while keeping Wave D automation
-  deferred
+- `seed_aoa_first_wave_candidate_lineage_pack.md` is now landed upstream and
+  retained for lineage as the first-wave hardening record for the aligned
+  `cluster_ref -> candidate_ref -> seed_ref` example chain, center validator,
+  and closed schema/example/doc seams
+- `seed_aoa_remaining_seeds_execution_pack.md` is now landed upstream and
+  retained for lineage as the follow-through capsule whose selected new owner
+  slice was the `aoa-evals` `aoa-diagnosis-cause-discipline` bundle; Wave D
+  automation remains deferred
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -177,14 +175,14 @@ Current exploratory notes live under:
 - `seed_staging/audit/seed_federated_audit_remediation_pack.md`
 - `seed_staging/future/seed_aoa_growth_refinery_docket_pack.md`
 - `seed_staging/future/seed_aoa_growth_refinery_contract_seed_pack.md`
+- `seed_staging/future/seed_aoa_first_wave_candidate_lineage_pack.md`
+- `seed_staging/future/seed_aoa_remaining_seeds_execution_pack.md`
 
 ### `partially_landed_retained_for_lineage`
 
 - `seed_staging/questbook/seed_questbook_seedgarden_profile_pack.md`
 - `seed_staging/future/seed_aoa_stats_telemetry_pack.md`
 - `seed_staging/future/seed_aoa_codex_surface_plane_pack.md`
-- `seed_staging/future/seed_aoa_first_wave_candidate_lineage_pack.md`
-- `seed_staging/future/seed_aoa_remaining_seeds_execution_pack.md`
 - `seed_staging/future/seed_tos_graph_curation_pack.md`
 - `seed_staging/future/seed_aoa_rag_skeleton_pack.md`
 
@@ -216,13 +214,14 @@ Reading:
   upstream across `Agents-of-Abyss`, `aoa-sdk`, `aoa-skills`, `Dionysus`,
   `aoa-stats`, `aoa-evals`, `aoa-playbooks`, and `aoa-memo`; keep them as
   rollout-order, proving-chain, and acceptance-gate lineage only
-- the first-wave candidate-lineage pack is partially landed lineage
-  hardening: the live surfaces exist, while the current follow-through is one
-  aligned example chain, one center validator, and the named schema/doc seams
-- the remaining-seeds execution pack is partially landed follow-through:
-  already-landed Growth Refinery stats/playbook/memo surfaces stay untouched,
-  the `aoa-diagnosis-cause-discipline` proof bundle is the selected missing
-  owner slice, and Wave D automation remains deferred
+- the first-wave candidate-lineage pack is now landed lineage hardening:
+  the live example chain is aligned across `aoa-sdk`, `aoa-skills`, and
+  `Dionysus`, the center validator lives in `Agents-of-Abyss`, and the named
+  schema/doc seams are closed
+- the remaining-seeds execution pack is now landed follow-through lineage:
+  already-landed Growth Refinery stats/playbook/memo surfaces stayed
+  untouched, `aoa-evals` owns the `aoa-diagnosis-cause-discipline` proof
+  bundle, and Wave D automation remains deferred
 
 ### `staged_only_not_landed`
 
