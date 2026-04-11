@@ -71,6 +71,10 @@ EXPECTED_NOTES = {
         "kind": "prep-pack-note",
         "lifecycle_status": "staged_only_not_landed",
     },
+    "seed_staging/future/seed_aoa_codex_surface_plane_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "partially_landed_retained_for_lineage",
+    },
     "seed_staging/future/seed_aoa_rag_skeleton_pack.md": {
         "kind": "prep-pack-note",
         "lifecycle_status": "partially_landed_retained_for_lineage",

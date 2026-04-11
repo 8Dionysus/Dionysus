@@ -91,6 +91,23 @@ Read those markers first, then verify the owner repos directly.
 - `seed_aoa_automation_opportunity_scan_pack.md` is a newer staged add-on pack
   for automation-readiness detection around the live session-harvest family and
   the existing playbook automation-seed posture
+- `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
+  pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
+  live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
+  now live through `aoa-stats` and `/srv/.codex`, the repo-local `dionysus`
+  MCP is now live through `Dionysus` and `/srv/.codex`, and the first
+  skill-to-MCP wiring slice is now live through `aoa-skills` plus workspace
+  route-discipline guidance, the first `aoa-agents` subagent projection is now
+  live through `aoa-agents` plus `/srv/.codex/agents/`, the first launcher
+  plugin slice is now live through `/srv/.codex/plugins/` plus
+  `/srv/.agents/plugins/marketplace.json`, the first convergence slice is now
+  live through `/srv/.codex/tools/`, `/srv/.codex/scripts/`,
+  `/srv/.codex/bin/`, and `/srv/.codex/generated/codex/`, and the first
+  hooked-doctor slice is now live through
+  `/srv/.codex/tools/aoa_codex_hooks/`,
+  `/srv/.codex/scripts/aoa_codex_hooks_doctor.py`, `/srv/.codex/hooks/`, and
+  `/srv/.codex/generated/codex/hooks/`, while the wider lineage route remains
+  deferred
 - `seed_aoa_rag_skeleton_pack.md` is now a partially landed lineage pack for a
   thin RAG spine across public AoA and ToS owner surfaces; the first
   `abyss-stack` consumer slice is live, while owner-surface regrounding and
@@ -146,6 +163,7 @@ Current exploratory notes live under:
 
 - `seed_staging/questbook/seed_questbook_seedgarden_profile_pack.md`
 - `seed_staging/future/seed_aoa_stats_telemetry_pack.md`
+- `seed_staging/future/seed_aoa_codex_surface_plane_pack.md`
 - `seed_staging/future/seed_tos_graph_curation_pack.md`
 - `seed_staging/future/seed_aoa_rag_skeleton_pack.md`
 
@@ -155,6 +173,15 @@ Reading:
 - the `8Dionysus` slice remains deferred
 - the first owner-local telemetry receipt wave landed, but the derived stats
   adjunct remains deferred
+- the workspace-level `aoa_workspace` MCP, project-level `/srv/.codex` glue,
+  the repo-local `aoa_stats` and `dionysus` MCPs, and the first `aoa-skills`
+  skill-to-MCP wiring slice landed, the first `aoa-agents` subagent
+  projection plus `/srv/.codex/agents/` install seam landed, the first
+  launcher plugin slice landed through `/srv/.codex/plugins/` and
+  `/srv/.agents/plugins/marketplace.json`, the first convergence slice landed
+  through workspace-local `.codex` tooling and reports, the first hooked-doctor
+  slice landed through workspace-local `.codex` tooling, hooks, and reports,
+  while wider lineage follow-through remains deferred
 - the first owner-local ToS graph curation slice landed in `abyss-stack`, but
   validator-gated writeback and any repo-local `Tree-of-Sophia` hardening
   remain deferred
