@@ -1,0 +1,104 @@
+map_version: 1
+updated_at: '2026-04-11'
+seed_note: seed_staging/future/seed_aoa_first_wave_candidate_lineage_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-first-wave-candidate-lineage-pack-2026-04-11.zip
+  companion_summary: archive/seed_pack_exports/aoa-first-wave-candidate-lineage-pack-2026-04-11-summary.md
+  included_surfaces:
+    - aoa_first_wave_candidate_lineage_pack/README.md
+    - aoa_first_wave_candidate_lineage_pack/LIVE_STATE_ALIGNMENT.md
+    - aoa_first_wave_candidate_lineage_pack/contracts/candidate_lineage_contract_v1.md
+    - aoa_first_wave_candidate_lineage_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_first_wave_candidate_lineage_pack/PR_SLICES.md
+    - aoa_first_wave_candidate_lineage_pack/ACCEPTANCE_MATRIX.md
+    - aoa_first_wave_candidate_lineage_pack/proposed-targets/Agents-of-Abyss/scripts/validate_candidate_lineage_contract.py
+    - aoa_first_wave_candidate_lineage_pack/proposed-targets/aoa-sdk/schemas/closeout_candidate_lineage_map.schema.json
+    - aoa_first_wave_candidate_lineage_pack/proposed-targets/aoa-sdk/examples/closeout_candidate_lineage_map.example.json
+    - aoa_first_wave_candidate_lineage_pack/proposed-targets/aoa-skills/docs/CANDIDATE_REF_REFINERY.md
+    - aoa_first_wave_candidate_lineage_pack/proposed-targets/Dionysus/examples/seed_lineage_entry.example.json
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss validator seam
+  family_rule:
+    - keep one live chain aligned as cluster_ref -> candidate_ref -> seed_ref
+    - keep aoa-sdk provisional and out of reviewed candidate or seed identity
+    - keep aoa-skills as the reviewed candidate_ref owner
+    - keep Dionysus as the seed_ref owner
+  landing_rule:
+    - patch missing seams rather than duplicating already-landed doctrine docs
+    - adapt proposed-targets to live repo conventions
+    - keep examples and schemas coherent before widening automation
+  lineage_precondition:
+    - aoa-sdk checkpoint example must share cluster_ref with aoa-skills receipt
+    - aoa-skills receipt must share candidate_ref with Dionysus seed example
+    - Dionysus seed example must keep seed_ref local and object_ref absent until planted
+  downstream_rule:
+    - do not start Wave D automation in this planting
+  derivative_rule:
+    - do not let aoa-routing, aoa-kag, stats, memo, or workspace glue become first-authoring homes for candidate identity
+  sequence_rule:
+    - first land Agents-of-Abyss validator
+    - then land aoa-sdk closeout map and checkpoint example alignment
+    - then land aoa-skills candidate-ref hardening
+    - then land Dionysus seed-lineage example alignment
+    - then run the cross-repo validator
+targets:
+  - repo: Agents-of-Abyss
+    contour: center validation pointer
+    files:
+      - scripts/validate_candidate_lineage_contract.py
+    validation:
+      - python scripts/validate_candidate_lineage_contract.py --workspace-root /srv
+      - python scripts/build_center_entry_map.py --check
+      - python scripts/validate_center_entry_map.py
+      - python scripts/validate_ecosystem.py
+      - python -m pytest -q tests
+    focus:
+      - validate the cross-repo example chain without becoming a candidate ledger
+  - repo: aoa-sdk
+    contour: provisional closeout lineage carry
+    files:
+      - schemas/closeout_candidate_lineage_map.schema.json
+      - examples/closeout_candidate_lineage_map.example.json
+      - examples/checkpoint_lineage_hint.example.json
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - keep cluster_ref carry without candidate_ref, seed_ref, or object_ref minting
+  - repo: aoa-skills
+    contour: reviewed candidate identity hardening
+    files:
+      - docs/CANDIDATE_REF_REFINERY.md
+      - skills/aoa-session-donor-harvest/references/harvest-packet-receipt-schema.yaml
+      - examples/session_harvest_family.receipts.example.json
+    validation:
+      - python scripts/build_catalog.py --check
+      - python scripts/validate_skills.py --fail-on-review-truth-sync
+      - python scripts/report_skill_evaluation.py --fail-on-canonical-gaps
+      - python -m pytest -q tests
+    focus:
+      - allow reviewed lineage entries while keeping seed_ref and object_ref out
+  - repo: Dionysus
+    contour: seed identity example alignment
+    files:
+      - examples/seed_lineage_entry.example.json
+    validation:
+      - python scripts/validate_seed_surfaces.py
+      - python scripts/build_seed_route_map.py --check
+      - python scripts/validate_seed_route_map.py
+      - python -m pytest -q tests
+    focus:
+      - keep seed_ref local and align status_posture with first-wave grammar
+scope_exclusions:
+  - duplicate doctrine docs
+  - direct proposed-target imports
+  - seed_ref or object_ref in aoa-sdk or aoa-skills
+  - Wave D automation

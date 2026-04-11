@@ -1,0 +1,68 @@
+map_version: 1
+updated_at: '2026-04-11'
+seed_note: seed_staging/future/seed_aoa_remaining_seeds_execution_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-remaining-seeds-execution-pack-2026-04-11.zip
+  companion_summary: archive/seed_pack_exports/aoa-remaining-seeds-execution-pack-2026-04-11-summary.md
+  included_surfaces:
+    - aoa_remaining_seeds_execution_pack/README.md
+    - aoa_remaining_seeds_execution_pack/CONCEPT__WHAT_REMAINS_TO_BE_SEEDED.md
+    - aoa_remaining_seeds_execution_pack/WAVES__EXECUTION_SEQUENCE.md
+    - aoa_remaining_seeds_execution_pack/DOCKET__REPO_BY_REPO.md
+    - aoa_remaining_seeds_execution_pack/ACCEPTANCE_MATRIX.md
+    - aoa_remaining_seeds_execution_pack/MEASURES__AND_SIGNALS.md
+    - aoa_remaining_seeds_execution_pack/RISK_REGISTER.md
+    - aoa_remaining_seeds_execution_pack/PR_SLICES.md
+    - aoa_remaining_seeds_execution_pack/contracts/CANDIDATE_LINEAGE_CONTRACT_SEED_v1.md
+    - aoa_remaining_seeds_execution_pack/manifests/aoa_remaining_seeds_manifest.v1.json
+    - aoa_remaining_seeds_execution_pack/maps/REMAINING_SEEDS_DECISION_MAP.md
+    - aoa_remaining_seeds_execution_pack/prompts/CODEX__implement_remaining_seeds.md
+    - aoa_remaining_seeds_execution_pack/templates/REMAINING_SEEDS_AUDIT.template.md
+    - aoa_remaining_seeds_execution_pack/templates/REMAINING_SEEDS_WAVE_RECEIPT.template.md
+selection_policy:
+  preferred_first_owner: aoa-evals proof bundle gap
+  family_rule:
+    - treat the capsule as follow-through lineage, not as a replacement docket
+    - keep already-landed stats, playbook, and memo slices out of this planting
+    - keep Wave D automation deferred
+  landing_rule:
+    - preserve the pack in Dionysus before owner-repo mutation
+    - plant only the explicit aoa-evals diagnosis-cause-discipline gap
+    - record accepted, already-landed, and deferred items in the closeout
+  lineage_precondition:
+    - first-wave candidate-lineage hardening should validate before final closeout
+    - proof bundles must remain claim-bounded and weaker than owner truth
+  downstream_rule:
+    - do not proceed into automation Wave D during this planting
+  derivative_rule:
+    - do not move Growth Refinery authority into routing, workspace glue, stats, memo, or runtime layers
+  sequence_rule:
+    - first preserve the capsule in Dionysus
+    - then complete first-wave hardening
+    - then add aoa-evals diagnosis-cause-discipline
+    - then close out both packs in Dionysus
+targets:
+  - repo: aoa-evals
+    contour: proof bundle follow-through
+    files:
+      - bundles/aoa-diagnosis-cause-discipline/
+      - EVAL_INDEX.md
+      - EVAL_SELECTION.md
+      - generated/
+    validation:
+      - python scripts/validate_repo.py
+      - python scripts/build_catalog.py --check
+      - python -m pytest -q tests
+    focus:
+      - add diagnosis-cause-discipline as a bounded proof bundle without seizing owner meaning
+scope_exclusions:
+  - duplicate stats, playbook, or memo surfaces
+  - Wave D governed automation
+  - Wave E runtime-body work
+  - replacement of docket or contract companion packs
