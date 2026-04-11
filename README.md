@@ -48,6 +48,7 @@ After reading a prep-pack note, verify the owner repo directly before treating s
 - `seed-registry.yaml` is the human/Codex navigation overlay
 - `docs/SEED_SURFACE_MAP.md` explains how to read `seed_staging/` and `seed_notes/exploratory/` without confusing canon, staging, lineage, and exploratory donor notes
 - `docs/codex/` holds the planting protocol and provenance rules
+- `docs/CODEX_MCP.md` explains the repo-local Codex MCP surface and its stop rules
 - `templates/planting-report.template.md` defines the durable planting-report shape when Dionysus needs to hold the trace
 - `reports/planting/README.md` explains when Dionysus should keep durable planting trace instead of relying on target-repo PR or commit history alone
 - `scripts/validate_seed_surfaces.py` is the single seed-surface validation entrypoint
@@ -106,6 +107,13 @@ For current repo-local and workflow reinforcement, also run:
 
 ```bash
 python -m pytest -q tests
+```
+
+For the optional repo-local MCP slice, also run:
+
+```bash
+python -m pytest -q tests/test_dionysus_mcp_state.py
+python scripts/dionysus_mcp_server.py
 ```
 
 For advisory v3 readiness status only, also use:

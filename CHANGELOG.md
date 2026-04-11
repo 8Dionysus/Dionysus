@@ -7,6 +7,21 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+### Added
+
+- narrow repo-local `dionysus` MCP surface for Codex under
+  `src/dionysus_mcp/` and `scripts/dionysus_mcp_server.py`, scoped to route
+  maps, registry navigation, wave context, staging-note reality checks,
+  planting rules, and quest follow-through
+- focused MCP state tests under `tests/test_dionysus_mcp_state.py`
+- optional MCP dependency surface in `requirements-mcp.txt`
+
+### Documentation
+
+- repo-local MCP posture and launch guidance in `docs/CODEX_MCP.md`
+- README and AGENTS routing updates so the MCP stays route-first and
+  non-sovereign
+
 ## [0.1.0] - 2026-04-10
 
 ### Summary

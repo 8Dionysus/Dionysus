@@ -86,6 +86,14 @@ When the requested change is not truly seed-owned, route by the question being a
 
 Keep seed work here only when staging, replay, lineage preservation, or pre-canon shaping is still the real task.
 
+When the task is specifically about repo-local Codex orientation inside
+`Dionysus`, also read:
+
+- `docs/CODEX_MCP.md`
+- `scripts/dionysus_mcp_server.py`
+- `src/dionysus_mcp/`
+- `tests/test_dionysus_mcp_state.py`
+
 ## Local contract
 
 - keep `Dionysus` small, legible, lineage-preserving, and transplant-focused
@@ -96,6 +104,8 @@ Keep seed work here only when staging, replay, lineage preservation, or pre-cano
 - keep public surfaces public-safe
 - treat already-landed repositories as live homes rather than deferred future seeds
 - keep repo-local questbook surfaces evidence-first and adjunct-only
+- keep the `dionysus` MCP route-first, read-only, and weaker than manifests,
+  registry, closure notes, and owner-repo reality
 
 ## Hard no
 
@@ -165,6 +175,13 @@ For repo-local and workflow reinforcement, also run:
 
 ```bash
 python -m pytest -q tests
+```
+
+For the optional repo-local MCP slice, also run:
+
+```bash
+python -m pytest -q tests/test_dionysus_mcp_state.py
+python scripts/dionysus_mcp_server.py
 ```
 
 Use `reports/planting/` only when the target-repo PR or commit trail would not preserve the lineage well enough on its own.
