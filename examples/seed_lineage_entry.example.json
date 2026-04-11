@@ -2,14 +2,14 @@
   "schema_version": "dionysus_seed_lineage_entry_v1",
   "seed_ref": "seed:aoa:session-growth:reviewed-donor-harvest:v1",
   "candidate_ref": "candidate:session-growth:reviewed-donor-harvest",
-  "cluster_ref": "cluster:checkpoint:session-growth",
+  "cluster_ref": "cluster:growth:aoa-sdk-checkpoint-auto-capture-verify-green",
   "owner_hypothesis": "aoa-skills",
-  "owner_shape": "reviewed-owner-local-receipt",
+  "owner_shape": "skill",
   "lifecycle_status": "staged",
-  "status_posture": "reviewed_ready_for_seed_staging",
+  "status_posture": "early",
   "evidence_refs": [
     "repo:aoa-skills/examples/session_growth_artifacts/candidate_lineage_receipt.alpha.json",
-    "seed_staging/future/seed_aoa_growth_refinery_contract_seed_pack.md#boundary-posture-to-preserve"
+    "docs/CANDIDATE_SEED_IDENTITY.md#what-dionysus-must-carry"
   ],
   "supersedes": [],
   "merged_into": null,

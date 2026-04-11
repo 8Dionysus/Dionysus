@@ -62,6 +62,8 @@ The local seed-lineage example is intentionally structural:
 - `planted` must carry a non-null `object_ref`
 - `superseded` must point at `merged_into`
 - `dropped` must explain `drop_reason`
+- `status_posture` must stay within `early`, `reanchor`, `thin-evidence`,
+  or `stable`
 
 That is enough for local consistency without claiming proof that an owner-repo
 planting already landed.
