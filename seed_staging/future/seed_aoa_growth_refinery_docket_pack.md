@@ -4,8 +4,8 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: The reviewable growth refinery docket remains staged in Dionysus; the post-Codex internal lineage route is planned, but no owner-repo slice for cluster_ref -> candidate_ref -> seed_ref -> object_ref is landed yet.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: The reviewable growth refinery route is now landed upstream across Agents-of-Abyss, aoa-sdk, aoa-skills, Dionysus, aoa-stats, aoa-evals, aoa-playbooks, and aoa-memo; keep this docket pack in Dionysus as rollout-order and lineage evidence only.
 reality_checked_at: '2026-04-11'
 status: pending_archive
 priority: high
@@ -111,6 +111,10 @@ Read later landings under these owner boundaries:
 
 Treat this pack as staged future prep work.
 
+As of `2026-04-11`, the ordered owner slices listed below are landed upstream.
+Keep the route order here as lineage and replay evidence, not as the active
+owner queue.
+
 The honest landing order is:
 
 1. `Agents-of-Abyss` doctrine and lineage crosswalk
@@ -144,6 +148,10 @@ repo that owns them.
 
 Keep this pack because it names the next real internal AoA route after the
 merged Codex-plane landing.
+
+The route itself is now landed upstream. `Dionysus` keeps this note only so
+the rollout order, stop-lines, and owner boundaries remain inspectable after
+the owner repos took truth custody.
 
 But preserve the difference between:
 

@@ -166,6 +166,8 @@ Current exploratory notes live under:
 - `seed_staging/rpg/seed_rpg_runtime_projection_pack.md`
 - `seed_staging/future/seed_aoa_session_harvest_family_pack.md`
 - `seed_staging/audit/seed_federated_audit_remediation_pack.md`
+- `seed_staging/future/seed_aoa_growth_refinery_docket_pack.md`
+- `seed_staging/future/seed_aoa_growth_refinery_contract_seed_pack.md`
 
 ### `partially_landed_retained_for_lineage`
 
@@ -199,6 +201,10 @@ Reading:
   runtime-reference revalidation remain deferred
 - the federated audit remediation pack is now fully landed upstream and
   retained only for lineage, replay, and owner-repo reality checks
+- the growth-refinery docket and contract companion packs are now landed
+  upstream across `Agents-of-Abyss`, `aoa-sdk`, `aoa-skills`, `Dionysus`,
+  `aoa-stats`, `aoa-evals`, `aoa-playbooks`, and `aoa-memo`; keep them as
+  rollout-order, proving-chain, and acceptance-gate lineage only
 
 ### `staged_only_not_landed`
 
@@ -209,8 +215,6 @@ Reading:
 - `seed_staging/future/seed_memory_evals_skills_docs_pack.md`
 - `seed_staging/future/seed_future_agent_systems_prep_pack.md`
 - `seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md`
-- `seed_staging/future/seed_aoa_growth_refinery_docket_pack.md`
-- `seed_staging/future/seed_aoa_growth_refinery_contract_seed_pack.md`
 
 ### `donor_only_not_planted`
 

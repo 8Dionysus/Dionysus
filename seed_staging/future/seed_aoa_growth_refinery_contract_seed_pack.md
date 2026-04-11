@@ -4,8 +4,8 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: The growth-refinery contract companion remains staged in Dionysus as the v1 contract substrate for the wider docket route; no owner-layer slice from this companion pack is landed yet.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: The growth-refinery contract companion is now landed upstream across Agents-of-Abyss, aoa-sdk, aoa-skills, Dionysus, aoa-stats, aoa-evals, aoa-playbooks, and aoa-memo; keep this pack in Dionysus as contract, acceptance-gate, and lineage evidence only.
 reality_checked_at: '2026-04-11'
 status: pending_archive
 priority: high
@@ -133,6 +133,10 @@ Read later landings under these owner boundaries:
 
 Treat this pack as the contract companion for the staged route.
 
+As of `2026-04-11`, the ordered owner slices listed below are landed upstream.
+Keep this companion pack as replayable contract substrate, not as an active
+owner queue or a stronger authority than the landed repos.
+
 The honest landing order stays:
 
 1. `Agents-of-Abyss`
@@ -163,6 +167,10 @@ When planted later:
 
 Keep this pack because the staged docket route now needs concrete v1 contracts,
 examples, and acceptance gates.
+
+Those contracts are now represented by landed owner-repo surfaces. `Dionysus`
+keeps this note only so the companion acceptance gates, examples, and tiny
+validator posture remain easy to trace after planting.
 
 But preserve the difference between:
 
