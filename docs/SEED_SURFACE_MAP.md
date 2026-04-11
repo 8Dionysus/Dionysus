@@ -91,14 +91,13 @@ Read those markers first, then verify the owner repos directly.
 - `seed_aoa_automation_opportunity_scan_pack.md` is a newer staged add-on pack
   for automation-readiness detection around the live session-harvest family and
   the existing playbook automation-seed posture
-- `seed_aoa_growth_refinery_docket_pack.md` is a staged-only future prep pack
-  for the post-Codex internal lineage route
-  `cluster_ref -> candidate_ref -> seed_ref -> object_ref`; no owner-layer
-  slice from this docket is landed yet
-- `seed_aoa_growth_refinery_contract_seed_pack.md` is the staged contract
-  companion to that docket pack: it carries the v1 contract substrate,
-  acceptance gates, examples, and the tiny structural validator without
-  replacing the route-order or stop-line authority of the docket
+- `seed_aoa_growth_refinery_docket_pack.md` is now landed upstream and retained
+  for lineage as the route-order record for the post-Codex internal lineage
+  chain `cluster_ref -> candidate_ref -> seed_ref -> object_ref`
+- `seed_aoa_growth_refinery_contract_seed_pack.md` is now landed upstream and
+  retained for lineage as the contract companion to that docket pack: it
+  preserves the v1 contract substrate, acceptance gates, examples, and tiny
+  structural validator posture without replacing owner-repo truth
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is

@@ -42,6 +42,20 @@ class ValidateSeedLineageExamplesTests(unittest.TestCase):
         self.assertEqual(1, len(errors))
         self.assertIn("must keep object_ref null before planting", errors[0])
 
+    def test_entry_requires_cluster_ref(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            example_path = root / "examples/seed_lineage_entry.example.json"
+            payload = json.loads(example_path.read_text(encoding="utf-8"))
+            del payload["cluster_ref"]
+            example_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+            errors = validate_seed_lineage_examples.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("'cluster_ref' is a required property", errors[0])
+
     def test_merged_into_requires_superseded_state(self) -> None:
         with TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
@@ -55,6 +69,34 @@ class ValidateSeedLineageExamplesTests(unittest.TestCase):
 
         self.assertEqual(1, len(errors))
         self.assertIn("merged_into requires lifecycle_status 'superseded'", errors[0])
+
+    def test_superseded_state_requires_merged_into(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            example_path = root / "examples/seed_lineage_entry.example.json"
+            payload = json.loads(example_path.read_text(encoding="utf-8"))
+            payload["lifecycle_status"] = "superseded"
+            example_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+            errors = validate_seed_lineage_examples.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("lifecycle_status 'superseded' requires merged_into", errors[0])
+
+    def test_dropped_state_requires_drop_reason(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            example_path = root / "examples/seed_lineage_entry.example.json"
+            payload = json.loads(example_path.read_text(encoding="utf-8"))
+            payload["lifecycle_status"] = "dropped"
+            example_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+            errors = validate_seed_lineage_examples.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("lifecycle_status 'dropped' requires drop_reason", errors[0])
 
 
 if __name__ == "__main__":

@@ -16,6 +16,7 @@ REQUIRED_SCHEMA_FIELDS = (
     "schema_version",
     "seed_ref",
     "candidate_ref",
+    "cluster_ref",
     "owner_hypothesis",
     "owner_shape",
     "lifecycle_status",
@@ -99,8 +100,12 @@ def validate_example_payload(payload: object, schema: object, *, root: Path) -> 
         fail(f"{display_path(root / EXAMPLE_REL, root)} must carry object_ref once lifecycle_status is 'planted'")
     if merged_into is not None and lifecycle_status != "superseded":
         fail(f"{display_path(root / EXAMPLE_REL, root)} merged_into requires lifecycle_status 'superseded'")
+    if lifecycle_status == "superseded" and merged_into is None:
+        fail(f"{display_path(root / EXAMPLE_REL, root)} lifecycle_status 'superseded' requires merged_into")
     if drop_reason is not None and lifecycle_status != "dropped":
         fail(f"{display_path(root / EXAMPLE_REL, root)} drop_reason requires lifecycle_status 'dropped'")
+    if lifecycle_status == "dropped" and drop_reason is None:
+        fail(f"{display_path(root / EXAMPLE_REL, root)} lifecycle_status 'dropped' requires drop_reason")
     if payload["seed_ref"] == payload["candidate_ref"]:
         fail(f"{display_path(root / EXAMPLE_REL, root)} seed_ref must stay distinct from candidate_ref")
     if payload["seed_ref"] in supersedes:
