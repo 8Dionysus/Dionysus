@@ -4,8 +4,8 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: partially_landed_retained_for_lineage
-lifecycle_note: The Growth Refinery first-wave lineage surfaces are already partly landed across Agents-of-Abyss, aoa-sdk, aoa-skills, and Dionysus; keep this pack as the hardening guide for one aligned live example chain, one cross-repo validator, and the remaining schema/example/doc seams.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: 'The Growth Refinery first-wave lineage hardening is now landed upstream across Agents-of-Abyss, aoa-sdk, aoa-skills, and Dionysus; keep this pack as lineage evidence for the aligned cluster_ref -> candidate_ref -> seed_ref chain, the center validator, and the closed schema/example/doc seams.'
 reality_checked_at: '2026-04-11'
 status: pending_archive
 priority: high
@@ -76,17 +76,17 @@ Read this pack under these boundaries:
 
 ## Application posture
 
-Treat this pack as partially landed lineage hardening.
+Treat this pack as landed upstream and retained for lineage.
 
-The current owner-repo slices already exist, so later planting must be minimal:
+The current owner-repo slices now exist:
 
-1. add the missing `Agents-of-Abyss` validator
-2. add the `aoa-sdk` closeout candidate-lineage map schema and example
-3. align the `aoa-sdk` checkpoint hint example with the live chain
-4. add an `aoa-skills` candidate-ref bridge note
-5. harden the existing harvest-packet receipt schema for lineage entries
-6. align the `Dionysus` seed lineage example with the same chain
-7. run the cross-repo validator
+1. `Agents-of-Abyss` owns the center cross-repo validator
+2. `aoa-sdk` owns the closeout candidate-lineage map and provisional
+   checkpoint example alignment
+3. `aoa-skills` owns the candidate-ref bridge note and reviewed receipt
+   schema hardening
+4. `Dionysus` owns the seed lineage example alignment
+5. the cross-repo validator passes for the live example chain
 
 ## What this pack is not for
 
