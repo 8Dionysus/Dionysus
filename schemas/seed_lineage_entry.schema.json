@@ -7,6 +7,7 @@
     "schema_version",
     "seed_ref",
     "candidate_ref",
+    "cluster_ref",
     "owner_hypothesis",
     "owner_shape",
     "lifecycle_status",
