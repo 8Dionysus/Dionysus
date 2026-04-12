@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dionysus seed_owner_landing_trace_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "candidate_ref",
+    "seed_ref",
+    "owner_repo",
+    "owner_shape",
+    "outcome",
+    "owner_status_ref",
+    "object_ref",
+    "merged_into",
+    "superseded_by",
+    "drop_reason",
+    "observed_at",
+    "evidence_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "dionysus_seed_owner_landing_trace_v1"
+    },
+    "cluster_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "candidate_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seed_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_shape": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "landed_owner_status",
+        "landed_owner_object",
+        "reanchored",
+        "merged",
+        "deferred",
+        "dropped"
+      ]
+    },
+    "owner_status_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "object_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "merged_into": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "superseded_by": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "drop_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

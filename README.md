@@ -54,6 +54,7 @@ After reading a prep-pack note, verify the owner repo directly before treating s
 - `reports/planting/README.md` explains when Dionysus should keep durable planting trace instead of relying on target-repo PR or commit history alone
 - `scripts/validate_seed_surfaces.py` is the single seed-surface validation entrypoint
 - `schemas/seed_lineage_entry.schema.json`, `examples/seed_lineage_entry.example.json`, and `scripts/validate_seed_lineage_examples.py` keep the local seed-lineage witness structural instead of sovereign
+- `docs/SEED_OWNER_LANDING_TRACE.md`, `schemas/seed_owner_landing_trace.schema.json`, `examples/seed_owner_landing_trace.example.json`, and `scripts/validate_seed_owner_landing_trace.py` keep the seed-to-owner follow-through trace subordinate to seed registry, planting protocol, and owner-repo truth
 - `seed_staging/` holds structured transport and staging packs grouped by domain instead of mixing them into the root
 - `seed_notes/exploratory/` holds informal exploratory seed texts that should not be mistaken for queue control
 - repo-local questbook surfaces in `QUESTBOOK.md`, `quests/`, `schemas/`, and `generated/` are follow-through for the seed garden, not a second sovereignty layer

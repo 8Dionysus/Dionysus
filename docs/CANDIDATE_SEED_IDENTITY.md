@@ -46,6 +46,14 @@ The repo-local structural surface for that entry lives in:
 - `examples/seed_lineage_entry.example.json`
 - `scripts/validate_seed_lineage_examples.py`
 
+Once `seed_ref` already exists and the route needs a visible post-staging
+followthrough witness, continue with:
+
+- `docs/SEED_OWNER_LANDING_TRACE.md`
+- `schemas/seed_owner_landing_trace.schema.json`
+- `examples/seed_owner_landing_trace.example.json`
+- `scripts/validate_seed_owner_landing_trace.py`
+
 ## Negative Rules
 
 - do not mint `seed_ref` without a reviewed `candidate_ref`
@@ -76,3 +84,6 @@ The current growth-refinery bridge example keeps one reviewed candidate from
 That example is not the final rollout report.
 It is the local contract witness that the `candidate_ref -> seed_ref` step can
 be carried honestly inside this repo.
+
+The separate seed-owner trace example starts only after that step and records
+what happened next without outranking the owner repository.
