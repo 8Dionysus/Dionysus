@@ -110,11 +110,10 @@ Read those markers first, then verify the owner repos directly.
   for the downstream Growth Refinery convergence layer across `aoa-stats`,
   `aoa-evals`, `aoa-playbooks`, and `aoa-memo`; use it to harden existing
   repo-owned surfaces and add one shared validator without widening authority
-- `seed_aoa_wave3_owner_landing_followthrough_pack.md` is a newly staged future
-  pack for the post-candidate owner-followthrough and pruning layer; use it
-  after wave2 to harden owner-status, governed follow-through, seed-to-owner
-  trace, and prune visibility while preserving the live first-wave grammar and
-  existing follow-through playbook family
+- `seed_aoa_wave3_owner_landing_followthrough_pack.md` is now landed upstream
+  and retained for lineage as the post-candidate owner-followthrough and
+  pruning layer across `Agents-of-Abyss`, `aoa-sdk`, `aoa-skills`,
+  `Dionysus`, `aoa-stats`, `aoa-playbooks`, and `aoa-memo`
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -232,6 +231,12 @@ Reading:
   already-landed Growth Refinery stats/playbook/memo surfaces stayed
   untouched, `aoa-evals` owns the `aoa-diagnosis-cause-discipline` proof
   bundle, and Wave D automation remains deferred
+- the wave3 owner-followthrough pack is now landed upstream lineage: owner
+  landing doctrine lives in `Agents-of-Abyss`, reviewed follow-through carry
+  lives in `aoa-sdk`, owner-status surfaces live in `aoa-skills`, seed trace
+  lives in `Dionysus`, derived pruning summaries live in `aoa-stats`, the
+  narrower campaign route lives in `aoa-playbooks`, and bounded prune
+  writeback lives in `aoa-memo`
 
 ### `staged_only_not_landed`
 
@@ -243,7 +248,6 @@ Reading:
 - `seed_staging/future/seed_future_agent_systems_prep_pack.md`
 - `seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md`
 - `seed_staging/future/seed_aoa_wave2_refinery_convergence_pack.md`
-- `seed_staging/future/seed_aoa_wave3_owner_landing_followthrough_pack.md`
 
 ### `donor_only_not_planted`
 

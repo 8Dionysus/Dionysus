@@ -77,7 +77,7 @@ EXPECTED_NOTES = {
     },
     "seed_staging/future/seed_aoa_wave3_owner_landing_followthrough_pack.md": {
         "kind": "prep-pack-note",
-        "lifecycle_status": "staged_only_not_landed",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
     },
     "seed_staging/future/seed_aoa_codex_surface_plane_pack.md": {
         "kind": "prep-pack-note",
