@@ -137,13 +137,14 @@ Read those markers first, then verify the owner repos directly.
   cadence layer in `aoa-playbooks` landed as an `AOA-P-0028` adjunct rather
   than a new sovereign playbook, bounded follow-through examples now live in
   `aoa-memo`, and `aoa-sdk` keeps only the typed campaign-ref boundary note
-- `seed_aoa_wave9_self_agency_continuity_pack.md` is a newly staged future
-  pack for bounded self-agency continuity across `Agents-of-Abyss`,
-  `aoa-agents`, `aoa-sdk`, `aoa-playbooks`, `aoa-memo`, `aoa-stats`, and
-  `aoa-evals`; use it to keep continuity windows, bounded revision windows,
-  explicit reanchor decisions, anchor-artifact return, continuity support
-  writeback, derived continuity summaries, and proof bundles reviewable while
-  preventing runtime-autonomy drift and keeping route authority split
+- `seed_aoa_wave9_self_agency_continuity_pack.md` is now a landed-upstream
+  lineage pack for bounded self-agency continuity: doctrine now lives in
+  `Agents-of-Abyss`, continuity windows and anchor-return semantics live in
+  `aoa-agents`, proof bundles live in `aoa-evals`, the hint carry lives in
+  `aoa-sdk`, the recurring `AOA-P-0029` route lives in `aoa-playbooks`,
+  bounded continuity support writeback lives in `aoa-memo`, and derived
+  continuity summaries live in `aoa-stats`, while runtime-autonomy drift
+  remains explicitly rejected
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -273,6 +274,12 @@ Reading:
   `aoa-stats`, the cadence layer in `aoa-playbooks` stays companion-only under
   `AOA-P-0028`, bounded drift-review and rollback-followthrough examples live
   in `aoa-memo`, and `aoa-sdk` keeps only the typed campaign-ref boundary note
+- the wave9 self-agency continuity pack is now landed upstream lineage:
+  doctrine lives in `Agents-of-Abyss`, explicit continuity windows and anchor
+  return live in `aoa-agents`, proof bundles live in `aoa-evals`, typed
+  continuity hints live in `aoa-sdk`, the recurring `AOA-P-0029` route lives
+  in `aoa-playbooks`, bounded continuity support writeback lives in
+  `aoa-memo`, and derived continuity summaries live in `aoa-stats`
 
 ### `staged_only_not_landed`
 
@@ -287,7 +294,6 @@ Reading:
 - `seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md`
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
 - `seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md`
-- `seed_staging/future/seed_aoa_wave9_self_agency_continuity_pack.md`
 
 ### `donor_only_not_planted`
 
