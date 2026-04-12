@@ -7,6 +7,16 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-04-12
+
+### Summary
+
+- this patch adds repo-local Codex MCP disclosure and stages the current
+  release-line seed packs through continuity and federation KAG follow-through
+- seeded wave lifecycle audits are tightened for the live staging line
+- `Dionysus` remains the seed garden and staging surface rather than live
+  owner truth
+
 ### Added
 
 - narrow repo-local `dionysus` MCP surface for Codex under
@@ -15,12 +25,24 @@ Tracking starts with the community-docs baseline for this repository.
   planting rules, and quest follow-through
 - focused MCP state tests under `tests/test_dionysus_mcp_state.py`
 - optional MCP dependency surface in `requirements-mcp.txt`
+- staged release-line seed packs for owner follow-through, rollout campaign
+  cadence, self-agency continuity, and the federation KAG factory upgrade
+  path
 
 ### Documentation
 
 - repo-local MCP posture and launch guidance in `docs/CODEX_MCP.md`
 - README and AGENTS routing updates so the MCP stays route-first and
   non-sovereign
+
+### Changed
+
+- seeded wave lifecycle audits and continuity closeout traces are tightened
+  across the current release line.
+
+### Validation
+
+- `python scripts/release_check.py`
 
 ## [0.1.0] - 2026-04-10
 
