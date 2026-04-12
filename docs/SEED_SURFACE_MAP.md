@@ -149,13 +149,16 @@ Read those markers first, then verify the owner repos directly.
   bounded continuity support writeback lives in `aoa-memo`, and derived
   continuity summaries live in `aoa-stats`, while runtime-autonomy drift
   remains explicitly rejected
-- `seed_aoa_wave10_component_refresh_pack.md` is a newly staged future pack
-  for component refresh and self-maintenance triggers across
-  `Agents-of-Abyss`, `8Dionysus`, `aoa-sdk`, `aoa-skills`, `aoa-agents`,
-  `aoa-stats`, `aoa-playbooks`, and `aoa-memo`; use it to keep refresh law
-  owner-owned, drift hints hint-only or reviewed-only, playbook coordination
-  recommendation-only, and stats visibility derived-only, with no scheduler
-  authority or self-healing mythology
+- `seed_aoa_wave10_component_refresh_pack.md` is now a landed-upstream
+  lineage pack for bounded component refresh: doctrine and negative rules now
+  live in `Agents-of-Abyss`, the shared-root workspace route and Codex-plane
+  refresh law now live in `8Dionysus`, typed drift hints and reviewed
+  follow-through decisions now live in `aoa-sdk`, repo-local refresh laws now
+  live in `aoa-agents` and `aoa-skills`, derived refresh visibility now lives
+  in `aoa-stats`, the recurring `AOA-P-0030` route now lives in
+  `aoa-playbooks`, and bounded recovery-pattern writeback now lives in
+  `aoa-memo`, while scheduler authority and self-healing drift remain
+  explicitly rejected
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -230,6 +233,7 @@ Current exploratory notes live under:
 - `seed_staging/future/seed_aoa_wave3_owner_landing_followthrough_pack.md`
 - `seed_staging/future/seed_aoa_wave8_campaign_cadence_pack.md`
 - `seed_staging/future/seed_aoa_wave9_self_agency_continuity_pack.md`
+- `seed_staging/future/seed_aoa_wave10_component_refresh_pack.md`
 
 ### `partially_landed_retained_for_lineage`
 
@@ -292,6 +296,13 @@ Reading:
   continuity hints live in `aoa-sdk`, the recurring `AOA-P-0029` route lives
   in `aoa-playbooks`, bounded continuity support writeback lives in
   `aoa-memo`, and derived continuity summaries live in `aoa-stats`
+- the wave10 component-refresh pack is now landed upstream lineage:
+  doctrine lives in `Agents-of-Abyss`, the shared-root workspace route and
+  Codex-plane refresh law live in `8Dionysus`, typed drift hints and reviewed
+  follow-through decisions live in `aoa-sdk`, repo-local refresh laws live in
+  `aoa-agents` and `aoa-skills`, derived refresh visibility lives in
+  `aoa-stats`, the recurring `AOA-P-0030` route lives in `aoa-playbooks`, and
+  bounded recovery-pattern writeback lives in `aoa-memo`
 
 ### `staged_only_not_landed`
 
@@ -307,7 +318,6 @@ Reading:
 - `seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md`
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
 - `seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md`
-- `seed_staging/future/seed_aoa_wave10_component_refresh_pack.md`
 
 ### `donor_only_not_planted`
 
