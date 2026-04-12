@@ -1,0 +1,177 @@
+map_version: 1
+updated_at: '2026-04-11'
+seed_note: seed_staging/future/seed_aoa_wave3_owner_landing_followthrough_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-wave3-owner-landing-followthrough-pack-2026-04-11.zip
+  companion_summary: archive/seed_pack_exports/aoa-wave3-owner-landing-followthrough-pack-2026-04-11-summary.md
+  included_surfaces:
+    - aoa_wave3_owner_landing_followthrough_pack/README.md
+    - aoa_wave3_owner_landing_followthrough_pack/IMPLEMENTATION_DOCKET.md
+    - aoa_wave3_owner_landing_followthrough_pack/PR_SLICES.md
+    - aoa_wave3_owner_landing_followthrough_pack/ACCEPTANCE_MATRIX.md
+    - aoa_wave3_owner_landing_followthrough_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_wave3_owner_landing_followthrough_pack/contracts/owner_status_surface_contract_v1.md
+    - aoa_wave3_owner_landing_followthrough_pack/contracts/governed_followthrough_contract_v1.md
+    - aoa_wave3_owner_landing_followthrough_pack/contracts/supersession_drop_law_v1.md
+    - aoa_wave3_owner_landing_followthrough_pack/patch-guides/Agents-of-Abyss.md
+    - aoa_wave3_owner_landing_followthrough_pack/patch-guides/aoa-sdk.md
+    - aoa_wave3_owner_landing_followthrough_pack/patch-guides/aoa-skills.md
+    - aoa_wave3_owner_landing_followthrough_pack/patch-guides/Dionysus.md
+    - aoa_wave3_owner_landing_followthrough_pack/patch-guides/aoa-stats.md
+    - aoa_wave3_owner_landing_followthrough_pack/patch-guides/aoa-playbooks.md
+    - aoa_wave3_owner_landing_followthrough_pack/patch-guides/aoa-memo.md
+    - aoa_wave3_owner_landing_followthrough_pack/proposed-targets/Agents-of-Abyss/docs/OWNER_LANDING_AND_PRUNING.md
+    - aoa_wave3_owner_landing_followthrough_pack/proposed-targets/aoa-sdk/docs/CLOSEOUT_FOLLOWTHROUGH_MAP.md
+    - aoa_wave3_owner_landing_followthrough_pack/proposed-targets/aoa-skills/docs/OWNER_STATUS_SURFACES.md
+    - aoa_wave3_owner_landing_followthrough_pack/proposed-targets/aoa-skills/docs/GOVERNED_FOLLOWTHROUGH.md
+    - aoa_wave3_owner_landing_followthrough_pack/proposed-targets/Dionysus/docs/SEED_OWNER_LANDING_TRACE.md
+    - aoa_wave3_owner_landing_followthrough_pack/proposed-targets/aoa-stats/docs/OWNER_LANDING_SUMMARY.md
+    - aoa_wave3_owner_landing_followthrough_pack/proposed-targets/aoa-stats/docs/SUPERSESSION_DROP_SUMMARY.md
+    - aoa_wave3_owner_landing_followthrough_pack/proposed-targets/aoa-playbooks/playbooks/owner-followthrough-campaign/PLAYBOOK.md
+    - aoa_wave3_owner_landing_followthrough_pack/proposed-targets/aoa-memo/docs/GROWTH_REFINERY_PRUNE_WRITEBACK.md
+    - aoa_wave3_owner_landing_followthrough_pack/tools/validate_wave3_owner_landing.py
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss owner-landing doctrine extension
+  family_rule:
+    - keep wave order explicit: first-wave lineage, then wave2 convergence, then wave3 owner-followthrough and pruning
+    - keep owner-status surfaces weaker than final owner objects
+    - reuse existing owner-followthrough and session-growth playbook families when they already exist
+  landing_rule:
+    - extend existing repo-native surfaces first instead of importing the pack literally
+    - preserve live artifact vocabulary and grammar such as route_follow_through_decision, thin-evidence, and cluster:*
+    - keep terminal outcomes in lifecycle or outcome fields instead of widening status_posture
+  lineage_precondition:
+    - keep first-wave candidate-lineage hardening landed and unchanged
+    - keep wave2 convergence staged ahead of this wave and do not let wave3 bypass it
+    - keep tracked owner status subordinate to reviewed owner evidence and final owner objects
+  downstream_rule:
+    - do not proceed into hidden runners, scheduler authority, or memo/stats/playbook sovereignty during this planting
+  derivative_rule:
+    - do not move authority into aoa-routing, aoa-kag, workspace glue, or Dionysus staging
+  sequence_rule:
+    - first extend center doctrine
+    - then land aoa-sdk reviewed-closeout follow-through carry
+    - then land aoa-skills reviewed owner-status and governed follow-through surfaces
+    - then land Dionysus seed-to-owner landing trace
+    - then land aoa-stats landing and supersession/drop summaries
+    - then adapt aoa-playbooks existing follow-through family
+    - then land aoa-memo prune writeback hardening
+targets:
+  - repo: Agents-of-Abyss
+    contour: owner-landing and pruning doctrine extension
+    files:
+      - docs/REVIEWABLE_GROWTH_REFINERY.md
+      - docs/CANDIDATE_LINEAGE_CROSSWALK.md
+      - docs/OWNER_LANDING_AND_PRUNING.md
+      - scripts/
+    validation:
+      - python scripts/build_center_entry_map.py --check
+      - python scripts/validate_center_entry_map.py
+      - python scripts/validate_ecosystem.py
+      - python -m pytest -q tests
+    focus:
+      - keep owner-status and pruning law reviewable without creating new sovereignty
+      - preserve first-wave grammar and negative rules around routing, stats, memo, and seed layers
+  - repo: aoa-sdk
+    contour: reviewed closeout follow-through carry
+    files:
+      - docs/CLOSEOUT_FOLLOWTHROUGH_MAP.md
+      - schemas/closeout_owner_followthrough_map.schema.json
+      - examples/closeout_owner_followthrough_map.example.json
+      - docs/session-closeout.md
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - keep cluster_ref provisional and reviewed-closeout scoped
+      - do not mint candidate_ref, seed_ref, or object_ref
+  - repo: aoa-skills
+    contour: reviewed owner-status and governed follow-through surfaces
+    files:
+      - docs/
+      - schemas/
+      - examples/
+      - skills/aoa-session-donor-harvest/
+    validation:
+      - python scripts/build_catalog.py --check
+      - python scripts/validate_skills.py --fail-on-review-truth-sync
+      - python scripts/report_skill_evaluation.py --fail-on-canonical-gaps
+      - python -m pytest -q tests
+    focus:
+      - keep surfaces reviewed-only and explicit about nearest_wrong_target
+      - keep object truth out of the first tracked owner-status landing
+  - repo: Dionysus
+    contour: seed-to-owner landing outcome trace
+    files:
+      - docs/SEED_OWNER_LANDING_TRACE.md
+      - schemas/seed_owner_landing_trace.schema.json
+      - examples/seed_owner_landing_trace.example.json
+      - reports/planting/
+    validation:
+      - python scripts/validate_seed_surfaces.py
+      - python scripts/build_seed_route_map.py --check
+      - python scripts/validate_seed_route_map.py
+      - python -m pytest -q tests
+    focus:
+      - keep trace subordinate to seed registry, planting reports, and owner truth
+      - preserve honest outcome recording for reanchor, merge, defer, and drop
+  - repo: aoa-stats
+    contour: owner-landing and supersession/drop summaries
+    files:
+      - docs/OWNER_LANDING_SUMMARY.md
+      - docs/SUPERSESSION_DROP_SUMMARY.md
+      - schemas/
+      - examples/
+      - generated/
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - keep summaries derived-only and reviewed-only
+      - do not infer owner truth from staging or thin evidence alone
+  - repo: aoa-playbooks
+    contour: existing owner-followthrough family hardening
+    files:
+      - playbooks/closeout-owner-follow-through-continuity/PLAYBOOK.md
+      - playbooks/session-growth-cycle/PLAYBOOK.md
+      - generated/
+      - docs/
+    validation:
+      - python scripts/validate_playbooks.py
+      - python -m pytest -q tests
+    focus:
+      - adapt into the live follow-through family rather than minting duplicate playbook canon
+      - keep route explicit about stop, rollback, and safe-stop posture
+  - repo: aoa-memo
+    contour: bounded prune writeback hardening
+    files:
+      - docs/GROWTH_REFINERY_WRITEBACK.md
+      - docs/GROWTH_REFINERY_PRUNE_WRITEBACK.md
+      - examples/
+      - scripts/
+    validation:
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python scripts/validate_memory_object_surfaces.py
+      - python -m pytest -q tests
+    focus:
+      - keep prune and recovery writeback subordinate to owner and proof truth
+      - use existing memo kinds only
+scope_exclusions:
+  - new sovereign landing or lineage layer
+  - new playbook family when existing owner-follow-through canon already fits
+  - object_ref minted in the first owner-status surface
+  - status_posture widened beyond early reanchor thin-evidence stable
+  - ad hoc cluster_ref or route artifact vocabulary drift
+  - hidden scheduler authority or autonomous runner
+  - memo, stats, playbooks, or Dionysus staging as owner truth

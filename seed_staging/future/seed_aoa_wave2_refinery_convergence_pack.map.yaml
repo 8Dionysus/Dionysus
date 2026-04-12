@@ -1,0 +1,135 @@
+map_version: 1
+updated_at: '2026-04-11'
+seed_note: seed_staging/future/seed_aoa_wave2_refinery_convergence_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-wave2-refinery-convergence-pack-2026-04-11.zip
+  companion_summary: archive/seed_pack_exports/aoa-wave2-refinery-convergence-pack-2026-04-11-summary.md
+  included_surfaces:
+    - aoa_wave2_refinery_convergence_pack/README.md
+    - aoa_wave2_refinery_convergence_pack/IMPLEMENTATION_DOCKET.md
+    - aoa_wave2_refinery_convergence_pack/PR_SLICES.md
+    - aoa_wave2_refinery_convergence_pack/ACCEPTANCE_MATRIX.md
+    - aoa_wave2_refinery_convergence_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_wave2_refinery_convergence_pack/CODEX_POST_LANDING_AUDIT.md
+    - aoa_wave2_refinery_convergence_pack/contracts/growth_refinery_wave2_convergence_contract_v1.md
+    - aoa_wave2_refinery_convergence_pack/patch-guides/aoa-stats_growth_funnel_hardening.md
+    - aoa_wave2_refinery_convergence_pack/patch-guides/aoa-evals_growth_refinery_bundle_materialization.md
+    - aoa_wave2_refinery_convergence_pack/patch-guides/aoa-playbooks_session_growth_cycle_hardening.md
+    - aoa_wave2_refinery_convergence_pack/patch-guides/aoa-memo_growth_refinery_writeback_hardening.md
+    - aoa_wave2_refinery_convergence_pack/fixtures/reviewed_candidate_lineage_receipts.example.json
+    - aoa_wave2_refinery_convergence_pack/fixtures/session-growth-cycle.harvest.example.json
+    - aoa_wave2_refinery_convergence_pack/fixtures/failure_lesson_memory.lineage.example.json
+    - aoa_wave2_refinery_convergence_pack/fixtures/recovery_pattern_memory.lineage.example.json
+    - aoa_wave2_refinery_convergence_pack/tools/validate_wave2_refinery_convergence.py
+    - aoa_wave2_refinery_convergence_pack/tools/validate_pack_fixtures.py
+selection_policy:
+  preferred_first_owner: aoa-stats funnel hardening
+  family_rule:
+    - keep first-wave lineage order explicit and unchanged
+    - use downstream order aoa-stats -> aoa-evals -> aoa-playbooks -> aoa-memo
+    - keep derived, proof, method, and memory layers subordinate to owner truth
+  landing_rule:
+    - extend existing repo-native surfaces first
+    - prefer one missing example, test, or generated surface over new doctrine sprawl
+    - keep automation review-gated and explicit
+  lineage_precondition:
+    - keep first-wave candidate-lineage hardening landed and unchanged
+    - keep aoa-diagnosis-cause-discipline landed as the earlier explicit proof-gap slice
+    - keep stats reviewed-only in posture
+    - keep eval bundle status honest until real reviewed case families exist
+  downstream_rule:
+    - do not proceed into hidden runners or broad automation governance during this planting
+  derivative_rule:
+    - do not move authority into aoa-routing, aoa-kag, workspace glue, stats, playbooks, or memo
+  sequence_rule:
+    - first land aoa-stats funnel hardening
+    - then land aoa-evals proof-family materialization
+    - then land aoa-playbooks session-growth-cycle surfacing
+    - then land aoa-memo writeback hardening
+    - then land one cross-repo validator and audit pass
+targets:
+  - repo: aoa-stats
+    contour: growth-funnel hardening
+    files:
+      - docs/GROWTH_FUNNEL_SUMMARY.md
+      - schemas/candidate_lineage_summary.schema.json
+      - examples/candidate_lineage_summary.example.json
+      - generated/summary_surface_catalog.min.json
+      - tests/
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - add richer reviewed-lineage input without widening doctrine
+      - forbid weaker-stage inference and preserve misroute or supersession aggregates
+  - repo: aoa-evals
+    contour: Growth Refinery proof-family materialization
+    files:
+      - bundles/aoa-candidate-lineage-integrity/
+      - bundles/aoa-owner-fit-routing-quality/
+      - bundles/aoa-repair-boundedness/
+      - generated/
+      - tests/
+    validation:
+      - python scripts/validate_repo.py
+      - python scripts/build_catalog.py --check
+      - python -m pytest -q tests
+    focus:
+      - add fixture, report, and proof-flow support surfaces to the existing bundles
+      - keep claim limits split and keep bundle status honest
+  - repo: aoa-playbooks
+    contour: session-growth-cycle surfacing and review-gated automation seed
+    files:
+      - playbooks/session-growth-cycle/PLAYBOOK.md
+      - README.md
+      - docs/README.md
+      - examples/harvests/
+      - docs/gate-reviews/
+      - generated/playbook_automation_seeds.json
+    validation:
+      - python scripts/validate_playbooks.py
+      - python -m pytest -q tests
+    focus:
+      - make the playbook easier to find and harvest
+      - keep automation seed review-gated and keep the playbook out of hidden-runner territory
+  - repo: aoa-memo
+    contour: growth-refinery writeback hardening
+    files:
+      - docs/GROWTH_REFINERY_WRITEBACK.md
+      - examples/failure_lesson_memory.lineage.example.json
+      - examples/recovery_pattern_memory.lineage.example.json
+      - tests/
+      - scripts/
+    validation:
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python -m pytest -q tests
+    focus:
+      - keep failure and recovery writeback strong and lineage-rich
+      - keep lineage refs supportive rather than authoritative
+  - repo: Agents-of-Abyss
+    contour: later shared convergence validator home
+    files:
+      - scripts/
+      - docs/
+    validation:
+      - python scripts/validate_wave2_refinery_convergence.py --workspace-root /srv
+    focus:
+      - add one human-readable cross-repo validator only after the owner-repo slices are real
+      - fail loudly on missing seams without becoming a new sovereign doctrine layer
+scope_exclusions:
+  - new lineage order
+  - new routing or KAG authority
+  - one total growth score
+  - raw checkpoint-note intake into stats
+  - hidden autonomous runners
+  - memo as lineage ledger
+  - blind import of pack-local fixtures or tools
