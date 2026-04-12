@@ -1,0 +1,207 @@
+map_version: 1
+updated_at: '2026-04-12'
+seed_note: seed_staging/future/seed_aoa_wave10_component_refresh_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-wave10-component-refresh-pack-2026-04-12.zip
+  companion_summary: archive/seed_pack_exports/aoa-wave10-component-refresh-pack-2026-04-12-summary.md
+  included_surfaces:
+    - aoa_wave10_component_refresh_pack/README.md
+    - aoa_wave10_component_refresh_pack/IMPLEMENTATION_DOCKET.md
+    - aoa_wave10_component_refresh_pack/PR_SLICES.md
+    - aoa_wave10_component_refresh_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_wave10_component_refresh_pack/ACCEPTANCE_MATRIX.md
+    - aoa_wave10_component_refresh_pack/contracts/component_refresh_self_maintenance_contract_v1.md
+    - aoa_wave10_component_refresh_pack/proposed-targets/Agents-of-Abyss/docs/COMPONENT_REFRESH_LAW.md
+    - aoa_wave10_component_refresh_pack/proposed-targets/8Dionysus/docs/COMPONENT_REFRESH_ROUTE.md
+    - aoa_wave10_component_refresh_pack/proposed-targets/aoa-playbooks/playbooks/component-refresh-cycle/PLAYBOOK.md
+    - aoa_wave10_component_refresh_pack/examples/8Dionysus/codex_plane_refresh_law.example.json
+    - aoa_wave10_component_refresh_pack/examples/aoa-skills/skills_export_refresh_law.example.json
+    - aoa_wave10_component_refresh_pack/examples/aoa-agents/subagent_projection_refresh_law.example.json
+    - aoa_wave10_component_refresh_pack/examples/aoa-stats/summary_refresh_law.example.json
+    - aoa_wave10_component_refresh_pack/examples/aoa-stats/component_refresh_summary.example.json
+    - aoa_wave10_component_refresh_pack/examples/aoa-sdk/component_drift_hints.example.json
+    - aoa_wave10_component_refresh_pack/examples/aoa-sdk/component_refresh_followthrough_decision.example.json
+    - aoa_wave10_component_refresh_pack/examples/aoa-memo/recovery_pattern.component_refresh.example.json
+    - aoa_wave10_component_refresh_pack/tools/validate_wave10_component_refresh.py
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss doctrine plus 8Dionysus workspace route and codex-plane refresh law
+  family_rule:
+    - keep component refresh law source-owned in the owner repos, drift hints hint-only in aoa-sdk, summaries derived in aoa-stats, recurring coordination in aoa-playbooks, and optional recall bounded in aoa-memo
+    - keep component refresh reviewable and explicit instead of turning it into hidden scheduler authority or self-healing mythology
+    - rebind landed evidence to the current local date 2026-04-12 and real owner-local drift rather than preserving pack-only transport chronology
+  landing_rule:
+    - extend existing repo-native docs, examples, validators, and generated surfaces first instead of importing the pack literally
+    - keep refresh law, proof commands, and rollback anchors inside the owner repos
+    - keep aoa-sdk carry hint-only or reviewed-only
+    - reuse existing aoa-memo memory kinds instead of creating component-refresh object families
+  lineage_precondition:
+    - keep the already landed growth-refinery, rollout, continuity, and kernel layers explicit as the immediate baseline
+    - keep stable MCP names, owner boundaries, and recommendation-only playbook posture intact
+    - keep synthetic bundle examples weaker than real owner-local evidence
+  downstream_rule:
+    - do not widen Wave 10 into scheduler authority, autonomous mutation, or source-of-truth transfer
+  derivative_rule:
+    - do not let aoa-stats, aoa-playbooks, aoa-memo, or aoa-sdk overrule owner refresh truth
+  sequence_rule:
+    - first land Agents-of-Abyss doctrine and 8Dionysus workspace route
+    - then land aoa-sdk drift-hint and reviewed decision carry
+    - then land aoa-skills and aoa-agents owner refresh laws
+    - then land aoa-stats derived component-refresh visibility
+    - then land aoa-playbooks component-refresh-cycle
+    - then land aoa-memo bounded writeback
+targets:
+  - repo: Agents-of-Abyss
+    contour: component refresh doctrine and negative rules
+    files:
+      - README.md
+      - docs/COMPONENT_REFRESH_LAW.md
+      - docs/FEDERATION_RULES.md
+      - docs/REVIEWABLE_GROWTH_REFINERY.md
+      - docs/METHOD_SPINE.md
+      - scripts/validate_ecosystem.py
+      - tests/test_docs_verify_routes.py
+    validation:
+      - python scripts/build_center_entry_map.py --check
+      - python scripts/validate_center_entry_map.py
+      - python scripts/validate_ecosystem.py
+      - python -m pytest -q tests
+    focus:
+      - keep the law explicit and center-bounded
+      - reject hidden autonomy and scheduler drift
+  - repo: 8Dionysus
+    contour: workspace route plus shared-root codex-plane refresh law
+    files:
+      - AGENTS.md
+      - README.md
+      - docs/WORKSPACE_INSTALL.md
+      - docs/COMPONENT_REFRESH_ROUTE.md
+      - config/codex_plane/runtime_manifest.v1.json
+      - config/codex_plane/profiles/
+      - scripts/validate_codex_plane.py
+      - tests/
+    validation:
+      - python scripts/build_public_route_map.py --check
+      - python scripts/validate_public_route_map.py
+      - python scripts/validate_codex_plane.py
+      - python -m pytest -q tests
+    focus:
+      - keep codex-plane refresh source-owned and reviewable
+      - preserve explicit doctor and rollback posture
+  - repo: aoa-sdk
+    contour: component drift hints and reviewed refresh follow-through carry
+    files:
+      - README.md
+      - docs/COMPONENT_DRIFT_HINTS.md
+      - docs/session-growth-checkpoints.md
+      - docs/aoa-surface-detection-closeout-handoff.md
+      - examples/component_drift_hints.example.json
+      - examples/component_refresh_followthrough_decision.example.json
+      - tests/
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - keep carry hint-only or reviewed-only
+      - do not turn hints into automatic mutation
+  - repo: aoa-skills
+    contour: skills-export refresh law
+    files:
+      - README.md
+      - docs/COMPONENT_REFRESH_LAW.md
+      - examples/skills_export_refresh_law.example.json
+      - generated/skill_catalog.min.json
+      - generated/agent_skill_index.min.json
+      - scripts/build_catalog.py
+      - scripts/validate_skills.py
+      - scripts/validate_agent_skills.py
+    validation:
+      - python scripts/build_catalog.py --check
+      - python scripts/validate_skills.py --fail-on-review-truth-sync
+      - python scripts/validate_agent_skills.py
+      - python -m pytest -q tests
+    focus:
+      - keep source-to-export drift explicit
+      - keep export refresh under normal repo-native validation
+  - repo: aoa-agents
+    contour: codex subagent projection refresh law
+    files:
+      - README.md
+      - docs/CODEX_SUBAGENT_REFRESH_LAW.md
+      - examples/subagent_projection_refresh_law.example.json
+      - generated/codex_agents/projection_manifest.json
+      - scripts/build_published_surfaces.py
+      - scripts/build_codex_subagents_v2.py
+      - scripts/validate_agents.py
+      - scripts/validate_codex_subagents.py
+    validation:
+      - python scripts/validate_agents.py
+      - python scripts/validate_codex_subagents.py --profiles-root profiles --wiring config/codex_subagent_wiring.v2.json --agents-dir generated/codex_agents/agents --config-snippet generated/codex_agents/config.subagents.generated.toml --manifest generated/codex_agents/projection_manifest.json
+      - python -m pytest -q tests
+    focus:
+      - keep projection refresh source-owned and explicit
+      - prefer regeneration over repeated hand-fixed drift
+  - repo: aoa-stats
+    contour: component refresh law for derived summaries plus refresh summary family
+    files:
+      - README.md
+      - docs/COMPONENT_REFRESH_SUMMARIES.md
+      - examples/summary_refresh_law.example.json
+      - examples/component_refresh_summary.example.json
+      - generated/component_refresh_summary.min.json
+      - scripts/build_views.py
+      - scripts/validate_repo.py
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - keep the derived summary weaker than owner truth
+      - expose staleness and refresh status without authorizing refresh
+  - repo: aoa-playbooks
+    contour: recurring component-refresh-cycle
+    files:
+      - README.md
+      - playbooks/component-refresh-cycle/PLAYBOOK.md
+      - generated/playbook_registry.min.json
+      - generated/playbook_activation_surfaces.min.json
+      - generated/playbook_federation_surfaces.min.json
+      - scripts/validate_playbooks.py
+    validation:
+      - python scripts/generate_playbook_activation_surfaces.py --check
+      - python scripts/generate_playbook_federation_surfaces.py --check
+      - python scripts/validate_playbooks.py
+      - python -m pytest -q tests
+    focus:
+      - keep recurring coordination explicit
+      - keep the route weaker than scheduler authority
+  - repo: aoa-memo
+    contour: bounded component-refresh writeback
+    files:
+      - README.md
+      - docs/COMPONENT_REFRESH_WRITEBACK.md
+      - examples/recovery_pattern.component_refresh.example.json
+      - scripts/validate_memo.py
+    validation:
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python scripts/validate_memory_object_surfaces.py
+      - python -m pytest -q tests
+    focus:
+      - reuse existing memory kinds only
+      - keep refresh writeback subordinate to owner truth and proof
+scope_exclusions:
+  - hidden scheduler authority
+  - autonomous self-healing language
+  - aoa-sdk automatic owner mutation
+  - aoa-stats authority over owner truth
+  - component-refresh memo taxonomy fork
+  - literal blind import of the pack tree
