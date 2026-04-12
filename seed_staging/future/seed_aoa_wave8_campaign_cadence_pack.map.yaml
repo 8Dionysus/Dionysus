@@ -1,0 +1,169 @@
+map_version: 1
+updated_at: '2026-04-12'
+seed_note: seed_staging/future/seed_aoa_wave8_campaign_cadence_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-wave8-campaign-cadence-pack-2026-04-12.zip
+  companion_summary: archive/seed_pack_exports/aoa-wave8-campaign-cadence-pack-2026-04-12-summary.md
+  included_surfaces:
+    - aoa_wave8_campaign_cadence_pack/README.md
+    - aoa_wave8_campaign_cadence_pack/IMPLEMENTATION_DOCKET.md
+    - aoa_wave8_campaign_cadence_pack/PR_SLICES.md
+    - aoa_wave8_campaign_cadence_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_wave8_campaign_cadence_pack/ACCEPTANCE_MATRIX.md
+    - aoa_wave8_campaign_cadence_pack/contracts/campaign_cadence_drift_review_contract_v1.md
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/8Dionysus/docs/TRUSTED_ROLLOUT_CAMPAIGNS.md
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/8Dionysus/schemas/rollout_campaign_window_v1.json
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/8Dionysus/schemas/drift_review_window_v1.json
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/8Dionysus/schemas/rollback_followthrough_window_v1.json
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/aoa-stats/docs/ROLLOUT_CAMPAIGN_SUMMARY.md
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/aoa-stats/docs/DRIFT_REVIEW_SUMMARY.md
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/aoa-playbooks/playbooks/rollout-drift-review-campaign/PLAYBOOK.md
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/aoa-memo/docs/DRIFT_REVIEW_LESSON_MEMORY.md
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/aoa-memo/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md
+    - aoa_wave8_campaign_cadence_pack/proposed-targets/aoa-sdk/docs/codex_rollout_campaign_refs.md
+    - aoa_wave8_campaign_cadence_pack/tools/validate_wave8_campaign_cadence.py
+selection_policy:
+  preferred_first_owner: 8Dionysus campaign cadence doctrine and example windows
+  family_rule:
+    - keep campaign cadence source-owned in 8Dionysus, summaries derived in aoa-stats, cadence composition companion-only in aoa-playbooks, bounded recall in aoa-memo, and typed pass-through posture in aoa-sdk
+    - keep cadence reviewable and explicit instead of turning it into a second playbook, hidden runner, or scheduler
+    - rebind planted example ids to the current local date 2026-04-12 and repo-native ref families
+  landing_rule:
+    - extend existing repo-native rollout, summary, playbook, and memory surfaces first instead of importing the pack literally
+    - keep cadence meaning under AOA-P-0028 rather than minting a new sovereign playbook from the pack tree
+    - reuse existing aoa-memo memory families instead of creating cadence-only object kinds
+  lineage_precondition:
+    - keep existing trusted rollout operations surfaces explicit and unchanged as the immediate baseline
+    - keep stable MCP names and owner boundaries intact
+    - keep pack-local lowercase ids out of landed examples
+  downstream_rule:
+    - do not widen Wave 8 into scheduler authority, hidden automation, or source-of-truth transfer
+  derivative_rule:
+    - do not let aoa-stats, aoa-playbooks, aoa-memo, or aoa-sdk overrule 8Dionysus campaign truth
+  sequence_rule:
+    - first land 8Dionysus cadence doctrine and example windows
+    - then land aoa-stats derived cadence summaries
+    - then land aoa-playbooks companion cadence guidance under AOA-P-0028
+    - then land aoa-memo writeback examples
+    - then land the narrow aoa-sdk boundary note
+targets:
+  - repo: 8Dionysus
+    contour: campaign cadence doctrine and checked-in cadence example windows
+    files:
+      - README.md
+      - docs/WORKSPACE_INSTALL.md
+      - docs/CODEX_PLANE_ROLLOUT.md
+      - docs/CODEX_TRUSTED_ROLLOUT_OPERATIONS.md
+      - docs/TRUSTED_ROLLOUT_CAMPAIGNS.md
+      - schemas/rollout_campaign_window_v1.json
+      - schemas/drift_review_window_v1.json
+      - schemas/rollback_followthrough_window_v1.json
+      - examples/rollout_campaign_window.example.json
+      - examples/drift_review_window.example.json
+      - examples/rollback_followthrough_window.example.json
+      - scripts/validate_codex_rollout_campaign_cadence.py
+      - tests/test_codex_rollout_campaign_cadence.py
+    validation:
+      - python scripts/build_public_route_map.py --check
+      - python scripts/validate_public_route_map.py
+      - python scripts/validate_codex_plane_rollout_contracts.py
+      - python scripts/validate_codex_trusted_rollout_operations.py
+      - python scripts/validate_codex_rollout_campaign_cadence.py
+      - python -m pytest -q tests
+    focus:
+      - keep source-owned cadence law explicit
+      - keep cadence examples reviewable and current-date
+  - repo: aoa-stats
+    contour: derived rollout campaign and drift-review summaries
+    files:
+      - README.md
+      - docs/README.md
+      - docs/CODEX_PLANE_DEPLOYMENT_SUMMARIES.md
+      - docs/ROLLOUT_CAMPAIGN_SUMMARY.md
+      - docs/DRIFT_REVIEW_SUMMARY.md
+      - schemas/rollout-campaign-summary.schema.json
+      - schemas/drift-review-summary.schema.json
+      - examples/rollout_campaign_summary.example.json
+      - examples/drift_review_summary.example.json
+      - generated/rollout_campaign_summary.min.json
+      - generated/drift_review_summary.min.json
+      - scripts/build_views.py
+      - scripts/validate_repo.py
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - derive from 8Dionysus campaign windows only
+      - keep summaries descriptive and weaker than source truth
+  - repo: aoa-playbooks
+    contour: trusted rollout campaign cadence adjunct under AOA-P-0028
+    files:
+      - README.md
+      - docs/README.md
+      - playbooks/trusted-rollout-operations/PLAYBOOK.md
+      - docs/CODEX_PLANE_ROLLOUT_CYCLE.md
+      - docs/TRUSTED_ROLLOUT_CAMPAIGN_CADENCE.md
+      - docs/gate-reviews/trusted-rollout-operations.md
+      - scripts/validate_playbooks.py
+      - tests/test_codex_plane_rollout_cycle.py
+      - tests/test_trusted_rollout_operations.py
+    validation:
+      - python scripts/generate_playbook_activation_surfaces.py --check
+      - python scripts/generate_playbook_federation_surfaces.py --check
+      - python scripts/validate_playbooks.py
+      - python -m pytest -q tests
+    focus:
+      - make the cadence route explicit without creating a second playbook or hidden runner
+      - keep AOA-P-0028 gate posture honest
+  - repo: aoa-memo
+    contour: drift-review lesson and rollback-followthrough pattern examples
+    files:
+      - README.md
+      - docs/FAILURE_LESSON_MEMORY.md
+      - docs/RECOVERY_PATTERN_MEMORY.md
+      - docs/RUNTIME_WRITEBACK_SEAM.md
+      - docs/DRIFT_REVIEW_LESSON_MEMORY.md
+      - docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md
+      - examples/failure_lesson_memory.drift_review.example.json
+      - examples/recovery_pattern_memory.rollback_followthrough.example.json
+      - tests/test_antifragility_failure_lessons.py
+      - tests/test_antifragility_recovery_patterns.py
+    validation:
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python scripts/validate_memory_object_surfaces.py
+      - python -m pytest -q tests
+    focus:
+      - reuse existing memory families
+      - keep drift-review and rollback-followthrough recall subordinate to owner truth and proof
+  - repo: aoa-sdk
+    contour: Codex rollout campaign ref boundary note
+    files:
+      - README.md
+      - docs/CODEX_PLANE_DEPLOY_STATUS.md
+      - docs/CODEX_DEPLOY_OPERATION_BOUNDARY_NOTE.md
+      - docs/codex_rollout_campaign_refs.md
+      - tests/test_docs_routes.py
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - keep typed campaign refs visible without making aoa-sdk the campaign owner
+scope_exclusions:
+  - new sovereign playbook
+  - rollout scheduler authority
+  - hidden cadence runner
+  - stats authority over campaign truth
+  - cadence-only memo taxonomy
+  - sdk-local campaign decisions
+  - pack-local lowercase landed ids

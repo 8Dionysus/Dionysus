@@ -131,6 +131,13 @@ Read those markers first, then verify the owner repos directly.
   rollout campaigns, drift windows, rollback windows, derived summaries, and
   bounded recall reviewable while preserving `8Dionysus` rollout authority and
   rebinding landed examples to the current local date
+- `seed_aoa_wave8_campaign_cadence_pack.md` is a newly staged future pack for
+  trusted rollout campaign cadence across `8Dionysus`, `aoa-stats`,
+  `aoa-playbooks`, `aoa-memo`, and `aoa-sdk`; use it to keep campaign windows,
+  drift-review windows, rollback-followthrough windows, derived cadence
+  summaries, and bounded memo follow-through reviewable while preserving
+  `8Dionysus` campaign authority and landing cadence composition as an
+  `AOA-P-0028` adjunct instead of a new sovereign playbook
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -268,6 +275,7 @@ Reading:
 - `seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md`
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
 - `seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md`
+- `seed_staging/future/seed_aoa_wave8_campaign_cadence_pack.md`
 
 ### `donor_only_not_planted`
 
