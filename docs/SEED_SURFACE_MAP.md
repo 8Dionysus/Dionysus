@@ -137,6 +137,13 @@ Read those markers first, then verify the owner repos directly.
   cadence layer in `aoa-playbooks` landed as an `AOA-P-0028` adjunct rather
   than a new sovereign playbook, bounded follow-through examples now live in
   `aoa-memo`, and `aoa-sdk` keeps only the typed campaign-ref boundary note
+- `seed_aoa_wave9_self_agency_continuity_pack.md` is a newly staged future
+  pack for bounded self-agency continuity across `Agents-of-Abyss`,
+  `aoa-agents`, `aoa-sdk`, `aoa-playbooks`, `aoa-memo`, `aoa-stats`, and
+  `aoa-evals`; use it to keep continuity windows, bounded revision windows,
+  explicit reanchor decisions, anchor-artifact return, continuity support
+  writeback, derived continuity summaries, and proof bundles reviewable while
+  preventing runtime-autonomy drift and keeping route authority split
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -280,6 +287,7 @@ Reading:
 - `seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md`
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
 - `seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md`
+- `seed_staging/future/seed_aoa_wave9_self_agency_continuity_pack.md`
 
 ### `donor_only_not_planted`
 

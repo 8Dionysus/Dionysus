@@ -1,0 +1,166 @@
+map_version: 1
+updated_at: '2026-04-12'
+seed_note: seed_staging/future/seed_aoa_wave9_self_agency_continuity_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-wave9-self-agency-continuity-pack-2026-04-12.zip
+  companion_summary: archive/seed_pack_exports/aoa-wave9-self-agency-continuity-pack-2026-04-12-summary.md
+  included_surfaces:
+    - aoa_wave9_self_agency_continuity_pack/README.md
+    - aoa_wave9_self_agency_continuity_pack/IMPLEMENTATION_DOCKET.md
+    - aoa_wave9_self_agency_continuity_pack/PR_SLICES.md
+    - aoa_wave9_self_agency_continuity_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_wave9_self_agency_continuity_pack/ACCEPTANCE_MATRIX.md
+    - aoa_wave9_self_agency_continuity_pack/contracts/self_agency_continuity_contract_v1.md
+    - aoa_wave9_self_agency_continuity_pack/examples/aoa_agents.self_agency_continuity_window.example.json
+    - aoa_wave9_self_agency_continuity_pack/examples/aoa_sdk.closeout_continuity_window.example.json
+    - aoa_wave9_self_agency_continuity_pack/examples/aoa_playbooks.self_agency_continuity_packet.example.json
+    - aoa_wave9_self_agency_continuity_pack/examples/aoa_memo.self_agency_continuity_writeback.example.json
+    - aoa_wave9_self_agency_continuity_pack/examples/aoa_stats.continuity_window_summary.example.json
+    - aoa_wave9_self_agency_continuity_pack/examples/aoa_evals.self_agency_eval_registry.example.json
+    - aoa_wave9_self_agency_continuity_pack/proposed-targets/Agents-of-Abyss/docs/SELF_AGENCY_CONTINUITY.md
+    - aoa_wave9_self_agency_continuity_pack/proposed-targets/aoa-agents/docs/SELF_AGENCY_CONTINUITY_LANE.md
+    - aoa_wave9_self_agency_continuity_pack/proposed-targets/aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md
+    - aoa_wave9_self_agency_continuity_pack/proposed-targets/aoa-memo/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md
+    - aoa_wave9_self_agency_continuity_pack/proposed-targets/aoa-stats/docs/CONTINUITY_WINDOW_SUMMARY.md
+    - aoa_wave9_self_agency_continuity_pack/tools/validate_wave9_self_agency_continuity.py
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss doctrine plus aoa-agents continuity lane
+  family_rule:
+    - keep self-agency continuity bounded by reviewed windows, anchor artifacts, and explicit reanchor posture instead of runtime autonomy
+    - keep continuity doctrine in Agents-of-Abyss, lane semantics in aoa-agents, route composition in aoa-playbooks, bounded support in aoa-memo, derived view in aoa-stats, and proof in aoa-evals
+    - keep landed examples on the current local date 2026-04-12 and rebind transport ids to repo-native ref families
+  landing_rule:
+    - extend existing repo-native doctrine, lane, playbook, memory, stats, and eval surfaces instead of importing the pack literally
+    - let aoa-playbooks decide the honest sovereign-playbook shape from the live operational family rather than assuming numbering from the pack
+    - use existing memo kinds only and keep aoa-sdk hint-only
+  lineage_precondition:
+    - keep the landed campaign-cadence route explicit as the immediate baseline
+    - keep anchor return pointed to named public artifacts rather than chat continuity
+    - keep stable owner boundaries and MCP names intact
+  downstream_rule:
+    - do not widen Wave 9 into hidden runtime autonomy, routing authority transfer, or memo-taxonomy inflation
+  derivative_rule:
+    - do not let aoa-stats, aoa-playbooks, aoa-memo, aoa-evals, or aoa-sdk overrule doctrine and anchor truth
+  sequence_rule:
+    - first land Agents-of-Abyss doctrine
+    - then land aoa-agents continuity lane
+    - then land aoa-sdk continuity carry
+    - then land aoa-playbooks recurring continuity route
+    - then land aoa-memo continuity writeback
+    - then land aoa-stats continuity summary
+    - then land aoa-evals proof bundles
+targets:
+  - repo: Agents-of-Abyss
+    contour: self-agency continuity doctrine and negative rules
+    files:
+      - README.md
+      - docs/SELF_AGENCY_CONTINUITY.md
+      - docs/METHOD_SPINE.md
+      - docs/FEDERATION_RULES.md
+    validation:
+      - python scripts/build_center_entry_map.py --check
+      - python scripts/validate_center_entry_map.py
+      - python scripts/validate_ecosystem.py
+      - python -m pytest -q tests
+    focus:
+      - keep self-agency continuity as doctrine, not runtime authority
+      - keep reanchor and human-judgment posture explicit
+  - repo: aoa-agents
+    contour: public continuity lane rooted in anchor return and checkpoint posture
+    files:
+      - README.md
+      - docs/SELF_AGENCY_CONTINUITY_LANE.md
+      - examples/self_agency_continuity_window.example.json
+      - schemas/self-agency-continuity-window.schema.json
+    validation:
+      - python scripts/validate_agents.py
+      - python -m pytest -q tests
+    focus:
+      - continuity is not a retry loop
+      - return must point to a named anchor artifact
+  - repo: aoa-sdk
+    contour: narrow continuity-hint carry
+    files:
+      - README.md
+      - docs/session-growth-checkpoints.md
+      - examples/closeout_continuity_window.example.json
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - carry hints only
+      - do not mint reviewed continuity truth
+  - repo: aoa-playbooks
+    contour: recurring self-agency continuity route
+    files:
+      - README.md
+      - docs/README.md
+      - docs/PLAYBOOK_OPERATIONAL_FAMILY.md
+      - playbooks/self-agency-continuity-cycle/PLAYBOOK.md
+    validation:
+      - python scripts/generate_playbook_activation_surfaces.py --check
+      - python scripts/generate_playbook_federation_surfaces.py --check
+      - python scripts/validate_playbooks.py
+      - python -m pytest -q tests
+    focus:
+      - keep continuity route playbook-owned and reviewable
+      - keep fallback and reanchor posture explicit
+  - repo: aoa-memo
+    contour: bounded continuity support writeback under existing kinds
+    files:
+      - README.md
+      - docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md
+      - examples/self_agency_continuity_writeback.example.json
+    validation:
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python -m pytest -q tests
+    focus:
+      - no new continuity-only memory taxonomy
+      - support relaunch and reanchor without claiming proof truth
+  - repo: aoa-stats
+    contour: derived continuity-window summary
+    files:
+      - README.md
+      - docs/CONTINUITY_WINDOW_SUMMARY.md
+      - schemas/continuity-window-summary.schema.json
+      - examples/continuity_window_summary.example.json
+      - generated/continuity_window_summary.min.json
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - keep continuity summary derived-only
+      - cite anchor semantics instead of inventing them
+  - repo: aoa-evals
+    contour: continuity-integrity and bounded-revision proof bundles
+    files:
+      - EVAL_INDEX.md
+      - EVAL_SELECTION.md
+      - bundles/aoa-continuity-anchor-integrity/EVAL.md
+      - bundles/aoa-reflective-revision-boundedness/EVAL.md
+      - bundles/aoa-self-reanchor-correctness/EVAL.md
+    validation:
+      - python scripts/build_catalog.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - prove anchor integrity and bounded revision honestly
+      - keep proof narrower than doctrine and route composition
+scope_exclusions:
+  - hidden runtime autonomy
+  - permissionless self-modification
+  - new continuity-only memo object family
+  - stats authority over continuity truth
+  - sdk-local continuity verdicts
+  - chat-residue anchor targets
