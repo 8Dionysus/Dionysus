@@ -5,8 +5,8 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: Wave 3 owner-followthrough remains staged in Dionysus; the live repos already name owner landing and follow-through as route phases, but the bounded owner-status, governed follow-through, seed-to-owner trace, pruning summaries, and prune writeback layer are not yet landed as one reviewable rollout.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: The Wave 3 owner-followthrough pack is now landed upstream across Agents-of-Abyss, aoa-sdk, aoa-skills, Dionysus, aoa-stats, aoa-playbooks, and aoa-memo; keep it as lineage evidence for owner-status landing, governed follow-through, seed-to-owner trace, pruning summaries, and bounded prune writeback.
 reality_checked_at: '2026-04-11'
 status: pending_archive
 priority: high
@@ -28,8 +28,8 @@ tags:
 
 ## Purpose
 
-Prepare the next Growth Refinery wave after first-wave lineage and the staged
-wave2 downstream convergence route.
+Preserve the landed Growth Refinery wave after first-wave lineage and the
+staged wave2 downstream convergence route.
 
 This pack preserves the next honest layer after a reviewed `candidate_ref`
 already exists.
@@ -45,8 +45,8 @@ This prep pack belongs here because:
 
 - the source artifact is a cross-repo owner-followthrough packet, not one
   owner-repo patch
-- the live owner homes already exist, but the wave is not yet landed as one
-  bounded rollout
+- the live owner homes now exist as one bounded rollout, but the packet still
+  preserves the route as one traceable cross-repo wave
 - the bundle includes contracts, patch guides, and proposed target trees that
   should be adapted into repo-native patterns rather than copied blindly
 - the route spans center doctrine, control-plane carry, owner-status surfaces,
@@ -109,21 +109,20 @@ Read later landings under these owner boundaries:
 
 ## Application posture
 
-Treat this pack as a staged owner-followthrough source.
+Treat this pack as landed upstream and retained for lineage.
 
-The honest landing route, if chosen later, is:
+The current owner-repo slices now exist:
 
-1. extend center doctrine around owner landing and pruning
-2. add one provisional reviewed-closeout follow-through map in `aoa-sdk`
-3. add reviewed owner landing and governed follow-through surfaces in
-   `aoa-skills`
-4. add one seed-to-owner landing trace in `Dionysus`
-5. add owner-landing and supersession/drop summaries in `aoa-stats`
-6. adapt the existing owner-followthrough playbook family in `aoa-playbooks`
-7. extend prune writeback in `aoa-memo`
+1. `Agents-of-Abyss` owns the owner-landing and pruning doctrine extension
+2. `aoa-sdk` owns the reviewed-closeout follow-through map
+3. `aoa-skills` owns the reviewed owner-status and governed follow-through surfaces
+4. `Dionysus` owns the seed-to-owner landing trace
+5. `aoa-stats` owns owner-landing and supersession/drop summaries
+6. `aoa-playbooks` owns the narrower owner-followthrough campaign
+7. `aoa-memo` owns the prune-aware writeback extension
 
-When planted later, regenerate repo-owned surfaces from local builders and
-validators instead of copying pack-local artifacts into live repos.
+When replaying later, regenerate repo-owned surfaces from local builders and
+validators instead of copying pack-local artifacts back into live repos.
 
 ## Required adaptation warnings
 
@@ -153,12 +152,12 @@ Before owner rollout, preserve these live workspace rules:
 
 ## Final rule
 
-Keep this pack because it names the next owner-followthrough and pruning wave
+Keep this pack because it names the landed owner-followthrough and pruning wave
 after first-wave lineage and the staged wave2 downstream convergence route.
 
 But preserve the difference between:
 
-- a staged owner-followthrough pack in `Dionysus`
+- a landed-upstream owner-followthrough pack retained for lineage in `Dionysus`
 - provisional reviewed-closeout carry in `aoa-sdk`
 - reviewed owner-status truth in `aoa-skills`
 - seed-trace and planting evidence in `Dionysus`
