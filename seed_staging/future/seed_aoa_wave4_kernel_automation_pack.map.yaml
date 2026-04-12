@@ -1,0 +1,138 @@
+map_version: 1
+updated_at: '2026-04-11'
+seed_note: seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-wave4-kernel-automation-pack-2026-04-11.zip
+  companion_summary: archive/seed_pack_exports/aoa-wave4-kernel-automation-pack-2026-04-11-summary.md
+  included_surfaces:
+    - aoa_wave4_kernel_automation_pack/README.md
+    - aoa_wave4_kernel_automation_pack/IMPLEMENTATION_DOCKET.md
+    - aoa_wave4_kernel_automation_pack/PR_SLICES.md
+    - aoa_wave4_kernel_automation_pack/ACCEPTANCE_MATRIX.md
+    - aoa_wave4_kernel_automation_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_wave4_kernel_automation_pack/contracts/session_growth_kernel_activation_contract_v1.md
+    - aoa_wave4_kernel_automation_pack/patch-guides/aoa-sdk.md
+    - aoa_wave4_kernel_automation_pack/patch-guides/aoa-skills.md
+    - aoa_wave4_kernel_automation_pack/patch-guides/aoa-playbooks.md
+    - aoa_wave4_kernel_automation_pack/patch-guides/aoa-stats.md
+    - aoa_wave4_kernel_automation_pack/fixtures/aoa-sdk/closeout_followthrough_decision.example.json
+    - aoa_wave4_kernel_automation_pack/fixtures/aoa-skills/decision_fork_packet.example.json
+    - aoa_wave4_kernel_automation_pack/fixtures/aoa-skills/diagnosis_packet.example.json
+    - aoa_wave4_kernel_automation_pack/fixtures/aoa-skills/repair_packet.example.json
+    - aoa_wave4_kernel_automation_pack/fixtures/aoa-skills/progression_delta.example.json
+    - aoa_wave4_kernel_automation_pack/fixtures/aoa-skills/automation_opportunity_packet.example.json
+    - aoa_wave4_kernel_automation_pack/fixtures/aoa-playbooks/reviewed-automation-followthrough.PLAYBOOK.md
+    - aoa_wave4_kernel_automation_pack/fixtures/aoa-stats/session_growth_branch_summary.min.json
+    - aoa_wave4_kernel_automation_pack/fixtures/aoa-stats/automation_followthrough_summary.min.json
+    - aoa_wave4_kernel_automation_pack/tools/validate_pack_fixtures.py
+    - aoa_wave4_kernel_automation_pack/tools/validate_wave4_kernel_automation.py
+selection_policy:
+  preferred_first_owner: aoa-sdk deterministic kernel signal rules
+  family_rule:
+    - keep the earlier lineage and owner-followthrough layers explicit before the wave4 route
+    - use the route aoa-sdk -> aoa-skills -> aoa-playbooks -> aoa-stats
+    - keep reviewed recommendation, bounded execution, recurring method, and derived views in distinct owner layers
+  landing_rule:
+    - extend existing repo-native surfaces first instead of importing the pack literally
+    - prefer one explicit decision surface or example family over doctrine sprawl
+    - keep automation review-gated, approval-aware, and non-sovereign
+  lineage_precondition:
+    - keep the first-wave lineage chain landed and unchanged
+    - keep owner-followthrough explicit and weaker than final owner truth
+    - do not let wave4 bypass review, approval posture, or owner boundaries
+  downstream_rule:
+    - do not proceed into live scheduler authority, hidden loops, or silent mutation during this planting
+  derivative_rule:
+    - do not move authority into stats, playbooks, routing, or workspace glue
+  sequence_rule:
+    - first land aoa-sdk reviewed-closeout decision carry
+    - then land aoa-skills remaining kernel packet and receipt examples
+    - then land aoa-playbooks reviewed automation follow-through
+    - then land aoa-stats branch and automation follow-through summaries
+    - then land one explicit shared validator or audit pass
+targets:
+  - repo: aoa-sdk
+    contour: deterministic kernel signal rules
+    files:
+      - docs/SESSION_GROWTH_KERNEL_SIGNAL_RULES.md
+      - schemas/closeout_followthrough_decision.schema.json
+      - examples/closeout_followthrough_decision.example.json
+      - docs/session-growth-checkpoints.md
+      - docs/aoa-surface-detection-closeout-handoff.md
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - keep the decision surface reviewed-closeout scoped and recommendation-only
+      - do not mint candidate_ref, seed_ref, or object_ref
+  - repo: aoa-skills
+    contour: remaining session-growth kernel packet and receipt examples
+    files:
+      - docs/SESSION_GROWTH_KERNEL_MATURITY.md
+      - skills/
+      - generated/project_core_kernel_maturity.min.json
+      - tests/
+    validation:
+      - python scripts/build_catalog.py --check
+      - python scripts/validate_skills.py --fail-on-review-truth-sync
+      - python scripts/report_skill_evaluation.py --fail-on-canonical-gaps
+      - python -m pytest -q tests
+    focus:
+      - add concrete reviewed packet and receipt examples without creating a new sovereign execution layer
+      - keep automation classification review-gated and explicit about checkpoint or approval posture
+  - repo: aoa-playbooks
+    contour: reviewed automation follow-through route
+    files:
+      - playbooks/reviewed-automation-followthrough/PLAYBOOK.md
+      - docs/AUTOMATION_SEEDS.md
+      - examples/automations/
+      - generated/playbook_automation_seeds.json
+      - generated/playbook_handoff_contracts.json
+    validation:
+      - python scripts/validate_playbooks.py
+      - python -m pytest -q tests
+    focus:
+      - coordinate one reviewed automation follow-through route without hidden schedules
+      - keep playbook seeds as candidate composition surfaces rather than live scheduler truth
+  - repo: aoa-stats
+    contour: branch and automation follow-through summaries
+    files:
+      - docs/SESSION_GROWTH_BRANCH_SUMMARY.md
+      - docs/AUTOMATION_FOLLOWTHROUGH_SUMMARY.md
+      - schemas/
+      - examples/
+      - generated/
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - keep branch and follow-through views derived-only and review-only
+      - do not let stats infer scheduler activation, approval, or owner truth
+  - repo: Agents-of-Abyss
+    contour: later shared validator or audit home
+    files:
+      - scripts/
+      - docs/
+    validation:
+      - python scripts/validate_wave4_kernel_automation.py --workspace-root /srv
+    focus:
+      - add one human-readable cross-repo validator only after the owner slices are real
+      - fail loudly on missing seams without becoming a new sovereign doctrine layer
+scope_exclusions:
+  - scheduler authority
+  - hidden autonomous runners
+  - candidate_ref or seed_ref minting in aoa-sdk
+  - playbook seeds treated as live schedules
+  - stats treated as routing or proof authority
+  - repair packets implying silent mutation
+  - blind import of pack-local fixtures or tools
