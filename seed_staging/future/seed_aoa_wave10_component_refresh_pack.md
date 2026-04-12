@@ -4,8 +4,8 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: Wave 10 component refresh remains staged in Dionysus; the next honest route is owner-first landing of component refresh law, drift-hint carry, owner refresh laws, derived summaries, and one recurring coordination playbook without turning any of it into hidden scheduler authority or autonomous self-healing.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: Wave 10 component refresh is now landed upstream across Agents-of-Abyss, 8Dionysus, aoa-sdk, aoa-agents, aoa-skills, aoa-stats, aoa-playbooks, and aoa-memo; keep this pack only as lineage for the merged owner-first refresh route, typed drift hints, reviewed follow-through decisions, owner refresh laws, derived refresh visibility, the recurring `AOA-P-0030` layer, and bounded recovery-pattern writeback without widening any of it into scheduler authority or autonomous self-healing.
 reality_checked_at: '2026-04-12'
 status: pending_archive
 priority: high
@@ -28,18 +28,19 @@ tags:
 
 ## Purpose
 
-Prepare the next bounded self-maintenance layer as one future prep pack inside
-`Dionysus`.
+Preserve the Wave 10 component refresh layer inside `Dionysus` as landed
+lineage.
 
 This pack does not invent hidden autonomy.
-It names the missing reflex by which AoA can honestly say:
+It records the now-landed owner-first refresh family:
 
-- one internal component is drifting
-- the drift belongs to a named owner repo
-- reviewed closeout should raise one bounded refresh decision
-- the owner repo owns the refresh law and proof path
-- derived summary and optional memo writeback may follow without swallowing
-  owner truth
+- named component refresh law
+- reviewed component drift hints
+- one bounded refresh follow-through decision
+- owner refresh laws in the named owner repos
+- derived component-refresh visibility
+- the recurring `AOA-P-0030` coordination route
+- bounded recovery-pattern writeback under existing memo kinds
 
 ## Why this belongs in Dionysus
 
@@ -51,12 +52,11 @@ This pack belongs here because:
   rather than one repo-local patch
 - the bundle proposes shared component-refresh vocabulary that must be adapted
   into owner-native contracts instead of copied blindly
-- the route must preserve the split between doctrine, workspace route,
-  control-plane hint carry, owner refresh law, derived visibility, recurring
+- the now-landed route preserves the split between doctrine, workspace route,
+  control-plane hint carry, owner refresh laws, derived visibility, recurring
   coordination, and optional bounded writeback
-- the bundle examples point to real drift and refresh posture, but those
-  examples still need to be rebound into live repo-native surfaces and current
-  local evidence instead of staying pack-local transport
+- `Dionysus` still needs to keep the archived transport bundle, lifecycle
+  marker, and merged trail after the owner repos took over live truth
 
 ## Bundle contents to preserve
 
@@ -82,10 +82,9 @@ The package carries:
 
 ## Boundary posture to preserve
 
-Read this pack under these boundaries:
+Read this pack under these landed boundaries:
 
-- keep owner repos on refresh law, proof commands, rollback anchors, and
-  refresh receipts
+- keep owner repos on refresh law, proof commands, and rollback anchors
 - keep `aoa-sdk` on drift hints and reviewed refresh follow-through decisions
   only
 - keep `aoa-stats` on derived refresh visibility only
@@ -99,7 +98,7 @@ Read this pack under these boundaries:
 
 ## Ownership posture
 
-Read later landings under these owner boundaries:
+Read the landed route under these owner boundaries:
 
 - `Agents-of-Abyss` is the first honest owner for center doctrine and negative
   rules around component refresh law
@@ -122,22 +121,26 @@ Read later landings under these owner boundaries:
 
 ## Application posture
 
-Treat this pack as staged future prep work.
+Treat this pack as landed upstream and retained for lineage.
 
-The honest landing order, if chosen later, is:
+The current planting landed:
 
-1. land `Agents-of-Abyss` component refresh doctrine and negative rules
-2. land `8Dionysus` workspace route plus the shared-root Codex-plane refresh
-   law
-3. land `aoa-sdk` drift-hint carry and reviewed follow-through docs/examples
-4. land `aoa-skills` and `aoa-agents` owner refresh laws
-5. land `aoa-stats` derived component-refresh summary doctrine and surface
-6. land `aoa-playbooks` recurring component-refresh cycle
-7. land `aoa-memo` bounded refresh writeback note/examples
+1. `Agents-of-Abyss` component refresh doctrine and negative rules
+2. `8Dionysus` workspace route plus the shared-root Codex-plane refresh law
+3. the narrow `aoa-sdk` drift-hint and reviewed follow-through carry
+4. `aoa-agents` codex-subagent projection refresh law
+5. `aoa-skills` skills-export refresh law
+6. `aoa-stats` derived component-refresh summary doctrine and surfaces
+7. `aoa-playbooks` recurring `AOA-P-0030 component-refresh-cycle`
+8. `aoa-memo` bounded recovery-pattern writeback under the existing memory
+   family
+9. this final `Dionysus` lifecycle closeout and planting report
 
-When planted later, adapt the bundle to live repo-native builders, validators,
-and docs, and keep evidence tied to the current local date `2026-04-12` and
-real owner-local drift rather than frozen transport-only examples.
+The landed route adapted the bundle to live repo-native builders, validators,
+and docs, rebound example refs to the local planting date `2026-04-12`, kept
+refresh authority in the owner repos, and reused the existing
+`aoa-memo` recovery-pattern surface instead of inventing a component-refresh
+memo family or replaying the pack tree literally.
 
 ## What this pack is not for
 
@@ -150,15 +153,15 @@ real owner-local drift rather than frozen transport-only examples.
 
 ## Final rule
 
-Keep this pack because it names the next honest component-refresh and
+Keep this pack because it now witnesses the landed component-refresh and
 self-maintenance route for internal AoA surfaces.
 
 But preserve the difference between:
 
-- a staged future component-refresh pack in `Dionysus`
+- a landed-upstream component-refresh lineage pack in `Dionysus`
 - doctrine and negative rules in `Agents-of-Abyss`
 - workspace route and shared-root refresh law in `8Dionysus`
 - hint carry and reviewed decisions in `aoa-sdk`
-- owner refresh laws in `aoa-skills`, `aoa-agents`, and `aoa-stats`
+- owner refresh laws in `aoa-agents`, `aoa-skills`, and `aoa-stats`
 - recurring route composition in `aoa-playbooks`
-- optional bounded writeback in `aoa-memo`
+- optional bounded recovery-pattern writeback in `aoa-memo`
