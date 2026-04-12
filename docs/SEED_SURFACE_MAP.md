@@ -114,6 +114,17 @@ Read those markers first, then verify the owner repos directly.
   and retained for lineage as the post-candidate owner-followthrough and
   pruning layer across `Agents-of-Abyss`, `aoa-sdk`, `aoa-skills`,
   `Dionysus`, `aoa-stats`, `aoa-playbooks`, and `aoa-memo`
+- `seed_aoa_wave4_kernel_automation_pack.md` is a newly staged future pack
+  for one governed session-growth kernel cycle across `aoa-sdk`,
+  `aoa-skills`, `aoa-playbooks`, and `aoa-stats`; keep it
+  recommendation-only, review-gated, and derived-only, with no scheduler
+  authority or silent-mutation drift
+- `seed_aoa_wave5_portability_regeneration_pack.md` is a newly staged future
+  pack for source-owned Codex-plane portability and regeneration across
+  `8Dionysus`, `aoa-sdk`, and the shared-root `.codex` projection seam; use
+  it to move path-bound deploy surfaces onto manifest-driven regeneration
+  while preserving stable MCP names, owner boundaries, and explicit rejection
+  of bundled `__pycache__` transport noise
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -248,6 +259,8 @@ Reading:
 - `seed_staging/future/seed_future_agent_systems_prep_pack.md`
 - `seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md`
 - `seed_staging/future/seed_aoa_wave2_refinery_convergence_pack.md`
+- `seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md`
+- `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
 
 ### `donor_only_not_planted`
 

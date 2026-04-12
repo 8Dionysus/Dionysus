@@ -1,0 +1,105 @@
+map_version: 1
+updated_at: '2026-04-11'
+seed_note: seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-wave5-portability-regeneration-pack-2026-04-11.zip
+  companion_summary: archive/seed_pack_exports/aoa-wave5-portability-regeneration-pack-2026-04-11-summary.md
+  included_surfaces:
+    - aoa_wave5_portability_regeneration_pack/README.md
+    - aoa_wave5_portability_regeneration_pack/IMPLEMENTATION_DOCKET.md
+    - aoa_wave5_portability_regeneration_pack/PR_SLICES.md
+    - aoa_wave5_portability_regeneration_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_wave5_portability_regeneration_pack/ACCEPTANCE_MATRIX.md
+    - aoa_wave5_portability_regeneration_pack/contracts/codex_plane_regeneration_contract_v1.md
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/docs/CODEX_PLANE_REGENERATION.md
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/docs/WORKSPACE_INSTALL.patch.md
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/config/codex_plane/runtime_manifest.v1.json
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/config/codex_plane/profiles/linux-python3.json
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/config/codex_plane/profiles/windows-py3.json
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/config/codex_plane/examples/current-srv.config.toml
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/config/codex_plane/examples/current-srv.hooks.json
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/config/codex_plane/examples/current-srv.paths.json
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/scripts/render_codex_plane.py
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/8Dionysus/scripts/validate_codex_plane_regeneration.py
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/aoa-sdk/docs/CODEX_PLANE_PORTABILITY.md
+    - aoa_wave5_portability_regeneration_pack/proposed-targets/aoa-sdk/docs/workspace-layout.patch.md
+    - aoa_wave5_portability_regeneration_pack/tools/validate_wave5_portability_regeneration.py
+selection_policy:
+  preferred_first_owner: 8Dionysus codex-plane regeneration doctrine and manifest
+  family_rule:
+    - keep shared-root install doctrine, workspace discovery, and repo-owned MCP implementations in distinct owner layers
+    - regenerate path-bound deploy surfaces from manifest/profile inputs instead of hand-editing them
+    - keep live shared-root projection explicit and weaker than source-owned install doctrine
+  landing_rule:
+    - extend existing repo-native install and route surfaces first instead of importing the pack literally
+    - keep checked-in .codex deploy surfaces generated from source-owned inputs
+    - ignore raw __pycache__ and .pyc transport payloads
+  lineage_precondition:
+    - keep the current codex-surface-plane landing explicit and unchanged
+    - keep MCP names, root markers, and owner split stable
+    - do not let portability work rewrite runtime ownership boundaries
+  downstream_rule:
+    - do not proceed into global user-config authority or ad hoc path rewrites during this planting
+  derivative_rule:
+    - do not move meaning out of aoa-agents, aoa-sdk, aoa-stats, or Dionysus and into 8Dionysus route surfaces
+  sequence_rule:
+    - first land 8Dionysus doctrine and manifest/profile inputs
+    - then land 8Dionysus renderer, validator, and regenerated checked-in deploy surfaces
+    - then land the narrow aoa-sdk portability note
+targets:
+  - repo: 8Dionysus
+    contour: codex-plane regeneration doctrine and source inputs
+    files:
+      - docs/CODEX_PLANE_REGENERATION.md
+      - docs/WORKSPACE_INSTALL.md
+      - config/codex_plane/runtime_manifest.v1.json
+      - config/codex_plane/profiles/
+      - config/codex_plane/examples/
+    validation:
+      - python scripts/build_public_route_map.py --check
+      - python scripts/validate_public_route_map.py
+      - python -m pytest -q tests
+    focus:
+      - make manifest/profile the primary edit surface for shared-root Codex deploy surfaces
+      - keep source-owned install doctrine explicit without absorbing owner-repo meaning
+  - repo: 8Dionysus
+    contour: renderer validator and regenerated checked-in deploy surfaces
+    files:
+      - scripts/render_codex_plane.py
+      - scripts/validate_codex_plane_regeneration.py
+      - .codex/config.toml
+      - .codex/hooks.json
+    validation:
+      - python scripts/render_codex_plane.py --workspace-root /srv --check
+      - python scripts/validate_codex_plane_regeneration.py
+      - python -m pytest -q tests
+    focus:
+      - preserve the current /srv behavior while making regeneration root-aware
+      - keep generated deploy files reviewable and drift-checkable
+  - repo: aoa-sdk
+    contour: Codex-plane portability boundary note
+    files:
+      - docs/CODEX_PLANE_PORTABILITY.md
+      - docs/workspace-layout.md
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - clarify discovery versus regeneration ownership
+      - keep aoa-sdk out of renderer duty
+scope_exclusions:
+  - MCP server renaming
+  - moving owner meaning into 8Dionysus
+  - replacing aoa-sdk discovery with a second renderer
+  - hand-edited path drift as the primary portability strategy
+  - global user-config authority
+  - planting __pycache__ or .pyc transport noise
