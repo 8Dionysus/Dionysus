@@ -4,8 +4,8 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: Wave 9 self-agency continuity remains staged in Dionysus; the next honest route is owner-first landing across Agents-of-Abyss, aoa-agents, aoa-sdk, aoa-playbooks, aoa-memo, aoa-stats, and aoa-evals while keeping continuity bounded, reviewable, and reanchorable rather than inflating it into runtime autonomy.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: Wave 9 self-agency continuity is now landed upstream across Agents-of-Abyss, aoa-agents, aoa-sdk, aoa-evals, aoa-playbooks, aoa-memo, and aoa-stats; keep this pack only as lineage for the merged owner-first continuity route, the `continuity_ref -> revision_window_ref -> reanchor_ref -> anchor_artifact_ref` chain, and the recurring `AOA-P-0029` playbook layer without inflating any of it into runtime autonomy.
 reality_checked_at: '2026-04-12'
 status: pending_archive
 priority: high
@@ -29,12 +29,11 @@ tags:
 
 ## Purpose
 
-Prepare the next bounded AoA continuity layer as one future prep pack inside
-`Dionysus`.
+Preserve the Wave 9 self-agency continuity layer inside `Dionysus` as landed
+lineage.
 
 This pack does not grant autonomous self-modification.
-It extends the current owner-followthrough and campaign-cadence route into one
-reviewable continuity family:
+It records the now-landed owner-first continuity family:
 
 - continuity windows
 - bounded revision windows
@@ -43,6 +42,8 @@ reviewable continuity family:
 - continuity-shaped memo writeback
 - derived continuity summaries
 - proof of anchor integrity and bounded reflective revision
+- the `continuity_ref -> revision_window_ref -> reanchor_ref ->
+  anchor_artifact_ref` chain
 
 ## Why this belongs in Dionysus
 
@@ -103,7 +104,7 @@ Read this pack under these boundaries:
 
 ## Ownership posture
 
-Read later landings under these owner boundaries:
+Read the landed route under these owner boundaries:
 
 - `Agents-of-Abyss` is the first honest owner for the doctrine note that names
   self-agency continuity and its negative rules
@@ -122,20 +123,24 @@ Read later landings under these owner boundaries:
 
 ## Application posture
 
-Treat this pack as staged future prep work.
+Treat this pack as landed upstream and retained for lineage.
 
-The honest landing order, if chosen later, is:
+The current planting landed:
 
-1. land `Agents-of-Abyss` doctrine for self-agency continuity
-2. land `aoa-agents` continuity lane plus example window
-3. land the narrow `aoa-sdk` continuity-hint carry
-4. land `aoa-playbooks` recurring continuity route
-5. land `aoa-memo` continuity writeback surfaces under existing kinds
-6. land `aoa-stats` derived continuity-window summary
-7. land `aoa-evals` proof bundles
+1. `Agents-of-Abyss` doctrine for self-agency continuity and negative rules
+2. `aoa-agents` continuity lane plus the example continuity window
+3. `aoa-evals` proof bundles for continuity anchor integrity, bounded
+   reflective revision, and self-reanchor correctness
+4. the narrow `aoa-sdk` continuity-hint carry
+5. `aoa-memo` bounded continuity support writeback under existing memory kinds
+6. `aoa-playbooks` recurring `AOA-P-0029 self-agency-continuity-cycle`
+7. `aoa-stats` derived continuity-window summary
+8. this final `Dionysus` lifecycle closeout and planting report
 
-When planted later, adapt the bundle to live repo-native builders, validators,
-and docs, and keep landed examples on the local planting date `2026-04-12`.
+The landed route adapted the bundle to live repo-native builders, validators,
+and docs, rebound example refs to the local planting date `2026-04-12`, kept
+playbook authority separate from doctrine and proof, and kept the continuity
+chain anchored to named artifacts rather than chat residue.
 
 ## What this pack is not for
 
@@ -149,12 +154,12 @@ and docs, and keep landed examples on the local planting date `2026-04-12`.
 
 ## Final rule
 
-Keep this pack because it names the next honest continuity layer after the
-landed campaign-cadence route.
+Keep this pack because it now witnesses the merged self-agency continuity
+layer after the landed campaign-cadence route.
 
 But preserve the difference between:
 
-- a staged future continuity pack in `Dionysus`
+- a landed-upstream continuity lineage pack in `Dionysus`
 - doctrine and owner-boundary language in `Agents-of-Abyss`
 - explicit continuity windows and return posture in `aoa-agents`
 - typed continuity hints in `aoa-sdk`
