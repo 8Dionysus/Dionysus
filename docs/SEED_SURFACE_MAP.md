@@ -131,13 +131,12 @@ Read those markers first, then verify the owner repos directly.
   rollout campaigns, drift windows, rollback windows, derived summaries, and
   bounded recall reviewable while preserving `8Dionysus` rollout authority and
   rebinding landed examples to the current local date
-- `seed_aoa_wave8_campaign_cadence_pack.md` is a newly staged future pack for
-  trusted rollout campaign cadence across `8Dionysus`, `aoa-stats`,
-  `aoa-playbooks`, `aoa-memo`, and `aoa-sdk`; use it to keep campaign windows,
-  drift-review windows, rollback-followthrough windows, derived cadence
-  summaries, and bounded memo follow-through reviewable while preserving
-  `8Dionysus` campaign authority and landing cadence composition as an
-  `AOA-P-0028` adjunct instead of a new sovereign playbook
+- `seed_aoa_wave8_campaign_cadence_pack.md` is now a landed-upstream lineage
+  pack for trusted rollout campaign cadence: source-owned campaign windows now
+  live in `8Dionysus`, derived cadence summaries now live in `aoa-stats`, the
+  cadence layer in `aoa-playbooks` landed as an `AOA-P-0028` adjunct rather
+  than a new sovereign playbook, bounded follow-through examples now live in
+  `aoa-memo`, and `aoa-sdk` keeps only the typed campaign-ref boundary note
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -210,6 +209,7 @@ Current exploratory notes live under:
 - `seed_staging/future/seed_aoa_first_wave_candidate_lineage_pack.md`
 - `seed_staging/future/seed_aoa_remaining_seeds_execution_pack.md`
 - `seed_staging/future/seed_aoa_wave3_owner_landing_followthrough_pack.md`
+- `seed_staging/future/seed_aoa_wave8_campaign_cadence_pack.md`
 
 ### `partially_landed_retained_for_lineage`
 
@@ -261,6 +261,11 @@ Reading:
   lives in `Dionysus`, derived pruning summaries live in `aoa-stats`, the
   narrower campaign route lives in `aoa-playbooks`, and bounded prune
   writeback lives in `aoa-memo`
+- the wave8 campaign cadence pack is now landed upstream lineage: source-owned
+  campaign windows live in `8Dionysus`, derived cadence summaries live in
+  `aoa-stats`, the cadence layer in `aoa-playbooks` stays companion-only under
+  `AOA-P-0028`, bounded drift-review and rollback-followthrough examples live
+  in `aoa-memo`, and `aoa-sdk` keeps only the typed campaign-ref boundary note
 
 ### `staged_only_not_landed`
 
@@ -275,7 +280,6 @@ Reading:
 - `seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md`
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
 - `seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md`
-- `seed_staging/future/seed_aoa_wave8_campaign_cadence_pack.md`
 
 ### `donor_only_not_planted`
 

@@ -4,8 +4,8 @@ profile_anchor: 8Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: Wave 8 campaign cadence remains staged in Dionysus; the next honest route is owner-first landing across 8Dionysus, aoa-stats, aoa-playbooks, aoa-memo, and a narrow aoa-sdk boundary note while keeping cadence meaning source-owned and companion-only under AOA-P-0028.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: Wave 8 campaign cadence is now landed upstream across 8Dionysus, aoa-stats, aoa-playbooks, aoa-memo, and a narrow aoa-sdk boundary note; keep this pack only as lineage for the merged owner-first cadence route and the AOA-P-0028 companion adjunct.
 reality_checked_at: '2026-04-12'
 status: pending_archive
 priority: high
@@ -27,11 +27,11 @@ tags:
 
 ## Purpose
 
-Prepare the next bounded Codex-plane campaign cadence layer as one future prep
-pack inside `Dionysus`.
+Preserve the Wave 8 campaign cadence layer inside `Dionysus` as landed
+lineage.
 
 This pack does not replace the existing trusted rollout operations surfaces.
-It extends them upward into one reviewable cadence family:
+It records the now-landed owner-first cadence family:
 
 - rollout campaign windows
 - drift-review windows
@@ -111,19 +111,20 @@ Read later landings under these owner boundaries:
 
 ## Application posture
 
-Treat this pack as staged future prep work.
+Treat this pack as landed upstream and retained for lineage.
 
-The honest landing order, if chosen later, is:
+The current planting landed:
 
-1. land `8Dionysus` campaign cadence doctrine plus checked-in example windows
-2. land `aoa-stats` derived campaign and drift-review summaries
-3. land `aoa-playbooks` cadence companion guidance under `AOA-P-0028`
-4. land `aoa-memo` drift-review and rollback-followthrough examples inside
+1. `8Dionysus` campaign cadence doctrine plus checked-in example windows
+2. `aoa-stats` derived campaign and drift-review summaries
+3. `aoa-playbooks` cadence companion guidance under `AOA-P-0028`
+4. `aoa-memo` drift-review and rollback-followthrough examples inside
    existing memory families
-5. land the narrow `aoa-sdk` boundary note
+5. the narrow `aoa-sdk` boundary note
+6. this final `Dionysus` lifecycle closeout and planting report
 
-When planted later, adapt the bundle to live repo-native builders, validators,
-and docs, and rebind example ids to the current planting date `2026-04-12`.
+The landed route adapted the bundle to live repo-native builders, validators,
+and docs, and rebound example ids to the local planting date `2026-04-12`.
 
 ## What this pack is not for
 
@@ -138,12 +139,12 @@ and docs, and rebind example ids to the current planting date `2026-04-12`.
 
 ## Final rule
 
-Keep this pack because it names the next honest campaign cadence layer for the
-shared-root Codex plane after trusted rollout operations.
+Keep this pack because it now witnesses the merged campaign cadence layer for
+the shared-root Codex plane after trusted rollout operations.
 
 But preserve the difference between:
 
-- a staged future cadence pack in `Dionysus`
+- a landed-upstream cadence lineage pack in `Dionysus`
 - source-owned cadence doctrine and windows in `8Dionysus`
 - derived cadence summaries in `aoa-stats`
 - companion cadence composition in `aoa-playbooks`
