@@ -1,0 +1,154 @@
+map_version: 1
+updated_at: '2026-04-11'
+seed_note: seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-wave7-trusted-rollout-ops-pack-2026-04-11.zip
+  companion_summary: archive/seed_pack_exports/aoa-wave7-trusted-rollout-ops-pack-2026-04-11-summary.md
+  included_surfaces:
+    - aoa_wave7_trusted_rollout_ops_pack/README.md
+    - aoa_wave7_trusted_rollout_ops_pack/IMPLEMENTATION_DOCKET.md
+    - aoa_wave7_trusted_rollout_ops_pack/PR_SLICES.md
+    - aoa_wave7_trusted_rollout_ops_pack/CODEX_EXECUTION_PROMPT.md
+    - aoa_wave7_trusted_rollout_ops_pack/ACCEPTANCE_MATRIX.md
+    - aoa_wave7_trusted_rollout_ops_pack/contracts/trusted_rollout_operations_contract_v1.md
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/8Dionysus/docs/CODEX_TRUSTED_ROLLOUT_OPERATIONS.md
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/8Dionysus/generated/codex/rollout/deploy_history.example.jsonl
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/8Dionysus/generated/codex/rollout/regeneration_campaigns.min.example.json
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/8Dionysus/generated/codex/rollout/rollback_windows.min.example.json
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/8Dionysus/generated/codex/rollout/rollout_latest.min.example.json
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/aoa-stats/generated/codex_rollout_operations_summary.min.example.json
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/aoa-stats/generated/codex_rollout_drift_summary.min.example.json
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/aoa-playbooks/playbooks/trusted-rollout-operations/PLAYBOOK.md
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/aoa-memo/generated/deploy_drift_lesson.example.json
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/aoa-memo/generated/rollout_recovery_pattern.example.json
+    - aoa_wave7_trusted_rollout_ops_pack/proposed-targets/aoa-sdk/docs/CODEX_DEPLOY_OPERATION_BOUNDARY_NOTE.md
+    - aoa_wave7_trusted_rollout_ops_pack/tools/validate_wave7_trusted_rollout_ops.py
+selection_policy:
+  preferred_first_owner: 8Dionysus trusted rollout operations doctrine and history
+  family_rule:
+    - keep rollout history source-owned in 8Dionysus, summaries derived in aoa-stats, route composition in aoa-playbooks, recall support in aoa-memo, and typed boundary posture in aoa-sdk
+    - keep trusted rollout operations explicit, reviewable, and bounded instead of turning them into hidden automation
+    - rebind planted example ids to the current local date 2026-04-11
+  landing_rule:
+    - extend existing repo-native rollout, summary, playbook, and memory surfaces first instead of importing the pack literally
+    - keep checked-in rollout history visible in 8Dionysus/generated/codex/rollout
+    - reuse existing aoa-memo memory families instead of creating rollout-only object kinds
+  lineage_precondition:
+    - keep existing Codex-plane regeneration and rollout surfaces explicit and unchanged as the immediate baseline
+    - keep stable MCP names and owner boundaries intact
+    - keep future-dated transport refs out of landed examples
+  downstream_rule:
+    - do not widen Wave 7 into scheduler authority, hidden automation, or source-of-truth transfer
+  derivative_rule:
+    - do not let aoa-stats, aoa-playbooks, aoa-memo, or aoa-sdk overrule 8Dionysus rollout truth
+  sequence_rule:
+    - first land 8Dionysus doctrine and checked-in rollout history
+    - then land aoa-stats derived summaries
+    - then land aoa-playbooks trusted rollout operations
+    - then land aoa-memo writeback examples
+    - then land the narrow aoa-sdk boundary note
+targets:
+  - repo: 8Dionysus
+    contour: trusted rollout operations doctrine and checked-in rollout history
+    files:
+      - docs/CODEX_TRUSTED_ROLLOUT_OPERATIONS.md
+      - docs/CODEX_PLANE_ROLLOUT.md
+      - docs/WORKSPACE_INSTALL.md
+      - README.md
+      - generated/codex/rollout/
+      - scripts/validate_codex_trusted_rollout_operations.py
+      - tests/test_codex_trusted_rollout_operations.py
+    validation:
+      - python scripts/build_public_route_map.py --check
+      - python scripts/validate_public_route_map.py
+      - python scripts/validate_codex_plane_rollout_contracts.py
+      - python scripts/validate_codex_trusted_rollout_operations.py
+      - python -m pytest -q tests
+    focus:
+      - keep source-owned rollout law explicit
+      - keep checked-in rollout history coherent and current-date
+  - repo: aoa-stats
+    contour: derived rollout operations and drift summaries
+    files:
+      - docs/CODEX_PLANE_DEPLOYMENT_SUMMARIES.md
+      - schemas/codex-rollout-operations-summary.schema.json
+      - schemas/codex-rollout-drift-summary.schema.json
+      - examples/codex_rollout_operations_summary.example.json
+      - examples/codex_rollout_drift_summary.example.json
+      - generated/codex_rollout_operations_summary.min.json
+      - generated/codex_rollout_drift_summary.min.json
+      - scripts/build_views.py
+      - scripts/validate_repo.py
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - derive from 8Dionysus rollout history only
+      - keep summaries descriptive and weaker than source truth
+  - repo: aoa-playbooks
+    contour: recurring trusted rollout operations playbook
+    files:
+      - playbooks/trusted-rollout-operations/PLAYBOOK.md
+      - docs/CODEX_PLANE_ROLLOUT_CYCLE.md
+      - examples/codex_plane_rollout_lane.example.json
+      - generated/playbook_registry.min.json
+      - generated/playbook_activation_surfaces.min.json
+      - generated/playbook_federation_surfaces.min.json
+      - generated/playbook_review_packet_contracts.min.json
+      - generated/playbook_review_intake.min.json
+      - generated/playbook_landing_governance.min.json
+      - scripts/generate_playbook_activation_surfaces.py
+      - scripts/generate_playbook_federation_surfaces.py
+    validation:
+      - python scripts/generate_playbook_activation_surfaces.py --check
+      - python scripts/generate_playbook_federation_surfaces.py --check
+      - python scripts/validate_playbooks.py
+      - python -m pytest -q tests
+    focus:
+      - make the recurring route explicit without building a hidden runner
+      - keep rollback and stop-lines visible
+  - repo: aoa-memo
+    contour: rollout lesson and recovery-pattern writeback examples
+    files:
+      - docs/FAILURE_LESSON_MEMORY.md
+      - docs/RECOVERY_PATTERN_MEMORY.md
+      - docs/RUNTIME_WRITEBACK_SEAM.md
+      - examples/failure_lesson_memory.rollout.example.json
+      - examples/recovery_pattern_memory.rollout.example.json
+      - scripts/validate_memo.py
+    validation:
+      - python scripts/validate_memo.py
+      - python scripts/validate_memory_surfaces.py
+      - python scripts/validate_memory_object_surfaces.py
+      - python -m pytest -q tests
+    focus:
+      - reuse existing memory families
+      - keep lesson and recovery recall subordinate to owner truth and proof
+  - repo: aoa-sdk
+    contour: Codex deploy operation boundary note
+    files:
+      - docs/CODEX_DEPLOY_OPERATION_BOUNDARY_NOTE.md
+      - docs/CODEX_PLANE_DEPLOY_STATUS.md
+      - README.md
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - keep typed rollout refs visible without making aoa-sdk the rollout owner
+scope_exclusions:
+  - scheduler authority
+  - hidden automation governor
+  - stats authority over rollout truth
+  - rollout-only memo taxonomy
+  - sdk-local rollout decisions
+  - future-dated landed example ids

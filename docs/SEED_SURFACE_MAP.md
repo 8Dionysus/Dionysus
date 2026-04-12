@@ -125,6 +125,12 @@ Read those markers first, then verify the owner repos directly.
   it to move path-bound deploy surfaces onto manifest-driven regeneration
   while preserving stable MCP names, owner boundaries, and explicit rejection
   of bundled `__pycache__` transport noise
+- `seed_aoa_wave7_trusted_rollout_ops_pack.md` is a newly staged future pack
+  for trusted shared-root Codex rollout operations across `8Dionysus`,
+  `aoa-stats`, `aoa-playbooks`, `aoa-memo`, and `aoa-sdk`; use it to keep
+  rollout campaigns, drift windows, rollback windows, derived summaries, and
+  bounded recall reviewable while preserving `8Dionysus` rollout authority and
+  rebinding landed examples to the current local date
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -261,6 +267,7 @@ Reading:
 - `seed_staging/future/seed_aoa_wave2_refinery_convergence_pack.md`
 - `seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md`
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
+- `seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md`
 
 ### `donor_only_not_planted`
 
