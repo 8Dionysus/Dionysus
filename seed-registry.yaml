@@ -1,5 +1,5 @@
 registry_version: 2
-updated_at: '2026-04-11'
+updated_at: '2026-04-12'
 navigation:
   canonical_order_source: wave manifests
   semantic_source: source seed files
@@ -43,6 +43,7 @@ origin_notes:
 - seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md
 - seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md
 - seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md
+- seed_staging/future/seed_aoa_wave8_campaign_cadence_pack.md
 - seed_staging/future/seed_aoa_antifragility_first_wave_pack.md
 - seed_staging/future/seed_aoa_antifragility_second_wave_pack.md
 - seed_staging/future/seed_aoa_antifragility_third_wave_pack.md
