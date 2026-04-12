@@ -36,6 +36,7 @@ def test_readme_lists_current_validation_and_lineage_routes() -> None:
     assert "`generated/seed_route_map.min.json` is the compact low-context seed entry capsule" in readme
     assert "`archive/seed_pack_exports/` holds derived ingress and transport bundles only" in readme
     assert "`reports/planting/README.md` explains when Dionysus should keep durable planting trace" in readme
+    assert "`docs/SEED_OWNER_LANDING_TRACE.md`, `schemas/seed_owner_landing_trace.schema.json`, `examples/seed_owner_landing_trace.example.json`, and `scripts/validate_seed_owner_landing_trace.py` keep the seed-to-owner follow-through trace subordinate to seed registry, planting protocol, and owner-repo truth" in readme
 
 
 def test_agents_mentions_pytest_reinforcement() -> None:

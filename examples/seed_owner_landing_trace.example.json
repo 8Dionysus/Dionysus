@@ -1,0 +1,19 @@
+{
+  "schema_version": "dionysus_seed_owner_landing_trace_v1",
+  "cluster_ref": "cluster:growth:aoa-sdk-checkpoint-auto-capture-verify-green",
+  "candidate_ref": "candidate:session-growth:reviewed-donor-harvest",
+  "seed_ref": "seed:aoa:session-growth:reviewed-donor-harvest:v1",
+  "owner_repo": "aoa-skills",
+  "owner_shape": "skill",
+  "outcome": "landed_owner_status",
+  "owner_status_ref": "repo:aoa-skills/examples/reviewed_owner_landing_bundle.example.json",
+  "object_ref": null,
+  "merged_into": null,
+  "superseded_by": null,
+  "drop_reason": null,
+  "observed_at": "2026-04-12T00:42:00Z",
+  "evidence_refs": [
+    "repo:Dionysus/examples/seed_lineage_entry.example.json",
+    "repo:aoa-skills/examples/reviewed_owner_landing_bundle.example.json"
+  ]
+}
