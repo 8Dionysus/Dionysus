@@ -75,6 +75,14 @@ EXPECTED_NOTES = {
         "kind": "prep-pack-note",
         "lifecycle_status": "staged_only_not_landed",
     },
+    "seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "staged_only_not_landed",
+    },
+    "seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "staged_only_not_landed",
+    },
     "seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md": {
         "kind": "prep-pack-note",
         "lifecycle_status": "staged_only_not_landed",

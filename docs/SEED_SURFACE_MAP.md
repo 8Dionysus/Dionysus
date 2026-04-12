@@ -218,6 +218,7 @@ Current exploratory notes live under:
 - `seed_staging/future/seed_aoa_remaining_seeds_execution_pack.md`
 - `seed_staging/future/seed_aoa_wave3_owner_landing_followthrough_pack.md`
 - `seed_staging/future/seed_aoa_wave8_campaign_cadence_pack.md`
+- `seed_staging/future/seed_aoa_wave9_self_agency_continuity_pack.md`
 
 ### `partially_landed_retained_for_lineage`
 
