@@ -91,6 +91,10 @@ Read those markers first, then verify the owner repos directly.
 - `seed_aoa_automation_opportunity_scan_pack.md` is a newer staged add-on pack
   for automation-readiness detection around the live session-harvest family and
   the existing playbook automation-seed posture
+- `seed_aoa_federation_kag_factory_upgrade_pack.md` is a staged-only prep pack
+  for manifest-driven donor activation and live-spine separation in
+  `aoa-kag`, while any `aoa-routing` or `aoa-sdk` follow-through remains
+  explicitly downstream of that first owner landing
 - `seed_aoa_growth_refinery_docket_pack.md` is now landed upstream and retained
   for lineage as the route-order record for the post-Codex internal lineage
   chain `cluster_ref -> candidate_ref -> seed_ref -> object_ref`
@@ -291,6 +295,7 @@ Reading:
 - `seed_staging/future/seed_memory_evals_skills_docs_pack.md`
 - `seed_staging/future/seed_future_agent_systems_prep_pack.md`
 - `seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md`
+- `seed_staging/future/seed_aoa_federation_kag_factory_upgrade_pack.md`
 - `seed_staging/future/seed_aoa_wave2_refinery_convergence_pack.md`
 - `seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md`
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`

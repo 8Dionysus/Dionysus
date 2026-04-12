@@ -1,0 +1,140 @@
+map_version: 1
+updated_at: '2026-04-09'
+seed_note: seed_staging/future/seed_aoa_federation_kag_factory_upgrade_pack.md
+status: prep_pack_note
+source_bundle:
+  path: archive/seed_pack_exports/aoa-federation-kag-factory-upgrade-seed-2026-04-06.zip
+  companion_summary: archive/seed_pack_exports/aoa-federation-kag-factory-upgrade-seed-2026-04-06-summary.md
+  included_surfaces:
+    - aoa_federation_kag_factory_upgrade_seed/README.md
+    - aoa_federation_kag_factory_upgrade_seed/codex/REPO_GROUNDING.md
+    - aoa_federation_kag_factory_upgrade_seed/codex/CODEX_BRIEF.md
+    - aoa_federation_kag_factory_upgrade_seed/codex/WORK_ITEMS.yaml
+    - aoa_federation_kag_factory_upgrade_seed/codex/ACCEPTANCE.md
+    - aoa_federation_kag_factory_upgrade_seed/codex/FILE_TOUCHPOINTS.json
+    - aoa_federation_kag_factory_upgrade_seed/codex/RISK_NOTES.md
+    - aoa_federation_kag_factory_upgrade_seed/machine/upgrade_manifest.json
+    - aoa_federation_kag_factory_upgrade_seed/machine/test_matrix.yaml
+    - aoa_federation_kag_factory_upgrade_seed/proposed/aoa-kag/IMPLEMENTATION_NOTES.md
+    - aoa_federation_kag_factory_upgrade_seed/proposed/aoa-kag/manifests/federation_export_registry.seed.json
+    - aoa_federation_kag_factory_upgrade_seed/proposed/aoa-kag/examples/federation_export_registry.example.json
+    - aoa_federation_kag_factory_upgrade_seed/proposed/aoa-routing/ABI_DELTA.md
+    - aoa_federation_kag_factory_upgrade_seed/proposed/aoa-sdk/CONTROL_PLANE_DELTA.md
+selection_policy:
+  preferred_first_owner: aoa-kag
+  priority_band: next
+  planting_readiness: needs_adaptation
+  why_now:
+    - the bundle captures the next bounded step out of the current two-donor federation hardcode without widening live exposure by default
+    - the package already separates mandatory aoa-kag work from optional aoa-routing, aoa-sdk, and aoa-evals follow-through
+    - Dionysus should preserve the package as staging lineage before owner repos absorb it on repo-native terms
+  dependencies: []
+  family_rule:
+    - keep aoa-kag as the owner of derived donor-registry and live-spine behavior
+    - keep aoa-routing navigation-only and aoa-sdk control-plane-only
+    - keep donor publication, registry visibility, spine visibility, and routing visibility as separate gates
+  landing_rule:
+    - land generic federation ingress and donor activation registry in aoa-kag before any routing or SDK follow-through
+    - preserve the current live two-donor spine until explicit activation widens it
+    - regenerate generated surfaces from repo-native builders and validators instead of copying package outputs
+  downstream_rule:
+    - treat aoa-routing and aoa-sdk as additive consumers of aoa-kag registry state, not parallel sources of truth
+    - keep aoa-evals optional until a durable portable proof gap is real
+  lineage_precondition:
+    - verify current owner repos directly before assuming the package still matches live code paths
+    - keep aoa-techniques, Tree-of-Sophia, and aoa-memo as donor context rather than as first-authoring homes for this bundle
+  derivative_rule:
+    - do not use Dionysus, aoa-routing, or aoa-sdk to author source-owned export meaning
+    - do not let aoa-memo registry visibility imply proof or graph truth
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+targets:
+  - repo: aoa-kag
+    contour: manifest-driven federation ingress and donor-registry first owner
+    files:
+      - scripts/kag_generation.py
+      - scripts/validate_kag.py
+      - docs/FEDERATION_KAG_READINESS.md
+      - docs/FEDERATION_SPINE.md
+      - docs/SOURCE_OWNED_EXPORT_DEPENDENCIES.md
+      - manifests/source_owned_export_dependencies.json
+      - manifests/federation_spine.json
+      - manifests/federation_export_registry.json
+      - schemas/
+      - examples/
+      - generated/
+      - tests/
+    validation:
+      - python scripts/generate_kag.py
+      - python scripts/validate_kag.py
+      - python scripts/validate_nested_agents.py
+      - python -m unittest discover -s tests -p 'test_*.py'
+    focus:
+      - genericize federation export validation without widening owner authority
+      - publish one derived donor registry with explicit visibility gates
+      - keep the live spine two-donor by default while aoa-memo stays registry-visible only
+  - repo: aoa-routing
+    contour: additive routing compatibility follow-through
+    files:
+      - docs/FEDERATION_ENTRY_ABI.md
+      - scripts/build_router.py
+      - generated/federation_entrypoints.min.json
+      - tests/
+    validation:
+      - python scripts/build_router.py
+      - python scripts/validate_router.py
+      - python -m pytest -q tests
+    focus:
+      - consume donor activation metadata without becoming authority
+      - keep live kag_view exposure unchanged unless routing visibility is explicitly true
+  - repo: aoa-sdk
+    contour: optional typed donor-registry read helper
+    files:
+      - current KAG-facing typed facade
+      - tests/
+      - docs/
+    validation:
+      - python -m pytest -q
+      - python -m ruff check .
+      - aoa workspace inspect /srv/aoa-sdk
+      - aoa compatibility check /srv/aoa-sdk
+    focus:
+      - keep the SDK on the control plane
+      - expose only a small typed read path over the derived registry
+  - repo: aoa-evals
+    contour: optional portable proof follow-through
+    files:
+      - later bounded proof surfaces only if a durable cross-repo contract gap remains after owner-repo tests
+    validation:
+      - local repo validation once a bounded eval candidate exists
+    focus:
+      - keep proof downstream of owner semantics
+      - avoid adding eval weight before owner behavior is real
+  - repo: Dionysus
+    contour: seed-garden staging and lineage
+    files:
+      - archive/seed_pack_exports/aoa-federation-kag-factory-upgrade-seed-2026-04-06.zip
+      - archive/seed_pack_exports/aoa-federation-kag-factory-upgrade-seed-2026-04-06-summary.md
+      - seed_staging/future/seed_aoa_federation_kag_factory_upgrade_pack.md
+      - seed_staging/future/seed_aoa_federation_kag_factory_upgrade_pack.map.yaml
+      - seed-registry.yaml
+      - docs/SEED_SURFACE_MAP.md
+    validation:
+      - python scripts/validate_seed_surfaces.py
+      - python -m pytest -q tests
+    focus:
+      - keep the pack staging-only and manifest-first
+      - preserve archive lineage without changing the live next-seed route
+      - record owner-boundary order honestly before any real repo landing starts
+scope_exclusions:
+  - new wave manifest creation
+  - change to navigation.next_live_seed
+  - seed_index promotion before an owner landing exists
+  - direct owner-repo writeback from Dionysus
+  - routing or SDK source-truth drift
+  - memo truth inflation
+  - AOA-K-0008 activation
