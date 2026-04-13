@@ -14,15 +14,18 @@ Read in this order:
 2. the exact source seed named by that manifest
 3. the matching closure note for that wave when one exists
 4. `seed-registry.yaml`
-5. `docs/codex/planting-protocol.md`
-6. the target repository structure and ownership
-7. `AGENTS.md` and the nearest nested `AGENTS.md`
+5. `ROADMAP.md`
+6. `docs/codex/planting-protocol.md`
+7. the target repository structure and ownership
+8. `AGENTS.md` and the nearest nested `AGENTS.md`
 
 If work starts from a named prep pack rather than an opened wave, read the pack note and matching `.map.yaml` after checking the stronger live surfaces above. Named prep packs are flexible staging notes. They do not overrule an opened wave or the current live seed.
 After reading a prep-pack note, verify the owner repo directly before treating staging guidance as current queue truth.
 
-`Dionysus` intentionally does not use a standalone `ROADMAP.md` right now.
-Its current direction lives in `seed-registry.yaml`, `seed_expansion/`, and `docs/SEED_SURFACE_MAP.md`.
+`ROADMAP.md` is the garden-level direction surface.
+It summarizes the current live seed posture after the stronger seed surfaces
+above and does not overrule manifests, closure notes, registry state, or
+owner-repo reality.
 
 ## What belongs here
 
@@ -49,6 +52,7 @@ Its current direction lives in `seed-registry.yaml`, `seed_expansion/`, and `doc
 - `seed_expansion/` holds the current gated next-work surfaces after the archived ninth wave
 - `generated/seed_route_map.min.json` is the compact low-context seed entry capsule; `seed-registry.yaml` remains the canonical seed ledger and navigation overlay
 - `seed-registry.yaml` is the human/Codex navigation overlay
+- `ROADMAP.md` summarizes current seed-garden posture after those stronger live surfaces without replacing them
 - `docs/SEED_SURFACE_MAP.md` explains how to read `seed_staging/` and `seed_notes/exploratory/` without confusing canon, staging, lineage, and exploratory donor notes
 - `docs/CANDIDATE_SEED_IDENTITY.md` explains the local `candidate_ref -> seed_ref` bridge and the stop rules around `seed_ref`
 - `docs/codex/` holds the planting protocol and provenance rules
@@ -75,7 +79,7 @@ When files pull in different directions, treat these as authoritative in this or
 6. target repository structure and ownership
 7. `README.md`
 
-The manifest defines order. The seed file defines meaning. The closure note defines the finished state of a closed wave. The registry makes navigation legible. The README should explain, not overrule.
+The manifest defines order. The seed file defines meaning. The closure note defines the finished state of a closed wave. The registry makes navigation legible. `ROADMAP.md` summarizes current garden-level posture after those stronger live surfaces. The README should explain, not overrule.
 
 ## Using Dionysus to plant with Codex
 
