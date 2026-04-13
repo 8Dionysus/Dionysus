@@ -1,0 +1,185 @@
+map_version: 1
+updated_at: '2026-04-13'
+seed_note: seed_staging/future/seed_aoa_wave5_a2a_codex_return_checkpoint_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: archive/seed_pack_exports/aoa-wave5-a2a-codex-return-checkpoint-pack-2026-04-13.zip
+  companion_summary: archive/seed_pack_exports/aoa-wave5-a2a-codex-return-checkpoint-pack-2026-04-13-summary.md
+  included_surfaces:
+    - a2a-wave5-codex-return-checkpoint-seed/README.md
+    - a2a-wave5-codex-return-checkpoint-seed/APPLY_WITH_CODEX.md
+    - a2a-wave5-codex-return-checkpoint-seed/INSTALLATION_STRATEGY.md
+    - a2a-wave5-codex-return-checkpoint-seed/ACCEPTANCE_CRITERIA.md
+    - a2a-wave5-codex-return-checkpoint-seed/PACKAGE_MANIFEST.json
+    - a2a-wave5-codex-return-checkpoint-seed/SUPERSESSION_MAP.md
+    - a2a-wave5-codex-return-checkpoint-seed/SHA256SUMS.txt
+    - a2a-wave5-codex-return-checkpoint-seed/8Dionysus/docs/A2A_CODEX_WORKSPACE_ALIGNMENT.md
+    - a2a-wave5-codex-return-checkpoint-seed/Agents-of-Abyss/docs/A2A_WAVE5_CONSOLIDATED_NOTE.md
+    - a2a-wave5-codex-return-checkpoint-seed/abyss-stack/docs/A2A_CODEX_FRIENDLY_LOCAL_AGENTS.md
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-agents/docs/A2A_CODEX_LOCAL_AGENT_ALIGNMENT.md
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-agents/examples/a2a/codex_local_agent_target.example.json
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-evals/docs/A2A_RETURN_PROGRESSION_CHECKPOINT_PROOF.md
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-memo/docs/A2A_RETURN_SUPPORT_AND_REVIEWED_EXPORTS.md
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-playbooks/docs/A2A_RETURN_REENTRY_ADJUNCTS.md
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-routing/docs/A2A_RETURN_NAV_AND_CODEX_LOCAL_SELECTION.md
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-skills/docs/A2A_SUMMON_RETURN_AND_CHECKPOINTS.md
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-skills/generated/aoa-summon.wave5.seed.snippets.json
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-skills/skills/aoa-summon/*
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-sdk/docs/A2A_WAVE5_CODEX_RETURN_CHECKPOINT.md
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-sdk/examples/a2a/*
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-sdk/src/aoa_sdk/a2a/rebase/*
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-sdk/tests/test_a2a_wave5_assessment.py
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-sdk/tests/test_a2a_wave5_checkpoint_and_return.py
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-sdk/tests/test_a2a_wave5_codex_and_closeout.py
+    - a2a-wave5-codex-return-checkpoint-seed/aoa-stats/docs/A2A_RETURN_AND_CHECKPOINT_EVENT_MAPPING.md
+    - a2a-wave5-codex-return-checkpoint-seed/Dionysus/seed_expansion/seed.a2a.wave5-codex-return-checkpoint-pack.v0.md
+selection_policy:
+  preferred_first_owner: aoa-skills aoa-summon workflow and references
+  family_rule:
+    - keep summon permission in aoa-skills rather than in routing, stats, or Dionysus
+    - keep Codex-local child targeting and return or checkpoint planning in aoa-sdk as control-plane helpers only
+    - keep recurrence, role, memo, eval, publication, and install meaning in their current owner layers
+  landing_rule:
+    - extend existing repo-native surfaces first instead of importing pack filenames literally
+    - prefer current live docs and schemas over parallel wave5 naming
+    - treat the imported aoa-sdk test battery as adaptation-only until the package layer is repaired
+  lineage_precondition:
+    - keep current checkpoint-closeout bridge, recurrence discipline, and Codex projection chain explicit and unchanged
+    - keep the current next live seed and direct owner-repo reality stronger than this prep pack
+    - keep bundled __pycache__, .pyc, and .pytest_cache payloads visible as transport noise
+  downstream_rule:
+    - do not proceed into a hidden auto-runner, second workspace install tree, or second A2A authority during this planting
+  derivative_rule:
+    - do not move authority into Dionysus, aoa-routing, aoa-memo, or aoa-stats
+  sequence_rule:
+    - first land aoa-skills aoa-summon workflow plus references
+    - then land aoa-sdk a2a/rebase helpers, examples, and tests after package-layer repair
+    - then fold surviving boundary notes into owner repos only where stronger live files do not already say enough
+targets:
+  - repo: aoa-skills
+    contour: bounded summon workflow and supporting references
+    files:
+      - docs/A2A_SUMMON_RETURN_AND_CHECKPOINTS.md
+      - skills/aoa-summon/
+      - generated/aoa-summon.wave5.seed.snippets.json
+    validation:
+      - python scripts/build_catalog.py --check
+      - python scripts/validate_skills.py --fail-on-review-truth-sync
+      - python -m pytest -q tests
+    focus:
+      - land summon as a first-class bounded workflow
+      - keep checkpoint bridge subordinate to aoa-checkpoint-closeout-bridge
+  - repo: aoa-sdk
+    contour: A2A control-plane helper slice
+    files:
+      - docs/A2A_WAVE5_CODEX_RETURN_CHECKPOINT.md
+      - src/aoa_sdk/a2a/rebase/
+      - examples/a2a/
+      - tests/test_a2a_wave5_assessment.py
+      - tests/test_a2a_wave5_checkpoint_and_return.py
+      - tests/test_a2a_wave5_codex_and_closeout.py
+    validation:
+      - python scripts/build_workspace_control_plane.py --check
+      - python scripts/validate_workspace_control_plane.py
+      - python -m pytest -q
+      - python -m ruff check .
+    focus:
+      - keep helper logic planning-only and review-gated
+      - repair the aoa_sdk.a2a package layer before trusting imported tests
+  - repo: aoa-agents
+    contour: additive role and Codex-local alignment fold
+    files:
+      - docs/A2A_CODEX_LOCAL_AGENT_ALIGNMENT.md
+      - examples/a2a/
+    validation:
+      - python scripts/validate_agents.py
+      - python -m pytest -q
+    focus:
+      - keep role profiles, projection chain, passports, and self-agent checkpoint truth here
+      - avoid a second role registry
+  - repo: aoa-routing
+    contour: advisory return-navigation fold
+    files:
+      - docs/A2A_RETURN_NAV_AND_CODEX_LOCAL_SELECTION.md
+    validation:
+      - python scripts/validate_router.py
+      - python scripts/build_router.py --check
+      - python -m pytest -q tests
+    focus:
+      - keep routing hint-only and weaker than summon approval
+  - repo: aoa-playbooks
+    contour: scenario-level return adjunct
+    files:
+      - docs/A2A_RETURN_REENTRY_ADJUNCTS.md
+    validation:
+      - run the repo README verify battery
+    focus:
+      - keep return scenario-owned rather than runtime-owned
+  - repo: aoa-evals
+    contour: bounded proof adjunct for checkpoint and return posture
+    files:
+      - docs/A2A_RETURN_PROGRESSION_CHECKPOINT_PROOF.md
+    validation:
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - keep proof bounded and non-sovereign
+  - repo: aoa-memo
+    contour: reviewed export adjunct
+    files:
+      - docs/A2A_RETURN_SUPPORT_AND_REVIEWED_EXPORTS.md
+    validation:
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - keep writeback reviewed and raw-trace-free
+  - repo: aoa-stats
+    contour: canonical-envelope event mapping adjunct
+    files:
+      - docs/A2A_RETURN_AND_CHECKPOINT_EVENT_MAPPING.md
+    validation:
+      - python scripts/build_views.py --check
+      - python scripts/validate_repo.py
+      - python -m pytest -q tests
+    focus:
+      - keep canonical event kinds and avoid new receipt families
+  - repo: 8Dionysus
+    contour: workspace install boundary note fold
+    files:
+      - docs/A2A_CODEX_WORKSPACE_ALIGNMENT.md
+    validation:
+      - python scripts/build_public_route_map.py --check
+      - python scripts/validate_public_route_map.py
+      - python -m pytest -q tests
+    focus:
+      - keep shared-root install truth explicit without moving owner meaning
+  - repo: Agents-of-Abyss
+    contour: AoA-center consolidated boundary note
+    files:
+      - docs/A2A_WAVE5_CONSOLIDATED_NOTE.md
+    validation:
+      - python -m pytest -q tests
+    focus:
+      - keep federation-center wording short and non-sovereign
+  - repo: abyss-stack
+    contour: runtime publication and Codex-friendly local agent note
+    files:
+      - docs/A2A_CODEX_FRIENDLY_LOCAL_AGENTS.md
+    validation:
+      - python -m pytest -q tests
+    focus:
+      - keep runtime publication owner-local and canonical-envelope only
+scope_exclusions:
+  - blind replay of waves 1 through 4
+  - second A2A authority surface
+  - hidden auto-runner or autonomous closeout loop
+  - second workspace install story
+  - new stats event families
+  - raw child trace in memo canon
+  - planting __pycache__, .pyc, or .pytest_cache payloads

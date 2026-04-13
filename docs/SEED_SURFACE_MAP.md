@@ -129,6 +129,14 @@ Read those markers first, then verify the owner repos directly.
   it to move path-bound deploy surfaces onto manifest-driven regeneration
   while preserving stable MCP names, owner boundaries, and explicit rejection
   of bundled `__pycache__` transport noise
+- `seed_aoa_wave5_a2a_codex_return_checkpoint_pack.md` is a newly staged
+  future pack for governed A2A child-route posture across `aoa-skills`,
+  `aoa-sdk`, `aoa-agents`, `aoa-routing`, `aoa-playbooks`, `aoa-evals`,
+  `aoa-memo`, `aoa-stats`, `8Dionysus`, `Agents-of-Abyss`, and
+  `abyss-stack`; use it to land `aoa-summon`, Codex-local child targeting,
+  governed return, and checkpoint-bridge planning without creating a second
+  role registry, second closeout world, second workspace install story, or
+  new stats family
 - `seed_aoa_wave7_trusted_rollout_ops_pack.md` is a newly staged future pack
   for trusted shared-root Codex rollout operations across `8Dionysus`,
   `aoa-stats`, `aoa-playbooks`, `aoa-memo`, and `aoa-sdk`; use it to keep
@@ -317,6 +325,7 @@ Reading:
 - `seed_staging/future/seed_aoa_wave2_refinery_convergence_pack.md`
 - `seed_staging/future/seed_aoa_wave4_kernel_automation_pack.md`
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
+- `seed_staging/future/seed_aoa_wave5_a2a_codex_return_checkpoint_pack.md`
 - `seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md`
 
 ### `donor_only_not_planted`
