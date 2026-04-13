@@ -21,6 +21,7 @@ wave expansion pass.
 The current posture is:
 
 - archived numbered waves remain lineage roots, not active queue authority
+- the current gated next-live seed is `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion`, still carried as a live seed rather than an opened numbered wave
 - live direction is carried by `seed-registry.yaml`, `seed_expansion/`, prep-
   pack notes, and owner-repo reality
 - `aoa-sdk` is already landed upstream and should be treated as a live owner
