@@ -30,6 +30,42 @@ The current posture is:
   owner-landing trace, and seed-route surfaces truthful as more meaning lands
   upstream
 
+### Current release contour
+
+The live `v0.1.1` contour is seed-garden stewardship for release-line staging,
+not a new owner layer. Its current checked surface is:
+
+- live route truth and registry navigation:
+  `seed-registry.yaml`, `generated/seed_route_map.min.json`,
+  `seed_expansion/seed.tos.wider-world-thought-expansion.v0.md`,
+  `docs/SEED_SURFACE_MAP.md`, and `docs/codex/planting-protocol.md`
+- repo-local read-only Codex MCP:
+  `docs/CODEX_MCP.md`, `scripts/dionysus_mcp_server.py`,
+  `src/dionysus_mcp/server.py`, `src/dionysus_mcp/repo_state.py`,
+  `tests/test_dionysus_mcp_state.py`, and `requirements-mcp.txt`
+- seed lineage and owner-followthrough witnesses:
+  `docs/CANDIDATE_SEED_IDENTITY.md`,
+  `docs/SEED_OWNER_LANDING_TRACE.md`,
+  `schemas/seed_lineage_entry.schema.json`,
+  `examples/seed_lineage_entry.example.json`,
+  `schemas/seed_owner_landing_trace.schema.json`,
+  `examples/seed_owner_landing_trace.example.json`,
+  `scripts/validate_seed_lineage_examples.py`, and
+  `scripts/validate_seed_owner_landing_trace.py`
+- release-line prep packs for owner follow-through, rollout campaign cadence,
+  self-agency continuity, and federation KAG factory follow-through:
+  `seed_staging/future/seed_aoa_wave3_owner_landing_followthrough_pack.md`,
+  `seed_staging/future/seed_aoa_wave8_campaign_cadence_pack.md`,
+  `seed_staging/future/seed_aoa_wave9_self_agency_continuity_pack.md`, and
+  `seed_staging/future/seed_aoa_federation_kag_factory_upgrade_pack.md`
+- seed-surface validation:
+  `scripts/validate_seed_surfaces.py`, `scripts/build_seed_route_map.py`,
+  `scripts/validate_seed_route_map.py`, and `scripts/release_check.py`
+
+This contour keeps MCP and prep-pack guidance route-first and non-sovereign.
+Prep packs remain weaker than opened waves, registry state, and direct
+owner-repo reality.
+
 ## Current cycle
 
 ### Wave 1: live route truth
