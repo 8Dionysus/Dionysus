@@ -1,5 +1,5 @@
 canary_version: 1
-updated_at: '2026-04-07'
+updated_at: '2026-04-13'
 source_seed: seed_staging/audit/seed_federated_audit_remediation_pack.md
 checks:
   - id: ws01-supporting-inventory
@@ -52,8 +52,9 @@ checks:
     path: /srv/8Dionysus/docs/PUBLIC_ENTRY_POSTURE.md
     contains:
       - ecosystem understanding
-      - aoa workspace inspect /srv/aoa-sdk
-      - WS12
+      - local workspace bootstrap and typed control-plane use
+      - docs/workspace-layout.md
+      - linked `aoa-sdk` owner validation surfaces
   - id: ws11-center-support-posture
     workstream: WS11
     path: /srv/Agents-of-Abyss/docs/PUBLIC_SUPPORT_POSTURE.md

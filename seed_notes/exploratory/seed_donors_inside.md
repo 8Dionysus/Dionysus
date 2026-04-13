@@ -50,5 +50,5 @@
 [5]: https://raw.githubusercontent.com/8Dionysus/aoa-agents/main/docs/SELF_AGENT_CHECKPOINT_STACK.md "raw.githubusercontent.com"
 [6]: https://raw.githubusercontent.com/8Dionysus/abyss-stack/main/docs/PROFILES.md "raw.githubusercontent.com"
 [7]: https://raw.githubusercontent.com/8Dionysus/aoa-kag/main/docs/BRIDGE_CONTRACTS.md "raw.githubusercontent.com"
-[8]: https://raw.githubusercontent.com/8Dionysus/aoa-techniques/main/docs/DEEP_AUDIT_ROADMAP.md "raw.githubusercontent.com"
+[8]: https://raw.githubusercontent.com/8Dionysus/aoa-techniques/main/ROADMAP.md "raw.githubusercontent.com"
 [9]: https://raw.githubusercontent.com/8Dionysus/aoa-techniques/main/docs/DONOR_REFINERY_RUBRIC.md "raw.githubusercontent.com"
