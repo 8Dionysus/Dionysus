@@ -15,19 +15,23 @@ def test_readme_start_here_surfaces_closure_note_and_owner_repo_before_agents() 
 
     closure_step = "3. the matching closure note for that wave when one exists"
     registry_step = "4. `seed-registry.yaml`"
-    owner_step = "6. the target repository structure and ownership"
-    agents_step = "7. `AGENTS.md` and the nearest nested `AGENTS.md`"
+    roadmap_step = "5. `ROADMAP.md`"
+    owner_step = "7. the target repository structure and ownership"
+    agents_step = "8. `AGENTS.md` and the nearest nested `AGENTS.md`"
 
     assert closure_step in readme
     assert registry_step in readme
+    assert roadmap_step in readme
     assert owner_step in readme
     assert agents_step in readme
     assert readme.index(closure_step) < readme.index(registry_step)
+    assert readme.index(registry_step) < readme.index(roadmap_step)
     assert readme.index(owner_step) < readme.index(agents_step)
 
 
 def test_readme_lists_current_validation_and_lineage_routes() -> None:
     readme = read_text("README.md")
+    roadmap = read_text("ROADMAP.md")
 
     assert "python scripts/validate_seed_surfaces.py" in readme
     assert "python scripts/build_seed_route_map.py --check" in readme
@@ -37,6 +41,8 @@ def test_readme_lists_current_validation_and_lineage_routes() -> None:
     assert "`archive/seed_pack_exports/` holds derived ingress and transport bundles only" in readme
     assert "`reports/planting/README.md` explains when Dionysus should keep durable planting trace" in readme
     assert "`docs/SEED_OWNER_LANDING_TRACE.md`, `schemas/seed_owner_landing_trace.schema.json`, `examples/seed_owner_landing_trace.example.json`, and `scripts/validate_seed_owner_landing_trace.py` keep the seed-to-owner follow-through trace subordinate to seed registry, planting protocol, and owner-repo truth" in readme
+    assert "garden-level direction surface" in roadmap
+    assert "It is weaker than the live seed surfaces." in roadmap
 
 
 def test_agents_mentions_pytest_reinforcement() -> None:
@@ -46,6 +52,7 @@ def test_agents_mentions_pytest_reinforcement() -> None:
     assert "python scripts/build_seed_route_map.py --check" in agents
     assert "python scripts/validate_seed_route_map.py" in agents
     assert "python -m pytest -q tests" in agents
+    assert "5. `ROADMAP.md`" in agents
 
 
 def test_seed_surface_map_softens_root_wording_and_marks_seed_pack_exports_derived() -> None:

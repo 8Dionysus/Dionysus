@@ -66,12 +66,16 @@ Before making changes, read in this order:
 2. the exact source seed named by that manifest or live route
 3. the matching closure note when one exists
 4. `seed-registry.yaml`
-5. `docs/SEED_SURFACE_MAP.md`
-6. `docs/codex/planting-protocol.md` and nearby contract files
-7. the target repository structure and ownership
-8. `README.md`, `AGENTS.md`, and the nearest nested `AGENTS.md`
+5. `ROADMAP.md`
+6. `docs/SEED_SURFACE_MAP.md`
+7. `docs/codex/planting-protocol.md` and nearby contract files
+8. the target repository structure and ownership
+9. `README.md`, `AGENTS.md`, and the nearest nested `AGENTS.md`
 
 If work starts from a named prep pack rather than an opened wave, read the pack note and matching `.map.yaml` after the stronger live surfaces above. Prep packs are flexible staging notes, not queue sovereignty.
+`ROADMAP.md` is a garden-level direction surface after those stronger live
+materials. It must not overrule manifest order, closure state, registry state,
+or owner-repo reality.
 
 ## Route by intent
 
