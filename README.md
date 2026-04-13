@@ -21,6 +21,9 @@ Read in this order:
 If work starts from a named prep pack rather than an opened wave, read the pack note and matching `.map.yaml` after checking the stronger live surfaces above. Named prep packs are flexible staging notes. They do not overrule an opened wave or the current live seed.
 After reading a prep-pack note, verify the owner repo directly before treating staging guidance as current queue truth.
 
+`Dionysus` intentionally does not use a standalone `ROADMAP.md` right now.
+Its current direction lives in `seed-registry.yaml`, `seed_expansion/`, and `docs/SEED_SURFACE_MAP.md`.
+
 ## What belongs here
 
 - seed sources before or between plantings

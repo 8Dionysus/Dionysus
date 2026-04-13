@@ -24,7 +24,13 @@ Please make sure:
 - docs stay public-safe and reviewable
 - this repository remains a seed-source surface rather than a replacement for the owning repositories
 
-Run the manifest validator before opening a PR:
+Run the current repo-level release audit before opening a PR:
+
+```bash
+python scripts/release_check.py
+```
+
+For a quick manifest-only precheck before that, you may also run:
 
 ```bash
 python scripts/validate_manifest.py
