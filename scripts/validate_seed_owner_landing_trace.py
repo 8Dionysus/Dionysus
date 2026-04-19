@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -29,6 +30,12 @@ REQUIRED_SCHEMA_FIELDS = (
     "drop_reason",
     "observed_at",
     "evidence_refs",
+)
+RFC3339_DATETIME_RE = re.compile(
+    r"^(?P<date>\d{4}-\d{2}-\d{2})[Tt]"
+    r"(?P<time>\d{2}:\d{2}:\d{2})"
+    r"(?:\.(?P<fraction>\d+))?"
+    r"(?P<timezone>[Zz]|[+-]\d{2}:\d{2})$"
 )
 
 
@@ -58,7 +65,20 @@ def read_json(path: Path, root: Path) -> object:
 def is_rfc3339_datetime(value: object) -> bool:
     if not isinstance(value, str) or not value:
         return False
-    normalized = value.replace("Z", "+00:00") if value.endswith("Z") else value
+    match = RFC3339_DATETIME_RE.fullmatch(value)
+    if match is None:
+        return False
+    fraction = match.group("fraction")
+    normalized_fraction = ""
+    if fraction is not None:
+        normalized_fraction = "." + fraction[:6].ljust(6, "0")
+    timezone = match.group("timezone")
+    if timezone in {"Z", "z"}:
+        timezone = "+00:00"
+    normalized = (
+        f"{match.group('date')}T{match.group('time')}"
+        f"{normalized_fraction}{timezone}"
+    )
     try:
         parsed = datetime.fromisoformat(normalized)
     except ValueError:
