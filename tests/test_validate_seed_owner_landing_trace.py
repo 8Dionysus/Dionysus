@@ -86,6 +86,19 @@ class ValidateSeedOwnerLandingTraceTests(unittest.TestCase):
         self.assertEqual(1, len(errors))
         self.assertIn("schema violation at 'observed_at'", errors[0])
 
+    def test_observed_at_accepts_nanosecond_precision(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            example_path = root / "examples/seed_owner_landing_trace.example.json"
+            payload = json.loads(example_path.read_text(encoding="utf-8"))
+            payload["observed_at"] = "2026-04-12T00:42:00.123456789Z"
+            example_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+            errors = validate_seed_owner_landing_trace.run_validation(root)
+
+        self.assertEqual([], errors)
+
     def test_reanchored_outcome_requires_superseded_by(self) -> None:
         with TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
