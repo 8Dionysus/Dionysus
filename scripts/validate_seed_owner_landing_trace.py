@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import sys
+from datetime import datetime
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
@@ -54,6 +55,17 @@ def read_json(path: Path, root: Path) -> object:
         raise AssertionError("unreachable") from exc
 
 
+def is_rfc3339_datetime(value: object) -> bool:
+    if not isinstance(value, str) or not value:
+        return False
+    normalized = value.replace("Z", "+00:00") if value.endswith("Z") else value
+    try:
+        parsed = datetime.fromisoformat(normalized)
+    except ValueError:
+        return False
+    return parsed.tzinfo is not None
+
+
 def validate_schema_contract(schema: object, *, root: Path) -> None:
     if not isinstance(schema, dict):
         fail(f"{display_path(root / SCHEMA_REL, root)} must be a JSON object")
@@ -95,7 +107,7 @@ def validate_example_payload(
     if not isinstance(lineage_payload, dict):
         fail(f"{display_path(root / LINEAGE_EXAMPLE_REL, root)} must be a JSON object")
 
-    validator = Draft202012Validator(schema)
+    validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
     errors = sorted(validator.iter_errors(payload), key=lambda error: list(error.absolute_path))
     if errors:
         error = errors[0]
@@ -103,6 +115,11 @@ def validate_example_payload(
         if path:
             fail(f"{display_path(root / EXAMPLE_REL, root)} schema violation at '{path}': {error.message}")
         fail(f"{display_path(root / EXAMPLE_REL, root)} schema violation: {error.message}")
+    if not is_rfc3339_datetime(payload["observed_at"]):
+        fail(
+            f"{display_path(root / EXAMPLE_REL, root)} schema violation at 'observed_at': "
+            f"{payload['observed_at']!r} is not a 'date-time'"
+        )
 
     if payload["candidate_ref"] != lineage_payload["candidate_ref"]:
         fail(f"{display_path(root / EXAMPLE_REL, root)} candidate_ref must stay aligned with seed_lineage_entry.example.json")
@@ -133,6 +150,10 @@ def validate_example_payload(
         fail(f"{display_path(root / EXAMPLE_REL, root)} outcome 'merged' requires merged_into")
     if outcome != "merged" and merged_into is not None:
         fail(f"{display_path(root / EXAMPLE_REL, root)} merged_into requires outcome 'merged'")
+    if outcome == "reanchored" and payload["superseded_by"] is None:
+        fail(f"{display_path(root / EXAMPLE_REL, root)} outcome 'reanchored' requires superseded_by")
+    if outcome != "reanchored" and payload["superseded_by"] is not None:
+        fail(f"{display_path(root / EXAMPLE_REL, root)} superseded_by requires outcome 'reanchored'")
     if outcome == "dropped" and drop_reason is None:
         fail(f"{display_path(root / EXAMPLE_REL, root)} outcome 'dropped' requires drop_reason")
     if outcome != "dropped" and drop_reason is not None:

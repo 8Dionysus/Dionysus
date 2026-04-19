@@ -72,6 +72,50 @@ class ValidateSeedOwnerLandingTraceTests(unittest.TestCase):
         self.assertEqual(1, len(errors))
         self.assertIn("outcome 'merged' requires merged_into", errors[0])
 
+    def test_observed_at_must_be_valid_datetime(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            example_path = root / "examples/seed_owner_landing_trace.example.json"
+            payload = json.loads(example_path.read_text(encoding="utf-8"))
+            payload["observed_at"] = "not-a-date"
+            example_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+            errors = validate_seed_owner_landing_trace.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("schema violation at 'observed_at'", errors[0])
+
+    def test_reanchored_outcome_requires_superseded_by(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            example_path = root / "examples/seed_owner_landing_trace.example.json"
+            payload = json.loads(example_path.read_text(encoding="utf-8"))
+            payload["outcome"] = "reanchored"
+            payload["owner_status_ref"] = None
+            payload["superseded_by"] = None
+            example_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+            errors = validate_seed_owner_landing_trace.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("outcome 'reanchored' requires superseded_by", errors[0])
+
+    def test_non_reanchored_outcome_forbids_superseded_by(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            copy_surface(root)
+            example_path = root / "examples/seed_owner_landing_trace.example.json"
+            payload = json.loads(example_path.read_text(encoding="utf-8"))
+            payload["superseded_by"] = "seed:aoa:session-growth:reviewed-donor-harvest:v2"
+            example_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+            errors = validate_seed_owner_landing_trace.run_validation(root)
+
+        self.assertEqual(1, len(errors))
+        self.assertIn("superseded_by requires outcome 'reanchored'", errors[0])
+
     def test_dropped_outcome_requires_drop_reason(self) -> None:
         with TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
