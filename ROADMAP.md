@@ -32,7 +32,7 @@ The current posture is:
 
 ### Current release contour
 
-The live `v0.1.1` contour is seed-garden stewardship for release-line staging,
+The live `v0.1.2` contour is seed-garden stewardship for release-line staging,
 not a new owner layer. Its current checked surface is:
 
 - live route truth and registry navigation:

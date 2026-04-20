@@ -7,6 +7,37 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-04-19
+
+### Summary
+
+- this patch tightens landing-trace validation and stages the current
+  Wave5/Wave10 seed packs for follow-through
+- roadmap/current-direction docs, PR intake, and required-check plus Node24
+  workflow refs are aligned with the active staging line
+- `Dionysus` remains the seed garden and staging surface rather than live
+  owner truth
+
+### Added
+
+- a Wave5 A2A Codex return checkpoint seed pack and Wave10 component refresh
+  pack closeout staging surfaces
+
+### Changed
+
+- seed owner landing-trace validation, RFC3339 nanosecond precision handling,
+  roadmap direction references, and CI/protection surfaces are tightened for
+  the current staging wave
+
+### Validation
+
+- `python scripts/release_check.py`
+
+### Notes
+
+- this patch strengthens staging lineage and handoff posture without promoting
+  staged seed material into live owner authority
+
 ## [0.1.1] - 2026-04-12
 
 ### Summary
