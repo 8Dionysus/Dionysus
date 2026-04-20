@@ -44,6 +44,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 - `python scripts/release_check.py`
 
+### Notes
+
+- detailed Codex MCP, staged release-line seed-pack, and seeded lifecycle-audit changes for this patch remain enumerated below under `Added`, `Documentation`, and `Changed`
+
 ## [0.1.0] - 2026-04-10
 
 ### Summary
