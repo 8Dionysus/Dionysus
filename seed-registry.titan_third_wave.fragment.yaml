@@ -1,0 +1,10 @@
+- seed_ref: aoa-titans-operator-console-charter
+  wave: twelfth
+  status: staged
+  owner_repo: aoa-agents
+  surface: docs/TITAN_OPERATOR_CONSOLE_BOUNDARY.md
+- seed_ref: aoa-titans-appserver-bridge
+  wave: twelfth
+  status: staged
+  owner_repo: aoa-sdk
+  surface: docs/TITAN_APPSERVER_BRIDGE.md

@@ -1,0 +1,12 @@
+pack_id: seed_aoa_titans_operator_console_pack
+program: titan_operator_console
+recommended_open_wave: twelfth_wave
+mode: aoa_titans_operator_console
+seeds:
+  - {id: aoa-titans-operator-console-charter, target_repo: aoa-agents, first_artifact_hint: docs/TITAN_OPERATOR_CONSOLE_BOUNDARY.md}
+  - {id: aoa-titans-appserver-bridge, target_repo: aoa-sdk, first_artifact_hint: docs/TITAN_APPSERVER_BRIDGE.md}
+  - {id: aoa-titans-console-state-ledger, target_repo: aoa-sdk, first_artifact_hint: schemas/titan_console_state.schema.json}
+  - {id: aoa-titans-operator-approval-gates, target_repo: aoa-sdk, first_artifact_hint: schemas/titan_operator_approval.schema.json}
+  - {id: aoa-titans-console-prompts, target_repo: 8Dionysus, first_artifact_hint: .codex/prompts/titan-console.start.v0.md}
+  - {id: aoa-titans-console-evals, target_repo: aoa-evals, first_artifact_hint: evals/titan_console_visibility_canary.yaml}
+promotion_gates: [first_wave_names_planted, second_wave_runtime_harness_available, console_state_schema_defined, gate_approval_schema_defined, appserver_bridge_is_seed_only, no_hidden_lane_rule_written, local_smoke_passes]

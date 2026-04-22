@@ -1,0 +1,28 @@
+{
+  "seed_ref": "AOA-TITAN-SEED-01..07",
+  "wave": "tenth_wave",
+  "program": "titan_first_appearance",
+  "source_refs": [
+    "tenth_wave.manifest.json",
+    "seed_staging/future/seed_aoa_titans_first_appearance_pack.md"
+  ],
+  "names": {
+    "Atlas": "architect",
+    "Sentinel": "reviewer",
+    "Mneme": "memory-keeper",
+    "Forge": "coder",
+    "Delta": "evaluator"
+  },
+  "owner_repos": [
+    "Dionysus",
+    "aoa-agents",
+    "8Dionysus",
+    "aoa-sdk",
+    "aoa-skills",
+    "aoa-playbooks",
+    "aoa-evals",
+    "aoa-memo",
+    "aoa-stats"
+  ],
+  "boundary": "service cohort only; no hidden arena; mutation and judgment are gated"
+}

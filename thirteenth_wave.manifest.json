@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "mode": "aoa_titans_appserver_bridge",
+  "title": "Titan Fourth Wave: App-Server Bridge",
+  "canonical_sources": [
+    "seed_staging/future/seed_aoa_titans_appserver_bridge_pack.md",
+    "seed_staging/future/seed_aoa_titans_appserver_bridge_pack.map.yaml"
+  ],
+  "thirteenth_wave_order": [
+    {
+      "id": "aoa-titan-appserver-bridge-charter",
+      "label": "AOA-TITAN-SEED-46 App-Server Bridge Charter",
+      "source": "seed_expansion/seed.aoa.titans.appserver-bridge-charter.v0.md#aoa-titan-seed-46-app-server-bridge-charter"
+    },
+    {
+      "id": "aoa-titan-jsonrpc-launch-weave",
+      "label": "AOA-TITAN-SEED-47 JSON-RPC Launch Weave",
+      "source": "seed_expansion/seed.aoa.titans.jsonrpc-launch-weave.v0.md#aoa-titan-seed-47-json-rpc-launch-weave"
+    },
+    {
+      "id": "aoa-titan-event-normalizer",
+      "label": "AOA-TITAN-SEED-48 Event Normalizer",
+      "source": "seed_expansion/seed.aoa.titans.event-normalizer.v0.md#aoa-titan-seed-48-event-normalizer"
+    },
+    {
+      "id": "aoa-titan-approval-loom",
+      "label": "AOA-TITAN-SEED-49 Approval Loom",
+      "source": "seed_expansion/seed.aoa.titans.approval-loom.v0.md#aoa-titan-seed-49-approval-loom"
+    },
+    {
+      "id": "aoa-titan-thread-turn-binding",
+      "label": "AOA-TITAN-SEED-50 Thread/Turn Binding",
+      "source": "seed_expansion/seed.aoa.titans.thread-turn-binding.v0.md#aoa-titan-seed-50-threadturn-binding"
+    },
+    {
+      "id": "aoa-titan-bridge-ledger-replay",
+      "label": "AOA-TITAN-SEED-51 Bridge Ledger Replay",
+      "source": "seed_expansion/seed.aoa.titans.bridge-ledger-replay.v0.md#aoa-titan-seed-51-bridge-ledger-replay"
+    },
+    {
+      "id": "aoa-titan-bridge-metrics",
+      "label": "AOA-TITAN-SEED-52 Bridge Metrics",
+      "source": "seed_expansion/seed.aoa.titans.bridge-metrics.v0.md#aoa-titan-seed-52-bridge-metrics"
+    },
+    {
+      "id": "aoa-titan-bridge-rollout-closure",
+      "label": "AOA-TITAN-SEED-53 Bridge Rollout Closure",
+      "source": "seed_expansion/seed.aoa.titans.bridge-rollout-closure.v0.md#aoa-titan-seed-53-bridge-rollout-closure"
+    }
+  ],
+  "closure_law": "The fourth wave opens the bridge, not the cage."
+}

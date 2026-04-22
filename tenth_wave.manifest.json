@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "mode": "aoa_titans_first_appearance",
+  "canonical_sources": [
+    "seed_staging/future/seed_aoa_titans_first_appearance_pack.md",
+    "seed_staging/future/seed_aoa_titans_first_appearance_pack.map.yaml",
+    "seed_expansion/seed.aoa.titans.service-cohort.v0.md#aoa-titan-seed-01-service-cohort-identity",
+    "seed_expansion/seed.aoa.titans.codex-projection-body.v0.md#aoa-titan-seed-02-codex-projection-body",
+    "seed_expansion/seed.aoa.titans.summon-ritual.v0.md#aoa-titan-seed-03-summon-ritual",
+    "seed_expansion/seed.aoa.titans.mutation-gate.v0.md#aoa-titan-seed-04-mutation-gate",
+    "seed_expansion/seed.aoa.titans.receipt-memory.v0.md#aoa-titan-seed-05-receipt-and-memory-posture",
+    "seed_expansion/seed.aoa.titans.eval-canaries.v0.md#aoa-titan-seed-06-eval-canaries",
+    "seed_expansion/seed.aoa.titans.rollout-closure.v0.md#aoa-titan-seed-07-rollout-and-closure"
+  ],
+  "tenth_wave_order": [
+    {
+      "id": "aoa-titans-service-cohort",
+      "label": "AOA-TITAN-SEED-01 Service Cohort Identity",
+      "source": "seed_expansion/seed.aoa.titans.service-cohort.v0.md#aoa-titan-seed-01-service-cohort-identity"
+    },
+    {
+      "id": "aoa-titans-codex-projection-body",
+      "label": "AOA-TITAN-SEED-02 Codex Projection Body",
+      "source": "seed_expansion/seed.aoa.titans.codex-projection-body.v0.md#aoa-titan-seed-02-codex-projection-body"
+    },
+    {
+      "id": "aoa-titans-summon-ritual",
+      "label": "AOA-TITAN-SEED-03 Summon Ritual",
+      "source": "seed_expansion/seed.aoa.titans.summon-ritual.v0.md#aoa-titan-seed-03-summon-ritual"
+    },
+    {
+      "id": "aoa-titans-mutation-gate",
+      "label": "AOA-TITAN-SEED-04 Mutation Gate",
+      "source": "seed_expansion/seed.aoa.titans.mutation-gate.v0.md#aoa-titan-seed-04-mutation-gate"
+    },
+    {
+      "id": "aoa-titans-receipt-memory",
+      "label": "AOA-TITAN-SEED-05 Receipt and Memory Posture",
+      "source": "seed_expansion/seed.aoa.titans.receipt-memory.v0.md#aoa-titan-seed-05-receipt-and-memory-posture"
+    },
+    {
+      "id": "aoa-titans-eval-canaries",
+      "label": "AOA-TITAN-SEED-06 Eval Canaries",
+      "source": "seed_expansion/seed.aoa.titans.eval-canaries.v0.md#aoa-titan-seed-06-eval-canaries"
+    },
+    {
+      "id": "aoa-titans-rollout-closure",
+      "label": "AOA-TITAN-SEED-07 Rollout and Closure",
+      "source": "seed_expansion/seed.aoa.titans.rollout-closure.v0.md#aoa-titan-seed-07-rollout-and-closure"
+    }
+  ],
+  "supporting_notes": [
+    "reports/planting/titan_first_appearance.preflight.md",
+    "reports/planting/titan_first_appearance.closure.md",
+    "examples/seed_lineage_entry.titans_first_appearance.example.json"
+  ]
+}

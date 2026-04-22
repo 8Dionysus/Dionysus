@@ -1,5 +1,5 @@
 registry_version: 2
-updated_at: '2026-04-12'
+updated_at: '2026-04-22'
 navigation:
   canonical_order_source: wave manifests
   semantic_source: source seed files
@@ -53,6 +53,12 @@ origin_notes:
 - seed_staging/future/seed_aoa_antifragility_fourth_wave_pack.md
 - seed_staging/future/seed_aoa_antifragility_wave_4_5_via_negativa_pack.md
 - seed_staging/future/seed_aoa_rag_skeleton_pack.md
+- seed_staging/future/seed_aoa_titans_first_appearance_pack.md
+- seed_staging/future/seed_aoa_titans_runtime_harness_pack.md
+- seed_staging/future/seed_aoa_titans_operator_console_pack.md
+- seed_staging/future/seed_aoa_titans_appserver_bridge_pack.md
+- seed_staging/future/seed_aoa_titans_memory_loom_pack.md
+- seed_staging/future/seed_aoa_titans_bearer_lineage_identity_patch.md
 - seed_staging/future/seed_aoa_federation_kag_factory_upgrade_pack.md
 - seed_staging/future/seed_tos_graph_curation_pack.md
 - seed_staging/audit/seed_wave3_codex_repo_local_skills_trace_harness.md
@@ -127,6 +133,88 @@ wave_index:
   - aoa-evals
   - abyss-stack
   summary: contract-first AoA growth wave closed and archived on canonical terms
+- wave: tenth_wave
+  file: tenth_wave.manifest.json
+  mode: aoa_titans_first_appearance
+  registry_status: landed_post_wave
+  supporting_notes:
+  - reports/planting/titan_first_appearance.preflight.md
+  - reports/planting/titan_first_appearance.closure.md
+  landed_to:
+  - Dionysus
+  - aoa-agents
+  - aoa-sdk
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-routing
+  - aoa-stats
+  - 8Dionysus
+  summary: first Titan service cohort, explicit summon boundary, mutation gate, receipt memory, eval canaries, and rollout closure
+- wave: eleventh_wave
+  file: eleventh_wave.manifest.json
+  mode: aoa_titans_runtime_harness
+  registry_status: landed_post_wave
+  landed_to:
+  - aoa-agents
+  - aoa-routing
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - Dionysus
+  summary: runtime roster, receipts, Forge and Delta gates, Codex harness, closeout memory, runtime evals, and closure
+- wave: twelfth_wave
+  file: twelfth_wave.manifest.json
+  mode: aoa_titans_operator_console
+  registry_status: landed_post_wave
+  landed_to:
+  - aoa-agents
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - Dionysus
+  summary: operator console, visible state ledger, approval gates, digest, evals, and app-server launch plan without hidden execution
+- wave: thirteenth_wave
+  file: thirteenth_wave.manifest.json
+  mode: aoa_titans_appserver_bridge
+  registry_status: landed_post_wave
+  landed_to:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  summary: app-server bridge charter, JSON-RPC launch weave, event normalization, approval loom, thread-turn binding, replay, metrics, and closure
+- wave: fourteenth_wave
+  file: fourteenth_wave.manifest.json
+  mode: aoa_titans_memory_loom
+  registry_status: landed_post_wave
+  landed_to:
+  - aoa-memo
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  summary: candidate-grade Titan memory loom with receipt ingest, recall index, redaction, digest, lineage bridge, eval canaries, and closure
 seed_index:
 - registry_id: rootline
   label: AoA x ToS Rootline
@@ -1785,5 +1873,1792 @@ seed_index:
     - no third-party redistribution or donor carry-over is implied by this registry entry
   freshness:
     last_revalidated_at: null
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-service-cohort
+  label: AOA-TITAN-SEED-01 Service Cohort Identity
+  source_ref: seed_expansion/seed.aoa.titans.service-cohort.v0.md#aoa-titan-seed-01-service-cohort-identity
+  wave: tenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - 8Dionysus
+  - aoa-sdk
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-routing
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by tenth_wave.manifest.json
+  notes: First Titan service cohort with explicit summon, gates, receipts, and no hidden arena. Seed surface - AOA-TITAN-SEED-01 Service Cohort Identity.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-01 Service Cohort Identity as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-codex-projection-body
+  label: AOA-TITAN-SEED-02 Codex Projection Body
+  source_ref: seed_expansion/seed.aoa.titans.codex-projection-body.v0.md#aoa-titan-seed-02-codex-projection-body
+  wave: tenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - 8Dionysus
+  - aoa-sdk
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-routing
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by tenth_wave.manifest.json
+  notes: First Titan service cohort with explicit summon, gates, receipts, and no hidden arena. Seed surface - AOA-TITAN-SEED-02 Codex Projection Body.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-02 Codex Projection Body as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-summon-ritual
+  label: AOA-TITAN-SEED-03 Summon Ritual
+  source_ref: seed_expansion/seed.aoa.titans.summon-ritual.v0.md#aoa-titan-seed-03-summon-ritual
+  wave: tenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - 8Dionysus
+  - aoa-sdk
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-routing
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by tenth_wave.manifest.json
+  notes: First Titan service cohort with explicit summon, gates, receipts, and no hidden arena. Seed surface - AOA-TITAN-SEED-03 Summon Ritual.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-03 Summon Ritual as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-mutation-gate
+  label: AOA-TITAN-SEED-04 Mutation Gate
+  source_ref: seed_expansion/seed.aoa.titans.mutation-gate.v0.md#aoa-titan-seed-04-mutation-gate
+  wave: tenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - 8Dionysus
+  - aoa-sdk
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-routing
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by tenth_wave.manifest.json
+  notes: First Titan service cohort with explicit summon, gates, receipts, and no hidden arena. Seed surface - AOA-TITAN-SEED-04 Mutation Gate.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-04 Mutation Gate as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-receipt-memory
+  label: AOA-TITAN-SEED-05 Receipt and Memory Posture
+  source_ref: seed_expansion/seed.aoa.titans.receipt-memory.v0.md#aoa-titan-seed-05-receipt-and-memory-posture
+  wave: tenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - 8Dionysus
+  - aoa-sdk
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-routing
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by tenth_wave.manifest.json
+  notes: First Titan service cohort with explicit summon, gates, receipts, and no hidden arena. Seed surface - AOA-TITAN-SEED-05 Receipt and Memory Posture.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-05 Receipt and Memory Posture as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-eval-canaries
+  label: AOA-TITAN-SEED-06 Eval Canaries
+  source_ref: seed_expansion/seed.aoa.titans.eval-canaries.v0.md#aoa-titan-seed-06-eval-canaries
+  wave: tenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - 8Dionysus
+  - aoa-sdk
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-routing
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by tenth_wave.manifest.json
+  notes: First Titan service cohort with explicit summon, gates, receipts, and no hidden arena. Seed surface - AOA-TITAN-SEED-06 Eval Canaries.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-06 Eval Canaries as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-rollout-closure
+  label: AOA-TITAN-SEED-07 Rollout and Closure
+  source_ref: seed_expansion/seed.aoa.titans.rollout-closure.v0.md#aoa-titan-seed-07-rollout-and-closure
+  wave: tenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - 8Dionysus
+  - aoa-sdk
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-routing
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by tenth_wave.manifest.json
+  notes: First Titan service cohort with explicit summon, gates, receipts, and no hidden arena. Seed surface - AOA-TITAN-SEED-07 Rollout and Closure.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-07 Rollout and Closure as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-runtime-roster
+  label: AOA-TITAN2-SEED-01 Runtime Roster
+  source_ref: seed_expansion/seed.aoa.titans.runtime-roster.v0.md#seed-aoa-titans-runtime-roster-v0
+  wave: eleventh_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - aoa-routing
+  first_artifact_hint: owner-local Titan surfaces named by eleventh_wave.manifest.json
+  notes: Runtime harness that turns the cohort into receipt-backed local state without changing owner truth. Seed surface - AOA-TITAN2-SEED-01 Runtime Roster.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN2-SEED-01 Runtime Roster as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-session-receipts
+  label: AOA-TITAN2-SEED-02 Session Receipts
+  source_ref: seed_expansion/seed.aoa.titans.session-receipts.v0.md#seed-aoa-titans-session-receipts-v0
+  wave: eleventh_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - aoa-stats
+  - aoa-memo
+  first_artifact_hint: owner-local Titan surfaces named by eleventh_wave.manifest.json
+  notes: Runtime harness that turns the cohort into receipt-backed local state without changing owner truth. Seed surface - AOA-TITAN2-SEED-02 Session Receipts.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN2-SEED-02 Session Receipts as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-runtime-gates
+  label: AOA-TITAN2-SEED-03 Forge and Delta Gates
+  source_ref: seed_expansion/seed.aoa.titans.runtime-gates.v0.md#seed-aoa-titans-forge-and-delta-gates-v0
+  wave: eleventh_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  first_artifact_hint: owner-local Titan surfaces named by eleventh_wave.manifest.json
+  notes: Runtime harness that turns the cohort into receipt-backed local state without changing owner truth. Seed surface - AOA-TITAN2-SEED-03 Forge and Delta Gates.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN2-SEED-03 Forge and Delta Gates as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-codex-harness
+  label: AOA-TITAN2-SEED-04 Codex Runtime Harness
+  source_ref: seed_expansion/seed.aoa.titans.codex-runtime-harness.v0.md#seed-aoa-titans-codex-runtime-harness-v0
+  wave: eleventh_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - 8Dionysus
+  - aoa-sdk
+  first_artifact_hint: owner-local Titan surfaces named by eleventh_wave.manifest.json
+  notes: Runtime harness that turns the cohort into receipt-backed local state without changing owner truth. Seed surface - AOA-TITAN2-SEED-04 Codex Runtime Harness.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN2-SEED-04 Codex Runtime Harness as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-closeout
+  label: AOA-TITAN2-SEED-05 Closeout and Memory
+  source_ref: seed_expansion/seed.aoa.titans.closeout-memory.v0.md#seed-aoa-titans-closeout-and-memory-v0
+  wave: eleventh_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by eleventh_wave.manifest.json
+  notes: Runtime harness that turns the cohort into receipt-backed local state without changing owner truth. Seed surface - AOA-TITAN2-SEED-05 Closeout and Memory.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN2-SEED-05 Closeout and Memory as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-runtime-evals
+  label: AOA-TITAN2-SEED-06 Runtime Eval Canaries
+  source_ref: seed_expansion/seed.aoa.titans.runtime-evals.v0.md#seed-aoa-titans-runtime-eval-canaries-v0
+  wave: eleventh_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-evals
+  - aoa-stats
+  first_artifact_hint: owner-local Titan surfaces named by eleventh_wave.manifest.json
+  notes: Runtime harness that turns the cohort into receipt-backed local state without changing owner truth. Seed surface - AOA-TITAN2-SEED-06 Runtime Eval Canaries.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN2-SEED-06 Runtime Eval Canaries as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-runtime-closure
+  label: AOA-TITAN2-SEED-07 Runtime Harness Closure
+  source_ref: seed_expansion/seed.aoa.titans.runtime-closure.v0.md#seed-aoa-titans-runtime-harness-closure-v0
+  wave: eleventh_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by eleventh_wave.manifest.json
+  notes: Runtime harness that turns the cohort into receipt-backed local state without changing owner truth. Seed surface - AOA-TITAN2-SEED-07 Runtime Harness Closure.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN2-SEED-07 Runtime Harness Closure as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-operator-console-charter
+  label: AOA-TITAN-SEED-15 Operator Console Charter
+  source_ref: seed_expansion/seed.aoa.titans.operator-console-charter.v0.md#aoa-titan-seed-15-operator-console-charter
+  wave: twelfth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by twelfth_wave.manifest.json
+  notes: Operator console and visible approval ledger for Titan lanes. Seed surface - AOA-TITAN-SEED-15 Operator Console Charter.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-15 Operator Console Charter as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-appserver-bridge
+  label: AOA-TITAN-SEED-16 App-Server Bridge Seed
+  source_ref: seed_expansion/seed.aoa.titans.appserver-bridge.v0.md#aoa-titan-seed-16-app-server-bridge-seed
+  wave: twelfth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by twelfth_wave.manifest.json
+  notes: Operator console and visible approval ledger for Titan lanes. Seed surface - AOA-TITAN-SEED-16 App-Server Bridge Seed.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-16 App-Server Bridge Seed as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-console-state-ledger
+  label: AOA-TITAN-SEED-17 Console State Ledger
+  source_ref: seed_expansion/seed.aoa.titans.console-state-ledger.v0.md#aoa-titan-seed-17-console-state-ledger
+  wave: twelfth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by twelfth_wave.manifest.json
+  notes: Operator console and visible approval ledger for Titan lanes. Seed surface - AOA-TITAN-SEED-17 Console State Ledger.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-17 Console State Ledger as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-operator-approval-gates
+  label: AOA-TITAN-SEED-18 Operator Approval Gates
+  source_ref: seed_expansion/seed.aoa.titans.operator-approval-gates.v0.md#aoa-titan-seed-18-operator-approval-gates
+  wave: twelfth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by twelfth_wave.manifest.json
+  notes: Operator console and visible approval ledger for Titan lanes. Seed surface - AOA-TITAN-SEED-18 Operator Approval Gates.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-18 Operator Approval Gates as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-console-digest
+  label: AOA-TITAN-SEED-19 Console Digest
+  source_ref: seed_expansion/seed.aoa.titans.console-digest.v0.md#aoa-titan-seed-19-console-digest
+  wave: twelfth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by twelfth_wave.manifest.json
+  notes: Operator console and visible approval ledger for Titan lanes. Seed surface - AOA-TITAN-SEED-19 Console Digest.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-19 Console Digest as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-console-evals
+  label: AOA-TITAN-SEED-20 Console Eval Canaries
+  source_ref: seed_expansion/seed.aoa.titans.console-evals.v0.md#aoa-titan-seed-20-console-eval-canaries
+  wave: twelfth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by twelfth_wave.manifest.json
+  notes: Operator console and visible approval ledger for Titan lanes. Seed surface - AOA-TITAN-SEED-20 Console Eval Canaries.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-20 Console Eval Canaries as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titans-console-rollout-closure
+  label: AOA-TITAN-SEED-21 Console Rollout and Closure
+  source_ref: seed_expansion/seed.aoa.titans.console-rollout-closure.v0.md#aoa-titan-seed-21-console-rollout-and-closure
+  wave: twelfth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-agents
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by twelfth_wave.manifest.json
+  notes: Operator console and visible approval ledger for Titan lanes. Seed surface - AOA-TITAN-SEED-21 Console Rollout and Closure.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-21 Console Rollout and Closure as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-appserver-bridge-charter
+  label: AOA-TITAN-SEED-46 App-Server Bridge Charter
+  source_ref: seed_expansion/seed.aoa.titans.appserver-bridge-charter.v0.md#aoa-titan-seed-46-app-server-bridge-charter
+  wave: thirteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by thirteenth_wave.manifest.json
+  notes: App-server bridge surfaces for thread, turn, event, approval, replay, and metrics. Seed surface - AOA-TITAN-SEED-46 App-Server Bridge Charter.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-46 App-Server Bridge Charter as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-jsonrpc-launch-weave
+  label: AOA-TITAN-SEED-47 JSON-RPC Launch Weave
+  source_ref: seed_expansion/seed.aoa.titans.jsonrpc-launch-weave.v0.md#aoa-titan-seed-47-json-rpc-launch-weave
+  wave: thirteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by thirteenth_wave.manifest.json
+  notes: App-server bridge surfaces for thread, turn, event, approval, replay, and metrics. Seed surface - AOA-TITAN-SEED-47 JSON-RPC Launch Weave.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-47 JSON-RPC Launch Weave as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-event-normalizer
+  label: AOA-TITAN-SEED-48 Event Normalizer
+  source_ref: seed_expansion/seed.aoa.titans.event-normalizer.v0.md#aoa-titan-seed-48-event-normalizer
+  wave: thirteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by thirteenth_wave.manifest.json
+  notes: App-server bridge surfaces for thread, turn, event, approval, replay, and metrics. Seed surface - AOA-TITAN-SEED-48 Event Normalizer.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-48 Event Normalizer as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-approval-loom
+  label: AOA-TITAN-SEED-49 Approval Loom
+  source_ref: seed_expansion/seed.aoa.titans.approval-loom.v0.md#aoa-titan-seed-49-approval-loom
+  wave: thirteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by thirteenth_wave.manifest.json
+  notes: App-server bridge surfaces for thread, turn, event, approval, replay, and metrics. Seed surface - AOA-TITAN-SEED-49 Approval Loom.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-49 Approval Loom as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-thread-turn-binding
+  label: AOA-TITAN-SEED-50 Thread/Turn Binding
+  source_ref: seed_expansion/seed.aoa.titans.thread-turn-binding.v0.md#aoa-titan-seed-50-threadturn-binding
+  wave: thirteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by thirteenth_wave.manifest.json
+  notes: App-server bridge surfaces for thread, turn, event, approval, replay, and metrics. Seed surface - AOA-TITAN-SEED-50 Thread/Turn Binding.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-50 Thread/Turn Binding as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-bridge-ledger-replay
+  label: AOA-TITAN-SEED-51 Bridge Ledger Replay
+  source_ref: seed_expansion/seed.aoa.titans.bridge-ledger-replay.v0.md#aoa-titan-seed-51-bridge-ledger-replay
+  wave: thirteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by thirteenth_wave.manifest.json
+  notes: App-server bridge surfaces for thread, turn, event, approval, replay, and metrics. Seed surface - AOA-TITAN-SEED-51 Bridge Ledger Replay.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-51 Bridge Ledger Replay as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-bridge-metrics
+  label: AOA-TITAN-SEED-52 Bridge Metrics
+  source_ref: seed_expansion/seed.aoa.titans.bridge-metrics.v0.md#aoa-titan-seed-52-bridge-metrics
+  wave: thirteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by thirteenth_wave.manifest.json
+  notes: App-server bridge surfaces for thread, turn, event, approval, replay, and metrics. Seed surface - AOA-TITAN-SEED-52 Bridge Metrics.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-52 Bridge Metrics as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-bridge-rollout-closure
+  label: AOA-TITAN-SEED-53 Bridge Rollout Closure
+  source_ref: seed_expansion/seed.aoa.titans.bridge-rollout-closure.v0.md#aoa-titan-seed-53-bridge-rollout-closure
+  wave: thirteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by thirteenth_wave.manifest.json
+  notes: App-server bridge surfaces for thread, turn, event, approval, replay, and metrics. Seed surface - AOA-TITAN-SEED-53 Bridge Rollout Closure.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-53 Bridge Rollout Closure as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-memory-loom-charter
+  label: AOA-TITAN-SEED-38 Memory Loom Charter
+  source_ref: seed_expansion/seed.aoa.titans.memory-loom-charter.v0.md#aoa-titan-seed-38-memory-loom-charter
+  wave: fourteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by fourteenth_wave.manifest.json
+  notes: Memory Loom surfaces for candidate recall, redaction, digest, and lineage carry. Seed surface - AOA-TITAN-SEED-38 Memory Loom Charter.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-38 Memory Loom Charter as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-receipt-ingest
+  label: AOA-TITAN-SEED-39 Receipt Ingest
+  source_ref: seed_expansion/seed.aoa.titans.receipt-ingest.v0.md#aoa-titan-seed-39-receipt-ingest
+  wave: fourteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by fourteenth_wave.manifest.json
+  notes: Memory Loom surfaces for candidate recall, redaction, digest, and lineage carry. Seed surface - AOA-TITAN-SEED-39 Receipt Ingest.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-39 Receipt Ingest as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-recall-index
+  label: AOA-TITAN-SEED-40 Recall Index
+  source_ref: seed_expansion/seed.aoa.titans.recall-index.v0.md#aoa-titan-seed-40-recall-index
+  wave: fourteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by fourteenth_wave.manifest.json
+  notes: Memory Loom surfaces for candidate recall, redaction, digest, and lineage carry. Seed surface - AOA-TITAN-SEED-40 Recall Index.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-40 Recall Index as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-redaction-retention
+  label: AOA-TITAN-SEED-41 Redaction and Retention
+  source_ref: seed_expansion/seed.aoa.titans.redaction-retention.v0.md#aoa-titan-seed-41-redaction-and-retention
+  wave: fourteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by fourteenth_wave.manifest.json
+  notes: Memory Loom surfaces for candidate recall, redaction, digest, and lineage carry. Seed surface - AOA-TITAN-SEED-41 Redaction and Retention.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-41 Redaction and Retention as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-cross-session-digest
+  label: AOA-TITAN-SEED-42 Cross-Session Digest
+  source_ref: seed_expansion/seed.aoa.titans.cross-session-digest.v0.md#aoa-titan-seed-42-cross-session-digest
+  wave: fourteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by fourteenth_wave.manifest.json
+  notes: Memory Loom surfaces for candidate recall, redaction, digest, and lineage carry. Seed surface - AOA-TITAN-SEED-42 Cross-Session Digest.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-42 Cross-Session Digest as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-planting-lineage-bridge
+  label: AOA-TITAN-SEED-43 Planting Lineage Bridge
+  source_ref: seed_expansion/seed.aoa.titans.planting-lineage-bridge.v0.md#aoa-titan-seed-43-planting-lineage-bridge
+  wave: fourteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by fourteenth_wave.manifest.json
+  notes: Memory Loom surfaces for candidate recall, redaction, digest, and lineage carry. Seed surface - AOA-TITAN-SEED-43 Planting Lineage Bridge.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-43 Planting Lineage Bridge as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-memory-evals
+  label: AOA-TITAN-SEED-44 Memory Eval Canaries
+  source_ref: seed_expansion/seed.aoa.titans.memory-evals.v0.md#aoa-titan-seed-44-memory-eval-canaries
+  wave: fourteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by fourteenth_wave.manifest.json
+  notes: Memory Loom surfaces for candidate recall, redaction, digest, and lineage carry. Seed surface - AOA-TITAN-SEED-44 Memory Eval Canaries.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-44 Memory Eval Canaries as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-memory-closure
+  label: AOA-TITAN-SEED-45 Memory Closure
+  source_ref: seed_expansion/seed.aoa.titans.memory-closure.v0.md#aoa-titan-seed-45-memory-closure
+  wave: fourteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-memo
+  - aoa-sdk
+  - aoa-agents
+  - aoa-routing
+  - aoa-skills
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-stats
+  - 8Dionysus
+  - Dionysus
+  first_artifact_hint: owner-local Titan surfaces named by fourteenth_wave.manifest.json
+  notes: Memory Loom surfaces for candidate recall, redaction, digest, and lineage carry. Seed surface - AOA-TITAN-SEED-45 Memory Closure.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - AOA-TITAN-SEED-45 Memory Closure as a source-like Titan seed routed through owner repositories without replacing their authority.
+    what_stays_behind:
+    - no external donor doctrine is imported at this seed surface
+    non_goals:
+    - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
     revalidate_after_days: null
     superseded_by: null

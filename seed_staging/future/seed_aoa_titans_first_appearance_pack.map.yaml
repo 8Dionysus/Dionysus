@@ -1,0 +1,61 @@
+pack_id: seed_aoa_titans_first_appearance_pack
+program: titan_first_appearance
+opened_wave: tenth_wave
+mode: aoa_titans_first_appearance
+names:
+  Atlas: architect
+  Sentinel: reviewer
+  Mneme: memory-keeper
+  Forge: coder
+  Delta: evaluator
+seeds:
+  - id: aoa-titans-service-cohort
+    label: AOA-TITAN-SEED-01 Service Cohort Identity
+    target_repo: aoa-agents
+    source: seed_expansion/seed.aoa.titans.service-cohort.v0.md
+    first_artifact_hint: docs/TITAN_SERVICE_COHORT.md
+    gate: no_hidden_arena_rule_written
+  - id: aoa-titans-codex-projection-body
+    label: AOA-TITAN-SEED-02 Codex Projection Body
+    target_repo: aoa-agents
+    source: seed_expansion/seed.aoa.titans.codex-projection-body.v0.md
+    first_artifact_hint: generated/codex_agents/projection_manifest.json
+    gate: role_projection_validated
+  - id: aoa-titans-summon-ritual
+    label: AOA-TITAN-SEED-03 Summon Ritual
+    target_repo: 8Dionysus
+    source: seed_expansion/seed.aoa.titans.summon-ritual.v0.md
+    first_artifact_hint: .codex/prompts/titan-summon.service-cohort.v0.md
+    gate: explicit_summon_prompt_ready
+  - id: aoa-titans-mutation-gate
+    label: AOA-TITAN-SEED-04 Mutation Gate
+    target_repo: aoa-skills
+    source: seed_expansion/seed.aoa.titans.mutation-gate.v0.md
+    first_artifact_hint: skills/titan-mutation-gate/SKILL.md
+    gate: forge_locked_until_mutation_intent
+  - id: aoa-titans-receipt-memory
+    label: AOA-TITAN-SEED-05 Receipt and Memory Posture
+    target_repo: aoa-memo
+    source: seed_expansion/seed.aoa.titans.receipt-memory.v0.md
+    first_artifact_hint: docs/TITAN_MEMORY_POSTURE.md
+    gate: mneme_cannot_write_source_truth
+  - id: aoa-titans-eval-canaries
+    label: AOA-TITAN-SEED-06 Eval Canaries
+    target_repo: aoa-evals
+    source: seed_expansion/seed.aoa.titans.eval-canaries.v0.md
+    first_artifact_hint: evals/titan_service_cohort_no_hidden_arena.yaml
+    gate: delta_locked_until_judgment_intent
+  - id: aoa-titans-rollout-closure
+    label: AOA-TITAN-SEED-07 Rollout and Closure
+    target_repo: Dionysus
+    source: seed_expansion/seed.aoa.titans.rollout-closure.v0.md
+    first_artifact_hint: reports/planting/titan_first_appearance.closure.md
+    gate: first_summon_receipt_recorded
+promotion_gates:
+  - owner_repo_reality_checked
+  - no_hidden_arena_rule_written
+  - role_projection_validated
+  - summon_prompt_ready
+  - mutation_gate_defined
+  - eval_canaries_defined
+  - closure_path_defined
