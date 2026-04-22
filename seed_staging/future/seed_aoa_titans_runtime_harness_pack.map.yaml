@@ -1,0 +1,55 @@
+pack_id: seed_aoa_titans_runtime_harness_pack
+program: titan_runtime_harness
+recommended_open_wave: eleventh_wave
+mode: aoa_titans_runtime_harness
+
+seeds:
+  - id: aoa-titan-runtime-roster
+    target_repo: aoa-agents
+    first_artifact_hint: docs/TITAN_RUNTIME_ROSTER.md
+
+  - id: aoa-titan-runtime-route
+    target_repo: aoa-routing
+    first_artifact_hint: docs/TITAN_RUNTIME_ROUTE.md
+
+  - id: aoa-titan-session-receipts
+    target_repo: aoa-sdk
+    first_artifact_hint: schemas/titan_session_receipt.schema.json
+
+  - id: aoa-titan-runtime-cli
+    target_repo: aoa-sdk
+    first_artifact_hint: scripts/titanctl.py
+
+  - id: aoa-titan-codex-harness
+    target_repo: 8Dionysus
+    first_artifact_hint: .codex/prompts/titan-summon.runtime-harness.v0.md
+
+  - id: aoa-titan-gates
+    target_repo: aoa-skills
+    first_artifact_hint: skills/titan-runtime-gate/SKILL.md
+
+  - id: aoa-titan-playbook
+    target_repo: aoa-playbooks
+    first_artifact_hint: docs/TITAN_RUNTIME_HARNESS_PLAYBOOK.md
+
+  - id: aoa-titan-runtime-evals
+    target_repo: aoa-evals
+    first_artifact_hint: evals/titan_runtime_roster_canary.yaml
+
+  - id: aoa-titan-memory-closeout
+    target_repo: aoa-memo
+    first_artifact_hint: docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md
+
+  - id: aoa-titan-runtime-stats
+    target_repo: aoa-stats
+    first_artifact_hint: docs/TITAN_RUNTIME_METRICS.md
+
+promotion_gates:
+  - first_wave_names_preserved
+  - no_hidden_autospawn
+  - receipt_schema_planted
+  - titanctl_smoke_passes
+  - forge_delta_gates_enforced
+  - closeout_memory_candidate_not_sovereign
+  - eval_canaries_defined
+  - closure_trace_ready

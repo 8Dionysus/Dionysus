@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "mode": "aoa_titans_operator_console",
+  "date": "2026-04-22",
+  "name": "Titan Third Wave: Operator Console",
+  "depends_on": [
+    "tenth_wave.manifest.json",
+    "eleventh_wave.manifest.json"
+  ],
+  "primary_names": {
+    "architect": "Atlas",
+    "reviewer": "Sentinel",
+    "memory-keeper": "Mneme",
+    "coder": "Forge",
+    "evaluator": "Delta"
+  },
+  "canonical_sources": [
+    "seed_expansion/seed.aoa.titans.operator-console-charter.v0.md#aoa-titan-seed-15-operator-console-charter",
+    "seed_expansion/seed.aoa.titans.appserver-bridge.v0.md#aoa-titan-seed-16-app-server-bridge-seed",
+    "seed_expansion/seed.aoa.titans.console-state-ledger.v0.md#aoa-titan-seed-17-console-state-ledger",
+    "seed_expansion/seed.aoa.titans.operator-approval-gates.v0.md#aoa-titan-seed-18-operator-approval-gates",
+    "seed_expansion/seed.aoa.titans.console-digest.v0.md#aoa-titan-seed-19-console-digest",
+    "seed_expansion/seed.aoa.titans.console-evals.v0.md#aoa-titan-seed-20-console-eval-canaries",
+    "seed_expansion/seed.aoa.titans.console-rollout-closure.v0.md#aoa-titan-seed-21-console-rollout-and-closure"
+  ],
+  "twelfth_wave_order": [
+    {
+      "id": "aoa-titans-operator-console-charter",
+      "label": "AOA-TITAN-SEED-15 Operator Console Charter",
+      "source": "seed_expansion/seed.aoa.titans.operator-console-charter.v0.md#aoa-titan-seed-15-operator-console-charter"
+    },
+    {
+      "id": "aoa-titans-appserver-bridge",
+      "label": "AOA-TITAN-SEED-16 App-Server Bridge Seed",
+      "source": "seed_expansion/seed.aoa.titans.appserver-bridge.v0.md#aoa-titan-seed-16-app-server-bridge-seed"
+    },
+    {
+      "id": "aoa-titans-console-state-ledger",
+      "label": "AOA-TITAN-SEED-17 Console State Ledger",
+      "source": "seed_expansion/seed.aoa.titans.console-state-ledger.v0.md#aoa-titan-seed-17-console-state-ledger"
+    },
+    {
+      "id": "aoa-titans-operator-approval-gates",
+      "label": "AOA-TITAN-SEED-18 Operator Approval Gates",
+      "source": "seed_expansion/seed.aoa.titans.operator-approval-gates.v0.md#aoa-titan-seed-18-operator-approval-gates"
+    },
+    {
+      "id": "aoa-titans-console-digest",
+      "label": "AOA-TITAN-SEED-19 Console Digest",
+      "source": "seed_expansion/seed.aoa.titans.console-digest.v0.md#aoa-titan-seed-19-console-digest"
+    },
+    {
+      "id": "aoa-titans-console-evals",
+      "label": "AOA-TITAN-SEED-20 Console Eval Canaries",
+      "source": "seed_expansion/seed.aoa.titans.console-evals.v0.md#aoa-titan-seed-20-console-eval-canaries"
+    },
+    {
+      "id": "aoa-titans-console-rollout-closure",
+      "label": "AOA-TITAN-SEED-21 Console Rollout and Closure",
+      "source": "seed_expansion/seed.aoa.titans.console-rollout-closure.v0.md#aoa-titan-seed-21-console-rollout-and-closure"
+    }
+  ],
+  "acceptance": [
+    "console state can be created locally",
+    "console exposes all five Titan lanes",
+    "Forge requires mutation gate",
+    "Delta requires judgment gate",
+    "app-server launch plan can be generated as JSONL without executing Codex",
+    "console digest records events and approvals"
+  ],
+  "non_goals": [
+    "hidden background agents",
+    "silent app-server autospawn",
+    "console-owned role truth",
+    "generated Codex TOML rewrites"
+  ]
+}

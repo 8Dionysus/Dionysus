@@ -1,0 +1,24 @@
+# Fragment to merge into seed-registry.yaml after tenth_wave.manifest.json lands.
+- seed_ref: AOA-TITAN-SEED-01..07
+  wave: tenth_wave
+  status: opened
+  title: Titan First Appearance
+  mode: aoa_titans_first_appearance
+  source: tenth_wave.manifest.json
+  owner_route:
+    - Dionysus
+    - aoa-agents
+    - 8Dionysus
+    - aoa-sdk
+    - aoa-skills
+    - aoa-playbooks
+    - aoa-evals
+    - aoa-memo
+    - aoa-stats
+  names:
+    Atlas: architect
+    Sentinel: reviewer
+    Mneme: memory-keeper
+    Forge: coder
+    Delta: evaluator
+  boundary: service cohort, explicit summon, no hidden arena

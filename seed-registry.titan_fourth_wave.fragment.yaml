@@ -1,0 +1,32 @@
+- seed_ref: AOA-TITAN-SEED-46
+  title: AOA-TITAN-SEED-46 App-Server Bridge Charter
+  wave: thirteenth_wave
+  target_repo: aoa-sdk
+- seed_ref: AOA-TITAN-SEED-47
+  title: AOA-TITAN-SEED-47 JSON-RPC Launch Weave
+  wave: thirteenth_wave
+  target_repo: aoa-sdk
+- seed_ref: AOA-TITAN-SEED-48
+  title: AOA-TITAN-SEED-48 Event Normalizer
+  wave: thirteenth_wave
+  target_repo: aoa-sdk
+- seed_ref: AOA-TITAN-SEED-49
+  title: AOA-TITAN-SEED-49 Approval Loom
+  wave: thirteenth_wave
+  target_repo: aoa-sdk
+- seed_ref: AOA-TITAN-SEED-50
+  title: AOA-TITAN-SEED-50 Thread/Turn Binding
+  wave: thirteenth_wave
+  target_repo: aoa-sdk
+- seed_ref: AOA-TITAN-SEED-51
+  title: AOA-TITAN-SEED-51 Bridge Ledger Replay
+  wave: thirteenth_wave
+  target_repo: aoa-sdk
+- seed_ref: AOA-TITAN-SEED-52
+  title: AOA-TITAN-SEED-52 Bridge Metrics
+  wave: thirteenth_wave
+  target_repo: aoa-sdk
+- seed_ref: AOA-TITAN-SEED-53
+  title: AOA-TITAN-SEED-53 Bridge Rollout Closure
+  wave: thirteenth_wave
+  target_repo: aoa-sdk

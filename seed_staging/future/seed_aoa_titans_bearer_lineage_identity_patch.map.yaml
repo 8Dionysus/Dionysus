@@ -1,0 +1,36 @@
+pack_id: seed_aoa_titans_bearer_lineage_identity_patch
+program: titan_bearer_lineage_identity
+mode: titan_identity_lineage_patch
+
+seeds:
+  - id: aoa-titan-role-class-model
+    target_repo: aoa-agents
+    first_artifact_hint: docs/TITAN_ROLE_BEARER_ONTOLOGY.md
+
+  - id: aoa-titan-bearer-ledger
+    target_repo: aoa-agents
+    first_artifact_hint: config/titan_bearers.v0.json
+
+  - id: aoa-titan-lineage-events
+    target_repo: aoa-agents
+    first_artifact_hint: config/titan_lineage_ledger.v0.json
+
+  - id: aoa-titan-lineage-cli
+    target_repo: aoa-sdk
+    first_artifact_hint: scripts/titan_lineage.py
+
+  - id: aoa-titan-personality-memory
+    target_repo: aoa-memo
+    first_artifact_hint: docs/TITAN_PERSONALITY_MEMORY_POLICY.md
+
+  - id: aoa-titan-name-remembrance
+    target_repo: 8Dionysus
+    first_artifact_hint: docs/TITAN_NAME_REMEMBRANCE.md
+
+promotion_gates:
+  - role_class_schema_valid
+  - bearer_identity_schema_valid
+  - no_duplicate_active_titan_name
+  - fallen_bearer_not_deleted
+  - codex_visible_name_maps_to_bearer_name
+  - receipts_include_role_key_and_bearer_id

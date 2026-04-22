@@ -1,0 +1,38 @@
+pack_id: seed_aoa_titans_memory_loom_pack
+program: titan_memory_loom
+recommended_open_wave: fourteenth_wave
+mode: aoa_titans_memory_loom
+
+seeds:
+  - id: aoa-titan-memory-loom-charter
+    target_repo: aoa-agents
+    first_artifact_hint: docs/TITAN_MEMORY_LOOM_BOUNDARY.md
+  - id: aoa-titan-receipt-ingest
+    target_repo: aoa-sdk
+    first_artifact_hint: scripts/titan_memory_loom.py
+  - id: aoa-titan-recall-index
+    target_repo: aoa-sdk
+    first_artifact_hint: schemas/titan_memory_index.schema.json
+  - id: aoa-titan-redaction-retention
+    target_repo: aoa-memo
+    first_artifact_hint: docs/TITAN_RECALL_CANDIDATE_POLICY.md
+  - id: aoa-titan-cross-session-digest
+    target_repo: aoa-memo
+    first_artifact_hint: schemas/titan_memory_digest.schema.json
+  - id: aoa-titan-planting-lineage-bridge
+    target_repo: Dionysus
+    first_artifact_hint: reports/planting/titan_memory_loom.preflight.md
+  - id: aoa-titan-memory-evals
+    target_repo: aoa-evals
+    first_artifact_hint: evals/titan_memory_no_sovereignty_canary.yaml
+  - id: aoa-titan-memory-closure
+    target_repo: Dionysus
+    first_artifact_hint: reports/planting/titan_memory_loom.closure.md
+
+promotion_gates:
+  - memory_sovereignty_denied
+  - recall_result_authority_notes_present
+  - redaction_workflow_present
+  - retention_policy_present
+  - forge_delta_gates_unchanged
+  - local_smoke_passes

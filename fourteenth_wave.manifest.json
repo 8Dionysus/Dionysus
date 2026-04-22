@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "mode": "aoa_titans_memory_loom",
+  "title": "Titan Fifth Wave: Memory Loom",
+  "canonical_sources": [
+    "seed_staging/future/seed_aoa_titans_memory_loom_pack.md",
+    "seed_staging/future/seed_aoa_titans_memory_loom_pack.map.yaml"
+  ],
+  "titan_names": [
+    "Atlas",
+    "Sentinel",
+    "Mneme",
+    "Forge",
+    "Delta"
+  ],
+  "fourteenth_wave_order": [
+    {
+      "id": "aoa-titan-memory-loom-charter",
+      "label": "AOA-TITAN-SEED-38 Memory Loom Charter",
+      "source": "seed_expansion/seed.aoa.titans.memory-loom-charter.v0.md#aoa-titan-seed-38-memory-loom-charter"
+    },
+    {
+      "id": "aoa-titan-receipt-ingest",
+      "label": "AOA-TITAN-SEED-39 Receipt Ingest",
+      "source": "seed_expansion/seed.aoa.titans.receipt-ingest.v0.md#aoa-titan-seed-39-receipt-ingest"
+    },
+    {
+      "id": "aoa-titan-recall-index",
+      "label": "AOA-TITAN-SEED-40 Recall Index",
+      "source": "seed_expansion/seed.aoa.titans.recall-index.v0.md#aoa-titan-seed-40-recall-index"
+    },
+    {
+      "id": "aoa-titan-redaction-retention",
+      "label": "AOA-TITAN-SEED-41 Redaction and Retention",
+      "source": "seed_expansion/seed.aoa.titans.redaction-retention.v0.md#aoa-titan-seed-41-redaction-and-retention"
+    },
+    {
+      "id": "aoa-titan-cross-session-digest",
+      "label": "AOA-TITAN-SEED-42 Cross-Session Digest",
+      "source": "seed_expansion/seed.aoa.titans.cross-session-digest.v0.md#aoa-titan-seed-42-cross-session-digest"
+    },
+    {
+      "id": "aoa-titan-planting-lineage-bridge",
+      "label": "AOA-TITAN-SEED-43 Planting Lineage Bridge",
+      "source": "seed_expansion/seed.aoa.titans.planting-lineage-bridge.v0.md#aoa-titan-seed-43-planting-lineage-bridge"
+    },
+    {
+      "id": "aoa-titan-memory-evals",
+      "label": "AOA-TITAN-SEED-44 Memory Eval Canaries",
+      "source": "seed_expansion/seed.aoa.titans.memory-evals.v0.md#aoa-titan-seed-44-memory-eval-canaries"
+    },
+    {
+      "id": "aoa-titan-memory-closure",
+      "label": "AOA-TITAN-SEED-45 Memory Closure",
+      "source": "seed_expansion/seed.aoa.titans.memory-closure.v0.md#aoa-titan-seed-45-memory-closure"
+    }
+  ],
+  "acceptance": [
+    "Memory records are explicitly candidate-grade unless owner-repo-confirmed.",
+    "Recall results include source, confidence, and authority notes.",
+    "Redaction/tombstone workflow exists before broad ingestion.",
+    "Forge and Delta gates remain unchanged.",
+    "A local memory index can be initialized, ingested, queried, digested, redacted, and closed."
+  ]
+}

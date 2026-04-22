@@ -44,6 +44,26 @@ MANIFEST_SPECS = {
         "order_key": "ninth_wave_order",
         "tail_keys": ("supporting_notes",),
     },
+    "tenth_wave.manifest.json": {
+        "order_key": "tenth_wave_order",
+        "tail_keys": ("supporting_notes",),
+    },
+    "eleventh_wave.manifest.json": {
+        "order_key": "eleventh_wave_order",
+        "tail_keys": (),
+    },
+    "twelfth_wave.manifest.json": {
+        "order_key": "twelfth_wave_order",
+        "tail_keys": (),
+    },
+    "thirteenth_wave.manifest.json": {
+        "order_key": "thirteenth_wave_order",
+        "tail_keys": (),
+    },
+    "fourteenth_wave.manifest.json": {
+        "order_key": "fourteenth_wave_order",
+        "tail_keys": (),
+    },
 }
 MANIFEST_PATHS = [ROOT / name for name in MANIFEST_SPECS]
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")

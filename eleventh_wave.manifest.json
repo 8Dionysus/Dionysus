@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "mode": "aoa_titans_runtime_harness",
+  "wave_name": "Titan Second Wave: Runtime Harness",
+  "date": "2026-04-22",
+  "canonical_sources": [
+    "seed_staging/future/seed_aoa_titans_runtime_harness_pack.md",
+    "seed_staging/future/seed_aoa_titans_runtime_harness_pack.map.yaml"
+  ],
+  "prior_wave_reference": "tenth_wave.manifest.json",
+  "core_titans": {
+    "Atlas": "architect",
+    "Sentinel": "reviewer",
+    "Mneme": "memory-keeper",
+    "Forge": "coder",
+    "Delta": "evaluator"
+  },
+  "eleventh_wave_order": [
+    {
+      "id": "aoa-titan-runtime-roster",
+      "label": "AOA-TITAN2-SEED-01 Runtime Roster",
+      "source": "seed_expansion/seed.aoa.titans.runtime-roster.v0.md#seed-aoa-titans-runtime-roster-v0",
+      "target_repos": [
+        "aoa-agents",
+        "aoa-routing"
+      ]
+    },
+    {
+      "id": "aoa-titan-session-receipts",
+      "label": "AOA-TITAN2-SEED-02 Session Receipts",
+      "source": "seed_expansion/seed.aoa.titans.session-receipts.v0.md#seed-aoa-titans-session-receipts-v0",
+      "target_repos": [
+        "aoa-sdk",
+        "aoa-stats",
+        "aoa-memo"
+      ]
+    },
+    {
+      "id": "aoa-titan-runtime-gates",
+      "label": "AOA-TITAN2-SEED-03 Forge and Delta Gates",
+      "source": "seed_expansion/seed.aoa.titans.runtime-gates.v0.md#seed-aoa-titans-forge-and-delta-gates-v0",
+      "target_repos": [
+        "aoa-skills",
+        "aoa-playbooks",
+        "aoa-evals"
+      ]
+    },
+    {
+      "id": "aoa-titan-codex-harness",
+      "label": "AOA-TITAN2-SEED-04 Codex Runtime Harness",
+      "source": "seed_expansion/seed.aoa.titans.codex-runtime-harness.v0.md#seed-aoa-titans-codex-runtime-harness-v0",
+      "target_repos": [
+        "8Dionysus",
+        "aoa-sdk"
+      ]
+    },
+    {
+      "id": "aoa-titan-closeout",
+      "label": "AOA-TITAN2-SEED-05 Closeout and Memory",
+      "source": "seed_expansion/seed.aoa.titans.closeout-memory.v0.md#seed-aoa-titans-closeout-and-memory-v0",
+      "target_repos": [
+        "aoa-memo",
+        "Dionysus"
+      ]
+    },
+    {
+      "id": "aoa-titan-runtime-evals",
+      "label": "AOA-TITAN2-SEED-06 Runtime Eval Canaries",
+      "source": "seed_expansion/seed.aoa.titans.runtime-evals.v0.md#seed-aoa-titans-runtime-eval-canaries-v0",
+      "target_repos": [
+        "aoa-evals",
+        "aoa-stats"
+      ]
+    },
+    {
+      "id": "aoa-titan-runtime-closure",
+      "label": "AOA-TITAN2-SEED-07 Runtime Harness Closure",
+      "source": "seed_expansion/seed.aoa.titans.runtime-closure.v0.md#seed-aoa-titans-runtime-harness-closure-v0",
+      "target_repos": [
+        "Dionysus"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    "Atlas, Sentinel, and Mneme can be represented in a runtime roster as active after explicit summon.",
+    "Forge remains locked unless a mutation gate is recorded.",
+    "Delta remains locked unless a judgment gate is recorded.",
+    "A session receipt can be created, validated, gated, and closed without external dependencies.",
+    "Codex hook surfaces add context only and do not spawn hidden agents.",
+    "Eval canaries define failure conditions for hidden arena behavior, missing receipts, and ungated mutation or judgment."
+  ]
+}

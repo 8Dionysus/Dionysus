@@ -1,0 +1,18 @@
+- seed_ref: seed.aoa.titans.runtime-harness.v0
+  wave: eleventh
+  status: staged
+  title: AoA Titans Runtime Harness
+  source: eleventh_wave.manifest.json
+  target_repos:
+    - aoa-agents
+    - aoa-routing
+    - aoa-sdk
+    - 8Dionysus
+    - aoa-skills
+    - aoa-playbooks
+    - aoa-evals
+    - aoa-memo
+    - aoa-stats
+  notes: >
+    Second Titan wave. Adds runtime roster, receipts, gates, Codex harness prompt,
+    closeout memory posture, eval canaries, and stats derivation surfaces.

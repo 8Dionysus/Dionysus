@@ -1,0 +1,11 @@
+pack_id: seed_aoa_titans_appserver_bridge_pack
+program: titan_fourth_wave
+recommended_open_wave: thirteenth_wave
+mode: aoa_titans_appserver_bridge
+promotion_gates:
+  - no_hidden_runtime_rule_written
+  - jsonrpc_launch_messages_emit
+  - event_replay_normalizes_thread_turn_approval
+  - approval_decision_records
+  - forge_delta_gates_preserved
+  - metrics_derivable_from_receipts
