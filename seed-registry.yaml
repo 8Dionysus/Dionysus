@@ -223,8 +223,8 @@ wave_index:
   mode: aoa_titans_incarnation_spine_praxis_replay
   registry_status: landed_post_wave
   supporting_notes:
-  - reports/planting/titan_incarnation_spine.preflight.md
-  - reports/planting/titan_incarnation_spine.closure.md
+  - reports/planting/2026-04-22.cross-repo.titan-incarnation-spine.preflight.md
+  - reports/planting/2026-04-22.cross-repo.titan-incarnation-spine.closure.md
   landed_to:
   - aoa-sdk
   - 8Dionysus

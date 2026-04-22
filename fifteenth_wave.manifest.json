@@ -39,8 +39,8 @@
     }
   ],
   "supporting_notes": [
-    "reports/planting/titan_incarnation_spine.preflight.md",
-    "reports/planting/titan_incarnation_spine.closure.md"
+    "reports/planting/2026-04-22.cross-repo.titan-incarnation-spine.preflight.md",
+    "reports/planting/2026-04-22.cross-repo.titan-incarnation-spine.closure.md"
   ],
   "non_goals": [
     "autospawn",
