@@ -50,7 +50,7 @@ owner-repo reality.
 - `archive/` is the canonical archive root for historical seed sources
 - `archive/seed_pack_exports/` holds derived ingress and transport bundles only; never treat them as canonical seed surfaces
 - `seed_expansion/` holds the current gated next-work surfaces plus planted post-wave seed surfaces retained live for lineage until a later archive pass
-- `tenth_wave.manifest.json` through `fourteenth_wave.manifest.json` hold the planted Titan service-cohort, runtime harness, operator console, app-server bridge, and Memory Loom wave order
+- `tenth_wave.manifest.json` through `fifteenth_wave.manifest.json` hold the planted Titan service-cohort, runtime harness, operator console, app-server bridge, Memory Loom, and incarnation spine wave order
 - `generated/seed_route_map.min.json` is the compact low-context seed entry capsule; `seed-registry.yaml` remains the canonical seed ledger and navigation overlay
 - `seed-registry.yaml` is the human/Codex navigation overlay
 - `ROADMAP.md` summarizes current seed-garden posture after those stronger live surfaces without replacing them

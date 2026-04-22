@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "mode": "aoa_titans_incarnation_spine_praxis_replay",
+  "title": "Titan Fifteenth Wave: Incarnation Spine & Praxis Replay",
+  "canonical_sources": [
+    "seed_staging/future/seed_aoa_titans_incarnation_spine_praxis_replay_pack.md",
+    "seed_staging/future/seed_aoa_titans_incarnation_spine_praxis_replay_pack.map.yaml"
+  ],
+  "fifteenth_wave_order": [
+    {
+      "id": "titan-incarnation-spine",
+      "label": "Runtime bearer/incarnation identity spine",
+      "source": "seed_expansion/seed.aoa.titans.incarnation-spine.v0.md#titan-incarnation-spine"
+    },
+    {
+      "id": "titan-gate-payloads",
+      "label": "Forge and Delta payload gates",
+      "source": "seed_expansion/seed.aoa.titans.gate-payloads.v0.md#titan-gate-payloads"
+    },
+    {
+      "id": "titan-named-summon-hardening",
+      "label": "Named custom-agent summon hardening",
+      "source": "seed_expansion/seed.aoa.titans.named-summon-hardening.v0.md#named-summon-hardening"
+    },
+    {
+      "id": "titan-memory-provenance",
+      "label": "Candidate memory provenance hardening",
+      "source": "seed_expansion/seed.aoa.titans.memory-provenance.v0.md#titan-memory-provenance"
+    },
+    {
+      "id": "titan-praxis-replay",
+      "label": "Visible session replay and Titan packet production",
+      "source": "seed_expansion/seed.aoa.titans.praxis-replay.v0.md#titan-praxis-replay"
+    },
+    {
+      "id": "titan-eval-stats-closeout",
+      "label": "Canaries, stats and closeout evidence",
+      "source": "seed_expansion/seed.aoa.titans.eval-stats-closeout.v0.md#titan-eval-stats-closeout"
+    }
+  ],
+  "supporting_notes": [
+    "reports/planting/titan_incarnation_spine.preflight.md",
+    "reports/planting/titan_incarnation_spine.closure.md"
+  ],
+  "non_goals": [
+    "autospawn",
+    "memory_as_truth",
+    "generic_role_shadow",
+    "unchecked_mutation"
+  ]
+}
