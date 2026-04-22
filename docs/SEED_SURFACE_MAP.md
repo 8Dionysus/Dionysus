@@ -167,6 +167,12 @@ Read those markers first, then verify the owner repos directly.
   `aoa-playbooks`, and bounded recovery-pattern writeback now lives in
   `aoa-memo`, while scheduler authority and self-healing drift remain
   explicitly rejected
+- `seed_aoa_experience_wave1_kernel_pack.md` is a local-workspace landing
+  lineage pack for the external v0.1-v0.3 `aoa-experience-*` archives: center
+  vocabulary and stop-lines now live in `Agents-of-Abyss`, owner-local slices
+  now live across stats, playbooks, evals, memo, routing, agents, SDK, and
+  substrate notes, and `Dionysus` keeps only source refs, route discipline,
+  guard evidence, and planting trace until merge
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -248,6 +254,7 @@ Current exploratory notes live under:
 - `seed_staging/questbook/seed_questbook_seedgarden_profile_pack.md`
 - `seed_staging/future/seed_aoa_stats_telemetry_pack.md`
 - `seed_staging/future/seed_aoa_codex_surface_plane_pack.md`
+- `seed_staging/future/seed_aoa_experience_wave1_kernel_pack.md`
 - `seed_staging/future/seed_tos_graph_curation_pack.md`
 - `seed_staging/future/seed_aoa_rag_skeleton_pack.md`
 
@@ -311,6 +318,10 @@ Reading:
   `aoa-agents` and `aoa-skills`, derived refresh visibility lives in
   `aoa-stats`, the recurring `AOA-P-0030` route lives in `aoa-playbooks`, and
   bounded recovery-pattern writeback lives in `aoa-memo`
+- the experience wave1 kernel pack is planted in the local workspace from
+  external operator archives into owner-native local surfaces; keep it weaker
+  than live owner repo state and do not replay raw archive contents as source
+  truth
 
 ### `staged_only_not_landed`
 

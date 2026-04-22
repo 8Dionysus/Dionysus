@@ -1,0 +1,116 @@
+map_version: 1
+updated_at: '2026-04-22'
+seed_note: seed_staging/future/seed_aoa_experience_wave1_kernel_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: false
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: /home/dionysus/Загрузки/aoa-experience-mechanic-seed-v0_1.zip
+  companion_paths:
+    - /home/dionysus/Загрузки/aoa-experience-runtime-capture-seed-v0_2.zip
+    - /home/dionysus/Загрузки/aoa-experience-pilot-integration-seed-v0_3.zip
+  included_surfaces:
+    - SEED_MANIFEST.md in each v0.1-v0.3 archive
+    - seed-local validators from each v0.1-v0.3 archive
+    - seed-local tests from each v0.1-v0.3 archive
+    - proposed owner surfaces for center law, capture, pilot, proof, memory, routing, agents, SDK, and substrate notes
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss center kernel, then owner-local helper and boundary slices
+  family_rule:
+    - preserve the mechanics friction -> recurrence -> candidate -> verdict -> memory gate -> owner route -> inert projection
+    - adapt every archive surface into the owning repository's local conventions
+    - keep generated/cache transport artifacts out of owner repos
+  landing_rule:
+    - plant center law and schema/example/validator in Agents-of-Abyss
+    - plant derived receipts and dashboards in aoa-stats only as weaker-than-owner summaries
+    - plant pilot choreography in aoa-playbooks and verdict proof in aoa-evals
+    - plant memory readiness, dispatch hints, assistant projection posture, SDK helper, and substrate note in their owner repos
+  lineage_precondition:
+    - explicit operator approval was given on 2026-04-22
+    - dry-run seed integrity, validators, and v0.1-v0.3 tests passed before mutation
+    - owner repo boundaries and stop-lines from the authority reviewer remain active test fixtures
+  downstream_rule:
+    - later waves must start from owner-repo state and this lineage note, not raw archive copying
+  derivative_rule:
+    - do not let stats, routing, memo, SDK, or Dionysus overrule owner truth
+  sequence_rule:
+    - first land the center experience kernel
+    - then land stats/playbook/eval, memo/routing/agents, and SDK/substrate owner slices
+    - then run owner-local validations
+    - then close with one Dionysus planting report
+targets:
+  - repo: Agents-of-Abyss
+    contour: center experience law, ordered flow, schema, example, and validator
+    files:
+      - docs/EXPERIENCE_WAVE1_KERNEL.md
+      - schemas/experience-wave1-flow.schema.json
+      - examples/experience_wave1_flow.example.json
+      - scripts/validate_experience_wave1.py
+      - tests/test_experience_wave1.py
+    validation:
+      - python scripts/validate_experience_wave1.py
+      - python -m pytest -q tests/test_experience_wave1.py
+  - repo: aoa-stats
+    contour: derived friction and recurrence observability only
+    files:
+      - owner-local Wave 1 stats docs/schemas/examples/tests
+    validation:
+      - owner-local stats validation and targeted tests
+  - repo: aoa-playbooks
+    contour: closed-loop pilot choreography only
+    files:
+      - owner-local Wave 1 playbook docs/examples/tests
+    validation:
+      - owner-local playbook validation and targeted tests
+  - repo: aoa-evals
+    contour: verdict and proof bundles only
+    files:
+      - owner-local Wave 1 eval docs/schemas/examples/tests
+    validation:
+      - owner-local eval validation and targeted tests
+  - repo: aoa-memo
+    contour: memory readiness boundary and gated writeback only
+    files:
+      - docs/MEMORY_READINESS_BOUNDARY.md
+      - schemas/memory_readiness_boundary_contract.schema.json
+      - examples/memory_readiness_boundary_contract.example.json
+      - tests/test_wave1_boundary_contract.py
+  - repo: aoa-routing
+    contour: owner dispatch hints without truth authority
+    files:
+      - docs/AGON_GATE_DECISION_BOUNDARY.md
+      - schemas/owner-dispatch-seam.schema.json
+      - examples/owner_dispatch_seam.example.json
+      - tests/test_wave1_owner_dispatch_seam.py
+  - repo: aoa-agents
+    contour: assistant projection resolver without self-rewrite authority
+    files:
+      - docs/CODEX_SUBAGENT_PROJECTION.md
+      - schemas/assistant-projection-resolver.schema.json
+      - examples/assistant_projection_resolver.example.json
+      - tests/test_wave1_assistant_projection.py
+  - repo: aoa-sdk
+    contour: typed helper and dry-run control-plane seam
+    files:
+      - docs/AGON_WAVE1_EXPERIENCE_CAPTURE_PIPELINE.md
+      - schemas/agon-experience-capture-pipeline-helper.schema.json
+      - examples/agon_experience_capture_pipeline_helper.example.json
+      - tests/test_agon_experience_capture_pipeline_helper.py
+  - repo: abyss-stack
+    contour: pilot-records-only substrate note
+    files:
+      - docs/W5_PILOT.md
+scope_exclusions:
+  - new aoa-experience repository
+  - Tree-of-Sophia direct write
+  - hidden runtime activation
+  - automatic projection
+  - memory writes before gate
+  - stats verdict authority
+  - routing owner authority
+  - SDK-local experience authority
+  - certification, deployment, governance, constitution, release, and live-office claims
