@@ -64,6 +64,10 @@ MANIFEST_SPECS = {
         "order_key": "fourteenth_wave_order",
         "tail_keys": (),
     },
+    "fifteenth_wave.manifest.json": {
+        "order_key": "fifteenth_wave_order",
+        "tail_keys": ("supporting_notes",),
+    },
 }
 MANIFEST_PATHS = [ROOT / name for name in MANIFEST_SPECS]
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")

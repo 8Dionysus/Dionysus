@@ -61,6 +61,7 @@ origin_notes:
 - seed_staging/future/seed_aoa_titans_appserver_bridge_pack.md
 - seed_staging/future/seed_aoa_titans_memory_loom_pack.md
 - seed_staging/future/seed_aoa_titans_bearer_lineage_identity_patch.md
+- seed_staging/future/seed_aoa_titans_incarnation_spine_praxis_replay_pack.md
 - seed_staging/future/seed_aoa_federation_kag_factory_upgrade_pack.md
 - seed_staging/future/seed_tos_graph_curation_pack.md
 - seed_staging/audit/seed_wave3_codex_repo_local_skills_trace_harness.md
@@ -217,6 +218,23 @@ wave_index:
   - 8Dionysus
   - Dionysus
   summary: candidate-grade Titan memory loom with receipt ingest, recall index, redaction, digest, lineage bridge, eval canaries, and closure
+- wave: fifteenth_wave
+  file: fifteenth_wave.manifest.json
+  mode: aoa_titans_incarnation_spine_praxis_replay
+  registry_status: landed_post_wave
+  supporting_notes:
+  - reports/planting/titan_incarnation_spine.preflight.md
+  - reports/planting/titan_incarnation_spine.closure.md
+  landed_to:
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-agents
+  - aoa-evals
+  - aoa-stats
+  - aoa-memo
+  - aoa-playbooks
+  - Dionysus
+  summary: Titan incarnation identity spine, payload gates, named summon hardening, provenance memory, visible replay, and bounded canary/stat closeout
 seed_index:
 - registry_id: rootline
   label: AoA x ToS Rootline
@@ -3660,6 +3678,295 @@ seed_index:
     - no external donor doctrine is imported at this seed surface
     non_goals:
     - Titan seed routing does not create hidden agents, silent mutation, or source-of-truth transfer across owner repos
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-incarnation-spine
+  label: Titan Incarnation Spine
+  source_ref: seed_expansion/seed.aoa.titans.incarnation-spine.v0.md#titan-incarnation-spine
+  wave: fifteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-agents
+  - aoa-evals
+  - aoa-stats
+  - aoa-memo
+  - aoa-playbooks
+  - Dionysus
+  first_artifact_hint: src/aoa_sdk/titans/incarnation_spine.py
+  notes: Runtime bearer and incarnation identity spine for named Titans without generic role shadowing or hidden autospawn.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Named Titan bearer_id, role_key, role_class, incarnation_id, and session_id as explicit runtime identity fields.
+    what_stays_behind:
+    - no hidden runtime authority or memory truth claim is imported at this seed surface
+    non_goals:
+    - no autospawn, generic role shadowing, unchecked mutation, or memory sovereignty
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-gate-payloads
+  label: Titan Gate Payloads
+  source_ref: seed_expansion/seed.aoa.titans.gate-payloads.v0.md#titan-gate-payloads
+  wave: fifteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-agents
+  - aoa-evals
+  - aoa-stats
+  - aoa-memo
+  - aoa-playbooks
+  - Dionysus
+  first_artifact_hint: schemas/titan_gate_event.schema.json
+  notes: Forge and Delta gate payloads become structured mutation and judgment contracts rather than loose intent strings.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Forge mutation gates require scope, expected files, rollback note, approval, and test plan.
+    - Delta judgment gates require claim, criteria, evidence refs, and verdict scope.
+    what_stays_behind:
+    - no hidden runtime authority or memory truth claim is imported at this seed surface
+    non_goals:
+    - no autospawn, generic role shadowing, unchecked mutation, or memory sovereignty
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-named-summon-hardening
+  label: Titan Named Summon Hardening
+  source_ref: seed_expansion/seed.aoa.titans.named-summon-hardening.v0.md#named-summon-hardening
+  wave: fifteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-agents
+  - aoa-evals
+  - aoa-stats
+  - aoa-memo
+  - aoa-playbooks
+  - Dionysus
+  first_artifact_hint: .codex/prompts/titan-summon.incarnation-spine.v0.md
+  notes: Codex prompt surfaces summon named Titan bearers directly and avoid generic custom-agent role shadows.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Atlas, Sentinel, Mneme, Forge, and Delta are visible bearer names; role_key remains an internal field.
+    what_stays_behind:
+    - no hidden runtime authority or memory truth claim is imported at this seed surface
+    non_goals:
+    - no autospawn, generic role shadowing, unchecked mutation, or memory sovereignty
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-memory-provenance
+  label: Titan Memory Provenance
+  source_ref: seed_expansion/seed.aoa.titans.memory-provenance.v0.md#titan-memory-provenance
+  wave: fifteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-agents
+  - aoa-evals
+  - aoa-stats
+  - aoa-memo
+  - aoa-playbooks
+  - Dionysus
+  first_artifact_hint: docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md
+  notes: Mneme remembrance records remain candidate memory and require source refs, session refs, receipt refs, or lineage-event refs.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Titan remembrance is candidate memory with explicit provenance and source-verification wording.
+    what_stays_behind:
+    - no hidden runtime authority or memory truth claim is imported at this seed surface
+    non_goals:
+    - no autospawn, generic role shadowing, unchecked mutation, or memory sovereignty
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-praxis-replay
+  label: Titan Praxis Replay
+  source_ref: seed_expansion/seed.aoa.titans.praxis-replay.v0.md#titan-praxis-replay
+  wave: fifteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-agents
+  - aoa-evals
+  - aoa-stats
+  - aoa-memo
+  - aoa-playbooks
+  - Dionysus
+  first_artifact_hint: src/aoa_sdk/titans/session_replay.py
+  notes: Visible session exports become phase graphs, Titan packets, and learning candidates without hidden reasoning.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Visible phase segmentation, Titan packet production, and replay learning deltas grounded in exported session text.
+    what_stays_behind:
+    - no hidden runtime authority or memory truth claim is imported at this seed surface
+    non_goals:
+    - no autospawn, generic role shadowing, unchecked mutation, or memory sovereignty
+  freshness:
+    last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-eval-stats-closeout
+  label: Titan Eval Stats Closeout
+  source_ref: seed_expansion/seed.aoa.titans.eval-stats-closeout.v0.md#titan-eval-stats-closeout
+  wave: fifteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: null
+  repo_homes:
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-agents
+  - aoa-evals
+  - aoa-stats
+  - aoa-memo
+  - aoa-playbooks
+  - Dionysus
+  first_artifact_hint: evals/titan_incarnation_spine_canary.yaml
+  notes: Eval canaries and stats summaries describe Titan integrity without becoming proof or route authority.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Named-identity, gate-payload, memory-source, lineage, and descriptive stats closeout surfaces.
+    what_stays_behind:
+    - no hidden runtime authority or memory truth claim is imported at this seed surface
+    non_goals:
+    - no autospawn, generic role shadowing, unchecked mutation, or memory sovereignty
   freshness:
     last_revalidated_at: '2026-04-22'
     revalidate_after_days: null

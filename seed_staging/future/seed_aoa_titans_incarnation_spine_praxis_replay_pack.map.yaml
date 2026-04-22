@@ -1,0 +1,35 @@
+pack_id: seed_aoa_titans_incarnation_spine_praxis_replay_pack
+program: titan_incarnation_spine_praxis_replay
+recommended_open_wave: fifteenth_wave
+mode: aoa_titans_incarnation_spine_praxis_replay
+
+seeds:
+  - id: titan-incarnation-spine
+    target_repo: aoa-sdk
+    first_artifact_hint: src/aoa_sdk/titans/incarnation_spine.py
+  - id: titan-gate-payloads
+    target_repo: aoa-sdk
+    first_artifact_hint: schemas/titan_gate_event.schema.json
+  - id: titan-named-summon-hardening
+    target_repo: 8Dionysus
+    first_artifact_hint: .codex/prompts/titan-summon.incarnation-spine.v0.md
+  - id: titan-memory-provenance
+    target_repo: aoa-memo
+    first_artifact_hint: docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md
+  - id: titan-praxis-replay
+    target_repo: aoa-sdk
+    first_artifact_hint: src/aoa_sdk/titans/session_replay.py
+  - id: titan-eval-stats-closeout
+    target_repo: aoa-evals
+    first_artifact_hint: evals/titan_incarnation_spine_canary.yaml
+
+promotion_gates:
+  - owner_repo_reality_checked
+  - receipts_carry_bearer_and_incarnation_ids
+  - forge_gate_payload_required
+  - delta_gate_payload_required
+  - named_summon_not_generic_role_shadow
+  - memory_record_has_source
+  - replay_uses_visible_evidence_only
+  - eval_canaries_defined
+  - stats_are_descriptive_not_verdict
