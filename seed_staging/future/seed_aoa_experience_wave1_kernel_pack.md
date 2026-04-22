@@ -4,10 +4,10 @@ profile_anchor: Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: partially_landed_retained_for_lineage
-lifecycle_note: Experience Wave 1 is planted in the live workspace from the external v0.1-v0.3 seed archives and remains pending merge; keep this note as lineage and route discipline for the local owner-first landing across Agents-of-Abyss, aoa-stats, aoa-playbooks, aoa-evals, aoa-memo, aoa-routing, aoa-agents, aoa-sdk, and abyss-stack without treating Dionysus or the transport archives as final owner truth.
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: Experience Wave 1 landed upstream from the external v0.1-v0.3 seed archives on 2026-04-22; keep this note as lineage and route discipline for the owner-first landing across Agents-of-Abyss, aoa-stats, aoa-playbooks, aoa-evals, aoa-memo, aoa-routing, aoa-agents, aoa-sdk, and abyss-stack without treating Dionysus or the transport archives as final owner truth.
 reality_checked_at: '2026-04-22'
-status: workspace_landed_pending_merge
+status: owner_repos_merged_retained_for_lineage
 priority: now
 parent_seed: seed.aoa.wave10-component-refresh-pack.v0
 tags:
@@ -132,6 +132,7 @@ Do not use this pack to create:
 
 ## Current Application Posture
 
-Treat this pack as local workspace landing lineage until the first-wave owner
-slices are committed or merged. Owner repo state is now the first reading
-surface, and this note remains only as route evidence.
+Treat this pack as landed upstream lineage. The first-wave owner slices were
+merged on `2026-04-22`, so owner repo state is now the first reading surface.
+This note remains only as route evidence, source archive memory, and a guard
+against replaying raw transport contents as owner truth.

@@ -1,0 +1,130 @@
+map_version: 1
+updated_at: '2026-04-22'
+seed_note: seed_staging/future/seed_aoa_experience_wave2_certification_watchtower_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: false
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: /home/dionysus/Загрузки/aoa-experience-certification-forge-seed-v0_4.zip
+  companion_paths:
+    - /home/dionysus/Загрузки/aoa-experience-deployment-watchtower-seed-v0_5.zip
+  included_surfaces:
+    - SEED_MANIFEST.md in each v0.4-v0.5 archive
+    - seed-local validators from each v0.4-v0.5 archive
+    - seed-local tests from each v0.4-v0.5 archive
+    - proposed owner surfaces for certification gate, regression pack, rollback drill, assistant release, watchtower, retention, routing, SDK helpers, KAG candidate seam, and runtime records
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss center certification/watchtower law, then owner-local proof, role, route, memory, stats, SDK, KAG, and runtime contract slices
+  family_rule:
+    - preserve the mechanics patch proposal -> release candidate -> regression pack -> certification gate -> rollback drill -> operator review -> versioned release -> retention watch
+    - keep deployment watchtower as a contract-only follow-up until the certification forge is green
+    - adapt every archive surface into the owning repository's local conventions
+    - keep generated/cache transport artifacts out of owner repos
+  landing_rule:
+    - plant center law and schema/example/validator in Agents-of-Abyss
+    - plant assistant role posture in aoa-agents and proof bundle in aoa-evals
+    - plant certification choreography in aoa-playbooks and retention/writeback gates in aoa-memo
+    - plant release health summaries in aoa-stats only as weaker-than-owner summaries
+    - plant release, rollback, and incident route hints in aoa-routing without owner truth
+    - plant helper contracts in aoa-sdk, post-release pattern candidate seam in aoa-kag, and dry-run runtime record posture in abyss-stack
+  lineage_precondition:
+    - explicit operator approval was given on 2026-04-22
+    - Wave 1 owner-repo landings were merged before Wave 2 planting began
+    - dry-run seed integrity, validators, and v0.4-v0.5 tests passed before mutation
+    - authority review kept v0.4 active and v0.5 contract-only for this wave
+  downstream_rule:
+    - later waves must start from owner-repo state and this lineage note, not raw archive copying
+    - deployment watchtower activation requires a separate runtime confirmation path
+  derivative_rule:
+    - do not let stats, routing, memo, SDK, KAG, or Dionysus overrule owner truth
+  sequence_rule:
+    - first land the center certification/watchtower law
+    - then land agents/evals/playbooks/memo/stats/routing/sdk/kag/stack owner slices
+    - then run owner-local validations
+    - then close with one Dionysus planting report
+targets:
+  - repo: Agents-of-Abyss
+    contour: center certification and watchtower law, ordered flow, schema, example, and validator
+    files:
+      - docs/EXPERIENCE_WAVE2_CERTIFICATION_WATCHTOWER.md
+      - schemas/experience-wave2-certification-watchtower.schema.json
+      - examples/experience_wave2_certification_watchtower.example.json
+      - scripts/validate_experience_wave2.py
+      - tests/test_experience_wave2.py
+    validation:
+      - python scripts/validate_experience_wave2.py
+      - python -m pytest -q tests/test_experience_wave2.py
+  - repo: aoa-agents
+    contour: assistant release and watch posture without self-deployment authority
+    files:
+      - owner-local Wave 2 agents docs/schemas/examples/tests
+    validation:
+      - owner-local agents validation and targeted tests
+  - repo: aoa-evals
+    contour: certification gate integrity and post-release regression verdict bundles only
+    files:
+      - bundles/aoa-experience-certification-gate-integrity/
+      - owner-local Wave 2 eval docs/schemas/examples/tests
+    validation:
+      - owner-local eval validation and targeted tests
+  - repo: aoa-playbooks
+    contour: certification forge choreography only
+    files:
+      - playbooks/experience-certification-forge/
+      - owner-local Wave 2 playbook docs/schemas/examples/tests
+    validation:
+      - owner-local playbook validation and targeted tests
+  - repo: aoa-memo
+    contour: revision and retention memory gates only
+    files:
+      - owner-local Wave 2 memo docs/schemas/examples/tests
+    validation:
+      - owner-local memo validation and targeted tests
+  - repo: aoa-stats
+    contour: derived release health and recurrence summaries only
+    files:
+      - owner-local Wave 2 stats docs/schemas/examples/tests
+    validation:
+      - owner-local stats validation and targeted tests
+  - repo: aoa-routing
+    contour: advisory release, rollback, and incident route hints without owner truth
+    files:
+      - owner-local Wave 2 routing docs/schemas/examples/tests
+    validation:
+      - owner-local routing validation and targeted tests
+  - repo: aoa-sdk
+    contour: typed helper contracts and dry-run control-plane seam
+    files:
+      - owner-local Wave 2 SDK docs/schemas/examples/tests
+    validation:
+      - owner-local SDK validation and targeted tests
+  - repo: aoa-kag
+    contour: post-release pattern candidate seam only
+    files:
+      - owner-local Wave 2 KAG docs/schemas/examples/tests
+    validation:
+      - owner-local KAG validation and targeted tests
+  - repo: abyss-stack
+    contour: dry-run runtime record and watchtower storage posture only
+    files:
+      - owner-local Wave 2 stack docs/schemas/examples/tests
+    validation:
+      - owner-local stack validation and targeted tests
+scope_exclusions:
+  - new aoa-experience repository
+  - Tree-of-Sophia direct write
+  - hidden runtime activation
+  - Codex certification
+  - Codex release approval
+  - Codex ring promotion
+  - assistant self-deployment
+  - durable rollback without operator authority
+  - stats proof authority
+  - routing owner authority
+  - SDK-local release authority
+  - direct KAG promotion
+  - live services, host ports, live scheduling, and hidden deployment

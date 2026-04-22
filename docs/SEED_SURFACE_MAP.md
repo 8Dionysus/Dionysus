@@ -248,13 +248,14 @@ Current exploratory notes live under:
 - `seed_staging/future/seed_aoa_wave8_campaign_cadence_pack.md`
 - `seed_staging/future/seed_aoa_wave9_self_agency_continuity_pack.md`
 - `seed_staging/future/seed_aoa_wave10_component_refresh_pack.md`
+- `seed_staging/future/seed_aoa_experience_wave1_kernel_pack.md`
 
 ### `partially_landed_retained_for_lineage`
 
 - `seed_staging/questbook/seed_questbook_seedgarden_profile_pack.md`
 - `seed_staging/future/seed_aoa_stats_telemetry_pack.md`
 - `seed_staging/future/seed_aoa_codex_surface_plane_pack.md`
-- `seed_staging/future/seed_aoa_experience_wave1_kernel_pack.md`
+- `seed_staging/future/seed_aoa_experience_wave2_certification_watchtower_pack.md`
 - `seed_staging/future/seed_tos_graph_curation_pack.md`
 - `seed_staging/future/seed_aoa_rag_skeleton_pack.md`
 
@@ -318,10 +319,14 @@ Reading:
   `aoa-agents` and `aoa-skills`, derived refresh visibility lives in
   `aoa-stats`, the recurring `AOA-P-0030` route lives in `aoa-playbooks`, and
   bounded recovery-pattern writeback lives in `aoa-memo`
-- the experience wave1 kernel pack is planted in the local workspace from
-  external operator archives into owner-native local surfaces; keep it weaker
-  than live owner repo state and do not replay raw archive contents as source
-  truth
+- the experience wave1 kernel pack is now landed upstream lineage from
+  external operator archives into owner-native owner repo surfaces; keep it
+  weaker than live owner repo state and do not replay raw archive contents as
+  source truth
+- the experience wave2 certification/watchtower pack is planted in the local
+  workspace from external operator archives into owner-native local surfaces:
+  v0.4 certification forge is active, v0.5 deployment watchtower is
+  contract-only until a separate runtime confirmation path exists
 
 ### `staged_only_not_landed`
 
