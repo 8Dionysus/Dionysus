@@ -105,7 +105,7 @@ EXPECTED_NOTES = {
     },
     "seed_staging/future/seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.md": {
         "kind": "prep-pack-note",
-        "lifecycle_status": "staged_only_not_landed",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
     },
     "seed_staging/future/seed_aoa_wave3_owner_landing_followthrough_pack.md": {
         "kind": "prep-pack-note",
