@@ -1,0 +1,156 @@
+map_version: 1
+updated_at: '2026-04-22'
+seed_note: seed_staging/future/seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: true
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: /home/dionysus/Загрузки/aoa-experience-service-mesh-operations-seed-v1_2.zip
+  companion_paths:
+    - /home/dionysus/Загрузки/aoa-experience-office-foundry-role-pairs-seed-v1_3.zip
+    - /home/dionysus/Загрузки/aoa-experience-agonic-pair-trials-mechanical-arena-kernel-seed-v1_4.zip
+    - /home/dionysus/Загрузки/aoa-experience-epistemic-duel-model-of-other-forge-seed-v1_5.zip
+    - /home/dionysus/Загрузки/aoa-experience-epistemic-memory-rank-reputation-engine-seed-v1_6.zip
+    - /home/dionysus/Загрузки/aoa-experience-affective-economy-honor-treasury-seed-v1_7.zip
+    - /home/dionysus/Загрузки/aoa-experience-context-routing-nervous-system-seed-v1_8.zip
+    - /home/dionysus/Загрузки/aoa-experience-context-memory-weaving-continuity-loom-seed-v1_9.zip
+    - /home/dionysus/Загрузки/aoa-experience-living-workspace-continuity-runtime-seed-v2_0.zip
+  included_surfaces:
+    - SEED_MANIFEST.md and README.md in each v1.2-v2.0 archive
+    - seed-local validators from each v1.2-v2.0 archive
+    - seed-local tests from each v1.2-v2.0 archive
+    - proposed owner surfaces under archive-local repo/ paths
+    - fixtures that expose stop-lines, clean flows, and failure cases
+selection_policy:
+  preferred_first_owner: Dionysus intake and compost first, then Agents-of-Abyss bridge before any owner-local wave
+  fixed_order_required: true
+  priority_band: now
+  planting_readiness: needs_adaptation
+  why_now:
+    - the operator explicitly opened Wave 0 for the v1.2-v2.0 seed line
+    - prior Experience and Agon landings make direct archive replay risky without a bridge
+    - source refs, quarantine, and owner routing must become visible before owner-repo mutation
+  dependencies:
+    - seed.aoa.experience-wave1-kernel-pack.v0
+    - seed.aoa.experience-wave2-certification-watchtower-pack.v0
+    - planted Agon law and stop-line surfaces in Agents-of-Abyss
+  default_order:
+    - Dionysus
+    - Agents-of-Abyss
+    - aoa-agents
+    - aoa-skills
+    - aoa-routing
+    - aoa-evals
+    - aoa-playbooks
+    - aoa-memo
+    - aoa-stats
+    - aoa-sdk
+    - aoa-kag
+    - aoa-techniques
+    - 8Dionysus
+    - abyss-stack
+    - Tree-of-Sophia
+  family_rule:
+    - treat Wave 0 as a named prep-pack intake phase, not a numbered Dionysus wave manifest and not Agon Wave 0
+    - preserve the campaign order v1.2 -> v1.3 -> v1.4 -> v1.5 -> v1.6 -> v1.7 -> v1.8 -> v1.9 -> v2.0
+    - keep Wave 0 in Dionysus as lineage and route discipline only
+    - adapt every archive surface into the owning repository's local conventions in later waves
+    - keep generated/cache transport artifacts out of owner repos
+  landing_rule:
+    - open only the Dionysus seed note, companion map, registry origin note, surface-map entry, and lifecycle validation entry in Wave 0
+    - plant the center Agon/Experience bridge in Agents-of-Abyss only in the next wave
+    - plant service, office, arena, duel, rank, honor, routing, loom, and runtime surfaces only after their owner-local wave plans are explicit
+  lineage_precondition:
+    - explicit operator approval was given on 2026-04-22
+    - public-share guard required approval, dry-run posture, and sanitization review before mutation
+    - zip integrity passed for all v1.2-v2.0 archives
+    - seed-local validators passed for all v1.2-v2.0 archives
+    - v1.2 tests passed with PYTHONPATH=. because the archive imports scripts from its root
+    - v1.3-v2.0 tests passed from their archive roots
+  downstream_rule:
+    - later waves must start from this intake pack and owner-repo state, not raw archive copying
+    - exact path collisions must be merged or rechartered, never overwritten
+    - runtime continuity installation requires a separate runtime gate after the loom wave
+  derivative_rule:
+    - do not let stats, routing, memo, KAG, SDK, 8Dionysus, or Dionysus overrule owner truth
+  sequence_rule:
+    - first open Wave 0 in Dionysus
+    - then draft and review the Agents-of-Abyss bridge
+    - then plant one owner-local wave at a time with tests and stop-line checks
+    - then close with a Dionysus harvest report after owner-landings are complete
+targets:
+  - repo: Dionysus
+    contour: Wave 0 source lineage, quarantine, owner route map, and intake trace only
+    files:
+      - seed_staging/future/seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.md
+      - seed_staging/future/seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.map.yaml
+      - seed-registry.yaml
+      - docs/SEED_SURFACE_MAP.md
+      - scripts/validate_seed_note_lifecycle.py
+    validation:
+      - python scripts/validate_seed_surfaces.py
+      - python scripts/build_seed_route_map.py --check
+      - python -m pytest -q tests
+  - repo: Agents-of-Abyss
+    contour: next-wave Agon/Experience bridge and center stop-lines
+    files:
+      - later Wave 1 bridge docs/schemas/examples/tests
+    validation:
+      - later owner-local center validation
+  - repo: aoa-agents
+    contour: later service office, role pair, assistant boundary, and continuity actor posture
+    files:
+      - later owner-local agents docs/schemas/examples/tests
+    validation:
+      - later owner-local agents validation
+  - repo: aoa-routing
+    contour: later advisory service escalation, context routing, and continuity route receipts
+    files:
+      - later owner-local routing docs/schemas/examples/tests
+    validation:
+      - later owner-local routing validation
+  - repo: aoa-evals
+    contour: later drill, arena, duel, rank, honor, routing, and continuity proof bundles
+    files:
+      - later owner-local eval docs/schemas/examples/tests
+    validation:
+      - later owner-local eval validation
+  - repo: aoa-memo
+    contour: later retention, rank evidence, honor obligations, continuity reentry, and recall gates
+    files:
+      - later owner-local memo docs/schemas/examples/tests
+    validation:
+      - later owner-local memo validation
+  - repo: aoa-sdk
+    contour: later typed helpers and control-plane seams only
+    files:
+      - later owner-local SDK docs/schemas/examples/tests
+    validation:
+      - later owner-local SDK validation
+  - repo: Tree-of-Sophia
+    contour: later candidate dossier boundary only, never direct runtime write
+    files:
+      - later owner-reviewed ToS candidate boundary surfaces if accepted
+    validation:
+      - later ToS owner validation
+scope_exclusions:
+  - owner-repo planting in Wave 0
+  - new numbered Dionysus wave manifest
+  - Agon Wave 0 protocol claims
+  - new aoa-experience repository
+  - direct Tree-of-Sophia write
+  - hidden runtime activation
+  - live arena, live summon, live verdict, scar write, or rank mutation
+  - Codex or assistant certification, release, rank, honor, continuity, or canon authority
+  - stats proof authority
+  - routing owner authority
+  - memo truth authority
+  - KAG canon authority
+  - SDK-local experience authority
+  - direct .codex/continuity installation
+  - live services, host ports, scheduler loops, runtime workers, and deployment daemons
+  - raw generated transport output, caches, and archive-local runtime examples
