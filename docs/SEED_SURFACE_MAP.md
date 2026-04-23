@@ -173,6 +173,11 @@ Read those markers first, then verify the owner repos directly.
   now live across stats, playbooks, evals, memo, routing, agents, SDK, and
   substrate notes, and `Dionysus` keeps only source refs, route discipline,
   guard evidence, and planting trace until merge
+- `seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.md` is a staged-only
+  intake pack for the external v1.2-v2.0 `aoa-experience-*` archives:
+  `Dionysus` now keeps source refs, dry-run evidence, compost, owner routing,
+  and stop-lines before any owner-repo planting, while the future bridge and
+  owner-local waves remain unplanted
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -343,6 +348,7 @@ Reading:
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
 - `seed_staging/future/seed_aoa_wave5_a2a_codex_return_checkpoint_pack.md`
 - `seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md`
+- `seed_staging/future/seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.md`
 
 ### `donor_only_not_planted`
 
