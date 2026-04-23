@@ -4,10 +4,10 @@ profile_anchor: Dionysus
 projects:
   - AoA
 kind: prep-pack-note
-lifecycle_status: staged_only_not_landed
-lifecycle_note: Experience Wave 0 opens the v1.2-v2.0 intake campaign in Dionysus only; keep this note as source lineage, quarantine, route discipline, and owner-map staging before any owner repository planting, without treating Dionysus or the transport archives as final authority for Agon, service offices, rank, honor, routing, memory, continuity, runtime behavior, or Tree-of-Sophia canon.
-reality_checked_at: '2026-04-22'
-status: wave0_opened_intake_only
+lifecycle_status: landed_upstream_retained_for_lineage
+lifecycle_note: Experience Wave 0 now survives as landed-upstream lineage for the completed v1.2-v2.0 owner-first route; keep this note as source-archive memory, dry-run evidence, route discipline, and boundary witness for the merged center contracts in Agents-of-Abyss plus the narrow repair and post-W10 hardening slices in aoa-memo, aoa-routing, and aoa-evals, without treating Dionysus or the transport archives as final authority for rank, honor, routing truth, memory truth, runtime continuity, or Tree-of-Sophia canon.
+reality_checked_at: '2026-04-23'
+status: owner_repos_merged_retained_for_lineage
 priority: now
 parent_seed: seed.aoa.experience-wave2-certification-watchtower-pack.v0
 tags:
@@ -24,10 +24,10 @@ tags:
 
 ## Purpose
 
-Open the next `aoa-experience-*` campaign inside `Dionysus` without planting
-the archives directly into owner repositories.
+Preserve the completed `aoa-experience-*` v1.2-v2.0 campaign inside
+`Dionysus` as landed lineage after the owner-first route finished upstream.
 
-This Wave 0 pack covers the intake, quarantine, and route map for:
+This Wave 0 pack keeps the original intake, quarantine, and route map for:
 
 - `aoa-experience-service-mesh-operations-seed-v1_2.zip`
 - `aoa-experience-office-foundry-role-pairs-seed-v1_3.zip`
@@ -39,9 +39,9 @@ This Wave 0 pack covers the intake, quarantine, and route map for:
 - `aoa-experience-context-memory-weaving-continuity-loom-seed-v1_9.zip`
 - `aoa-experience-living-workspace-continuity-runtime-seed-v2_0.zip`
 
-Wave 0 is not a numbered `Dionysus` wave manifest and not Agon Wave 0. It is a
-named prep-pack intake phase: source refs, dry-run evidence, compost, owner
-routing, and stop-lines before the first owner-local change.
+Wave 0 was not a numbered `Dionysus` wave manifest and not Agon Wave 0. It
+remained the named prep-pack intake phase: source refs, dry-run evidence,
+compost, owner routing, and stop-lines before the first owner-local change.
 
 ## Source Archives
 
@@ -109,7 +109,8 @@ This pack belongs here because:
   content separate from owner truth
 - the line follows already planted Experience waves and already planted Agon
   law, so replaying raw archive surfaces directly would blur authority
-- the next honest move is quarantine and owner-map staging, not file copying
+- future sessions should start from live owner repos and use this pack only as
+  lineage and route evidence, not as a replay source for raw archive copying
 
 ## Campaign Route
 
@@ -192,7 +193,10 @@ Do not use this pack to create:
 
 ## Current Application Posture
 
-Treat this pack as staged-only Wave 0. It opens the campaign route and preserves
-dry-run evidence, but it does not land owner-local doctrine or runtime behavior.
-Future sessions should start from this note, the companion map, and live owner
-repo state rather than replaying raw archive contents.
+Treat this pack as landed-upstream lineage. The completed owner-first route now
+lives in the merged bridge and versioned `v1.2 -> v2.0` center contracts in
+`Agents-of-Abyss`, with repair hardening in `aoa-memo`, post-W10 live-session
+reentry review in `aoa-routing`, and post-W10 runtime integrity review in
+`aoa-evals`. `Dionysus` keeps only the source refs, dry-run evidence, route
+discipline, and planting trace so future sessions start from live owner repos
+rather than replaying raw archive contents.

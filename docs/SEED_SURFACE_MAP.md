@@ -173,11 +173,12 @@ Read those markers first, then verify the owner repos directly.
   now live across stats, playbooks, evals, memo, routing, agents, SDK, and
   substrate notes, and `Dionysus` keeps only source refs, route discipline,
   guard evidence, and planting trace until merge
-- `seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.md` is a staged-only
-  intake pack for the external v1.2-v2.0 `aoa-experience-*` archives:
-  `Dionysus` now keeps source refs, dry-run evidence, compost, owner routing,
-  and stop-lines before any owner-repo planting, while the future bridge and
-  owner-local waves remain unplanted
+- `seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.md` is now landed
+  upstream lineage for the external v1.2-v2.0 `aoa-experience-*` archives:
+  the merged bridge and versioned center contracts now live in
+  `Agents-of-Abyss`, the repair and post-W10 hardening slices now live in
+  `aoa-memo`, `aoa-routing`, and `aoa-evals`, and `Dionysus` keeps only
+  source refs, dry-run evidence, route discipline, and planting trace
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
   live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
@@ -332,6 +333,12 @@ Reading:
   workspace from external operator archives into owner-native local surfaces:
   v0.4 certification forge is active, v0.5 deployment watchtower is
   contract-only until a separate runtime confirmation path exists
+- the experience wave0 v1.2-v2.0 intake pack is now landed upstream lineage
+  from external operator archives into the merged center bridge and versioned
+  `v1.2 -> v2.0` contracts in `Agents-of-Abyss`, with narrow repair and
+  post-W10 hardening in `aoa-memo`, `aoa-routing`, and `aoa-evals`; keep
+  `Dionysus` on source refs, dry-run evidence, route discipline, and planting
+  trace only
 
 ### `staged_only_not_landed`
 
@@ -348,7 +355,6 @@ Reading:
 - `seed_staging/future/seed_aoa_wave5_portability_regeneration_pack.md`
 - `seed_staging/future/seed_aoa_wave5_a2a_codex_return_checkpoint_pack.md`
 - `seed_staging/future/seed_aoa_wave7_trusted_rollout_ops_pack.md`
-- `seed_staging/future/seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.md`
 
 ### `donor_only_not_planted`
 
