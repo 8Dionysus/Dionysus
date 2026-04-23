@@ -1,0 +1,140 @@
+map_version: 1
+updated_at: '2026-04-23'
+seed_note: seed_staging/future/seed_aoa_experience_wave5_sovereign_office_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: false
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: /home/dionysus/Загрузки/aoa-experience-installation-sovereign-release-seed-v1_0.zip
+  companion_paths:
+    - /home/dionysus/Загрузки/aoa-experience-live-office-expansion-seed-v1_1.zip
+  included_surfaces:
+    - SEED_MANIFEST.md in each v1.0-v1.1 archive
+    - seed-local validators from each v1.0-v1.1 archive
+    - seed-local tests from each v1.0-v1.1 archive
+    - proposed owner surfaces for release seals, rollback drills, office profiles, office routing, revision ledgers, compatibility verdicts, and runtime workers
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss center sovereign office law, then owner-local release, office, routing, memory, proof, and runtime contract slices
+  family_rule:
+    - preserve the installation spine landing order -> backup -> smoke gates -> operator review -> sovereign seal -> rollback drill -> replay -> post-release watch
+    - preserve the office-train spine notary anchor -> registry -> bootstrap -> receipt handoff -> compatibility -> smoke gates -> rollback -> operator go or no-go -> train seal -> replay and watch
+    - adapt every archive surface into the owning repository's local conventions
+    - keep generated/cache transport artifacts out of owner repos
+  landing_rule:
+    - plant center law and schema/example/validator in Agents-of-Abyss
+    - plant ToS no-runtime-write boundaries in Tree-of-Sophia and runtime workers in abyss-stack
+    - plant assistant office profiles and service contracts in aoa-agents, verdicts in aoa-evals, and candidate seams in aoa-kag
+    - plant bounded memories in aoa-memo, drills in aoa-playbooks, route gates in aoa-routing, typed API calls in aoa-sdk, bounded skill invocation in aoa-skills, derived rollups in aoa-stats, and reusable notes in aoa-techniques
+  lineage_precondition:
+    - explicit operator approval opened the next wave and authorized bounded agent-assisted planting
+    - Wave 4 owner-repo landings were already the first reading surface before Wave 5 adaptation began
+    - live owner repo state now shows the center and owner-local Wave 5 surfaces on merged upstream history
+  downstream_rule:
+    - future sovereign release or office-train work must start from live owner repos and this lineage note, not raw archive copying
+    - notary.assistant stays the first receipt-bearing office anchor until a later owner contract promotes another office
+  derivative_rule:
+    - do not let routing, memo, stats, SDK, abyss-stack, or Dionysus overrule owner truth
+  sequence_rule:
+    - first land the center sovereign office law
+    - then land ToS/stack/agents/evals/kag/memo/playbooks/routing/sdk/skills/stats/techniques owner slices
+    - then re-read owner-local validations and keep Dionysus as lineage only
+targets:
+  - repo: Agents-of-Abyss
+    contour: center sovereign release and office-train law, ordered flow, schema, example, and validator
+    files:
+      - docs/EXPERIENCE_WAVE5_SOVEREIGN_OFFICE.md
+      - schemas/experience-wave5-sovereign-office.schema.json
+      - examples/experience_wave5_sovereign_office.example.json
+      - scripts/validate_experience_wave5.py
+      - tests/test_experience_wave5.py
+    validation:
+      - python scripts/validate_experience_wave5.py
+      - python -m pytest -q tests/test_experience_wave5.py
+  - Tree-of-Sophia
+    contour: dossier intake boundary and no-runtime-office-write guard
+    files:
+      - owner-local Wave 5 ToS docs/schemas/examples/tests
+    validation:
+      - owner-local ToS validation and targeted tests
+  - abyss-stack
+    contour: runtime workers, storage plans, rollback mechanics, and replay jobs only
+    files:
+      - owner-local Wave 5 stack docs/schemas/examples/tests
+    validation:
+      - owner-local stack validation and targeted tests
+  - aoa-agents
+    contour: assistant office profiles, service contracts, and post-release watch only
+    files:
+      - owner-local Wave 5 agents docs/schemas/examples/tests
+    validation:
+      - owner-local agents validation and targeted tests
+  - aoa-evals
+    contour: smoke, replay, handoff, and certification verdicts only
+    files:
+      - owner-local Wave 5 eval docs/schemas/examples/tests
+    validation:
+      - owner-local eval validation and targeted tests
+  - aoa-kag
+    contour: derived precedent and pattern candidates only
+    files:
+      - owner-local Wave 5 KAG docs/schemas/examples/tests
+    validation:
+      - owner-local KAG validation and targeted tests
+  - aoa-memo
+    contour: bounded memory entries, retention markers, and revision ledgers only
+    files:
+      - owner-local Wave 5 memo docs/schemas/examples/tests
+    validation:
+      - owner-local memo validation and targeted tests
+  - aoa-playbooks
+    contour: runbooks, drills, and office-train choreography only
+    files:
+      - owner-local Wave 5 playbook docs/schemas/examples/tests
+    validation:
+      - owner-local playbook validation and targeted tests
+  - aoa-routing
+    contour: route gates, handoff packets, and service boundaries without meaning authority
+    files:
+      - owner-local Wave 5 routing docs/schemas/examples/tests
+    validation:
+      - owner-local routing validation and targeted tests
+  - aoa-sdk
+    contour: typed API calls and controlled orchestration only
+    files:
+      - owner-local Wave 5 SDK docs/schemas/examples/tests
+    validation:
+      - owner-local SDK validation and targeted tests
+  - aoa-skills
+    contour: bounded skill invocation contracts only
+    files:
+      - owner-local Wave 5 skills docs/schemas/examples/tests
+    validation:
+      - owner-local skills validation and targeted tests
+  - aoa-stats
+    contour: derived dashboards and rollups only
+    files:
+      - owner-local Wave 5 stats docs/schemas/examples/tests
+    validation:
+      - owner-local stats validation and targeted tests
+  - aoa-techniques
+    contour: reusable technique notes only
+    files:
+      - owner-local Wave 5 techniques docs/schemas/examples/tests
+    validation:
+      - owner-local techniques validation and targeted tests
+scope_exclusions:
+  - new aoa-experience repository
+  - direct Tree-of-Sophia runtime write
+  - Codex release certification
+  - Codex release sealing
+  - Codex train approval
+  - assistant self-release
+  - assistant self-enrollment
+  - hidden office self-authority
+  - routing meaning authority
+  - stats judgment authority
+  - Dionysus release authority

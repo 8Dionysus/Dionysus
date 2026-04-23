@@ -103,6 +103,18 @@ EXPECTED_NOTES = {
         "kind": "prep-pack-note",
         "lifecycle_status": "partially_landed_retained_for_lineage",
     },
+    "seed_staging/future/seed_aoa_experience_wave3_federation_adoption_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
+    },
+    "seed_staging/future/seed_aoa_experience_wave4_polis_constitution_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
+    },
+    "seed_staging/future/seed_aoa_experience_wave5_sovereign_office_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_upstream_retained_for_lineage",
+    },
     "seed_staging/future/seed_aoa_experience_wave0_v1_2_to_v2_0_intake_pack.md": {
         "kind": "prep-pack-note",
         "lifecycle_status": "landed_upstream_retained_for_lineage",

@@ -1,0 +1,140 @@
+map_version: 1
+updated_at: '2026-04-23'
+seed_note: seed_staging/future/seed_aoa_experience_wave4_polis_constitution_pack.md
+status: prep_pack_note
+navigation_constraints:
+  keep_next_live_seed: seed_expansion/seed.tos.wider-world-thought-expansion.v0.md#tos-expansion-wider-world-thought-expansion
+  add_to_origin_notes: true
+  do_not_add_seed_index_entries_yet: true
+  do_not_apply_downstream_yet: false
+  do_not_create_wave_manifest_yet: true
+source_bundle:
+  path: /home/dionysus/Загрузки/aoa-experience-polis-governance-seed-v0_8.zip
+  companion_paths:
+    - /home/dionysus/Загрузки/aoa-experience-constitution-runtime-seed-v0_9.zip
+  included_surfaces:
+    - SEED_MANIFEST.md in each v0.8-v0.9 archive
+    - seed-local validators from each v0.8-v0.9 archive
+    - seed-local tests from each v0.8-v0.9 archive
+    - proposed owner surfaces for governance cases, sealed decisions, appeal and stay boundaries, replay integrity, precedent candidates, and runtime queues
+selection_policy:
+  preferred_first_owner: Agents-of-Abyss center polis/constitution law, then owner-local governance, replay, precedent, and runtime contract slices
+  family_rule:
+    - preserve the governance spine case -> authority -> review path -> decision -> route -> precedent or hold -> retention
+    - preserve the constitution runtime spine queue -> resolve -> schedule -> seal -> reveal -> enforce -> replay -> index -> dispatch
+    - adapt every archive surface into the owning repository's local conventions
+    - keep generated/cache transport artifacts out of owner repos
+  landing_rule:
+    - plant center law and schema/example/validator in Agents-of-Abyss
+    - plant dossier intake boundaries in Tree-of-Sophia and bounded governance verdicts in aoa-evals
+    - plant scenario composition in aoa-playbooks and bounded memories in aoa-memo
+    - plant derived dashboard summaries in aoa-stats only as weaker-than-owner observability
+    - plant thin dispatch hints in aoa-routing, role posture in aoa-agents, typed helper seams in aoa-sdk, precedent candidates in aoa-kag, bounded runtime skill posture in aoa-skills, reusable resolution practice in aoa-techniques, and runtime queues and replay jobs in abyss-stack
+  lineage_precondition:
+    - explicit operator approval opened the next wave and authorized bounded agent-assisted planting
+    - Wave 3 owner-repo landings were already the first reading surface before Wave 4 adaptation began
+    - live owner repo state now shows the center and owner-local Wave 4 surfaces on merged upstream history
+  downstream_rule:
+    - future governance or runtime work must start from live owner repos and this lineage note, not raw archive copying
+    - runtime execution may make governance legible but must not manufacture authority
+  derivative_rule:
+    - do not let stats, routing, memo, SDK, KAG, abyss-stack, or Dionysus overrule owner truth
+  sequence_rule:
+    - first land the center polis constitution law
+    - then land ToS/evals/playbooks/stats/memo/routing/agents/sdk/kag/skills/techniques/stack owner slices
+    - then re-read owner-local validations and keep Dionysus as lineage only
+targets:
+  - repo: Agents-of-Abyss
+    contour: center polis governance and constitution runtime law, ordered flow, schema, example, and validator
+    files:
+      - docs/EXPERIENCE_WAVE4_POLIS_CONSTITUTION.md
+      - schemas/experience-wave4-polis-constitution.schema.json
+      - examples/experience_wave4_polis_constitution.example.json
+      - scripts/validate_experience_wave4.py
+      - tests/test_experience_wave4.py
+    validation:
+      - python scripts/validate_experience_wave4.py
+      - python -m pytest -q tests/test_experience_wave4.py
+  - Tree-of-Sophia
+    contour: source-first dossier intake and no direct governance or runtime write boundaries
+    files:
+      - owner-local Wave 4 ToS docs/schemas/examples/tests
+    validation:
+      - owner-local ToS validation and targeted tests
+  - aoa-evals
+    contour: bounded authority, stay, seal, and replay verdicts only
+    files:
+      - owner-local Wave 4 eval docs/schemas/examples/tests
+    validation:
+      - owner-local eval validation and targeted tests
+  - aoa-playbooks
+    contour: sealed-session, stay, appeal, and replay choreography only
+    files:
+      - owner-local Wave 4 playbook docs/schemas/examples/tests
+    validation:
+      - owner-local playbook validation and targeted tests
+  - aoa-stats
+    contour: derived queue, replay, and dashboard observability only
+    files:
+      - owner-local Wave 4 stats docs/schemas/examples/tests
+    validation:
+      - owner-local stats validation and targeted tests
+  - aoa-memo
+    contour: bounded decision, stay, and precedent memories only
+    files:
+      - owner-local Wave 4 memo docs/schemas/examples/tests
+    validation:
+      - owner-local memo validation and targeted tests
+  - aoa-routing
+    contour: case, appeal, stay, and precedent dispatch hints without authority
+    files:
+      - owner-local Wave 4 routing docs/schemas/examples/tests
+    validation:
+      - owner-local routing validation and targeted tests
+  - aoa-agents
+    contour: role posture, authority claims, and self-recharter blocks only
+    files:
+      - owner-local Wave 4 agents docs/schemas/examples/tests
+    validation:
+      - owner-local agents validation and targeted tests
+  - aoa-sdk
+    contour: typed helper calls for queues, sealing, replay, and runtime APIs only
+    files:
+      - owner-local Wave 4 SDK docs/schemas/examples/tests
+    validation:
+      - owner-local SDK validation and targeted tests
+  - aoa-kag
+    contour: derived precedent candidates and supersession links only
+    files:
+      - owner-local Wave 4 KAG docs/schemas/examples/tests
+    validation:
+      - owner-local KAG validation and targeted tests
+  - aoa-skills
+    contour: bounded governance-runtime invocation posture only
+    files:
+      - owner-local Wave 4 skills docs/schemas/examples/tests
+    validation:
+      - owner-local skills validation and targeted tests
+  - aoa-techniques
+    contour: reusable authority-resolution and sealed-decision practice only
+    files:
+      - owner-local Wave 4 techniques docs/schemas/examples/tests
+    validation:
+      - owner-local techniques validation and targeted tests
+  - abyss-stack
+    contour: queues, scheduler, storage, stay enforcement, and replay jobs only
+    files:
+      - owner-local Wave 4 stack docs/schemas/examples/tests
+    validation:
+      - owner-local stack validation and targeted tests
+scope_exclusions:
+  - new aoa-experience repository
+  - direct Tree-of-Sophia write
+  - hidden runtime lawmaking
+  - Codex voting authority
+  - sovereign authority resolution by Codex
+  - assistant self-recharter
+  - routing meaning authority
+  - stats certification authority
+  - memo proof authority
+  - Dionysus constitutional authority
