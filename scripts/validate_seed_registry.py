@@ -136,6 +136,10 @@ MANIFEST_SPECS = {
         "order_key": "fifteenth_wave_order",
         "tail_keys": ("supporting_notes",),
     },
+    "sixteenth_wave.manifest.json": {
+        "order_key": "sixteenth_wave_order",
+        "tail_keys": ("supporting_notes",),
+    },
 }
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 HTML_ID = re.compile(r'<a\s+id="([^"]+)"></a>', re.IGNORECASE)

@@ -66,6 +66,7 @@ origin_notes:
 - seed_staging/future/seed_aoa_titans_memory_loom_pack.md
 - seed_staging/future/seed_aoa_titans_bearer_lineage_identity_patch.md
 - seed_staging/future/seed_aoa_titans_incarnation_spine_praxis_replay_pack.md
+- seed_staging/future/seed_aoa_titans_swarm_ledger_closeout_audit_pack.md
 - seed_staging/future/seed_aoa_federation_kag_factory_upgrade_pack.md
 - seed_staging/future/seed_tos_graph_curation_pack.md
 - seed_staging/audit/seed_wave3_codex_repo_local_skills_trace_harness.md
@@ -239,6 +240,23 @@ wave_index:
   - aoa-playbooks
   - Dionysus
   summary: Titan incarnation identity spine, payload gates, named summon hardening, provenance memory, visible replay, and bounded canary/stat closeout
+- wave: sixteenth_wave
+  file: sixteenth_wave.manifest.json
+  mode: aoa_titans_swarm_ledger_closeout_audit
+  registry_status: landed_post_wave
+  supporting_notes:
+  - reports/planting/2026-04-23.cross-repo.titan-swarm-ledger-closeout-audit.preflight.md
+  - reports/planting/2026-04-23.cross-repo.titan-swarm-ledger-closeout-audit.closure.md
+  landed_to:
+  - Dionysus
+  - aoa-sdk
+  - 8Dionysus
+  - aoa-agents
+  - aoa-playbooks
+  - aoa-evals
+  - aoa-memo
+  - aoa-stats
+  summary: Titan swarm ledger, task contracts, agent reports, finding lifecycle, closeout audit, compact summon discipline, memory candidates, eval canaries, and derived stats support
 seed_index:
 - registry_id: rootline
   label: AoA x ToS Rootline
@@ -3973,5 +3991,311 @@ seed_index:
     - no autospawn, generic role shadowing, unchecked mutation, or memory sovereignty
   freshness:
     last_revalidated_at: '2026-04-22'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-swarm-ledger
+  label: Titan Swarm Ledger
+  source_ref: seed_expansion/seed.aoa.titans.swarm-ledger.v0.md#titan-swarm-ledger
+  wave: sixteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: aoa-titan-incarnation-spine
+  repo_homes:
+  - aoa-sdk
+  - Dionysus
+  first_artifact_hint: src/aoa_sdk/titans/swarm_ledger.py
+  notes: Visible Titan participation ledger for task, report, finding, timeout, grade, closeout, and memory-candidate lineage.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Titan participation becomes a visible local ledger instead of hidden orchestration memory.
+    what_stays_behind:
+    - no runtime autospawn or owner-truth transfer is imported at this seed surface
+    non_goals:
+    - no hidden scheduler, memory sovereignty, generic role shadowing, or live route authority
+  freshness:
+    last_revalidated_at: '2026-04-23'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-task-contract
+  label: Titan Task Contract
+  source_ref: seed_expansion/seed.aoa.titans.task-contract.v0.md#titan-task-contract
+  wave: sixteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: aoa-titan-swarm-ledger
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - Dionysus
+  first_artifact_hint: schemas/titan_agent_task.schema.json
+  notes: Titan summons receive bounded task contracts before review, judgment, provenance, or mutation work.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Sentinel compact reviews require literal diff excerpts and Delta judgments require bounded residual-risk questions.
+    what_stays_behind:
+    - no broad unbounded review or certification sovereignty is imported at this seed surface
+    non_goals:
+    - no hidden autospawn, unchecked mutation, or report-as-verdict collapse
+  freshness:
+    last_revalidated_at: '2026-04-23'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-agent-report
+  label: Titan Agent Report
+  source_ref: seed_expansion/seed.aoa.titans.agent-report.v0.md#titan-agent-report
+  wave: sixteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: aoa-titan-task-contract
+  repo_homes:
+  - aoa-sdk
+  - aoa-agents
+  - Dionysus
+  first_artifact_hint: schemas/titan_agent_report.schema.json
+  notes: Titan reports become structured evidence with source refs and finding lifecycle states, not automatic memory or proof.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Reports may emit findings that move through explicit lifecycle states before any memory candidate exists.
+    what_stays_behind:
+    - no report becomes memory, proof, or owner truth by itself
+    non_goals:
+    - no memory-as-proof, no hidden verdict promotion, and no owner-route erasure
+  freshness:
+    last_revalidated_at: '2026-04-23'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-closeout-audit
+  label: Titan Closeout Audit
+  source_ref: seed_expansion/seed.aoa.titans.closeout-audit.v0.md#titan-closeout-audit
+  wave: sixteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: aoa-titan-agent-report
+  repo_homes:
+  - aoa-sdk
+  - aoa-playbooks
+  - aoa-memo
+  - Dionysus
+  first_artifact_hint: schemas/titan_closeout_audit.schema.json
+  notes: Closeout audit separates Titan quality from orchestration, prompt, tooling, timeout, and stale-source faults.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Grade and timeout records distinguish agent quality from orchestration quality before memory promotion.
+    what_stays_behind:
+    - no closeout audit becomes final owner truth without source refs and owner route
+    non_goals:
+    - no Delta certification sovereignty, hidden closeout runtime, or stats-as-proof collapse
+  freshness:
+    last_revalidated_at: '2026-04-23'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-summon-discipline-v2
+  label: Titan Summon Discipline v2
+  source_ref: seed_expansion/seed.aoa.titans.summon-discipline.v0.md#titan-summon-discipline
+  wave: sixteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: aoa-titan-named-summon-hardening
+  repo_homes:
+  - 8Dionysus
+  - aoa-agents
+  - aoa-playbooks
+  - aoa-evals
+  - Dionysus
+  first_artifact_hint: docs/TITAN_SUMMON_PROTOCOL_V2.md
+  notes: Atlas and Mneme act early, Sentinel stays narrow and late, Delta stays last and bounded, and Forge remains behind mutation gate.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Compact reviewer and judge prompts reduce timeout pressure without generic role shadows.
+    what_stays_behind:
+    - no hidden child automation or broad unbounded review posture is imported at this seed surface
+    non_goals:
+    - no autospawn, generic role shadowing, unchecked mutation, or unbounded reviewer/judge scope
+  freshness:
+    last_revalidated_at: '2026-04-23'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-compaction-recovery
+  label: Titan Compaction Recovery
+  source_ref: seed_expansion/seed.aoa.titans.compaction-recovery.v0.md#titan-compaction-recovery
+  wave: sixteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: aoa-titan-praxis-replay
+  repo_homes:
+  - aoa-sdk
+  - aoa-memo
+  - aoa-evals
+  - Dionysus
+  first_artifact_hint: schemas/titan_compaction_source.schema.json
+  notes: Compaction-recovered session material carries chronology confidence instead of pretending to restore full command trace.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Recovered dossiers can support replay and memory only with explicit chronology and tool-trace confidence labels.
+    what_stays_behind:
+    - no compaction summary is treated as perfect transcript or hidden reasoning source
+    non_goals:
+    - no hidden history reconstruction, memory sovereignty, or proof without evidence refs
+  freshness:
+    last_revalidated_at: '2026-04-23'
+    revalidate_after_days: null
+    superseded_by: null
+- registry_id: aoa-titan-eval-stats-memory-support
+  label: Titan Eval, Stats, and Memory Support
+  source_ref: seed_expansion/seed.aoa.titans.eval-stats-memory.v0.md#titan-eval-stats-memory
+  wave: sixteenth_wave
+  projects:
+  - AoA
+  kind: titan-seed
+  registry_status: landed_post_wave
+  parent_seed: aoa-titan-closeout-audit
+  repo_homes:
+  - aoa-evals
+  - aoa-stats
+  - aoa-memo
+  - aoa-playbooks
+  - Dionysus
+  first_artifact_hint: evals/titan_closeout_overclaim_canary.yaml
+  notes: Canary, derived summary, memory policy, and playbook support surfaces stay subordinate to owner truth.
+  provenance:
+    origin_mode: native
+    donor_repo: null
+    donor_ref: null
+    donor_license_spdx: null
+    donor_paths: []
+    provenance_note: null
+  redistribution:
+    license_spdx: null
+    upstream_license_ref: null
+    copy_license_required: false
+    notice_required: false
+    retain_attribution_required: false
+    mark_modifications_required: false
+    modified_from_upstream: false
+    obligations_note: No third-party redistribution duties are recorded at this seed surface.
+  transplant:
+    policy: native
+    what_survives:
+    - Evals catch protocol drift, stats summarize pressure, and memo stores only sourced candidates.
+    what_stays_behind:
+    - no eval, stats summary, or memory candidate becomes owner truth by itself
+    non_goals:
+    - no proof theater, stats sovereignty, memory-as-truth, or route authority transfer
+  freshness:
+    last_revalidated_at: '2026-04-23'
     revalidate_after_days: null
     superseded_by: null

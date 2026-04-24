@@ -1,0 +1,48 @@
+pack_id: seed_aoa_titans_swarm_ledger_closeout_audit_pack
+program: titan_swarm_ledger_closeout_audit
+recommended_open_wave: sixteenth_wave
+mode: aoa_titans_swarm_ledger_closeout_audit
+
+seeds:
+  - id: titan-swarm-ledger
+    target_repo: aoa-sdk
+    first_artifact_hint: src/aoa_sdk/titans/swarm_ledger.py
+
+  - id: titan-task-contract
+    target_repo: aoa-sdk
+    first_artifact_hint: schemas/titan_agent_task.schema.json
+
+  - id: titan-summon-protocol-v2
+    target_repo: aoa-agents
+    first_artifact_hint: docs/TITAN_SUMMON_PROTOCOL_V2.md
+
+  - id: titan-compact-prompts
+    target_repo: 8Dionysus
+    first_artifact_hint: .codex/prompts/titan-review.sentinel-compact.v0.md
+
+  - id: titan-closeout-playbook
+    target_repo: aoa-playbooks
+    first_artifact_hint: docs/TITAN_CLOSEOUT_PLAYBOOK.md
+
+  - id: titan-closeout-canaries
+    target_repo: aoa-evals
+    first_artifact_hint: evals/titan_delta_verdict_frame_canary.yaml
+
+  - id: titan-audit-memory-policy
+    target_repo: aoa-memo
+    first_artifact_hint: docs/TITAN_AUDIT_MEMORY_POLICY.md
+
+  - id: titan-summon-metrics
+    target_repo: aoa-stats
+    first_artifact_hint: docs/TITAN_SUMMON_METRICS.md
+
+promotion_gates:
+  - fifteenth_wave_present
+  - swarm_ledger_validates
+  - task_contract_requires_scope_and_question
+  - sentinel_compact_requires_diff_excerpts
+  - delta_compact_requires_claim_evidence_residual_question
+  - grade_ledger_distinguishes_orchestration_fault
+  - compaction_recovered_sources_marked_with_confidence
+  - memory_candidates_have_source_refs
+  - eval_canaries_defined

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "mode": "aoa_titans_swarm_ledger_closeout_audit",
+  "title": "Titan Sixteenth Wave: Swarm Ledger, Closeout Audit & Summon Discipline",
+  "canonical_sources": [
+    "seed_staging/future/seed_aoa_titans_swarm_ledger_closeout_audit_pack.md",
+    "seed_staging/future/seed_aoa_titans_swarm_ledger_closeout_audit_pack.map.yaml"
+  ],
+  "sixteenth_wave_order": [
+    {
+      "id": "titan-swarm-ledger",
+      "label": "Swarm ledger for Titan task/report/finding lineage",
+      "source": "seed_expansion/seed.aoa.titans.swarm-ledger.v0.md#titan-swarm-ledger"
+    },
+    {
+      "id": "titan-task-contract",
+      "label": "Structured task contract before every Titan summon",
+      "source": "seed_expansion/seed.aoa.titans.task-contract.v0.md#titan-task-contract"
+    },
+    {
+      "id": "titan-agent-report",
+      "label": "Structured Titan agent report and finding lifecycle",
+      "source": "seed_expansion/seed.aoa.titans.agent-report.v0.md#titan-agent-report"
+    },
+    {
+      "id": "titan-closeout-audit",
+      "label": "Closeout audit, grades, timeout accounting and memory candidates",
+      "source": "seed_expansion/seed.aoa.titans.closeout-audit.v0.md#titan-closeout-audit"
+    },
+    {
+      "id": "titan-summon-discipline",
+      "label": "Summon protocol v2 with compact Sentinel and Delta modes",
+      "source": "seed_expansion/seed.aoa.titans.summon-discipline.v0.md#titan-summon-discipline"
+    },
+    {
+      "id": "titan-compaction-recovery",
+      "label": "Compaction-recovered source confidence rules for replay and memory",
+      "source": "seed_expansion/seed.aoa.titans.compaction-recovery.v0.md#titan-compaction-recovery"
+    },
+    {
+      "id": "titan-eval-stats-memory",
+      "label": "Canaries, stats, memo and playbook support surfaces",
+      "source": "seed_expansion/seed.aoa.titans.eval-stats-memory.v0.md#titan-eval-stats-memory"
+    }
+  ],
+  "supporting_notes": [
+    "reports/planting/2026-04-23.cross-repo.titan-swarm-ledger-closeout-audit.preflight.md",
+    "reports/planting/2026-04-23.cross-repo.titan-swarm-ledger-closeout-audit.closure.md"
+  ],
+  "non_goals": [
+    "autospawn",
+    "hidden_scheduler",
+    "memory_as_truth",
+    "generic_role_shadow",
+    "unchecked_mutation",
+    "unbounded_review",
+    "delta_certification"
+  ]
+}
