@@ -23,9 +23,9 @@ def test_roadmap_names_current_next_live_seed_posture() -> None:
     payload = load_json("generated/seed_route_map.min.json")
     next_live_seed_ref = " ".join(payload["next_live_seed_ref"].split())
 
-    assert "> Current release: `v0.1.2`" in readme
-    assert "## [0.1.2] - 2026-04-19" in changelog
-    assert "`v0.1.2`" in roadmap
+    assert "> Current release: `v0.1.3`" in readme
+    assert "## [0.1.3] - 2026-04-23" in changelog
+    assert "`v0.1.3`" in roadmap
     assert "Current release contour" in roadmap
     assert "seed-garden stewardship for release-line staging" in roadmap
     assert "Prep packs remain weaker than opened waves" in roadmap

@@ -7,6 +7,46 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-04-23
+
+### Summary
+
+- this patch archives Agon Wave XV, downloaded zip, recurrence, Codex-plane,
+  project-MCP, local-plugin, and seed-pack exports while deduplicating
+  archived transport copies
+- Titan seed waves, Titan incarnation planting traces, and Experience
+  wave1-wave5 (external v0.1-v1.1) / v1.2-v2.0 lineage surfaces are
+  registered, staged, dated, and closed out against owner-repo landings
+- `Dionysus` remains the seed garden and staging surface: it preserves lineage
+  without becoming live owner truth after planting
+
+### Added
+
+- archived Agon Wave XV, broader downloaded zip archives, recurrence seed
+  packs, Codex-plane packs, project-MCP packs, local-plugin packs, and
+  deduplicated seed-pack exports
+- Titan seed-wave registration, Titan incarnation spine traces, bearer
+  lineage preflights, appserver bridge, memory loom, operator console, runtime
+  harness, and dated planting lineage reports
+- Experience wave1-wave5 (external v0.1-v1.1) and v1.2-v2.0 intake,
+  seed-staging, seed-expansion, planting-report, and lineage closeout surfaces
+
+### Changed
+
+- archived seed-pack exports were deduplicated, owner-repo reality canaries
+  were kept as lineage checks, and Experience lineage closure was completed
+  across the current staging line
+
+### Validation
+
+- `python scripts/release_check.py`
+
+### Notes
+
+- this patch preserves seed and planting lineage only; landed owner repos
+  remain the stronger source of truth for live doctrine, runtime, proof,
+  memory, routing, and role contracts
+
 ## [0.1.2] - 2026-04-19
 
 ### Summary
