@@ -64,8 +64,8 @@ The second wave plants these surfaces:
 This wave is complete when the operator can run:
 
 ```bash
-python scripts/titanctl.py summon --workspace /srv --operator Dionysus --out /srv/.titan/receipts/example.json
-python scripts/titanctl.py validate --receipt /srv/.titan/receipts/example.json
+python scripts/titanctl.py summon --workspace /srv/AbyssOS --operator Dionysus --out /srv/AbyssOS/.titan/receipts/example.json
+python scripts/titanctl.py validate --receipt /srv/AbyssOS/.titan/receipts/example.json
 ```
 
 and the receipt proves that Forge and Delta stayed locked unless explicitly gated.

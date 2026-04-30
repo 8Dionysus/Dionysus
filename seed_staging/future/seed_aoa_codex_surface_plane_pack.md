@@ -99,7 +99,7 @@ Read later landings under these owner boundaries:
   doctrine note
 - `aoa-sdk` is the first owner for workspace discovery, project-level
   orientation, and the `aoa_workspace` MCP server
-- the sibling workspace root `/srv` is the honest home for project-level
+- the sibling workspace root `/srv/AbyssOS` is the honest home for project-level
   `.codex` glue such as MCP server declarations and hooks config
 - `aoa-stats` is the first owner for the derived observability MCP slice
 - `Dionysus` is the first owner for the read-only seed-garden MCP slice and
@@ -121,53 +121,53 @@ Treat this pack as a partially landed lineage pack.
 The honest first planting is already live as:
 
 1. one workspace-level `aoa_workspace` MCP server in `aoa-sdk`
-2. one project-level `/srv/.codex` layer with `aoa_workspace` wiring
+2. one project-level `/srv/AbyssOS/.codex` layer with `aoa_workspace` wiring
 3. one runtime-proved resolution path that correctly prefers
    `/home/dionysus/src/abyss-stack`
 4. one repo-local `aoa_stats` MCP server in `aoa-stats`
-5. one project-level `/srv/.codex` wiring for `aoa_stats`
+5. one project-level `/srv/AbyssOS/.codex` wiring for `aoa_stats`
 6. one runtime-proved `stats_catalog` read through Codex
 7. one repo-local `dionysus` MCP server in `Dionysus`
-8. one project-level `/srv/.codex` wiring for `dionysus`
+8. one project-level `/srv/AbyssOS/.codex` wiring for `dionysus`
 9. one runtime-proved `seed_route_catalog` and `seed_next_live` read through
    Codex
 10. one repo-owned `aoa-skills` skill-to-MCP wiring layer with route-family
     examples, generator and validator scripts, and generated-export guidance
-11. one workspace-level `/srv` route-discipline note plus stable-server naming
+11. one workspace-level `/srv/AbyssOS` route-discipline note plus stable-server naming
     guidance for the skill-to-MCP layer
 12. one workspace-validated example pass proving the named route-family
-    scaffolds align with `/srv/.codex/config.toml`
+    scaffolds align with `/srv/AbyssOS/.codex/config.toml`
 13. one repo-owned `aoa-agents` subagent projection layer with live profile
     wiring, generator and validator scripts, and generated Codex custom-agent
     surfaces
-14. one project-level `/srv/.codex/agents/` install plus `/srv/.codex/config.toml`
+14. one project-level `/srv/AbyssOS/.codex/agents/` install plus `/srv/AbyssOS/.codex/config.toml`
     registration for the five active AoA role seeds
 15. one workspace-level validation pass proving the installed custom-agent
     projection still matches live `aoa-agents` profiles and wiring
 16. one workspace-local `aoa-shared-launchers` plugin install under
-    `/srv/.codex/plugins/aoa-shared-launchers`
+    `/srv/AbyssOS/.codex/plugins/aoa-shared-launchers`
 17. one workspace plugin discovery seam at
-    `/srv/.agents/plugins/marketplace.json` pointing at the installed launcher
+    `/srv/AbyssOS/.agents/plugins/marketplace.json` pointing at the installed launcher
     plugin
 18. one post-install validation pass proving the launcher plugin manifest,
     bundled skills, marketplace entry, and named MCP dependencies align with
-    `/srv/.codex/config.toml`
+    `/srv/AbyssOS/.codex/config.toml`
 19. one workspace-local convergence package under
-    `/srv/.codex/tools/aoa_codex_converge/`, `/srv/.codex/scripts/`, and
-    `/srv/.codex/bin/`
-20. one convergence bootstrap plus doctor/status pass proving the live `/srv`
+    `/srv/AbyssOS/.codex/tools/aoa_codex_converge/`, `/srv/AbyssOS/.codex/scripts/`, and
+    `/srv/AbyssOS/.codex/bin/`
+20. one convergence bootstrap plus doctor/status pass proving the live `/srv/AbyssOS`
     control-plane seams converge cleanly and emitting reports under
-    `/srv/.codex/generated/codex/`
+    `/srv/AbyssOS/.codex/generated/codex/`
 21. one workspace-local hooks doctor package under
-    `/srv/.codex/tools/aoa_codex_hooks/` and
-    `/srv/.codex/scripts/aoa_codex_hooks_doctor.py`
+    `/srv/AbyssOS/.codex/tools/aoa_codex_hooks/` and
+    `/srv/AbyssOS/.codex/scripts/aoa_codex_hooks_doctor.py`
 22. one in-place upgrade of the existing `.codex/hooks/*.py` entrypoints so
     current hook names keep working while richer hook state and event logic now
     flow through the new package
 23. one manual hooks doctor pass plus event-wrapper smoke path proving reports
-    and event logs now write under `/srv/.codex/generated/codex/hooks/`
+    and event logs now write under `/srv/AbyssOS/.codex/generated/codex/hooks/`
 24. one explicit workspace-local adaptation rule keeping plugins, convergence,
-    and hooks under `.codex/*` because `/srv` itself is not writable for
+    and hooks under `.codex/*` because `/srv/AbyssOS` itself is not writable for
     top-level `plugins/` and `scripts/` install surfaces
 
 The next bounded landings remain staged on purpose:

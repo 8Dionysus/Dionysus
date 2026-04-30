@@ -53,7 +53,7 @@ targets:
     files:
       - scripts/validate_candidate_lineage_contract.py
     validation:
-      - python scripts/validate_candidate_lineage_contract.py --workspace-root /srv
+      - python scripts/validate_candidate_lineage_contract.py --workspace-root /srv/AbyssOS
       - python scripts/build_center_entry_map.py --check
       - python scripts/validate_center_entry_map.py
       - python scripts/validate_ecosystem.py
