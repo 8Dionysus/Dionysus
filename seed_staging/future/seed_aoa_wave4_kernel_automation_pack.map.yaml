@@ -124,7 +124,7 @@ targets:
       - scripts/
       - docs/
     validation:
-      - python scripts/validate_wave4_kernel_automation.py --workspace-root /srv
+      - python scripts/validate_wave4_kernel_automation.py --workspace-root /srv/AbyssOS
     focus:
       - add one human-readable cross-repo validator only after the owner slices are real
       - fail loudly on missing seams without becoming a new sovereign doctrine layer

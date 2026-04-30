@@ -137,7 +137,7 @@ def test_owner_repo_reality_canary_falls_back_to_github_raw_for_missing_workspac
                 canary_version: 1
                 checks:
                   - id: workspace-sibling
-                    path: /srv/Agents-of-Abyss/generated/federation_supporting_inventory.min.json
+                    path: /srv/AbyssOS/Agents-of-Abyss/generated/federation_supporting_inventory.min.json
                     contains:
                       - '"supporting-consumer"'
                 """
@@ -162,7 +162,7 @@ def test_owner_repo_reality_canary_remaps_current_repo_workspace_path() -> None:
                 canary_version: 1
                 checks:
                   - id: current-repo-remap
-                    path: /srv/Dionysus/reports/ecosystem-audits/ledger.yaml
+                    path: /srv/AbyssOS/Dionysus/reports/ecosystem-audits/ledger.yaml
                     contains:
                       - token-a
                 """

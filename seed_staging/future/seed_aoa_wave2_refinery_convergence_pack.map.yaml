@@ -121,7 +121,7 @@ targets:
       - scripts/
       - docs/
     validation:
-      - python scripts/validate_wave2_refinery_convergence.py --workspace-root /srv
+      - python scripts/validate_wave2_refinery_convergence.py --workspace-root /srv/AbyssOS
     focus:
       - add one human-readable cross-repo validator only after the owner-repo slices are real
       - fail loudly on missing seams without becoming a new sovereign doctrine layer

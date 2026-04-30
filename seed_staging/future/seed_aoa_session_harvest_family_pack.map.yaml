@@ -79,7 +79,7 @@ targets:
     focus:
       - preserve the published technique canon that now backs the live family
       - keep later updates source-owned in aoa-techniques rather than in archived seed files
-  - repo: /srv/.agents
+  - repo: /srv/AbyssOS/.agents
     contour: landed root install profile
     files:
       - .agents/skills/aoa-session-donor-harvest
@@ -89,7 +89,7 @@ targets:
       - .agents/skills/aoa-session-progression-lift
       - .agents/skills/aoa-quest-harvest
     validation:
-      - python /srv/aoa-skills/scripts/verify_skill_pack.py --repo-root /srv/aoa-skills --profile repo-session-harvest-family --install-root /srv/.agents/skills --format json
+      - python /srv/AbyssOS/aoa-skills/scripts/verify_skill_pack.py --repo-root /srv/AbyssOS/aoa-skills --profile repo-session-harvest-family --install-root /srv/AbyssOS/.agents/skills --format json
     focus:
       - keep root install aligned to live aoa-skills exports
       - treat root install as runtime access, not as authoring canon
@@ -104,7 +104,7 @@ targets:
       - Agents-of-Abyss/.agents/skills/
       - Tree-of-Sophia/.agents/skills/
     validation:
-      - python /srv/aoa-skills/scripts/verify_skill_pack.py --repo-root /srv/aoa-skills --profile repo-session-harvest-family --install-root <repo>/.agents/skills --format json
+      - python /srv/AbyssOS/aoa-skills/scripts/verify_skill_pack.py --repo-root /srv/AbyssOS/aoa-skills --profile repo-session-harvest-family --install-root <repo>/.agents/skills --format json
     focus:
       - keep repo-local copies refreshed from live aoa-skills outputs
       - do not treat copied install roots as the source of truth

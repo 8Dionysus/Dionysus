@@ -199,20 +199,20 @@ Read those markers first, then verify the owner repos directly.
   source refs, dry-run evidence, route discipline, and planting trace
 - `seed_aoa_codex_surface_plane_pack.md` is now a partially landed lineage
   pack for the Codex access plane: the workspace-level `aoa_workspace` MCP is
-  live through `aoa-sdk` and `/srv/.codex`, the repo-local `aoa_stats` MCP is
-  now live through `aoa-stats` and `/srv/.codex`, the repo-local `dionysus`
-  MCP is now live through `Dionysus` and `/srv/.codex`, and the first
+  live through `aoa-sdk` and `/srv/AbyssOS/.codex`, the repo-local `aoa_stats` MCP is
+  now live through `aoa-stats` and `/srv/AbyssOS/.codex`, the repo-local `dionysus`
+  MCP is now live through `Dionysus` and `/srv/AbyssOS/.codex`, and the first
   skill-to-MCP wiring slice is now live through `aoa-skills` plus workspace
   route-discipline guidance, the first `aoa-agents` subagent projection is now
-  live through `aoa-agents` plus `/srv/.codex/agents/`, the first launcher
-  plugin slice is now live through `/srv/.codex/plugins/` plus
-  `/srv/.agents/plugins/marketplace.json`, the first convergence slice is now
-  live through `/srv/.codex/tools/`, `/srv/.codex/scripts/`,
-  `/srv/.codex/bin/`, and `/srv/.codex/generated/codex/`, and the first
+  live through `aoa-agents` plus `/srv/AbyssOS/.codex/agents/`, the first launcher
+  plugin slice is now live through `/srv/AbyssOS/.codex/plugins/` plus
+  `/srv/AbyssOS/.agents/plugins/marketplace.json`, the first convergence slice is now
+  live through `/srv/AbyssOS/.codex/tools/`, `/srv/AbyssOS/.codex/scripts/`,
+  `/srv/AbyssOS/.codex/bin/`, and `/srv/AbyssOS/.codex/generated/codex/`, and the first
   hooked-doctor slice is now live through
-  `/srv/.codex/tools/aoa_codex_hooks/`,
-  `/srv/.codex/scripts/aoa_codex_hooks_doctor.py`, `/srv/.codex/hooks/`, and
-  `/srv/.codex/generated/codex/hooks/`, while the wider lineage route remains
+  `/srv/AbyssOS/.codex/tools/aoa_codex_hooks/`,
+  `/srv/AbyssOS/.codex/scripts/aoa_codex_hooks_doctor.py`, `/srv/AbyssOS/.codex/hooks/`, and
+  `/srv/AbyssOS/.codex/generated/codex/hooks/`, while the wider lineage route remains
   deferred
 - `seed_aoa_rag_skeleton_pack.md` is now a partially landed lineage pack for a
   thin RAG spine across public AoA and ToS owner surfaces; the first
@@ -293,12 +293,12 @@ Reading:
 - the `8Dionysus` slice remains deferred
 - the first owner-local telemetry receipt wave landed, but the derived stats
   adjunct remains deferred
-- the workspace-level `aoa_workspace` MCP, project-level `/srv/.codex` glue,
+- the workspace-level `aoa_workspace` MCP, project-level `/srv/AbyssOS/.codex` glue,
   the repo-local `aoa_stats` and `dionysus` MCPs, and the first `aoa-skills`
   skill-to-MCP wiring slice landed, the first `aoa-agents` subagent
-  projection plus `/srv/.codex/agents/` install seam landed, the first
-  launcher plugin slice landed through `/srv/.codex/plugins/` and
-  `/srv/.agents/plugins/marketplace.json`, the first convergence slice landed
+  projection plus `/srv/AbyssOS/.codex/agents/` install seam landed, the first
+  launcher plugin slice landed through `/srv/AbyssOS/.codex/plugins/` and
+  `/srv/AbyssOS/.agents/plugins/marketplace.json`, the first convergence slice landed
   through workspace-local `.codex` tooling and reports, the first hooked-doctor
   slice landed through workspace-local `.codex` tooling, hooks, and reports,
   while wider lineage follow-through remains deferred

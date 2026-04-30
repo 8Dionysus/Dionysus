@@ -84,4 +84,4 @@ scope_exclusions:
   - charter or roadmap rewrites unless a tiny contradiction repair is required
   - new ownership or maturity claims
   - registry or manifest lifecycle changes
-  - runtime-root edits under /srv/abyss-stack used as if they were source-repo edits
+  - runtime-root edits under /srv/AbyssOS/abyss-stack used as if they were source-repo edits

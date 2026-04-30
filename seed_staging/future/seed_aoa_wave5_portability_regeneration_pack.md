@@ -29,7 +29,7 @@ Prepare the next Codex-plane portability and regeneration wave as one bounded
 future prep surface inside `Dionysus`.
 
 This pack preserves a source-owned install hardening route for shared-root
-Codex deploy surfaces after the current `/srv` Codex-plane landing is already
+Codex deploy surfaces after the current `/srv/AbyssOS` Codex-plane landing is already
 real.
 
 It does not invent a new owner for MCP meaning. It hardens regeneration,

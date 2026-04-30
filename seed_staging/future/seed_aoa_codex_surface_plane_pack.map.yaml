@@ -39,10 +39,10 @@ selection_policy:
     - preserve the already-landed aoa_stats repo-local MCP slice in aoa-stats and /srv as the current truth
     - preserve the already-landed dionysus repo-local MCP slice in Dionysus and /srv as the current truth
     - preserve the already-landed aoa-skills skill-to-MCP wiring slice in aoa-skills and /srv as the current truth
-    - preserve the already-landed aoa-agents subagent projection and /srv/.codex install slice as the current truth
-    - preserve the already-landed workspace launcher plugin slice in /srv/.codex/plugins and /srv/.agents/plugins as the current truth
-    - preserve the already-landed workspace-local convergence seam in /srv/.codex/tools, /srv/.codex/scripts, /srv/.codex/bin, and /srv/.codex/generated/codex as the current truth
-    - preserve the already-landed workspace-local hooked-doctor seam in /srv/.codex/tools, /srv/.codex/scripts, /srv/.codex/hooks, and /srv/.codex/generated/codex/hooks as the current truth
+    - preserve the already-landed aoa-agents subagent projection and /srv/AbyssOS/.codex install slice as the current truth
+    - preserve the already-landed workspace launcher plugin slice in /srv/AbyssOS/.codex/plugins and /srv/AbyssOS/.agents/plugins as the current truth
+    - preserve the already-landed workspace-local convergence seam in /srv/AbyssOS/.codex/tools, /srv/AbyssOS/.codex/scripts, /srv/AbyssOS/.codex/bin, and /srv/AbyssOS/.codex/generated/codex as the current truth
+    - preserve the already-landed workspace-local hooked-doctor seam in /srv/AbyssOS/.codex/tools, /srv/AbyssOS/.codex/scripts, /srv/AbyssOS/.codex/hooks, and /srv/AbyssOS/.codex/generated/codex/hooks as the current truth
     - use live repo state rather than archive snippets as the basis for follow-on planting
   downstream_rule:
     - keep later lineage doctrine and owner-fit proof behind the already-landed workspace, repo-local MCP, skill-to-MCP, subagent projection, launcher plugin, convergence, and hooked-doctor slices
@@ -85,7 +85,7 @@ targets:
     validation:
       - python -m pytest -q
       - python -m ruff check .
-      - aoa workspace inspect /srv/aoa-sdk
+      - aoa workspace inspect /srv/AbyssOS/aoa-sdk
     focus:
       - reuse Workspace.discover instead of hardcoded repo maps
       - keep abyss-stack source checkout preferred over runtime mirror
@@ -108,9 +108,9 @@ targets:
       - codex -C /srv mcp get aoa_workspace
       - codex -C /srv mcp get aoa_stats
       - codex -C /srv mcp get dionysus
-      - python /srv/aoa-agents/scripts/validate_codex_subagents.py --profiles-root /srv/aoa-agents/profiles --wiring /srv/aoa-agents/config/codex_subagent_wiring.v2.json --agents-dir /srv/.codex/agents --config-snippet /srv/.codex/config.toml
-      - python /srv/.codex/scripts/aoa_codex_doctor.py --workspace-root /srv --write-report --format text
-      - python /srv/.codex/scripts/aoa_codex_hooks_doctor.py --workspace-root /srv --write-report --format text
+      - python /srv/AbyssOS/aoa-agents/scripts/validate_codex_subagents.py --profiles-root /srv/AbyssOS/aoa-agents/profiles --wiring /srv/AbyssOS/aoa-agents/config/codex_subagent_wiring.v2.json --agents-dir /srv/AbyssOS/.codex/agents --config-snippet /srv/AbyssOS/.codex/config.toml
+      - python /srv/AbyssOS/.codex/scripts/aoa_codex_doctor.py --workspace-root /srv/AbyssOS --write-report --format text
+      - python /srv/AbyssOS/.codex/scripts/aoa_codex_hooks_doctor.py --workspace-root /srv/AbyssOS --write-report --format text
     focus:
       - keep workspace-root config narrow and project-scoped
       - do not mirror personal model or sandbox defaults into the project layer
@@ -179,7 +179,7 @@ targets:
     focus:
       - project subagent config from live profiles rather than archive fixtures
       - keep role posture separate from skill canon
-      - keep generated codex_agents as the repo-owned seam and /srv/.codex/agents as the install seam
+      - keep generated codex_agents as the repo-owned seam and /srv/AbyssOS/.codex/agents as the install seam
   - repo: aoa-evals
     contour: lineage-integrity and owner-fit proof home
     files:

@@ -42,7 +42,7 @@ This prep pack belongs here because:
 - the original staging bundle spanned the ecosystem center, a concrete source
   owner, and several sibling AoA owner layers at once
 - the intended `ATM10-Agent` owner landing had to go through GitHub rather
-  than the `/srv` sibling-workspace path
+  than the `/srv/AbyssOS` sibling-workspace path
 - the original owner-repo reality check found no current antifragility traces
   in the checked AoA repos before the later merges
 - the prep pack should stay replayable as lineage even after the owner
@@ -116,7 +116,7 @@ already active.
 ## What this pack is not for
 
 - no immediate owner-repo rollout from `Dionysus`
-- no assumption that `ATM10-Agent` should be planted from the current `/srv`
+- no assumption that `ATM10-Agent` should be planted from the current `/srv/AbyssOS`
   sibling workflow
 - no authority drift into `aoa-stats`
 - no hidden automation widening or auto-remediation

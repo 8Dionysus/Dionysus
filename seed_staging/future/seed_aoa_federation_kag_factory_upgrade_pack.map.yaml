@@ -100,8 +100,8 @@ targets:
     validation:
       - python -m pytest -q
       - python -m ruff check .
-      - aoa workspace inspect /srv/aoa-sdk
-      - aoa compatibility check /srv/aoa-sdk
+      - aoa workspace inspect /srv/AbyssOS/aoa-sdk
+      - aoa compatibility check /srv/AbyssOS/aoa-sdk
     focus:
       - keep the SDK on the control plane
       - expose only a small typed read path over the derived registry

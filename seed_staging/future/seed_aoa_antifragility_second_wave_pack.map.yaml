@@ -45,7 +45,7 @@ selection_policy:
     - keep the sdk narrowing, disclosing, or blocking under stress rather than auto-repairing
   landing_rule:
     - verify first-wave receipts, proof, and derived vectors before widening transport
-    - treat /srv/abyss-stack as workspace-local only and use ~/src/abyss-stack as the real source checkout before runtime landing
+    - treat /srv/AbyssOS/abyss-stack as workspace-local only and use ~/src/abyss-stack as the real source checkout before runtime landing
     - keep stats or memo hints weaker than source receipts
   lineage_precondition:
     - no antifragility traces are verified upstream across aoa-routing, aoa-memo, aoa-sdk, or the checked AoA repos in /srv
@@ -87,7 +87,7 @@ targets:
       - local owner-repo validation once the real source checkout is confirmed
     focus:
       - keep degradation and closeout reviewed, bounded, and owner-local
-      - avoid treating /srv/abyss-stack as the source repository by default
+      - avoid treating /srv/AbyssOS/abyss-stack as the source repository by default
       - use ~/src/abyss-stack as the real owner checkout for any later runtime landing
   - repo: aoa-sdk
     contour: control-plane and closeout consumption of stress context
@@ -105,7 +105,7 @@ targets:
 scope_exclusions:
   - immediate cross-repo rollout from this Dionysus staging step
   - bypassing missing first-wave landings
-  - treating /srv/abyss-stack as the source repository
+  - treating /srv/AbyssOS/abyss-stack as the source repository
   - hidden auto-repair or silent remediation widening
   - memo acting as proof
   - central stress empire behavior or global scoring

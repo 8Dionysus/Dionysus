@@ -24,7 +24,7 @@ aoa-sdk/schemas/titan_session_ingress.schema.json
 ## First command
 
 ```bash
-codex --cd /srv "$(cat /srv/8Dionysus/.codex/prompts/titan-summon.service-cohort.v0.md)"
+codex --cd /srv/AbyssOS "$(cat /srv/AbyssOS/8Dionysus/.codex/prompts/titan-summon.service-cohort.v0.md)"
 ```
 
 ## Acceptance

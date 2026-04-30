@@ -77,7 +77,7 @@ targets:
       - .codex/config.toml
       - .codex/hooks.json
     validation:
-      - python scripts/render_codex_plane.py --workspace-root /srv --check
+      - python scripts/render_codex_plane.py --workspace-root /srv/AbyssOS --check
       - python scripts/validate_codex_plane_regeneration.py
       - python -m pytest -q tests
     focus:

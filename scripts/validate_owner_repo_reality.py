@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CANARY_SPEC_PATH = (
     ROOT / "reports" / "ecosystem-audits" / "federated-audit-remediation.reality-canary.yaml"
 )
-WORKSPACE_ROOT = Path("/srv")
+WORKSPACE_ROOT = Path("/srv/AbyssOS")
 GITHUB_RAW_OWNER = "8Dionysus"
 GITHUB_RAW_BASE = f"https://raw.githubusercontent.com/{GITHUB_RAW_OWNER}"
 

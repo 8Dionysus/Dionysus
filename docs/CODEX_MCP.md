@@ -77,7 +77,7 @@ The AoA workspace-level Codex config can wire this repo-local server with:
 [mcp_servers.dionysus]
 command = "python3"
 args = ["scripts/dionysus_mcp_server.py"]
-cwd = "/srv/Dionysus"
+cwd = "/srv/AbyssOS/Dionysus"
 ```
 
 Keep the wiring project-scoped. Do not mirror personal sandbox or model

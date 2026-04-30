@@ -41,7 +41,7 @@ This prep pack belongs here because:
 - the original staging bundle depended on first-wave antifragility surfaces
   before the owner-repo landings refreshed those seams upstream
 - the package spans routing, memo, runtime, and control-plane layers at once
-- the seed explicitly warns against treating `/srv/abyss-stack` as the source
+- the seed explicitly warns against treating `/srv/AbyssOS/abyss-stack` as the source
   repository, and the real source checkout is available at
   `~/src/abyss-stack`
 - the original owner-repo reality check found no current antifragility traces
@@ -79,7 +79,7 @@ Read this pack under these boundaries:
 - keep the SDK narrowing, disclosing, or blocking under stress rather than
   widening automation
 - keep source-owned receipts stronger than stats or memo hints
-- keep `/srv/abyss-stack` out of source-repo assumptions and use
+- keep `/srv/AbyssOS/abyss-stack` out of source-repo assumptions and use
   `~/src/abyss-stack` as the real checkout when runtime planting begins
 
 ## Ownership posture
@@ -118,7 +118,7 @@ already active.
 
 - no immediate cross-repo rollout from `Dionysus`
 - no bypass around missing first-wave landings
-- no treatment of `/srv/abyss-stack` as the source repo
+- no treatment of `/srv/AbyssOS/abyss-stack` as the source repo
 - no hidden auto-repair or silent remediation widening
 - no use of memo as proof
 - no central stress empire or global scalar
