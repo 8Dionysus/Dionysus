@@ -104,10 +104,10 @@ targets:
       - .codex/hooks.json
       - .codex/hooks/
     validation:
-      - codex -C /srv mcp list
-      - codex -C /srv mcp get aoa_workspace
-      - codex -C /srv mcp get aoa_stats
-      - codex -C /srv mcp get dionysus
+      - codex -C /srv/AbyssOS mcp list
+      - codex -C /srv/AbyssOS mcp get aoa_workspace
+      - codex -C /srv/AbyssOS mcp get aoa_stats
+      - codex -C /srv/AbyssOS mcp get dionysus
       - python /srv/AbyssOS/aoa-agents/scripts/validate_codex_subagents.py --profiles-root /srv/AbyssOS/aoa-agents/profiles --wiring /srv/AbyssOS/aoa-agents/config/codex_subagent_wiring.v2.json --agents-dir /srv/AbyssOS/.codex/agents --config-snippet /srv/AbyssOS/.codex/config.toml
       - python /srv/AbyssOS/.codex/scripts/aoa_codex_doctor.py --workspace-root /srv/AbyssOS --write-report --format text
       - python /srv/AbyssOS/.codex/scripts/aoa_codex_hooks_doctor.py --workspace-root /srv/AbyssOS --write-report --format text
