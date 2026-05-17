@@ -61,5 +61,9 @@
     "Redaction/tombstone workflow exists before broad ingestion.",
     "Forge and Delta gates remain unchanged.",
     "A local memory index can be initialized, ingested, queried, digested, redacted, and closed."
+  ],
+  "supporting_notes": [
+    "reports/planting/2026-04-22.cross-repo.titan-memory-loom.preflight.md",
+    "reports/planting/2026-04-22.cross-repo.titan-memory-loom.closure.md"
   ]
 }

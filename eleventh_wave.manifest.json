@@ -88,5 +88,9 @@
     "A session receipt can be created, validated, gated, and closed without external dependencies.",
     "Codex hook surfaces add context only and do not spawn hidden agents.",
     "Eval canaries define failure conditions for hidden arena behavior, missing receipts, and ungated mutation or judgment."
+  ],
+  "supporting_notes": [
+    "reports/planting/2026-04-22.cross-repo.titan-runtime-harness.preflight.md",
+    "reports/planting/2026-04-22.cross-repo.titan-runtime-harness.closure.md"
   ]
 }

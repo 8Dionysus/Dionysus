@@ -146,8 +146,8 @@ wave_index:
   mode: aoa_titans_first_appearance
   registry_status: landed_post_wave
   supporting_notes:
-  - reports/planting/titan_first_appearance.preflight.md
-  - reports/planting/titan_first_appearance.closure.md
+  - reports/planting/2026-04-21.cross-repo.titan-first-appearance.preflight.md
+  - reports/planting/2026-04-21.cross-repo.titan-first-appearance.closure.md
   landed_to:
   - Dionysus
   - aoa-agents
@@ -164,6 +164,9 @@ wave_index:
   file: eleventh_wave.manifest.json
   mode: aoa_titans_runtime_harness
   registry_status: landed_post_wave
+  supporting_notes:
+  - reports/planting/2026-04-22.cross-repo.titan-runtime-harness.preflight.md
+  - reports/planting/2026-04-22.cross-repo.titan-runtime-harness.closure.md
   landed_to:
   - aoa-agents
   - aoa-routing
@@ -180,6 +183,9 @@ wave_index:
   file: twelfth_wave.manifest.json
   mode: aoa_titans_operator_console
   registry_status: landed_post_wave
+  supporting_notes:
+  - reports/planting/2026-04-22.cross-repo.titan-operator-console.preflight.md
+  - reports/planting/2026-04-22.cross-repo.titan-operator-console.closure.md
   landed_to:
   - aoa-agents
   - aoa-sdk
@@ -196,6 +202,9 @@ wave_index:
   file: thirteenth_wave.manifest.json
   mode: aoa_titans_appserver_bridge
   registry_status: landed_post_wave
+  supporting_notes:
+  - reports/planting/2026-04-22.cross-repo.titan-appserver-bridge.preflight.md
+  - reports/planting/2026-04-22.cross-repo.titan-appserver-bridge.closure.md
   landed_to:
   - aoa-sdk
   - aoa-agents
@@ -211,6 +220,9 @@ wave_index:
   file: fourteenth_wave.manifest.json
   mode: aoa_titans_memory_loom
   registry_status: landed_post_wave
+  supporting_notes:
+  - reports/planting/2026-04-22.cross-repo.titan-memory-loom.preflight.md
+  - reports/planting/2026-04-22.cross-repo.titan-memory-loom.closure.md
   landed_to:
   - aoa-memo
   - aoa-sdk

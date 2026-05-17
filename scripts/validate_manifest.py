@@ -50,19 +50,19 @@ MANIFEST_SPECS = {
     },
     "eleventh_wave.manifest.json": {
         "order_key": "eleventh_wave_order",
-        "tail_keys": (),
+        "tail_keys": ("supporting_notes",),
     },
     "twelfth_wave.manifest.json": {
         "order_key": "twelfth_wave_order",
-        "tail_keys": (),
+        "tail_keys": ("supporting_notes",),
     },
     "thirteenth_wave.manifest.json": {
         "order_key": "thirteenth_wave_order",
-        "tail_keys": (),
+        "tail_keys": ("supporting_notes",),
     },
     "fourteenth_wave.manifest.json": {
         "order_key": "fourteenth_wave_order",
-        "tail_keys": (),
+        "tail_keys": ("supporting_notes",),
     },
     "fifteenth_wave.manifest.json": {
         "order_key": "fifteenth_wave_order",
@@ -76,6 +76,7 @@ MANIFEST_SPECS = {
 MANIFEST_PATHS = [ROOT / name for name in MANIFEST_SPECS]
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 HTML_ID = re.compile(r"<a\s+id=\"([^\"]+)\"\s*>\s*</a>", re.IGNORECASE)
+DATED_PLANTING_REPORT = re.compile(r"^\d{4}-\d{2}-\d{2}\.")
 
 
 class ValidationError(RuntimeError):
@@ -125,6 +126,7 @@ def anchors_for(path: Path) -> set[str]:
 def validate_ref(ref: str, label: str, require_anchor: bool = False) -> None:
     if not isinstance(ref, str) or not ref:
         fail(f"{label}: ref must be a non-empty string")
+    validate_planting_report_ref_name(ref, label)
     path_text, _, anchor = ref.partition("#")
     target = ROOT / path_text
     if not target.exists():
@@ -147,7 +149,19 @@ def seed_bundle_ref_requires_anchor(ref: object) -> bool:
         or ref.startswith("archive/seed_branches/")
         or ref.startswith("archive/seed_soil/")
         or ref.startswith("archive/seed_expansion/")
+        or ref.startswith("archive/seed_post_wave/")
     )
+
+
+def validate_planting_report_ref_name(ref: str, label: str) -> None:
+    path_text = ref.partition("#")[0]
+    if not path_text.startswith("reports/planting/") or not path_text.endswith(".md"):
+        return
+    name = Path(path_text).name
+    if name in {"AGENTS.md", "README.md"}:
+        return
+    if not DATED_PLANTING_REPORT.match(name):
+        fail(f"{label}: planting reports must use YYYY-MM-DD-prefixed names: {ref}")
 
 
 def validate_manifest(manifest_path: Path) -> None:

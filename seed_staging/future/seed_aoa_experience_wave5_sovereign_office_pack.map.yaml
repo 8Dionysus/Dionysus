@@ -54,7 +54,7 @@ targets:
     validation:
       - python scripts/validate_experience_wave5.py
       - python -m pytest -q tests/test_experience_wave5.py
-  - Tree-of-Sophia
+  - repo: Tree-of-Sophia
     contour: dossier intake boundary and no-runtime-office-write guard
     files:
       - owner-local Wave 5 ToS docs/schemas/examples/tests

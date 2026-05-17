@@ -49,7 +49,7 @@ seeds:
     label: AOA-TITAN-SEED-07 Rollout and Closure
     target_repo: Dionysus
     source: seed_expansion/seed.aoa.titans.rollout-closure.v0.md
-    first_artifact_hint: reports/planting/titan_first_appearance.closure.md
+    first_artifact_hint: reports/planting/2026-04-21.cross-repo.titan-first-appearance.closure.md
     gate: first_summon_receipt_recorded
 promotion_gates:
   - owner_repo_reality_checked
