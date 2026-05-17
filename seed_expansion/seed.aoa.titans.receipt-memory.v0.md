@@ -19,7 +19,7 @@ aoa-memo/docs/TITAN_MEMORY_POSTURE.md
 aoa-memo/schemas/titan_memory_candidate.schema.json
 aoa-memo/examples/titan_memory_candidate.example.json
 aoa-stats/docs/TITAN_RECEIPT_DERIVATION.md
-Dionysus/reports/planting/titan_first_appearance.preflight.md
+Dionysus/reports/planting/2026-04-21.cross-repo.titan-first-appearance.preflight.md
 ```
 
 ## Receipt minimum

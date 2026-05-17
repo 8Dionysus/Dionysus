@@ -21,13 +21,13 @@ seeds:
     first_artifact_hint: schemas/titan_memory_digest.schema.json
   - id: aoa-titan-planting-lineage-bridge
     target_repo: Dionysus
-    first_artifact_hint: reports/planting/titan_memory_loom.preflight.md
+    first_artifact_hint: reports/planting/2026-04-22.cross-repo.titan-memory-loom.preflight.md
   - id: aoa-titan-memory-evals
     target_repo: aoa-evals
     first_artifact_hint: evals/titan_memory_no_sovereignty_canary.yaml
   - id: aoa-titan-memory-closure
     target_repo: Dionysus
-    first_artifact_hint: reports/planting/titan_memory_loom.closure.md
+    first_artifact_hint: reports/planting/2026-04-22.cross-repo.titan-memory-loom.closure.md
 
 promotion_gates:
   - memory_sovereignty_denied

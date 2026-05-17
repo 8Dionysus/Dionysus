@@ -55,7 +55,7 @@ targets:
     validation:
       - python scripts/validate_experience_wave4.py
       - python -m pytest -q tests/test_experience_wave4.py
-  - Tree-of-Sophia
+  - repo: Tree-of-Sophia
     contour: source-first dossier intake and no direct governance or runtime write boundaries
     files:
       - owner-local Wave 4 ToS docs/schemas/examples/tests

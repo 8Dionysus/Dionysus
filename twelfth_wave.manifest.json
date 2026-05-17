@@ -73,5 +73,9 @@
     "silent app-server autospawn",
     "console-owned role truth",
     "generated Codex TOML rewrites"
+  ],
+  "supporting_notes": [
+    "reports/planting/2026-04-22.cross-repo.titan-operator-console.preflight.md",
+    "reports/planting/2026-04-22.cross-repo.titan-operator-console.closure.md"
   ]
 }

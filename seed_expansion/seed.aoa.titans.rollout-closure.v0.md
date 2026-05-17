@@ -15,8 +15,8 @@ Target repo: `Dionysus`
 Required surfaces:
 
 ```text
-reports/planting/titan_first_appearance.preflight.md
-reports/planting/titan_first_appearance.closure.md
+reports/planting/2026-04-21.cross-repo.titan-first-appearance.preflight.md
+reports/planting/2026-04-21.cross-repo.titan-first-appearance.closure.md
 generated/seed_route_map.min.json after rebuild
 seed-registry.yaml entry or fragment
 ```

@@ -17,6 +17,7 @@ except ImportError as exc:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_LIFECYCLE_STATUS = {
+    "landed_post_wave",
     "landed_upstream_retained_for_lineage",
     "partially_landed_retained_for_lineage",
     "staged_only_not_landed",
@@ -66,6 +67,22 @@ EXPECTED_NOTES = {
     "seed_staging/future/seed_aoa_session_harvest_family_pack.md": {
         "kind": "prep-pack-note",
         "lifecycle_status": "landed_upstream_retained_for_lineage",
+    },
+    "seed_staging/future/seed_aoa_antifragility_first_wave_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_post_wave",
+    },
+    "seed_staging/future/seed_aoa_antifragility_second_wave_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_post_wave",
+    },
+    "seed_staging/future/seed_aoa_antifragility_third_wave_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_post_wave",
+    },
+    "seed_staging/future/seed_aoa_antifragility_fourth_wave_pack.md": {
+        "kind": "prep-pack-note",
+        "lifecycle_status": "landed_post_wave",
     },
     "seed_staging/future/seed_aoa_automation_opportunity_scan_pack.md": {
         "kind": "prep-pack-note",

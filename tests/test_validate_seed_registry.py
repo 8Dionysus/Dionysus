@@ -74,6 +74,26 @@ class ValidateSeedRegistryTests(unittest.TestCase):
 
             validate_seed_registry.validate_archived_seed_pack_immutable_sources(root)
 
+    def test_post_wave_seed_refs_require_anchors(self) -> None:
+        self.assertTrue(
+            validate_seed_registry.seed_like_ref_requires_anchor(
+                "archive/seed_post_wave/seed.example.md"
+            )
+        )
+
+    def test_planting_report_refs_require_date_prefix(self) -> None:
+        with self.assertRaises(validate_seed_registry.ValidationError) as exc:
+            validate_seed_registry.validate_planting_report_ref_name(
+                "reports/planting/titan_runtime_harness.preflight.md",
+                "seed-registry.yaml: wave_index[10].supporting_notes[0]",
+            )
+
+        self.assertIn("YYYY-MM-DD-prefixed", str(exc.exception))
+        validate_seed_registry.validate_planting_report_ref_name(
+            "reports/planting/2026-04-22.cross-repo.titan-runtime-harness.preflight.md",
+            "seed-registry.yaml: wave_index[10].supporting_notes[0]",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

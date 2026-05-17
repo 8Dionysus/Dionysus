@@ -48,5 +48,9 @@
       "source": "seed_expansion/seed.aoa.titans.bridge-rollout-closure.v0.md#aoa-titan-seed-53-bridge-rollout-closure"
     }
   ],
-  "closure_law": "The fourth wave opens the bridge, not the cage."
+  "closure_law": "The fourth wave opens the bridge, not the cage.",
+  "supporting_notes": [
+    "reports/planting/2026-04-22.cross-repo.titan-appserver-bridge.preflight.md",
+    "reports/planting/2026-04-22.cross-repo.titan-appserver-bridge.closure.md"
+  ]
 }
