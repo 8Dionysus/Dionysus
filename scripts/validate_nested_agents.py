@@ -22,6 +22,7 @@ REQUIRED_AGENTS_DOCS: dict[str, tuple[str, ...]] = {
     "seed_notes/AGENTS.md": ("exploratory seed notes", "not queue control"),
     "src/dionysus_mcp/AGENTS.md": ("route-first, read-only", "weaker than manifests"),
     "templates/AGENTS.md": ("planting report templates", "do not freeze future waves"),
+    "memo/AGENTS.md": ("local memory port", "reviewed landing"),
 }
 ADVISORY_AGENT_DIRS: tuple[str, ...] = (
     ".agents/skills",
