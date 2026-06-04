@@ -16,8 +16,9 @@ Read in this order:
 4. `seed-registry.yaml`
 5. `ROADMAP.md`
 6. `docs/codex/planting-protocol.md`
-7. the target repository structure and ownership
-8. `AGENTS.md` and the nearest nested `AGENTS.md`
+7. `docs/decisions/README.md` when seed-garden route rationale matters
+8. the target repository structure and ownership
+9. `AGENTS.md` and the nearest nested `AGENTS.md`
 
 If work starts from a named prep pack rather than an opened wave, read the pack note and matching `.map.yaml` after checking the stronger live surfaces above. Named prep packs are flexible staging notes. They do not overrule an opened wave, a planted Titan wave, or the current live seed.
 After reading a prep-pack note, verify the owner repo directly before treating staging guidance as current queue truth.
@@ -56,6 +57,7 @@ owner-repo reality.
 - `ROADMAP.md` summarizes current seed-garden posture after those stronger live surfaces without replacing them
 - `docs/SEED_SURFACE_MAP.md` explains how to read `seed_staging/` and `seed_notes/exploratory/` without confusing canon, staging, lineage, and exploratory donor notes
 - `docs/CANDIDATE_SEED_IDENTITY.md` explains the local `candidate_ref -> seed_ref` bridge and the stop rules around `seed_ref`
+- `docs/decisions/` holds durable seed-garden route rationale with generated lookup indexes
 - `docs/codex/` holds the planting protocol and provenance rules
 - `docs/CODEX_MCP.md` explains the repo-local Codex MCP surface and its stop rules
 - `templates/planting-report.template.md` defines the durable planting-report shape when Dionysus needs to hold the trace
@@ -105,6 +107,8 @@ The seed-surface validation entrypoint remains:
 
 ```bash
 python scripts/validate_seed_surfaces.py
+python scripts/generate_decision_indexes.py --check
+python scripts/validate_decision_records.py
 ```
 
 For the compact seed-entry capsule itself, use:

@@ -11,6 +11,15 @@ REPOSITORY_NAME = "Dionysus"
 
 REQUIRED_AGENTS_DOCS: dict[str, tuple[str, ...]] = {
     "archive/AGENTS.md": ("canonical archive root", "not as a draft workspace"),
+    "docs/decisions/AGENTS.md": (
+        "durable decision-rationale lane",
+        "DION-SEED-D-####",
+        "Seed surfaces",
+        "Owner lanes",
+        "Target repositories own planted meaning",
+        "python scripts/generate_decision_indexes.py --check",
+        "python scripts/validate_decision_records.py",
+    ),
     "docs/codex/AGENTS.md": ("planting protocol", "stop rules"),
     "reports/planting/AGENTS.md": ("durable planting trace", "Reports are durable trace"),
     "seed_expansion/AGENTS.md": ("explicitly gated next-live seed material", "general staging warehouse"),

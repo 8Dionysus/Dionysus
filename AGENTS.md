@@ -30,8 +30,9 @@ It does not own:
 5. `ROADMAP.md`
 6. `docs/SEED_SURFACE_MAP.md`
 7. `docs/codex/planting-protocol.md`
-8. the target repository ownership docs
-9. `docs/AGENTS_ROOT_REFERENCE.md` for preserved full root guidance
+8. `docs/decisions/README.md` for durable seed-route rationale
+9. the target repository ownership docs
+10. `docs/AGENTS_ROOT_REFERENCE.md` for preserved full root guidance
 
 
 ## AGENTS stack law
@@ -82,6 +83,8 @@ Default seed-surface check:
 
 ```bash
 python scripts/validate_seed_surfaces.py
+python scripts/generate_decision_indexes.py --check
+python scripts/validate_decision_records.py
 ```
 
 When the compact seed route capsule changes:
