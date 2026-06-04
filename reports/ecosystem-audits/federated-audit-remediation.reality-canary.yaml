@@ -1,5 +1,5 @@
 canary_version: 1
-updated_at: '2026-04-13'
+updated_at: '2026-06-04'
 source_seed: seed_staging/audit/seed_federated_audit_remediation_pack.md
 checks:
   - id: ws01-supporting-inventory
@@ -25,7 +25,7 @@ checks:
     workstream: WS02
     path: /srv/AbyssOS/aoa-sdk/.github/workflows/latest-sibling-canary.yml
     contains:
-      - "python scripts/run_sibling_canary.py --repo-root . --matrix scripts/sibling_canary_matrix.json"
+      - "python mechanics/release-support/parts/public-support-ci-posture/scripts/run_sibling_canary.py --repo-root ."
       - "repository: 8Dionysus/aoa-playbooks"
   - id: ws06-ledger-present
     workstream: WS06
@@ -37,14 +37,14 @@ checks:
     workstream: WS08-WS09
     path: /srv/AbyssOS/aoa-skills/.github/workflows/repo-validation.yml
     contains:
-      - python scripts/validate_skills.py --fail-on-review-truth-sync
-      - python scripts/report_technique_drift.py --techniques-repo ../aoa-techniques --fail-on-drift
-      - python scripts/release_check.py --include-packaging-smoke
+      - python scripts/lanes/ci_gate.py --mode source-fast
+      - python scripts/lanes/ci_gate.py --mode generated --group all
   - id: ws09-portable-export-skills-ref
     workstream: WS09
     path: /srv/AbyssOS/aoa-skills/.github/workflows/codex-portable-export.yml
     contains:
-      - python scripts/run_skills_ref_validation.py --repo-root . --require-skills-ref
+      - python scripts/lanes/ci_gate.py --mode export --changed-only --base-ref "$BASE_REF"
+      - python scripts/lanes/ci_gate.py --mode export
     not_contains:
       - "continue-on-error: true"
   - id: ws11-profile-entry-posture
@@ -64,11 +64,12 @@ checks:
       - .github/workflows/source-side-smoke.yml
   - id: ws11-sdk-release-ci-posture
     workstream: WS11
-    path: /srv/AbyssOS/aoa-sdk/docs/RELEASE_CI_POSTURE.md
+    path: /srv/AbyssOS/aoa-sdk/mechanics/release-support/parts/public-support-ci-posture/docs/public-support-ci-posture.md
     contains:
       - aoa compatibility check /srv/AbyssOS/aoa-sdk
       - python -m mypy src
       - .github/workflows/latest-sibling-canary.yml
+      - python mechanics/release-support/parts/public-support-ci-posture/scripts/run_sibling_canary.py --repo-root .
   - id: ws12-product-edge-posture
     workstream: WS12
     path: https://raw.githubusercontent.com/8Dionysus/ATM10-Agent/main/docs/PRODUCT_EDGE_POSTURE.md

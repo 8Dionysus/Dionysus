@@ -2,7 +2,8 @@
 Local guidance for `scripts/` in `Dionysus`.
 
 Read the root `AGENTS.md` first. This directory contains builders, validators,
-and repo-local MCP entrypoints that keep the seed garden legible.
+decision-index helpers, and repo-local MCP entrypoints that keep the seed garden
+legible.
 
 ## Local role
 Scripts should be deterministic, repo-relative, public-safe, and weaker than the
@@ -23,5 +24,7 @@ Run the specific script in check mode when available, then:
 
 ```bash
 python scripts/validate_seed_surfaces.py
+python scripts/generate_decision_indexes.py --check
+python scripts/validate_decision_records.py
 python -m pytest -q tests
 ```

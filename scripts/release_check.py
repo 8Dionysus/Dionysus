@@ -10,6 +10,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 COMMANDS = [
     ("validate seed surfaces", [sys.executable, "scripts/validate_seed_surfaces.py"]),
+    ("check decision indexes", [sys.executable, "scripts/generate_decision_indexes.py", "--check"]),
+    ("validate decision records", [sys.executable, "scripts/validate_decision_records.py"]),
     ("check seed route map", [sys.executable, "scripts/build_seed_route_map.py", "--check"]),
     ("validate seed route map", [sys.executable, "scripts/validate_seed_route_map.py"]),
     ("run tests", [sys.executable, "-m", "pytest", "-q", "tests"]),

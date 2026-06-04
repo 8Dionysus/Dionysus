@@ -30,10 +30,12 @@ Run the current repo-level release audit before opening a PR:
 python scripts/release_check.py
 ```
 
-For a quick manifest-only precheck before that, you may also run:
+For focused prechecks before that, you may also run:
 
 ```bash
 python scripts/validate_manifest.py
+python scripts/generate_decision_indexes.py --check
+python scripts/validate_decision_records.py
 ```
 
 ## Preferred PR scope

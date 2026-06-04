@@ -14,6 +14,7 @@ sys.modules[SPEC.name] = validator
 SPEC.loader.exec_module(validator)
 
 EXPECTED_PACK3_DOCS = {
+    "docs/decisions/AGENTS.md",
     "generated/AGENTS.md",
     "schema/AGENTS.md",
     "schemas/AGENTS.md",
