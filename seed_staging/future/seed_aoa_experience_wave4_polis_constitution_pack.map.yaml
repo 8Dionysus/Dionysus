@@ -61,67 +61,67 @@ targets:
       - owner-local Wave 4 ToS docs/schemas/examples/tests
     validation:
       - owner-local ToS validation and targeted tests
-  - aoa-evals
+  - repo: aoa-evals
     contour: bounded authority, stay, seal, and replay verdicts only
     files:
       - owner-local Wave 4 eval docs/schemas/examples/tests
     validation:
       - owner-local eval validation and targeted tests
-  - aoa-playbooks
+  - repo: aoa-playbooks
     contour: sealed-session, stay, appeal, and replay choreography only
     files:
       - owner-local Wave 4 playbook docs/schemas/examples/tests
     validation:
       - owner-local playbook validation and targeted tests
-  - aoa-stats
+  - repo: aoa-stats
     contour: derived queue, replay, and dashboard observability only
     files:
       - owner-local Wave 4 stats docs/schemas/examples/tests
     validation:
       - owner-local stats validation and targeted tests
-  - aoa-memo
+  - repo: aoa-memo
     contour: bounded decision, stay, and precedent memories only
     files:
       - owner-local Wave 4 memo docs/schemas/examples/tests
     validation:
       - owner-local memo validation and targeted tests
-  - aoa-routing
+  - repo: aoa-routing
     contour: case, appeal, stay, and precedent dispatch hints without authority
     files:
       - owner-local Wave 4 routing docs/schemas/examples/tests
     validation:
       - owner-local routing validation and targeted tests
-  - aoa-agents
+  - repo: aoa-agents
     contour: role posture, authority claims, and self-recharter blocks only
     files:
       - owner-local Wave 4 agents docs/schemas/examples/tests
     validation:
       - owner-local agents validation and targeted tests
-  - aoa-sdk
+  - repo: aoa-sdk
     contour: typed helper calls for queues, sealing, replay, and runtime APIs only
     files:
       - owner-local Wave 4 SDK docs/schemas/examples/tests
     validation:
       - owner-local SDK validation and targeted tests
-  - aoa-kag
+  - repo: aoa-kag
     contour: derived precedent candidates and supersession links only
     files:
       - owner-local Wave 4 KAG docs/schemas/examples/tests
     validation:
       - owner-local KAG validation and targeted tests
-  - aoa-skills
+  - repo: aoa-skills
     contour: bounded governance-runtime invocation posture only
     files:
       - owner-local Wave 4 skills docs/schemas/examples/tests
     validation:
       - owner-local skills validation and targeted tests
-  - aoa-techniques
+  - repo: aoa-techniques
     contour: reusable authority-resolution and sealed-decision practice only
     files:
       - owner-local Wave 4 techniques docs/schemas/examples/tests
     validation:
       - owner-local techniques validation and targeted tests
-  - abyss-stack
+  - repo: abyss-stack
     contour: queues, scheduler, storage, stay enforcement, and replay jobs only
     files:
       - owner-local Wave 4 stack docs/schemas/examples/tests

@@ -60,67 +60,67 @@ targets:
       - owner-local Wave 5 ToS docs/schemas/examples/tests
     validation:
       - owner-local ToS validation and targeted tests
-  - abyss-stack
+  - repo: abyss-stack
     contour: runtime workers, storage plans, rollback mechanics, and replay jobs only
     files:
       - owner-local Wave 5 stack docs/schemas/examples/tests
     validation:
       - owner-local stack validation and targeted tests
-  - aoa-agents
+  - repo: aoa-agents
     contour: assistant office profiles, service contracts, and post-release watch only
     files:
       - owner-local Wave 5 agents docs/schemas/examples/tests
     validation:
       - owner-local agents validation and targeted tests
-  - aoa-evals
+  - repo: aoa-evals
     contour: smoke, replay, handoff, and certification verdicts only
     files:
       - owner-local Wave 5 eval docs/schemas/examples/tests
     validation:
       - owner-local eval validation and targeted tests
-  - aoa-kag
+  - repo: aoa-kag
     contour: derived precedent and pattern candidates only
     files:
       - owner-local Wave 5 KAG docs/schemas/examples/tests
     validation:
       - owner-local KAG validation and targeted tests
-  - aoa-memo
+  - repo: aoa-memo
     contour: bounded memory entries, retention markers, and revision ledgers only
     files:
       - owner-local Wave 5 memo docs/schemas/examples/tests
     validation:
       - owner-local memo validation and targeted tests
-  - aoa-playbooks
+  - repo: aoa-playbooks
     contour: runbooks, drills, and office-train choreography only
     files:
       - owner-local Wave 5 playbook docs/schemas/examples/tests
     validation:
       - owner-local playbook validation and targeted tests
-  - aoa-routing
+  - repo: aoa-routing
     contour: route gates, handoff packets, and service boundaries without meaning authority
     files:
       - owner-local Wave 5 routing docs/schemas/examples/tests
     validation:
       - owner-local routing validation and targeted tests
-  - aoa-sdk
+  - repo: aoa-sdk
     contour: typed API calls and controlled orchestration only
     files:
       - owner-local Wave 5 SDK docs/schemas/examples/tests
     validation:
       - owner-local SDK validation and targeted tests
-  - aoa-skills
+  - repo: aoa-skills
     contour: bounded skill invocation contracts only
     files:
       - owner-local Wave 5 skills docs/schemas/examples/tests
     validation:
       - owner-local skills validation and targeted tests
-  - aoa-stats
+  - repo: aoa-stats
     contour: derived dashboards and rollups only
     files:
       - owner-local Wave 5 stats docs/schemas/examples/tests
     validation:
       - owner-local stats validation and targeted tests
-  - aoa-techniques
+  - repo: aoa-techniques
     contour: reusable technique notes only
     files:
       - owner-local Wave 5 techniques docs/schemas/examples/tests
