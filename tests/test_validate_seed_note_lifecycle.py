@@ -16,6 +16,32 @@ validate_seed_note_lifecycle = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(validate_seed_note_lifecycle)
 
 
+def test_repo_seed_note_lifecycle_validates() -> None:
+    assert validate_seed_note_lifecycle.run_validation(REPO_ROOT) == []
+
+
+def test_staging_map_yaml_errors_are_reported() -> None:
+    with TemporaryDirectory() as temp_dir:
+        root = Path(temp_dir)
+        map_path = root / "seed_staging" / "future" / "bad.map.yaml"
+        map_path.parent.mkdir(parents=True)
+        map_path.write_text(
+            "targets:\n"
+            "  - repo: Tree-of-Sophia\n"
+            "    contour: valid mapping entry\n"
+            "  - aoa-evals\n"
+            "    contour: invalid scalar-followed-by-mapping\n",
+            encoding="utf-8",
+        )
+
+        with patch.object(validate_seed_note_lifecycle, "EXPECTED_NOTES", {}):
+            with patch.object(validate_seed_note_lifecycle, "EXPECTED_COMPANION_MAPS", {}):
+                errors = validate_seed_note_lifecycle.run_validation(root)
+
+    assert len(errors) == 1
+    assert "invalid YAML in seed_staging/future/bad.map.yaml" in errors[0]
+
+
 def copy_text_file(root: Path, relative_path: str) -> None:
     source = REPO_ROOT / relative_path
     destination = root / relative_path

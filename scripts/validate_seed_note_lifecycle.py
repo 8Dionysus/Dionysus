@@ -295,6 +295,8 @@ def load_yaml(path: Path, *, root: Path = ROOT) -> dict[str, Any]:
         payload = yaml.safe_load(path.read_text(encoding="utf-8"))
     except FileNotFoundError as exc:
         fail(f"missing file: {display_path(path, root=root)}")
+    except yaml.YAMLError as exc:
+        fail(f"invalid YAML in {display_path(path, root=root)}: {exc}")
     if not isinstance(payload, dict) or not payload:
         fail(f"{display_path(path, root=root)}: YAML payload must be a non-empty mapping")
     return payload
@@ -306,7 +308,14 @@ def require_string_list(value: object, label: str) -> list[str]:
     return list(value)
 
 
+def validate_staging_map_yaml(root: Path = ROOT) -> None:
+    for map_path in sorted((root / "seed_staging").glob("**/*.map.yaml")):
+        load_yaml(map_path, root=root)
+
+
 def validate_seed_note_lifecycle(root: Path = ROOT) -> None:
+    validate_staging_map_yaml(root)
+
     for note_name, expected in EXPECTED_NOTES.items():
         note_path = root / note_name
         if not note_path.exists():
