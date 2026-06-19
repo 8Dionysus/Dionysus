@@ -19,6 +19,7 @@ SCHEMA_REF = "schemas/seed-route-map.schema.json"
 VALIDATION_REFS = (
     "scripts/build_seed_route_map.py",
     "scripts/validate_seed_route_map.py",
+    "scripts/validate_abyss_machine_seed_route_bundle.py",
     "scripts/validate_seed_surfaces.py",
     "scripts/validate_seed_registry.py",
     "tests/test_seed_route_map.py",
@@ -26,7 +27,7 @@ VALIDATION_REFS = (
 FORBIDDEN_LOW_CONTEXT_PREFIXES = ("src/", "scripts/")
 
 SEED_ROUTE_MAP_ARTIFACT_IDENTITY = {
-    "artifact_class": "seed_route_readmodel_capsule",
+    "artifact_class": "dionysus_seed_route_readmodel_bundle",
     "surface_state": "public_source_generated_seed_route_capsule",
     "owner_repo": "Dionysus",
     "authority_ref": "docs/codex/planting-protocol.md",
@@ -52,8 +53,8 @@ SEED_ROUTE_MAP_ARTIFACT_IDENTITY = {
     ),
     "abi_epoch": "dionysus_seed_route_map_v2",
     "contract_version": (
-        "scripts/seed_route_map_common.py@"
-        "dionysus_seed_route_map_v2#artifact_identity"
+        "repo:abyss-machine/manifests/artifact_signature_policy.manifest.json@"
+        "0.2.4#dionysus_seed_route_readmodel_bundle"
     ),
     "trust_layer": ["abi_contract_signature", "w3c_prov_lineage"],
     "verification": list(VALIDATION_REFS),
