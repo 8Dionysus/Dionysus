@@ -25,12 +25,48 @@ VALIDATION_REFS = (
 )
 FORBIDDEN_LOW_CONTEXT_PREFIXES = ("src/", "scripts/")
 
+SEED_ROUTE_MAP_ARTIFACT_IDENTITY = {
+    "artifact_class": "seed_route_readmodel_capsule",
+    "surface_state": "public_source_generated_seed_route_capsule",
+    "owner_repo": "Dionysus",
+    "authority_ref": "docs/codex/planting-protocol.md",
+    "producer": (
+        "scripts/build_seed_route_map.py via scripts/seed_route_map_common.py "
+        "from seed-registry.yaml and route specs"
+    ),
+    "consumer_expectation": (
+        "Verify schema_version, owner_repo, surface_kind, authority_ref, "
+        "artifact_identity, next_live_seed_ref, route refs, build_seed_route_map "
+        "--check, validate_seed_route_map, and seed-surface validation before "
+        "using this as low-context seed navigation; do not treat it as seed canon "
+        "or owner-repo landing proof."
+    ),
+    "privacy_boundary": (
+        "Public seed navigation and source refs only; no private operator traces, "
+        "secrets, live runtime state, machine-local state, session transcripts, "
+        "or unpublished owner-repo evidence."
+    ),
+    "content_identity": (
+        "generated/seed_route_map.min.json rendered from build_payload() and "
+        "compared by build_seed_route_map --check plus validate_seed_route_map."
+    ),
+    "abi_epoch": "dionysus_seed_route_map_v2",
+    "contract_version": (
+        "scripts/seed_route_map_common.py@"
+        "dionysus_seed_route_map_v2#artifact_identity"
+    ),
+    "trust_layer": ["abi_contract_signature", "w3c_prov_lineage"],
+    "verification": list(VALIDATION_REFS),
+    "action": "ADD_CONSUMER_EXPECTATION",
+}
+
 SURFACE_PAYLOAD = {
     "schema_version": "dionysus_seed_route_map_v2",
     "schema_ref": SCHEMA_REF,
     "owner_repo": "Dionysus",
     "surface_kind": "seed",
     "authority_ref": "docs/codex/planting-protocol.md",
+    "artifact_identity": SEED_ROUTE_MAP_ARTIFACT_IDENTITY,
     "validation_refs": list(VALIDATION_REFS),
 }
 
@@ -149,7 +185,10 @@ def build_payload() -> dict[str, object]:
     resolve_ref(SURFACE_PAYLOAD["authority_ref"])
     resolve_ref("seed-registry.yaml")
     resolve_ref(SURFACE_PAYLOAD["schema_ref"])
+    resolve_ref(SEED_ROUTE_MAP_ARTIFACT_IDENTITY["authority_ref"])
     for ref in SURFACE_PAYLOAD["validation_refs"]:
+        resolve_ref(ref)
+    for ref in SEED_ROUTE_MAP_ARTIFACT_IDENTITY["verification"]:
         resolve_ref(ref)
     resolve_ref(next_live_seed_ref)
 

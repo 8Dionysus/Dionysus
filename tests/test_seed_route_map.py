@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from seed_route_map_common import (  # noqa: E402
     ROUTE_SPECS,
     SEED_ROUTE_MAP_PATH,
+    SEED_ROUTE_MAP_ARTIFACT_IDENTITY,
     SURFACE_PAYLOAD,
     build_payload,
 )
@@ -22,6 +23,7 @@ def test_build_payload_stays_seed_only() -> None:
     assert payload["schema_ref"] == "schemas/seed-route-map.schema.json"
     assert payload["owner_repo"] == "Dionysus"
     assert payload["surface_kind"] == "seed"
+    assert payload["artifact_identity"] == SEED_ROUTE_MAP_ARTIFACT_IDENTITY
     assert [route["route_id"] for route in payload["routes"]] == [
         "next-live-seed",
         "registry-validation",
@@ -39,6 +41,7 @@ def test_surface_keeps_expected_refs() -> None:
     payload = build_payload()
 
     assert payload["authority_ref"] == SURFACE_PAYLOAD["authority_ref"]
+    assert payload["artifact_identity"]["authority_ref"] == SURFACE_PAYLOAD["authority_ref"]
     assert payload["validation_refs"] == SURFACE_PAYLOAD["validation_refs"]
     assert payload["routes"][1]["surface_ref"] == ROUTE_SPECS[1]["surface_ref"]
     assert payload["routes"][2]["surface_ref"] == ROUTE_SPECS[2]["surface_ref"]
@@ -47,3 +50,12 @@ def test_surface_keeps_expected_refs() -> None:
         for route in payload["routes"]
         for ref in [route["surface_ref"], *route["verification_refs"]]
     )
+
+
+def test_artifact_identity_marks_readmodel_contract() -> None:
+    identity = build_payload()["artifact_identity"]
+
+    assert identity["artifact_class"] == "seed_route_readmodel_capsule"
+    assert identity["trust_layer"] == ["abi_contract_signature", "w3c_prov_lineage"]
+    assert identity["privacy_boundary"].startswith("Public seed navigation")
+    assert "owner-repo landing proof" in identity["consumer_expectation"]
