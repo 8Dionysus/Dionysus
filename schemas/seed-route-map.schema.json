@@ -10,6 +10,7 @@
     "owner_repo",
     "surface_kind",
     "authority_ref",
+    "artifact_identity",
     "next_live_seed_ref",
     "validation_refs",
     "routes"
@@ -30,6 +31,9 @@
     "authority_ref": {
       "type": "string",
       "const": "docs/codex/planting-protocol.md"
+    },
+    "artifact_identity": {
+      "$ref": "#/$defs/artifact_identity"
     },
     "next_live_seed_ref": {
       "type": "string",
@@ -53,6 +57,87 @@
     }
   },
   "$defs": {
+    "artifact_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_class",
+        "surface_state",
+        "owner_repo",
+        "authority_ref",
+        "producer",
+        "consumer_expectation",
+        "privacy_boundary",
+        "content_identity",
+        "abi_epoch",
+        "contract_version",
+        "trust_layer",
+        "verification",
+        "action"
+      ],
+      "properties": {
+        "artifact_class": {
+          "type": "string",
+          "minLength": 3
+        },
+        "surface_state": {
+          "type": "string",
+          "minLength": 3
+        },
+        "owner_repo": {
+          "type": "string",
+          "const": "Dionysus"
+        },
+        "authority_ref": {
+          "type": "string",
+          "const": "docs/codex/planting-protocol.md"
+        },
+        "producer": {
+          "type": "string",
+          "minLength": 3
+        },
+        "consumer_expectation": {
+          "type": "string",
+          "minLength": 3
+        },
+        "privacy_boundary": {
+          "type": "string",
+          "minLength": 3
+        },
+        "content_identity": {
+          "type": "string",
+          "minLength": 3
+        },
+        "abi_epoch": {
+          "type": "string",
+          "const": "dionysus_seed_route_map_v2"
+        },
+        "contract_version": {
+          "type": "string",
+          "minLength": 3
+        },
+        "trust_layer": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "verification": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "action": {
+          "type": "string",
+          "minLength": 3
+        }
+      }
+    },
     "route": {
       "type": "object",
       "additionalProperties": false,
