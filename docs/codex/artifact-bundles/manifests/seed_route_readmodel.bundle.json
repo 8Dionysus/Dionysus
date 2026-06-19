@@ -1,0 +1,23 @@
+{
+  "schema": "abyss_machine_artifact_bundle_manifest_v1",
+  "id": "dionysus-seed-route-readmodel-bundle",
+  "artifact_class": "dionysus_seed_route_readmodel_bundle",
+  "owner_repo": "Dionysus",
+  "policy_ref": "repo:abyss-machine/manifests/artifact_signature_policy.manifest.json",
+  "mode": "os_abyss_local",
+  "subject_repo_root": "../../../..",
+  "artifact_identity": {
+    "artifact_class": "dionysus_seed_route_readmodel_bundle",
+    "abi_epoch": "dionysus_seed_route_map_v2"
+  },
+  "abi_subject": {
+    "path": "generated/seed_route_map.min.json",
+    "artifact_identity_pointer": "/artifact_identity"
+  },
+  "artifact_subjects": [
+    {
+      "path": "generated/seed_route_map.min.json",
+      "role": "seed_route_map"
+    }
+  ]
+}

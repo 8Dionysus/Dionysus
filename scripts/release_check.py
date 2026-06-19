@@ -14,6 +14,10 @@ COMMANDS = [
     ("validate decision records", [sys.executable, "scripts/validate_decision_records.py"]),
     ("check seed route map", [sys.executable, "scripts/build_seed_route_map.py", "--check"]),
     ("validate seed route map", [sys.executable, "scripts/validate_seed_route_map.py"]),
+    (
+        "validate OS Abyss seed route artifact bundle",
+        [sys.executable, "scripts/validate_abyss_machine_seed_route_bundle.py"],
+    ),
     ("run tests", [sys.executable, "-m", "pytest", "-q", "tests"]),
 ]
 

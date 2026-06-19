@@ -14,6 +14,9 @@ Before editing this directory, read:
 ## Local role
 
 This directory holds the operational planting protocol for maintainers and coding agents.
+It may also hold OS Abyss artifact-bundle manifests for generated seed route
+verification when those manifests stay subordinate to seed sources and do not
+own seed meaning.
 
 Keep it about:
 - planting discipline
@@ -21,6 +24,7 @@ Keep it about:
 - owner-repo reality checks
 - donor and replay honesty
 - stop rules for red-risk zones
+- verifier manifests for generated seed route transport, not seed canon
 
 Seed meaning, wave status, and repo ownership belong in manifests, closure notes, registry surfaces, or owner repos, not here.
 

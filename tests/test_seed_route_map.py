@@ -55,7 +55,7 @@ def test_surface_keeps_expected_refs() -> None:
 def test_artifact_identity_marks_readmodel_contract() -> None:
     identity = build_payload()["artifact_identity"]
 
-    assert identity["artifact_class"] == "seed_route_readmodel_capsule"
+    assert identity["artifact_class"] == "dionysus_seed_route_readmodel_bundle"
     assert identity["trust_layer"] == ["abi_contract_signature", "w3c_prov_lineage"]
     assert identity["privacy_boundary"].startswith("Public seed navigation")
     assert "owner-repo landing proof" in identity["consumer_expectation"]

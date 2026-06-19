@@ -59,6 +59,7 @@ owner-repo reality.
 - `docs/CANDIDATE_SEED_IDENTITY.md` explains the local `candidate_ref -> seed_ref` bridge and the stop rules around `seed_ref`
 - `docs/decisions/` holds durable seed-garden route rationale with generated lookup indexes
 - `docs/codex/` holds the planting protocol and provenance rules
+- `docs/codex/artifact-bundles/` holds OS Abyss verifier manifests for generated seed route transport, not seed canon
 - `docs/CODEX_MCP.md` explains the repo-local Codex MCP surface and its stop rules
 - `templates/planting-report.template.md` defines the durable planting-report shape when Dionysus needs to hold the trace
 - `reports/planting/README.md` explains when Dionysus should keep durable planting trace instead of relying on target-repo PR or commit history alone
@@ -116,6 +117,7 @@ For the compact seed-entry capsule itself, use:
 ```bash
 python scripts/build_seed_route_map.py --check
 python scripts/validate_seed_route_map.py
+python scripts/validate_abyss_machine_seed_route_bundle.py
 ```
 
 For current repo-local and workflow reinforcement, also run:

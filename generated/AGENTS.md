@@ -24,5 +24,6 @@ When generated seed route surfaces change, run:
 ```bash
 python scripts/build_seed_route_map.py --check
 python scripts/validate_seed_route_map.py
+python scripts/validate_abyss_machine_seed_route_bundle.py
 python scripts/validate_seed_surfaces.py
 ```
