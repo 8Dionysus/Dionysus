@@ -5,7 +5,14 @@
   "owner_repo": "Dionysus",
   "policy_ref": "repo:abyss-machine/manifests/artifact_signature_policy.manifest.json",
   "mode": "os_abyss_local",
+  "public_safe": true,
+  "purpose": "Repo-local OS Abyss artifact bundle input for generated/seed_route_map.min.json.",
   "subject_repo_root": "../../../..",
+  "artifact_source": {
+    "kind": "generated_seed_route_readmodel",
+    "content_identity_ref": "generated/seed_route_map.min.json",
+    "artifact_identity_ref": "generated/seed_route_map.min.json#/artifact_identity"
+  },
   "artifact_identity": {
     "artifact_class": "dionysus_seed_route_readmodel_bundle",
     "abi_epoch": "dionysus_seed_route_map_v2"
@@ -19,5 +26,37 @@
       "path": "generated/seed_route_map.min.json",
       "role": "seed_route_map"
     }
+  ],
+  "lifecycle": {
+    "initial_state": "candidate",
+    "promotion_path": [
+      "candidate",
+      "built-local",
+      "manually-verified",
+      "release-ready",
+      "published",
+      "superseded",
+      "revoked"
+    ],
+    "latest_eligible_states": [
+      "manually-verified",
+      "release-ready",
+      "published"
+    ]
+  },
+  "consumer_contract": {
+    "stable_interface": "python scripts/validate_abyss_machine_seed_route_bundle.py",
+    "consumer_expectation": "Seed consumers select a dionysus_seed_route_readmodel_bundle from the registry latest read-model only after ABI verification, seed route validation, and seed-surface validation pass; the generated route map remains navigation, not seed canon or owner-repo landing proof.",
+    "registry_required": true
+  },
+  "consumer_command": [
+    "abyss-machine artifacts build-sidecars --manifest docs/codex/artifact-bundles/manifests/seed_route_readmodel.bundle.json --bundle-dir BUNDLE_DIR",
+    "abyss-machine artifacts sign BUNDLE_DIR",
+    "abyss-machine artifacts verify BUNDLE_DIR",
+    "abyss-machine artifacts release-check BUNDLE_DIR",
+    "abyss-machine artifacts bundle-register BUNDLE_DIR --registry-dir REGISTRY_DIR --lifecycle-state release-ready --json",
+    "abyss-machine artifacts materialize-subjects BUNDLE_DIR --registry-dir REGISTRY_DIR --manifest docs/codex/artifact-bundles/manifests/seed_route_readmodel.bundle.json --json",
+    "abyss-machine artifacts trust-gate --registry-dir REGISTRY_DIR --artifact-class dionysus_seed_route_readmodel_bundle --consumer-intent agent --source-repo Dionysus --json",
+    "abyss-machine artifacts registry-latest --registry-dir REGISTRY_DIR --artifact-class dionysus_seed_route_readmodel_bundle --consumer-intent agent --source-repo Dionysus --json"
   ]
 }
