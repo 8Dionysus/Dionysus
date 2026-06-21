@@ -59,3 +59,27 @@ def test_artifact_identity_marks_readmodel_contract() -> None:
     assert identity["trust_layer"] == ["abi_contract_signature", "w3c_prov_lineage"]
     assert identity["privacy_boundary"].startswith("Public seed navigation")
     assert "owner-repo landing proof" in identity["consumer_expectation"]
+
+
+def test_artifact_bundle_manifest_requires_registry_lifecycle() -> None:
+    manifest = json.loads(
+        (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "codex"
+            / "artifact-bundles"
+            / "manifests"
+            / "seed_route_readmodel.bundle.json"
+        ).read_text(encoding="utf-8")
+    )
+
+    assert manifest["public_safe"] is True
+    assert manifest["artifact_source"]["kind"] == "generated_seed_route_readmodel"
+    assert manifest["lifecycle"]["initial_state"] == "candidate"
+    assert "release-ready" in manifest["lifecycle"]["promotion_path"]
+    assert manifest["consumer_contract"]["registry_required"] is True
+    command_text = "\n".join(manifest["consumer_command"])
+    assert "bundle-register" in command_text
+    assert "materialize-subjects" in command_text
+    assert "trust-gate" in command_text
+    assert "registry-latest" in command_text
