@@ -79,7 +79,12 @@ def test_artifact_bundle_manifest_requires_registry_lifecycle() -> None:
     assert "release-ready" in manifest["lifecycle"]["promotion_path"]
     assert manifest["consumer_contract"]["registry_required"] is True
     command_text = "\n".join(manifest["consumer_command"])
-    assert "bundle-register" in command_text
+    assert "evidence-promote" in command_text
     assert "materialize-subjects" in command_text
     assert "trust-gate" in command_text
     assert "registry-latest" in command_text
+    assert "--consumer-ref Dionysus:seed-route-readmodel" in command_text
+    assert "--source-repo Dionysus" in command_text
+    assert "--trust-root-mode host_managed" in command_text
+    assert manifest["consumer_contract"]["subject_store_required"] is True
+    assert manifest["consumer_contract"]["admission_gate"] == "fail_closed_consumer_admission"

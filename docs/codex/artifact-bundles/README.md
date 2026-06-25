@@ -16,11 +16,12 @@ The active controls are ABI-only:
 python scripts/validate_abyss_machine_seed_route_bundle.py
 ```
 
-The validator also writes a temporary OS Abyss bundle registry read-model,
+The validator promotes durable release-ready evidence with source and
+host-managed trust-root metadata, materializes an isolated subject store,
 requires a `release-ready` latest record only after successful ABI verification,
 and rehearses rejection of corrupted ABI sidecars, private markers, unverified
 latest promotion, terminal revocation, consumer trust-gate selection, and
-isolated subject-store materialization.
+subject-store admission.
 
 C2PA is not claimed here. Public seed packs, PDFs, media, docs, or content
 credentials need a real C2PA-capable artifact class and generator before they
