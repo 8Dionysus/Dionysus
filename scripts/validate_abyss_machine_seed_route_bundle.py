@@ -32,6 +32,7 @@ CONSUMER_REF = "Dionysus:seed-route-readmodel"
 TRUST_ROOT_MODE = "host_managed"
 PRODUCER = "Dionysus seed route readmodel builder"
 EXPECTED_REQUIRED_CONTROLS = ["abi_signature"]
+REQUIRED_SUBJECT_STORE_BLOCKER = "required_artifact_subject_store_not_verified"
 
 
 def _candidate_abyss_machine_roots() -> list[Path]:
@@ -438,21 +439,33 @@ def _trust_gate_allow_latest(
         else run_trust_gate()
     )
     inspected_claims = trust_gate.get("inspected_claims", {})
-    payload = {
-        "ok": bool(
+    blockers = {str(item) for item in trust_gate.get("blockers", [])}
+    subject_store_pending = not require_subject_store and blockers == {REQUIRED_SUBJECT_STORE_BLOCKER}
+    gate_admission_ok = (
+        bool(
             trust_gate.get("ok")
             and trust_gate.get("verdict") in {"allow", "warn"}
             and trust_gate.get("decision", {}).get("model") == "fail_closed_consumer_admission"
             and trust_gate.get("decision", {}).get("allow") is True
-            and inspected_claims.get("registry_latest", {}).get("selected_record_is_latest") is True
-            and inspected_claims.get("controls", {}).get("required_controls_missing") == []
-            and inspected_claims.get("source", {}).get("source_repo_matched") is True
-            and inspected_claims.get("trust_root", {}).get("trust_root_mode_matched") is True
-            and (
-                not require_subject_store
-                or inspected_claims.get("artifact_subject_store", {}).get("ok") is True
-            )
-        ),
+        )
+        or bool(
+            subject_store_pending
+            and trust_gate.get("verdict") == "deny"
+            and trust_gate.get("decision", {}).get("model") == "fail_closed_consumer_admission"
+        )
+    )
+    claims_ok = bool(
+        inspected_claims.get("registry_latest", {}).get("selected_record_is_latest") is True
+        and inspected_claims.get("controls", {}).get("required_controls_missing") == []
+        and inspected_claims.get("source", {}).get("source_repo_matched") is True
+        and inspected_claims.get("trust_root", {}).get("trust_root_mode_matched") is True
+        and (
+            not require_subject_store
+            or inspected_claims.get("artifact_subject_store", {}).get("ok") is True
+        )
+    )
+    payload = {
+        "ok": bool(gate_admission_ok and claims_ok),
         "trust_gate": trust_gate,
     }
     return payload
