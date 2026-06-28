@@ -51,11 +51,17 @@
   "index_kind": "inventory",
   "indexed_record_classes": [
     "node",
-    "edge"
+    "edge",
+    "index",
+    "projection",
+    "receipt"
   ],
   "source_record_ids": [
     "node:dionysus:seed-route-map",
     "node:dionysus:seed-garden-route",
-    "edge:dionysus:source-returns-to-owner"
+    "edge:dionysus:source-returns-to-owner",
+    "index:dionysus:source-surfaces",
+    "projection:mcp:dionysus-source-return",
+    "receipt:validation:dionysus-provider"
   ]
 }

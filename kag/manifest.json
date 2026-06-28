@@ -59,6 +59,10 @@
     {
       "route": "python scripts/build_seed_route_map.py --check",
       "lane": "owner-local"
+    },
+    {
+      "route": "aoa-kag local subtree validator",
+      "lane": "local-kag"
     }
   ],
   "consumer_routes": [
