@@ -344,21 +344,50 @@ def _registry_roundtrip_with_subject_store(
             os.environ[env_roots] = old_roots
 
 
+def _with_subject_store_roots(store_root: Path, callback: Any) -> Any:
+    env_root = "ABYSS_MACHINE_ARTIFACT_SUBJECT_STORE_ROOT"
+    env_roots = "ABYSS_MACHINE_ARTIFACT_SUBJECT_STORE_ROOTS"
+    old_root = os.environ.get(env_root)
+    old_roots = os.environ.get(env_roots)
+    os.environ[env_root] = str(store_root)
+    os.environ[env_roots] = str(store_root)
+    try:
+        return callback()
+    finally:
+        if old_root is None:
+            os.environ.pop(env_root, None)
+        else:
+            os.environ[env_root] = old_root
+        if old_roots is None:
+            os.environ.pop(env_roots, None)
+        else:
+            os.environ[env_roots] = old_roots
+
+
 def _trust_gate_allow_latest(
     artifact_bundles: Any,
     registry_dir: Path,
     registry_roundtrip: dict[str, Any],
     *,
     require_subject_store: bool = True,
+    subject_store_root: Path | None = None,
 ) -> dict[str, Any]:
     record = registry_roundtrip.get("promoted", {}).get("record", {})
-    trust_gate = artifact_bundles.trust_gate(
-        registry_dir,
-        artifact_class=EXPECTED_ARTIFACT_CLASS,
-        subject_digest=str(record.get("subject_digest") or ""),
-        consumer_intent=CONSUMER_INTENT,
-        expected_source_repo=OWNER_REPO,
-        expected_trust_root_mode=TRUST_ROOT_MODE,
+
+    def run_trust_gate() -> dict[str, Any]:
+        return artifact_bundles.trust_gate(
+            registry_dir,
+            artifact_class=EXPECTED_ARTIFACT_CLASS,
+            subject_digest=str(record.get("subject_digest") or ""),
+            consumer_intent=CONSUMER_INTENT,
+            expected_source_repo=OWNER_REPO,
+            expected_trust_root_mode=TRUST_ROOT_MODE,
+        )
+
+    trust_gate = (
+        _with_subject_store_roots(subject_store_root, run_trust_gate)
+        if subject_store_root is not None
+        else run_trust_gate()
     )
     inspected_claims = trust_gate.get("inspected_claims", {})
     payload = {
@@ -537,13 +566,16 @@ def _verify_materialized_subject_store(
     )
     latest_record = refreshed_registry.get("latest", {}).get("latest_by_artifact_class", {}).get(EXPECTED_ARTIFACT_CLASS, {})
     store_status = latest_record.get("artifact_subject_store") if isinstance(latest_record, dict) else {}
-    gate = artifact_bundles.trust_gate(
-        registry_dir,
-        artifact_class=EXPECTED_ARTIFACT_CLASS,
-        subject_digest=str(materialized.get("aggregate_digest") or ""),
-        consumer_intent=CONSUMER_INTENT,
-        expected_source_repo=OWNER_REPO,
-        expected_trust_root_mode=TRUST_ROOT_MODE,
+    gate = _with_subject_store_roots(
+        target_store_root,
+        lambda: artifact_bundles.trust_gate(
+            registry_dir,
+            artifact_class=EXPECTED_ARTIFACT_CLASS,
+            subject_digest=str(materialized.get("aggregate_digest") or ""),
+            consumer_intent=CONSUMER_INTENT,
+            expected_source_repo=OWNER_REPO,
+            expected_trust_root_mode=TRUST_ROOT_MODE,
+        ),
     )
     return {
         "ok": bool(
@@ -670,14 +702,22 @@ def _validate_in_bundle_dir(
         manifest=manifest,
         abyss_repo_root=abyss_repo_root,
     )
-    trust_gate = _trust_gate_allow_latest(artifact_bundles, registry_dir, registry_with_subject_store)
-    subject_store_gate = artifact_bundles.trust_gate(
+    trust_gate = _trust_gate_allow_latest(
+        artifact_bundles,
         registry_dir,
-        artifact_class=EXPECTED_ARTIFACT_CLASS,
-        subject_digest=str(materialized.get("aggregate_digest") or ""),
-        consumer_intent=CONSUMER_INTENT,
-        expected_source_repo=OWNER_REPO,
-        expected_trust_root_mode=TRUST_ROOT_MODE,
+        registry_with_subject_store,
+        subject_store_root=subject_store_root,
+    )
+    subject_store_gate = _with_subject_store_roots(
+        subject_store_root,
+        lambda: artifact_bundles.trust_gate(
+            registry_dir,
+            artifact_class=EXPECTED_ARTIFACT_CLASS,
+            subject_digest=str(materialized.get("aggregate_digest") or ""),
+            consumer_intent=CONSUMER_INTENT,
+            expected_source_repo=OWNER_REPO,
+            expected_trust_root_mode=TRUST_ROOT_MODE,
+        ),
     )
     _sanitize_public_json_tree(registry_dir, abyss_machine_root)
     _sanitize_public_json_tree(subject_store_root, abyss_machine_root)
