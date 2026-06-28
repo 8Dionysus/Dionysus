@@ -52,7 +52,6 @@
   "indexed_record_classes": [
     "node",
     "edge",
-    "index",
     "projection",
     "receipt"
   ],
@@ -60,7 +59,6 @@
     "node:dionysus:seed-route-map",
     "node:dionysus:seed-garden-route",
     "edge:dionysus:source-returns-to-owner",
-    "index:dionysus:source-surfaces",
     "projection:mcp:dionysus-source-return",
     "receipt:validation:dionysus-provider"
   ]
