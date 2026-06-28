@@ -1,0 +1,67 @@
+{
+  "schema_version": "aoa-local-kag-record-v1",
+  "repo": "Dionysus",
+  "local_id": "index:dionysus:source-surfaces",
+  "record_class": "index",
+  "source_refs": [
+    {
+      "repo": "Dionysus",
+      "path": "generated/seed_route_map.min.json",
+      "source_class": "route_source",
+      "role": "primary",
+      "authority": "derived_readmodel"
+    },
+    {
+      "repo": "Dionysus",
+      "path": "seed-registry.yaml",
+      "source_class": "route_source",
+      "role": "primary",
+      "authority": "authored_source"
+    }
+  ],
+  "source_owner": "Dionysus",
+  "provenance_mode": "strict_source_linked",
+  "derived_method": "source-linked local KAG index over seed-garden provider records",
+  "generated_or_authored": "generated_from_source",
+  "status": "active",
+  "owner_return_route": {
+    "repo": "Dionysus",
+    "surface": "README.md",
+    "route_kind": "authored_meaning"
+  },
+  "freshness": {
+    "mode": "source_snapshot",
+    "state": "current",
+    "checked_ref": "generated/seed_route_map.min.json"
+  },
+  "builder": {
+    "route": "seed route map builder",
+    "surface": "scripts/build_seed_route_map.py"
+  },
+  "validator": {
+    "route": "python scripts/validate_seed_surfaces.py",
+    "lane": "owner-local"
+  },
+  "storage_posture": {
+    "git_surface": "portable_records",
+    "payload_class": "index",
+    "runtime_route": "source-repo"
+  },
+  "consumer_route": "aoa-kag registry",
+  "index_kind": "inventory",
+  "indexed_record_classes": [
+    "node",
+    "edge",
+    "index",
+    "projection",
+    "receipt"
+  ],
+  "source_record_ids": [
+    "node:dionysus:seed-route-map",
+    "node:dionysus:seed-garden-route",
+    "edge:dionysus:source-returns-to-owner",
+    "index:dionysus:source-surfaces",
+    "projection:mcp:dionysus-source-return",
+    "receipt:validation:dionysus-provider"
+  ]
+}

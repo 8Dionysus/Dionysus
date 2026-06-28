@@ -32,6 +32,7 @@ CONSUMER_REF = "Dionysus:seed-route-readmodel"
 TRUST_ROOT_MODE = "host_managed"
 PRODUCER = "Dionysus seed route readmodel builder"
 EXPECTED_REQUIRED_CONTROLS = ["abi_signature"]
+REQUIRED_SUBJECT_STORE_BLOCKER = "required_artifact_subject_store_not_verified"
 
 
 def _candidate_abyss_machine_roots() -> list[Path]:
@@ -262,6 +263,54 @@ def _assert_expected_controls(verify: dict[str, Any], identity: dict[str, Any]) 
         raise ValueError("c2pa deferral must route future seed-pack credentials explicitly")
 
 
+def _compact_status(value: Any) -> dict[str, Any]:
+    if not isinstance(value, dict):
+        return {"ok": None}
+    status: dict[str, Any] = {"ok": value.get("ok")}
+    for key in ("verdict", "errors", "warnings", "missing", "blockers", "reasons"):
+        current = value.get(key)
+        if current:
+            status[key] = current
+    decision = value.get("decision")
+    if isinstance(decision, dict):
+        status["decision"] = {
+            key: decision.get(key)
+            for key in ("allow", "verdict", "blockers", "warnings")
+            if decision.get(key)
+        }
+    return status
+
+
+def _failure_summary(payload: dict[str, Any]) -> dict[str, Any]:
+    top_level = [
+        "registry",
+        "pre_materialization_gate",
+        "materialized_subject_store",
+        "trust_gate",
+        "subject_store_gate",
+        "adversarial_checks",
+    ]
+    summary: dict[str, Any] = {
+        "ok": payload.get("ok"),
+        "failed_top_level": {
+            key: _compact_status(payload.get(key))
+            for key in top_level
+            if isinstance(payload.get(key), dict) and payload.get(key, {}).get("ok") is not True
+        },
+        "steps": {
+            key: _compact_status(value)
+            for key, value in (payload.get("steps") or {}).items()
+            if isinstance(value, dict) and value.get("ok") is not True
+        },
+        "adversarial_checks": {
+            key: _compact_status(value)
+            for key, value in (payload.get("adversarial_checks", {}).get("checks") or {}).items()
+            if isinstance(value, dict) and value.get("ok") is not True
+        },
+    }
+    return summary
+
+
 def _copy_bundle(bundle_dir: Path, target: Path) -> Path:
     if target.exists():
         shutil.rmtree(target)
@@ -344,38 +393,79 @@ def _registry_roundtrip_with_subject_store(
             os.environ[env_roots] = old_roots
 
 
+def _with_subject_store_roots(store_root: Path, callback: Any) -> Any:
+    env_root = "ABYSS_MACHINE_ARTIFACT_SUBJECT_STORE_ROOT"
+    env_roots = "ABYSS_MACHINE_ARTIFACT_SUBJECT_STORE_ROOTS"
+    old_root = os.environ.get(env_root)
+    old_roots = os.environ.get(env_roots)
+    os.environ[env_root] = str(store_root)
+    os.environ[env_roots] = str(store_root)
+    try:
+        return callback()
+    finally:
+        if old_root is None:
+            os.environ.pop(env_root, None)
+        else:
+            os.environ[env_root] = old_root
+        if old_roots is None:
+            os.environ.pop(env_roots, None)
+        else:
+            os.environ[env_roots] = old_roots
+
+
 def _trust_gate_allow_latest(
     artifact_bundles: Any,
     registry_dir: Path,
     registry_roundtrip: dict[str, Any],
     *,
     require_subject_store: bool = True,
+    subject_store_root: Path | None = None,
 ) -> dict[str, Any]:
     record = registry_roundtrip.get("promoted", {}).get("record", {})
-    trust_gate = artifact_bundles.trust_gate(
-        registry_dir,
-        artifact_class=EXPECTED_ARTIFACT_CLASS,
-        subject_digest=str(record.get("subject_digest") or ""),
-        consumer_intent=CONSUMER_INTENT,
-        expected_source_repo=OWNER_REPO,
-        expected_trust_root_mode=TRUST_ROOT_MODE,
+
+    def run_trust_gate() -> dict[str, Any]:
+        return artifact_bundles.trust_gate(
+            registry_dir,
+            artifact_class=EXPECTED_ARTIFACT_CLASS,
+            subject_digest=str(record.get("subject_digest") or ""),
+            consumer_intent=CONSUMER_INTENT,
+            expected_source_repo=OWNER_REPO,
+            expected_trust_root_mode=TRUST_ROOT_MODE,
+        )
+
+    trust_gate = (
+        _with_subject_store_roots(subject_store_root, run_trust_gate)
+        if subject_store_root is not None
+        else run_trust_gate()
     )
     inspected_claims = trust_gate.get("inspected_claims", {})
-    payload = {
-        "ok": bool(
+    blockers = {str(item) for item in trust_gate.get("blockers", [])}
+    subject_store_pending = not require_subject_store and blockers == {REQUIRED_SUBJECT_STORE_BLOCKER}
+    gate_admission_ok = (
+        bool(
             trust_gate.get("ok")
             and trust_gate.get("verdict") in {"allow", "warn"}
             and trust_gate.get("decision", {}).get("model") == "fail_closed_consumer_admission"
             and trust_gate.get("decision", {}).get("allow") is True
-            and inspected_claims.get("registry_latest", {}).get("selected_record_is_latest") is True
-            and inspected_claims.get("controls", {}).get("required_controls_missing") == []
-            and inspected_claims.get("source", {}).get("source_repo_matched") is True
-            and inspected_claims.get("trust_root", {}).get("trust_root_mode_matched") is True
-            and (
-                not require_subject_store
-                or inspected_claims.get("artifact_subject_store", {}).get("ok") is True
-            )
-        ),
+        )
+        or bool(
+            subject_store_pending
+            and trust_gate.get("verdict") == "deny"
+            and trust_gate.get("decision", {}).get("model") == "fail_closed_consumer_admission"
+        )
+    )
+    claims_ok = bool(
+        inspected_claims.get("registry_latest", {}).get("selected_record_is_latest") is True
+        and inspected_claims.get("controls", {}).get("required_controls_missing") == []
+        and inspected_claims.get("source", {}).get("source_repo_matched") is True
+        and inspected_claims.get("trust_root", {}).get("trust_root_mode_matched") is True
+        and (
+            not require_subject_store
+            or inspected_claims.get("artifact_subject_store", {}).get("ok") is True
+        )
+    )
+    payload = {
+        "ok": bool(gate_admission_ok and claims_ok),
         "trust_gate": trust_gate,
     }
     return payload
@@ -537,13 +627,16 @@ def _verify_materialized_subject_store(
     )
     latest_record = refreshed_registry.get("latest", {}).get("latest_by_artifact_class", {}).get(EXPECTED_ARTIFACT_CLASS, {})
     store_status = latest_record.get("artifact_subject_store") if isinstance(latest_record, dict) else {}
-    gate = artifact_bundles.trust_gate(
-        registry_dir,
-        artifact_class=EXPECTED_ARTIFACT_CLASS,
-        subject_digest=str(materialized.get("aggregate_digest") or ""),
-        consumer_intent=CONSUMER_INTENT,
-        expected_source_repo=OWNER_REPO,
-        expected_trust_root_mode=TRUST_ROOT_MODE,
+    gate = _with_subject_store_roots(
+        target_store_root,
+        lambda: artifact_bundles.trust_gate(
+            registry_dir,
+            artifact_class=EXPECTED_ARTIFACT_CLASS,
+            subject_digest=str(materialized.get("aggregate_digest") or ""),
+            consumer_intent=CONSUMER_INTENT,
+            expected_source_repo=OWNER_REPO,
+            expected_trust_root_mode=TRUST_ROOT_MODE,
+        ),
     )
     return {
         "ok": bool(
@@ -618,6 +711,8 @@ def _validate_in_bundle_dir(
     if clean and subject_store_root.exists():
         shutil.rmtree(subject_store_root)
     bundle_dir.mkdir(parents=True, exist_ok=True)
+    (registry_dir / "records").mkdir(parents=True, exist_ok=True)
+    subject_store_root.mkdir(parents=True, exist_ok=True)
 
     abyss_repo_root = abyss_machine_root or artifact_bundles.REPO_ROOT
     producer_command = "python scripts/validate_abyss_machine_seed_route_bundle.py"
@@ -668,14 +763,22 @@ def _validate_in_bundle_dir(
         manifest=manifest,
         abyss_repo_root=abyss_repo_root,
     )
-    trust_gate = _trust_gate_allow_latest(artifact_bundles, registry_dir, registry_with_subject_store)
-    subject_store_gate = artifact_bundles.trust_gate(
+    trust_gate = _trust_gate_allow_latest(
+        artifact_bundles,
         registry_dir,
-        artifact_class=EXPECTED_ARTIFACT_CLASS,
-        subject_digest=str(materialized.get("aggregate_digest") or ""),
-        consumer_intent=CONSUMER_INTENT,
-        expected_source_repo=OWNER_REPO,
-        expected_trust_root_mode=TRUST_ROOT_MODE,
+        registry_with_subject_store,
+        subject_store_root=subject_store_root,
+    )
+    subject_store_gate = _with_subject_store_roots(
+        subject_store_root,
+        lambda: artifact_bundles.trust_gate(
+            registry_dir,
+            artifact_class=EXPECTED_ARTIFACT_CLASS,
+            subject_digest=str(materialized.get("aggregate_digest") or ""),
+            consumer_intent=CONSUMER_INTENT,
+            expected_source_repo=OWNER_REPO,
+            expected_trust_root_mode=TRUST_ROOT_MODE,
+        ),
     )
     _sanitize_public_json_tree(registry_dir, abyss_machine_root)
     _sanitize_public_json_tree(subject_store_root, abyss_machine_root)
@@ -784,6 +887,9 @@ def main() -> int:
             f"{payload['bundle_dir']} ({', '.join(payload['verified_controls'])}; "
             f"registry={payload['registry_dir']}; subject-store={payload['subject_store_root']})"
         )
+    else:
+        print("[error] abyss-machine Dionysus seed route artifact bundle validation failed")
+        print(json.dumps(_failure_summary(payload), sort_keys=True))
     return 0 if payload["ok"] else 1
 
 
