@@ -262,6 +262,54 @@ def _assert_expected_controls(verify: dict[str, Any], identity: dict[str, Any]) 
         raise ValueError("c2pa deferral must route future seed-pack credentials explicitly")
 
 
+def _compact_status(value: Any) -> dict[str, Any]:
+    if not isinstance(value, dict):
+        return {"ok": None}
+    status: dict[str, Any] = {"ok": value.get("ok")}
+    for key in ("verdict", "errors", "warnings", "missing", "blockers", "reasons"):
+        current = value.get(key)
+        if current:
+            status[key] = current
+    decision = value.get("decision")
+    if isinstance(decision, dict):
+        status["decision"] = {
+            key: decision.get(key)
+            for key in ("allow", "verdict", "blockers", "warnings")
+            if decision.get(key)
+        }
+    return status
+
+
+def _failure_summary(payload: dict[str, Any]) -> dict[str, Any]:
+    top_level = [
+        "registry",
+        "pre_materialization_gate",
+        "materialized_subject_store",
+        "trust_gate",
+        "subject_store_gate",
+        "adversarial_checks",
+    ]
+    summary: dict[str, Any] = {
+        "ok": payload.get("ok"),
+        "failed_top_level": {
+            key: _compact_status(payload.get(key))
+            for key in top_level
+            if isinstance(payload.get(key), dict) and payload.get(key, {}).get("ok") is not True
+        },
+        "steps": {
+            key: _compact_status(value)
+            for key, value in (payload.get("steps") or {}).items()
+            if isinstance(value, dict) and value.get("ok") is not True
+        },
+        "adversarial_checks": {
+            key: _compact_status(value)
+            for key, value in (payload.get("adversarial_checks", {}).get("checks") or {}).items()
+            if isinstance(value, dict) and value.get("ok") is not True
+        },
+    }
+    return summary
+
+
 def _copy_bundle(bundle_dir: Path, target: Path) -> Path:
     if target.exists():
         shutil.rmtree(target)
@@ -826,6 +874,9 @@ def main() -> int:
             f"{payload['bundle_dir']} ({', '.join(payload['verified_controls'])}; "
             f"registry={payload['registry_dir']}; subject-store={payload['subject_store_root']})"
         )
+    else:
+        print("[error] abyss-machine Dionysus seed route artifact bundle validation failed")
+        print(json.dumps(_failure_summary(payload), sort_keys=True))
     return 0 if payload["ok"] else 1
 
 
