@@ -618,6 +618,8 @@ def _validate_in_bundle_dir(
     if clean and subject_store_root.exists():
         shutil.rmtree(subject_store_root)
     bundle_dir.mkdir(parents=True, exist_ok=True)
+    (registry_dir / "records").mkdir(parents=True, exist_ok=True)
+    subject_store_root.mkdir(parents=True, exist_ok=True)
 
     abyss_repo_root = abyss_machine_root or artifact_bundles.REPO_ROOT
     producer_command = "python scripts/validate_abyss_machine_seed_route_bundle.py"
