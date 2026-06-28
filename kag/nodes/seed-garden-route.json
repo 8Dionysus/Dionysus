@@ -1,0 +1,46 @@
+{
+  "schema_version": "aoa-local-kag-record-v1",
+  "repo": "Dionysus",
+  "local_id": "node:dionysus:seed-garden-route",
+  "record_class": "node",
+  "source_refs": [
+    {
+      "repo": "Dionysus",
+      "path": "README.md",
+      "source_class": "route_source",
+      "role": "owner_route",
+      "authority": "authored_source"
+    }
+  ],
+  "source_owner": "Dionysus",
+  "provenance_mode": "strict_source_linked",
+  "derived_method": "source-linked local KAG node over seed-garden owner route",
+  "generated_or_authored": "authored_control",
+  "status": "active",
+  "owner_return_route": {
+    "repo": "Dionysus",
+    "surface": "README.md",
+    "route_kind": "authored_meaning"
+  },
+  "freshness": {
+    "mode": "source_snapshot",
+    "state": "current",
+    "checked_ref": "README.md"
+  },
+  "builder": {
+    "route": "seed route map builder",
+    "surface": "scripts/build_seed_route_map.py"
+  },
+  "validator": {
+    "route": "python scripts/validate_seed_surfaces.py",
+    "lane": "owner-local"
+  },
+  "storage_posture": {
+    "git_surface": "portable_records",
+    "payload_class": "node",
+    "runtime_route": "source-repo"
+  },
+  "consumer_route": "aoa-kag registry",
+  "node_kind": "route_surface",
+  "label": "seed garden owner route"
+}

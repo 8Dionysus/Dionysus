@@ -24,6 +24,12 @@ REQUIRED_AGENTS_DOCS: dict[str, tuple[str, ...]] = {
     "reports/planting/AGENTS.md": ("durable planting trace", "Reports are durable trace"),
     "seed_expansion/AGENTS.md": ("explicitly gated next-live seed material", "general staging warehouse"),
     "generated/AGENTS.md": ("generated/seed_route_map.min.json", "Do not hand-edit compact surfaces"),
+    "kag/AGENTS.md": (
+        "local KAG provider home",
+        "source-linked records",
+        "seed garden route map",
+        "source-return route",
+    ),
     "schema/AGENTS.md": ("seed-registry.contract.yaml", "legacy registry contract surface"),
     "schemas/AGENTS.md": ("Schema changes are contract changes", "paired examples"),
     "scripts/AGENTS.md": ("validate_seed_surfaces.py", "repo-relative"),
