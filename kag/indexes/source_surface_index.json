@@ -70,7 +70,7 @@
   },
   "index_identity": {
     "artifact_kind": "source_surface_index",
-    "content_digest": "e1f6fd036f9967df243274db775c9d1950a36e8dc31395b808bcd63090a3593c",
+    "content_digest": "2b6f730d25adc1bff829a0196a176f684dd24d31e6f535c607c10919b38ae41b",
     "local_id": "index:repo-local:source-surfaces",
     "schema_ref": "aoa-kag:schemas/repo-local-kag-index.schema.json"
   },
@@ -23657,7 +23657,7 @@
         "content_hash": "70d6c4ce3dfc7a58fa348f660e90d56971a562d1fc03d742e80d3dee40ad0acb",
         "git_ref": "git-index-source-tree",
         "id": "file:.github/codeowners:3d36a1bf06",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": ".github/CODEOWNERS",
         "repo": "Dionysus",
         "size_bytes": 652
@@ -23864,7 +23864,7 @@
         "state": "current"
       },
       "identity": {
-        "content_hash": "b31dc0f66081f51b9598fd21f915b8888d011e10027437ab58227d66a5f56445",
+        "content_hash": "111765d0f350f74c2369e8ec0db1ea22aacb5441d6f60fa029205dda35b08415",
         "git_ref": "git-index-source-tree",
         "id": "file:.github/workflows/validate-seed-surfaces.yml:c0acb9edc6",
         "mime": "application/yaml",
@@ -23903,7 +23903,7 @@
       },
       "signs": {
         "attestation_ref": "",
-        "digest": "b31dc0f66081f51b9598fd21f915b8888d011e10027437ab58227d66a5f56445",
+        "digest": "111765d0f350f74c2369e8ec0db1ea22aacb5441d6f60fa029205dda35b08415",
         "signature_ref": "",
         "verification_state": "digest-only"
       },
@@ -23956,7 +23956,7 @@
         "content_hash": "8b63a611de5126633439c02cf37bed981d82941d285d341ca9ec20d27a7d1d6f",
         "git_ref": "git-index-source-tree",
         "id": "file:.gitignore:bc37d034ba",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": ".gitignore",
         "repo": "Dionysus",
         "size_bytes": 71
@@ -24731,7 +24731,7 @@
         "content_hash": "0b81e2ea9cf9c447b3317b84e5bbaca9f3cf98a5d08ef8d754a3286f21c3392a",
         "git_ref": "git-index-source-tree",
         "id": "file:license:c693279643",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "LICENSE",
         "repo": "Dionysus",
         "size_bytes": 10775
@@ -51136,7 +51136,7 @@
         "surface": "generated/quest_catalog.min.example.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -51225,7 +51225,7 @@
         "surface": "generated/quest_catalog.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -51314,7 +51314,7 @@
         "surface": "generated/quest_dispatch.min.example.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -51403,7 +51403,7 @@
         "surface": "generated/quest_dispatch.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -51492,7 +51492,7 @@
         "surface": "generated/seed_route_map.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "scripts/build_seed_route_map.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -52896,7 +52896,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/candidates/.gitkeep:7a4b28e1a9",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/candidates/.gitkeep",
         "repo": "Dionysus",
         "size_bytes": 1
@@ -52983,7 +52983,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/exports/.gitkeep:d77c10c9ba",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/exports/.gitkeep",
         "repo": "Dionysus",
         "size_bytes": 1
@@ -53159,7 +53159,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/local/.gitkeep:c612a98de6",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/local/.gitkeep",
         "repo": "Dionysus",
         "size_bytes": 1
@@ -53246,7 +53246,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/receipts/.gitkeep:eb3b036b02",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/receipts/.gitkeep",
         "repo": "Dionysus",
         "size_bytes": 1
