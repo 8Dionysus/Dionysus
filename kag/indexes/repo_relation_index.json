@@ -1936,6 +1936,9 @@
     {"confidence":1.0,"evidence_anchor_ids":["aoa:dionysus:anchor:22b02068bc2325ce4c0d47b6"],"evidence_class":"deterministic","from_id":"aoa:dionysus:entity:9144924ff317e2595b3f6f5c","id":"aoa:dionysus:relation:0d7d693c3d7737038bf2e279","provenance_ref":"deterministic","relation_kind":"references","temporal_ref":"current","to_id":"aoa:dionysus:anchor:6a2624185a39cf13ef8237e6","trust_ref":"deterministic"},
     {"confidence":1.0,"evidence_anchor_ids":["aoa:dionysus:anchor:3c079d8430a11e945ab0ccd8"],"evidence_class":"deterministic","from_id":"aoa:dionysus:entity:9144924ff317e2595b3f6f5c","id":"aoa:dionysus:relation:6bb34da11886a797d2f0d679","provenance_ref":"deterministic","relation_kind":"references","temporal_ref":"current","to_id":"aoa:dionysus:anchor:6bc37cc59672a9e8e3cf949e","trust_ref":"deterministic"},
     {"confidence":1.0,"evidence_anchor_ids":["aoa:dionysus:anchor:16422307153f3b8d1ac743e3"],"evidence_class":"deterministic","from_id":"aoa:dionysus:entity:9144924ff317e2595b3f6f5c","id":"aoa:dionysus:relation:c51eaf097e6600b91e5cd723","provenance_ref":"deterministic","relation_kind":"references","temporal_ref":"current","to_id":"aoa:dionysus:anchor:e8d570c840d4dd6123f3eb61","trust_ref":"deterministic"},
+    {"confidence":1.0,"evidence_anchor_ids":["aoa:dionysus:anchor:ffeda76300aa21c04dd8cefe"],"evidence_class":"deterministic","from_id":"aoa:dionysus:entity:940f2add7cb1a6b4152fd53c","id":"aoa:dionysus:relation:47a374e65e0137d766ca6bdc","provenance_ref":"deterministic","relation_kind":"references","temporal_ref":"current","to_id":"aoa:dionysus:entity:306f75ccf54720b67957adb1","trust_ref":"deterministic"},
+    {"confidence":1.0,"evidence_anchor_ids":["aoa:dionysus:anchor:f5620572cffa4d1a706423cf"],"evidence_class":"deterministic","from_id":"aoa:dionysus:entity:940f2add7cb1a6b4152fd53c","id":"aoa:dionysus:relation:1d4f91608b02534df9d8adb7","provenance_ref":"deterministic","relation_kind":"references","temporal_ref":"current","to_id":"aoa:dionysus:entity:70634901492df952ec8b82bf","trust_ref":"deterministic"},
+    {"confidence":1.0,"evidence_anchor_ids":["aoa:dionysus:anchor:b3f49da78043903423417f83"],"evidence_class":"deterministic","from_id":"aoa:dionysus:entity:940f2add7cb1a6b4152fd53c","id":"aoa:dionysus:relation:b726bcba1c688d52b4766880","provenance_ref":"deterministic","relation_kind":"references","temporal_ref":"current","to_id":"aoa:dionysus:entity:d31f7398d014a24db5785a85","trust_ref":"deterministic"},
     {"confidence":1.0,"evidence_anchor_ids":["aoa:dionysus:anchor:08355d38f564a052c0ec6611"],"evidence_class":"deterministic","from_id":"aoa:dionysus:entity:9a201bbada9a84405b034a63","id":"aoa:dionysus:relation:83506af84dd3757ed8f9746e","provenance_ref":"deterministic","relation_kind":"references","temporal_ref":"current","to_id":"aoa:dionysus:anchor:401d3dd6419832294692726c","trust_ref":"deterministic"},
     {"confidence":1.0,"evidence_anchor_ids":["aoa:dionysus:anchor:a7ab94af5be0b27a277402f9"],"evidence_class":"deterministic","from_id":"aoa:dionysus:entity:9a201bbada9a84405b034a63","id":"aoa:dionysus:relation:c28e44f4887c3fe5b0dc3bbe","provenance_ref":"deterministic","relation_kind":"references","temporal_ref":"current","to_id":"aoa:dionysus:anchor:501a6896206378732b6b2962","trust_ref":"deterministic"},
     {"confidence":1.0,"evidence_anchor_ids":["aoa:dionysus:anchor:19e1c77e412b9099a0b62323"],"evidence_class":"deterministic","from_id":"aoa:dionysus:entity:d75c1985b7727ac0a1c47efd","id":"aoa:dionysus:relation:a2326e1441b6021df692252a","provenance_ref":"deterministic","relation_kind":"references","temporal_ref":"current","to_id":"aoa:dionysus:anchor:501a6896206378732b6b2962","trust_ref":"deterministic"},
@@ -2654,7 +2657,7 @@
   ],
   "index_identity": {
     "artifact_kind": "repository_relation_index",
-    "content_digest": "20ba1790d135701ca30687cffdef88e9486b93abc239dac37c5ba33b2007386a",
+    "content_digest": "1a796029e9a2fb2a365753d722b7d101280f420ac05edcac7df3aee54fe5cdae",
     "index_kind": "relation",
     "local_id": "index:repo-local:relations",
     "schema_ref": "aoa-kag:schemas/repo-local-kag-repository-index.schema.json"
@@ -2740,17 +2743,17 @@
   },
   "schema_version": "aoa-repo-local-kag-repository-index-v2",
   "source_index": {
-    "content_digest": "be5ca2ad6c2555f533bac76a3f48f547f4690ec3c8331cae9b1e80150536ef94",
+    "content_digest": "a77b1bf5c784ca2832acfdf554565bd8d208a9993ac44e028fdd23ab0736e629",
     "local_id": "index:repo-local:source-surfaces",
     "path": "kag/indexes/source_surface_index.json"
   },
   "summary": {
-    "entry_count": 2651,
+    "entry_count": 2654,
     "kind_counts": {
       "calls": 216,
       "contains": 1300,
       "defines": 391,
-      "references": 40,
+      "references": 43,
       "represents": 704
     }
   }
