@@ -214,7 +214,7 @@
     {"anchor_id":"aoa:dionysus:anchor:795b57df4725405b7530a553","artifact_kind":"document","content_hash":"9960713d333a6d3d42161ab247f72c37e89d1833604211295b4745256c245016","id":"aoa:dionysus:artifact:f0cbd6aa0372f04d8e3ab075","lineage_path":".github/AGENTS.md","mime":"text/markdown","path":".github/AGENTS.md","provenance_ref":"deterministic","surface_state":"authored_source","temporal_ref":"current","trust_ref":"deterministic","version_id":"aoa:dionysus:artifact-version:ee8064bffd1c3e8b7c687ef4"},
     {"anchor_id":"aoa:dionysus:anchor:1cda6ba807a0d2b7bdeb0898","artifact_kind":"owner_metadata","content_hash":"70d6c4ce3dfc7a58fa348f660e90d56971a562d1fc03d742e80d3dee40ad0acb","id":"aoa:dionysus:artifact:3d36a1bf06148bc6ba1ce2ed","lineage_path":".github/CODEOWNERS","mime":"text/plain","path":".github/CODEOWNERS","provenance_ref":"deterministic","surface_state":"authored_source","temporal_ref":"current","trust_ref":"deterministic","version_id":"aoa:dionysus:artifact-version:8f0f8932a7f5286b7401e9e9"},
     {"anchor_id":"aoa:dionysus:anchor:361dc8d26b336f142a1c9371","artifact_kind":"document","content_hash":"a7f51045c3f50be4f0ac84eba1d4e5547dca96a539b6b32f0ab5784778786858","id":"aoa:dionysus:artifact:b2496e80299b8c3150b19444","lineage_path":".github/pull_request_template.md","mime":"text/markdown","path":".github/pull_request_template.md","provenance_ref":"deterministic","surface_state":"authored_source","temporal_ref":"current","trust_ref":"deterministic","version_id":"aoa:dionysus:artifact-version:caa9dedbe3c0121bc5f7598d"},
-    {"anchor_id":"aoa:dionysus:anchor:5c2c67cce40943463d2fb273","artifact_kind":"config","content_hash":"85f36c36803cda9fc0090c08d3afa748b8b365887be3971619d29917cb0839e2","id":"aoa:dionysus:artifact:c0acb9edc66d00d258303635","lineage_path":".github/workflows/validate-seed-surfaces.yml","mime":"application/yaml","path":".github/workflows/validate-seed-surfaces.yml","provenance_ref":"deterministic","surface_state":"authored_source","temporal_ref":"current","trust_ref":"deterministic","version_id":"aoa:dionysus:artifact-version:84e6cacc2c8afcb83d950bbb"},
+    {"anchor_id":"aoa:dionysus:anchor:5c2c67cce40943463d2fb273","artifact_kind":"config","content_hash":"6ffd4c9b2fea05784bade205f9e8aff4ebcab02dd451b15be781afa1b159ae7a","id":"aoa:dionysus:artifact:c0acb9edc66d00d258303635","lineage_path":".github/workflows/validate-seed-surfaces.yml","mime":"application/yaml","path":".github/workflows/validate-seed-surfaces.yml","provenance_ref":"deterministic","surface_state":"authored_source","temporal_ref":"current","trust_ref":"deterministic","version_id":"aoa:dionysus:artifact-version:b4b26a9ec08a6bfac121980b"},
     {"anchor_id":"aoa:dionysus:anchor:70197f47ddd449a20c785f80","artifact_kind":"owner_metadata","content_hash":"8b63a611de5126633439c02cf37bed981d82941d285d341ca9ec20d27a7d1d6f","id":"aoa:dionysus:artifact:bc37d034bad564583790a46f","lineage_path":".gitignore","mime":"text/plain","path":".gitignore","provenance_ref":"deterministic","surface_state":"authored_source","temporal_ref":"current","trust_ref":"deterministic","version_id":"aoa:dionysus:artifact-version:0f5bc4d409d9173ec9649199"},
     {"anchor_id":"aoa:dionysus:anchor:b8322160f24bd2e59a53da07","artifact_kind":"document","content_hash":"e879725df7e5b4cdbf94a8e9a56b6d8deb78c889880ccc1449f06be9524f50f8","id":"aoa:dionysus:artifact:a54ff182c7e8acf56acfd6e4","lineage_path":"AGENTS.md","mime":"text/markdown","path":"AGENTS.md","provenance_ref":"deterministic","surface_state":"authored_source","temporal_ref":"current","trust_ref":"deterministic","version_id":"aoa:dionysus:artifact-version:231f334431a9993534c0e390"},
     {"anchor_id":"aoa:dionysus:anchor:501a6896206378732b6b2962","artifact_kind":"document","content_hash":"bfb2b4e29fba8c1012c7726782ac3bfd2a600f8d38cc8a978fc3143e344b9a14","id":"aoa:dionysus:artifact:06572a96a58dc510037d5efa","lineage_path":"CHANGELOG.md","mime":"text/markdown","path":"CHANGELOG.md","provenance_ref":"deterministic","surface_state":"authored_source","temporal_ref":"current","trust_ref":"deterministic","version_id":"aoa:dionysus:artifact-version:ebfe358a5b2a69234fbee816"},
@@ -1087,7 +1087,7 @@
   ],
   "index_identity": {
     "artifact_kind": "repository_artifact_index",
-    "content_digest": "1c637c8ac2ade6c292756d45f5ef9c97b930ff953efb87645049f39c9bbf8208",
+    "content_digest": "4abe48236d522bd4dca4190d74826f7bb340f2c40df96de26b0e941d9a454643",
     "index_kind": "artifact",
     "local_id": "index:repo-local:artifacts",
     "schema_ref": "aoa-kag:schemas/repo-local-kag-repository-index.schema.json"
@@ -1173,7 +1173,7 @@
   },
   "schema_version": "aoa-repo-local-kag-repository-index-v2",
   "source_index": {
-    "content_digest": "a77b1bf5c784ca2832acfdf554565bd8d208a9993ac44e028fdd23ab0736e629",
+    "content_digest": "359aa2aa3a59d74189e7d2ef3cdbfa98c3f5f1e49781db213607c91a9f15a4ad",
     "local_id": "index:repo-local:source-surfaces",
     "path": "kag/indexes/source_surface_index.json"
   },
