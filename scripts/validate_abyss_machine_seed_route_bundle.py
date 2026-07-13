@@ -25,6 +25,7 @@ DEFAULT_SUBJECT = REPO_ROOT / "generated" / "seed_route_map.min.json"
 DEFAULT_BUNDLE_DIR = REPO_ROOT / "dist" / "abyss-artifact-bundle" / "dionysus-seed-route-readmodel"
 DEFAULT_REGISTRY_DIR = REPO_ROOT / "dist" / "abyss-artifact-registry" / "dionysus-seed-route-readmodel"
 DEFAULT_SUBJECT_STORE_ROOT = REPO_ROOT / "dist" / "abyss-artifact-subjects" / "dionysus-seed-route-readmodel"
+SAFE_CLEAN_MARKER = ".abyss-artifact-validator-output"
 EXPECTED_ARTIFACT_CLASS = "dionysus_seed_route_readmodel_bundle"
 OWNER_REPO = "Dionysus"
 CONSUMER_INTENT = "agent"
@@ -88,6 +89,29 @@ def _load_json(path: Path) -> dict[str, Any]:
     if not isinstance(payload, dict):
         raise ValueError(f"{path} must contain a JSON object")
     return payload
+
+
+def _is_relative_to(path: Path, root: Path) -> bool:
+    try:
+        path.relative_to(root)
+    except ValueError:
+        return False
+    return True
+
+
+def _safe_rmtree_generated_dir(path: Path, *, label: str, safe_parent: Path) -> None:
+    if not path.exists():
+        return
+    resolved = path.resolve()
+    safe_root = safe_parent.resolve()
+    marker = path / SAFE_CLEAN_MARKER
+    if resolved == safe_root or not _is_relative_to(resolved, safe_root):
+        if not marker.is_file():
+            raise ValueError(
+                f"refusing to clean {label} outside safe generated root {safe_parent}: {path}; "
+                f"use --no-clean or place {SAFE_CLEAN_MARKER} in the target directory"
+            )
+    shutil.rmtree(path)
 
 
 def _portable_ref(path: Path) -> str:
@@ -564,7 +588,11 @@ def _verify_terminal_registry_state(
     revoked_gate = artifact_bundles.trust_gate(
         registry_dir,
         artifact_class=EXPECTED_ARTIFACT_CLASS,
-        record_id=str(release_ready.get("promoted", {}).get("record", {}).get("record_id") or ""),
+        record_id=str(
+            revoked.get("record", {}).get("record_id")
+            or revoked.get("promotion", {}).get("record_id")
+            or ""
+        ),
         consumer_intent=CONSUMER_INTENT,
         expected_source_repo=OWNER_REPO,
         expected_trust_root_mode=TRUST_ROOT_MODE,
@@ -704,12 +732,14 @@ def _validate_in_bundle_dir(
     artifact_bundles, abyss_machine_root, package_root = _import_artifact_bundles()
     _assert_manifest_matches_subject(manifest, subject)
     _assert_public_safe_subjects(manifest, subject)
-    if clean and bundle_dir.exists():
-        shutil.rmtree(bundle_dir)
-    if clean and registry_dir.exists():
-        shutil.rmtree(registry_dir)
-    if clean and subject_store_root.exists():
-        shutil.rmtree(subject_store_root)
+    if clean:
+        _safe_rmtree_generated_dir(bundle_dir, label="bundle_dir", safe_parent=DEFAULT_BUNDLE_DIR.parent)
+        _safe_rmtree_generated_dir(registry_dir, label="registry_dir", safe_parent=DEFAULT_REGISTRY_DIR.parent)
+        _safe_rmtree_generated_dir(
+            subject_store_root,
+            label="subject_store_root",
+            safe_parent=DEFAULT_SUBJECT_STORE_ROOT.parent,
+        )
     bundle_dir.mkdir(parents=True, exist_ok=True)
     (registry_dir / "records").mkdir(parents=True, exist_ok=True)
     subject_store_root.mkdir(parents=True, exist_ok=True)

@@ -66,10 +66,10 @@ checks:
     workstream: WS11
     path: /srv/AbyssOS/aoa-sdk/mechanics/release-support/parts/public-support-ci-posture/docs/public-support-ci-posture.md
     contains:
-      - aoa compatibility check /srv/AbyssOS/aoa-sdk
-      - python -m mypy src
+      - root `AGENTS.md#verify`
+      - scripts/release_check.py
       - .github/workflows/latest-sibling-canary.yml
-      - python mechanics/release-support/parts/public-support-ci-posture/scripts/run_sibling_canary.py --repo-root .
+      - part-local sibling-canary runner
   - id: ws12-product-edge-posture
     workstream: WS12
     path: https://raw.githubusercontent.com/8Dionysus/ATM10-Agent/main/docs/PRODUCT_EDGE_POSTURE.md
