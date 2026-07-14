@@ -30,16 +30,16 @@ The current posture is:
   owner-landing trace, and seed-route surfaces truthful as more meaning lands
   upstream
 
-The post-`v0.2.0` mainline also exposes one owner-local reference statistic over
+The live `v0.3.0` release also exposes one owner-local reference statistic over
 the seed registry through `stats/`. It describes the literal
 `landed_post_wave` label distribution and remains weaker than seed, wave,
 closure, registry, and target-repository truth.
 
 ### Current release contour
 
-The live `v0.2.0` contour is guarded seed-garden stewardship with bounded
-memo/eval ports, decision rationale, artifact-trust verification, and local
-KAG publication; it is still not a new owner layer. Its current checked
+The live `v0.3.0` contour is guarded seed-garden stewardship with bounded
+memo/eval/stats ports, decision rationale, artifact-trust verification, and
+local KAG publication; it is still not a new owner layer. Its current checked
 surface is:
 
 - live route truth and registry navigation:
@@ -60,7 +60,8 @@ surface is:
   `scripts/validate_seed_lineage_examples.py`, and
   `scripts/validate_seed_owner_landing_trace.py`
 - bounded local support ports and durable rationale:
-  `memo/README.md`, `evals/README.md`, `docs/decisions/README.md`, and
+  `memo/README.md`, `evals/README.md`, `stats/README.md`,
+  `stats/port.manifest.json`, `docs/decisions/README.md`, and
   `docs/decisions/indexes/index_contract.yaml`
 - seed-route artifact and KAG publication:
   `docs/codex/artifact-bundles/README.md`,

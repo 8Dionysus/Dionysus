@@ -7,12 +7,29 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-07-14
+
+### Summary
+
+- This release adds a bounded owner-local statistics port over the public seed
+  registry v2 lifecycle labels while preserving seed, wave, registry, closure,
+  and target-repository authority.
+- Validation and documentation routes now fail closed on the central stats
+  contract and return runnable commands to executable owners or the nearest
+  `AGENTS.md` instead of duplicating them across explanatory Markdown.
+- The release was reconstructed from the complete post-`v0.2.0` Git range:
+  its single first-parent commit changed 37 paths with 1,068 additions and 516
+  deletions, and that 1/1 commit is accounted for below rather than inferred
+  only from the previous `[Unreleased]` prose.
+
 ### Added
 
 - A root `stats/` port now exposes the public reference ratio of seed registry
   v2 entries carrying the literal `landed_post_wave` lifecycle label, with the
   exact population, missingness, provenance, and authority ceiling declared
   through the shared `aoa-stats` contract.
+- Added the owner-delegating stats validator, reference packet, regression
+  coverage, CODEOWNERS route, and CI checkout of the pinned `aoa-stats` owner.
 
 ### Changed
 
@@ -21,6 +38,34 @@ Tracking starts with the community-docs baseline for this repository.
   blocks across README, decision, protocol, lineage, and staging surfaces.
 - The repository release gate now fails closed when the compatible central
   stats validator is unavailable.
+- Refreshed root, seed/staging, protocol, decision, Spark, and script route
+  cards so operational commands remain with executable owners.
+- Regenerated all seven repository-local KAG indexes after the authored,
+  validation, and stats surfaces changed.
+
+### First-Parent Reconciliation (1/1)
+
+1. `77f2583` — Add Dionysus federated stats port (#148).
+
+### Validation
+
+- Release preparation reconciled the exact `v0.2.0..77f2583` first-parent
+  history and all 37 changed paths, including the stats contract, seed/staging
+  route cleanup, release-gate dependency law, and complete KAG index family.
+- The repository release gate validates seed manifests, registry/lifecycle and
+  decision contracts, generated route and KAG parity, artifact admission, the
+  pinned central stats owner, and the full test suite.
+
+### Notes
+
+- The published ratio describes only the literal public registry population;
+  it is not a seed-quality verdict and does not infer owner-repository landing
+  truth beyond the recorded lifecycle label.
+- `aoa-stats` retains shared grammar and cross-owner composition, while live
+  seed meaning and landed owner truth remain with their stronger surfaces.
+- Release-only version markers, changelog reconciliation, and regenerated
+  companions follow the one reconciled product commit and are described here
+  rather than misclassified as another product change.
 
 ## [0.2.0] - 2026-07-13
 
