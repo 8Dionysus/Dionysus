@@ -7,6 +7,135 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-07-13
+
+### Summary
+
+- This release advances `Dionysus` from the `v0.1.3` release-line staging
+  baseline into a guarded seed-garden surface with explicit agent routes,
+  bounded memo and eval ports, durable decision rationale, artifact-trust
+  verification, and a canonical local KAG provider.
+- Titan sixteenth-wave lineage, current seed-route contracts, portable support
+  skills, and host-consumable readmodel evidence are now checked without
+  promoting the seed garden into owner-repo, runtime, proof, memory, or graph
+  authority.
+- The release was reconstructed from Git because the old `[Unreleased]`
+  section was empty: all 37 first-parent commits from `v0.1.3` through
+  `c3bb7db` are accounted for below, spanning 368 changed paths and 48,431
+  additions / 342 deletions. None of those 37 commits had updated this
+  changelog.
+
+### Added
+
+- The Titan sixteenth-wave swarm-ledger closeout seed, manifest, registry
+  entries, preflight/closure lineage, and bounded supporting seed surfaces.
+- Nested seed-surface `AGENTS.md` guardrails plus a compact root route card and
+  preserved full root reference.
+- A portable `.agents/skills/` foundation, session-growth and GitHub landing
+  routes, shared skill refreshes, and hardened traceability, dry-run,
+  self-diagnosis, and summon support.
+- A local `memo/` port and canonical `aoa-memo` trigger/route vocabulary that
+  keep durable reviewed memory outside the seed garden.
+- A `DIONYSUS-SEED-D-####` decision rationale lane with generated lookup
+  indexes and modeled-surface validation.
+- A bounded local `evals/` port for seed-garden evaluation pressure without
+  central verdict authority.
+- Artifact identity for `generated/seed_route_map.min.json`, an OS Abyss seed
+  route bundle gate, stronger artifact profiles, material evidence, trust
+  roots, subject-store checks, and release-gate coverage.
+- A local KAG provider and canonical seven-index family for source surfaces,
+  entities, artifacts, anchors, events, assertions, and relations.
+
+### Changed
+
+- Seed routes, portable skill links, owner-reality canaries, staging maps, and
+  MCP validation roots now use the current `/srv/AbyssOS` workspace contour.
+- Seed lifecycle validation now handles the Experience wave4/wave5 map YAML
+  shape correctly and closes bot-audit gaps in manifests, registry entries,
+  dated lineage reports, and staging lifecycle markers.
+- Decision generation rejects unmodeled surfaces, validates modeled entries,
+  and requires explicit lists instead of accepting ambiguous shapes.
+- Repo-local KAG publication is CI-enforced, pinned, deterministic, complete
+  across all seven indexes, and compacted into canonical committed outputs.
+- Seed-route artifact cleanup is fail-closed outside owned generated roots,
+  revoked-record checks use the actual revoked identity, and the owner-reality
+  verification contract points at the current host surface.
+
+### Fixed
+
+- Dry-run helpers preserve malformed preview data for explicit rejection
+  instead of hiding the invalid shape.
+- Experience seed maps use validator-compatible YAML quoting and carry a
+  regression test for their lifecycle form.
+- Stale single-index KAG output and the old dirty receipt snapshot are not
+  carried forward over the newer canonical seven-index family.
+
+### First-Parent Reconciliation (37/37)
+
+The ordered pre-release history is recorded explicitly because all 37 commits
+were absent from the old changelog:
+
+1. `45811b9` — Plant Titan sixteenth wave seed.
+2. `01e8990` — Add seed surface AGENTS guardrails (#112).
+3. `6f691e6` — Slim root AGENTS route card (#113).
+4. `ff881b8` — Retarget seed surfaces to AbyssOS.
+5. `2f9e115` — Retarget Codex MCP validation root.
+6. `5210604` — Install portable AoA skill foundation.
+7. `ce39f68` — Roll out session-growth skills and GitHub landing (#116).
+8. `c340574` — Harden portable skills and traceability (#117).
+9. `3b0e04d` — Refresh session growth refs and readiness guard (#118).
+10. `a24e1f0` — Guard dry run preview step shape (#119).
+11. `520f47e` — Preserve dry run helper malformed shapes (#120).
+12. `3f321b1` — Refresh shared AoA skill pack (#121).
+13. `e27b008` — Refresh shared AoA skill pack (#122).
+14. `1248796` — Close Dionysus bot audit gaps (#123).
+15. `279f682` — Refresh self-diagnose skill export.
+16. `0a12fb8` — Add memory route trigger law (#125).
+17. `24e5669` — Use canonical aoa-memo route label (#126).
+18. `1e1ed20` — Add local memo port (#127).
+19. `2677bee` — Make memo validation route portable (#128).
+20. `5e9b106` — Add seed decision rationale lane.
+21. `f51c577` — Detect unmodeled decision lane surfaces (#130).
+22. `a4d2f21` — Validate modeled decision surface contract entries (#131).
+23. `5db52f9` — Require modeled surfaces to be explicit lists (#132).
+24. `aec93c7` — Add local eval port skeleton.
+25. `15c25e2` — Fix Experience seed map YAML validation (#134).
+26. `0c15c97` — Add artifact identity to seed route map (#135).
+27. `0165772` — Add OS Abyss seed route artifact gate (#136).
+28. `fb8b198` — Strengthen seed route artifact trust profile (#137).
+29. `c40b3a9` — Promote seed route evidence with trust roots (#138).
+30. `888f8c9` — Add Dionysus KAG provider home.
+31. `04e253d` — Align Dionysus KAG provider index with schema.
+32. `a8a394d` — Add repo-local KAG indexes (#141).
+33. `286ed81` — Enforce repo-local KAG index parity (#142).
+34. `3a31578` — Pin deterministic repo-local KAG index gate (#143).
+35. `f5c35a8` — Add repository KAG index family (#144).
+36. `b22292b` — Publish canonical repository KAG indexes (#145).
+37. `c3bb7db` — Refresh seed route verification contracts (#146).
+
+### Validation
+
+- Release preparation reconciled the exact `v0.1.3..c3bb7db` first-parent
+  history, changed-path inventory, stale dirty-tree evidence, seed route and
+  registry truth, decisions, local ports, artifact bundle/trust boundaries,
+  and all seven KAG indexes instead of relying on `[Unreleased]`.
+- The repo release gate validates seed manifests, registry and lifecycle
+  contracts, nested guidance, decision indexes, generated route parity,
+  artifact evidence/admission, KAG provider outputs, and the full test suite.
+
+### Notes
+
+- `Dionysus` remains a seed garden and lineage surface. Memo, eval, portable
+  skill, artifact enforcement, runtime, KAG composition, and planted owner
+  meaning remain with their stronger repositories.
+- The stale canonical dirty tree was preserved as a local safety commit before
+  cleanup. Its validator change is byte-identical to landed `c3bb7db`; its
+  older single KAG index and receipt state are superseded by the canonical
+  seven-index family and are intentionally not republished.
+- Release-only banners, roadmap contour, parity test, changelog reconciliation,
+  and regenerated derived indexes follow the 37 reconciled commits and are not
+  hidden inside that count.
+
 ## [0.1.3] - 2026-04-23
 
 ### Summary

@@ -32,8 +32,10 @@ The current posture is:
 
 ### Current release contour
 
-The live `v0.1.3` contour is seed-garden stewardship for release-line staging,
-not a new owner layer. Its current checked surface is:
+The live `v0.2.0` contour is guarded seed-garden stewardship with bounded
+memo/eval ports, decision rationale, artifact-trust verification, and local
+KAG publication; it is still not a new owner layer. Its current checked
+surface is:
 
 - live route truth and registry navigation:
   `seed-registry.yaml`, `generated/seed_route_map.min.json`,
@@ -52,6 +54,14 @@ not a new owner layer. Its current checked surface is:
   `examples/seed_owner_landing_trace.example.json`,
   `scripts/validate_seed_lineage_examples.py`, and
   `scripts/validate_seed_owner_landing_trace.py`
+- bounded local support ports and durable rationale:
+  `memo/README.md`, `evals/README.md`, `docs/decisions/README.md`, and
+  `docs/decisions/indexes/index_contract.yaml`
+- seed-route artifact and KAG publication:
+  `docs/codex/artifact-bundles/README.md`,
+  `docs/codex/artifact-bundles/manifests/seed_route_readmodel.bundle.json`,
+  `scripts/validate_abyss_machine_seed_route_bundle.py`, `kag/README.md`, and
+  `kag/manifest.json`
 - release-line prep packs for owner follow-through, rollout campaign cadence,
   self-agency continuity, and federation KAG factory follow-through:
   `seed_staging/future/seed_aoa_wave3_owner_landing_followthrough_pack.md`,
