@@ -21,11 +21,11 @@ aoa-sdk/docs/TITAN_SESSION_INGRESS.md
 aoa-sdk/schemas/titan_session_ingress.schema.json
 ```
 
-## First command
+## Invocation contract
 
-```bash
-codex --cd /srv/AbyssOS "$(cat /srv/AbyssOS/8Dionysus/.codex/prompts/titan-summon.service-cohort.v0.md)"
-```
+The runnable summon invocation belongs to the shared-root Codex owner in
+`8Dionysus`; this seed preserves only the requirement to invoke the reviewed
+service-cohort prompt from the intended workspace.
 
 ## Acceptance
 

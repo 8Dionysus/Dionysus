@@ -1,4 +1,6 @@
-# Spark lane for Dionysus
+# AGENTS.md
+
+Spark lane for `Dionysus`.
 
 This file governs work on files under the `Spark/` subtree.
 

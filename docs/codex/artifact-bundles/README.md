@@ -10,11 +10,9 @@ closure notes, `seed-registry.yaml`, and the planting protocol.
 
 `manifests/seed_route_readmodel.bundle.json` verifies
 `generated/seed_route_map.min.json` as a `dionysus_seed_route_readmodel_bundle`.
-The active controls are ABI-only:
-
-```bash
-python scripts/validate_abyss_machine_seed_route_bundle.py
-```
+The active controls are ABI-only and remain executable in
+`scripts/validate_abyss_machine_seed_route_bundle.py`; the operator route is
+owned by the root `AGENTS.md`.
 
 The validator promotes durable release-ready evidence with source and
 host-managed trust-root metadata, materializes an isolated subject store,

@@ -51,23 +51,8 @@ truth.
 
 ## Local run
 
-Install the optional MCP dependency:
-
-```bash
-python -m pip install -r requirements-mcp.txt
-```
-
-Run the focused MCP tests:
-
-```bash
-python -m pytest -q tests/test_dionysus_mcp_state.py
-```
-
-Start the STDIO server from the repo root:
-
-```bash
-python scripts/dionysus_mcp_server.py
-```
+Optional dependencies remain declared in `requirements-mcp.txt`. Focused test
+and STDIO launch commands are owned by `src/dionysus_mcp/AGENTS.md#validation`.
 
 ## Project-level Codex wiring
 

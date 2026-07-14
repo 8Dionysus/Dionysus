@@ -36,6 +36,7 @@ owner-repo reality.
 - live gated future-work seeds that are not yet open waves
 - named prep packs for flexible future-work staging when a new numbered wave would be premature
 - planting protocol, registry overlays, and validation surfaces
+- owner-local statistical questions over seed-garden records and lifecycle labels
 - planting trace when the target-repo trail would not preserve the lineage well enough
 
 ## What does not belong here
@@ -45,6 +46,7 @@ owner-repo reality.
 - derived graph, export, or UI inflation
 - silent AoA ↔ ToS collapse
 - repo-local backlog disguised as seed canon
+- shared stats grammar, cross-owner composition, or target-repository landing truth
 
 ## Key live surfaces
 
@@ -54,6 +56,7 @@ owner-repo reality.
 - `tenth_wave.manifest.json` through `sixteenth_wave.manifest.json` hold the planted Titan service-cohort, runtime harness, operator console, app-server bridge, Memory Loom, incarnation spine, and swarm-ledger closeout wave order
 - `generated/seed_route_map.min.json` is the compact low-context seed entry capsule; `seed-registry.yaml` remains the canonical seed ledger and navigation overlay
 - `seed-registry.yaml` is the human/Codex navigation overlay
+- `stats/` exposes the owner-local seed-registry measurement contract and its public reference packet; `aoa-stats` retains shared grammar and cross-owner composition
 - `ROADMAP.md` summarizes current seed-garden posture after those stronger live surfaces without replacing them
 - `docs/SEED_SURFACE_MAP.md` explains how to read `seed_staging/` and `seed_notes/exploratory/` without confusing canon, staging, lineage, and exploratory donor notes
 - `docs/CANDIDATE_SEED_IDENTITY.md` explains the local `candidate_ref -> seed_ref` bridge and the stop rules around `seed_ref`
@@ -104,40 +107,11 @@ When an owner-repo landing merges and Dionysus still keeps a linked prep pack or
 
 ## Validation
 
-The seed-surface validation entrypoint remains:
-
-```bash
-python scripts/validate_seed_surfaces.py
-python scripts/generate_decision_indexes.py --check
-python scripts/validate_decision_records.py
-```
-
-For the compact seed-entry capsule itself, use:
-
-```bash
-python scripts/build_seed_route_map.py --check
-python scripts/validate_seed_route_map.py
-python scripts/validate_abyss_machine_seed_route_bundle.py
-```
-
-For current repo-local and workflow reinforcement, also run:
-
-```bash
-python -m pytest -q tests
-```
-
-For the optional repo-local MCP slice, also run:
-
-```bash
-python -m pytest -q tests/test_dionysus_mcp_state.py
-python scripts/dionysus_mcp_server.py
-```
-
-For advisory v3 readiness status only, also use:
-
-```bash
-python scripts/check_seed_registry_v3_readiness.py seed-registry.yaml --write-report reports/seed-registry-v3-readiness.md
-```
+The executable repository gate and short operator route live in
+`scripts/release_check.py` and `AGENTS.md#verify`. Nearest `AGENTS.md` cards own
+focused checks for decisions, generated artifacts, MCP, schemas, and the local
+stats port. The advisory v3 readiness helper remains owned by
+`scripts/check_seed_registry_v3_readiness.py`.
 
 ## Working rule
 

@@ -1,0 +1,115 @@
+{
+  "schema_version": "aoa_stats_local_port_v1",
+  "contract_version": "1.0.0",
+  "owner_repo": "Dionysus",
+  "status": "active",
+  "owner_boundary_ref": "AGENTS.md",
+  "central_contract_refs": [
+    "aoa-stats:stats/measurement-contract/measurement-contract.schema.json",
+    "aoa-stats:stats/measurement-contract/measurement-packet.schema.json"
+  ],
+  "evidence_posture": {
+    "live_state": "reference_only",
+    "privacy": "public",
+    "raw_content_allowed": false
+  },
+  "questions": [
+    {
+      "id": "question:seed-registry-landed-post-wave-ratio",
+      "question": "What fraction of entries in the current validated Dionysus seed registry v2 carry the owner-authored lifecycle label landed_post_wave?",
+      "consumer_refs": [
+        "stats/README.md",
+        "README.md",
+        "ROADMAP.md",
+        "docs/SEED_SURFACE_MAP.md"
+      ]
+    }
+  ],
+  "measurements": [
+    {
+      "schema_version": "aoa_stats_measurement_contract_v1",
+      "measurement_id": "Dionysus/seed-registry-landed-post-wave-ratio",
+      "contract_version": "1.0.0",
+      "owner_repo": "Dionysus",
+      "question_ref": "question:seed-registry-landed-post-wave-ratio",
+      "semantic_class": "statistic",
+      "statistic": "ratio",
+      "object_kind": "seed-registry-v2-entry",
+      "unit": {
+        "symbol": "1",
+        "quantity": "proportion"
+      },
+      "population": {
+        "subject": "current entries in the Dionysus seed registry v2 seed_index",
+        "definition": "one unique seed_index record in seed-registry.yaml after owner validation",
+        "inclusion_rule": "every valid unique record in the registry v2 seed_index array",
+        "exclusion_rule": "wave_index rows, origin notes, source files, staging packs, archives, planting reports, target-repository state, runtime state, and deployment state",
+        "sampling": "census"
+      },
+      "window": {
+        "temporality": "instant",
+        "clock": "owner_defined"
+      },
+      "dimensions": {
+        "allowed": [],
+        "prohibited": [
+          "registry_id",
+          "label",
+          "source_ref",
+          "wave",
+          "project",
+          "repo_home"
+        ]
+      },
+      "aggregation": {
+        "operator": "none",
+        "across": []
+      },
+      "missingness": {
+        "states": [
+          "missing",
+          "unknown",
+          "stale"
+        ],
+        "zero_is_observation": true
+      },
+      "uncertainty": {
+        "required": false,
+        "methods": [
+          "not_applicable"
+        ]
+      },
+      "provenance": {
+        "evidence_refs_required": true,
+        "source_revision_required": true
+      },
+      "lifecycle": {
+        "status": "active",
+        "compatible_with": []
+      },
+      "privacy": {
+        "classification": "public",
+        "raw_content_allowed": false,
+        "sensitive_dimensions_allowed": false
+      },
+      "live_state": {
+        "capability": "reference_only"
+      },
+      "authority_ceiling": "Reports only the fraction of current seed_index records carrying the literal Dionysus-authored lifecycle label landed_post_wave at one source revision; it does not prove a target-repository merge, current owner acceptance, landing quality, completeness, canonical meaning, release readiness, or what should be planted next."
+    }
+  ],
+  "exports": [
+    {
+      "measurement_id": "Dionysus/seed-registry-landed-post-wave-ratio",
+      "posture": "reference",
+      "packet_refs": [
+        "stats/packets/seed-registry-landed-post-wave-ratio.reference.json"
+      ],
+      "evidence_refs": [
+        "seed-registry.yaml",
+        "schema/seed-registry.contract.yaml",
+        "scripts/validate_seed_registry.py"
+      ]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ COMMANDS = [
     ("validate seed surfaces", [sys.executable, "scripts/validate_seed_surfaces.py"]),
     ("check decision indexes", [sys.executable, "scripts/generate_decision_indexes.py", "--check"]),
     ("validate decision records", [sys.executable, "scripts/validate_decision_records.py"]),
+    ("validate owner-local stats port", [sys.executable, "scripts/validate_local_stats_port.py"]),
     ("check seed route map", [sys.executable, "scripts/build_seed_route_map.py", "--check"]),
     ("validate seed route map", [sys.executable, "scripts/validate_seed_route_map.py"]),
     (

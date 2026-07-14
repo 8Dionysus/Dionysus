@@ -47,12 +47,5 @@ must not infer from this decision.
 
 ## Validation
 
-Run:
-
-```bash
-python scripts/generate_decision_indexes.py
-python scripts/generate_decision_indexes.py --check
-python scripts/validate_decision_records.py
-```
-
-Also run the validator for the owning surface the decision describes.
+Follow `docs/decisions/AGENTS.md#verify`, then run the validator for the owning
+surface the decision describes.

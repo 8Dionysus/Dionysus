@@ -33,16 +33,14 @@ def test_readme_start_here_surfaces_closure_note_and_owner_repo_before_agents() 
     assert readme.index(owner_step) < readme.index(agents_step)
 
 
-def test_readme_lists_current_validation_and_lineage_routes() -> None:
+def test_readme_routes_validation_and_lists_current_lineage_surfaces() -> None:
     readme = read_text("README.md")
     roadmap = read_text("ROADMAP.md")
 
-    assert "python scripts/validate_seed_surfaces.py" in readme
-    assert "python scripts/generate_decision_indexes.py --check" in readme
-    assert "python scripts/validate_decision_records.py" in readme
-    assert "python scripts/build_seed_route_map.py --check" in readme
-    assert "python scripts/validate_seed_route_map.py" in readme
-    assert "python -m pytest -q tests" in readme
+    assert "scripts/release_check.py" in readme
+    assert "AGENTS.md#verify" in readme
+    assert "`stats/` exposes the owner-local seed-registry measurement contract" in readme
+    assert "```bash" not in readme
     assert "`generated/seed_route_map.min.json` is the compact low-context seed entry capsule" in readme
     assert "`archive/seed_pack_exports/` holds derived ingress and transport bundles only" in readme
     assert "`reports/planting/README.md` explains when Dionysus should keep durable planting trace" in readme
@@ -51,15 +49,12 @@ def test_readme_lists_current_validation_and_lineage_routes() -> None:
     assert "It is weaker than the live seed surfaces." in roadmap
 
 
-def test_agents_mentions_pytest_reinforcement() -> None:
+def test_agents_routes_repository_gate_and_stats_owner() -> None:
     agents = read_text("AGENTS.md")
 
-    assert "python scripts/validate_seed_surfaces.py" in agents
-    assert "python scripts/generate_decision_indexes.py --check" in agents
-    assert "python scripts/validate_decision_records.py" in agents
-    assert "python scripts/build_seed_route_map.py --check" in agents
-    assert "python scripts/validate_seed_route_map.py" in agents
-    assert "python -m pytest -q tests" in agents
+    assert "python scripts/release_check.py" in agents
+    assert "stats/AGENTS.md" in agents
+    assert "shared measurement grammar or cross-owner statistics belong in `aoa-stats`" in agents
     assert "5. `ROADMAP.md`" in agents
     assert "8. `docs/decisions/README.md` for durable seed-route rationale" in agents
 

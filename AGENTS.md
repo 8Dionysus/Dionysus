@@ -14,10 +14,12 @@ This repository owns:
 - seed sources before or between plantings
 - wave manifests, closure notes, prep packs, archive surfaces, and seed registry overlays
 - planting protocol, replay route, and durable lineage trace when target-repo history is not enough
+- owner-local statistical questions over seed-garden records and lifecycle labels
 
 It does not own:
 
 - final AoA doctrine, final ToS meaning, runtime behavior, SDK helper behavior, or target-repo implementation law
+- shared statistical grammar, cross-owner composition, or target-repository landing truth
 - a shadow backlog disguised as seed canon
 - quest or continuity language that hides missing owner routes
 
@@ -33,6 +35,9 @@ It does not own:
 8. `docs/decisions/README.md` for durable seed-route rationale
 9. the target repository ownership docs
 10. `docs/AGENTS_ROOT_REFERENCE.md` for preserved full root guidance
+
+For a seed-garden statistical question, continue through `stats/AGENTS.md`,
+`stats/README.md`, and `stats/port.manifest.json` after the owner surfaces above.
 
 
 ## AGENTS stack law
@@ -60,6 +65,7 @@ through `aoa-memo`.
 - runtime belongs in `abyss-stack`
 - typed helper behavior belongs in `aoa-sdk`
 - operator companion behavior belongs in `ATM10-Agent`
+- shared measurement grammar or cross-owner statistics belong in `aoa-stats`
 
 ## GitHub landing workflow
 
@@ -79,31 +85,18 @@ If GitHub status or merge permissions cannot be observed, stop the landing route
 
 ## Verify
 
-Default seed-surface check:
+The executable repository gate owns the full validation sequence:
 
 ```bash
-python scripts/validate_seed_surfaces.py
-python scripts/generate_decision_indexes.py --check
-python scripts/validate_decision_records.py
-```
-
-When the compact seed route capsule changes:
-
-```bash
-python scripts/build_seed_route_map.py --check
-python scripts/validate_seed_route_map.py
-python scripts/validate_abyss_machine_seed_route_bundle.py
-```
-
-For repo-local reinforcement, also run:
-
-```bash
-python -m pytest -q tests
+python scripts/release_check.py
 ```
 
 ## Report
 
-State which seed surface changed, whether meaning or only staging/routing changed, whether lineage or replay posture changed, and whether follow-up now belongs in a stronger owner repo.
+State which seed surface changed, whether meaning or only staging/routing changed,
+whether lineage or replay posture changed, and whether follow-up now belongs in
+a stronger owner repo. For stats changes, also name the owner-local question,
+population, evidence posture, and authority ceiling.
 
 ## Full reference
 
