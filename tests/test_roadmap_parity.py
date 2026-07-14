@@ -23,9 +23,9 @@ def test_roadmap_names_current_next_live_seed_posture() -> None:
     payload = load_json("generated/seed_route_map.min.json")
     next_live_seed_ref = " ".join(payload["next_live_seed_ref"].split())
 
-    assert "> Current release: `v0.2.0`" in readme
-    assert "## [0.2.0] - 2026-07-13" in changelog
-    assert "`v0.2.0`" in roadmap
+    assert "> Current release: `v0.3.0`" in readme
+    assert "## [0.3.0] - 2026-07-14" in changelog
+    assert "`v0.3.0`" in roadmap
     assert "Current release contour" in roadmap
     assert "guarded seed-garden stewardship" in roadmap
     assert "Prep packs remain weaker than opened waves" in roadmap
@@ -70,7 +70,7 @@ def test_roadmap_names_current_next_live_seed_posture() -> None:
         assert (REPO_ROOT / surface).exists(), surface
         assert surface in roadmap
 
-    assert "post-`v0.2.0` mainline" in roadmap
+    assert "live `v0.3.0` release" in roadmap
     assert "`landed_post_wave` label distribution" in roadmap
     for surface in (
         "stats/README.md",
