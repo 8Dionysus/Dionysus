@@ -30,6 +30,11 @@ The current posture is:
   owner-landing trace, and seed-route surfaces truthful as more meaning lands
   upstream
 
+The post-`v0.2.0` mainline also exposes one owner-local reference statistic over
+the seed registry through `stats/`. It describes the literal
+`landed_post_wave` label distribution and remains weaker than seed, wave,
+closure, registry, and target-repository truth.
+
 ### Current release contour
 
 The live `v0.2.0` contour is guarded seed-garden stewardship with bounded
@@ -118,3 +123,5 @@ Across all waves:
 - keep prep packs weaker than live waves and live registry state
 - keep repo-local quest followthrough adjunct-only
 - do not let the seed garden become a shadow owner of landed repo meaning
+- keep the local stats packet descriptive and weaker than registry, seed, wave,
+  closure, and target-repository truth

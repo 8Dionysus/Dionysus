@@ -24,19 +24,9 @@ Please make sure:
 - docs stay public-safe and reviewable
 - this repository remains a seed-source surface rather than a replacement for the owning repositories
 
-Run the current repo-level release audit before opening a PR:
-
-```bash
-python scripts/release_check.py
-```
-
-For focused prechecks before that, you may also run:
-
-```bash
-python scripts/validate_manifest.py
-python scripts/generate_decision_indexes.py --check
-python scripts/validate_decision_records.py
-```
+Run the current repository gate before opening a PR. The short operator route
+is owned by `AGENTS.md#verify`, the executable sequence by
+`scripts/release_check.py`, and focused prechecks by the nearest `AGENTS.md`.
 
 ## Preferred PR scope
 

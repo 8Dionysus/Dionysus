@@ -10,6 +10,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY_NAME = "Dionysus"
 
 REQUIRED_AGENTS_DOCS: dict[str, tuple[str, ...]] = {
+    ".github/AGENTS.md": ("GitHub platform surface", "Repo Validation"),
+    "Spark/AGENTS.md": ("fast-loop lane", "bounded patch"),
     "archive/AGENTS.md": ("canonical archive root", "not as a draft workspace"),
     "docs/decisions/AGENTS.md": (
         "durable decision-rationale lane",
@@ -21,7 +23,12 @@ REQUIRED_AGENTS_DOCS: dict[str, tuple[str, ...]] = {
         "python scripts/validate_decision_records.py",
     ),
     "docs/codex/AGENTS.md": ("planting protocol", "stop rules"),
+    "evals/AGENTS.md": ("seed-garden eval pressure", "aoa-evals"),
     "reports/planting/AGENTS.md": ("durable planting trace", "Reports are durable trace"),
+    "reports/local-ai-trials/AGENTS.md": (
+        "durable human+AI-readable mirrors",
+        "raw runtime truth",
+    ),
     "seed_expansion/AGENTS.md": ("explicitly gated next-live seed material", "general staging warehouse"),
     "generated/AGENTS.md": ("generated/seed_route_map.min.json", "Do not hand-edit compact surfaces"),
     "kag/AGENTS.md": (
@@ -36,6 +43,12 @@ REQUIRED_AGENTS_DOCS: dict[str, tuple[str, ...]] = {
     "seed_staging/AGENTS.md": ("structured transport and staging packs", "must not overrule manifests"),
     "seed_notes/AGENTS.md": ("exploratory seed notes", "not queue control"),
     "src/dionysus_mcp/AGENTS.md": ("route-first, read-only", "weaker than manifests"),
+    "stats/AGENTS.md": (
+        "owner-local statistical questions",
+        "Shared measurement grammar",
+        "landed_post_wave",
+        "unknown, not zero",
+    ),
     "templates/AGENTS.md": ("planting report templates", "do not freeze future waves"),
     "memo/AGENTS.md": ("local memory port", "reviewed landing"),
 }

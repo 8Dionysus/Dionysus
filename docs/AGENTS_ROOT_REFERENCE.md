@@ -1,7 +1,10 @@
 # AGENTS root reference
 
-This file preserves the previous full root guidance for `Dionysus`.
+This file preserves the previous semantic root guidance for `Dionysus`.
 The live root route card is `../AGENTS.md`.
+
+Runnable command catalogs are intentionally not preserved here; active
+operator routes belong to the live root or nearest nested `AGENTS.md`.
 
 Use this reference when:
 
@@ -175,33 +178,10 @@ Summarize:
 
 ## Validation
 
-Run the repository entrypoint:
-
-```bash
-python scripts/validate_seed_surfaces.py
-```
-
-When the compact seed-entry capsule changes, also run:
-
-```bash
-python scripts/build_seed_route_map.py --check
-python scripts/validate_seed_route_map.py
-```
-
-That gate should remain the single seed-surface validation entrypoint.
-
-For repo-local and workflow reinforcement, also run:
-
-```bash
-python -m pytest -q tests
-```
-
-For the optional repo-local MCP slice, also run:
-
-```bash
-python -m pytest -q tests/test_dionysus_mcp_state.py
-python scripts/dionysus_mcp_server.py
-```
+This preserved reference no longer repeats runnable commands. The active
+operator route is `../AGENTS.md#verify`, the executable repository sequence is
+owned by `../scripts/release_check.py`, and focused routes live in the nearest
+active `AGENTS.md`.
 
 Use `reports/planting/` only when the target-repo PR or commit trail would not preserve the lineage well enough on its own.
 

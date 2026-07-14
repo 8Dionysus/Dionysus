@@ -7,6 +7,21 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+### Added
+
+- A root `stats/` port now exposes the public reference ratio of seed registry
+  v2 entries carrying the literal `landed_post_wave` lifecycle label, with the
+  exact population, missingness, provenance, and authority ceiling declared
+  through the shared `aoa-stats` contract.
+
+### Changed
+
+- Active explanatory Markdown now routes validation and runnable commands to
+  executable owners or the nearest `AGENTS.md` instead of repeating command
+  blocks across README, decision, protocol, lineage, and staging surfaces.
+- The repository release gate now fails closed when the compatible central
+  stats validator is unavailable.
+
 ## [0.2.0] - 2026-07-13
 
 ### Summary

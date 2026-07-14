@@ -14,14 +14,19 @@ sys.modules[SPEC.name] = validator
 SPEC.loader.exec_module(validator)
 
 EXPECTED_PACK3_DOCS = {
+    ".github/AGENTS.md",
+    "Spark/AGENTS.md",
     "docs/decisions/AGENTS.md",
+    "evals/AGENTS.md",
     "generated/AGENTS.md",
     "schema/AGENTS.md",
     "schemas/AGENTS.md",
     "scripts/AGENTS.md",
+    "reports/local-ai-trials/AGENTS.md",
     "seed_notes/AGENTS.md",
     "seed_staging/AGENTS.md",
     "src/dionysus_mcp/AGENTS.md",
+    "stats/AGENTS.md",
     "templates/AGENTS.md",
 }
 

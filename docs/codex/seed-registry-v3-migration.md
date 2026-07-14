@@ -41,11 +41,8 @@ At this stage the main CI validator can remain unchanged.
 
 Use the advisory checker to find missing v3 fields and, if useful, emit per-entry stub files.
 
-Suggested command:
-
-```bash
-python scripts/check_seed_registry_v3_readiness.py seed-registry.yaml --emit-stub-dir .seed-registry-v3-stubs
-```
+The executable owner is `scripts/check_seed_registry_v3_readiness.py`; use its
+self-described options rather than copying a second command contract here.
 
 ### 3. Backfill donor-shaped entries first
 

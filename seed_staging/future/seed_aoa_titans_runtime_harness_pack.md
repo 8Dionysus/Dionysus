@@ -61,11 +61,7 @@ The second wave plants these surfaces:
 
 ## Promotion condition
 
-This wave is complete when the operator can run:
-
-```bash
-python scripts/titanctl.py summon --workspace /srv/AbyssOS --operator Dionysus --out /srv/AbyssOS/.titan/receipts/example.json
-python scripts/titanctl.py validate --receipt /srv/AbyssOS/.titan/receipts/example.json
-```
-
-and the receipt proves that Forge and Delta stayed locked unless explicitly gated.
+This wave is complete when the executable owner can summon the cohort, write a
+receipt, and validate that receipt while proving that Forge and Delta stayed
+locked unless explicitly gated. This retained seed pack does not own current
+launcher syntax or host paths.

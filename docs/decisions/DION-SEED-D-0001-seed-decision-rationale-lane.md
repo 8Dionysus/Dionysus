@@ -86,11 +86,5 @@ Tradeoffs:
 
 ## Validation
 
-Run:
-
-```bash
-python scripts/generate_decision_indexes.py
-python scripts/generate_decision_indexes.py --check
-python scripts/validate_decision_records.py
-python -m pytest -q tests/test_decision_indexes.py
-```
+The executable route is owned by `docs/decisions/AGENTS.md#verify` and the
+repository release gate.

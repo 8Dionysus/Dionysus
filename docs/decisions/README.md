@@ -19,7 +19,7 @@ to their owning surfaces instead.
 | output | canonical decision note, generated lookup indexes, and route back to the owning seed, protocol, generated, validation, or target-repo surface |
 | owner | `docs/decisions/AGENTS.md` for lane law; decision notes for rationale; generated indexes for lookup only |
 | next route | owning seed/manifest/registry/protocol/generated/script/test surface first, then nearest route card, `README.md`, `ROADMAP.md`, generated lookup indexes, or the affected target owner |
-| validation | `python scripts/generate_decision_indexes.py --check` and `python scripts/validate_decision_records.py`, plus the owning validator for the changed surface |
+| validation | `docs/decisions/AGENTS.md#verify`, plus the owning validator for the changed surface |
 
 ## Authority
 
@@ -58,17 +58,8 @@ metadata:
 - [Decisions by owner lane](indexes/by-owner-lane.md)
 - [Decisions by validation or guard family](indexes/by-guard.md)
 
-Regenerate the read models after decision metadata changes:
-
-```bash
-python scripts/generate_decision_indexes.py
-```
-
-Check generated parity before closeout:
-
-```bash
-python scripts/generate_decision_indexes.py --check
-```
+Regenerate and check the read models through the executable owner route in
+`docs/decisions/AGENTS.md#verify`.
 
 ## Lookup Route
 

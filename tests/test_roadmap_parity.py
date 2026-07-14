@@ -69,3 +69,13 @@ def test_roadmap_names_current_next_live_seed_posture() -> None:
     for surface in current_release_surfaces:
         assert (REPO_ROOT / surface).exists(), surface
         assert surface in roadmap
+
+    assert "post-`v0.2.0` mainline" in roadmap
+    assert "`landed_post_wave` label distribution" in roadmap
+    for surface in (
+        "stats/README.md",
+        "stats/port.manifest.json",
+        "stats/packets/seed-registry-landed-post-wave-ratio.reference.json",
+        "scripts/validate_local_stats_port.py",
+    ):
+        assert (REPO_ROOT / surface).exists(), surface
