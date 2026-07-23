@@ -1,0 +1,86 @@
+schema_version = "0.1.0"
+
+[[lenses]]
+id = "life-story"
+description = "Turning points, chapters, continuities, and revisions in the person's own account."
+
+[[lenses]]
+id = "values-worldview"
+description = "Values, meanings, moral tensions, and the experiences that shaped them."
+
+[[lenses]]
+id = "decisions"
+description = "How consequential choices are framed, made, revisited, and regretted."
+
+[[lenses]]
+id = "work-creation"
+description = "Craft, ambition, collaboration, taste, energy, and conditions for meaningful work."
+
+[[lenses]]
+id = "friction-shadow"
+description = "Avoidance, conflict, repeated failure, unwanted patterns, and difficult tradeoffs."
+
+[[lenses]]
+id = "language-voice"
+description = "Preferred metaphors, distinctions, recurring phrases, and ways of explaining experience."
+
+[[lenses]]
+id = "current-horizon"
+description = "Present commitments, pressures, uncertainties, experiments, and anticipated change."
+
+[[lenses]]
+id = "counterportrait"
+description = "Exceptions, contradictions, context shifts, and evidence against an easy summary."
+
+[[protocols]]
+id = "baseline-v0"
+kind = "baseline"
+maturity = "skeleton"
+preferred_mode = "voice"
+duration_hint_minutes = [60, 90]
+lenses = [
+  "life-story",
+  "values-worldview",
+  "decisions",
+  "work-creation",
+  "friction-shadow",
+  "language-voice",
+  "current-horizon",
+]
+purpose = "Establish breadth, vocabulary, and candidate areas for later depth without claiming completeness."
+
+[[protocols]]
+id = "depth-v0"
+kind = "depth"
+maturity = "skeleton"
+preferred_mode = "voice"
+duration_hint_minutes = [30, 60]
+lenses = []
+purpose = "Follow one selected lens or tension through concrete episodes, causes, consequences, and exceptions."
+
+[[protocols]]
+id = "counterportrait-v0"
+kind = "counterportrait"
+maturity = "skeleton"
+preferred_mode = "voice"
+duration_hint_minutes = [30, 45]
+lenses = ["counterportrait"]
+purpose = "Challenge an existing projection and recover context or evidence that resists its easiest narrative."
+
+[[protocols]]
+id = "refresh-v0"
+kind = "refresh"
+maturity = "skeleton"
+preferred_mode = "hybrid"
+duration_hint_minutes = [20, 40]
+lenses = ["current-horizon", "counterportrait"]
+purpose = "Review a bounded prior claim set and identify what strengthened, weakened, changed, or expired."
+
+[[protocols]]
+id = "event-v0"
+kind = "event"
+maturity = "skeleton"
+preferred_mode = "voice"
+duration_hint_minutes = [15, 30]
+lenses = []
+purpose = "Capture the person's interpretation of one consequential episode while preserving uncertainty."

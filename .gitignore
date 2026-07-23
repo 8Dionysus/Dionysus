@@ -1,0 +1,22 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Private Dionysus material. Keep only the boundary documentation.
+vault/*
+!vault/README.md
+
+# Personal media must not enter the public protocol repository.
+*.aac
+*.flac
+*.m4a
+*.mp3
+*.mp4
+*.ogg
+*.opus
+*.wav
+*.webm

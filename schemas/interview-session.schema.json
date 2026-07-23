@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://8dionysus.github.io/Dionysus/schemas/interview-session.schema.json",
+  "title": "Dionysus interview session manifest",
+  "description": "Metadata and consent state for one interview session. The manifest references private artifacts but does not embed them.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "session_id",
+    "subject_local_id",
+    "protocol_id",
+    "mode",
+    "started_at",
+    "consent",
+    "artifact_refs",
+    "review_state"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_local_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "A vault-local pseudonymous identifier, not a public identity."
+    },
+    "protocol_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "voice",
+        "text",
+        "hybrid"
+      ]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "selected_lenses": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capture",
+        "retained_artifacts",
+        "downstream_access",
+        "confirmed_at"
+      ],
+      "properties": {
+        "capture": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "audio",
+              "text"
+            ]
+          }
+        },
+        "retained_artifacts": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "raw",
+              "transcript",
+              "evidence",
+              "claims",
+              "projections"
+            ]
+          }
+        },
+        "downstream_access": {
+          "type": "string",
+          "enum": [
+            "none",
+            "reviewed-only",
+            "explicit-selection"
+          ]
+        },
+        "confirmed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "renewed_at_close": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "locator"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "raw",
+              "transcript",
+              "evidence",
+              "claims",
+              "projection"
+            ]
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "digest": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "review_state": {
+      "type": "string",
+      "enum": [
+        "open",
+        "awaiting-review",
+        "reviewed",
+        "closed-without-retention"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
