@@ -1,103 +1,37 @@
 # AGENTS.md
 
-Root route card for `Dionysus`.
+`Dionysus` is a frozen, read-only archive as of 2026-07-23.
 
-## Purpose
+## Archive boundary
 
-`Dionysus` is the seed garden and dispatch layer for AoA / ToS.
-It keeps early forms, wave manifests, seed files, closure notes, prep packs, registry overlays, and planting trace legible until stronger owner repositories can receive them.
+This repository no longer owns an active seed queue, dispatch workflow,
+planting protocol, MCP service, runtime, KAG provider, stats or eval port,
+quest surface, or local skill family.
 
-## Owner lane
+Treat every lifecycle label in the retained files as historical. In
+particular, `opened`, `gated_next`, `staged`, and similar labels do not
+authorize work and do not describe current owner-repository state.
 
-This repository owns:
+## Reading order
 
-- seed sources before or between plantings
-- wave manifests, closure notes, prep packs, archive surfaces, and seed registry overlays
-- planting protocol, replay route, and durable lineage trace when target-repo history is not enough
-- owner-local statistical questions over seed-garden records and lifecycle labels
+1. `README.md`
+2. the relevant `*_wave.manifest.json` or `seed-registry.yaml` entry
+3. the exact seed file
+4. a matching file under `reports/planting/`, when present
+5. the current owning repository, which is the only source of live truth
 
-It does not own:
+## Preservation rules
 
-- final AoA doctrine, final ToS meaning, runtime behavior, SDK helper behavior, or target-repo implementation law
-- shared statistical grammar, cross-owner composition, or target-repository landing truth
-- a shadow backlog disguised as seed canon
-- quest or continuity language that hides missing owner routes
+- Prefer analysis over edits.
+- Preserve original seed text, filenames, paths, chronology, and provenance.
+- Do not add new seeds, revive queue semantics, or restore removed machinery.
+- Do not treat archived seed content as current AoA, ToS, runtime, SDK, or
+  owner-repository doctrine.
+- Use `pre-archive-2026-07-23` or commit `8529c00` when removed operational
+  material is needed for historical analysis.
+- Route new work directly to the repository that owns its meaning.
 
-## Start here
-
-1. the relevant `*_wave.manifest.json` or current live gated seed surface
-2. the exact source seed file
-3. the matching closure note when one exists
-4. `seed-registry.yaml`
-5. `ROADMAP.md`
-6. `docs/SEED_SURFACE_MAP.md`
-7. `docs/codex/planting-protocol.md`
-8. `docs/decisions/README.md` for durable seed-route rationale
-9. the target repository ownership docs
-10. `docs/AGENTS_ROOT_REFERENCE.md` for preserved full root guidance
-
-For a seed-garden statistical question, continue through `stats/AGENTS.md`,
-`stats/README.md`, and `stats/port.manifest.json` after the owner surfaces above.
-
-
-## AGENTS stack law
-
-- Start with this root card, then follow the nearest nested `AGENTS.md` for every touched path.
-- Root guidance owns repository identity, owner boundaries, route choice, and the shortest honest verification path.
-- Nested guidance owns local contracts, local risk, exact files, and local checks.
-- Authored source surfaces own meaning. Generated, exported, compact, derived, runtime, and adapter surfaces summarize, transport, or support meaning.
-- Self-agency, recurrence, quest, progression, checkpoint, or growth language must stay bounded, reviewable, evidence-linked, and reversible.
-- Report what changed, what was verified, what was not verified, and where the next agent should resume.
-
-## Memory route
-
-For recall, continuity, compaction recovery, comparison with past work, or
-preserved lessons, start with `aoa-memo` and the workspace memory map. Session
-grounding routes through `.aoa`; local candidate writing routes through this
-repository's `memo/` port when that port exists; durable reviewed memory lands
-through `aoa-memo`.
-
-## Route away when
-
-- the seed has landed and the owner repository is clear
-- source-linked knowledge belongs in `Tree-of-Sophia`
-- ecosystem doctrine belongs in `Agents-of-Abyss`
-- runtime belongs in `abyss-stack`
-- typed helper behavior belongs in `aoa-sdk`
-- operator companion behavior belongs in `ATM10-Agent`
-- shared measurement grammar or cross-owner statistics belong in `aoa-stats`
-
-## GitHub landing workflow
-
-Root `AGENTS.md` owns the repository-wide branch, PR, CI, and merge route.
-`.github/AGENTS.md` owns the GitHub-native files that support it.
-
-When the user asks to commit, push, and merge in this repository, use this route:
-
-1. Start from a branch based on the current `origin/main`. If the worktree is already dirty, inventory it first and carry forward only the intended diff.
-2. Commit the intended change with a message that names the changed surface.
-3. Push the branch and open a pull request that states changed surfaces, validation run, skipped checks, and remaining risk.
-4. Wait for GitHub `Repo Validation` and any required GitHub checks. If a check fails, fix the branch and wait for the new result.
-5. Merge through GitHub after green validation. Use squash unless repository settings report a different required method; report the method that landed.
-6. Return to `main`, fast-forward from `origin/main`, and confirm the worktree is clean before closeout.
-
-If GitHub status or merge permissions cannot be observed, stop the landing route and report the exact blocker instead of guessing.
-
-## Verify
-
-The executable repository gate owns the full validation sequence:
-
-```bash
-python scripts/release_check.py
-```
-
-## Report
-
-State which seed surface changed, whether meaning or only staging/routing changed,
-whether lineage or replay posture changed, and whether follow-up now belongs in
-a stronger owner repo. For stats changes, also name the owner-local question,
-population, evidence posture, and authority ceiling.
-
-## Full reference
-
-`docs/AGENTS_ROOT_REFERENCE.md` preserves the former detailed root guidance for source-of-truth order, prep-pack posture, MCP route details, and planting trace review.
+There is intentionally no executable repository validation gate after the
+freeze. For archive-integrity inspection, use read-only Git checks such as
+`git diff --check`, `git fsck --full --strict`, and targeted path/history
+inspection.

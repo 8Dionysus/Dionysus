@@ -1,127 +1,79 @@
-# Dionysus Seed Garden
+# Dionysus — archived seed garden
 
-`Dionysus` is the seed garden and dispatch layer for the current AoA / ToS ecosystem.
+> **Archived on 2026-07-23.** This repository is a historical, read-only
+> record. It no longer operates as a seed dispatcher, staging queue, MCP
+> service, or active OS Abyss component.
 
-It stores seed sources, wave manifests, archived planting surfaces, live gated expansion surfaces, and the minimal protocol needed to move bounded seeds into owning repositories. It is not the final owning home of AoA meaning, ToS meaning, runtime behavior, or repo-local implementation detail.
+## Why it was archived
 
-> Current release: `v0.3.0`. See [CHANGELOG](CHANGELOG.md) for release notes.
+`Dionysus` was created to preserve, expand, stage, and dispatch early AoA and
+Tree of Sophia seeds into their owning repositories. That intermediary is no
+longer needed: current seeds can be planted directly with a capable coding
+agent and reviewed in the repository that owns the resulting meaning.
 
-## Start here
+Keeping the intermediary active would add routing cost, duplicated machinery,
+and false queue authority. Freezing it preserves the useful material without
+requiring OS Abyss to maintain another organ.
 
-Read in this order:
+## What remains
 
-1. the relevant `*_wave.manifest.json`
-2. the exact source seed named by that manifest
-3. the matching closure note for that wave when one exists
-4. `seed-registry.yaml`
-5. `ROADMAP.md`
-6. `docs/codex/planting-protocol.md`
-7. `docs/decisions/README.md` when seed-garden route rationale matters
-8. the target repository structure and ownership
-9. `AGENTS.md` and the nearest nested `AGENTS.md`
+The final tree keeps only seed material, direct planting history, and the
+minimum metadata needed to understand the archive:
 
-If work starts from a named prep pack rather than an opened wave, read the pack note and matching `.map.yaml` after checking the stronger live surfaces above. Named prep packs are flexible staging notes. They do not overrule an opened wave, a planted Titan wave, or the current live seed.
-After reading a prep-pack note, verify the owner repo directly before treating staging guidance as current queue truth.
+- `archive/` — canonical historical seeds and packaged seed exports;
+- `seed_expansion/` — source-like seeds that were on the former launch ledge;
+- `seed_notes/` — exploratory notes whose signal may still be useful;
+- `seed_staging/` — former staging and donor packs, preserved as historical
+  seed material;
+- `*_wave.manifest.json`, `ninth_wave.closure.md`, and
+  `seed-registry*.yaml` — the frozen wave and registry record;
+- `reports/planting/` — durable planting, preflight, closure, and proposed
+  planting trace;
+- `examples/seed_lineage_entry.titans_first_appearance.example.json` — the
+  lineage example referenced directly by `tenth_wave.manifest.json`;
+- `docs/decisions/DION-SEED-D-0001-seed-decision-rationale-lane.md` and
+  `CHANGELOG.md` — retained repository history.
 
-`ROADMAP.md` is the garden-level direction surface.
-It summarizes the current live seed posture after the stronger seed surfaces
-above and does not overrule manifests, closure notes, registry state, or
-owner-repo reality.
+Original paths were deliberately preserved. Many manifests, reports, and seed
+documents refer to one another by path, and reorganizing them during the
+freeze would make later archaeology less reliable.
 
-## What belongs here
+All lifecycle labels inside the archive — including `opened`, `gated_next`,
+`staged`, `staged_only_not_landed`, and `partially_landed` — describe the
+state recorded before the freeze. They are not a current queue, mandate, or
+claim about the present state of any owner repository.
 
-- seed sources before or between plantings
-- wave manifests that define order
-- archived canonical seed surfaces kept for lineage and replay
-- live gated future-work seeds that are not yet open waves
-- named prep packs for flexible future-work staging when a new numbered wave would be premature
-- planting protocol, registry overlays, and validation surfaces
-- owner-local statistical questions over seed-garden records and lifecycle labels
-- planting trace when the target-repo trail would not preserve the lineage well enough
+Packaged ZIP exports remain because some contain the most convenient surviving
+form of a seed packet. Generated KAG indexes, validators, tests, schemas,
+runtime adapters, MCP code, local skills, stats/eval/memo ports, quest
+machinery, CI, and transient audit or local-AI mirrors were removed from the
+final tree.
 
-## What does not belong here
+## Recovering the former operational repository
 
-- runtime services
-- final repo-owned doctrine that should live in a target repository
-- derived graph, export, or UI inflation
-- silent AoA ↔ ToS collapse
-- repo-local backlog disguised as seed canon
-- shared stats grammar, cross-owner composition, or target-repository landing truth
+Nothing removed by the cleanup was erased from Git history.
 
-## Key live surfaces
+- `pre-archive-2026-07-23` points to the complete repository immediately
+  before the cleanup.
+- `v0.3.0` is the last published operational release.
+- Commit `8529c00` is the final pre-cleanup `main` snapshot.
 
-- `archive/` is the canonical archive root for historical seed sources
-- `archive/seed_pack_exports/` holds derived ingress and transport bundles only; never treat them as canonical seed surfaces
-- `seed_expansion/` holds the current gated next-work surfaces plus planted post-wave seed surfaces retained live for lineage until a later archive pass
-- `tenth_wave.manifest.json` through `sixteenth_wave.manifest.json` hold the planted Titan service-cohort, runtime harness, operator console, app-server bridge, Memory Loom, incarnation spine, and swarm-ledger closeout wave order
-- `generated/seed_route_map.min.json` is the compact low-context seed entry capsule; `seed-registry.yaml` remains the canonical seed ledger and navigation overlay
-- `seed-registry.yaml` is the human/Codex navigation overlay
-- `stats/` exposes the owner-local seed-registry measurement contract and its public reference packet; `aoa-stats` retains shared grammar and cross-owner composition
-- `ROADMAP.md` summarizes current seed-garden posture after those stronger live surfaces without replacing them
-- `docs/SEED_SURFACE_MAP.md` explains how to read `seed_staging/` and `seed_notes/exploratory/` without confusing canon, staging, lineage, and exploratory donor notes
-- `docs/CANDIDATE_SEED_IDENTITY.md` explains the local `candidate_ref -> seed_ref` bridge and the stop rules around `seed_ref`
-- `docs/decisions/` holds durable seed-garden route rationale with generated lookup indexes
-- `docs/codex/` holds the planting protocol and provenance rules
-- `docs/codex/artifact-bundles/` holds OS Abyss verifier manifests for generated seed route transport, not seed canon
-- `docs/CODEX_MCP.md` explains the repo-local Codex MCP surface and its stop rules
-- `templates/planting-report.template.md` defines the durable planting-report shape when Dionysus needs to hold the trace
-- `reports/planting/README.md` explains when Dionysus should keep durable planting trace instead of relying on target-repo PR or commit history alone
-- `scripts/validate_seed_surfaces.py` is the single seed-surface validation entrypoint
-- `schemas/seed_lineage_entry.schema.json`, `examples/seed_lineage_entry.example.json`, and `scripts/validate_seed_lineage_examples.py` keep the local seed-lineage witness structural instead of sovereign
-- `docs/SEED_OWNER_LANDING_TRACE.md`, `schemas/seed_owner_landing_trace.schema.json`, `examples/seed_owner_landing_trace.example.json`, and `scripts/validate_seed_owner_landing_trace.py` keep the seed-to-owner follow-through trace subordinate to seed registry, planting protocol, and owner-repo truth
-- `seed_staging/` holds structured transport and staging packs grouped by domain instead of mixing them into the root
-- `seed_notes/exploratory/` holds informal exploratory seed texts that should not be mistaken for queue control
-- repo-local questbook surfaces in `QUESTBOOK.md`, `quests/`, `schemas/`, and `generated/` are follow-through for the seed garden, not a second sovereignty layer
-- `aoa-sdk` has already been seeded into its own live repository and should be treated as a live owning home for SDK work rather than as deferred future separation
+Examples:
 
-## Source-of-truth order
+```bash
+git show pre-archive-2026-07-23:scripts/release_check.py
+git log --all -- path/to/a/removed/file
+git worktree add ../Dionysus-pre-archive pre-archive-2026-07-23
+```
 
-When files pull in different directions, treat these as authoritative in this order:
+Use the live owner repository for current truth:
 
-1. relevant `*_wave.manifest.json`
-2. exact canonical source seed file
-3. matching closure note for the same wave
-4. `seed-registry.yaml`
-5. planting protocol and contract files
-6. target repository structure and ownership
-7. `README.md`
+- `Agents-of-Abyss` for AoA doctrine;
+- `Tree-of-Sophia` for ToS authored meaning;
+- `aoa-sdk`, `aoa-skills`, `aoa-evals`, `aoa-routing`, `aoa-memo`,
+  `aoa-stats`, `aoa-playbooks`, and `aoa-agents` for their respective
+  contracts and mechanisms;
+- `abyss-stack` for runtime and deployment.
 
-The manifest defines order. The seed file defines meaning. The closure note defines the finished state of a closed wave. The registry makes navigation legible. `ROADMAP.md` summarizes current garden-level posture after those stronger live surfaces. The README should explain, not overrule.
-
-## Using Dionysus to plant with Codex
-
-1. Pick the wave manifest or the current live gated seed.
-2. Read the exact source surface.
-3. Open the matching entry in `seed-registry.yaml`.
-4. Read the target repository before writing anything.
-5. Plant the smallest linked slice that leaves:
-   - one human-readable explanation
-   - one structural artifact
-   - preserved seed vocabulary
-   - explicit boundaries
-6. Stop at contracts or docs when a seed would cross red-risk zones.
-7. Leave trace in the target PR or commit trail, or in `reports/planting/` when the lineage would otherwise be lost.
-
-For donor-shaped or mixed seeds, also record donor repo/ref, transplant policy, redistribution obligations, and explicit `what survives` / `what stays behind` notes.
-When an owner-repo landing merges and Dionysus still keeps a linked prep pack or transport note for lineage, update `lifecycle_status` and `lifecycle_note` in the same cleanup pass so staged-only markers do not outlive the merge.
-
-## Validation
-
-The executable repository gate and short operator route live in
-`scripts/release_check.py` and `AGENTS.md#verify`. Nearest `AGENTS.md` cards own
-focused checks for decisions, generated artifacts, MCP, schemas, and the local
-stats port. The advisory v3 readiness helper remains owned by
-`scripts/check_seed_registry_v3_readiness.py`.
-
-## Working rule
-
-When in doubt:
-
-- plant structure before expansion
-- plant authored and source-linked surfaces before derived projections
-- plant lineage before archive
-- plant bridges as derived contracts, not identity collapse
-- plant witness and compost as public contracts before heavier runtime instrumentation
-- plant templates before branch multiplication
-- use named prep packs when future work needs priority and dependency control without a fresh numbered wave
-- keep Dionysus small, legible, and transplant-focused
+This archive does not designate a successor and should not be reopened merely
+to restore the old intermediary.
