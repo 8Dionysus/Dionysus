@@ -1,37 +1,58 @@
-# AGENTS.md
+# Dionysus agent guidance
 
-`Dionysus` is a frozen, read-only archive as of 2026-07-23.
+## Purpose
 
-## Archive boundary
+Dionysus owns interview protocols and evidence-grounded, human-reviewed
+personal portrait formats. It should help a person articulate a changing
+self-understanding without pretending that a model has discovered an
+authoritative or complete identity.
 
-This repository no longer owns an active seed queue, dispatch workflow,
-planting protocol, MCP service, runtime, KAG provider, stats or eval port,
-quest surface, or local skill family.
+## Owner boundary
 
-Treat every lifecycle label in the retained files as historical. In
-particular, `opened`, `gated_next`, `staged`, and similar labels do not
-authorize work and do not describe current owner-repository state.
+This repository owns:
 
-## Reading order
+- conversational interview families and their evolution;
+- consent, evidence, claim, review, and projection contracts;
+- compact portrait views derived from reviewed claims;
+- the boundary between public protocol and private personal material.
 
-1. `README.md`
-2. the relevant `*_wave.manifest.json` or `seed-registry.yaml` entry
-3. the exact seed file
-4. a matching file under `reports/planting/`, when present
-5. the current owning repository, which is the only source of live truth
+This repository does not own:
 
-## Preservation rules
+- generic AoA memory or memo retention;
+- `.aoa` session archives or transcript lifecycle;
+- speech, transcription, or agent runtime infrastructure;
+- the public `8Dionysus` profile;
+- psychological diagnosis, personality scoring, or an AI replica of a person;
+- automatic loading of a complete personal dossier into every agent session.
 
-- Prefer analysis over edits.
-- Preserve original seed text, filenames, paths, chronology, and provenance.
-- Do not add new seeds, revive queue semantics, or restore removed machinery.
-- Do not treat archived seed content as current AoA, ToS, runtime, SDK, or
-  owner-repository doctrine.
-- Use `pre-archive-2026-07-23` or commit `8529c00` when removed operational
-  material is needed for historical analysis.
-- Route new work directly to the repository that owns its meaning.
+Route runtime capabilities to their stronger owners. Keep Dionysus transport
+and provider neutral until a concrete integration is deliberately chosen.
 
-There is intentionally no executable repository validation gate after the
-freeze. For archive-integrity inspection, use read-only Git checks such as
-`git diff --check`, `git fsck --full --strict`, and targeted path/history
-inspection.
+## Safety and epistemic rules
+
+- Never commit real audio, transcripts, personal claims, secrets, or identifying
+  evidence. Put private working material under ignored `vault/`.
+- Do not infer psychological traits from vocal prosody, appearance, or other
+  biometric signals.
+- A model-generated statement starts as a candidate claim, not a fact.
+- Preserve the evidence reference, basis, confidence, scope, alternatives, and
+  review state of every claim.
+- Make contradiction visible. Do not force a single coherent portrait when the
+  evidence is contextual or contested.
+- Every derived portrait must cite claim IDs and state its purpose and review
+  date.
+- Keep fictional examples unmistakably fictional.
+
+## Change discipline
+
+Meaningful changes to topology, authority, privacy, or claim semantics require
+a decision record under `docs/decisions/`.
+
+Before landing a change, run:
+
+```bash
+python scripts/validate_skeleton.py
+```
+
+The contents of `legacy/seed-garden/` are preserved history. Do not edit them
+as part of the new Dionysus line; correct the active root instead.
