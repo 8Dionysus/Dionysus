@@ -5,7 +5,6 @@
 - Define owner and privacy boundaries.
 - Separate session, evidence, claim, review, and projection artifacts.
 - Establish an interview family without pretending the prompts are validated.
-- Preserve the former seed garden as immutable legacy.
 
 Exit condition: repository validation passes and the public tree contains no
 personal material.

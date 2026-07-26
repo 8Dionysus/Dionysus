@@ -53,6 +53,3 @@ Before landing a change, run:
 ```bash
 python scripts/validate_skeleton.py
 ```
-
-The contents of `legacy/seed-garden/` are preserved history. Do not edit them
-as part of the new Dionysus line; correct the active root instead.

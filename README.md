@@ -18,8 +18,6 @@ This is a skeleton, not a finished interview system.
 - `portrait/` contains disposable projection templates, never an authoritative
   dossier.
 - `vault/` documents the private boundary. Its contents are ignored by Git.
-- `legacy/seed-garden/` preserves the former Dionysus seed-garden repository
-  intact.
 
 No voice transport, transcription provider, agent runtime, or personal dataset
 is selected yet.
@@ -46,10 +44,6 @@ generic memory authority.
 2. Review [docs/PRIVACY.md](docs/PRIVACY.md).
 3. Inspect the interview family in [interviews/catalog.toml](interviews/catalog.toml).
 4. Run `python scripts/validate_skeleton.py`.
-
-The former seed garden remains available at
-[legacy/seed-garden/README.md](legacy/seed-garden/README.md) and at the
-`pre-archive-2026-07-23` Git tag.
 
 ## License
 
