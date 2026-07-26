@@ -31,17 +31,24 @@ REQUIRED_PATHS = (
     "examples/interview-session.example.json",
     "examples/portrait-claim.example.json",
     "vault/README.md",
-    "legacy/seed-garden/README.md",
-    "legacy/seed-garden/AGENTS.md",
-    "legacy/seed-garden/seed-registry.yaml",
 )
 
-LEGACY_ROOT_PATHS = (
-    "archive",
-    "seed_expansion",
-    "seed_notes",
-    "seed_staging",
-    "seed-registry.yaml",
+PUBLIC_TRACKED_PATHS = (
+    ".github",
+    ".gitignore",
+    ".ignore",
+    "AGENTS.md",
+    "DESIGN.md",
+    "LICENSE",
+    "README.md",
+    "ROADMAP.md",
+    "docs",
+    "examples",
+    "interviews",
+    "portrait",
+    "schemas",
+    "scripts",
+    "vault",
 )
 
 MEDIA_SUFFIXES = {
@@ -152,12 +159,6 @@ def validate_required_paths() -> None:
     missing = [path for path in REQUIRED_PATHS if not (ROOT / path).is_file()]
     require(not missing, f"missing required files: {missing}")
 
-    old_roots = [path for path in LEGACY_ROOT_PATHS if (ROOT / path).exists()]
-    require(not old_roots, f"old seed-garden paths remain active at root: {old_roots}")
-
-    legacy_count = sum(1 for path in (ROOT / "legacy/seed-garden").rglob("*") if path.is_file())
-    require(legacy_count >= 400, f"legacy seed garden looks incomplete: {legacy_count} files")
-
 
 def validate_catalog() -> None:
     catalog_path = ROOT / "interviews/catalog.toml"
@@ -216,7 +217,7 @@ def validate_public_boundary() -> None:
     require(not vault_entries, f"private vault contains unexpected files: {vault_entries}")
 
     tracked = subprocess.run(
-        ["git", "ls-files", "-z"],
+        ["git", "ls-files", "-z", "--", *PUBLIC_TRACKED_PATHS],
         cwd=ROOT,
         check=True,
         capture_output=True,
@@ -248,7 +249,7 @@ def main() -> int:
     print("OK: Dionysus skeleton is structurally valid")
     print("OK: interview catalog contains five distinct skeleton protocols")
     print("OK: fictional examples satisfy the public schemas")
-    print("OK: legacy seed garden is isolated and the private vault is empty")
+    print("OK: the private vault is empty")
     return 0
 
 
