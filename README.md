@@ -14,6 +14,8 @@ This is a skeleton, not a finished interview system.
 
 - `interviews/` defines the first interview family and the conversation
   contract.
+- `instruments/` records evidence, rights, language, voice-mode, and admission
+  boundaries for methods that may orient an interview.
 - `schemas/` separates an interview session from a portrait claim.
 - `portrait/` contains disposable projection templates, never an authoritative
   dossier.
@@ -38,12 +40,19 @@ Claims must remain traceable to evidence and review. Derived portraits must be
 small enough to inspect, must cite claim IDs, and must never silently become a
 generic memory authority.
 
+A standardized instrument, when allowed, is a separate feeder into this flow:
+its private result may suggest questions, but cannot directly assert a trait,
+value, strength, or type. The repository does not vendor test content or own a
+scoring service.
+
 ## Start here
 
 1. Read [DESIGN.md](DESIGN.md).
 2. Review [docs/PRIVACY.md](docs/PRIVACY.md).
-3. Inspect the interview family in [interviews/catalog.toml](interviews/catalog.toml).
-4. Run `python scripts/validate_skeleton.py`.
+3. Inspect the instrument boundary in
+   [instruments/admission-contract.md](instruments/admission-contract.md).
+4. Inspect the interview family in [interviews/catalog.toml](interviews/catalog.toml).
+5. Run `python scripts/validate_skeleton.py`.
 
 ## License
 

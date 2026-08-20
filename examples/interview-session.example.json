@@ -9,12 +9,25 @@
   "selected_lenses": [
     "work-creation"
   ],
+  "orientation_refs": [
+    {
+      "registry_id": "personal-strivings",
+      "form": "fictional six-striving elicitation",
+      "language": "en",
+      "administration_mode": "conversation",
+      "registry_admission": "admitted",
+      "completed_at": "2000-01-01T09:30:00Z",
+      "result_locator": "vault://fictional/instruments/strivings-001",
+      "interpretation_purpose": "Select one fictional work-goal tension for episode-based inquiry."
+    }
+  ],
   "consent": {
     "capture": [
       "audio"
     ],
     "retained_artifacts": [
       "transcript",
+      "instrument-results",
       "evidence",
       "claims"
     ],
@@ -23,6 +36,11 @@
     "renewed_at_close": "2000-01-01T10:35:00Z"
   },
   "artifact_refs": [
+    {
+      "kind": "instrument-result",
+      "locator": "vault://fictional/instruments/strivings-001",
+      "digest": "sha256:fictional-instrument-fixture-not-a-real-digest"
+    },
     {
       "kind": "transcript",
       "locator": "vault://fictional/transcripts/session-001",

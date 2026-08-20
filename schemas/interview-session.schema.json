@@ -60,6 +60,69 @@
         "minLength": 1
       }
     },
+    "orientation_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "Metadata-only references to private instrument results used to route inquiry. Scores and responses are not embedded.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "registry_id",
+          "form",
+          "language",
+          "administration_mode",
+          "registry_admission",
+          "completed_at",
+          "result_locator",
+          "interpretation_purpose"
+        ],
+        "properties": {
+          "registry_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "form": {
+            "type": "string",
+            "minLength": 1
+          },
+          "language": {
+            "type": "string",
+            "minLength": 1
+          },
+          "administration_mode": {
+            "type": "string",
+            "enum": [
+              "paper",
+              "computer",
+              "voice",
+              "conversation",
+              "external-unknown"
+            ]
+          },
+          "registry_admission": {
+            "type": "string",
+            "enum": [
+              "admitted",
+              "external-only",
+              "pilot"
+            ]
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "result_locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interpretation_purpose": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
     "consent": {
       "type": "object",
       "additionalProperties": false,
@@ -89,6 +152,7 @@
             "enum": [
               "raw",
               "transcript",
+              "instrument-results",
               "evidence",
               "claims",
               "projections"
@@ -131,6 +195,7 @@
             "enum": [
               "raw",
               "transcript",
+              "instrument-result",
               "evidence",
               "claims",
               "projection"

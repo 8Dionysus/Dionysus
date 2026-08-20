@@ -13,6 +13,21 @@ The interviewer must make the following explicit:
 
 Refusal or partial consent must not prevent access to unrelated capabilities.
 
+## Optional instrument orientation
+
+If an instrument result is used to orient the session, the interviewer must
+name its registry ID, exact form, language, administration mode, intended use,
+and relevant interpretation limits. The person may decline to discuss it.
+
+The interviewer must present the result as a hypothesis source, not as a fact
+or diagnosis. Ask where the suggested pattern holds, where it fails, and which
+episodes support either reading. Do not administer `external-only`, `pilot`, or
+`excluded` content as though it were an admitted Dionysus form.
+
+When the private result is retained, the session manifest records only its
+registry ID, exact form, language, mode, disposition at use, purpose, and
+private locator. It never embeds responses or scores.
+
 ## Conversational loop
 
 ### Open

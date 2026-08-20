@@ -13,6 +13,11 @@ personal material.
 
 - Research qualitative interviewing, oral history, narrative identity,
   motivational interviewing, and longitudinal personal context.
+- Maintain an evidence- and license-backed instrument registry; compare one
+  trait foundation, values, idiographic goals, interests, and optional depth
+  modules without importing protected test content.
+- Design standardized and conversational voice lanes separately. Do not claim
+  score equivalence for a voice form before an empirical mode comparison.
 - Draft several voice-native prompt packs for the cataloged interview forms.
 - Add interviewer behavior tests: follow-up quality, non-leading reflection,
   counterexample seeking, consent renewal, and graceful refusal.

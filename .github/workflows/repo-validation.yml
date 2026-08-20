@@ -21,6 +21,7 @@ jobs:
             .github
             docs
             examples
+            instruments
             interviews
             portrait
             schemas

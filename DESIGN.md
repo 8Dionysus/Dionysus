@@ -29,6 +29,29 @@ Raw capture, transcripts, claims, and projections have different sensitivity
 and retention needs. A future implementation must not collapse them into one
 opaque vector store or conversation history.
 
+## Instrument-assisted orientation
+
+Non-clinical instruments may precede an interview when they add a distinct
+question that the conversation can test. They remain a separate lane:
+
+```text
+exact authorized instrument and mode
+  -> private result
+  -> bounded hypotheses for inquiry
+  -> episodes, conditions, and counterexamples
+  -> candidate claims under human review
+```
+
+The result is not itself a portrait claim. Standardized wording, response
+format, scoring, language, and administration mode must follow the admitted
+source conditions. If a model paraphrases an item into natural conversation,
+the result becomes an ordinary interview response and loses any standardized
+score claim.
+
+The public [instrument registry](instruments/README.md) records the current
+Dionysus disposition and open gaps. It contains no items, scoring keys, norms,
+or personal results.
+
 ## Interview loop
 
 Each interview follows a common conversational loop:
@@ -84,6 +107,7 @@ This skeleton deliberately defers:
 - encrypted storage and key management;
 - agent or MCP integration;
 - prompt wording and interview pacing;
+- a repository-owned standardized instrument or scoring implementation;
 - claim comparison and longitudinal diff algorithms;
 - selective context release into other systems.
 

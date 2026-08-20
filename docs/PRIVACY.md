@@ -6,6 +6,8 @@ Dionysus is public protocol; personal material is private data.
 
 - voice or video recordings;
 - raw or edited transcripts from a real person;
+- instrument responses, score reports, norm comparisons, or person-specific
+  assessment metadata;
 - personal claims, portrait projections, journals, or biographical notes;
 - consent records containing identity or contact information;
 - API keys, credentials, provider job IDs, or storage locators;
