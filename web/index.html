@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#111713">
+    <meta
+      name="description"
+      content="Локальная рабочая тетрадь Dionysus для подготовки к личному интервью."
+    >
+    <title>Dionysus — предварительная карта</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Перейти к содержанию</a>
+
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <button class="brand" type="button" data-action="home" aria-label="На главную">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span>
+          <strong>Dionysus</strong>
+          <small>предварительная карта</small>
+        </span>
+      </button>
+
+      <button class="privacy-chip" type="button" data-action="privacy">
+        <span class="privacy-dot" aria-hidden="true"></span>
+        <span class="privacy-label-full">Только на этом устройстве</span>
+        <span class="privacy-label-short">Локально</span>
+      </button>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+
+    <footer class="site-footer">
+      <p>Не диагноз и не портрет. Черновик вопросов для разговора.</p>
+      <button class="text-button" type="button" data-action="privacy">
+        Как хранятся ответы
+      </button>
+    </footer>
+
+    <dialog id="privacy-dialog" class="privacy-dialog" aria-labelledby="privacy-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">Приватность</p>
+          <h2 id="privacy-title">Ответы не покидают браузер</h2>
+        </div>
+        <button class="icon-button" type="button" data-action="close-privacy" aria-label="Закрыть">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="dialog-copy">
+        <p>
+          У страницы нет сервера, аккаунта, аналитики и сетевой отправки.
+          Черновик сохраняется в <code>localStorage</code> этого браузера, чтобы
+          к нему можно было вернуться.
+        </p>
+        <p>
+          Это удобное, но не зашифрованное хранилище. На общем или чужом
+          устройстве лучше не вводить чувствительные сведения. Экспортируйте
+          JSON только туда, где вы готовы хранить личный материал.
+        </p>
+        <p>
+          Кнопка «Удалить черновик» стирает локальную копию этой страницы.
+          Уже скачанные файлы нужно удалить отдельно.
+        </p>
+      </div>
+      <div class="dialog-actions">
+        <button class="button button-primary" type="button" data-action="close-privacy">
+          Понятно
+        </button>
+      </div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    <div id="live-region" class="sr-only" role="status" aria-live="polite"></div>
+
+    <noscript>
+      <div class="noscript">
+        Для пошагового прохождения и локального сохранения нужен JavaScript.
+      </div>
+    </noscript>
+  </body>
+</html>

@@ -18,6 +18,19 @@ last-line guard, not as a complete security control. A future real-data pilot
 requires encrypted storage, access control, retention limits, deletion
 semantics, backup policy, and a threat model.
 
+## Local browser workbook
+
+The static `web/` page has no backend, account, analytics, remote assets, or
+network submission. It stores a resumable draft in browser `localStorage`.
+That storage is origin-specific and not encrypted: other users or software
+with access to the same browser profile may be able to read it.
+
+Do not enter sensitive material on a shared or untrusted device. JSON export
+and local deletion require explicit person actions. Exported files are private
+personal artifacts and must not be committed; deleting the browser draft does
+not delete a previously downloaded file. Browser storage is not the private
+vault required for a real-data pilot.
+
 ## Consent is ongoing
 
 Consent must specify:

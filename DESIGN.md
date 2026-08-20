@@ -52,6 +52,34 @@ The public [instrument registry](instruments/README.md) records the current
 Dionysus disposition and open gaps. It contains no items, scoring keys, norms,
 or personal results.
 
+## Local reflection workbook
+
+The initial [text workbook](web/README.md) is a pre-interview interaction
+prototype, not a standardized assessment surface. Its three passes use only
+admitted Dionysus-authored elicitation or existing interview structure:
+current personal strivings, selected narrative life scenes, and a countermap
+for testing one self-description against exceptions and alternate readings.
+
+The workbook keeps the epistemic direction visible:
+
+```text
+person's own text
+  -> reflected themes and bounded questions
+  -> later episode-based interview
+  -> candidate claims under explicit human review
+```
+
+It does not reverse that direction by turning a response pattern into an
+identity verdict. The summary can quote answers and ask about gaps such as high
+importance with low perceived progress, but it cannot assert why the gap
+exists.
+
+The page is dependency-free and makes no network requests. Browser
+`localStorage` enables pause and return but is unencrypted convenience storage,
+not the future private vault. JSON export is an explicit person action and the
+result is a private source artifact. A server, synchronization layer, or real
+personal-data pilot remains deferred.
+
 ## Interview loop
 
 Each interview follows a common conversational loop:

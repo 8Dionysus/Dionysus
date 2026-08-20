@@ -12,6 +12,7 @@ authoritative or complete identity.
 This repository owns:
 
 - conversational interview families and their evolution;
+- local pre-interview reflection surfaces and their private export contract;
 - evidence, language, license, and mode admission metadata for non-clinical
   instruments that may orient an interview;
 - consent, evidence, claim, review, and projection contracts;

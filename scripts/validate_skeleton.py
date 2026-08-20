@@ -22,6 +22,7 @@ REQUIRED_PATHS = (
     "docs/PRIVACY.md",
     "docs/decisions/DION-D-0001-conversational-self-portrait.md",
     "docs/decisions/DION-D-0002-instrument-registry-boundary.md",
+    "docs/decisions/DION-D-0003-local-reflection-workbook.md",
     "instruments/AGENTS.md",
     "instruments/README.md",
     "instruments/admission-contract.md",
@@ -36,6 +37,12 @@ REQUIRED_PATHS = (
     "examples/interview-session.example.json",
     "examples/portrait-claim.example.json",
     "vault/README.md",
+    "web/AGENTS.md",
+    "web/README.md",
+    "web/favicon.svg",
+    "web/index.html",
+    "web/styles.css",
+    "web/app.js",
 )
 
 PUBLIC_TRACKED_PATHS = (
@@ -55,6 +62,7 @@ PUBLIC_TRACKED_PATHS = (
     "schemas",
     "scripts",
     "vault",
+    "web",
 )
 
 MEDIA_SUFFIXES = {
@@ -377,6 +385,74 @@ def validate_instrument_session_links() -> None:
         )
 
 
+def validate_reflection_ui() -> None:
+    deploy_paths = ("web/index.html", "web/styles.css", "web/app.js")
+    sources: dict[str, str] = {}
+    for relative_path in deploy_paths:
+        try:
+            sources[relative_path] = (ROOT / relative_path).read_text(encoding="utf-8")
+        except OSError as exc:
+            raise ValidationError(f"{relative_path}: cannot read UI source: {exc}") from exc
+
+    for relative_path, source in sources.items():
+        require(
+            "http://" not in source and "https://" not in source,
+            f"{relative_path}: deployed UI must not reference remote assets or endpoints",
+        )
+
+    app_source = sources["web/app.js"]
+    forbidden_network_primitives = (
+        "fetch(",
+        "XMLHttpRequest",
+        "WebSocket(",
+        "EventSource(",
+        "sendBeacon(",
+    )
+    observed_network_primitives = [
+        primitive for primitive in forbidden_network_primitives if primitive in app_source
+    ]
+    require(
+        not observed_network_primitives,
+        f"reflection UI: network primitives are forbidden: {observed_network_primitives}",
+    )
+
+    html_source = sources["web/index.html"]
+    for marker in (
+        "Только на этом устройстве",
+        "Ответы не покидают браузер",
+        "не зашифрованное хранилище",
+    ):
+        require(marker in html_source, f"reflection UI: missing privacy marker {marker!r}")
+
+    for marker in (
+        'id: "personal-strivings"',
+        'id: "life-story-interview-ii"',
+        'id: "counterportrait-v0"',
+        "localStorage",
+        "exportWorkbook",
+        "resetWorkbook",
+        "Вопросы, а не выводы",
+    ):
+        require(marker in app_source, f"reflection UI: missing contract marker {marker!r}")
+
+    registry_path = ROOT / "instruments/registry.toml"
+    try:
+        registry = tomllib.loads(registry_path.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as exc:
+        raise ValidationError(f"instruments/registry.toml: invalid TOML: {exc}") from exc
+
+    deployed_source = "\n".join(sources.values())
+    embedded_non_admitted = [
+        item["id"]
+        for item in registry.get("instruments", [])
+        if item.get("admission") != "admitted" and item["id"] in deployed_source
+    ]
+    require(
+        not embedded_non_admitted,
+        f"reflection UI: non-admitted instrument IDs are embedded: {embedded_non_admitted}",
+    )
+
+
 def validate_public_boundary() -> None:
     vault_entries = [
         path
@@ -408,6 +484,7 @@ def main() -> int:
         validate_instrument_registry,
         validate_schemas_and_examples,
         validate_instrument_session_links,
+        validate_reflection_ui,
         validate_public_boundary,
     )
     try:
@@ -422,6 +499,7 @@ def main() -> int:
     print("OK: instrument registry preserves admission, rights, and mode boundaries")
     print("OK: fictional instrument orientation resolves to the current registry")
     print("OK: fictional examples satisfy the public schemas")
+    print("OK: local reflection UI has no network or non-admitted instrument surface")
     print("OK: the private vault is empty")
     return 0
 

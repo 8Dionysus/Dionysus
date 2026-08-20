@@ -19,12 +19,16 @@ personal material.
 - Design standardized and conversational voice lanes separately. Do not claim
   score equivalence for a voice form before an empirical mode comparison.
 - Draft several voice-native prompt packs for the cataloged interview forms.
+- Evaluate the local text workbook's comprehension, pacing, skip behavior,
+  resumption, review usefulness, and participant burden through fictional and
+  synthetic walkthroughs; do not treat its presence as a real-data pilot.
 - Add interviewer behavior tests: follow-up quality, non-leading reflection,
   counterexample seeking, consent renewal, and graceful refusal.
 - Conduct fictional and synthetic dry runs before any real interview.
 
 Exit condition: at least two protocol versions can be compared through reviewed
-transcripts and explicit evaluation criteria.
+transcripts and explicit evaluation criteria, and every instrument used by a
+dry run has a current registry disposition with no hidden rights or mode claim.
 
 ## Phase 2 — private pilot
 
