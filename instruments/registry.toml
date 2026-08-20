@@ -1,0 +1,271 @@
+schema_version = "0.1.0"
+reviewed_on = "2026-08-10"
+purpose = "Dionysus admission metadata for non-clinical instruments that may orient evidence-grounded interviews."
+authority = "Instrument owners and cited evidence retain source authority; this registry owns only the current Dionysus disposition."
+
+[[instruments]]
+id = "life-story-interview-ii"
+name = "Life Story Interview II"
+family = "narrative-identity"
+kind = "interview-protocol"
+role = "interview-source"
+admission = "admitted"
+language_posture = "Russian adaptation may be authored as a Dionysus interview protocol without claiming standardized coding equivalence."
+license_posture = "The official research group permits use and adaptation without explicit permission."
+content_posture = "reference-and-adaptation-allowed"
+voice_posture = "conversation-native"
+interpretation_posture = "Episodes and narrative themes are evidence candidates, not scores or identity facts."
+source_urls = [
+  "https://sites.northwestern.edu/studyoflivesresearchgroup/instruments/",
+]
+evidence_urls = [
+  "https://pubmed.ncbi.nlm.nih.gov/16594837/",
+]
+blocking_gaps = []
+decision_note = "Admitted as a design source for baseline and event interviews; existing coding systems are not silently modified or presented as validated Dionysus scoring."
+
+[[instruments]]
+id = "personal-strivings"
+name = "Personal Strivings elicitation"
+family = "goals-and-motivation"
+kind = "idiographic-elicitation"
+role = "baseline-prework"
+admission = "admitted"
+language_posture = "Dionysus may author plain Russian elicitation because the admitted role is non-normative goal generation, not reproduction of a fixed test."
+license_posture = "Method-level research source; no proprietary form or scoring key is bundled."
+content_posture = "dionysus-authored-elicitation-only"
+voice_posture = "conversation-native"
+interpretation_posture = "Self-generated goals and tensions route interview questions; no population score is produced."
+source_urls = [
+  "https://pure.roehampton.ac.uk/ws/files/1199887/Goal_Measures_for_psychotherapy_A_systematic_review_of_self_report_idiographic_instruments.pdf",
+]
+evidence_urls = [
+  "https://www.sciencedirect.com/science/article/pii/S0092656609000774",
+]
+blocking_gaps = []
+decision_note = "Admitted for eliciting current goals, importance, effort, conflict, support, and perceived progress before a baseline or refresh interview."
+
+[[instruments]]
+id = "bfi-2-60"
+name = "Big Five Inventory-2, 60-item form"
+family = "dispositional-traits"
+kind = "standardized-self-report"
+role = "preferred-russian-trait-candidate"
+admission = "external-only"
+language_posture = "A Russian version has published reliability, validity, and strict measurement invariance evidence."
+license_posture = "Copyrighted; the official owner grants personal and research use, while repository redistribution is not established here."
+content_posture = "reference-only"
+voice_posture = "unverified"
+interpretation_posture = "Use one trait battery as a hypothesis map; do not convert raw scores to percentiles without matching norms."
+source_urls = [
+  "https://www.colby.edu/academics/departments-and-programs/psychology/research-opportunities/personality-lab/the-bfi-2/",
+]
+evidence_urls = [
+  "https://publications.hse.ru/view/407808208",
+]
+blocking_gaps = [
+  "Redistribution rights for the exact Russian form are not pinned.",
+  "Russian voice-mode equivalence is unverified.",
+  "A target-population norm source is not selected for percentile interpretation.",
+]
+decision_note = "Preferred external trait instrument for an initial Russian personal pilot; do not administer alongside another broad trait battery by default."
+
+[[instruments]]
+id = "ipip-neo-120"
+name = "IPIP-NEO-120"
+family = "dispositional-traits"
+kind = "standardized-self-report"
+role = "open-trait-foundation-candidate"
+admission = "pilot"
+language_posture = "A published Russian adaptation exists, but the exact form and its adaptation rights are not yet pinned for Dionysus."
+license_posture = "The source IPIP items are public domain; a specific translation and assembled form require their own provenance review."
+content_posture = "open-source-items-no-vendored-form"
+voice_posture = "unverified"
+interpretation_posture = "Thirty facets may route depth questions; facet precision and norms must be reported conservatively."
+source_urls = [
+  "https://ipip.ori.org/",
+]
+evidence_urls = [
+  "https://www.sciencedirect.com/science/article/abs/pii/S0092656614000506",
+  "https://publications.hse.ru/view/315444282",
+]
+blocking_gaps = [
+  "Pin one Russian form with item-level provenance and explicit adaptation rights.",
+  "Review the Russian form's validation evidence for the intended individual use.",
+  "Establish voice-mode equivalence before reporting standardized voice scores.",
+]
+decision_note = "Strongest open-content direction for a future repository-owned trait layer, but not yet an admitted Russian or voice instrument."
+
+[[instruments]]
+id = "pvq-rr-57"
+name = "Portrait Values Questionnaire Revised, 57-item form"
+family = "personal-values"
+kind = "standardized-self-report"
+role = "preferred-values-candidate"
+admission = "external-only"
+language_posture = "Russian-language use and cross-cultural evidence exist; the exact target form must remain pinned."
+license_posture = "Research materials are available from the authors, but repository redistribution permission for the exact form is not established here."
+content_posture = "reference-only"
+voice_posture = "unverified"
+interpretation_posture = "Interpret relative value priorities and trade-offs, not moral worth or isolated absolute rankings."
+source_urls = [
+  "https://osf.io/w9as3/",
+]
+evidence_urls = [
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9131418/",
+  "https://www.hse.ru/data/2013/03/02/1293259880/08PSY2013.pdf",
+]
+blocking_gaps = [
+  "Pin redistribution and administration permission for the exact Russian form.",
+  "Pin scoring and within-person centering guidance for the intended report.",
+  "Russian voice-mode equivalence is unverified.",
+]
+decision_note = "Preferred external values lens; values must remain distinct from traits and must be explored through concrete trade-offs in interview."
+
+[[instruments]]
+id = "onet-interest-profiler"
+name = "O*NET Interest Profiler"
+family = "vocational-interests"
+kind = "standardized-self-report"
+role = "optional-work-and-creation-module"
+admission = "pilot"
+language_posture = "Official English and Spanish surfaces exist; no validated Russian form is pinned."
+license_posture = "Use and integration are available under the O*NET Career Exploration Tools Content License."
+content_posture = "licensed-source-available"
+voice_posture = "unverified"
+interpretation_posture = "RIASEC results describe vocational interests, not global personality or ability."
+source_urls = [
+  "https://www.onetcenter.org/reports/IP_Manual.html",
+]
+evidence_urls = [
+  "https://www.onetcenter.org/reports/IP_Manual.html",
+]
+blocking_gaps = [
+  "No validated Russian form is pinned.",
+  "Voice-mode equivalence is unverified.",
+  "License attribution and version requirements are not yet implemented in-repo.",
+]
+decision_note = "Useful only when work, craft, or future activity is in scope; it must not be generalized into a personality verdict."
+
+[[instruments]]
+id = "atq-short-77"
+name = "Adult Temperament Questionnaire, 77-item short form"
+family = "adult-temperament"
+kind = "standardized-self-report"
+role = "optional-temperament-depth-module"
+admission = "external-only"
+language_posture = "A published Russian adaptation exists, but the official owner page does not list a downloadable Russian form."
+license_posture = "Research use only and acquisition requires a request to the instrument owner."
+content_posture = "reference-only"
+voice_posture = "unverified"
+interpretation_posture = "Use only for a specific question about reactivity, sensitivity, or effortful control after checking overlap with the trait battery."
+source_urls = [
+  "https://research.bowdoin.edu/rothbart-temperament-questionnaires/instrument-descriptions/the-adult-temperament-questionnaire/",
+]
+evidence_urls = [
+  "https://vestnik.krsu.kg/archive/128/5591",
+]
+blocking_gaps = [
+  "Owner permission is required for the intended use.",
+  "The exact Russian form and its validation scope are not pinned.",
+  "Russian voice-mode equivalence is unverified.",
+]
+decision_note = "Optional depth instrument, not baseline: its broad factors substantially overlap the dispositional-trait layer."
+
+[[instruments]]
+id = "hexaco-pi-r-100"
+name = "HEXACO-PI-R, 100-item form"
+family = "dispositional-traits"
+kind = "standardized-self-report"
+role = "comparative-trait-candidate"
+admission = "external-only"
+language_posture = "The official owner provides a Russian 100-item form."
+license_posture = "Free only for non-profit academic research; public online applications are restricted and non-academic use requires author contact."
+content_posture = "reference-only"
+voice_posture = "unverified"
+interpretation_posture = "Honesty-Humility can motivate a distinct research question but must not become a moral ranking."
+source_urls = [
+  "https://hexaco.org/hexaco-inventory",
+]
+evidence_urls = [
+  "https://hexaco.org/hexaco-inventory",
+]
+blocking_gaps = [
+  "The intended Dionysus use is not covered by a pinned permission.",
+  "Public application restrictions conflict with an embedded open protocol.",
+  "Russian voice-mode equivalence is unverified.",
+]
+decision_note = "Retained as a comparative branch, not the default trait foundation."
+
+[[instruments]]
+id = "via-adult-strengths"
+name = "VIA adult character-strength assessments"
+family = "character-strengths"
+kind = "standardized-self-report-family"
+role = "optional-reflective-module"
+admission = "external-only"
+language_posture = "Multiple translations exist; no exact Russian form is pinned for Dionysus."
+license_posture = "Public completion and research-site access are available, but item redistribution rights are not established here."
+content_posture = "reference-only"
+voice_posture = "unverified"
+interpretation_posture = "Strengths are reflective vocabulary; different forms can yield different signature-strength sets because of measurement variance and error."
+source_urls = [
+  "https://www.viacharacter.org/researchers/assessments",
+]
+evidence_urls = [
+  "https://pubmed.ncbi.nlm.nih.gov/36121305/",
+]
+blocking_gaps = [
+  "Pin one form, translation, intended use, and permission.",
+  "Define a non-ranking interpretation that does not duplicate traits or values.",
+  "Russian voice-mode equivalence is unverified.",
+]
+decision_note = "May support a later strengths-focused depth interview, but cannot define a person's character or canonical top strengths."
+
+[[instruments]]
+id = "mbti-family"
+name = "Myers-Briggs Type Indicator family"
+family = "categorical-personality-typologies"
+kind = "instrument-family"
+role = "negative-boundary"
+admission = "excluded"
+language_posture = "Not evaluated because the family is excluded from the foundation."
+license_posture = "Proprietary."
+content_posture = "do-not-vendor"
+voice_posture = "not-applicable"
+interpretation_posture = "A person's own type vocabulary may be retained as self-description, never as Dionysus trait truth."
+source_urls = [
+  "https://doi.org/10.1002/jcad.70006",
+]
+evidence_urls = [
+  "https://doi.org/10.1002/jcad.70006",
+]
+blocking_gaps = [
+  "Categorical type assignment discards continuous trait information needed by the portrait.",
+  "No distinct foundation role justifies overlap with stronger continuous trait models.",
+]
+decision_note = "Excluded from routing and portrait claims; user-supplied language remains quotable as a reviewed self-description."
+
+[[instruments]]
+id = "enneagram-family"
+name = "Enneagram instrument family"
+family = "categorical-personality-typologies"
+kind = "instrument-family"
+role = "negative-boundary"
+admission = "excluded"
+language_posture = "Not evaluated because the family is excluded from the foundation."
+license_posture = "Varies by instrument; no form is admitted."
+content_posture = "do-not-vendor"
+voice_posture = "not-applicable"
+interpretation_posture = "A person's own Enneagram vocabulary may be retained as narrative language, never as validated portrait structure."
+source_urls = [
+  "https://pubmed.ncbi.nlm.nih.gov/33332604/",
+]
+evidence_urls = [
+  "https://pubmed.ncbi.nlm.nih.gov/33332604/",
+]
+blocking_gaps = [
+  "The systematic review reports mixed reliability and validity evidence across instruments.",
+  "Core mechanisms such as wings and intertype movement lack sufficient support for a foundation role.",
+]
+decision_note = "Excluded from routing and portrait claims; it may appear only as explicitly attributed self-description."

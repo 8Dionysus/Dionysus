@@ -21,6 +21,12 @@ REQUIRED_PATHS = (
     "ROADMAP.md",
     "docs/PRIVACY.md",
     "docs/decisions/DION-D-0001-conversational-self-portrait.md",
+    "docs/decisions/DION-D-0002-instrument-registry-boundary.md",
+    "docs/decisions/DION-D-0003-local-reflection-workbook.md",
+    "instruments/AGENTS.md",
+    "instruments/README.md",
+    "instruments/admission-contract.md",
+    "instruments/registry.toml",
     "interviews/catalog.toml",
     "interviews/session-contract.md",
     "portrait/templates/KERNEL.md",
@@ -31,6 +37,12 @@ REQUIRED_PATHS = (
     "examples/interview-session.example.json",
     "examples/portrait-claim.example.json",
     "vault/README.md",
+    "web/AGENTS.md",
+    "web/README.md",
+    "web/favicon.svg",
+    "web/index.html",
+    "web/styles.css",
+    "web/app.js",
 )
 
 PUBLIC_TRACKED_PATHS = (
@@ -44,11 +56,13 @@ PUBLIC_TRACKED_PATHS = (
     "ROADMAP.md",
     "docs",
     "examples",
+    "instruments",
     "interviews",
     "portrait",
     "schemas",
     "scripts",
     "vault",
+    "web",
 )
 
 MEDIA_SUFFIXES = {
@@ -66,6 +80,30 @@ MEDIA_SUFFIXES = {
 PROTOCOL_KINDS = {"baseline", "depth", "counterportrait", "refresh", "event"}
 PROTOCOL_MODES = {"voice", "text", "hybrid"}
 MATURITY_STATES = {"skeleton", "draft", "pilot", "validated"}
+INSTRUMENT_ADMISSION_STATES = {"admitted", "external-only", "pilot", "excluded"}
+INSTRUMENT_VOICE_POSTURES = {
+    "conversation-native",
+    "unverified",
+    "verbatim-pilot",
+    "equivalent",
+    "not-applicable",
+}
+INSTRUMENT_CONTENT_POSTURES = {
+    "reference-and-adaptation-allowed",
+    "dionysus-authored-elicitation-only",
+    "reference-only",
+    "open-source-items-no-vendored-form",
+    "licensed-source-available",
+    "do-not-vendor",
+}
+FORBIDDEN_INSTRUMENT_KEYS = {
+    "items",
+    "item_text",
+    "norms",
+    "responses",
+    "scores",
+    "scoring_key",
+}
 
 
 class ValidationError(Exception):
@@ -195,6 +233,105 @@ def validate_catalog() -> None:
         require(protocol.get("purpose"), f"{location}: missing purpose")
 
 
+def validate_instrument_registry() -> None:
+    registry_path = ROOT / "instruments/registry.toml"
+    try:
+        registry = tomllib.loads(registry_path.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as exc:
+        raise ValidationError(f"instruments/registry.toml: invalid TOML: {exc}") from exc
+
+    require(
+        registry.get("schema_version") == "0.1.0",
+        "instrument registry: unsupported schema_version",
+    )
+    require(registry.get("reviewed_on"), "instrument registry: missing review date")
+    require(registry.get("purpose"), "instrument registry: missing purpose")
+    require(registry.get("authority"), "instrument registry: missing authority boundary")
+
+    instruments = registry.get("instruments", [])
+    require(instruments, "instrument registry: no entries")
+    instrument_ids = [item.get("id") for item in instruments]
+    require(
+        len(instrument_ids) == len(set(instrument_ids)),
+        "instrument registry: duplicate IDs",
+    )
+    observed_states = {item.get("admission") for item in instruments}
+    require(
+        "admitted" in observed_states,
+        "instrument registry: at least one bounded method must be admitted",
+    )
+    require(
+        observed_states & {"external-only", "pilot", "excluded"},
+        "instrument registry: must preserve at least one explicit non-admission boundary",
+    )
+
+    required_strings = {
+        "id",
+        "name",
+        "family",
+        "kind",
+        "role",
+        "language_posture",
+        "license_posture",
+        "content_posture",
+        "voice_posture",
+        "interpretation_posture",
+        "decision_note",
+    }
+    for instrument in instruments:
+        location = f"instrument {instrument.get('id', '<missing>')}"
+        forbidden = set(instrument) & FORBIDDEN_INSTRUMENT_KEYS
+        require(not forbidden, f"{location}: protected or private content keys are forbidden: {sorted(forbidden)}")
+
+        for field in required_strings:
+            require(
+                isinstance(instrument.get(field), str) and instrument[field].strip(),
+                f"{location}: missing or empty {field}",
+            )
+
+        admission = instrument.get("admission")
+        require(
+            admission in INSTRUMENT_ADMISSION_STATES,
+            f"{location}: invalid admission state",
+        )
+        require(
+            instrument.get("voice_posture") in INSTRUMENT_VOICE_POSTURES,
+            f"{location}: invalid voice posture",
+        )
+        require(
+            instrument.get("content_posture") in INSTRUMENT_CONTENT_POSTURES,
+            f"{location}: invalid content posture",
+        )
+
+        for field in ("source_urls", "evidence_urls"):
+            urls = instrument.get(field)
+            require(isinstance(urls, list) and urls, f"{location}: {field} must be non-empty")
+            require(
+                all(isinstance(url, str) and url.startswith("https://") for url in urls),
+                f"{location}: {field} must contain only HTTPS URLs",
+            )
+
+        gaps = instrument.get("blocking_gaps")
+        require(isinstance(gaps, list), f"{location}: blocking_gaps must be an array")
+        require(
+            all(isinstance(gap, str) and gap.strip() for gap in gaps),
+            f"{location}: blocking_gaps contains an empty value",
+        )
+        if admission == "admitted":
+            require(not gaps, f"{location}: admitted entry has blocking gaps")
+            require(
+                instrument.get("voice_posture") != "unverified",
+                f"{location}: admitted entry cannot rely on unverified voice scoring",
+            )
+        else:
+            require(gaps, f"{location}: non-admitted entry must explain its blocking gaps")
+        if admission == "excluded":
+            require(
+                instrument.get("voice_posture") == "not-applicable",
+                f"{location}: excluded entry must not expose an administration mode",
+            )
+
+
 def validate_schemas_and_examples() -> None:
     pairs = (
         ("schemas/interview-session.schema.json", "examples/interview-session.example.json"),
@@ -206,6 +343,114 @@ def validate_schemas_and_examples() -> None:
         require(schema.get("$schema") == "https://json-schema.org/draft/2020-12/schema", f"{schema_path}: unexpected JSON Schema dialect")
         require(schema.get("$id"), f"{schema_path}: missing $id")
         validate_instance(example, schema, example_path)
+
+
+def validate_instrument_session_links() -> None:
+    registry_path = ROOT / "instruments/registry.toml"
+    try:
+        registry = tomllib.loads(registry_path.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as exc:
+        raise ValidationError(f"instruments/registry.toml: invalid TOML: {exc}") from exc
+
+    dispositions = {
+        item["id"]: item["admission"] for item in registry.get("instruments", [])
+    }
+    example = load_json("examples/interview-session.example.json")
+    orientation_refs = example.get("orientation_refs", [])
+    artifact_refs = example.get("artifact_refs", [])
+    artifact_locators = {
+        item["locator"]
+        for item in artifact_refs
+        if item.get("kind") == "instrument-result"
+    }
+
+    for orientation in orientation_refs:
+        registry_id = orientation["registry_id"]
+        location = f"interview orientation {registry_id}"
+        require(registry_id in dispositions, f"{location}: unknown registry ID")
+        require(
+            dispositions[registry_id] == orientation["registry_admission"],
+            f"{location}: stale admission disposition",
+        )
+        require(
+            orientation["result_locator"] in artifact_locators,
+            f"{location}: private result is not represented in artifact_refs",
+        )
+
+    if orientation_refs:
+        retained = example["consent"]["retained_artifacts"]
+        require(
+            "instrument-results" in retained,
+            "interview orientation: consent does not cover retained instrument results",
+        )
+
+
+def validate_reflection_ui() -> None:
+    deploy_paths = ("web/index.html", "web/styles.css", "web/app.js")
+    sources: dict[str, str] = {}
+    for relative_path in deploy_paths:
+        try:
+            sources[relative_path] = (ROOT / relative_path).read_text(encoding="utf-8")
+        except OSError as exc:
+            raise ValidationError(f"{relative_path}: cannot read UI source: {exc}") from exc
+
+    for relative_path, source in sources.items():
+        require(
+            "http://" not in source and "https://" not in source,
+            f"{relative_path}: deployed UI must not reference remote assets or endpoints",
+        )
+
+    app_source = sources["web/app.js"]
+    forbidden_network_primitives = (
+        "fetch(",
+        "XMLHttpRequest",
+        "WebSocket(",
+        "EventSource(",
+        "sendBeacon(",
+    )
+    observed_network_primitives = [
+        primitive for primitive in forbidden_network_primitives if primitive in app_source
+    ]
+    require(
+        not observed_network_primitives,
+        f"reflection UI: network primitives are forbidden: {observed_network_primitives}",
+    )
+
+    html_source = sources["web/index.html"]
+    for marker in (
+        "Только на этом устройстве",
+        "Ответы не покидают браузер",
+        "не зашифрованное хранилище",
+    ):
+        require(marker in html_source, f"reflection UI: missing privacy marker {marker!r}")
+
+    for marker in (
+        'id: "personal-strivings"',
+        'id: "life-story-interview-ii"',
+        'id: "counterportrait-v0"',
+        "localStorage",
+        "exportWorkbook",
+        "resetWorkbook",
+        "Вопросы, а не выводы",
+    ):
+        require(marker in app_source, f"reflection UI: missing contract marker {marker!r}")
+
+    registry_path = ROOT / "instruments/registry.toml"
+    try:
+        registry = tomllib.loads(registry_path.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as exc:
+        raise ValidationError(f"instruments/registry.toml: invalid TOML: {exc}") from exc
+
+    deployed_source = "\n".join(sources.values())
+    embedded_non_admitted = [
+        item["id"]
+        for item in registry.get("instruments", [])
+        if item.get("admission") != "admitted" and item["id"] in deployed_source
+    ]
+    require(
+        not embedded_non_admitted,
+        f"reflection UI: non-admitted instrument IDs are embedded: {embedded_non_admitted}",
+    )
 
 
 def validate_public_boundary() -> None:
@@ -236,7 +481,10 @@ def main() -> int:
     checks = (
         validate_required_paths,
         validate_catalog,
+        validate_instrument_registry,
         validate_schemas_and_examples,
+        validate_instrument_session_links,
+        validate_reflection_ui,
         validate_public_boundary,
     )
     try:
@@ -248,7 +496,10 @@ def main() -> int:
 
     print("OK: Dionysus skeleton is structurally valid")
     print("OK: interview catalog contains five distinct skeleton protocols")
+    print("OK: instrument registry preserves admission, rights, and mode boundaries")
+    print("OK: fictional instrument orientation resolves to the current registry")
     print("OK: fictional examples satisfy the public schemas")
+    print("OK: local reflection UI has no network or non-admitted instrument surface")
     print("OK: the private vault is empty")
     return 0
 

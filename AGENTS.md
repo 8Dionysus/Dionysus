@@ -12,6 +12,9 @@ authoritative or complete identity.
 This repository owns:
 
 - conversational interview families and their evolution;
+- local pre-interview reflection surfaces and their private export contract;
+- evidence, language, license, and mode admission metadata for non-clinical
+  instruments that may orient an interview;
 - consent, evidence, claim, review, and projection contracts;
 - compact portrait views derived from reviewed claims;
 - the boundary between public protocol and private personal material.
@@ -22,7 +25,8 @@ This repository does not own:
 - `.aoa` session archives or transcript lifecycle;
 - speech, transcription, or agent runtime infrastructure;
 - the public `8Dionysus` profile;
-- psychological diagnosis, personality scoring, or an AI replica of a person;
+- psychological diagnosis, test publishing, personality scoring, normative
+  interpretation, or an AI replica of a person;
 - automatic loading of a complete personal dossier into every agent session.
 
 Route runtime capabilities to their stronger owners. Keep Dionysus transport
@@ -34,6 +38,12 @@ and provider neutral until a concrete integration is deliberately chosen.
   evidence. Put private working material under ignored `vault/`.
 - Do not infer psychological traits from vocal prosody, appearance, or other
   biometric signals.
+- Do not copy protected test items, forms, scoring keys, or norms without
+  explicit redistribution rights.
+- A standardized result may route interview questions, but it does not become
+  a portrait claim without evidence and human review.
+- Do not claim equivalence for a new language or voice mode without evidence
+  for that exact form and use.
 - A model-generated statement starts as a candidate claim, not a fact.
 - Preserve the evidence reference, basis, confidence, scope, alternatives, and
   review state of every claim.

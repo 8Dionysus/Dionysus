@@ -29,6 +29,57 @@ Raw capture, transcripts, claims, and projections have different sensitivity
 and retention needs. A future implementation must not collapse them into one
 opaque vector store or conversation history.
 
+## Instrument-assisted orientation
+
+Non-clinical instruments may precede an interview when they add a distinct
+question that the conversation can test. They remain a separate lane:
+
+```text
+exact authorized instrument and mode
+  -> private result
+  -> bounded hypotheses for inquiry
+  -> episodes, conditions, and counterexamples
+  -> candidate claims under human review
+```
+
+The result is not itself a portrait claim. Standardized wording, response
+format, scoring, language, and administration mode must follow the admitted
+source conditions. If a model paraphrases an item into natural conversation,
+the result becomes an ordinary interview response and loses any standardized
+score claim.
+
+The public [instrument registry](instruments/README.md) records the current
+Dionysus disposition and open gaps. It contains no items, scoring keys, norms,
+or personal results.
+
+## Local reflection workbook
+
+The initial [text workbook](web/README.md) is a pre-interview interaction
+prototype, not a standardized assessment surface. Its three passes use only
+admitted Dionysus-authored elicitation or existing interview structure:
+current personal strivings, selected narrative life scenes, and a countermap
+for testing one self-description against exceptions and alternate readings.
+
+The workbook keeps the epistemic direction visible:
+
+```text
+person's own text
+  -> reflected themes and bounded questions
+  -> later episode-based interview
+  -> candidate claims under explicit human review
+```
+
+It does not reverse that direction by turning a response pattern into an
+identity verdict. The summary can quote answers and ask about gaps such as high
+importance with low perceived progress, but it cannot assert why the gap
+exists.
+
+The page is dependency-free and makes no network requests. Browser
+`localStorage` enables pause and return but is unencrypted convenience storage,
+not the future private vault. JSON export is an explicit person action and the
+result is a private source artifact. A server, synchronization layer, or real
+personal-data pilot remains deferred.
+
 ## Interview loop
 
 Each interview follows a common conversational loop:
@@ -84,6 +135,7 @@ This skeleton deliberately defers:
 - encrypted storage and key management;
 - agent or MCP integration;
 - prompt wording and interview pacing;
+- a repository-owned standardized instrument or scoring implementation;
 - claim comparison and longitudinal diff algorithms;
 - selective context release into other systems.
 
