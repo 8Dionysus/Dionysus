@@ -74,7 +74,9 @@ only its public source and release-surface identity.
 ## Recovery and migration
 
 If publication fails after the tag is pushed, preserve the tag and rerun
-`--postpublish` after resolving the GitHub Release operation. Do not move or
-recreate the tag. A future correction requires a new owner-approved version.
+the strict shared postpublish audit after resolving the GitHub Release
+operation. Do not move or recreate the tag. A future product or release
+correction requires a new owner-approved version; an editorial body erratum may
+update only the existing Release body from corrected canonical source.
 Former seed-garden consumers must migrate to their actual owner repositories;
 `legacy/` and `pre-archive-2026-07-23` are archaeology/recovery paths only.

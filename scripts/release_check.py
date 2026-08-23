@@ -143,6 +143,32 @@ def _clean_status() -> str:
     return output(["git", "status", "--porcelain", "--untracked-files=all"])
 
 
+def _reconciliation_range_end() -> str:
+    """Anchor the product ledger before the immutable release commit.
+
+    Before publication there is no exact release tag, so the release-prep
+    commit remains HEAD and its parent is the historical range boundary. After
+    publication, later documentation corrections must not make the tagged
+    release-preparation commit look like a new product commit.
+    """
+
+    tag_ref = f"refs/tags/{RELEASE_TAG}"
+    tag_probe = run(["git", "show-ref", "--tags", "--verify", tag_ref])
+    if tag_probe.returncode not in (0, 1):
+        fail(f"could not inspect immutable release tag {RELEASE_TAG}: {command_detail(tag_probe)}")
+    if tag_probe.returncode == 1:
+        return "HEAD^"
+
+    tagged_commit = output(["git", "rev-list", "-n", "1", f"{tag_ref}^{{}}"])
+    ancestry = run(["git", "merge-base", "--is-ancestor", tagged_commit, "HEAD"])
+    if ancestry.returncode != 0:
+        fail(
+            f"immutable release commit {tagged_commit} for {RELEASE_TAG} "
+            "must be an ancestor of current main"
+        )
+    return f"{tagged_commit}^"
+
+
 def verify_release_surfaces() -> ReleaseSection:
     changelog_path = ROOT / "CHANGELOG.md"
     if not changelog_path.is_file():
@@ -169,8 +195,9 @@ def verify_release_surfaces() -> ReleaseSection:
         if phrase not in releasing:
             fail(f"docs/RELEASING.md is missing {phrase!r}")
 
+    range_end = _reconciliation_range_end()
     actual_product_commits = tuple(
-        output(["git", "rev-list", "--first-parent", "--reverse", f"{BASELINE_TAG}..HEAD^"]).splitlines()
+        output(["git", "rev-list", "--first-parent", "--reverse", f"{BASELINE_TAG}..{range_end}"]).splitlines()
     )
     if actual_product_commits != PRODUCT_FIRST_PARENT:
         fail(
