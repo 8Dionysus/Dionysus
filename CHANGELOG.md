@@ -118,9 +118,10 @@ the source history.
 - Recovery is through the clean Git tag, GitHub source archive, `legacy/`, and
   the `pre-archive-2026-07-23` recovery tag. The release publisher refuses to
   move a mismatched target tag.
-- Rollback execution is not claimed. A future correction requires a new
-  owner-approved version; runtime rollback and live health belong to stronger
-  owners.
+- Rollback execution is not claimed. A future product or release correction
+  requires a new owner-approved version; this editorial post-release erratum
+  does not create or move a version. Runtime rollback and live health belong to
+  stronger owners.
 
 ### Artifacts, Attestation, and Admission
 
