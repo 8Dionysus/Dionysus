@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish and audit the exact Dionysus prerelease through the owner route."""
+"""Publish and audit the exact Dionysus alpha.2 prerelease reference route."""
 
 from __future__ import annotations
 

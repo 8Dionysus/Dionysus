@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Owner-local release gate for the Dionysus source-only alpha."""
+"""Owner-local release gate for the Dionysus source-only alpha.2."""
 
 from __future__ import annotations
 
@@ -14,16 +14,13 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RELEASE_VERSION = "0.4.0-alpha.1"
+RELEASE_VERSION = "0.4.0-alpha.2"
 RELEASE_TAG = f"v{RELEASE_VERSION}"
-BASELINE_TAG = "v0.3.0"
-BASELINE_COMMIT = "72031c63ffc296550777ff7db1a86e29f94f6768"
+BASELINE_TAG = "v0.4.0-alpha.1"
+BASELINE_COMMIT = "bddfc4618edf249f6bbe532846e76e3757695e12"
 PRODUCT_FIRST_PARENT = (
-    "8529c00c731ce560c0d8d2719fabbaf9dcbe222e",
-    "209cc4888be3896d5da6db1d25ca0ac42bb45786",
-    "6c463f6b89a11e85b37e2606525afc7d45005fbd",
-    "8c5c8ec960c507e097b37472e9e8353c369919bf",
-    "b2ed9208e5712e45be4eb08d65ed60826c745170",
+    "e52439b6a8cdcdd718918de3ed88d2dd9367dc6c",
+    "785999b8bbf971976acac09a2fa813f446f275db",
 )
 REQUIRED_HEADINGS = (
     "Summary",
@@ -37,7 +34,7 @@ REQUIRED_HEADINGS = (
     "Deployment, Observability, Recovery, and Rollback",
     "Artifacts, Attestation, and Admission",
     "Validation",
-    "First-Parent Reconciliation (5/5)",
+    "First-Parent Reconciliation (2/2)",
     "Notes",
 )
 MEDIA_SUFFIXES = {".aac", ".flac", ".m4a", ".mp3", ".mp4", ".ogg", ".opus", ".wav", ".webm"}
@@ -153,7 +150,7 @@ def _reconciliation_range_end() -> str:
     """
 
     tag_ref = f"refs/tags/{RELEASE_TAG}"
-    tag_probe = run(["git", "show-ref", "--tags", "--verify", tag_ref])
+    tag_probe = run(["git", "show-ref", "--tags", "--verify", "--quiet", tag_ref])
     if tag_probe.returncode not in (0, 1):
         fail(f"could not inspect immutable release tag {RELEASE_TAG}: {command_detail(tag_probe)}")
     if tag_probe.returncode == 1:
