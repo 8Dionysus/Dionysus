@@ -1,5 +1,7 @@
 # Dionysus
 
+> Current release: `v0.4.0-alpha.1`. See [CHANGELOG](CHANGELOG.md) for release notes.
+
 Dionysus is a voice-first, evidence-grounded laboratory for building a
 human-reviewed portrait of a person over time.
 
