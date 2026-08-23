@@ -16,51 +16,55 @@ owner attestation.
 - `scripts/release_check.py` owns the exact baseline/first-parent, privacy,
   validator, browser syntax, loopback HTTP smoke, clean-main, and release
   surface gate.
-- `scripts/release_publish.py` owns the prerelease-aware dry-run, annotated
-  tag identity, canonical GitHub Release publication, and postpublish audit.
+- The installed shared `aoa release` route owns federation preflight,
+  prerelease-aware publication, exact tag identity, canonical GitHub Release
+  publication, and strict postpublish audit. `scripts/release_publish.py` is
+  retained as an owner-local compatibility/reference helper.
 - `interviews/`, `schemas/`, and `instruments/` retain their own `0.1.0`
   contract versions. They are not repository release markers and must not be
   mass-rewritten to `0.4.0-alpha.1`.
 
-## Required route
+## Published route for `v0.4.0-alpha.1`
 
-Run from a clean `main` checkout synchronized with `origin/main`, after the
-release-prep PR has landed:
-
-```bash
-python scripts/release_check.py
-python scripts/release_publish.py --dry-run
-```
-
-Inspect the plan. Then publish exactly once:
+The exact alpha publication ran from a clean `main` checkout synchronized with
+`origin/main`, after the release-prep PR had landed:
 
 ```bash
-python scripts/release_publish.py --confirm
+aoa release audit /srv/AbyssOS --phase preflight --repo Dionysus --strict --json
+aoa release publish /srv/AbyssOS --repo Dionysus --dry-run --json
 ```
 
-Finish with the owner postpublish audit:
+The plan was then published exactly once through the installed shared route:
 
 ```bash
-python scripts/release_publish.py --postpublish
+aoa release publish /srv/AbyssOS --repo Dionysus --confirm --json
 ```
 
-The publisher refuses to move a mismatched `v0.4.0-alpha.1` tag, refuses to
-overwrite a mismatched existing Release, publishes no assets, and verifies the
-peeled tag commit, annotated tag type, prerelease flag, latest marker, exact
+The strict shared postpublish audit completed the route:
+
+```bash
+aoa release audit /srv/AbyssOS --phase postpublish --repo Dionysus --strict --json
+```
+
+The shared route created the annotated `v0.4.0-alpha.1` tag and existing
+source-only GitHub prerelease, published no assets, and verified the peeled tag
+commit, annotated tag type, prerelease flag, stable latest marker, exact
 canonical body, empty asset set, clean synchronized `main`, and source-only
 artifact posture.
 
+After this post-release correction lands, do not rerun a publish command for
+`v0.4.0-alpha.1` and do not move its tag. A correction may update only the
+existing Release body from the corrected canonical changelog, followed by the
+strict postpublish audit.
+
 ## Federation helper boundary
 
-`Dionysus` is listed in the shared federation release owner set, but the
-installed `aoa-sdk` release helper currently parses only stable `X.Y.Z`
-changelog headings and would derive `v0.4.0`, not the approved alpha tag. Do
-not create a stable compatibility alias or invoke that helper to publish the
-wrong identity. The generic `aoa release audit /srv/AbyssOS --phase preflight
---repo Dionysus --strict --json` route is therefore recorded as a known
-contract mismatch for this alpha, not a green release gate. The owner-local
-route above is the current canonical route for this approved prerelease; the
-shared helper's prerelease support is a separate federation follow-up.
+`aoa-sdk` PR [#263](https://github.com/8Dionysus/aoa-sdk/pull/263) landed exact
+SemVer prerelease support before this publication. The installed shared
+`aoa release publish` route therefore created the exact `v0.4.0-alpha.1`
+identity; the owner-local `scripts/release_publish.py` was not used for the
+publication. The canonical changelog records this as a post-release correction
+because the source correction landed after the immutable tag was published.
 
 The owner route remains subject to the common distinction between source
 landing, GitHub checks, tag, Release publication, artifact admission, runtime
