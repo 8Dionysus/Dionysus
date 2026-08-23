@@ -144,9 +144,9 @@ the source history.
 - `git diff --check`
 - GitHub `Repo Validation` on the release-prep PR and exact landed release
   commit
-- Exact owner-local prerelease dry-run before publication, then tag/commit
-  identity, prerelease/latest marker, canonical body, empty-assets, and
-  postpublish audit after publication
+- Installed shared `aoa release` preflight and dry-run before publication,
+  then tag/commit identity, prerelease/latest marker, canonical body,
+  empty-assets, and strict shared postpublish audit after publication
 - First-parent reconciliation: the five product commits from `v0.3.0` through
   the parent of the release-preparation commit are accounted for below. The
   release-preparation commit itself is the tag commit and is intentionally
@@ -172,6 +172,22 @@ unclassified internal noise. The release-preparation tag commit is a separate
 release-only carrier and is verified by the owner-local gate and postpublish
 receipt rather than being counted as another product change.
 
+### Post-release Correction
+
+This correction was added after the immutable `v0.4.0-alpha.1` tag and GitHub
+Release were published. The annotated tag object
+`b66a913dcc69f3c06ae3242bf7b61093e78998d0` and its peeled commit
+`bddfc4618edf249f6bbe532846e76e3757695e12` remain unchanged; this source
+correction is not part of that tagged commit.
+
+- [aoa-sdk PR #263](https://github.com/8Dionysus/aoa-sdk/pull/263) landed the
+  prerelease support in the shared `aoa release` helper before publication.
+- The exact `v0.4.0-alpha.1` release was published through the installed shared
+  `aoa release publish` route. The owner-local `scripts/release_publish.py`
+  was not the publication route for this release.
+- The earlier publication-route note was incorrect and is superseded by this
+  correction; the immutable tag and its release identity were not rewritten.
+
 ### Notes
 
 - This alpha is a prerelease of a new 0.x owner surface, not a 1.0 identity
@@ -185,8 +201,6 @@ receipt rather than being counted as another product change.
 - `aoa-session-memory` is protected and untouched. `aoa-routing` and
   `abyss-stack_old` are archived/maintenance boundaries and were not unarchived
   or republished.
-- The installed federation helper's current parser accepts only stable
-  `X.Y.Z` changelog headings and would otherwise publish the wrong `v0.4.0`.
-  This prerelease therefore uses the owner-local prerelease route; that shared
-  helper compatibility gap is recorded as a federation follow-up, not hidden
-  by a stable alias.
+- The publication-route correction above records the exact shared helper and
+  release command used for this alpha. It does not claim runtime, proof, or
+  human acceptance, and it does not alter the immutable tag.
