@@ -6,6 +6,136 @@ the source history.
 
 ## [Unreleased]
 
+## [0.4.0-alpha.2] - 2026-08-23
+
+### Summary
+
+- This corrective prerelease publishes the already-landed release-semantic
+  correction as a new immutable identity instead of redefining `v0.4.0-alpha.1`.
+- It closes the alpha.1 tag-to-canonical changelog identity defect while
+  preserving alpha.1's tag, GitHub Release, and disclosed post-release erratum.
+- It remains a source-only prerelease; stable `v0.3.0` remains the latest stable
+  GitHub Release and no package or runtime artifact is published.
+
+### Added
+
+- A new immutable `v0.4.0-alpha.2` release surface for the two landed
+  post-alpha.1 release-contract corrections.
+- A complete `First-Parent Reconciliation (2/2)` ledger covering the exact
+  semantic correction commits without counting this release carrier as a third
+  product change.
+
+### Changed
+
+- The active release marker now names `v0.4.0-alpha.2` across `README.md`,
+  `ROADMAP.md`, the canonical changelog, and the owner release gate.
+- The owner release gate now treats immutable `v0.4.0-alpha.1` as the baseline
+  and anchors the correction ledger at the exact new release tag after landing.
+- The documented publication route remains the installed shared `aoa release`
+  preflight, dry-run, publish, and strict postpublish sequence.
+
+### Fixed
+
+- The release body for alpha.2 is derived from this exact tagged changelog
+  section, so its canonical source and GitHub Release body are byte-consistent.
+- The post-release semantic correction is represented by a new version rather
+  than by moving alpha.1 or pretending its tagged source contained later edits.
+- The owner gate's first-parent range now covers only the two landed correction
+  commits after alpha.1: PR #156 and PR #157.
+
+### Deprecated
+
+- No protocol, schema, catalog, instrument, or interview surface is deprecated
+  by this corrective prerelease.
+
+### Removed
+
+- No public Dionysus surface is removed by this corrective prerelease.
+
+### Security
+
+- No real audio, transcript, claims, scores, responses, credentials, or
+  identifying evidence is included; the existing public/private boundary is
+  unchanged.
+- No secret, personal material, sibling repository, protected
+  `aoa-session-memory` GitHub surface, archived route, or runtime state is part
+  of this release change.
+
+### Compatibility and Migration
+
+- Alpha.2 is a release-contract correction, not a new protocol API or package
+  ABI. Consumers of alpha.1 may continue to resolve that immutable historical
+  release; consumers needing the corrected release semantics should use alpha.2.
+- The alpha.1 tag and GitHub Release remain the prior prerelease identity, and
+  stable `v0.3.0` remains the stable migration baseline.
+- No compatibility adapter, provider pin, or cross-repository dependency is
+  introduced.
+
+### Deployment, Observability, Recovery, and Rollback
+
+- This remains a source-only GitHub prerelease with no hosted deployment,
+  runtime activation, health, telemetry, or provider integration claim.
+- Recovery uses the immutable alpha.1 and alpha.2 tags and GitHub source
+  archives. Existing tags are never moved or recreated by this route.
+- Rollback execution is not claimed; any future product or release correction
+  requires another owner-approved immutable version.
+
+### Artifacts, Attestation, and Admission
+
+- Dionysus produces no package, container, model, runtime, media, SBOM,
+  signature, provenance sidecar, or durable artifact-registry record for this
+  source-only release.
+- The OS Abyss artifact trust loop is therefore `not_applicable` for a
+  release artifact here; no `allow`, `warn`, `deny`, `manual_review_required`,
+  or `unknown` verdict is rewritten or promoted.
+- GitHub's generated source archive is a view of the exact tag, not an admitted
+  Dionysus-produced artifact or runtime proof.
+
+### Validation
+
+- `python scripts/validate_skeleton.py`
+- `node --check web/app.js`
+- `python scripts/smoke_workbook.py` (loopback-only static HTTP smoke)
+- `python scripts/release_check.py` on exact landed `main` with alpha.1 as the
+  immutable baseline and the alpha.2 tag as the release carrier
+- `git diff --check`
+- GitHub `Repo Validation` on the release-prep PR and exact landed release
+  commit
+- Installed shared `aoa release` strict preflight and dry-run before
+  publication, then exact annotated tag/commit identity, prerelease marker,
+  stable-latest marker, canonical body, empty-assets, and strict postpublish
+  audit after publication
+- First-parent reconciliation: the two post-alpha.1 semantic correction
+  commits are accounted for below; the alpha.2 release-preparation commit is a
+  release-only carrier outside that product range.
+
+### First-Parent Reconciliation (2/2)
+
+The exact range is `v0.4.0-alpha.1..HEAD^` before the alpha.2 release-prep
+commit is tagged. Each first-parent correction commit is classified once.
+
+| # | Exact commit / PR | Meaning | Classification | Release treatment |
+|---:|---|---|---|---|
+| 1 | `e52439b6a8cdcdd718918de3ed88d2dd9367dc6c` / [#156](https://github.com/8Dionysus/Dionysus/pull/156) | Correct the documented alpha.1 publication route after the immutable release had been published; align the canonical erratum and release instructions with the installed shared helper | `changelog_worthy` | Included as the release-route correction; alpha.1 tag and Release remain unchanged. |
+| 2 | `785999b8bbf971976acac09a2fa813f446f275db` / [#157](https://github.com/8Dionysus/Dionysus/pull/157) | Anchor the release ledger before the immutable alpha.1 tag so later semantic documentation corrections are not misclassified as product commits | `changelog_worthy` | Included as the immutable-identity/gate correction; the alpha.2 release carrier remains outside the product range. |
+
+No commit in this two-commit correction range is hidden, duplicated, or
+reclassified as a new product capability. The release-preparation commit is a
+separate carrier verified by the owner gate and shared postpublish route.
+
+### Notes
+
+- Alpha.2 is still a prerelease of the new 0.x owner surface, not a 1.0
+  identity. A future beta requires the Phase 1 evidence named in `ROADMAP.md`.
+- Voice transport, transcription, encrypted vault/storage, private pilot,
+  agent/MCP integration, claim comparison, selective context release,
+  deployment, observability, and rollback automation remain deferred.
+- Publication proves source, tag, GitHub Release, and release-body identity
+  only; it does not prove artifact admission, deployment, runtime health, proof,
+  terminal closure, master acceptance, or human acceptance.
+- `aoa-session-memory` remains protected and untouched; `aoa-routing` and
+  `abyss-stack_old` remain archived and were not unarchived or republished.
+
 ## [0.4.0-alpha.1] - 2026-08-22
 
 ### Summary

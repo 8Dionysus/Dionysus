@@ -1,6 +1,6 @@
 # Roadmap
 
-Current release line: `v0.4.0-alpha.1` (source-only prerelease; the active
+Current release line: `v0.4.0-alpha.2` (source-only prerelease; the active
 protocols remain skeletons).
 
 ## Phase 0 — skeleton

@@ -22,9 +22,9 @@ owner attestation.
   retained as an owner-local compatibility/reference helper.
 - `interviews/`, `schemas/`, and `instruments/` retain their own `0.1.0`
   contract versions. They are not repository release markers and must not be
-  mass-rewritten to `0.4.0-alpha.1`.
+  mass-rewritten to `0.4.0-alpha.2`.
 
-## Published route for `v0.4.0-alpha.1`
+## Historical route for `v0.4.0-alpha.1`
 
 The exact alpha publication ran from a clean `main` checkout synchronized with
 `origin/main`, after the release-prep PR had landed:
@@ -52,19 +52,50 @@ commit, annotated tag type, prerelease flag, stable latest marker, exact
 canonical body, empty asset set, clean synchronized `main`, and source-only
 artifact posture.
 
-After this post-release correction lands, do not rerun a publish command for
-`v0.4.0-alpha.1` and do not move its tag. A correction may update only the
-existing Release body from the corrected canonical changelog, followed by the
-strict postpublish audit.
+The alpha.1 publication and its disclosed post-release correction are
+historical evidence for the current alpha.2 repair. Do not rerun a publish
+command for `v0.4.0-alpha.1`, move its tag, or retrospectively redefine its
+tagged source.
+
+## Current required route for `v0.4.0-alpha.2`
+
+The alpha.2 correction release runs from a clean `main` checkout synchronized
+with `origin/main`, after its release-prep PR has landed:
+
+```bash
+python scripts/release_check.py
+aoa release audit /srv/AbyssOS --phase preflight --repo Dionysus --strict --json
+aoa release publish /srv/AbyssOS --repo Dionysus --dry-run --json
+```
+
+Inspect the dry-run to confirm that it creates only an annotated
+`v0.4.0-alpha.2` tag and a new prerelease Release. Then publish exactly once
+through the installed shared route:
+
+```bash
+aoa release publish /srv/AbyssOS --repo Dionysus --confirm --json
+```
+
+Finish with the strict shared postpublish audit:
+
+```bash
+aoa release audit /srv/AbyssOS --phase postpublish --repo Dionysus --strict --json
+```
+
+The route must preserve alpha.1, keep stable `v0.3.0` as GitHub's latest
+stable Release, publish no assets, and verify that the alpha.2 tag peels to
+the exact landed `main` commit and that the Release body matches the canonical
+alpha.2 changelog section. A dry-run that proposes updating alpha.1 is stale
+and must not be confirmed.
 
 ## Federation helper boundary
 
 `aoa-sdk` PR [#263](https://github.com/8Dionysus/aoa-sdk/pull/263) landed exact
-SemVer prerelease support before this publication. The installed shared
-`aoa release publish` route therefore created the exact `v0.4.0-alpha.1`
-identity; the owner-local `scripts/release_publish.py` was not used for the
-publication. The canonical changelog records this as a post-release correction
-because the source correction landed after the immutable tag was published.
+SemVer prerelease support before the alpha.1 publication. The installed shared
+`aoa release publish` route supports the exact alpha.2 identity as well; no
+stable alias is permitted. The owner-local `scripts/release_publish.py`
+remains a compatibility/reference helper and is not the canonical publication
+route.
 
 The owner route remains subject to the common distinction between source
 landing, GitHub checks, tag, Release publication, artifact admission, runtime
@@ -73,10 +104,11 @@ only its public source and release-surface identity.
 
 ## Recovery and migration
 
-If publication fails after the tag is pushed, preserve the tag and rerun
-the strict shared postpublish audit after resolving the GitHub Release
-operation. Do not move or recreate the tag. A future product or release
-correction requires a new owner-approved version; an editorial body erratum may
-update only the existing Release body from corrected canonical source.
+If alpha.2 publication fails after its tag is pushed, preserve that tag and
+rerun the strict shared postpublish audit after resolving the GitHub Release
+operation. Do not move or recreate alpha.1 or alpha.2. A future product or
+release correction requires a new owner-approved version; an editorial body
+erratum may update only the corresponding existing Release body from corrected
+canonical source.
 Former seed-garden consumers must migrate to their actual owner repositories;
 `legacy/` and `pre-archive-2026-07-23` are archaeology/recovery paths only.
