@@ -36,3 +36,9 @@ jobs:
 
       - name: Validate skeleton
         run: python scripts/validate_skeleton.py
+
+      - name: Check workbook syntax
+        run: node --check web/app.js
+
+      - name: Smoke local workbook HTTP route
+        run: python scripts/smoke_workbook.py
