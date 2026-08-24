@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Owner-local release gate for the Dionysus source-only alpha.2."""
+"""Owner-local release gate for the sole Dionysus source-only alpha.2."""
 
 from __future__ import annotations
 
@@ -16,11 +16,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RELEASE_VERSION = "0.4.0-alpha.2"
 RELEASE_TAG = f"v{RELEASE_VERSION}"
-BASELINE_TAG = "v0.4.0-alpha.1"
-BASELINE_COMMIT = "bddfc4618edf249f6bbe532846e76e3757695e12"
+BASELINE_TAG = "v0.3.0"
+BASELINE_COMMIT = "72031c63ffc296550777ff7db1a86e29f94f6768"
 PRODUCT_FIRST_PARENT = (
+    "8529c00c731ce560c0d8d2719fabbaf9dcbe222e",
+    "209cc4888be3896d5da6db1d25ca0ac42bb45786",
+    "6c463f6b89a11e85b37e2606525afc7d45005fbd",
+    "8c5c8ec960c507e097b37472e9e8353c369919bf",
+    "b2ed9208e5712e45be4eb08d65ed60826c745170",
+    "bddfc4618edf249f6bbe532846e76e3757695e12",
     "e52439b6a8cdcdd718918de3ed88d2dd9367dc6c",
     "785999b8bbf971976acac09a2fa813f446f275db",
+    "4a50762a4a4f9b27a79ed081f467fd1099d918b4",
 )
 REQUIRED_HEADINGS = (
     "Summary",
@@ -34,7 +41,8 @@ REQUIRED_HEADINGS = (
     "Deployment, Observability, Recovery, and Rollback",
     "Artifacts, Attestation, and Admission",
     "Validation",
-    "First-Parent Reconciliation (2/2)",
+    "First-Parent Reconciliation (9/9)",
+    "Historical Campaign Material (Conserved)",
     "Notes",
 )
 MEDIA_SUFFIXES = {".aac", ".flac", ".m4a", ".mp3", ".mp4", ".ogg", ".opus", ".wav", ".webm"}
@@ -81,13 +89,30 @@ def fail(message: str) -> None:
     raise ReleaseGateError(message)
 
 
+def _heading_spans(body: str) -> tuple[tuple[str, int, int], ...]:
+    """Return active level-three headings while ignoring conserved code blocks."""
+
+    spans: list[tuple[str, int, int]] = []
+    fenced = False
+    offset = 0
+    for line in body.splitlines(keepends=True):
+        stripped = line.rstrip("\r\n")
+        if stripped.startswith(("```", "~~~")):
+            fenced = not fenced
+        elif not fenced and stripped.startswith("### "):
+            spans.append((stripped[4:].strip(), offset, offset + len(line)))
+        offset += len(line)
+    return tuple(spans)
+
+
 def _section_body(body: str, heading: str) -> str | None:
-    match = re.search(rf"^### {re.escape(heading)}\s*$", body, re.M)
-    if match is None:
+    spans = _heading_spans(body)
+    match_index = next((index for index, item in enumerate(spans) if item[0] == heading), None)
+    if match_index is None:
         return None
-    next_heading = re.search(r"^### ", body[match.end() :], re.M)
-    end = match.end() + next_heading.start() if next_heading else len(body)
-    return body[match.end() : end].strip()
+    _, start, end = spans[match_index]
+    next_start = spans[match_index + 1][1] if match_index + 1 < len(spans) else len(body)
+    return body[end:next_start].strip()
 
 
 def _bullets(section: str | None) -> tuple[str, ...]:
@@ -143,10 +168,10 @@ def _clean_status() -> str:
 def _reconciliation_range_end() -> str:
     """Anchor the product ledger before the immutable release commit.
 
-    Before publication there is no exact release tag, so the release-prep
-    commit remains HEAD and its parent is the historical range boundary. After
-    publication, later documentation corrections must not make the tagged
-    release-preparation commit look like a new product commit.
+    The final alpha.2 carrier is the only campaign carrier. Its parent is the
+    historical range boundary, so the final reconsolidation carrier itself is
+    not counted as a product/history commit. The old alpha.2 carrier remains
+    in the 9/9 conserved campaign range.
     """
 
     tag_ref = f"refs/tags/{RELEASE_TAG}"
@@ -163,7 +188,7 @@ def _reconciliation_range_end() -> str:
             f"immutable release commit {tagged_commit} for {RELEASE_TAG} "
             "must be an ancestor of current main"
         )
-    return f"{tagged_commit}^"
+    return "HEAD^"
 
 
 def verify_release_surfaces() -> ReleaseSection:
@@ -173,6 +198,8 @@ def verify_release_surfaces() -> ReleaseSection:
     changelog = changelog_path.read_text(encoding="utf-8")
     if "## [Unreleased]" not in changelog:
         fail("CHANGELOG.md must retain [Unreleased]")
+    if re.search(r"^## \[0\.4\.0-alpha\.1\] - ", changelog, re.M):
+        fail("alpha.1 must be nested historical material, not an active release section")
     section = extract_release_section(changelog)
     if not section.summary_bullets:
         fail("release section must contain Summary bullets")
