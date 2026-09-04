@@ -130,4 +130,7 @@ final postpublish proof, future product or release corrections require a new
 owner-approved immutable version; an editorial erratum may update only the
 corresponding existing Release body from corrected canonical source.
 Former seed-garden consumers must migrate to their actual owner repositories;
-`legacy/` and `pre-archive-2026-07-23` are archaeology/recovery paths only.
+The former `legacy/` tree is available through the immutable source recorded in
+[DION-D-0005](decisions/DION-D-0005-seed-history-outside-current-tree.md), not in
+the current checkout. `pre-archive-2026-07-23` remains an earlier operational
+archaeology/recovery reference only.
