@@ -58,8 +58,5 @@ and provider neutral until a concrete integration is deliberately chosen.
 Meaningful changes to topology, authority, privacy, or claim semantics require
 a decision record under `docs/decisions/`.
 
-Before landing a change, run:
-
-```bash
-python scripts/validate_skeleton.py
-```
+Before landing a change, use the on-demand procedure in
+[`VALIDATION.md`](VALIDATION.md).

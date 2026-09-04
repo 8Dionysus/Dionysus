@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_PATHS = (
     "README.md",
     "AGENTS.md",
+    "VALIDATION.md",
     "DESIGN.md",
     "LICENSE",
     "ROADMAP.md",
@@ -54,6 +55,7 @@ PUBLIC_TRACKED_PATHS = (
     "LICENSE",
     "README.md",
     "ROADMAP.md",
+    "VALIDATION.md",
     "docs",
     "examples",
     "instruments",

@@ -6,6 +6,9 @@ the source history.
 
 ## [Unreleased]
 
+- Agent guidance now routes the skeleton check through an on-demand
+  `VALIDATION.md` surface that is itself required by the public topology.
+
 ## [0.4.0-alpha.2] - 2026-08-23
 
 ### Summary
