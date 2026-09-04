@@ -12,13 +12,16 @@ Treat every lifecycle label in the retained files as historical. In
 particular, `opened`, `gated_next`, `staged`, and similar labels do not
 authorize work and do not describe current owner-repository state.
 
-## Reading order
+## Reading route
 
-1. `README.md`
-2. the relevant `*_wave.manifest.json` or `seed-registry.yaml` entry
-3. the exact seed file
-4. a matching file under `reports/planting/`, when present
-5. the current owning repository, which is the only source of live truth
+- For archive-wide archaeology or interpretation of former queue states, start
+  with `README.md`.
+- For one named artifact, start with the relevant `*_wave.manifest.json` or
+  `seed-registry.yaml` entry, then inspect the exact seed and a matching file
+  under `reports/planting/` when present.
+- Return to the current owning repository, which is the only source of live
+  truth. Use the archive README for broader topology only when that context is
+  needed.
 
 ## Preservation rules
 
