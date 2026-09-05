@@ -6,6 +6,8 @@ the source history.
 
 ## [Unreleased]
 
+- Retired the frozen seed-garden `legacy/` subtree from the current checkout;
+  DION-D-0005 preserves the exact commit, original paths, and recovery route.
 - Agent guidance now routes the skeleton check through an on-demand
   `VALIDATION.md` surface that is itself required by the public topology.
 
